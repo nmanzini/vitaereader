@@ -2,13 +2,33 @@
  * Client-side quote card (canvas PNG) for share flows.
  * Fixed tasteful palette — independent of reader themes (colors-only invariant).
  * X/Threads web intents cannot attach images; share orchestration lives in `shareQuote.ts`.
+ *
+ * Width is fixed; height adapts to wrapped quote + attribution (no empty square void).
  */
 
 export const QUOTE_CARD_W = 1080
-export const QUOTE_CARD_H = 1080
+/** Short quotes still feel like a card, not a stub. */
+export const QUOTE_CARD_MIN_H = 720
+/** Cap tall cards so share previews stay manageable. */
+export const QUOTE_CARD_MAX_H = 1350
+
 const MAX_CARD_QUOTE = 360
-const MAX_QUOTE_LINES = 9
-const QUOTE_LINE_H = 64
+const MAX_QUOTE_LINES = 12
+const QUOTE_LINE_H = 58
+const TITLE_LINE_H = 40
+
+/** Layout rhythm (px) — content-driven; no flex spacer between quote and footer. */
+const FRAME_INSET = 40
+const PAD_X = 88
+const PAD_TOP = 72
+const PAD_BOTTOM = 72
+const MARK_BLOCK = 88
+const QUOTE_TO_RULE = 36
+const RULE_TO_ATTR = 28
+const CREDIT_GAP = 10
+const CREDIT_LINE = 32
+const SITE_GAP = 22
+const SITE_LINE = 28
 
 /** Calm book palette (matches day theme tokens, not theme-driven). */
 const COLORS = {
@@ -28,6 +48,16 @@ export type QuoteCardInput = {
   collection?: string
   /** Home URL baked into the card (e.g. https://nmanzini.github.io/vitaereader/) */
   siteUrl: string
+}
+
+export type QuoteCardMetrics = {
+  width: number
+  height: number
+  contentHeight: number
+  /** Top offset when min-height pads short quotes (centers the block as a unit). */
+  blockOffsetY: number
+  quoteLineCount: number
+  titleLineCount: number
 }
 
 /** Word-wrap using a width measure (canvas measureText or a stub in tests). */
@@ -85,6 +115,65 @@ export function fitLines(lines: string[], maxLines: number): string[] {
   return kept
 }
 
+/**
+ * Content height for quote + attribution stack (before min/max clamp).
+ * Pure helper for tests and adaptive canvas sizing.
+ */
+export function quoteCardContentHeight(
+  quoteLineCount: number,
+  titleLineCount = 1,
+): number {
+  const q = Math.max(0, quoteLineCount)
+  const t = Math.max(1, titleLineCount)
+  return (
+    PAD_TOP +
+    MARK_BLOCK +
+    q * QUOTE_LINE_H +
+    QUOTE_TO_RULE +
+    RULE_TO_ATTR +
+    t * TITLE_LINE_H +
+    CREDIT_GAP +
+    CREDIT_LINE +
+    SITE_GAP +
+    SITE_LINE +
+    PAD_BOTTOM
+  )
+}
+
+/** Clamp content height into the card range; center short stacks within min height. */
+export function measureQuoteCard(opts: {
+  quoteLineCount: number
+  titleLineCount?: number
+}): QuoteCardMetrics {
+  const titleLineCount = opts.titleLineCount ?? 1
+  const contentHeight = quoteCardContentHeight(
+    opts.quoteLineCount,
+    titleLineCount,
+  )
+  const height = Math.min(
+    QUOTE_CARD_MAX_H,
+    Math.max(QUOTE_CARD_MIN_H, contentHeight),
+  )
+  const blockOffsetY =
+    contentHeight < height ? Math.floor((height - contentHeight) / 2) : 0
+  return {
+    width: QUOTE_CARD_W,
+    height,
+    contentHeight,
+    blockOffsetY,
+    quoteLineCount: opts.quoteLineCount,
+    titleLineCount,
+  }
+}
+
+/** Max quote lines that still fit under QUOTE_CARD_MAX_H. */
+export function maxQuoteLinesForCard(titleLineCount = 1): number {
+  const fixed = quoteCardContentHeight(0, titleLineCount)
+  const budget = QUOTE_CARD_MAX_H - fixed
+  const fromHeight = Math.max(1, Math.floor(budget / QUOTE_LINE_H))
+  return Math.min(MAX_QUOTE_LINES, fromHeight)
+}
+
 /** Strip protocol + trailing slash for a quiet footer mark. */
 export function displaySiteHost(url: string): string {
   return url
@@ -119,6 +208,7 @@ function canvasMeasure(ctx: CanvasRenderingContext2D, s: string): number {
 
 /**
  * Draw a quiet quote card onto a canvas. Returns the same canvas.
+ * Height adapts to wrapped quote + attribution (clamped min/max).
  * Awaits document fonts when available so serif faces can load.
  */
 export async function drawQuoteCard(
@@ -126,9 +216,7 @@ export async function drawQuoteCard(
   input: QuoteCardInput,
 ): Promise<HTMLCanvasElement> {
   const w = QUOTE_CARD_W
-  const h = QUOTE_CARD_H
-  canvas.width = w
-  canvas.height = h
+  const contentW = w - PAD_X * 2
 
   const ctx = canvas.getContext('2d')
   if (!ctx) throw new Error('Canvas 2D unavailable')
@@ -141,10 +229,39 @@ export async function drawQuoteCard(
     }
   }
 
-  const padX = 88
-  const padTop = 96
-  const padBottom = 88
-  const contentW = w - padX * 2
+  const quote = truncateForCard(input.quote)
+  const { title, credit } = cardAttribution(
+    input.workTitle,
+    input.author,
+    input.collection,
+  )
+  const siteLabel = displaySiteHost(input.siteUrl)
+
+  // Measure title wrap first (affects max quote lines under height cap).
+  ctx.font =
+    '600 32px "Source Serif 4", Georgia, "Times New Roman", serif'
+  const titleLines = fitLines(
+    wrapText(title, contentW, (s) => canvasMeasure(ctx, s)),
+    2,
+  )
+
+  ctx.font =
+    'italic 44px "Cormorant Garamond", Georgia, "Times New Roman", serif'
+  const maxLines = maxQuoteLinesForCard(titleLines.length)
+  const quoteLines = fitLines(
+    wrapText(quote, contentW, (s) => canvasMeasure(ctx, s)),
+    maxLines,
+  )
+
+  const metrics = measureQuoteCard({
+    quoteLineCount: Math.max(1, quoteLines.length),
+    titleLineCount: titleLines.length,
+  })
+  const h = metrics.height
+  const oy = metrics.blockOffsetY
+
+  canvas.width = w
+  canvas.height = h
 
   // Background
   ctx.fillStyle = COLORS.bg
@@ -153,75 +270,57 @@ export async function drawQuoteCard(
   // Thin outer rule
   ctx.strokeStyle = COLORS.rule
   ctx.lineWidth = 2
-  ctx.strokeRect(40, 40, w - 80, h - 80)
+  ctx.strokeRect(FRAME_INSET, FRAME_INSET, w - FRAME_INSET * 2, h - FRAME_INSET * 2)
+
+  const padX = PAD_X
+  let y = oy + PAD_TOP
 
   // Opening mark
   ctx.fillStyle = COLORS.accent
   ctx.font = 'italic 120px "Cormorant Garamond", Georgia, "Times New Roman", serif'
   ctx.textBaseline = 'top'
-  ctx.fillText('“', padX - 8, padTop - 24)
+  ctx.fillText('“', padX - 8, y - 8)
+  y += MARK_BLOCK
 
-  const quote = truncateForCard(input.quote)
+  // Quote (tight stack — attribution follows immediately)
   ctx.fillStyle = COLORS.ink
   ctx.font =
     'italic 44px "Cormorant Garamond", Georgia, "Times New Roman", serif'
-  const quoteTop = padTop + 100
-  const attrBlockTop = h - padBottom - 96 - 36
-  const maxQuoteH = Math.max(QUOTE_LINE_H, attrBlockTop - quoteTop - 24)
-  const maxLines = Math.min(
-    MAX_QUOTE_LINES,
-    Math.max(1, Math.floor(maxQuoteH / QUOTE_LINE_H)),
-  )
-  const quoteLines = fitLines(
-    wrapText(quote, contentW, (s) => canvasMeasure(ctx, s)),
-    maxLines,
-  )
-  let y = quoteTop
   for (const line of quoteLines) {
     ctx.fillText(line, padX, y)
     y += QUOTE_LINE_H
   }
 
-  const { title, credit } = cardAttribution(
-    input.workTitle,
-    input.author,
-    input.collection,
-  )
-
-  // Attribution block near bottom (above site URL)
-  const siteLabel = displaySiteHost(input.siteUrl)
-  const footerY = h - padBottom
-  let attrY = footerY - 96
+  y += QUOTE_TO_RULE
 
   // Soft rule above attribution
   ctx.strokeStyle = COLORS.rule
   ctx.lineWidth = 1.5
   ctx.beginPath()
-  ctx.moveTo(padX, attrY - 36)
-  ctx.lineTo(padX + Math.min(160, contentW * 0.35), attrY - 36)
+  ctx.moveTo(padX, y)
+  ctx.lineTo(padX + Math.min(160, contentW * 0.35), y)
   ctx.stroke()
+
+  y += RULE_TO_ATTR
 
   ctx.fillStyle = COLORS.ink
   ctx.font =
     '600 32px "Source Serif 4", Georgia, "Times New Roman", serif'
-  const titleLines = fitLines(
-    wrapText(title, contentW, (s) => canvasMeasure(ctx, s)),
-    2,
-  )
   for (const line of titleLines) {
-    ctx.fillText(line, padX, attrY)
-    attrY += 40
+    ctx.fillText(line, padX, y)
+    y += TITLE_LINE_H
   }
 
   ctx.fillStyle = COLORS.muted
   ctx.font =
     '400 26px "Source Serif 4", Georgia, "Times New Roman", serif'
-  ctx.fillText(credit, padX, attrY + 8)
+  ctx.fillText(credit, padX, y + CREDIT_GAP)
+  y += CREDIT_GAP + CREDIT_LINE
 
   ctx.fillStyle = COLORS.accent
   ctx.font =
     '400 22px "Source Serif 4", Georgia, "Times New Roman", serif'
-  ctx.fillText(siteLabel, padX, footerY)
+  ctx.fillText(siteLabel, padX, y + SITE_GAP)
 
   return canvas
 }

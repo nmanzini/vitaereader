@@ -4,6 +4,8 @@
  */
 
 const PRODUCTION_ORIGIN = 'https://nmanzini.github.io'
+/** Public Pages home — always baked into quote-card footers (never localhost). */
+const PRODUCTION_HOME_PATH = '/vitaereader/'
 const MAX_QUOTE = 180
 const MAX_CITATION_QUOTE = 480
 
@@ -24,6 +26,19 @@ export function readerBaseUrl(
   const o = origin || PRODUCTION_ORIGIN
   const b = base.endsWith('/') ? base : `${base}/`
   return `${o}${b}`
+}
+
+/**
+ * Canonical public home for quote-card footers.
+ * Uses known host + Vite base when base is the Pages path; otherwise production path
+ * so local `BASE_URL=/` never paints `127.0.0.1` onto the card.
+ */
+export function cardSiteHome(
+  base = typeof import.meta !== 'undefined' ? import.meta.env.BASE_URL : '/',
+): string {
+  const raw = base && base !== '/' ? base : PRODUCTION_HOME_PATH
+  const path = raw.endsWith('/') ? raw : `${raw}/`
+  return `${PRODUCTION_ORIGIN}${path}`
 }
 
 /** Deep link to a work, optionally anchored on a paragraph. */
@@ -141,7 +156,6 @@ export async function prepareShareAssets(opts: {
   workId: string
   paraId?: string
 }): Promise<ShareAssets> {
-  const home = readerBaseUrl()
   const deepLink = workShareUrl(opts.workId, opts.paraId)
   const shareText = buildShareText(opts.workTitle, opts.quote, deepLink)
   const citation = buildCitationText(opts.workTitle, opts.quote, {
@@ -153,7 +167,7 @@ export async function prepareShareAssets(opts: {
   const blob = await renderQuoteCardPng({
     quote: opts.quote,
     workTitle: opts.workTitle,
-    siteUrl: home,
+    siteUrl: cardSiteHome(),
   })
 
   return { citation, shareText, deepLink, blob, filename }

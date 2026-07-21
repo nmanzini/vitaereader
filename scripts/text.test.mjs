@@ -45,6 +45,7 @@ import {
 import {
   buildCitationText,
   buildShareText,
+  cardSiteHome,
   threadsIntentUrl,
   truncateQuote,
   twitterIntentUrl,
@@ -54,6 +55,11 @@ import {
   cardAttribution,
   displaySiteHost,
   fitLines,
+  measureQuoteCard,
+  QUOTE_CARD_MAX_H,
+  QUOTE_CARD_MIN_H,
+  QUOTE_CARD_W,
+  quoteCardContentHeight,
   truncateForCard,
   wrapText,
 } from '../src/lib/quoteCard.ts'
@@ -541,6 +547,17 @@ describe('shareQuote', () => {
     )
   })
 
+  it('bakes canonical home for quote-card footers', () => {
+    assert.equal(
+      cardSiteHome('/'),
+      'https://nmanzini.github.io/vitaereader/',
+    )
+    assert.equal(
+      cardSiteHome('/vitaereader/'),
+      'https://nmanzini.github.io/vitaereader/',
+    )
+  })
+
   it('keeps share text short and tasteful', () => {
     const long = 'word '.repeat(80)
     const q = truncateQuote(long, 40)
@@ -610,6 +627,24 @@ describe('quoteCard layout helpers', () => {
       displaySiteHost('https://nmanzini.github.io/vitaereader/'),
       'nmanzini.github.io/vitaereader',
     )
+  })
+
+  it('sizes height from quote lines without empty void', () => {
+    const short = quoteCardContentHeight(2, 1)
+    const tall = quoteCardContentHeight(8, 1)
+    assert.ok(short < QUOTE_CARD_MIN_H)
+    assert.ok(tall > short)
+
+    const shortCard = measureQuoteCard({ quoteLineCount: 2, titleLineCount: 1 })
+    assert.equal(shortCard.width, QUOTE_CARD_W)
+    assert.equal(shortCard.height, QUOTE_CARD_MIN_H)
+    assert.ok(shortCard.blockOffsetY > 0)
+
+    const midCard = measureQuoteCard({ quoteLineCount: 6, titleLineCount: 1 })
+    assert.ok(midCard.height >= midCard.contentHeight)
+    assert.ok(midCard.height <= QUOTE_CARD_MAX_H)
+    // No giant spacer: content height tracks lines, not a fixed square.
+    assert.ok(midCard.contentHeight < QUOTE_CARD_W)
   })
 
   it('truncates long card quotes on a word boundary', () => {
