@@ -5,7 +5,10 @@
     {
       "id": "tarquin",
       "names": [
-        "Tarquin"
+        "Tarquin",
+        "Tarquinius Superbus",
+        "Tarquinius",
+        "Superbus"
       ],
       "relation": "Expelled king; lasting enemy",
       "blurb": "Last king of Rome. After Lucretia’s death the people drove him out; he warred to return with Tuscan and Latin aid.",
@@ -103,6 +106,9 @@
     {
       "id": "valerius",
       "names": [
+        "Publius Valerius",
+        "Publicola",
+        "Poplicola",
         "Valerius"
       ],
       "relation": "Poplicola before his surname",
@@ -148,7 +154,9 @@
     {
       "id": "horatius",
       "names": [
-        "Horatius"
+        "Horatius",
+        "Horatius Cocles",
+        "Cocles"
       ],
       "relation": "Held the bridge",
       "blurb": "Defended the Tiber bridge until it was cut behind him, then swam back in armor—Rome’s first great republican exemplar.",
@@ -167,7 +175,9 @@
     {
       "id": "mucius",
       "names": [
-        "Mucius"
+        "Mucius",
+        "Mucius Scaevola",
+        "Scaevola"
       ],
       "relation": "Burned his hand before Porsenna",
       "blurb": "Entered the Tuscan camp to kill Porsenna, slew the wrong man, and thrust his hand into the fire to prove Roman resolve.",
@@ -354,6 +364,90 @@
           "characterId": "pisistratus",
           "label": "Solon’s Life",
           "workId": "solon"
+        }
+      ]
+    },
+    {
+      "id": "postumius",
+      "names": [
+        "Postumius",
+        "Postumius Balbus",
+        "Postumius Tubertus"
+      ],
+      "relation": "Consular colleagues in the early Republic’s wars",
+      "blurb": "Two Postumii serve under Poplicola: Tubertus as consul with Marcus Valerius, and Balbus as a night commander who closed the enemy’s ambuscade.",
+      "links": [
+        {
+          "characterId": "valerius"
+        },
+        {
+          "characterId": "brutus"
+        }
+      ]
+    },
+    {
+      "id": "minucius-p",
+      "names": [
+        "Caius Minucius",
+        "Minucius"
+      ],
+      "relation": "Citizen who urged moderation in the wealth dispute",
+      "blurb": "Private man who rose in the assembly to counsel Brutus and the Romans to keep Tarquin’s confiscated property rather than distribute it, setting the treasury question.",
+      "links": [
+        {
+          "characterId": "brutus"
+        },
+        {
+          "characterId": "valerius"
+        }
+      ]
+    },
+    {
+      "id": "sylla-p",
+      "names": [
+        "Sylla"
+      ],
+      "relation": "Dictator who built the second Capitoline temple",
+      "blurb": "Sulla rebuilt the Capitoline temple burnt in the civil wars, yet died before its dedication—the ironic reverse of Poplicola’s timely death before his house was demolished.",
+      "links": [
+        {
+          "characterId": "vespasian-p"
+        },
+        {
+          "characterId": "domitian"
+        }
+      ]
+    },
+    {
+      "id": "vespasian-p",
+      "names": [
+        "Vespasian"
+      ],
+      "relation": "Emperor who built the third Capitoline temple",
+      "blurb": "Rebuilt the temple a third time after the Vitellian sedition; Plutarch notes he succeeded in his temples as in all his enterprises, unlike Sulla who died before dedication.",
+      "links": [
+        {
+          "characterId": "sylla-p"
+        },
+        {
+          "characterId": "domitian"
+        }
+      ]
+    },
+    {
+      "id": "titus-lucretius",
+      "names": [
+        "Titus Lucretius",
+        "Titus"
+      ],
+      "relation": "Consular colleague of Poplicola",
+      "blurb": "Chosen as Poplicola’s colleague in a second consulship; served while Poplicola led the armies against the Latin and Sabine threats after the Tarquin wars.",
+      "links": [
+        {
+          "characterId": "valerius"
+        },
+        {
+          "characterId": "tarquin"
         }
       ]
     }

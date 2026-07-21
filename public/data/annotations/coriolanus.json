@@ -5,7 +5,9 @@
     {
       "id": "marcius",
       "names": [
-        "Marcius"
+        "Marcius",
+        "Coriolanus",
+        "Caius Marcius"
       ],
       "relation": "Birth name of Coriolanus",
       "blurb": "Caius Marcius, later Coriolanus for Corioli. Proud patrician warrior who could beat Volscians but not court the Roman demos.",
@@ -172,7 +174,8 @@
     {
       "id": "lartius",
       "names": [
-        "Lartius"
+        "Lartius",
+        "Titus Lartius"
       ],
       "relation": "Roman captain at Corioli",
       "blurb": "Commander in the Volscian campaign who shared the day Marcius won his surname.",
@@ -279,6 +282,73 @@
         },
         {
           "characterId": "corioli"
+        }
+      ]
+    },
+    {
+      "id": "numa-cor",
+      "names": [
+        "Numa Pompilius",
+        "Numa"
+      ],
+      "relation": "Peaceful king cited in the mourning law",
+      "blurb": "Numa’s law fixed the longest permitted mourning at ten months; Plutarch cites it when describing Volumnia’s grief and Coriolanus’s widowed mother.",
+      "links": [
+        {
+          "characterId": "volumnia"
+        },
+        {
+          "characterId": "numa-life",
+          "label": "Numa’s Life",
+          "workId": "numa-pompilius"
+        }
+      ]
+    },
+    {
+      "id": "homer-cor",
+      "names": [
+        "Homer"
+      ],
+      "relation": "Poet cited on divine and human motivation",
+      "blurb": "Plutarch quotes Homer to contrast mortal deliberation with divine compulsion—the context is Coriolanus’s rage, which Plutarch insists was chosen, not imposed by gods.",
+      "links": [
+        {
+          "characterId": "marcius"
+        }
+      ]
+    },
+    {
+      "id": "poplicola-cor",
+      "names": [
+        "Poplicola"
+      ],
+      "relation": "Republican hero whose sister joined the women’s embassy",
+      "blurb": "Valeria, who organized the matrons’ embassy to Coriolanus, was the sister of Poplicola; Plutarch notes he was already dead by that time.",
+      "links": [
+        {
+          "characterId": "valeria"
+        },
+        {
+          "characterId": "poplicola-life",
+          "label": "Poplicola’s Life",
+          "workId": "poplicola"
+        }
+      ]
+    },
+    {
+      "id": "latinus",
+      "names": [
+        "Titus Latinus",
+        "Latinus"
+      ],
+      "relation": "Roman citizen who reported Juno’s dream",
+      "blurb": "A quiet man of modest station who twice dreamed that Juno’s games had been profaned; when he finally reported it, the senators ordered the rites renewed.",
+      "links": [
+        {
+          "characterId": "jupiter"
+        },
+        {
+          "characterId": "marcius"
         }
       ]
     }

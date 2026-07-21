@@ -386,6 +386,261 @@
       ],
       "relation": "Roman antiquarian cited",
       "blurb": "Marcus Terentius Varro, whose chronology and lore Plutarch weighs against other founders’ dates."
+    },
+    {
+      "id": "romulus",
+      "names": [
+        "Romulus"
+      ],
+      "relation": "Founder of Rome; subject of the Life",
+      "blurb": "Twin of Remus who traced descent from Mars, slew Remus and Acron, built Rome’s walls, and vanished in a storm to become the god Quirinus.",
+      "links": [
+        {
+          "characterId": "remus"
+        },
+        {
+          "characterId": "mars"
+        },
+        {
+          "characterId": "quirinus"
+        },
+        {
+          "characterId": "proculus"
+        }
+      ]
+    },
+    {
+      "id": "jupiter",
+      "names": [
+        "Jupiter",
+        "Jupiter Feretrius",
+        "Jupiter Stator"
+      ],
+      "relation": "Chief god; recipient of the first spolia opima",
+      "blurb": "Romulus vowed his enemy Acron’s armor to Jupiter Feretrius after Caenina, and prayed to Jupiter Stator to halt the Roman rout in the Sabine war.",
+      "links": [
+        {
+          "characterId": "acron"
+        },
+        {
+          "characterId": "tatius"
+        }
+      ]
+    },
+    {
+      "id": "carmenta",
+      "names": [
+        "Carmenta"
+      ],
+      "relation": "Prophetess; Evander’s mother",
+      "blurb": "Prophetic nymph whose oracles Evander carried to Italy; her name means either ‘verse-singer’ from carmen or ‘out of her mind’ for prophetic frenzy.",
+      "links": [
+        {
+          "characterId": "evander"
+        }
+      ]
+    },
+    {
+      "id": "vulcan",
+      "names": [
+        "Vulcan"
+      ],
+      "relation": "God whose temple held the brazen chariot",
+      "blurb": "Romulus placed a four-horse chariot from Camerium in the temple of Vulcan; that precinct was later one of the sites named for his disappearance.",
+      "links": [
+        {
+          "characterId": "romulus"
+        }
+      ]
+    },
+    {
+      "id": "vesta",
+      "names": [
+        "Vesta"
+      ],
+      "relation": "Goddess who restrained Amulius; hearth of the city",
+      "blurb": "Vesta appeared to Amulius in a dream and dissuaded him from killing Rhea Silvia; her temple on the Sacred Way marked the Sabine truce.",
+      "links": [
+        {
+          "characterId": "amulius"
+        },
+        {
+          "characterId": "rhea-silvia"
+        }
+      ]
+    },
+    {
+      "id": "romus",
+      "names": [
+        "Romus"
+      ],
+      "relation": "Legendary alternate founder figure",
+      "blurb": "One variant makes Romus—son of Emathion or king of the Latins—the true eponym of Rome, displacing the Romulus-and-Remus tradition Plutarch examines.",
+      "links": [
+        {
+          "characterId": "aeneas"
+        }
+      ]
+    },
+    {
+      "id": "diocles",
+      "names": [
+        "Diocles",
+        "Diocles of Peparethus"
+      ],
+      "relation": "Earliest Greek historian of Rome’s founding",
+      "blurb": "Author from Peparethus whom Fabius Pictor follows; together they are Plutarch’s oldest sources for the wolf, the twins, and the founding narrative.",
+      "links": [
+        {
+          "characterId": "fabius-pictor"
+        }
+      ]
+    },
+    {
+      "id": "fabius-pictor",
+      "names": [
+        "Fabius Pictor",
+        "Fabius"
+      ],
+      "relation": "Roman annalist; oldest Latin historian",
+      "blurb": "Wrote Rome’s founding traditions in Greek; Plutarch weighs his account alongside Diocles of Peparethus for the story of the twins and the Sabine war.",
+      "links": [
+        {
+          "characterId": "diocles"
+        }
+      ]
+    },
+    {
+      "id": "cossus",
+      "names": [
+        "Cornelius Cossus",
+        "Cossus"
+      ],
+      "relation": "Second winner of the spolia opima",
+      "blurb": "Killed the Etruscan king Tolumnius in single combat and dedicated the second spolia opima to Jupiter Feretrius, following Romulus’s founding precedent.",
+      "links": [
+        {
+          "characterId": "jupiter"
+        },
+        {
+          "characterId": "marcellus-r"
+        }
+      ]
+    },
+    {
+      "id": "marcellus-r",
+      "names": [
+        "Claudius Marcellus",
+        "Marcellus"
+      ],
+      "relation": "Third and last winner of the spolia opima",
+      "blurb": "Slew the Gallic king Viridomarus and claimed the third spolia opima; later Caesar’s workmen, repairing steps near the trophy, reopened the inscription dispute.",
+      "links": [
+        {
+          "characterId": "cossus"
+        },
+        {
+          "characterId": "caesar-r"
+        }
+      ]
+    },
+    {
+      "id": "scipio-r",
+      "names": [
+        "Scipio Africanus",
+        "Scipio"
+      ],
+      "relation": "Parallel figure: great man whose death was unexplained",
+      "blurb": "Plutarch invokes Scipio’s mysterious home-death to suggest that Romulus’s disappearance, however strange, is not unique among Rome’s greatest men.",
+      "links": [
+        {
+          "characterId": "romulus"
+        }
+      ]
+    },
+    {
+      "id": "caesar-r",
+      "names": [
+        "Caesar"
+      ],
+      "relation": "Later figure cited in the spolia opima dispute",
+      "blurb": "Caius Caesar’s workmen, repairing steps near an ancient trophy site, uncovered an inscription that reopened debate about Cossus’s spolia opima claim.",
+      "links": [
+        {
+          "characterId": "cossus"
+        },
+        {
+          "characterId": "caesar-subject",
+          "label": "Caesar’s Life",
+          "workId": "caesar"
+        }
+      ]
+    },
+    {
+      "id": "numa-r",
+      "names": [
+        "Numa",
+        "Numa Pompilius"
+      ],
+      "relation": "Peaceable successor mentioned in the Life",
+      "blurb": "Plutarch notes that the Roman calendar and Vestal order were disputed between Romulus and Numa—the martial founder and the priestly king differ in Plutarch’s comparison.",
+      "links": [
+        {
+          "characterId": "numa-life",
+          "label": "Numa’s Life",
+          "workId": "numa-pompilius"
+        }
+      ]
+    },
+    {
+      "id": "aristeas",
+      "names": [
+        "Aristeas",
+        "Aristeas the Proconnesian"
+      ],
+      "relation": "Greek mythic figure who vanished like Romulus",
+      "blurb": "Died in a fuller’s workshop yet was later seen traveling; Plutarch pairs him with Cleomedes as Greek parallels to Romulus’s miraculous translation.",
+      "links": [
+        {
+          "characterId": "cleomedes"
+        },
+        {
+          "characterId": "quirinus"
+        }
+      ]
+    },
+    {
+      "id": "cleomedes",
+      "names": [
+        "Cleomedes",
+        "Cleomedes the Astypalaean"
+      ],
+      "relation": "Greek hero who vanished; parallel to Romulus",
+      "blurb": "Mighty and wild athlete from Astypalaea who disappeared after a mad act—one of the Greek vanishing-hero tales Plutarch places beside Romulus’s translation.",
+      "links": [
+        {
+          "characterId": "aristeas"
+        },
+        {
+          "characterId": "quirinus"
+        }
+      ]
+    },
+    {
+      "id": "antigonus",
+      "names": [
+        "Antigonus"
+      ],
+      "relation": "Historian who recorded the Tarpeia tradition",
+      "blurb": "Cited for the version that Tarpeius arranged his daughter’s treachery himself—a reading Plutarch considers absurd but records among the conflicting accounts.",
+      "links": [
+        {
+          "characterId": "tarpeia"
+        },
+        {
+          "characterId": "tarpeius"
+        }
+      ]
     }
   ]
 }

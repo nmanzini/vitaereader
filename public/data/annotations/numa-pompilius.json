@@ -420,6 +420,162 @@
           "workId": "lycurgus"
         }
       ]
+    },
+    {
+      "id": "numa",
+      "names": [
+        "Numa",
+        "Numa Pompilius"
+      ],
+      "relation": "King and lawgiver; subject of the Life",
+      "blurb": "Sabine philosopher-king who tempered Rome’s martial spirit with religion, establishing priests, Vestals, and a peace-minded calendar after Romulus.",
+      "links": [
+        {
+          "characterId": "egeria"
+        },
+        {
+          "characterId": "tatius"
+        },
+        {
+          "characterId": "romulus"
+        },
+        {
+          "characterId": "vesta"
+        },
+        {
+          "characterId": "jupiter"
+        }
+      ]
+    },
+    {
+      "id": "proculus",
+      "names": [
+        "Proculus"
+      ],
+      "relation": "Witness of Romulus’s apotheosis; Numa’s ambassador",
+      "blurb": "Swore to the Romans that Romulus had ascended as Quirinus; later led the embassy that offered Numa the throne alongside the Sabine Velesus.",
+      "links": [
+        {
+          "characterId": "romulus"
+        },
+        {
+          "characterId": "velesus"
+        },
+        {
+          "characterId": "proculus-life",
+          "label": "Romulus’s Life",
+          "workId": "romulus"
+        }
+      ]
+    },
+    {
+      "id": "velesus",
+      "names": [
+        "Velesus"
+      ],
+      "relation": "Sabine rival candidate for the kingship",
+      "blurb": "Sabine nobleman named alongside Proculus as the man the Sabine faction preferred to succeed Romulus; the Roman party preferred Proculus.",
+      "links": [
+        {
+          "characterId": "proculus"
+        },
+        {
+          "characterId": "tatius"
+        }
+      ]
+    },
+    {
+      "id": "venus",
+      "names": [
+        "Venus",
+        "Aphrodite"
+      ],
+      "relation": "Goddess of April in Numa’s calendar",
+      "blurb": "Numa’s reformed calendar named April from Venus (or Aphrodite); the women bathed in myrtle garlands on the first day in her honor.",
+      "links": [
+        {
+          "characterId": "jupiter"
+        },
+        {
+          "characterId": "mars"
+        }
+      ]
+    },
+    {
+      "id": "mercury",
+      "names": [
+        "Mercury"
+      ],
+      "relation": "God whose Greek name gave Rome a priestly title",
+      "blurb": "The Latin word for a temple attendant (flamen) was traced by some to the Greek name for Mercury, showing Numa’s institutions drew on Greek religious vocabulary.",
+      "links": [
+        {
+          "characterId": "muses"
+        }
+      ]
+    },
+    {
+      "id": "mamercus",
+      "names": [
+        "Mamercus"
+      ],
+      "relation": "Son of Numa; eponym of the Aemilii",
+      "blurb": "One of Numa’s four sons, named Mamercus after a son of Pythagoras; the noble house of Aemilii claimed descent from him and that Pythagorean connection.",
+      "links": [
+        {
+          "characterId": "pythagoras"
+        },
+        {
+          "characterId": "pompilia"
+        }
+      ]
+    },
+    {
+      "id": "hippolytus",
+      "names": [
+        "Hippolytus"
+      ],
+      "relation": "Sicyonian hero favored by Apollo; parallel to Numa",
+      "blurb": "A Sicyonian said to be so beloved by Apollo that the god would utter an oracular verse whenever he put to sea—one of the divine-intimacy parallels Plutarch cites near Egeria.",
+      "links": [
+        {
+          "characterId": "egeria"
+        }
+      ]
+    },
+    {
+      "id": "augustus",
+      "names": [
+        "Augustus",
+        "Augustus Caesar"
+      ],
+      "relation": "Later emperor; renamed a month in Numa’s calendar",
+      "blurb": "Caesar Augustus renamed the month Sextilis after himself, as Julius Caesar had named July; Plutarch notes both in reviewing Numa’s original month-count.",
+      "links": [
+        {
+          "characterId": "numa"
+        },
+        {
+          "characterId": "augustus-cross",
+          "label": "Caesar’s Life",
+          "workId": "caesar"
+        }
+      ]
+    },
+    {
+      "id": "camillus-n",
+      "names": [
+        "Camillus"
+      ],
+      "relation": "Cross-reference to the Life of Camillus",
+      "blurb": "Plutarch directs readers to Camillus’s Life for the full account of the Palladium’s rites—mysteries Numa is said to have established.",
+      "links": [
+        {
+          "characterId": "camillus-life",
+          "label": "Camillus’s Life",
+          "workId": "camillus"
+        }
+      ]
     }
   ]
 }

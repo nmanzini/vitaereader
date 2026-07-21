@@ -105,7 +105,10 @@
     {
       "id": "antony",
       "names": [
-        "Antony"
+        "Antony",
+        "Antonius",
+        "Marcus Antonius",
+        "Mark Antony"
       ],
       "relation": "Lieutenant; later triumvir",
       "blurb": "Master of the Horse and loyal civil-war captain; gave Caesar’s funeral speech and inherited his popular mantle.",
@@ -613,6 +616,184 @@
           "characterId": "hephaestion",
           "label": "Alexander’s Life",
           "workId": "alexander"
+        }
+      ]
+    },
+    {
+      "id": "caesar-subject",
+      "names": [
+        "Caesar",
+        "Julius Caesar",
+        "Gaius Julius Caesar"
+      ],
+      "relation": "Conqueror, dictator, and subject of the Life",
+      "blurb": "Quaestor, pontifex maximus, consul, and dictator perpetuo—his ambition, clemency, and murder on the Ides of March made him the hinge on which the Republic turned into empire.",
+      "links": [
+        {
+          "characterId": "pompey"
+        },
+        {
+          "characterId": "brutus"
+        },
+        {
+          "characterId": "calpurnia"
+        },
+        {
+          "characterId": "antony"
+        },
+        {
+          "characterId": "octavius"
+        }
+      ]
+    },
+    {
+      "id": "cornelia-c",
+      "names": [
+        "Cornelia"
+      ],
+      "relation": "First wife; daughter of Cinna",
+      "blurb": "Daughter of the Marian leader Cinna; Caesar refused Sulla’s order to divorce her, risking proscription, and stayed loyal until her death left him free to marry Pompeia.",
+      "links": [
+        {
+          "characterId": "cinna"
+        },
+        {
+          "characterId": "sylla"
+        },
+        {
+          "characterId": "pompeia"
+        }
+      ]
+    },
+    {
+      "id": "marcellus-c",
+      "names": [
+        "Marcellus"
+      ],
+      "relation": "Optimate consul who opposed Caesar’s command extension",
+      "blurb": "Consul who joined Lentulus in blocking Caesar’s recall proposals; he struck a senator of New Comum to humiliate Caesar and send Pompey to war.",
+      "links": [
+        {
+          "characterId": "lentulus"
+        },
+        {
+          "characterId": "pompey"
+        },
+        {
+          "characterId": "caesar-subject"
+        }
+      ]
+    },
+    {
+      "id": "pollio",
+      "names": [
+        "Asinius Pollio",
+        "Pollio"
+      ],
+      "relation": "Historian and officer present at the Rubicon",
+      "blurb": "Caesar’s companion when he crossed the Rubicon; Pollio later recorded Caesar’s Latin words at that moment, which he himself translated into Greek in his own history.",
+      "links": [
+        {
+          "characterId": "caesar-subject"
+        },
+        {
+          "characterId": "labienus"
+        }
+      ]
+    },
+    {
+      "id": "lucullus-c",
+      "names": [
+        "Lucullus",
+        "Marcus Lucullus"
+      ],
+      "relation": "Praetor before whom young Caesar pleaded",
+      "blurb": "Marcus Lucullus served as praetor of Macedonia when Caesar prosecuted Publius Antonius there; his namesake Lucius Lucullus appears in the Clodius scandal as Clodia’s husband.",
+      "links": [
+        {
+          "characterId": "clodius"
+        },
+        {
+          "characterId": "caesar-subject"
+        }
+      ]
+    },
+    {
+      "id": "oppius",
+      "names": [
+        "Oppius"
+      ],
+      "relation": "Loyal agent and biographer",
+      "blurb": "Close supporter who managed Caesar’s business affairs; Plutarch cites Oppius’s own account of Caesar’s famous ability to dictate to several scribes simultaneously.",
+      "links": [
+        {
+          "characterId": "caesar-subject"
+        }
+      ]
+    },
+    {
+      "id": "considius",
+      "names": [
+        "Considius"
+      ],
+      "relation": "Veteran senator who joked about Caesar’s isolation",
+      "blurb": "Old man who told Caesar that the senators stayed away from the Forum out of fear of him; when Caesar asked why Considius himself came, the elder said age was his guard.",
+      "links": [
+        {
+          "characterId": "caesar-subject"
+        },
+        {
+          "characterId": "cato"
+        }
+      ]
+    },
+    {
+      "id": "servilius-isauricus",
+      "names": [
+        "Servilius Isauricus",
+        "Isauricus",
+        "Servilius"
+      ],
+      "relation": "Fellow consul with Caesar; key ally",
+      "blurb": "Publius Servilius Vatia Isauricus, Caesar’s consular colleague after the first dictatorship; he sided with Caesar against those urging peace with Pompey.",
+      "links": [
+        {
+          "characterId": "caesar-subject"
+        },
+        {
+          "characterId": "pompey"
+        }
+      ]
+    },
+    {
+      "id": "livy-c",
+      "names": [
+        "Livy"
+      ],
+      "relation": "Historian cited on the Ides omens",
+      "blurb": "Titus Livius, whose account of the augur Spurinna’s prediction and of Calpurnia’s dream Plutarch mentions when describing the omens before the Ides of March.",
+      "links": [
+        {
+          "characterId": "calpurnia"
+        },
+        {
+          "characterId": "caesar-subject"
+        }
+      ]
+    },
+    {
+      "id": "pharnaces",
+      "names": [
+        "Pharnaces"
+      ],
+      "relation": "Pontic king; veni, vidi, vici",
+      "blurb": "Son of Mithridates who overran Bithynia while Caesar was occupied in Egypt; Caesar defeated him at Zela so swiftly that he boasted ‘I came, I saw, I conquered.’",
+      "links": [
+        {
+          "characterId": "caesar-subject"
+        },
+        {
+          "characterId": "domitius"
         }
       ]
     }
