@@ -1,4 +1,5 @@
 import type { Work } from '../content/types'
+import type { WorkAnnotations } from './charMatch'
 
 export interface IndexWorkRef {
   id: string
@@ -54,6 +55,20 @@ export async function loadWork(slug: string): Promise<Work> {
   const res = await fetch(dataUrl(`works/${slug}.json`))
   if (!res.ok) throw new Error(`Work not found: ${slug}`)
   return res.json() as Promise<Work>
+}
+
+/**
+ * Per-work character highlights. Missing file → null (no highlights).
+ * Safe corpus-wide: works without annotations simply skip the feature.
+ */
+export async function loadAnnotations(
+  workId: string,
+): Promise<WorkAnnotations | null> {
+  const res = await fetch(dataUrl(`annotations/${workId}.json`))
+  if (!res.ok) return null
+  const data = (await res.json()) as WorkAnnotations
+  if (!data?.workId || !Array.isArray(data.characters)) return null
+  return data
 }
 
 export function pairWorks(pair: IndexPair): IndexWorkRef[] {

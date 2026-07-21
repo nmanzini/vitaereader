@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react'
 import {
-  LAYOUTS,
   loadLayout,
   setLayout as persistLayout,
   type LayoutId,
@@ -18,5 +17,5 @@ export function useLayout() {
     persistLayout(next)
   }
 
-  return [layout, setLayout, LAYOUTS] as const
+  return [layout, setLayout] as const
 }

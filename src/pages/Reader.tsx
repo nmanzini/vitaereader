@@ -3,16 +3,19 @@ import { Link, useNavigate, useParams } from 'react-router-dom'
 import type { Work } from '../content/types'
 import {
   findPairForWork,
+  loadAnnotations,
   loadIndex,
   loadWork,
   type IndexPair,
 } from '../lib/corpus'
 import {
+  type CharacterAnnotation,
+  type WorkAnnotations,
+} from '../lib/charMatch'
+import {
   loadFinished,
-  loadFooterStats,
   loadProgress,
   saveProgress,
-  setFooterStats as persistFooterStats,
   toggleFinished,
 } from '../lib/prefs'
 import {
@@ -33,6 +36,7 @@ import { useTheme } from '../lib/useTheme'
 import { useLayout } from '../lib/useLayout'
 import { useReaderChrome } from '../lib/useReaderChrome'
 import { SettingsSheet } from '../components/SettingsSheet'
+import { CharacterSheet } from '../components/CharacterSheet'
 import { ParagraphView } from '../components/ParagraphView'
 import {
   PaginatedReader,
@@ -50,10 +54,13 @@ export function Reader() {
   const restoreLockRef = useRef(false)
   const [work, setWork] = useState<Work | null>(null)
   const [pair, setPair] = useState<IndexPair | null>(null)
+  const [annotations, setAnnotations] = useState<WorkAnnotations | null>(null)
+  const [activeChar, setActiveChar] = useState<CharacterAnnotation | null>(
+    null,
+  )
   const [theme, setTheme] = useTheme()
   const [layout, setLayout] = useLayout()
   const [finished, setFinished] = useState(() => loadFinished())
-  const [footerStats, setFooterStats] = useState(() => loadFooterStats())
   const [settingsOpen, setSettingsOpen] = useState(false)
   const [progress, setProgress] = useState(0)
   /** Content ratio used to resume when work or layout changes. */
@@ -94,11 +101,14 @@ export function Reader() {
   useEffect(() => {
     if (!slug) return
     setWork(null)
+    setAnnotations(null)
+    setActiveChar(null)
     setError(null)
-    Promise.all([loadWork(slug), loadIndex()])
-      .then(([w, index]) => {
+    Promise.all([loadWork(slug), loadIndex(), loadAnnotations(slug)])
+      .then(([w, index, ann]) => {
         setWork(w)
         setPair(findPairForWork(index, slug))
+        setAnnotations(ann)
         const saved = clampRatio(loadProgress()[slug] ?? 0)
         progressRef.current = saved
         setProgress(saved)
@@ -106,6 +116,14 @@ export function Reader() {
       })
       .catch((e: Error) => setError(e.message))
   }, [slug])
+
+  const openCharacter = useCallback(
+    (characterId: string) => {
+      const hit = annotations?.characters.find((c) => c.id === characterId)
+      if (hit) setActiveChar(hit)
+    },
+    [annotations],
+  )
 
   // Layout switch: resume from the live center-measured ratio (progressRef),
   // not a stale load-time value. Pages←scroll uses pageIndexForContentRatio;
@@ -263,11 +281,24 @@ export function Reader() {
 
       <div className="reader-body">
         {work.paragraphs.map((p) => (
-          <ParagraphView key={p.id} paragraph={p} />
+          <ParagraphView
+            key={p.id}
+            paragraph={p}
+            characters={annotations?.characters}
+            onCharacter={annotations ? openCharacter : undefined}
+          />
         ))}
       </div>
 
-      <nav className="reader-footer-nav">
+      <footer className="reader-footer-nav">
+        <button
+          type="button"
+          className="reader-mark-finished"
+          onClick={() => setFinished(toggleFinished(work.id))}
+          aria-pressed={finished.has(work.id)}
+        >
+          {finished.has(work.id) ? 'Marked finished' : 'Mark as read'}
+        </button>
         {prev ? (
           <Link to={`/read/${prev.id}`} className="nav-prev">
             <span className="nav-label">Previous</span>
@@ -292,7 +323,7 @@ export function Reader() {
             <span className="nav-title">All Lives</span>
           </Link>
         )}
-      </nav>
+      </footer>
     </>
   )
 
@@ -360,13 +391,13 @@ export function Reader() {
         onTheme={setTheme}
         layout={layout}
         onLayout={setLayout}
-        footerStats={footerStats}
-        onFooterStats={(on) => {
-          setFooterStats(on)
-          persistFooterStats(on)
-        }}
-        finished={finished.has(work.id)}
-        onToggleFinished={() => setFinished(toggleFinished(work.id))}
+      />
+
+      <CharacterSheet
+        open={activeChar != null}
+        character={activeChar}
+        subject={annotations?.subject ?? work.title}
+        onClose={() => setActiveChar(null)}
       />
 
       {pagesMode ? (
@@ -421,16 +452,14 @@ export function Reader() {
         onMouseEnter={revealBottom}
         onMouseLeave={scheduleHideBottom}
       >
-        {footerStats ? (
-          <div className="reader-bottom-row">
-            <span className="reader-bottom-pos">
-              {pagesMode
-                ? `${pageStatus.page} / ${pageStatus.pageCount}`
-                : `Loc ${loc} / ${locCount}`}
-            </span>
-            <span className="reader-bottom-eta">{eta}</span>
-          </div>
-        ) : null}
+        <div className="reader-bottom-row">
+          <span className="reader-bottom-pos">
+            {pagesMode
+              ? `${pageStatus.page} / ${pageStatus.pageCount}`
+              : `Loc ${loc} / ${locCount}`}
+          </span>
+          <span className="reader-bottom-eta">{eta}</span>
+        </div>
       </footer>
     </div>
   )

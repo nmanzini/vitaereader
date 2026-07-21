@@ -270,7 +270,7 @@
   widows: 2;
 }
 
-.paged-content > .reader-footer-nav {
+.paged-content .reader-footer-nav {
   break-inside: avoid;
 }
 
@@ -328,6 +328,26 @@
   border-top: 1px solid var(--rule);
 }
 
+.reader-mark-finished {
+  grid-column: 1 / -1;
+  justify-self: start;
+  margin-bottom: 0.5rem;
+  padding: 0;
+  border: none;
+  background: none;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--ink-muted);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+  cursor: pointer;
+}
+
+.reader-mark-finished[aria-pressed='true'] {
+  color: var(--accent);
+  text-decoration: none;
+}
+
 .reader-footer-nav a {
   text-decoration: none;
 }
@@ -354,4 +374,33 @@
 .reader-msg {
   padding: 4rem var(--pad-x);
   color: var(--ink-muted);
+}
+
+/* Character name highlights — subtle, tap-first (not link-loud). */
+.char-ref {
+  display: inline;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+  background: none;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, var(--accent) 42%, transparent);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.16em;
+  -webkit-tap-highlight-color: color-mix(in srgb, var(--accent) 18%, transparent);
+}
+
+.char-ref:hover,
+.char-ref:focus-visible {
+  text-decoration-color: var(--accent);
+  color: color-mix(in srgb, var(--accent) 55%, var(--ink));
+}
+
+.char-ref:focus-visible {
+  outline: 1px solid color-mix(in srgb, var(--accent) 50%, transparent);
+  outline-offset: 2px;
 }

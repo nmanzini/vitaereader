@@ -64,8 +64,9 @@ If `check` fails, fix it. Do not skip hooks or weaken tests to greenwash.
 | Path | Owns |
 |------|------|
 | `src/pages/` | Route screens: Library, PairView, Reader shell |
-| `src/components/` | Reusable UI (PaginatedReader, SettingsSheet, ThemePicker, …) |
+| `src/components/` | Reusable UI (PaginatedReader, SettingsSheet, CharacterSheet, …) |
 | `src/lib/` | Pure helpers, prefs, corpus loaders, reader hooks |
+| `src/lib/charMatch.ts` | Character-name longest-match + text segmentation |
 | `src/content/types.ts` | Shared Work/Paragraph types |
 | `src/index.css` | Design tokens + themes (**colors only**) |
 | `scripts/parse-epub.mjs` | EPUB → JSON ingest |
@@ -75,6 +76,7 @@ If `check` fails, fix it. Do not skip hooks or weaken tests to greenwash.
 | `scripts/smoke.mjs` | Committed data integrity |
 | `content/source/` | Gutenberg EPUB (+ gitignored extract) |
 | `public/data/` | Served corpus (`index.json`, `works/*.json`) — committed |
+| `public/data/annotations/` | Optional per-work character highlights (`<workId>.json`) |
 
 **Rule:** domain math (ETA, page count, locations, progress mapping) lives in `src/lib/reading.ts` and is unit-tested. Do not bury it in JSX.
 
@@ -94,7 +96,7 @@ These are load-bearing. Violating them recreates fixed bugs.
 2. **Themes = colors only** — `[data-theme]` may override color tokens. Never change `--leading`, `--font-size-body`, or spacing via theme (pagination shifts).
 3. **Pages = CSS columns + hard clip** — `.paged-clip` is `overflow: hidden; contain: paint`. Content `width` **and** `columnWidth` must be the same integer page width. Do not use `width: auto` on the column box.
 4. **Measure with floored integers** — subpixel widths cause column bleed.
-5. **Footer stats are overlays** — toggling “Position & time” must not change spacer height.
+5. **Footer stats are overlays** — position & time always render in the bottom chrome when open; they must not change spacer height.
 6. **Position metrics** — Pages: `page / pageCount`. Scroll: Kindle-style `Loc X / Y` from `src/lib/reading.ts` (+ shared ETA).
 7. **Single content-anchored progress (Kindle-like)** — One `vitae.progress[workId]` float (0–1) = fraction of **words through the work** (cf. Kindle locations: a place in the text, not the viewport). Measure and restore **center-anchored**: Scroll samples/restores at the vertical center of `.reader-scroll-clip`; Pages at the center of `.paged-clip` (`measureContentRatio` / `scrollViewportToRatio`). **Pages restore** must resolve that anchor to the column/page that contains it (`pageIndexForContentRatio`), not `ratio × pageCount`. Layout switches resume from the live `progressRef` ratio so Pages→Scroll stays on the same text (center restore + commit) and Scroll→Pages seeks the containing page (at most ~½ page).
 8. **Scroll settles on line boxes** — Native overflow scroll is pixel-continuous (no OS line-snap). On scroll end, proximity-nudge the top edge onto the nearest line (`snapViewportTopToLine`) so resting frames don’t bisect glyphs. Do not use hard scroll-snap magnets.
@@ -111,6 +113,15 @@ content/source/pg674.epub
   → public/data/works/<slug>.json
 ```
 
+Optional character highlights (hand-authored, not from EPUB):
+
+```
+public/data/annotations/<workId>.json
+  { workId, subject, characters: [{ id, names[], blurb, relation }] }
+```
+
+`names` are surface forms to match in paragraph text (longer first). Missing annotation files → no highlights (safe corpus-wide). Pilot: `theseus`.
+
 Expected shape (asserted by tests/smoke): **68 works, 22 pairs, 4 unpaired, ~740k words**.
 
 Regenerate only when ingest/catalog/parser changes. Commit updated `public/data` with those changes.
@@ -123,7 +134,6 @@ Regenerate only when ingest/catalog/parser changes. Commit updated `public/data`
 | `vitae.layout` | `scroll` \| `pages` |
 | `vitae.progress` | `{ [workId]: 0..1 }` content word-fraction (see Invariant 7) |
 | `vitae.finished` | `string[]` |
-| `vitae.footerStats` | `1` / `0` (default on) |
 
 API: `src/lib/prefs.ts`. Keep storage keys stable unless migrating.
 
@@ -140,13 +150,13 @@ Minimum path:
 
 1. `/` — library loads; totals visible.
 2. `/pair/theseus-romulus` — pair links work.
-3. `/read/theseus` — scroll: top+bottom spacers exist; footer shows `Loc …` when stats on.
+3. `/read/theseus` — scroll: top+bottom spacers exist; footer shows `Loc …` when bottom chrome open.
 4. Switch layout to Pages (Settings):
    - Stable hooks: `[data-testid="reader-show-menu"]` then `[data-testid="reader-settings"]`.
    - Playwright click by label often fails while chrome is `translateY(-110%)` off-screen — reveal first, or open via eval below.
 5. Pages: `.paged-content` style `width === columnWidth` (integers); footer `N / M`; no adjacent-column bleed.
 6. Toggle themes — page breaks must not jump.
-7. Toggle footer stats — spacer heights unchanged.
+7. End of work shows Mark as read / Marked finished; spacer heights unchanged when bottom chrome toggles.
 
 ### Agent UI hooks
 
@@ -195,7 +205,7 @@ Do not add heavy React Testing Library stacks unless explicitly requested — ke
 - Calm reading UI: measure ~`36rem`, serif display/body (see `src/index.css`).
 - Mobile-first; respect safe areas.
 - Avoid dashboard chrome, card grids in the reader, and novelty UI.
-- PWA: cache `data/index.json` precache + runtime CacheFirst for `/data/works/*.json`.
+- PWA: cache `data/index.json` precache + runtime CacheFirst for `/data/works/*.json` and `/data/annotations/*.json` (200 only).
 
 ## Coding norms
 

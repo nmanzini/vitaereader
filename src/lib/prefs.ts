@@ -5,7 +5,6 @@ const THEME_KEY = 'vitae.theme'
 const LAYOUT_KEY = 'vitae.layout'
 const PROGRESS_KEY = 'vitae.progress'
 const FINISHED_KEY = 'vitae.finished'
-const FOOTER_STATS_KEY = 'vitae.footerStats'
 
 export const THEMES: { id: ThemeId; label: string }[] = [
   { id: 'day', label: 'Day' },
@@ -36,14 +35,6 @@ export function loadLayout(): LayoutId {
 
 export function setLayout(layout: LayoutId) {
   localStorage.setItem(LAYOUT_KEY, layout)
-}
-
-export function loadFooterStats(): boolean {
-  return localStorage.getItem(FOOTER_STATS_KEY) !== '0'
-}
-
-export function setFooterStats(on: boolean) {
-  localStorage.setItem(FOOTER_STATS_KEY, on ? '1' : '0')
 }
 
 export type ProgressMap = Record<string, number>

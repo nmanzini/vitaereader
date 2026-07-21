@@ -28,6 +28,10 @@ import {
   ratioFromAnchor,
   scrollTopForCenterAnchor,
 } from '../src/lib/contentProgress.ts'
+import {
+  findCharacterMatches,
+  segmentText,
+} from '../src/lib/charMatch.ts'
 import { readFileSync } from 'node:fs'
 import { join, dirname } from 'node:path'
 import { fileURLToPath } from 'node:url'
@@ -208,5 +212,58 @@ describe('content progress', () => {
     assert.equal(scrollTopForCenterAnchor(1000, 800, 2000), 600)
     assert.equal(scrollTopForCenterAnchor(5000, 800, 2000), 2000)
     assert.equal(scrollTopForCenterAnchor(100, 800, 0), 0)
+  })
+})
+
+describe('charMatch', () => {
+  const chars = [
+    {
+      id: 'dioscuri',
+      names: ['Castor and Pollux', 'Dioscuri', 'Castor', 'Pollux'],
+      blurb: 'Helen’s brothers',
+      relation: 'Brothers of Helen',
+    },
+    {
+      id: 'pallantidae',
+      names: ['Pallantidae', 'Pallas'],
+      blurb: 'Rivals',
+      relation: 'Uncle’s line',
+    },
+    {
+      id: 'aegeus',
+      names: ['Aegeus'],
+      blurb: 'Father',
+      relation: 'Father',
+    },
+  ]
+
+  it('prefers longer surface forms at the same index', () => {
+    const hits = findCharacterMatches(
+      'Castor and Pollux recovered Helen.',
+      chars,
+    )
+    assert.equal(hits.length, 1)
+    assert.equal(hits[0].characterId, 'dioscuri')
+    assert.equal(hits[0].text, 'Castor and Pollux')
+  })
+
+  it('does not match inside a longer word', () => {
+    const hits = findCharacterMatches('The Pallantidae fled from Pallas.', chars)
+    assert.equal(hits.length, 2)
+    assert.equal(hits[0].text, 'Pallantidae')
+    assert.equal(hits[1].text, 'Pallas')
+    assert.equal(findCharacterMatches('Aegeusan', chars).length, 0)
+  })
+
+  it('segments text with non-overlapping char refs', () => {
+    const segs = segmentText('Aegeus met Castor and Pollux.', chars)
+    assert.deepEqual(
+      segs.map((s) => (s.type === 'char' ? s.characterId : s.text)),
+      ['aegeus', ' met ', 'dioscuri', '.'],
+    )
+  })
+
+  it('returns plain text when there are no characters', () => {
+    assert.deepEqual(segmentText('Hello', []), [{ type: 'text', text: 'Hello' }])
   })
 })

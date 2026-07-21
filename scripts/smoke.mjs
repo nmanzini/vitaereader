@@ -63,6 +63,23 @@ function main() {
   assert.equal(theseus.kind, 'life')
   assert.ok(theseus.paragraphs[0].text.length > 40)
 
+  // Optional per-work character annotations (pilot: theseus).
+  const annDir = join(DATA, 'annotations')
+  if (existsSync(annDir)) {
+    const theseusAnnPath = join(annDir, 'theseus.json')
+    assert.ok(existsSync(theseusAnnPath), 'missing annotations/theseus.json')
+    const ann = readJson(theseusAnnPath)
+    assert.equal(ann.workId, 'theseus')
+    assert.equal(ann.subject, 'Theseus')
+    assert.ok(Array.isArray(ann.characters) && ann.characters.length > 0)
+    assert.ok(ann.characters.length <= 40, 'theseus annotations too large')
+    for (const c of ann.characters) {
+      assert.ok(c.id && Array.isArray(c.names) && c.names.length > 0)
+      assert.ok(typeof c.blurb === 'string' && c.blurb.length > 10)
+      assert.ok(typeof c.relation === 'string' && c.relation.length > 0)
+    }
+  }
+
   console.log(
     `smoke ok: ${index.totals.works} works, ${index.totals.pairs} pairs, ${index.totals.words} words`,
   )
@@ -77,6 +94,9 @@ async function liveCheck(baseUrl) {
 
   const workRes = await fetch(`${root}/data/works/theseus.json`)
   assert.ok(workRes.ok, `live theseus failed: ${workRes.status}`)
+
+  const annRes = await fetch(`${root}/data/annotations/theseus.json`)
+  assert.ok(annRes.ok, `live theseus annotations failed: ${annRes.status}`)
 
   const pageRes = await fetch(`${root}/read/theseus`)
   assert.ok(pageRes.ok, `live reader route failed: ${pageRes.status}`)

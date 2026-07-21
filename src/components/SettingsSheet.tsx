@@ -14,10 +14,6 @@ type Props = {
   onTheme: (theme: ThemeId) => void
   layout: LayoutId
   onLayout: (layout: LayoutId) => void
-  footerStats: boolean
-  onFooterStats: (on: boolean) => void
-  finished: boolean
-  onToggleFinished: () => void
 }
 
 export function SettingsSheet({
@@ -27,10 +23,6 @@ export function SettingsSheet({
   onTheme,
   layout,
   onLayout,
-  footerStats,
-  onFooterStats,
-  finished,
-  onToggleFinished,
 }: Props) {
   const titleId = useId()
 
@@ -82,31 +74,6 @@ export function SettingsSheet({
               </button>
             ))}
           </div>
-        </section>
-
-        <section className="settings-section">
-          <h3>Reading bar</h3>
-          <button
-            type="button"
-            className="settings-action"
-            onClick={() => onFooterStats(!footerStats)}
-            aria-pressed={footerStats}
-          >
-            {footerStats
-              ? 'Position & time showing'
-              : 'Position & time hidden'}
-          </button>
-        </section>
-
-        <section className="settings-section">
-          <button
-            type="button"
-            className="settings-action"
-            onClick={onToggleFinished}
-            aria-pressed={finished}
-          >
-            {finished ? 'Marked finished' : 'Mark as finished'}
-          </button>
         </section>
       </div>
     </div>
