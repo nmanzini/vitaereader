@@ -4,19 +4,20 @@ import { useTimedFlag } from './useTimedFlag'
 /**
  * Overlay chrome over reserved blank bands.
  * Showing/hiding never changes layout — spacers always keep the space.
+ * Top and bottom peek together (either band or center tap).
  */
 export function useReaderChrome(settingsOpen: boolean) {
   const {
     on: topOn,
     setOn: setTopOn,
-    reveal: revealTop,
+    reveal: revealTopOnly,
     scheduleHide: scheduleTopHide,
     clear: clearTop,
   } = useTimedFlag(false)
   const {
     on: bottomOn,
     setOn: setBottomOn,
-    reveal: revealBottom,
+    reveal: revealBottomOnly,
     scheduleHide: scheduleBottomHide,
   } = useTimedFlag(false)
 
@@ -31,14 +32,16 @@ export function useReaderChrome(settingsOpen: boolean) {
     }
   }, [settingsOpen, clearTop, setTopOn])
 
-  const scheduleHideTop = useCallback(() => {
+  const revealChrome = useCallback(() => {
+    revealTopOnly()
+    revealBottomOnly()
+  }, [revealTopOnly, revealBottomOnly])
+
+  const scheduleHideChrome = useCallback(() => {
     // Quiet Kindle: chrome retreats quickly after peek.
     scheduleTopHide(520, settingsOpen)
-  }, [scheduleTopHide, settingsOpen])
-
-  const scheduleHideBottom = useCallback(() => {
     scheduleBottomHide(520)
-  }, [scheduleBottomHide])
+  }, [scheduleTopHide, scheduleBottomHide, settingsOpen])
 
   const toggleChrome = useCallback(() => {
     const next = !topOnRef.current
@@ -49,10 +52,8 @@ export function useReaderChrome(settingsOpen: boolean) {
   return {
     topOpen: topOn || settingsOpen,
     bottomOpen: bottomOn,
-    revealTop,
-    scheduleHideTop,
-    revealBottom,
-    scheduleHideBottom,
+    revealChrome,
+    scheduleHideChrome,
     toggleChrome,
   }
 }

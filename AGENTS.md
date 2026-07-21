@@ -179,8 +179,8 @@ Minimum path:
 
 | testid | Purpose |
 |--------|---------|
-| `reader-show-menu` | Reveal top chrome band |
-| `reader-show-position` | Reveal bottom chrome band |
+| `reader-show-menu` | Reveal top+bottom chrome (either band peeks both) |
+| `reader-show-position` | Reveal top+bottom chrome (either band peeks both) |
 | `reader-settings` | Open settings sheet (also forces top chrome open) |
 
 ```js
