@@ -76,7 +76,7 @@ If `check` fails, fix it. Do not skip hooks or weaken tests to greenwash.
 | `src/lib/tapZones.ts` | Kindle-like L/C/R tap thirds over the page clip (gutters inherit) |
 | `src/lib/kindleCompat.ts` | Legacy Kindle/Silk detection + ResizeObserver/transform helpers |
 | `src/lib/contentProgress.ts` | Word-fraction progress + page restore from anchors |
-| `src/lib/charMatch.ts` | Character-name longest-match + text segmentation |
+| `src/lib/charMatch.ts` | Character-name longest-match + ambiguous-name resolutions + text segmentation |
 | `src/lib/textRanges.ts` | Highlight range helpers + compose with char refs |
 | `src/lib/selectionOffsets.ts` | DOM selection → paragraph plain-text offsets |
 | `src/lib/shareQuote.ts` | Share citation text + X/Threads intents + copy quote/image orchestration |
@@ -137,6 +137,14 @@ public/data/annotations/<workId>.json
 ```
 
 `names` are surface forms to match in paragraph text and in character-sheet blurbs (longer first). In the sheet, other cast names inside the blurb are tappable (same-work profile hop + Back). Optional `links` are validated by smoke but unused in UI. Missing annotation files → no highlights (safe corpus-wide).
+
+When several cast members share a surface form (e.g. multiple Philips), body links are **not** guessed from the name alone. Add optional `nameResolutions`:
+
+```
+nameResolutions: [{ paraId, start, end, characterId, note? }]
+```
+
+Each entry is an LLM/reviewer decision for one span (read surrounding paragraphs; score who is meant). Unique longer forms still match without a resolution. Unresolved ambiguous spans stay plain text. Sheet blurbs fall back to the first cast member that owns the name.
 
 Expected shape (asserted by tests/smoke): **68 works, 22 pairs, 4 unpaired, ~740k words**.
 

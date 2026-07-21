@@ -52,7 +52,10 @@ export function CharacterSheet({
   const current = viewing
   const name = current.names[0] ?? current.id
   const others = characters.filter((c) => c.id !== current.id)
-  const blurbSegments = segmentText(current.blurb, others)
+  // Blurbs are curated; shared names fall back to the first cast entry.
+  const blurbSegments = segmentText(current.blurb, others, {
+    ambiguous: 'first',
+  })
 
   function openProfile(characterId: string) {
     const next = characters.find((c) => c.id === characterId)

@@ -25,6 +25,65 @@
       ]
     },
     {
+      "id": "philip-acarnanian",
+      "names": [
+        "Philip, the Acarnanian",
+        "Philip"
+      ],
+      "relation": "Physician; friend who cured him in Cilicia",
+      "blurb": "Trusted Acarnanian doctor who risked the potion while Parmenio warned against him—Alexander drank and recovered.",
+      "links": [
+        {
+          "characterId": "parmenio"
+        },
+        {
+          "characterId": "darius"
+        }
+      ]
+    },
+    {
+      "id": "philip-theangela",
+      "names": [
+        "Philip of Theangela"
+      ],
+      "relation": "Historian cited on the Amazon visit",
+      "blurb": "One of the writers Plutarch lists who dismiss the Amazon tale as fiction, alongside Philip the Chalcidian.",
+      "links": [
+        {
+          "characterId": "philip-chalcidian"
+        }
+      ]
+    },
+    {
+      "id": "philip-chalcidian",
+      "names": [
+        "Philip the Chalcidian"
+      ],
+      "relation": "Historian cited on the Amazon visit",
+      "blurb": "Paired with Philip of Theangela among authorities who call the Amazon episode a fiction.",
+      "links": [
+        {
+          "characterId": "philip-theangela"
+        }
+      ]
+    },
+    {
+      "id": "philip-india",
+      "names": [
+        "Philip"
+      ],
+      "relation": "Friend; satrap after Porus",
+      "blurb": "After the Hydaspes, Alexander left Porus his kingdom and gave another friend—this Philip—a far larger neighboring government.",
+      "links": [
+        {
+          "characterId": "porus"
+        },
+        {
+          "characterId": "hephaestion"
+        }
+      ]
+    },
+    {
       "id": "olympias",
       "names": [
         "Olympias"
@@ -623,6 +682,302 @@
           "workId": "caesar"
         }
       ]
+    }
+  ],
+  "nameResolutions": [
+    {
+      "paraId": "alexander-p002",
+      "start": 167,
+      "end": 173,
+      "characterId": "philip",
+      "note": "Father; king of Macedon (context)"
+    },
+    {
+      "paraId": "alexander-p002",
+      "start": 666,
+      "end": 672,
+      "characterId": "philip",
+      "note": "Father; king of Macedon (context)"
+    },
+    {
+      "paraId": "alexander-p002",
+      "start": 872,
+      "end": 878,
+      "characterId": "philip",
+      "note": "Father; king of Macedon (context)"
+    },
+    {
+      "paraId": "alexander-p002",
+      "start": 1264,
+      "end": 1270,
+      "characterId": "philip",
+      "note": "Father; king of Macedon (context)"
+    },
+    {
+      "paraId": "alexander-p003",
+      "start": 0,
+      "end": 6,
+      "characterId": "philip",
+      "note": "Father; king of Macedon (context)"
+    },
+    {
+      "paraId": "alexander-p005",
+      "start": 11,
+      "end": 17,
+      "characterId": "philip",
+      "note": "Father; king of Macedon (context)"
+    },
+    {
+      "paraId": "alexander-p006",
+      "start": 1801,
+      "end": 1807,
+      "characterId": "philip",
+      "note": "Father; king of Macedon (context)"
+    },
+    {
+      "paraId": "alexander-p007",
+      "start": 590,
+      "end": 596,
+      "characterId": "philip",
+      "note": "Father; king of Macedon (context)"
+    },
+    {
+      "paraId": "alexander-p007",
+      "start": 719,
+      "end": 725,
+      "characterId": "philip",
+      "note": "Father; king of Macedon (context)"
+    },
+    {
+      "paraId": "alexander-p008",
+      "start": 682,
+      "end": 688,
+      "characterId": "philip",
+      "note": "Father; king of Macedon (context)"
+    },
+    {
+      "paraId": "alexander-p009",
+      "start": 58,
+      "end": 64,
+      "characterId": "philip",
+      "note": "Father; king of Macedon (context)"
+    },
+    {
+      "paraId": "alexander-p009",
+      "start": 309,
+      "end": 315,
+      "characterId": "philip",
+      "note": "Father; king of Macedon (context)"
+    },
+    {
+      "paraId": "alexander-p009",
+      "start": 526,
+      "end": 532,
+      "characterId": "philip",
+      "note": "Father; king of Macedon (context)"
+    },
+    {
+      "paraId": "alexander-p009",
+      "start": 918,
+      "end": 924,
+      "characterId": "philip",
+      "note": "Father; king of Macedon (context)"
+    },
+    {
+      "paraId": "alexander-p009",
+      "start": 1880,
+      "end": 1886,
+      "characterId": "philip",
+      "note": "Father; king of Macedon (context)"
+    },
+    {
+      "paraId": "alexander-p014",
+      "start": 6,
+      "end": 12,
+      "characterId": "philip",
+      "note": "Father; king of Macedon (context)"
+    },
+    {
+      "paraId": "alexander-p014",
+      "start": 829,
+      "end": 835,
+      "characterId": "philip",
+      "note": "Father; king of Macedon (context)"
+    },
+    {
+      "paraId": "alexander-p015",
+      "start": 473,
+      "end": 479,
+      "characterId": "philip",
+      "note": "Father; king of Macedon (context)"
+    },
+    {
+      "paraId": "alexander-p015",
+      "start": 814,
+      "end": 820,
+      "characterId": "philip",
+      "note": "Father; king of Macedon (context)"
+    },
+    {
+      "paraId": "alexander-p015",
+      "start": 1282,
+      "end": 1288,
+      "characterId": "philip",
+      "note": "Father; king of Macedon (context)"
+    },
+    {
+      "paraId": "alexander-p016",
+      "start": 152,
+      "end": 158,
+      "characterId": "philip",
+      "note": "Father; king of Macedon (context)"
+    },
+    {
+      "paraId": "alexander-p016",
+      "start": 212,
+      "end": 218,
+      "characterId": "philip",
+      "note": "Father; king of Macedon (context)"
+    },
+    {
+      "paraId": "alexander-p016",
+      "start": 739,
+      "end": 745,
+      "characterId": "philip",
+      "note": "Father; king of Macedon (context)"
+    },
+    {
+      "paraId": "alexander-p016",
+      "start": 948,
+      "end": 954,
+      "characterId": "philip",
+      "note": "Father; king of Macedon (context)"
+    },
+    {
+      "paraId": "alexander-p016",
+      "start": 1344,
+      "end": 1350,
+      "characterId": "philip",
+      "note": "Father; king of Macedon (context)"
+    },
+    {
+      "paraId": "alexander-p017",
+      "start": 169,
+      "end": 175,
+      "characterId": "philip",
+      "note": "Father; king of Macedon (context)"
+    },
+    {
+      "paraId": "alexander-p020",
+      "start": 291,
+      "end": 297,
+      "characterId": "philip",
+      "note": "Father; king of Macedon (context)"
+    },
+    {
+      "paraId": "alexander-p021",
+      "start": 2522,
+      "end": 2528,
+      "characterId": "philip",
+      "note": "Father; king of Macedon (context)"
+    },
+    {
+      "paraId": "alexander-p027",
+      "start": 3927,
+      "end": 3933,
+      "characterId": "philip",
+      "note": "Father; king of Macedon (context)"
+    },
+    {
+      "paraId": "alexander-p032",
+      "start": 1837,
+      "end": 1843,
+      "characterId": "philip-acarnanian",
+      "note": "Physician curing Alexander; Parmenio’s warning"
+    },
+    {
+      "paraId": "alexander-p032",
+      "start": 2095,
+      "end": 2101,
+      "characterId": "philip-acarnanian",
+      "note": "Physician curing Alexander; Parmenio’s warning"
+    },
+    {
+      "paraId": "alexander-p032",
+      "start": 2306,
+      "end": 2312,
+      "characterId": "philip-acarnanian",
+      "note": "Physician curing Alexander; Parmenio’s warning"
+    },
+    {
+      "paraId": "alexander-p032",
+      "start": 3037,
+      "end": 3043,
+      "characterId": "philip-acarnanian",
+      "note": "Physician curing Alexander; Parmenio’s warning"
+    },
+    {
+      "paraId": "alexander-p043",
+      "start": 2383,
+      "end": 2389,
+      "characterId": "philip",
+      "note": "Father; king of Macedon (context)"
+    },
+    {
+      "paraId": "alexander-p043",
+      "start": 2549,
+      "end": 2555,
+      "characterId": "philip",
+      "note": "Father; king of Macedon (context)"
+    },
+    {
+      "paraId": "alexander-p044",
+      "start": 839,
+      "end": 845,
+      "characterId": "philip",
+      "note": "Father; king of Macedon (context)"
+    },
+    {
+      "paraId": "alexander-p069",
+      "start": 4757,
+      "end": 4763,
+      "characterId": "philip",
+      "note": "Father; king of Macedon (context)"
+    },
+    {
+      "paraId": "alexander-p070",
+      "start": 2570,
+      "end": 2576,
+      "characterId": "philip",
+      "note": "Father; king of Macedon (context)"
+    },
+    {
+      "paraId": "alexander-p077",
+      "start": 339,
+      "end": 345,
+      "characterId": "philip",
+      "note": "Father; king of Macedon (context)"
+    },
+    {
+      "paraId": "alexander-p088",
+      "start": 1343,
+      "end": 1349,
+      "characterId": "philip-india",
+      "note": "Friend appointed to a larger government after Porus"
+    },
+    {
+      "paraId": "alexander-p098",
+      "start": 1072,
+      "end": 1078,
+      "characterId": "philip",
+      "note": "Father; king of Macedon (context)"
+    },
+    {
+      "paraId": "alexander-p105",
+      "start": 578,
+      "end": 584,
+      "characterId": "philip",
+      "note": "Father; king of Macedon (context)"
     }
   ]
 }

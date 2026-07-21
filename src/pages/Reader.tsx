@@ -489,6 +489,7 @@ export function Reader() {
             key={p.id}
             paragraph={p}
             characters={annotations?.characters}
+            nameResolutions={annotations?.nameResolutions}
             highlights={highlightsByPara.get(p.id)}
             onCharacter={annotations ? openCharacter : undefined}
             onHighlight={onHighlightTap}

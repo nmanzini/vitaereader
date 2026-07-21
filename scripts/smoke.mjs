@@ -102,6 +102,45 @@ function main() {
           }
         }
       }
+
+      // Optional LLM/reviewer name disambiguation (shared surface forms).
+      if (ann.nameResolutions != null) {
+        assert.ok(
+          Array.isArray(ann.nameResolutions),
+          `${file}: nameResolutions must be array`,
+        )
+        const workPath = join(WORKS_DIR, `${id}.json`)
+        assert.ok(existsSync(workPath), `${file}: work file missing for resolutions`)
+        const work = readJson(workPath)
+        const paraById = new Map(work.paragraphs.map((p) => [p.id, p]))
+        const seen = new Set()
+        for (const r of ann.nameResolutions) {
+          assert.ok(r.paraId && Number.isInteger(r.start) && Number.isInteger(r.end))
+          assert.ok(r.end > r.start, `${file}: resolution end must be > start`)
+          assert.ok(
+            ids.has(r.characterId),
+            `${file}: resolution characterId missing: ${r.characterId}`,
+          )
+          const para = paraById.get(r.paraId)
+          assert.ok(para, `${file}: resolution paraId unknown: ${r.paraId}`)
+          assert.ok(
+            r.start >= 0 && r.end <= para.text.length,
+            `${file}: resolution offsets out of range ${r.paraId}:${r.start}-${r.end}`,
+          )
+          const slice = para.text.slice(r.start, r.end)
+          const char = ann.characters.find((c) => c.id === r.characterId)
+          const nameOk = char.names.some(
+            (n) => n.trim().toLowerCase() === slice.toLowerCase(),
+          )
+          assert.ok(
+            nameOk,
+            `${file}: resolution text "${slice}" not in names of ${r.characterId}`,
+          )
+          const key = `${r.paraId}:${r.start}:${r.end}`
+          assert.ok(!seen.has(key), `${file}: duplicate resolution ${key}`)
+          seen.add(key)
+        }
+      }
     }
   }
 
