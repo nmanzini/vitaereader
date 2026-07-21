@@ -66,6 +66,7 @@ If `check` fails, fix it. Do not skip hooks or weaken tests to greenwash.
 | `src/pages/` | Route screens: Library, PairView, Reader shell |
 | `src/components/` | Reusable UI (PaginatedReader, SettingsSheet, CharacterSheet, …) |
 | `src/lib/` | Pure helpers, prefs, corpus loaders, reader hooks |
+| `src/lib/scrollLayout.ts` | Scroll clip height → N × body line-height |
 | `src/lib/charMatch.ts` | Character-name longest-match + text segmentation |
 | `src/content/types.ts` | Shared Work/Paragraph types |
 | `src/index.css` | Design tokens + themes (**colors only**) |
@@ -99,7 +100,7 @@ These are load-bearing. Violating them recreates fixed bugs.
 5. **Footer stats are overlays** — position & time always render in the bottom chrome when open; they must not change spacer height.
 6. **Position metrics** — Pages: `page / pageCount`. Scroll: Kindle-style `Loc X / Y` from `src/lib/reading.ts` (+ shared ETA).
 7. **Single content-anchored progress (Kindle-like)** — One `vitae.progress[workId]` float (0–1) = fraction of **words through the work** (cf. Kindle locations: a place in the text, not the viewport). Measure and restore **center-anchored**: Scroll samples/restores at the vertical center of `.reader-scroll-clip`; Pages at the center of `.paged-clip` (`measureContentRatio` / `scrollViewportToRatio`). **Pages restore** must resolve that anchor to the column/page that contains it (`pageIndexForContentRatio`), not `ratio × pageCount`. Layout switches resume from the live `progressRef` ratio so Pages→Scroll stays on the same text (center restore + commit) and Scroll→Pages seeks the containing page (at most ~½ page).
-8. **Scroll settles on line boxes** — Native overflow scroll is pixel-continuous (no OS line-snap). On scroll end, proximity-nudge the top edge onto the nearest line (`snapViewportTopToLine`) so resting frames don’t bisect glyphs. Do not use hard scroll-snap magnets.
+8. **Scroll fits and settles on line boxes** — The scroll clip (`.reader-scroll-clip`) height is floored to an integer multiple of body `line-height` (`applyScrollClipLineFit` in `src/lib/scrollLayout.ts`); leftover band space becomes vertical margins so chrome spacers stay fixed. Native overflow scroll is still pixel-continuous (no OS line-snap). On scroll end, proximity-nudge the top edge onto the nearest line (`snapViewportTopToLine`) so resting frames don’t bisect glyphs. Do not use hard scroll-snap magnets.
 9. **Missing Comparisons** (e.g. Alexander–Caesar) are manuscript losses — UI may note absence; do not “invent” comparison text.
 10. **No monolith corpus in `public/`** — index + per-work JSON only (PWA caches accordingly).
 

@@ -1,4 +1,11 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import {
+  useCallback,
+  useEffect,
+  useLayoutEffect,
+  useMemo,
+  useRef,
+  useState,
+} from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom'
 import type { Work } from '../content/types'
 import {
@@ -26,6 +33,7 @@ import {
   scrollViewportToRatio,
   snapViewportTopToLine,
 } from '../lib/contentProgress'
+import { applyScrollClipLineFit } from '../lib/scrollLayout'
 import {
   formatEta,
   locationCountFor,
@@ -140,6 +148,55 @@ export function Reader() {
       document.body.style.overflow = prev
     }
   }, [])
+
+  // Floor scroll clip height to N × body line-height so clip edges don’t
+  // bisect glyphs. Leftover space becomes margins — chrome bands stay put.
+  useLayoutEffect(() => {
+    if (pagesMode || !work) return
+    const clip = scrollRef.current
+    if (!clip) return
+
+    let unlockTimer = 0
+    let frames = 0
+    let raf = 0
+
+    const apply = () => {
+      applyScrollClipLineFit(clip)
+      if (!wordIndex) return
+      restoreLockRef.current = true
+      scrollViewportToRatio(clip, wordIndex, progressRef.current)
+      const measured = measureContentRatio(clip, wordIndex)
+      if (measured != null) commitProgress(measured)
+      window.clearTimeout(unlockTimer)
+      unlockTimer = window.setTimeout(() => {
+        restoreLockRef.current = false
+      }, 200)
+    }
+
+    const warm = () => {
+      frames += 1
+      apply()
+      if (frames < 4) raf = requestAnimationFrame(warm)
+    }
+    apply()
+    raf = requestAnimationFrame(warm)
+
+    const band = clip.parentElement
+    const ro = new ResizeObserver(() => apply())
+    if (band) ro.observe(band)
+    void document.fonts?.ready.then(() => apply())
+
+    return () => {
+      cancelAnimationFrame(raf)
+      window.clearTimeout(unlockTimer)
+      ro.disconnect()
+      clip.style.flex = ''
+      clip.style.height = ''
+      clip.style.marginTop = ''
+      clip.style.marginBottom = ''
+      restoreLockRef.current = false
+    }
+  }, [pagesMode, work, wordIndex, commitProgress])
 
   useEffect(() => {
     if (!work || pagesMode || !wordIndex) return
