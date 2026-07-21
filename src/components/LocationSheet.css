@@ -1,0 +1,152 @@
+.loc-sheet-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 70;
+  background: color-mix(in srgb, var(--ink) 18%, transparent);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 0;
+}
+
+.loc-sheet {
+  width: min(100%, 24rem);
+  max-height: min(78dvh, 34rem);
+  overflow: auto;
+  background: var(--bg);
+  color: var(--ink);
+  border-radius: 0.65rem 0.65rem 0 0;
+  border: 1px solid color-mix(in srgb, var(--ink) 10%, transparent);
+  border-bottom: 0;
+  padding: 1.05rem 1.15rem calc(1.25rem + var(--safe-bottom));
+  box-shadow: 0 -4px 24px color-mix(in srgb, var(--ink) 8%, transparent);
+}
+
+@media (min-width: 640px) {
+  .loc-sheet-backdrop {
+    align-items: center;
+    padding: 1.5rem;
+  }
+
+  .loc-sheet {
+    border-radius: 0.5rem;
+    border-bottom: 1px solid color-mix(in srgb, var(--ink) 10%, transparent);
+    padding-bottom: 1.25rem;
+    box-shadow: 0 8px 28px color-mix(in srgb, var(--ink) 10%, transparent);
+  }
+}
+
+.loc-sheet-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.3rem;
+}
+
+.loc-sheet-title-row {
+  display: flex;
+  align-items: baseline;
+  gap: 0.65rem;
+  min-width: 0;
+}
+
+.loc-sheet-header h2 {
+  font-size: 1.3rem;
+  margin: 0;
+}
+
+.loc-sheet-back,
+.loc-sheet-close {
+  font-size: 0.85rem;
+  color: var(--ink-muted);
+  flex-shrink: 0;
+}
+
+.loc-sheet-back:hover,
+.loc-sheet-back:focus-visible,
+.loc-sheet-close:hover,
+.loc-sheet-close:focus-visible {
+  color: var(--accent);
+}
+
+.loc-sheet-relation {
+  margin: 0 0 0.35rem;
+  font-size: 0.82rem;
+  color: var(--ink-muted);
+  line-height: 1.4;
+}
+
+.loc-sheet-subject {
+  color: color-mix(in srgb, var(--ink-muted) 80%, transparent);
+}
+
+.loc-sheet-modern {
+  margin: 0 0 0.75rem;
+  font-size: 0.78rem;
+  color: color-mix(in srgb, var(--ink-muted) 90%, transparent);
+  line-height: 1.35;
+}
+
+.loc-sheet-blurb {
+  margin: 0 0 0.9rem;
+  font-size: 0.95rem;
+  line-height: var(--leading);
+}
+
+.loc-sheet-inline {
+  display: inline;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.14em;
+  text-decoration-color: color-mix(in srgb, var(--ink) 28%, transparent);
+}
+
+.loc-sheet-inline:hover,
+.loc-sheet-inline:focus-visible {
+  color: var(--accent);
+  text-decoration-color: color-mix(in srgb, var(--accent) 50%, transparent);
+}
+
+.loc-sheet-inline:focus-visible {
+  outline: 2px solid color-mix(in srgb, var(--accent) 45%, transparent);
+  outline-offset: 2px;
+}
+
+.loc-sheet-map-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.loc-sheet-map-toggle {
+  align-self: flex-start;
+  font-size: 0.82rem;
+  color: var(--ink-muted);
+  padding: 0;
+  margin: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 0.12em;
+  text-decoration-color: color-mix(in srgb, var(--ink) 22%, transparent);
+}
+
+.loc-sheet-map-toggle:hover,
+.loc-sheet-map-toggle:focus-visible {
+  color: var(--accent);
+}
+
+.loc-sheet-map-toggle:focus-visible {
+  outline: 2px solid color-mix(in srgb, var(--accent) 45%, transparent);
+  outline-offset: 2px;
+}

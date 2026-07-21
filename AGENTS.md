@@ -67,7 +67,7 @@ If `check` fails, fix it. Do not skip hooks or weaken tests to greenwash.
 | Path | Owns |
 |------|------|
 | `src/pages/` | Route screens: Library, Highlights, Reader shell |
-| `src/components/` | Reusable UI (PaginatedReader, SettingsSheet, ShareSheet, CharacterSheet, SelectionToolbar, …) |
+| `src/components/` | Reusable UI (PaginatedReader, SettingsSheet, ShareSheet, CharacterSheet, LocationSheet, SelectionToolbar, …) |
 | `src/lib/readingPrefs.ts` | Kindle-like Aa prefs (font/size/leading/margins) + layout key |
 | `src/lib/prefs.ts` | Theme, progress, finished, highlights |
 | `src/lib/libraryOrder.ts` | Library pair/unpaired sequence + work order for Highlights |
@@ -76,8 +76,9 @@ If `check` fails, fix it. Do not skip hooks or weaken tests to greenwash.
 | `src/lib/tapZones.ts` | Kindle-like L/C/R tap thirds over the page clip (gutters inherit) |
 | `src/lib/kindleCompat.ts` | Legacy Kindle/Silk detection + ResizeObserver/transform helpers |
 | `src/lib/contentProgress.ts` | Word-fraction progress + page restore from anchors |
-| `src/lib/charMatch.ts` | Character-name longest-match + text segmentation |
-| `src/lib/textRanges.ts` | Highlight range helpers + compose with char refs |
+| `src/lib/charMatch.ts` | Character/location name longest-match + text segmentation |
+| `src/lib/geoMap.ts` | Equirectangular projection for offline location sketch-maps |
+| `src/lib/textRanges.ts` | Highlight range helpers + compose with char/loc refs |
 | `src/lib/selectionOffsets.ts` | DOM selection → paragraph plain-text offsets |
 | `src/lib/shareQuote.ts` | Share citation text + X/Threads intents + copy quote/image orchestration |
 | `src/lib/selectionLink.ts` | Compact base64url encode/decode for share selection ranges (`?r=`) |
@@ -91,7 +92,7 @@ If `check` fails, fix it. Do not skip hooks or weaken tests to greenwash.
 | `scripts/smoke.mjs` | Committed data integrity |
 | `content/source/` | Gutenberg EPUB (+ gitignored extract) |
 | `public/data/` | Served corpus (`index.json`, `works/*.json`) — committed |
-| `public/data/annotations/` | Optional per-work character highlights (`<workId>.json`) |
+| `public/data/annotations/` | Optional per-work character + location highlights (`<workId>.json`) |
 
 **Rule:** domain math (ETA, page count, locations, progress mapping) lives in `src/lib/reading.ts` and is unit-tested. Do not bury it in JSX.
 
@@ -129,14 +130,18 @@ content/source/pg674.epub
   → public/data/works/<slug>.json
 ```
 
-Optional character highlights (hand-authored, not from EPUB):
+Optional character / location highlights (hand-authored, not from EPUB):
 
 ```
 public/data/annotations/<workId>.json
-  { workId, subject, characters: [{ id, names[], blurb, relation, links? }] }
+  {
+    workId, subject,
+    characters: [{ id, names[], blurb, relation, links? }],
+    locations?: [{ id, names[], blurb, relation, lat, lon, modern? }]
+  }
 ```
 
-`names` are surface forms to match in paragraph text and in character-sheet blurbs (longer first). In the sheet, other cast names inside the blurb are tappable (same-work profile hop + Back). Optional `links` are validated by smoke but unused in UI. Missing annotation files → no highlights (safe corpus-wide).
+`names` are surface forms to match in paragraph text and in sheet blurbs (longer first). In character sheets, other cast names inside the blurb are tappable (same-work profile hop + Back). In location sheets, other place names in the blurb hop the same way; an expandable offline SVG sketch-map pins `lat`/`lon` (and peer dots when widened). Optional character `links` are validated by smoke but unused in UI. Missing annotation files → no highlights (safe corpus-wide). Location arrays are optional per work (Alexander ships first).
 
 Expected shape (asserted by tests/smoke): **68 works, 22 pairs, 4 unpaired, ~740k words**.
 
