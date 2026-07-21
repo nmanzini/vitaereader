@@ -517,15 +517,15 @@
   cursor: pointer;
   text-decoration: underline;
   text-decoration-style: dotted;
-  text-decoration-color: color-mix(in srgb, var(--ink) 22%, transparent);
+  text-decoration-color: color-mix(in srgb, var(--ink) 40%, transparent);
   text-decoration-thickness: from-font;
-  text-underline-offset: 0.14em;
+  text-underline-offset: 0.18em;
   -webkit-tap-highlight-color: color-mix(in srgb, var(--accent) 12%, transparent);
 }
 
 .loc-ref:hover,
 .loc-ref:focus-visible {
-  text-decoration-color: color-mix(in srgb, var(--accent) 45%, transparent);
+  text-decoration-color: color-mix(in srgb, var(--accent) 55%, transparent);
 }
 
 .loc-ref:focus-visible {

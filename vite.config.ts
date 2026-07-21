@@ -65,9 +65,9 @@ export default defineConfig({
           },
           {
             urlPattern: /\/data\/annotations\/.*\.json$/,
-            handler: 'CacheFirst',
+            handler: 'StaleWhileRevalidate',
             options: {
-              cacheName: 'vitae-annotations',
+              cacheName: 'vitae-annotations-v2',
               expiration: {
                 maxEntries: 80,
                 maxAgeSeconds: 60 * 60 * 24 * 365,
