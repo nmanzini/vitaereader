@@ -143,7 +143,7 @@ public/data/annotations/<workId>.json
   }
 ```
 
-**Annotated lives (14):** Alcibiades, Alexander, Caesar, Camillus, Coriolanus, Fabius, Lycurgus, Numa Pompilius, Pericles, Poplicola, Romulus, Solon, Themistocles, Theseus. Other works have no cast file yet (reader simply skips highlights).
+**Annotated works (20):** Alcibiades, Alexander, Caesar, Camillus, Coriolanus, Fabius, Lycurgus, Numa Pompilius, Pericles, Poplicola, Romulus, Solon, Themistocles, Theseus, **Eumenes, Sertorius, Comparison of Sertorius with Eumenes, Agesilaus, Pompey, Comparison of Pompey and Agesilaus**. Other works have no cast file yet (reader simply skips highlights). Location arrays ship with Alexander and the Eumenes–Sertorius / Agesilaus–Pompey sets.
 
 `names` are surface forms to match in paragraph text and in sheet blurbs (longer first). In character sheets, other cast names inside the blurb are tappable (same-work profile hop + Back). In location sheets, other place names in the blurb hop the same way; an expandable offline SVG map (Natural Earth 110m land silhouette, public domain — no tiles/API keys) pins `lat`/`lon` (and peer dots when widened). Place names in the reader use a dashed underline (not italic) so they read apart from character refs. **The Life’s subject is not highlighted in the reader body** (you’re already in their story); their profile can still open from another cast member’s blurb. Optional character `links` are validated by smoke but unused in UI. Missing annotation files → no highlights (safe corpus-wide). Location arrays are optional per work (Alexander ships first).
 
