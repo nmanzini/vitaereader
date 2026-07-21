@@ -100,8 +100,8 @@
   font-style: italic;
   text-decoration: underline;
   text-decoration-thickness: 1px;
-  text-underline-offset: 0.14em;
-  text-decoration-color: color-mix(in srgb, var(--ink) 28%, transparent);
+  text-underline-offset: 0.18em;
+  text-decoration-color: var(--char-underline);
 }
 
 .char-sheet-inline:hover,
