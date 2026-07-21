@@ -141,7 +141,7 @@ public/data/annotations/<workId>.json
   }
 ```
 
-`names` are surface forms to match in paragraph text and in sheet blurbs (longer first). In character sheets, other cast names inside the blurb are tappable (same-work profile hop + Back). In location sheets, other place names in the blurb hop the same way; an expandable offline SVG sketch-map pins `lat`/`lon` (and peer dots when widened). Optional character `links` are validated by smoke but unused in UI. Missing annotation files → no highlights (safe corpus-wide). Location arrays are optional per work (Alexander ships first).
+`names` are surface forms to match in paragraph text and in sheet blurbs (longer first). In character sheets, other cast names inside the blurb are tappable (same-work profile hop + Back). In location sheets, other place names in the blurb hop the same way; an expandable offline SVG sketch-map pins `lat`/`lon` (and peer dots when widened). Place names in the reader use a dashed underline (not italic) so they read apart from character refs. Optional character `links` are validated by smoke but unused in UI. Missing annotation files → no highlights (safe corpus-wide). Location arrays are optional per work (Alexander ships first).
 
 Expected shape (asserted by tests/smoke): **68 works, 22 pairs, 4 unpaired, ~740k words**.
 

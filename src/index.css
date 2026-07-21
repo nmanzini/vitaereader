@@ -11,7 +11,8 @@
   /* Theme-tuned underline washes (links / char-refs / loc-refs) — colors only. */
   --link-underline: color-mix(in srgb, var(--ink) 26%, transparent);
   --char-underline: color-mix(in srgb, var(--ink) 16%, transparent);
-  --loc-underline: color-mix(in srgb, var(--ink) 32%, transparent);
+  /* Stronger than char-underline — dashed place cues must stay visible on mobile. */
+  --loc-underline: color-mix(in srgb, var(--ink) 42%, transparent);
   --font-display: 'Cormorant Garamond', 'Palatino Linotype', Palatino, serif;
   --font-body: 'Source Serif 4', 'Iowan Old Style', 'Palatino Linotype', Palatino,
     serif;
@@ -109,7 +110,7 @@ html[data-type-margin='wide'] {
   /* Softer link underlines — light ink @ 28% reads as a hard rule on dark. */
   --link-underline: color-mix(in srgb, var(--ink) 16%, transparent);
   --char-underline: color-mix(in srgb, var(--ink) 20%, transparent);
-  --loc-underline: color-mix(in srgb, var(--ink) 28%, transparent);
+  --loc-underline: color-mix(in srgb, var(--ink) 36%, transparent);
 }
 
 [data-theme='sepia'] {
@@ -123,7 +124,7 @@ html[data-type-margin='wide'] {
   --highlight: color-mix(in srgb, var(--accent) 16%, transparent);
   --link-underline: color-mix(in srgb, var(--ink) 24%, transparent);
   --char-underline: color-mix(in srgb, var(--ink) 18%, transparent);
-  --loc-underline: color-mix(in srgb, var(--ink) 30%, transparent);
+  --loc-underline: color-mix(in srgb, var(--ink) 40%, transparent);
 }
 
 [data-theme='eink'] {
@@ -137,7 +138,7 @@ html[data-type-margin='wide'] {
   --highlight: color-mix(in srgb, var(--ink) 12%, transparent);
   --link-underline: color-mix(in srgb, var(--ink) 32%, transparent);
   --char-underline: color-mix(in srgb, var(--ink) 22%, transparent);
-  --loc-underline: color-mix(in srgb, var(--ink) 38%, transparent);
+  --loc-underline: color-mix(in srgb, var(--ink) 48%, transparent);
 }
 
 *,
