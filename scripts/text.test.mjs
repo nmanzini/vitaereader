@@ -32,9 +32,20 @@ import {
   ratioFromAnchor,
 } from '../src/lib/contentProgress.ts'
 import {
+  findAnnotationMatches,
   findCharacterMatches,
+  findLocationMatches,
+  segmentAnnotationText,
   segmentText,
 } from '../src/lib/charMatch.ts'
+import {
+  CAMPAIGN_BOUNDS,
+  isValidGeoPoint,
+  mapViewSize,
+  projectEquirectangular,
+  ringToSvgPath,
+} from '../src/lib/geoMap.ts'
+import { CAMPAIGN_LAND_RINGS } from '../src/lib/campaignLand.ts'
 import {
   findContainingHighlight,
   mergeHighlightSpans,
@@ -448,6 +459,102 @@ describe('charMatch', () => {
       para.text.slice(philip.start, philip.end + 20).includes('one of his friends'),
     )
   })
+
+  it('matches locations and prefers characters on equal-length ties', () => {
+    const locs = [
+      {
+        id: 'issus',
+        names: ['Issus'],
+        blurb: 'Battle',
+        relation: 'Battle',
+        lat: 36.8,
+        lon: 36.2,
+      },
+      {
+        id: 'tyre',
+        names: ['Tyre'],
+        blurb: 'Siege',
+        relation: 'Siege',
+        lat: 33.3,
+        lon: 35.2,
+      },
+    ]
+    const hits = findLocationMatches('After Issus he marched to Tyre.', locs)
+    assert.equal(hits.length, 2)
+    assert.equal(hits[0].locationId, 'issus')
+    assert.equal(hits[1].locationId, 'tyre')
+
+    const mixed = findAnnotationMatches(
+      'Aegeus left for Tyre.',
+      chars,
+      locs,
+    )
+    assert.deepEqual(
+      mixed.map((m) => `${m.kind}:${m.kind === 'char' ? m.characterId : m.locationId}`),
+      ['char:aegeus', 'loc:tyre'],
+    )
+  })
+
+  it('segments location blurbs with place hops', () => {
+    const locs = [
+      {
+        id: 'issus',
+        names: ['Issus'],
+        blurb: 'Before Tyre.',
+        relation: 'Battle',
+        lat: 36.8,
+        lon: 36.2,
+      },
+      {
+        id: 'tyre',
+        names: ['Tyre'],
+        blurb: 'After Issus.',
+        relation: 'Siege',
+        lat: 33.3,
+        lon: 35.2,
+      },
+    ]
+    const segs = segmentAnnotationText(locs[0].blurb, [], locs.slice(1))
+    assert.deepEqual(
+      segs.map((s) => (s.type === 'loc' ? s.locationId : s.text)),
+      ['Before ', 'tyre', '.'],
+    )
+  })
+})
+
+describe('geoMap', () => {
+  it('projects equirectangular points into viewBox space', () => {
+    const mid = projectEquirectangular(
+      { lat: 29, lon: 36.5 },
+      CAMPAIGN_BOUNDS,
+      320,
+      160,
+    )
+    assert.ok(mid.x > 140 && mid.x < 180)
+    assert.ok(mid.y > 60 && mid.y < 100)
+    assert.equal(isValidGeoPoint({ lat: 36.8, lon: 36.2 }), true)
+    assert.equal(isValidGeoPoint({ lat: 100, lon: 0 }), false)
+  })
+
+  it('sizes the viewBox to geographic aspect', () => {
+    const { w, h } = mapViewSize(CAMPAIGN_BOUNDS, 320, 200)
+    assert.equal(w, 320)
+    // lon/lat span ≈ 83/34 → height ≈ 131
+    assert.ok(h > 120 && h < 150)
+  })
+
+  it('turns land rings into SVG paths and keeps campaign land offline', () => {
+    assert.ok(CAMPAIGN_LAND_RINGS.length >= 3)
+    const d = ringToSvgPath(
+      CAMPAIGN_LAND_RINGS[0],
+      CAMPAIGN_BOUNDS,
+      320,
+      131,
+    )
+    assert.match(d, /^M/)
+    assert.match(d, /Z$/)
+    assert.ok(d.includes('L'))
+  })
 })
 
 describe('textRanges', () => {
@@ -483,7 +590,13 @@ describe('textRanges', () => {
         relation: 'Father',
       },
     ])
-    const segs = segmentWithHighlights(text, chars, [
+    const entities = chars.map((c) => ({
+      kind: 'char',
+      start: c.start,
+      end: c.end,
+      id: c.characterId,
+    }))
+    const segs = segmentWithHighlights(text, entities, [
       { id: 'h1', start: 0, end: 10 },
     ])
     assert.deepEqual(
@@ -499,6 +612,30 @@ describe('textRanges', () => {
         { t: 'text', text: ' Castor.', hl: [], c: null },
       ],
     )
+  })
+
+  it('composes highlights with location matches', () => {
+    const text = 'He reached Tyre.'
+    const locs = findLocationMatches(text, [
+      {
+        id: 'tyre',
+        names: ['Tyre'],
+        blurb: 'Siege',
+        relation: 'Siege',
+        lat: 33.3,
+        lon: 35.2,
+      },
+    ])
+    const entities = locs.map((l) => ({
+      kind: 'loc',
+      start: l.start,
+      end: l.end,
+      id: l.locationId,
+    }))
+    const segs = segmentWithHighlights(text, entities, [
+      { id: 'h1', start: 3, end: 15 },
+    ])
+    assert.equal(segs.some((s) => s.type === 'loc' && s.locationId === 'tyre'), true)
   })
 
   it('finds a containing highlight', () => {

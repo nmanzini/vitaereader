@@ -1,4 +1,4 @@
-.char-sheet-backdrop {
+.loc-sheet-backdrop {
   position: fixed;
   inset: 0;
   z-index: 70;
@@ -9,9 +9,9 @@
   padding: 0;
 }
 
-.char-sheet {
+.loc-sheet {
   width: min(100%, 24rem);
-  max-height: min(70dvh, 26rem);
+  max-height: min(78dvh, 34rem);
   overflow: auto;
   background: var(--bg);
   color: var(--ink);
@@ -23,12 +23,12 @@
 }
 
 @media (min-width: 640px) {
-  .char-sheet-backdrop {
+  .loc-sheet-backdrop {
     align-items: center;
     padding: 1.5rem;
   }
 
-  .char-sheet {
+  .loc-sheet {
     border-radius: 0.5rem;
     border-bottom: 1px solid color-mix(in srgb, var(--ink) 10%, transparent);
     padding-bottom: 1.25rem;
@@ -36,7 +36,7 @@
   }
 }
 
-.char-sheet-header {
+.loc-sheet-header {
   display: flex;
   align-items: baseline;
   justify-content: space-between;
@@ -44,51 +44,57 @@
   margin-bottom: 0.3rem;
 }
 
-.char-sheet-title-row {
+.loc-sheet-title-row {
   display: flex;
   align-items: baseline;
   gap: 0.65rem;
   min-width: 0;
 }
 
-.char-sheet-header h2 {
+.loc-sheet-header h2 {
   font-size: 1.3rem;
   margin: 0;
 }
 
-.char-sheet-back,
-.char-sheet-close {
+.loc-sheet-back,
+.loc-sheet-close {
   font-size: 0.85rem;
   color: var(--ink-muted);
   flex-shrink: 0;
 }
 
-.char-sheet-back:hover,
-.char-sheet-back:focus-visible,
-.char-sheet-close:hover,
-.char-sheet-close:focus-visible {
+.loc-sheet-back:hover,
+.loc-sheet-back:focus-visible,
+.loc-sheet-close:hover,
+.loc-sheet-close:focus-visible {
   color: var(--accent);
 }
 
-.char-sheet-relation {
-  margin: 0 0 0.75rem;
+.loc-sheet-relation {
+  margin: 0 0 0.35rem;
   font-size: 0.82rem;
   color: var(--ink-muted);
   line-height: 1.4;
 }
 
-.char-sheet-subject {
+.loc-sheet-subject {
   color: color-mix(in srgb, var(--ink-muted) 80%, transparent);
 }
 
-.char-sheet-blurb {
-  margin: 0;
+.loc-sheet-modern {
+  margin: 0 0 0.75rem;
+  font-size: 0.78rem;
+  color: color-mix(in srgb, var(--ink-muted) 90%, transparent);
+  line-height: 1.35;
+}
+
+.loc-sheet-blurb {
+  margin: 0 0 0.9rem;
   font-size: 0.95rem;
   line-height: var(--leading);
 }
 
-/* Names in the blurb that already have a profile — tap opens that sheet. */
-.char-sheet-inline {
+.loc-sheet-inline {
   display: inline;
   margin: 0;
   padding: 0;
@@ -97,20 +103,50 @@
   font: inherit;
   color: inherit;
   cursor: pointer;
-  font-style: italic;
   text-decoration: underline;
+  text-decoration-style: dashed;
   text-decoration-thickness: 1px;
-  text-underline-offset: 0.18em;
-  text-decoration-color: var(--char-underline);
+  text-underline-offset: 0.14em;
+  text-decoration-color: var(--loc-underline);
 }
 
-.char-sheet-inline:hover,
-.char-sheet-inline:focus-visible {
+.loc-sheet-inline:hover,
+.loc-sheet-inline:focus-visible {
   color: var(--accent);
   text-decoration-color: color-mix(in srgb, var(--accent) 50%, transparent);
 }
 
-.char-sheet-inline:focus-visible {
+.loc-sheet-inline:focus-visible {
+  outline: 2px solid color-mix(in srgb, var(--accent) 45%, transparent);
+  outline-offset: 2px;
+}
+
+.loc-sheet-map-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.loc-sheet-map-toggle {
+  align-self: flex-start;
+  font-size: 0.82rem;
+  color: var(--ink-muted);
+  padding: 0;
+  margin: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 0.12em;
+  text-decoration-color: color-mix(in srgb, var(--ink) 22%, transparent);
+}
+
+.loc-sheet-map-toggle:hover,
+.loc-sheet-map-toggle:focus-visible {
+  color: var(--accent);
+}
+
+.loc-sheet-map-toggle:focus-visible {
   outline: 2px solid color-mix(in srgb, var(--accent) 45%, transparent);
   outline-offset: 2px;
 }

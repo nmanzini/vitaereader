@@ -67,7 +67,7 @@ If `check` fails, fix it. Do not skip hooks or weaken tests to greenwash.
 | Path | Owns |
 |------|------|
 | `src/pages/` | Route screens: Library, Highlights, Reader shell |
-| `src/components/` | Reusable UI (PaginatedReader, SettingsSheet, ShareSheet, CharacterSheet, SelectionToolbar, …) |
+| `src/components/` | Reusable UI (PaginatedReader, SettingsSheet, ShareSheet, CharacterSheet, LocationSheet, SelectionToolbar, …) |
 | `src/lib/readingPrefs.ts` | Kindle-like Aa prefs (font/size/leading/margins) + layout key |
 | `src/lib/prefs.ts` | Theme, progress, finished, highlights |
 | `src/lib/libraryOrder.ts` | Library pair/unpaired sequence + work order for Highlights |
@@ -76,8 +76,10 @@ If `check` fails, fix it. Do not skip hooks or weaken tests to greenwash.
 | `src/lib/tapZones.ts` | Kindle-like L/C/R tap thirds over the page clip (gutters inherit) |
 | `src/lib/kindleCompat.ts` | Legacy Kindle/Silk detection + ResizeObserver/transform helpers |
 | `src/lib/contentProgress.ts` | Word-fraction progress + page restore from anchors |
-| `src/lib/charMatch.ts` | Character-name longest-match + ambiguous-name resolutions + text segmentation |
-| `src/lib/textRanges.ts` | Highlight range helpers + compose with char refs |
+| `src/lib/charMatch.ts` | Character/location name longest-match + ambiguous-name resolutions + text segmentation |
+| `src/lib/geoMap.ts` | Equirectangular projection + SVG path helpers for offline location maps |
+| `src/lib/campaignLand.ts` | Simplified Natural Earth land rings (public domain) for campaign maps |
+| `src/lib/textRanges.ts` | Highlight range helpers + compose with char/loc refs |
 | `src/lib/selectionOffsets.ts` | DOM selection → paragraph plain-text offsets |
 | `src/lib/shareQuote.ts` | Share citation text + X/Threads intents + copy quote/image orchestration |
 | `src/lib/selectionLink.ts` | Compact base64url encode/decode for share selection ranges (`?r=`) |
@@ -91,7 +93,7 @@ If `check` fails, fix it. Do not skip hooks or weaken tests to greenwash.
 | `scripts/smoke.mjs` | Committed data integrity |
 | `content/source/` | Gutenberg EPUB (+ gitignored extract) |
 | `public/data/` | Served corpus (`index.json`, `works/*.json`) — committed |
-| `public/data/annotations/` | Optional per-work character highlights (`<workId>.json`) |
+| `public/data/annotations/` | Optional per-work character + location highlights (`<workId>.json`) |
 
 **Rule:** domain math (ETA, page count, locations, progress mapping) lives in `src/lib/reading.ts` and is unit-tested. Do not bury it in JSX.
 
@@ -109,8 +111,8 @@ If `check` fails, fix it. Do not skip hooks or weaken tests to greenwash.
 These are load-bearing. Violating them recreates fixed bugs.
 
 1. **Shared chrome bands** — Reserved top/bottom empty spacers; chrome *overlays* those bands. Showing/hiding chrome must never resize the reading surface.
-2. **Themes = colors only** — `[data-theme]` may override color tokens. Never change `--leading`, `--font-size-body`, or spacing via theme.
-3. **Type prefs remasure pages** — Font / size / leading / margins live in `vitae.reading` → `data-type-*` on `<html>` (see `src/lib/readingPrefs.ts`). Changing them **must** remasure columns and restore via content-anchored ratio (`layoutKey` on `PaginatedReader`) — never keep a stale page index.
+2. **Themes = colors only** — `[data-theme]` may override color tokens (`--bg`, `--ink`, `--accent`, `--highlight`, `--link-underline`, `--char-underline`, `--loc-underline`, …). Never change `--leading`, `--font-size-body`, `--font-optical`, or spacing via theme.
+3. **Type prefs remasure pages** — Font / size / leading / margins live in `vitae.reading` → `data-type-*` on `<html>` (see `src/lib/readingPrefs.ts`). Changing them **must** remasure columns and restore via content-anchored ratio (`layoutKey` on `PaginatedReader`) — never keep a stale page index. Per-font `--font-optical` keeps Georgia / Literary / Classic at a matched apparent size on `.paged-content`.
 4. **Pages = CSS columns + hard clip** — `.paged-clip` is `overflow: hidden; contain: paint`. Content `width` **and** `columnWidth` must be the same integer page width. Do not use `width: auto` on the column box.
 5. **Measure with floored integers** — subpixel widths cause column bleed.
 6. **Footer stats are overlays** — page position and ETA always render in the bottom chrome when open; they must not change spacer height.
@@ -129,16 +131,21 @@ content/source/pg674.epub
   → public/data/works/<slug>.json
 ```
 
-Optional character highlights (hand-authored, not from EPUB):
+Optional character / location highlights (hand-authored, not from EPUB):
 
 ```
 public/data/annotations/<workId>.json
-  { workId, subject, characters: [{ id, names[], blurb, relation, links? }], nameResolutions? }
+  {
+    workId, subject,
+    characters: [{ id, names[], blurb, relation, links? }],
+    locations?: [{ id, names[], blurb, relation, lat, lon, modern? }],
+    nameResolutions?: [{ paraId, start, end, characterId, note? }]
+  }
 ```
 
 **Annotated lives (14):** Alcibiades, Alexander, Caesar, Camillus, Coriolanus, Fabius, Lycurgus, Numa Pompilius, Pericles, Poplicola, Romulus, Solon, Themistocles, Theseus. Other works have no cast file yet (reader simply skips highlights).
 
-`names` are surface forms to match in paragraph text and in character-sheet blurbs (longer first). In the sheet, other cast names inside the blurb are tappable (same-work profile hop + Back). Optional `links` are validated by smoke but unused in UI. Missing annotation files → no highlights (safe corpus-wide).
+`names` are surface forms to match in paragraph text and in sheet blurbs (longer first). In character sheets, other cast names inside the blurb are tappable (same-work profile hop + Back). In location sheets, other place names in the blurb hop the same way; an expandable offline SVG map (Natural Earth 110m land silhouette, public domain — no tiles/API keys) pins `lat`/`lon` (and peer dots when widened). Place names in the reader use a dashed underline (not italic) so they read apart from character refs. Optional character `links` are validated by smoke but unused in UI. Missing annotation files → no highlights (safe corpus-wide). Location arrays are optional per work (Alexander ships first).
 
 When several cast members share a surface form (e.g. multiple Philips), body links are **not** guessed from the name alone. Add optional `nameResolutions`:
 
@@ -189,8 +196,8 @@ Minimum path:
 
 | testid | Purpose |
 |--------|---------|
-| `reader-show-menu` | Reveal top+bottom chrome (either band peeks both) |
-| `reader-show-position` | Reveal top+bottom chrome (either band peeks both) |
+| `reader-show-menu` | Reveal top+bottom chrome (tap an open bar again to hide both) |
+| `reader-show-position` | Reveal top+bottom chrome (tap an open bar again to hide both) |
 | `reader-settings` | Open settings sheet (also forces top chrome open) |
 
 ```js

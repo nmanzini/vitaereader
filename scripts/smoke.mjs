@@ -63,7 +63,7 @@ function main() {
   assert.equal(theseus.kind, 'life')
   assert.ok(theseus.paragraphs[0].text.length > 40)
 
-  // Optional per-work character annotations.
+  // Optional per-work character / location annotations.
   const annDir = join(DATA, 'annotations')
   if (existsSync(annDir)) {
     const annFiles = readdirSync(annDir).filter((f) => f.endsWith('.json'))
@@ -139,6 +139,39 @@ function main() {
           const key = `${r.paraId}:${r.start}:${r.end}`
           assert.ok(!seen.has(key), `${file}: duplicate resolution ${key}`)
           seen.add(key)
+        }
+      }
+
+      if (ann.locations != null) {
+        assert.ok(Array.isArray(ann.locations), `${file}: locations must be array`)
+        assert.ok(
+          ann.locations.length <= 45,
+          `${file}: too many locations (${ann.locations.length})`,
+        )
+        const locIds = new Set(ann.locations.map((l) => l.id))
+        assert.equal(
+          locIds.size,
+          ann.locations.length,
+          `${file}: duplicate location id`,
+        )
+        for (const l of ann.locations) {
+          assert.ok(l.id && Array.isArray(l.names) && l.names.length > 0)
+          assert.ok(typeof l.blurb === 'string' && l.blurb.length > 10)
+          assert.ok(typeof l.relation === 'string' && l.relation.length > 0)
+          assert.ok(
+            Number.isFinite(l.lat) && l.lat >= -90 && l.lat <= 90,
+            `${file}/${l.id}: invalid lat`,
+          )
+          assert.ok(
+            Number.isFinite(l.lon) && l.lon >= -180 && l.lon <= 180,
+            `${file}/${l.id}: invalid lon`,
+          )
+          if (l.modern != null) {
+            assert.ok(
+              typeof l.modern === 'string' && l.modern.length > 0,
+              `${file}/${l.id}: modern must be non-empty string`,
+            )
+          }
         }
       }
     }

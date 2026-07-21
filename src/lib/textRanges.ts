@@ -1,5 +1,5 @@
 /**
- * Paragraph text ranges for user highlights + character refs.
+ * Paragraph text ranges for user highlights + annotation refs (char / loc).
  * Offsets are into plain paragraph text (same space as charMatch).
  */
 
@@ -12,6 +12,7 @@ export type HighlightSpan = {
 export type RichSegment =
   | { type: 'text'; text: string; highlightIds: string[] }
   | { type: 'char'; text: string; characterId: string; highlightIds: string[] }
+  | { type: 'loc'; text: string; locationId: string; highlightIds: string[] }
 
 /** Clamp + normalize a half-open [start, end) into text bounds. */
 export function normalizeRange(
@@ -59,21 +60,23 @@ export function mergeHighlightSpans(
   return out
 }
 
-type CharSpan = { start: number; end: number; characterId: string }
+export type EntitySpan =
+  | { start: number; end: number; kind: 'char'; id: string }
+  | { start: number; end: number; kind: 'loc'; id: string }
 
 /**
  * Split plain text into atomic segments so highlights (background) and
- * character refs (tappable) can compose on overlapping ranges.
+ * annotation refs (tappable) can compose on overlapping ranges.
  */
 export function segmentWithHighlights(
   text: string,
-  charMatches: readonly CharSpan[],
+  entities: readonly EntitySpan[],
   highlights: readonly HighlightSpan[],
 ): RichSegment[] {
   if (!text) return []
 
   const breaks = new Set<number>([0, text.length])
-  for (const m of charMatches) {
+  for (const m of entities) {
     breaks.add(Math.max(0, Math.min(text.length, m.start)))
     breaks.add(Math.max(0, Math.min(text.length, m.end)))
   }
@@ -92,12 +95,19 @@ export function segmentWithHighlights(
     const highlightIds = highlights
       .filter((h) => rangesOverlap(start, end, h.start, h.end))
       .map((h) => h.id)
-    const char = charMatches.find((m) => start >= m.start && end <= m.end)
-    if (char) {
+    const entity = entities.find((m) => start >= m.start && end <= m.end)
+    if (entity?.kind === 'char') {
       segments.push({
         type: 'char',
         text: slice,
-        characterId: char.characterId,
+        characterId: entity.id,
+        highlightIds,
+      })
+    } else if (entity?.kind === 'loc') {
+      segments.push({
+        type: 'loc',
+        text: slice,
+        locationId: entity.id,
         highlightIds,
       })
     } else {

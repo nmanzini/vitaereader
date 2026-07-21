@@ -1,23 +1,27 @@
 import type { ReactNode } from 'react'
 import type { Paragraph } from '../content/types'
 import {
-  findCharacterMatches,
+  findAnnotationMatches,
   type CharacterAnnotation,
+  type LocationAnnotation,
   type NameResolution,
 } from '../lib/charMatch'
 import {
   segmentWithHighlights,
+  type EntitySpan,
   type HighlightSpan,
 } from '../lib/textRanges'
 
 type Props = {
   paragraph: Paragraph
   characters?: readonly CharacterAnnotation[]
+  locations?: readonly LocationAnnotation[]
   /** LLM/reviewer span → characterId for ambiguous names in this work. */
   nameResolutions?: readonly NameResolution[]
   highlights?: readonly HighlightSpan[]
   onCharacter?: (characterId: string) => void
-  /** Tap an existing highlight (not on a char-ref) — open remove/share toolbar. */
+  onLocation?: (locationId: string) => void
+  /** Tap an existing highlight (not on a char/loc-ref) — open remove/share toolbar. */
   onHighlight?: (highlightId: string, markEl: HTMLElement) => void
 }
 
@@ -36,7 +40,7 @@ function wrapHighlight(
       data-hl-ids={highlightIds.join(' ')}
       data-testid="text-highlight"
       onClick={(e) => {
-        // Char-ref buttons stopPropagation; only bare highlight taps land here.
+        // Annotation-ref buttons stopPropagation; only bare highlight taps land here.
         if (!onHighlight) return
         e.stopPropagation()
         const mark = e.currentTarget
@@ -51,25 +55,31 @@ function wrapHighlight(
 function renderSegments(
   text: string,
   characters: readonly CharacterAnnotation[] | undefined,
+  locations: readonly LocationAnnotation[] | undefined,
   highlights: readonly HighlightSpan[] | undefined,
   onCharacter: ((characterId: string) => void) | undefined,
+  onLocation: ((locationId: string) => void) | undefined,
   onHighlight: ((highlightId: string, markEl: HTMLElement) => void) | undefined,
   keyPrefix: string,
   paraId: string,
   nameResolutions: readonly NameResolution[] | undefined,
 ): ReactNode {
   const chars = characters?.length ? characters : []
+  const locs = locations?.length ? locations : []
   const hl = highlights?.length ? highlights : []
-  if (chars.length === 0 && hl.length === 0) return text
+  if (chars.length === 0 && locs.length === 0 && hl.length === 0) return text
 
-  const matches = chars.length
-    ? findCharacterMatches(text, chars, {
-        paraId,
-        resolutions: nameResolutions,
-        ambiguous: 'skip',
-      })
-    : []
-  const segments = segmentWithHighlights(text, matches, hl)
+  const matches = findAnnotationMatches(text, chars, locs, {
+    paraId,
+    resolutions: nameResolutions,
+    ambiguous: 'skip',
+  })
+  const entities: EntitySpan[] = matches.map((m) =>
+    m.kind === 'char'
+      ? { kind: 'char', start: m.start, end: m.end, id: m.characterId }
+      : { kind: 'loc', start: m.start, end: m.end, id: m.locationId },
+  )
+  const segments = segmentWithHighlights(text, entities, hl)
 
   return segments.map((seg, i) => {
     const key = `${keyPrefix}-${i}`
@@ -79,33 +89,55 @@ function renderSegments(
       }
       return wrapHighlight(seg.text, seg.highlightIds, key, onHighlight)
     }
-    const btn = (
+    if (seg.type === 'char') {
+      const btn = (
+        <button
+          type="button"
+          className="char-ref"
+          data-char-id={seg.characterId}
+          aria-label={`About ${seg.text}`}
+          onClick={(e) => {
+            e.stopPropagation()
+            onCharacter?.(seg.characterId)
+          }}
+        >
+          {seg.text}
+        </button>
+      )
+      if (seg.highlightIds.length === 0) {
+        return <span key={key}>{btn}</span>
+      }
+      return wrapHighlight(btn, seg.highlightIds, key, onHighlight)
+    }
+    const locBtn = (
       <button
         type="button"
-        className="char-ref"
-        data-char-id={seg.characterId}
-        aria-label={`About ${seg.text}`}
+        className="loc-ref"
+        data-loc-id={seg.locationId}
+        aria-label={`Place: ${seg.text}`}
         onClick={(e) => {
           e.stopPropagation()
-          onCharacter?.(seg.characterId)
+          onLocation?.(seg.locationId)
         }}
       >
         {seg.text}
       </button>
     )
     if (seg.highlightIds.length === 0) {
-      return <span key={key}>{btn}</span>
+      return <span key={key}>{locBtn}</span>
     }
-    return wrapHighlight(btn, seg.highlightIds, key, onHighlight)
+    return wrapHighlight(locBtn, seg.highlightIds, key, onHighlight)
   })
 }
 
 export function ParagraphView({
   paragraph,
   characters,
+  locations,
   nameResolutions,
   highlights,
   onCharacter,
+  onLocation,
   onHighlight,
 }: Props) {
   if (paragraph.kind !== 'poem') {
@@ -118,8 +150,10 @@ export function ParagraphView({
         {renderSegments(
           paragraph.text,
           characters,
+          locations,
           highlights,
           onCharacter,
+          onLocation,
           onHighlight,
           paragraph.id,
           paragraph.id,
@@ -169,8 +203,10 @@ export function ParagraphView({
             {renderSegments(
               line,
               characters,
+              locations,
               lineHighlights,
               onCharacter,
+              onLocation,
               onHighlight,
               `${paragraph.id}-L${i}`,
               paragraph.id,

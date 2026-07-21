@@ -1,0 +1,46 @@
+.loc-map {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 0.35rem;
+  border: 1px solid color-mix(in srgb, var(--ink) 10%, transparent);
+}
+
+.loc-map-sea {
+  fill: color-mix(in srgb, var(--accent) 10%, var(--bg));
+}
+
+.loc-map-land {
+  fill: color-mix(in srgb, var(--accent) 18%, var(--bg-elevated));
+  stroke: color-mix(in srgb, var(--ink) 14%, transparent);
+  stroke-width: 0.6;
+  stroke-linejoin: round;
+}
+
+.loc-map-peer {
+  fill: color-mix(in srgb, var(--ink-muted) 45%, transparent);
+}
+
+.loc-map-pin-halo {
+  fill: color-mix(in srgb, var(--accent) 22%, transparent);
+}
+
+.loc-map-pin {
+  fill: var(--accent);
+}
+
+[data-theme='eink'] .loc-map-sea {
+  fill: var(--bg-elevated);
+}
+
+[data-theme='eink'] .loc-map-land {
+  fill: color-mix(in srgb, var(--ink) 6%, var(--bg));
+}
+
+[data-theme='eink'] .loc-map-pin-halo {
+  fill: color-mix(in srgb, var(--ink) 12%, transparent);
+}
+
+[data-theme='eink'] .loc-map-pin {
+  fill: var(--ink);
+}

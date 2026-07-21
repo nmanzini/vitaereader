@@ -75,8 +75,8 @@
 .library-highlights-link {
   text-decoration: underline;
   text-decoration-thickness: 1px;
-  text-underline-offset: 0.16em;
-  text-decoration-color: color-mix(in srgb, var(--ink) 28%, transparent);
+  text-underline-offset: 0.22em;
+  text-decoration-color: var(--link-underline);
   color: var(--ink);
 }
 
@@ -137,17 +137,22 @@
 
 .life-sep {
   display: inline-block;
-  margin: 0 0.45rem;
+  margin: 0 0.4rem;
+  padding: 0 0.05rem;
   color: var(--ink-muted);
   font-weight: 400;
+  /* Keep · clear of neighbor underlines (esp. night — light ink on dark). */
   text-decoration: none;
+  text-decoration-line: none;
 }
 
 .life-link {
   text-decoration: underline;
   text-decoration-thickness: 1px;
-  text-underline-offset: 0.16em;
-  text-decoration-color: color-mix(in srgb, var(--ink) 28%, transparent);
+  /* Clear descenders (y/g/p) and sit below · separators. */
+  text-underline-offset: 0.22em;
+  text-decoration-color: var(--link-underline);
+  text-decoration-skip-ink: auto;
   color: var(--ink);
 }
 

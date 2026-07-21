@@ -1,9 +1,10 @@
 /**
- * Longest-match character name scanning for reader annotations.
+ * Longest-match annotation name scanning for reader (characters + locations).
  * Pure: no DOM. Prefer longer surface forms first; never break mid-word.
+ * On equal length, characters win over locations.
  *
- * Shared names (e.g. several Philips) are not guessed from the string alone:
- * work body text uses optional `nameResolutions` (LLM/reviewer span → id).
+ * Shared character names (e.g. several Philips) are not guessed from the string
+ * alone: work body text uses optional `nameResolutions` (LLM/reviewer span → id).
  * Character-sheet blurbs may fall back to the first cast entry for a name.
  */
 
@@ -25,7 +26,7 @@ export type CharacterAnnotation = {
 }
 
 /**
- * Reviewer/LLM assignment for one name span in the work body.
+ * Reviewer/LLM assignment for one character-name span in the work body.
  * Offsets are plain-paragraph offsets (same space as highlights).
  */
 export type NameResolution = {
@@ -37,13 +38,29 @@ export type NameResolution = {
   note?: string
 }
 
+/** Place tapped in the text; lat/lon feed the expandable sheet map. */
+export type LocationAnnotation = {
+  id: string
+  /** Surface forms to match; put longer / canonical first in data. */
+  names: string[]
+  blurb: string
+  relation: string
+  lat: number
+  lon: number
+  /** Optional modern placename shown under the relation line. */
+  modern?: string
+}
+
 export type WorkAnnotations = {
   workId: string
   subject: string
   characters: CharacterAnnotation[]
+  /** Optional; missing or empty → no place highlights. */
+  locations?: LocationAnnotation[]
   /**
-   * Per-occurrence links for ambiguous surface forms (same name → many ids).
-   * Unique names still resolve by longest-match without entries here.
+   * Per-occurrence links for ambiguous character surface forms
+   * (same name → many character ids). Unique names still resolve by
+   * longest-match without entries here.
    */
   nameResolutions?: NameResolution[]
 }
@@ -55,9 +72,21 @@ export type CharMatch = {
   text: string
 }
 
+export type LocMatch = {
+  start: number
+  end: number
+  locationId: string
+  text: string
+}
+
+export type AnnotationMatch =
+  | (CharMatch & { kind: 'char' })
+  | (LocMatch & { kind: 'loc' })
+
 export type TextSegment =
   | { type: 'text'; text: string }
   | { type: 'char'; text: string; characterId: string }
+  | { type: 'loc'; text: string; locationId: string }
 
 export type FindCharacterMatchOptions = {
   /** Paragraph id — required for resolution lookup in work body. */
@@ -65,7 +94,7 @@ export type FindCharacterMatchOptions = {
   /** Work-level resolutions; filtered by paraId when provided. */
   resolutions?: readonly NameResolution[]
   /**
-   * Ambiguous surface form with no covering resolution:
+   * Ambiguous character surface form with no covering resolution:
    * - `skip` (default): leave as plain text (reader body)
    * - `first`: use the first cast member that owns the name (sheet blurbs)
    */
@@ -78,45 +107,76 @@ function isWordChar(ch: string | undefined): boolean {
   return /[A-Za-z0-9\u00C0-\u024F']/.test(ch)
 }
 
+type NamedEntity = {
+  id: string
+  names: string[]
+  kind: 'char' | 'loc'
+}
+
 type NamePattern = {
   name: string
-  /** Cast members that list this exact surface form (case-insensitive). */
-  characterIds: string[]
+  kind: 'char' | 'loc'
+  /** Owners of this surface form (multiple only for shared character names). */
+  ids: string[]
   lower: string
 }
 
-/** Flatten + sort names longest-first (stable for equal lengths). */
-function buildNamePatterns(
+function toEntities(
   characters: readonly CharacterAnnotation[],
-): NamePattern[] {
-  const byLower = new Map<string, { name: string; characterIds: string[] }>()
-  for (const c of characters) {
-    for (const name of c.names) {
+  locations: readonly LocationAnnotation[] = [],
+): NamedEntity[] {
+  return [
+    ...characters.map((c) => ({
+      id: c.id,
+      names: c.names,
+      kind: 'char' as const,
+    })),
+    ...locations.map((l) => ({
+      id: l.id,
+      names: l.names,
+      kind: 'loc' as const,
+    })),
+  ]
+}
+
+/**
+ * Flatten + sort names longest-first; equal length → char before loc, then alpha.
+ * Character surface forms shared by multiple cast members collapse to one pattern
+ * with several ids (resolved via nameResolutions / ambiguous mode).
+ */
+function buildNamePatterns(entities: readonly NamedEntity[]): NamePattern[] {
+  const byKey = new Map<
+    string,
+    { name: string; kind: 'char' | 'loc'; ids: string[] }
+  >()
+  for (const e of entities) {
+    for (const name of e.names) {
       const trimmed = name.trim()
       if (!trimmed) continue
       const lower = trimmed.toLowerCase()
-      const prev = byLower.get(lower)
+      const key = `${e.kind}:${lower}`
+      const prev = byKey.get(key)
       if (!prev) {
-        byLower.set(lower, { name: trimmed, characterIds: [c.id] })
+        byKey.set(key, { name: trimmed, kind: e.kind, ids: [e.id] })
         continue
       }
-      if (!prev.characterIds.includes(c.id)) {
-        prev.characterIds.push(c.id)
-      }
+      if (!prev.ids.includes(e.id)) prev.ids.push(e.id)
     }
   }
 
   const patterns: NamePattern[] = []
-  for (const { name, characterIds } of byLower.values()) {
+  for (const { name, kind, ids } of byKey.values()) {
     patterns.push({
       name,
-      characterIds,
+      kind,
+      ids,
       lower: name.toLowerCase(),
     })
   }
   patterns.sort((a, b) => {
     const byLen = b.name.length - a.name.length
     if (byLen !== 0) return byLen
+    if (a.kind !== b.kind) return a.kind === 'char' ? -1 : 1
     return a.name.localeCompare(b.name)
   })
   return patterns
@@ -160,19 +220,20 @@ function resolveCharacterId(
 /**
  * Find non-overlapping name matches left-to-right, longest wins at each index.
  * Matching is case-insensitive; reported `text` preserves the source casing.
- * Ambiguous names need a covering `nameResolutions` entry (unless `ambiguous: 'first'`).
+ * Ambiguous character names need a covering `nameResolutions` entry
+ * (unless `ambiguous: 'first'`).
  */
-export function findCharacterMatches(
+export function findAnnotationMatches(
   text: string,
   characters: readonly CharacterAnnotation[],
+  locations: readonly LocationAnnotation[] = [],
   opts?: FindCharacterMatchOptions,
-): CharMatch[] {
-  if (!text || characters.length === 0) return []
-
-  const patterns = buildNamePatterns(characters)
+): AnnotationMatch[] {
+  if (!text) return []
+  const patterns = buildNamePatterns(toEntities(characters, locations))
   if (patterns.length === 0) return []
 
-  const matches: CharMatch[] = []
+  const matches: AnnotationMatch[] = []
   let i = 0
   while (i < text.length) {
     let advanced = false
@@ -182,16 +243,31 @@ export function findCharacterMatches(
       if (text.slice(i, end).toLowerCase() !== p.lower) continue
       if (isWordChar(text[i - 1]) || isWordChar(text[end])) continue
 
-      const characterId = resolveCharacterId(p.characterIds, i, end, opts)
+      const slice = text.slice(i, end)
+      if (p.kind === 'loc') {
+        matches.push({
+          kind: 'loc',
+          start: i,
+          end,
+          locationId: p.ids[0]!,
+          text: slice,
+        })
+        i = end
+        advanced = true
+        break
+      }
+
+      const characterId = resolveCharacterId(p.ids, i, end, opts)
       if (!characterId) {
-        // Ambiguous and unresolved: do not consume; try shorter patterns, else skip char.
+        // Ambiguous and unresolved: try shorter patterns at this index.
         continue
       }
       matches.push({
+        kind: 'char',
         start: i,
         end,
         characterId,
-        text: text.slice(i, end),
+        text: slice,
       })
       i = end
       advanced = true
@@ -202,13 +278,65 @@ export function findCharacterMatches(
   return matches
 }
 
+/**
+ * Find non-overlapping character name matches left-to-right, longest wins.
+ * Matching is case-insensitive; reported `text` preserves the source casing.
+ */
+export function findCharacterMatches(
+  text: string,
+  characters: readonly CharacterAnnotation[],
+  opts?: FindCharacterMatchOptions,
+): CharMatch[] {
+  return findAnnotationMatches(text, characters, [], opts).flatMap((m) =>
+    m.kind === 'char'
+      ? [
+          {
+            start: m.start,
+            end: m.end,
+            characterId: m.characterId,
+            text: m.text,
+          },
+        ]
+      : [],
+  )
+}
+
+/** Location-only name scan (same rules as characters). */
+export function findLocationMatches(
+  text: string,
+  locations: readonly LocationAnnotation[],
+): LocMatch[] {
+  return findAnnotationMatches(text, [], locations).flatMap((m) =>
+    m.kind === 'loc'
+      ? [
+          {
+            start: m.start,
+            end: m.end,
+            locationId: m.locationId,
+            text: m.text,
+          },
+        ]
+      : [],
+  )
+}
+
 /** Split plain text into text / character-ref segments for rendering. */
 export function segmentText(
   text: string,
   characters: readonly CharacterAnnotation[],
   opts?: FindCharacterMatchOptions,
 ): TextSegment[] {
-  const matches = findCharacterMatches(text, characters, opts)
+  return segmentAnnotationText(text, characters, [], opts)
+}
+
+/** Split plain text into text / char / loc segments (location blurbs). */
+export function segmentAnnotationText(
+  text: string,
+  characters: readonly CharacterAnnotation[],
+  locations: readonly LocationAnnotation[],
+  opts?: FindCharacterMatchOptions,
+): TextSegment[] {
+  const matches = findAnnotationMatches(text, characters, locations, opts)
   if (matches.length === 0) return [{ type: 'text', text }]
 
   const segments: TextSegment[] = []
@@ -217,11 +345,19 @@ export function segmentText(
     if (m.start > cursor) {
       segments.push({ type: 'text', text: text.slice(cursor, m.start) })
     }
-    segments.push({
-      type: 'char',
-      text: m.text,
-      characterId: m.characterId,
-    })
+    if (m.kind === 'char') {
+      segments.push({
+        type: 'char',
+        text: m.text,
+        characterId: m.characterId,
+      })
+    } else {
+      segments.push({
+        type: 'loc',
+        text: m.text,
+        locationId: m.locationId,
+      })
+    }
     cursor = m.end
   }
   if (cursor < text.length) {
