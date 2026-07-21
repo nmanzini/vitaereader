@@ -74,6 +74,7 @@ If `check` fails, fix it. Do not skip hooks or weaken tests to greenwash.
 | `src/lib/highlightsList.ts` | Flatten / sort / group highlights for the Highlights page |
 | `src/lib/paginationLayout.ts` | Floored page width + CSS column sizing |
 | `src/lib/tapZones.ts` | Kindle-like L/C/R tap thirds over the page clip (gutters inherit) |
+| `src/lib/pageGestureIntent.ts` | Page-swipe vs text-select intent (slop / axis lock) |
 | `src/lib/kindleCompat.ts` | Legacy Kindle/Silk detection + ResizeObserver/transform helpers |
 | `src/lib/contentProgress.ts` | Word-fraction progress + page restore from anchors |
 | `src/lib/charMatch.ts` | Character/location name longest-match + ambiguous-name resolutions + text segmentation |

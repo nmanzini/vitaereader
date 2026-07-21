@@ -1,5 +1,9 @@
 import { useEffect, type RefObject } from 'react'
 import {
+  pendingMoveDecision,
+  TAP_SLOP,
+} from './pageGestureIntent'
+import {
   extendSelectionToClientPoint,
   hasTextSelection,
   restoreSelection,
@@ -27,10 +31,6 @@ type Point = { x: number; y: number; id: number }
 
 type Mode = 'idle' | 'pending' | 'paging' | 'selecting'
 
-const TAP_SLOP = 12
-const PAGE_DRAG_SLOP = 14
-/** Harder to steal a text drag into a page swipe (Silk/mobile). */
-const TEXT_PAGE_DRAG_SLOP = 56
 const LONG_PRESS_MS = 420
 const EDGE_ZONE_PX = 44
 const EDGE_ADVANCE_MS = 520
@@ -207,21 +207,15 @@ export function usePageGestures({
       const absY = Math.abs(dy)
 
       if (mode === 'pending') {
-        // Vertical-ish move on text → native selection, not a page swipe.
-        if (startedOnText && absY > 8 && absY >= absX * 0.85) {
+        const decision = pendingMoveDecision(startedOnText, absX, absY)
+        if (decision === 'wait') return
+        if (decision === 'selecting') {
           enterSelecting()
           return
         }
-
-        const slop = startedOnText ? TEXT_PAGE_DRAG_SLOP : PAGE_DRAG_SLOP
-        if (absX < slop) return
-        if (absX < absY) {
-          // Not a horizontal page gesture.
-          if (startedOnText) enterSelecting()
-          else {
-            mode = 'idle'
-            clearLongPress()
-          }
+        if (decision === 'cancel') {
+          mode = 'idle'
+          clearLongPress()
           return
         }
 

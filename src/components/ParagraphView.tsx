@@ -1,4 +1,4 @@
-import type { ReactNode } from 'react'
+import { memo, type ReactNode } from 'react'
 import type { Paragraph } from '../content/types'
 import {
   findAnnotationMatches,
@@ -130,7 +130,7 @@ function renderSegments(
   })
 }
 
-export function ParagraphView({
+function ParagraphViewInner({
   paragraph,
   characters,
   locations,
@@ -219,3 +219,6 @@ export function ParagraphView({
     </p>
   )
 }
+
+/** Memoized — page-turn chrome updates must not re-segment the whole work. */
+export const ParagraphView = memo(ParagraphViewInner)

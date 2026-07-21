@@ -70,7 +70,6 @@ export function PaginatedReader({
   const [page, setPage] = useState(0)
   const [pageCount, setPageCount] = useState(1)
   const [pageWidth, setPageWidth] = useState(0)
-  const [dragOffset, setDragOffset] = useState(0)
   const [dragging, setDragging] = useState(false)
   /** Hidden until columns + resume page are positioned (no flash). */
   const [settled, setSettled] = useState(false)
@@ -87,6 +86,8 @@ export function PaginatedReader({
   const pageRef = useRef(0)
   const pageCountRef = useRef(1)
   const pageWidthRef = useRef(0)
+  /** Finger follow — updated imperatively so drag does not re-render React. */
+  const dragOffsetRef = useRef(0)
   onStatusRef.current = onStatus
   measureRef.current = measureProgress
   resolveRef.current = resolvePageIndex
@@ -96,6 +97,15 @@ export function PaginatedReader({
   pageWidthRef.current = pageWidth
 
   const layoutEpoch = `${contentKey}::${layoutKey}`
+
+  const paintX = useCallback(() => {
+    const el = contentRef.current
+    if (!el) return
+    const w = pageWidthRef.current
+    const p = pageRef.current
+    const x = w > 0 ? -p * w + dragOffsetRef.current : dragOffsetRef.current
+    setTransformX(el, x)
+  }, [])
 
   const measure = useCallback(() => {
     const clip = clipRef.current
@@ -116,7 +126,7 @@ export function PaginatedReader({
     setSettled(false)
     setAllowMotion(false)
     setPage(0)
-    setDragOffset(0)
+    dragOffsetRef.current = 0
 
     let frames = 0
     let raf = 0
@@ -155,6 +165,7 @@ export function PaginatedReader({
     next = Math.max(0, Math.min(next, pageCount - 1))
     setPage(next)
     pageRef.current = next
+    dragOffsetRef.current = 0
     if (content) setTransformX(content, -next * pageWidth)
     restored.current = true
     setSettled(true)
@@ -226,6 +237,24 @@ export function PaginatedReader({
     return () => window.removeEventListener('keydown', onKey)
   }, [go])
 
+  const onDragOffset = useCallback(
+    (offset: number) => {
+      dragOffsetRef.current = offset
+      paintX()
+    },
+    [paintX],
+  )
+
+  const onDragging = useCallback(
+    (next: boolean) => {
+      if (!next) dragOffsetRef.current = 0
+      setDragging(next)
+      // Settling after a swipe: snap transform without waiting for React.
+      if (!next) paintX()
+    },
+    [paintX],
+  )
+
   usePageGestures({
     rootRef: viewportRef,
     clipRef,
@@ -235,18 +264,17 @@ export function PaginatedReader({
     pageWidthRef,
     onGo: go,
     onTapCenter: onToggleChrome,
-    onDragOffset: setDragOffset,
-    onDragging: setDragging,
+    onDragOffset,
+    onDragging,
   })
-
-  const x = pageWidth > 0 ? -page * pageWidth + dragOffset : dragOffset
 
   useLayoutEffect(() => {
     // Skip fighting the restore snap until settled; restore effect sets X once.
+    // While the finger owns the transform, skip so we do not clobber dragOffset.
     if (!settled && !restored.current) return
-    const el = contentRef.current
-    if (el) setTransformX(el, x)
-  }, [x, settled])
+    if (dragging) return
+    paintX()
+  }, [page, pageWidth, settled, dragging, paintX])
 
   return (
     <div className="paged-viewport" ref={viewportRef}>
