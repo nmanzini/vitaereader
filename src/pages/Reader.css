@@ -504,6 +504,35 @@
   outline-offset: 2px;
 }
 
+/* Place highlights — dotted underline (not italic) so they read apart from people. */
+.loc-ref {
+  display: inline;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+  background: none;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-decoration-color: color-mix(in srgb, var(--ink) 22%, transparent);
+  text-decoration-thickness: from-font;
+  text-underline-offset: 0.14em;
+  -webkit-tap-highlight-color: color-mix(in srgb, var(--accent) 12%, transparent);
+}
+
+.loc-ref:hover,
+.loc-ref:focus-visible {
+  text-decoration-color: color-mix(in srgb, var(--accent) 45%, transparent);
+}
+
+.loc-ref:focus-visible {
+  outline: 1px solid color-mix(in srgb, var(--accent) 35%, transparent);
+  outline-offset: 2px;
+}
+
 /* User highlights — soft theme-token wash (not neon). Tappable to remove. */
 mark.text-highlight {
   color: inherit;
@@ -522,6 +551,7 @@ mark.text-highlight {
   background: color-mix(in srgb, var(--ink) 12%, transparent);
 }
 
-mark.text-highlight .char-ref {
+mark.text-highlight .char-ref,
+mark.text-highlight .loc-ref {
   text-decoration-color: color-mix(in srgb, var(--ink) 28%, transparent);
 }
