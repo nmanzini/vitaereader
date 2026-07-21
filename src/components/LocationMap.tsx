@@ -1,6 +1,9 @@
+import { CAMPAIGN_LAND_RINGS } from '../lib/campaignLand'
 import {
   CAMPAIGN_BOUNDS,
+  mapViewSize,
   projectEquirectangular,
+  ringToSvgPath,
   type GeoPoint,
   type MapBounds,
 } from '../lib/geoMap'
@@ -22,12 +25,9 @@ type Props = {
   label: string
 }
 
-const COMPACT = { w: 320, h: 120 }
-const EXPANDED = { w: 320, h: 200 }
-
 /**
- * Offline SVG sketch-map: equirectangular frame + pin.
- * No tiles — calm enough for a reading sheet.
+ * Offline SVG map: Natural Earth land silhouette + pin.
+ * No tiles, no API keys — calm enough for a reading sheet / PWA.
  */
 export function LocationMap({
   focus,
@@ -36,8 +36,17 @@ export function LocationMap({
   bounds = CAMPAIGN_BOUNDS,
   label,
 }: Props) {
-  const { w, h } = expanded ? EXPANDED : COMPACT
+  const { w, h } = mapViewSize(
+    bounds,
+    320,
+    expanded ? 210 : 130,
+  )
   const pin = projectEquirectangular(focus, bounds, w, h)
+  const landPaths = CAMPAIGN_LAND_RINGS.map((ring, i) => ({
+    key: `land-${i}`,
+    d: ringToSvgPath(ring, bounds, w, h),
+  })).filter((p) => p.d.length > 0)
+
   const peers = expanded
     ? others
         .filter((m) => !m.active)
@@ -55,14 +64,9 @@ export function LocationMap({
       aria-label={label}
     >
       <rect className="loc-map-sea" x="0" y="0" width={w} height={h} />
-      {/* Soft “land band” suggestion — not a real coast, just atmosphere. */}
-      <ellipse
-        className="loc-map-land"
-        cx={w * 0.48}
-        cy={h * 0.55}
-        rx={w * 0.42}
-        ry={h * 0.38}
-      />
+      {landPaths.map((p) => (
+        <path key={p.key} className="loc-map-land" d={p.d} />
+      ))}
       {peers.map((p) => (
         <circle
           key={p.id}

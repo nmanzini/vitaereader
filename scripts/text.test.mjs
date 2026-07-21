@@ -41,8 +41,11 @@ import {
 import {
   CAMPAIGN_BOUNDS,
   isValidGeoPoint,
+  mapViewSize,
   projectEquirectangular,
+  ringToSvgPath,
 } from '../src/lib/geoMap.ts'
+import { CAMPAIGN_LAND_RINGS } from '../src/lib/campaignLand.ts'
 import {
   findContainingHighlight,
   mergeHighlightSpans,
@@ -430,6 +433,26 @@ describe('geoMap', () => {
     assert.ok(mid.y > 60 && mid.y < 100)
     assert.equal(isValidGeoPoint({ lat: 36.8, lon: 36.2 }), true)
     assert.equal(isValidGeoPoint({ lat: 100, lon: 0 }), false)
+  })
+
+  it('sizes the viewBox to geographic aspect', () => {
+    const { w, h } = mapViewSize(CAMPAIGN_BOUNDS, 320, 200)
+    assert.equal(w, 320)
+    // lon/lat span ≈ 83/34 → height ≈ 131
+    assert.ok(h > 120 && h < 150)
+  })
+
+  it('turns land rings into SVG paths and keeps campaign land offline', () => {
+    assert.ok(CAMPAIGN_LAND_RINGS.length >= 3)
+    const d = ringToSvgPath(
+      CAMPAIGN_LAND_RINGS[0],
+      CAMPAIGN_BOUNDS,
+      320,
+      131,
+    )
+    assert.match(d, /^M/)
+    assert.match(d, /Z$/)
+    assert.ok(d.includes('L'))
   })
 })
 

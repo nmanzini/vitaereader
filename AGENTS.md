@@ -77,7 +77,8 @@ If `check` fails, fix it. Do not skip hooks or weaken tests to greenwash.
 | `src/lib/kindleCompat.ts` | Legacy Kindle/Silk detection + ResizeObserver/transform helpers |
 | `src/lib/contentProgress.ts` | Word-fraction progress + page restore from anchors |
 | `src/lib/charMatch.ts` | Character/location name longest-match + text segmentation |
-| `src/lib/geoMap.ts` | Equirectangular projection for offline location sketch-maps |
+| `src/lib/geoMap.ts` | Equirectangular projection + SVG path helpers for offline location maps |
+| `src/lib/campaignLand.ts` | Simplified Natural Earth land rings (public domain) for campaign maps |
 | `src/lib/textRanges.ts` | Highlight range helpers + compose with char/loc refs |
 | `src/lib/selectionOffsets.ts` | DOM selection → paragraph plain-text offsets |
 | `src/lib/shareQuote.ts` | Share citation text + X/Threads intents + copy quote/image orchestration |
@@ -141,7 +142,7 @@ public/data/annotations/<workId>.json
   }
 ```
 
-`names` are surface forms to match in paragraph text and in sheet blurbs (longer first). In character sheets, other cast names inside the blurb are tappable (same-work profile hop + Back). In location sheets, other place names in the blurb hop the same way; an expandable offline SVG sketch-map pins `lat`/`lon` (and peer dots when widened). Place names in the reader use a dashed underline (not italic) so they read apart from character refs. Optional character `links` are validated by smoke but unused in UI. Missing annotation files → no highlights (safe corpus-wide). Location arrays are optional per work (Alexander ships first).
+`names` are surface forms to match in paragraph text and in sheet blurbs (longer first). In character sheets, other cast names inside the blurb are tappable (same-work profile hop + Back). In location sheets, other place names in the blurb hop the same way; an expandable offline SVG map (Natural Earth 110m land silhouette, public domain — no tiles/API keys) pins `lat`/`lon` (and peer dots when widened). Place names in the reader use a dashed underline (not italic) so they read apart from character refs. Optional character `links` are validated by smoke but unused in UI. Missing annotation files → no highlights (safe corpus-wide). Location arrays are optional per work (Alexander ships first).
 
 Expected shape (asserted by tests/smoke): **68 works, 22 pairs, 4 unpaired, ~740k words**.
 

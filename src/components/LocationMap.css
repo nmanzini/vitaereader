@@ -11,9 +11,10 @@
 }
 
 .loc-map-land {
-  fill: color-mix(in srgb, var(--accent) 16%, var(--bg-elevated));
-  stroke: color-mix(in srgb, var(--ink) 8%, transparent);
-  stroke-width: 0.5;
+  fill: color-mix(in srgb, var(--accent) 18%, var(--bg-elevated));
+  stroke: color-mix(in srgb, var(--ink) 14%, transparent);
+  stroke-width: 0.6;
+  stroke-linejoin: round;
 }
 
 .loc-map-peer {
