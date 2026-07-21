@@ -110,7 +110,7 @@ If `check` fails, fix it. Do not skip hooks or weaken tests to greenwash.
 These are load-bearing. Violating them recreates fixed bugs.
 
 1. **Shared chrome bands** — Reserved top/bottom empty spacers; chrome *overlays* those bands. Showing/hiding chrome must never resize the reading surface.
-2. **Themes = colors only** — `[data-theme]` may override color tokens (`--bg`, `--ink`, `--accent`, `--highlight`, `--link-underline`, `--char-underline`, …). Never change `--leading`, `--font-size-body`, `--font-optical`, or spacing via theme.
+2. **Themes = colors only** — `[data-theme]` may override color tokens (`--bg`, `--ink`, `--accent`, `--highlight`, `--link-underline`, `--char-underline`, `--loc-underline`, …). Never change `--leading`, `--font-size-body`, `--font-optical`, or spacing via theme.
 3. **Type prefs remasure pages** — Font / size / leading / margins live in `vitae.reading` → `data-type-*` on `<html>` (see `src/lib/readingPrefs.ts`). Changing them **must** remasure columns and restore via content-anchored ratio (`layoutKey` on `PaginatedReader`) — never keep a stale page index. Per-font `--font-optical` keeps Georgia / Literary / Classic at a matched apparent size on `.paged-content`.
 4. **Pages = CSS columns + hard clip** — `.paged-clip` is `overflow: hidden; contain: paint`. Content `width` **and** `columnWidth` must be the same integer page width. Do not use `width: auto` on the column box.
 5. **Measure with floored integers** — subpixel widths cause column bleed.
