@@ -66,9 +66,14 @@ export async function loadAnnotations(
 ): Promise<WorkAnnotations | null> {
   const res = await fetch(dataUrl(`annotations/${workId}.json`))
   if (!res.ok) return null
-  const data = (await res.json()) as WorkAnnotations
-  if (!data?.workId || !Array.isArray(data.characters)) return null
-  return data
+  // Dev SPA / static hosts may return index.html (200) for missing files.
+  try {
+    const data = (await res.json()) as WorkAnnotations
+    if (!data?.workId || !Array.isArray(data.characters)) return null
+    return data
+  } catch {
+    return null
+  }
 }
 
 export function pairWorks(pair: IndexPair): IndexWorkRef[] {

@@ -123,9 +123,13 @@ async function liveCheck(baseUrl) {
   const annRes = await fetch(`${root}/data/annotations/theseus.json`)
   assert.ok(annRes.ok, `live theseus annotations failed: ${annRes.status}`)
 
+  // GitHub Pages serves the SPA shell for unknown paths as 404.html (status 404).
   const pageRes = await fetch(`${root}/read/theseus`)
-  assert.ok(pageRes.ok, `live reader route failed: ${pageRes.status}`)
   const html = await pageRes.text()
+  assert.ok(
+    pageRes.ok || pageRes.status === 404,
+    `live reader route failed: ${pageRes.status}`,
+  )
   assert.ok(html.includes('Vitae'), 'reader HTML missing brand')
 
   console.log(`live smoke ok: ${root}`)
