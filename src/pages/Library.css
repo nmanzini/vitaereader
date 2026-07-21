@@ -61,6 +61,36 @@
   font-weight: 600;
 }
 
+.library-section + .library-section {
+  margin-top: 2rem;
+}
+
+.library-highlights-entry {
+  margin: 0;
+  padding: 0.15rem 0 0.35rem;
+  font-size: 1.02rem;
+  font-weight: 500;
+}
+
+.library-highlights-link {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.16em;
+  text-decoration-color: color-mix(in srgb, var(--ink) 28%, transparent);
+  color: var(--ink);
+}
+
+.library-highlights-link:hover {
+  color: var(--accent);
+  text-decoration-color: color-mix(in srgb, var(--accent) 55%, transparent);
+}
+
+.library-highlights-count {
+  color: var(--ink-muted);
+  font-weight: 400;
+  font-size: 0.92rem;
+}
+
 .pair-list {
   list-style: none;
   margin: 0;

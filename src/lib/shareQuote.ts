@@ -5,6 +5,7 @@
 
 const PRODUCTION_ORIGIN = 'https://nmanzini.github.io'
 const MAX_QUOTE = 180
+const MAX_CITATION_QUOTE = 480
 
 export function truncateQuote(text: string, max = MAX_QUOTE): string {
   const cleaned = text.replace(/\s+/g, ' ').trim()
@@ -53,15 +54,60 @@ export function buildShareText(
   return [workTitle, shorter ? `“${shorter}”` : '', url].filter(Boolean).join('\n')
 }
 
+/**
+ * Clipboard / preview citation: quote + work + author · Parallel Lives (+ optional URL).
+ */
+export function buildCitationText(
+  workTitle: string,
+  quote: string,
+  opts?: {
+    author?: string
+    collection?: string
+    url?: string
+  },
+): string {
+  const q = truncateQuote(quote.replace(/\s+/g, ' ').trim(), MAX_CITATION_QUOTE)
+  const author = opts?.author ?? 'Plutarch'
+  const collection = opts?.collection ?? 'Parallel Lives'
+  const lines = [
+    q ? `“${q}”` : '',
+    '',
+    `— ${workTitle.trim()}`,
+    `${author} · ${collection}`,
+  ]
+  if (opts?.url) {
+    lines.push('', opts.url)
+  }
+  return lines.join('\n').replace(/^\n+|\n+$/g, '')
+}
+
 export function twitterIntentUrl(text: string): string {
   return `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}`
 }
 
-export type ShareQuoteResult =
-  | 'shared'
-  | 'downloaded'
-  | 'cancelled'
-  | 'failed'
+/** Threads web intent (text + optional link attachment). */
+export function threadsIntentUrl(text: string, url?: string): string {
+  const params = new URLSearchParams()
+  if (text) params.set('text', text)
+  if (url) params.set('url', url)
+  const qs = params.toString()
+  return qs
+    ? `https://www.threads.com/intent/post?${qs}`
+    : 'https://www.threads.com/intent/post'
+}
+
+export type SharePlatform = 'x' | 'threads'
+
+export type ShareAssets = {
+  citation: string
+  shareText: string
+  deepLink: string
+  blob: Blob
+  filename: string
+}
+
+export type CopyResult = 'copied' | 'downloaded' | 'failed'
+export type IntentShareResult = 'opened' | 'failed'
 
 function downloadPng(blob: Blob, filename: string): void {
   const href = URL.createObjectURL(blob)
@@ -75,72 +121,109 @@ function downloadPng(blob: Blob, filename: string): void {
   window.setTimeout(() => URL.revokeObjectURL(href), 2_000)
 }
 
-function canShareFiles(file: File): boolean {
-  const nav = navigator as Navigator & {
-    canShare?: (data: ShareData) => boolean
-  }
-  if (typeof nav.share !== 'function') return false
-  if (typeof nav.canShare !== 'function') return true
+function openIntent(url: string): IntentShareResult {
   try {
-    return nav.canShare({ files: [file] })
+    const win = window.open(url, '_blank', 'noopener,noreferrer')
+    if (!win) {
+      // Popup blocked — navigate top-level as last resort.
+      window.location.assign(url)
+    }
+    return 'opened'
   } catch {
-    return false
+    return 'failed'
   }
 }
 
-/**
- * Share selection: generate a quote-card PNG, then
- * 1) `navigator.share` with file + text + deep-link when the OS allows files
- * 2) else download the PNG and open X web intent (text+URL only — no image attach)
- */
-export async function shareSelectionQuote(opts: {
+/** Build citation + share text + quote-card PNG once for the share sheet. */
+export async function prepareShareAssets(opts: {
   quote: string
   workTitle: string
   workId: string
   paraId?: string
-}): Promise<ShareQuoteResult> {
+}): Promise<ShareAssets> {
   const home = readerBaseUrl()
   const deepLink = workShareUrl(opts.workId, opts.paraId)
-  const text = buildShareText(opts.workTitle, opts.quote, deepLink)
+  const shareText = buildShareText(opts.workTitle, opts.quote, deepLink)
+  const citation = buildCitationText(opts.workTitle, opts.quote, {
+    url: deepLink,
+  })
 
-  // Dynamic import keeps Node unit tests free of canvas module resolution.
   const { quoteCardFileName, renderQuoteCardPng } = await import('./quoteCard')
   const filename = quoteCardFileName(opts.workTitle)
+  const blob = await renderQuoteCardPng({
+    quote: opts.quote,
+    workTitle: opts.workTitle,
+    siteUrl: home,
+  })
 
-  let blob: Blob
+  return { citation, shareText, deepLink, blob, filename }
+}
+
+export function shareViaIntent(
+  platform: SharePlatform,
+  shareText: string,
+  deepLink?: string,
+): IntentShareResult {
+  if (platform === 'x') return openIntent(twitterIntentUrl(shareText))
+  return openIntent(threadsIntentUrl(shareText, deepLink))
+}
+
+export async function copyCitationText(citation: string): Promise<CopyResult> {
   try {
-    blob = await renderQuoteCardPng({
-      quote: opts.quote,
-      workTitle: opts.workTitle,
-      siteUrl: home,
-    })
+    if (navigator.clipboard?.writeText) {
+      await navigator.clipboard.writeText(citation)
+      return 'copied'
+    }
   } catch {
-    window.open(twitterIntentUrl(text), '_blank', 'noopener,noreferrer')
+    /* fall through */
+  }
+  // Legacy fallback (Silk / older WebViews)
+  try {
+    const ta = document.createElement('textarea')
+    ta.value = citation
+    ta.setAttribute('readonly', '')
+    ta.style.position = 'fixed'
+    ta.style.left = '-9999px'
+    document.body.appendChild(ta)
+    ta.select()
+    const ok = document.execCommand('copy')
+    ta.remove()
+    return ok ? 'copied' : 'failed'
+  } catch {
     return 'failed'
   }
+}
 
-  const file = new File([blob], filename, { type: 'image/png' })
+/**
+ * Copy PNG via ClipboardItem when supported; otherwise download the file.
+ */
+export async function copyQuoteImage(
+  blob: Blob,
+  filename: string,
+): Promise<CopyResult> {
+  const itemCtor = typeof ClipboardItem !== 'undefined' ? ClipboardItem : null
+  const canWrite =
+    itemCtor &&
+    navigator.clipboard &&
+    typeof navigator.clipboard.write === 'function'
 
-  if (canShareFiles(file)) {
+  if (canWrite && itemCtor) {
     try {
-      await navigator.share({
-        files: [file],
-        text,
-        url: deepLink,
-        title: opts.workTitle,
-      })
-      return 'shared'
-    } catch (err) {
-      const name =
-        err && typeof err === 'object' && 'name' in err
-          ? String((err as { name: string }).name)
-          : ''
-      if (name === 'AbortError') return 'cancelled'
-      // Fall through to download + intent
+      // Safari often wants a Promise-valued ClipboardItem.
+      const png = Promise.resolve(blob)
+      await navigator.clipboard.write([
+        new itemCtor({ 'image/png': png }),
+      ])
+      return 'copied'
+    } catch {
+      /* fall through to download */
     }
   }
 
-  downloadPng(blob, filename)
-  window.open(twitterIntentUrl(text), '_blank', 'noopener,noreferrer')
-  return 'downloaded'
+  try {
+    downloadPng(blob, filename)
+    return 'downloaded'
+  } catch {
+    return 'failed'
+  }
 }

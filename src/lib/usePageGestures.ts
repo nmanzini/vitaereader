@@ -5,6 +5,7 @@ import {
   restoreSelection,
   serializeSelection,
 } from './selectionOffsets'
+import { tapZoneAt } from './tapZones'
 
 type Opts = {
   /** Full-bleed hit area (includes left/right margins outside the measure). */
@@ -44,7 +45,13 @@ function pointFromPointer(e: PointerEvent): Point {
 
 function isInteractiveTarget(target: EventTarget | null): boolean {
   const el = target as Element | null
-  return !!(el && el.closest && el.closest('a, button, .selection-toolbar'))
+  // Char-refs are buttons (win over highlight). Highlight marks open the
+  // selection toolbar for Remove — do not steal the tap for page/chrome.
+  return !!(
+    el &&
+    el.closest &&
+    el.closest('a, button, .selection-toolbar, mark.text-highlight')
+  )
 }
 
 /** True when the press likely intends to select body text. */
@@ -277,14 +284,13 @@ export function usePageGestures({
         return
       }
 
-      // Tap — thirds relative to full root (measure + outer gutters).
+      // Tap — thirds of the visible page (clip); gutters outside inherit L/R.
       // Selection intent already exited above (long-press / drag / live range).
       if (Math.abs(dx) > TAP_SLOP || Math.abs(dy) > TAP_SLOP) return
-      const rect = root.getBoundingClientRect()
-      const x = p.x - rect.left
-      const third = rect.width / 3
-      if (x < third) onGo(-1)
-      else if (x > third * 2) onGo(1)
+      const pageBox = (clipRef.current ?? root).getBoundingClientRect()
+      const zone = tapZoneAt(p.x, pageBox.left, pageBox.width)
+      if (zone === 'prev') onGo(-1)
+      else if (zone === 'next') onGo(1)
       else onTapCenter()
     }
 

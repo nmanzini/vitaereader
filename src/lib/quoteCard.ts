@@ -1,7 +1,7 @@
 /**
  * Client-side quote card (canvas PNG) for share flows.
  * Fixed tasteful palette — independent of reader themes (colors-only invariant).
- * X web intent cannot attach images; share orchestration lives in `shareQuote.ts`.
+ * X/Threads web intents cannot attach images; share orchestration lives in `shareQuote.ts`.
  */
 
 export const QUOTE_CARD_W = 1080

@@ -14,19 +14,31 @@ type Props = {
   characters?: readonly CharacterAnnotation[]
   highlights?: readonly HighlightSpan[]
   onCharacter?: (characterId: string) => void
+  /** Tap an existing highlight (not on a char-ref) — open remove/share toolbar. */
+  onHighlight?: (highlightId: string, markEl: HTMLElement) => void
 }
 
 function wrapHighlight(
   nodes: ReactNode,
   highlightIds: string[],
   key: string,
+  onHighlight: ((highlightId: string, markEl: HTMLElement) => void) | undefined,
 ): ReactNode {
   if (highlightIds.length === 0) return nodes
+  const primaryId = highlightIds[0]!
   return (
     <mark
       key={key}
       className="text-highlight"
       data-hl-ids={highlightIds.join(' ')}
+      data-testid="text-highlight"
+      onClick={(e) => {
+        // Char-ref buttons stopPropagation; only bare highlight taps land here.
+        if (!onHighlight) return
+        e.stopPropagation()
+        const mark = e.currentTarget
+        onHighlight(primaryId, mark)
+      }}
     >
       {nodes}
     </mark>
@@ -38,6 +50,7 @@ function renderSegments(
   characters: readonly CharacterAnnotation[] | undefined,
   highlights: readonly HighlightSpan[] | undefined,
   onCharacter: ((characterId: string) => void) | undefined,
+  onHighlight: ((highlightId: string, markEl: HTMLElement) => void) | undefined,
   keyPrefix: string,
 ): ReactNode {
   const chars = characters?.length ? characters : []
@@ -53,7 +66,7 @@ function renderSegments(
       if (seg.highlightIds.length === 0) {
         return <span key={key}>{seg.text}</span>
       }
-      return wrapHighlight(seg.text, seg.highlightIds, key)
+      return wrapHighlight(seg.text, seg.highlightIds, key, onHighlight)
     }
     const btn = (
       <button
@@ -72,7 +85,7 @@ function renderSegments(
     if (seg.highlightIds.length === 0) {
       return <span key={key}>{btn}</span>
     }
-    return wrapHighlight(btn, seg.highlightIds, key)
+    return wrapHighlight(btn, seg.highlightIds, key, onHighlight)
   })
 }
 
@@ -81,6 +94,7 @@ export function ParagraphView({
   characters,
   highlights,
   onCharacter,
+  onHighlight,
 }: Props) {
   if (paragraph.kind !== 'poem') {
     return (
@@ -94,6 +108,7 @@ export function ParagraphView({
           characters,
           highlights,
           onCharacter,
+          onHighlight,
           paragraph.id,
         )}
       </p>
@@ -128,6 +143,7 @@ export function ParagraphView({
               characters,
               lineHighlights,
               onCharacter,
+              onHighlight,
               `${paragraph.id}-L${i}`,
             )}
             {i < lines.length - 1 ? <br /> : null}

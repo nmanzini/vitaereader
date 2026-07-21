@@ -41,3 +41,21 @@ export function libraryEntries(index: CorpusIndex): LibraryEntry[] {
 
   return entries
 }
+
+/** Flatten library entries to works in catalog order (greek → roman → comparison). */
+export function worksInLibraryOrder(index: CorpusIndex): IndexWorkRef[] {
+  const out: IndexWorkRef[] = []
+  for (const entry of libraryEntries(index)) {
+    if (entry.kind === 'pair') {
+      const { pair } = entry
+      out.push(
+        ...pair.greek,
+        ...pair.roman,
+        ...(pair.comparison ? [pair.comparison] : []),
+      )
+    } else {
+      out.push(entry.work)
+    }
+  }
+  return out
+}

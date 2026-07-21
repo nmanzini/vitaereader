@@ -43,8 +43,11 @@ import {
   segmentWithHighlights,
 } from '../src/lib/textRanges.ts'
 import {
+  buildCitationText,
   buildShareText,
+  threadsIntentUrl,
   truncateQuote,
+  twitterIntentUrl,
   workShareUrl,
 } from '../src/lib/shareQuote.ts'
 import {
@@ -54,6 +57,7 @@ import {
   truncateForCard,
   wrapText,
 } from '../src/lib/quoteCard.ts'
+import { tapZoneAt } from '../src/lib/tapZones.ts'
 import { readFileSync } from 'node:fs'
 import { join, dirname } from 'node:path'
 import { fileURLToPath } from 'node:url'
@@ -168,6 +172,16 @@ describe('pagination math', () => {
     assert.equal(locationFromProgress(1, 100), 100)
     assert.equal(locationFromProgress(0.5, 5), 3)
     assert.equal(locationFromProgress(0, 1), 1)
+  })
+
+  it('tap zones use page-box thirds; outer gutters inherit L/R', () => {
+    // Centered measure on a wide viewport: page at [400, 900).
+    assert.equal(tapZoneAt(50, 400, 500), 'prev') // left gutter
+    assert.equal(tapZoneAt(420, 400, 500), 'prev') // left of text column
+    assert.equal(tapZoneAt(650, 400, 500), 'center')
+    assert.equal(tapZoneAt(880, 400, 500), 'next') // right of text column
+    assert.equal(tapZoneAt(1200, 400, 500), 'next') // right gutter
+    assert.equal(tapZoneAt(0, 0, 0), 'center')
   })
 })
 
@@ -388,6 +402,77 @@ describe('textRanges', () => {
   })
 })
 
+describe('highlightsList', () => {
+  it('sorts recent and groups by book in library order', async () => {
+    const {
+      flattenHighlights,
+      groupHighlightsByBook,
+      paraOrderKey,
+      sortHighlightsRecent,
+    } = await import('../src/lib/highlightsList.ts')
+
+    assert.equal(paraOrderKey('theseus-p012'), 12)
+    assert.equal(paraOrderKey('nope'), Number.MAX_SAFE_INTEGER)
+
+    const titles = new Map([
+      ['theseus', 'Theseus'],
+      ['romulus', 'Romulus'],
+    ])
+    const rows = flattenHighlights(
+      {
+        theseus: [
+          {
+            id: 'a',
+            paraId: 'theseus-p002',
+            start: 0,
+            end: 4,
+            text: 'early',
+            createdAt: 100,
+          },
+          {
+            id: 'b',
+            paraId: 'theseus-p001',
+            start: 2,
+            end: 5,
+            text: 'first',
+            createdAt: 300,
+          },
+        ],
+        romulus: [
+          {
+            id: 'c',
+            paraId: 'romulus-p001',
+            start: 0,
+            end: 3,
+            text: 'rome',
+            createdAt: 200,
+          },
+        ],
+      },
+      titles,
+    )
+    assert.equal(rows.length, 3)
+
+    const recent = sortHighlightsRecent(rows)
+    assert.deepEqual(
+      recent.map((r) => r.id),
+      ['b', 'c', 'a'],
+    )
+
+    const groups = groupHighlightsByBook(rows, ['romulus', 'theseus'])
+    assert.deepEqual(
+      groups.map((g) => ({
+        id: g.workId,
+        ids: g.highlights.map((h) => h.id),
+      })),
+      [
+        { id: 'romulus', ids: ['c'] },
+        { id: 'theseus', ids: ['b', 'a'] },
+      ],
+    )
+  })
+})
+
 describe('readingPrefs', () => {
   it('normalizes unknown payloads and steps size', async () => {
     const {
@@ -470,6 +555,28 @@ describe('shareQuote', () => {
     assert.ok(body.includes('“He was the founder of Athens.”'))
     assert.ok(body.includes('https://example.com/read/theseus?p=1'))
     assert.ok(body.length < 280)
+  })
+
+  it('builds a citation with author credit', () => {
+    const citation = buildCitationText('Theseus', 'He founded Athens.', {
+      url: 'https://example.com/read/theseus',
+    })
+    assert.ok(citation.includes('“He founded Athens.”'))
+    assert.ok(citation.includes('— Theseus'))
+    assert.ok(citation.includes('Plutarch · Parallel Lives'))
+    assert.ok(citation.includes('https://example.com/read/theseus'))
+  })
+
+  it('builds X and Threads intent URLs', () => {
+    const text = 'Theseus\n“quote”\nhttps://example.com/read/theseus'
+    const x = twitterIntentUrl(text)
+    assert.ok(x.startsWith('https://twitter.com/intent/tweet?text='))
+    assert.ok(x.includes(encodeURIComponent(text)))
+
+    const threads = threadsIntentUrl(text, 'https://example.com/read/theseus')
+    assert.ok(threads.startsWith('https://www.threads.com/intent/post?'))
+    assert.ok(threads.includes('text='))
+    assert.ok(threads.includes('url='))
   })
 })
 

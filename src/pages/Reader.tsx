@@ -39,10 +39,10 @@ import {
   clearWindowSelection,
   hasTextSelection,
   readWorkSelection,
+  restoreSelection,
   selectionToolbarAnchor,
   type WorkSelection,
 } from '../lib/selectionOffsets'
-import { shareSelectionQuote } from '../lib/shareQuote'
 import {
   findContainingHighlight,
   normalizeRange,
@@ -56,6 +56,10 @@ import { readingPrefsLayoutKey } from '../lib/readingPrefs'
 import { useReaderChrome } from '../lib/useReaderChrome'
 import { SettingsSheet } from '../components/SettingsSheet'
 import { CharacterSheet } from '../components/CharacterSheet'
+import {
+  ShareSheet,
+  type ShareSheetPayload,
+} from '../components/ShareSheet'
 import { ParagraphView } from '../components/ParagraphView'
 import {
   SelectionToolbar,
@@ -117,6 +121,11 @@ export function Reader() {
     sel: WorkSelection
     anchor: DOMRect
   } | null>(null)
+  const [sharePayload, setSharePayload] = useState<ShareSheetPayload | null>(
+    null,
+  )
+  /** Keep toolbar open after highlight tap when DOM selection can't be restored. */
+  const highlightFocusRef = useRef(false)
 
   const {
     topOpen,
@@ -202,13 +211,16 @@ export function Reader() {
       window.clearTimeout(showTimer)
       window.clearTimeout(clearTimer)
       if (hasTextSelection()) {
+        highlightFocusRef.current = false
         // Settle briefly so touch handles stop thrashing the toolbar.
         showTimer = window.setTimeout(() => {
           refreshSelectionUi()
         }, 140)
       } else {
         // Sticky clear — avoid flash when range briefly collapses mid-gesture.
+        // Highlight-tap fallback may pin the toolbar without a live DOM range.
         clearTimer = window.setTimeout(() => {
+          if (highlightFocusRef.current) return
           if (!hasTextSelection()) setSelection(null)
           else refreshSelectionUi()
         }, 300)
@@ -227,9 +239,64 @@ export function Reader() {
   }, [refreshSelectionUi])
 
   const dismissSelection = useCallback(() => {
+    highlightFocusRef.current = false
     clearWindowSelection()
     setSelection(null)
   }, [])
+
+  /** Tap an existing highlight → select it and open toolbar (Remove / Share). */
+  const onHighlightTap = useCallback(
+    (highlightId: string, markEl: HTMLElement) => {
+      const h = highlights.find((x) => x.id === highlightId)
+      if (!h) return
+      const shell = document.querySelector('.reader-shell')
+      if (!shell) return
+
+      const restored = restoreSelection(shell, {
+        start: { paraId: h.paraId, offset: h.start },
+        end: { paraId: h.paraId, offset: h.end },
+      })
+
+      const anchorFromMark = () => {
+        const rects = markEl.getClientRects()
+        for (let i = rects.length - 1; i >= 0; i--) {
+          const r = rects[i]!
+          if (r.width <= 0 && r.height <= 0) continue
+          if (r.bottom < 0 || r.top > window.innerHeight) continue
+          if (r.right < 0 || r.left > window.innerWidth) continue
+          return r
+        }
+        return markEl.getBoundingClientRect()
+      }
+
+      if (restored) {
+        highlightFocusRef.current = false
+        const sel = readWorkSelection(shell)
+        const anchor = selectionToolbarAnchor() ?? anchorFromMark()
+        if (sel && anchor) {
+          setSelection({ sel, anchor })
+          return
+        }
+      }
+
+      // Fallback when programmatic selection fails (some WebViews).
+      highlightFocusRef.current = true
+      const paraEl =
+        (markEl.closest('[data-para-id]') as HTMLElement | null) ?? markEl
+      const segment = {
+        paraId: h.paraId,
+        paraEl,
+        start: h.start,
+        end: h.end,
+        text: h.text,
+      }
+      setSelection({
+        sel: { segments: [segment], text: h.text, primary: segment },
+        anchor: anchorFromMark(),
+      })
+    },
+    [highlights],
+  )
 
   const onSelectionAction = useCallback(
     (action: SelectionToolbarAction) => {
@@ -274,18 +341,14 @@ export function Reader() {
         return
       }
       if (action === 'share') {
-        dismissSelection()
-        void shareSelectionQuote({
+        setSharePayload({
           quote,
           workTitle: work.title,
           workId: work.id,
           paraId: sel.primary.paraId,
         })
-        return
-      }
-      if (action === 'copy') {
-        void navigator.clipboard?.writeText(quote)
         dismissSelection()
+        return
       }
     },
     [selection, work, slug, highlights, dismissSelection],
@@ -390,6 +453,7 @@ export function Reader() {
             characters={annotations?.characters}
             highlights={highlightsByPara.get(p.id)}
             onCharacter={annotations ? openCharacter : undefined}
+            onHighlight={onHighlightTap}
           />
         ))}
       </div>
@@ -498,6 +562,12 @@ export function Reader() {
         subject={annotations?.subject ?? work.title}
         characters={annotations?.characters ?? []}
         onClose={() => setActiveChar(null)}
+      />
+
+      <ShareSheet
+        open={sharePayload != null}
+        payload={sharePayload}
+        onClose={() => setSharePayload(null)}
       />
 
       <SelectionToolbar

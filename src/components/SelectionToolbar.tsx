@@ -1,7 +1,7 @@
 import { useEffect, useId, useLayoutEffect, useRef, useState } from 'react'
 import './SelectionToolbar.css'
 
-export type SelectionToolbarAction = 'highlight' | 'remove' | 'share' | 'copy'
+export type SelectionToolbarAction = 'highlight' | 'remove' | 'share'
 
 type Props = {
   open: boolean
@@ -91,14 +91,7 @@ export function SelectionToolbar({
           className="selection-toolbar-btn"
           onClick={() => onAction('share')}
         >
-          Share on X
-        </button>
-        <button
-          type="button"
-          className="selection-toolbar-btn"
-          onClick={() => onAction('copy')}
-        >
-          Copy
+          Share
         </button>
       </div>
     </div>

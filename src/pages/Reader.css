@@ -223,7 +223,8 @@
   padding: 4.5rem var(--pad-x) calc(4rem + var(--safe-bottom));
 }
 
-/* Pages reading surface — full-bleed viewport so left/right margins are tappable. */
+/* Pages reading surface — full-bleed hit root; tap thirds use .paged-clip
+   (see tapZoneAt) so L/R work over the text column, and outer gutters inherit. */
 .reader-shell .paged-viewport {
   position: relative;
   /* basis 0 so flex assigns a definite height; content cannot grow the shell */
@@ -245,7 +246,8 @@
   -webkit-touch-callout: default;
 }
 
-/* Measure-constrained stage; margins outside remain in the viewport hit area. */
+/* Measure-constrained stage; outer margins stay in the viewport hit area
+   and inherit L/R tap zones from the clip (tapZoneAt). */
 .paged-stage {
   width: 100%;
   max-width: var(--measure);
@@ -493,13 +495,14 @@
   outline-offset: 2px;
 }
 
-/* User highlights — soft theme-token wash (not neon). */
+/* User highlights — soft theme-token wash (not neon). Tappable to remove. */
 mark.text-highlight {
   color: inherit;
   background: color-mix(in srgb, var(--accent) 18%, transparent);
   border-radius: 0.1em;
   box-decoration-break: clone;
   -webkit-box-decoration-break: clone;
+  cursor: pointer;
 }
 
 [data-theme='night'] mark.text-highlight {

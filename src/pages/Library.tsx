@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import {
   formatWords,
   loadFinished,
+  loadHighlights,
   loadProgress,
   type ProgressMap,
 } from '../lib/prefs'
@@ -114,6 +115,14 @@ export function Library() {
   const [theme, setTheme] = useTheme()
   const [finished] = useState(() => loadFinished())
   const [progress] = useState(() => loadProgress())
+  const [highlightCount] = useState(() => {
+    const map = loadHighlights()
+    let n = 0
+    for (const list of Object.values(map)) {
+      if (Array.isArray(list)) n += list.length
+    }
+    return n
+  })
   const [error, setError] = useState<string | null>(null)
 
   useEffect(() => {
@@ -178,6 +187,24 @@ export function Library() {
   return (
     <main className="library">
       {hero}
+
+      <section
+        className="library-section"
+        aria-labelledby="highlights-heading"
+      >
+        <h2 id="highlights-heading">Highlights</h2>
+        <p className="library-highlights-entry">
+          <Link to="/highlights" className="library-highlights-link">
+            Your marked passages
+          </Link>
+          {highlightCount > 0 ? (
+            <span className="library-highlights-count">
+              {' '}
+              · {highlightCount}
+            </span>
+          ) : null}
+        </p>
+      </section>
 
       <section className="library-section" aria-labelledby="lives-heading">
         <h2 id="lives-heading">Lives</h2>

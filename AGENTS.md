@@ -66,17 +66,20 @@ If `check` fails, fix it. Do not skip hooks or weaken tests to greenwash.
 
 | Path | Owns |
 |------|------|
-| `src/pages/` | Route screens: Library, Reader shell |
-| `src/components/` | Reusable UI (PaginatedReader, SettingsSheet, CharacterSheet, SelectionToolbar, …) |
+| `src/pages/` | Route screens: Library, Highlights, Reader shell |
+| `src/components/` | Reusable UI (PaginatedReader, SettingsSheet, ShareSheet, CharacterSheet, SelectionToolbar, …) |
 | `src/lib/readingPrefs.ts` | Kindle-like Aa prefs (font/size/leading/margins) + layout key |
 | `src/lib/prefs.ts` | Theme, progress, finished, highlights |
+| `src/lib/libraryOrder.ts` | Library pair/unpaired sequence + work order for Highlights |
+| `src/lib/highlightsList.ts` | Flatten / sort / group highlights for the Highlights page |
 | `src/lib/paginationLayout.ts` | Floored page width + CSS column sizing |
+| `src/lib/tapZones.ts` | Kindle-like L/C/R tap thirds over the page clip (gutters inherit) |
 | `src/lib/kindleCompat.ts` | Legacy Kindle/Silk detection + ResizeObserver/transform helpers |
 | `src/lib/contentProgress.ts` | Word-fraction progress + page restore from anchors |
 | `src/lib/charMatch.ts` | Character-name longest-match + text segmentation |
 | `src/lib/textRanges.ts` | Highlight range helpers + compose with char refs |
 | `src/lib/selectionOffsets.ts` | DOM selection → paragraph plain-text offsets |
-| `src/lib/shareQuote.ts` | Share citation text + deep-link URLs + share orchestration |
+| `src/lib/shareQuote.ts` | Share citation text + X/Threads intents + copy quote/image orchestration |
 | `src/lib/quoteCard.ts` | Client canvas quote-card PNG (layout helpers + render) |
 | `src/content/types.ts` | Shared Work/Paragraph types |
 | `src/index.css` | Design tokens + themes (**colors only**) |
@@ -96,6 +99,7 @@ If `check` fails, fix it. Do not skip hooks or weaken tests to greenwash.
 | Path | Screen |
 |------|--------|
 | `/` | Library (chronological pairs + unpaired; each life/comparison is a direct link) |
+| `/highlights` | All user highlights (Recent / By book); deep-links to `/read/:slug?p=` |
 | `/pair/:slug` | Redirects to `/` (legacy) |
 | `/read/:slug` | Reader (life or comparison) |
 
@@ -145,7 +149,7 @@ Regenerate only when ingest/catalog/parser changes. Commit updated `public/data`
 | `vitae.reading` | `{ font, size, leading, margin }` type metrics — see `src/lib/readingPrefs.ts`. Applied via `data-type-*` on `<html>` for the **reader surface** (`.paged-content`); Library pins its own catalog type and must not inherit Aa shout. |
 | `vitae.progress` | `{ [workId]: 0..1 }` content word-fraction (see Invariant 8) |
 | `vitae.finished` | `string[]` |
-| `vitae.highlights` | `{ [workId]: Array<{ id, paraId, start, end, text, createdAt }> }` plain-text offsets (same space as charMatch) |
+| `vitae.highlights` | `{ [workId]: Array<{ id, paraId, start, end, text, createdAt }> }` plain-text offsets (same space as charMatch). Listed on `/highlights`; tap a `.text-highlight` in the reader to Remove via SelectionToolbar. |
 
 API: `src/lib/prefs.ts` (theme/progress/highlights) + `src/lib/readingPrefs.ts` (Aa sheet). Keep storage keys stable unless migrating.
 
