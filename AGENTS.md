@@ -133,8 +133,10 @@ Optional character highlights (hand-authored, not from EPUB):
 
 ```
 public/data/annotations/<workId>.json
-  { workId, subject, characters: [{ id, names[], blurb, relation, links? }] }
+  { workId, subject, characters: [{ id, names[], blurb, relation, links? }], nameResolutions? }
 ```
+
+**Annotated lives (14):** Alcibiades, Alexander, Caesar, Camillus, Coriolanus, Fabius, Lycurgus, Numa Pompilius, Pericles, Poplicola, Romulus, Solon, Themistocles, Theseus. Other works have no cast file yet (reader simply skips highlights).
 
 `names` are surface forms to match in paragraph text and in character-sheet blurbs (longer first). In the sheet, other cast names inside the blurb are tappable (same-work profile hop + Back). Optional `links` are validated by smoke but unused in UI. Missing annotation files → no highlights (safe corpus-wide).
 
