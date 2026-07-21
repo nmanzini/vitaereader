@@ -7,6 +7,7 @@ import {
   pagesEngineSupported,
 } from './lib/kindleCompat'
 import { loadTheme, setTheme } from './lib/prefs'
+import { applyReadingPrefs, loadReadingPrefs } from './lib/readingPrefs'
 
 function showBootFallback() {
   const el = document.getElementById('boot-fallback')
@@ -27,6 +28,7 @@ try {
   } else {
     setTheme(loadTheme())
   }
+  applyReadingPrefs(loadReadingPrefs())
 } catch {
   /* private mode / blocked storage */
 }

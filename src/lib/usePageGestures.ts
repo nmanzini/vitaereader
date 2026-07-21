@@ -1,11 +1,18 @@
 import { useEffect, type RefObject } from 'react'
-import { hasTextSelection } from './selectionOffsets'
+import {
+  extendSelectionToClientPoint,
+  hasTextSelection,
+  restoreSelection,
+  serializeSelection,
+} from './selectionOffsets'
 
 type Opts = {
   /** Full-bleed hit area (includes left/right margins outside the measure). */
   rootRef: RefObject<HTMLElement | null>
   /** Visible page clip — used for selection edge auto-advance. */
   clipRef: RefObject<HTMLElement | null>
+  /** Content root that holds `[data-para-id]` nodes (for selection restore). */
+  contentRootRef?: RefObject<HTMLElement | null>
   pageRef: RefObject<number>
   pageCountRef: RefObject<number>
   pageWidthRef: RefObject<number>
@@ -22,10 +29,10 @@ type Mode = 'idle' | 'pending' | 'paging' | 'selecting'
 const TAP_SLOP = 12
 const PAGE_DRAG_SLOP = 14
 /** Harder to steal a text drag into a page swipe (Silk/mobile). */
-const TEXT_PAGE_DRAG_SLOP = 52
-const LONG_PRESS_MS = 380
-const EDGE_ZONE_PX = 36
-const EDGE_ADVANCE_MS = 420
+const TEXT_PAGE_DRAG_SLOP = 56
+const LONG_PRESS_MS = 420
+const EDGE_ZONE_PX = 44
+const EDGE_ADVANCE_MS = 520
 
 function pointFromTouch(t: Touch): Point {
   return { x: t.clientX, y: t.clientY, id: t.identifier }
@@ -57,6 +64,7 @@ function isTextualTarget(target: EventTarget | null): boolean {
 export function usePageGestures({
   rootRef,
   clipRef,
+  contentRootRef,
   pageRef,
   pageCountRef,
   pageWidthRef,
@@ -77,21 +85,18 @@ export function usePageGestures({
     let captured = false
     let startedOnText = false
     let longPressTimer: number | null = null
-    let edgeTimer: number | null = null
     let lastEdgeAt = 0
+    let advancing = false
     const usePointer = typeof window.PointerEvent === 'function'
+
+    function contentRoot(): ParentNode {
+      return contentRootRef?.current ?? clipRef.current ?? root
+    }
 
     function clearLongPress() {
       if (longPressTimer != null) {
         window.clearTimeout(longPressTimer)
         longPressTimer = null
-      }
-    }
-
-    function clearEdge() {
-      if (edgeTimer != null) {
-        window.clearTimeout(edgeTimer)
-        edgeTimer = null
       }
     }
 
@@ -115,8 +120,9 @@ export function usePageGestures({
       mode = 'selecting'
     }
 
-    function maybeEdgeAdvance(clientX: number) {
+    function maybeEdgeAdvance(clientX: number, clientY: number) {
       if (mode !== 'selecting' && !hasTextSelection()) return
+      if (advancing) return
       const clip = clipRef.current
       if (!clip) return
       const rect = clip.getBoundingClientRect()
@@ -134,8 +140,17 @@ export function usePageGestures({
       if (delta < 0 && page <= 0) return
 
       lastEdgeAt = now
-      // Instant column step so the native selection can continue across pages.
+      advancing = true
+      const snap = serializeSelection(contentRoot())
+      // Instant column step; restore + extend so native selection survives.
       onGo(delta, true)
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          if (snap) restoreSelection(contentRoot(), snap)
+          extendSelectionToClientPoint(clientX, clientY)
+          advancing = false
+        })
+      })
     }
 
     function onDown(p: Point, target: EventTarget | null) {
@@ -169,13 +184,13 @@ export function usePageGestures({
       if (mode === 'idle' || p.id !== pointerId) return
 
       if (mode === 'selecting') {
-        maybeEdgeAdvance(p.x)
+        maybeEdgeAdvance(p.x, p.y)
         return
       }
 
       if (hasTextSelection()) {
         enterSelecting()
-        maybeEdgeAdvance(p.x)
+        maybeEdgeAdvance(p.x, p.y)
         return
       }
 
@@ -186,7 +201,7 @@ export function usePageGestures({
 
       if (mode === 'pending') {
         // Vertical-ish move on text → native selection, not a page swipe.
-        if (startedOnText && absY > 10 && absY >= absX) {
+        if (startedOnText && absY > 8 && absY >= absX * 0.85) {
           enterSelecting()
           return
         }
@@ -234,7 +249,6 @@ export function usePageGestures({
       mode = 'idle'
       pointerId = null
       clearLongPress()
-      clearEdge()
       releaseCapture(p.id)
 
       if (was === 'selecting') {
@@ -263,7 +277,8 @@ export function usePageGestures({
         return
       }
 
-      // Tap — zones relative to full root (margins outside measure are live).
+      // Tap — thirds relative to full root (measure + outer gutters).
+      // Selection intent already exited above (long-press / drag / live range).
       if (Math.abs(dx) > TAP_SLOP || Math.abs(dy) > TAP_SLOP) return
       const rect = root.getBoundingClientRect()
       const x = p.x - rect.left
@@ -290,7 +305,6 @@ export function usePageGestures({
       root.addEventListener('pointercancel', onPointerUp)
       return () => {
         clearLongPress()
-        clearEdge()
         root.removeEventListener('pointerdown', onPointerDown)
         root.removeEventListener('pointermove', onPointerMove)
         root.removeEventListener('pointerup', onPointerUp)
@@ -321,7 +335,6 @@ export function usePageGestures({
     root.addEventListener('touchcancel', onTouchEnd)
     return () => {
       clearLongPress()
-      clearEdge()
       root.removeEventListener('touchstart', onTouchStart)
       root.removeEventListener('touchmove', onTouchMove)
       root.removeEventListener('touchend', onTouchEnd)
@@ -330,6 +343,7 @@ export function usePageGestures({
   }, [
     rootRef,
     clipRef,
+    contentRootRef,
     pageRef,
     pageCountRef,
     pageWidthRef,

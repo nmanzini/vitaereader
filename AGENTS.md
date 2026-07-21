@@ -68,14 +68,16 @@ If `check` fails, fix it. Do not skip hooks or weaken tests to greenwash.
 |------|------|
 | `src/pages/` | Route screens: Library, Reader shell |
 | `src/components/` | Reusable UI (PaginatedReader, SettingsSheet, CharacterSheet, SelectionToolbar, …) |
-| `src/lib/` | Pure helpers, prefs, corpus loaders, reader hooks |
+| `src/lib/readingPrefs.ts` | Kindle-like Aa prefs (font/size/leading/margins) + layout key |
+| `src/lib/prefs.ts` | Theme, progress, finished, highlights |
 | `src/lib/paginationLayout.ts` | Floored page width + CSS column sizing |
 | `src/lib/kindleCompat.ts` | Legacy Kindle/Silk detection + ResizeObserver/transform helpers |
 | `src/lib/contentProgress.ts` | Word-fraction progress + page restore from anchors |
 | `src/lib/charMatch.ts` | Character-name longest-match + text segmentation |
 | `src/lib/textRanges.ts` | Highlight range helpers + compose with char refs |
 | `src/lib/selectionOffsets.ts` | DOM selection → paragraph plain-text offsets |
-| `src/lib/shareQuote.ts` | Share citation text + deep-link URLs |
+| `src/lib/shareQuote.ts` | Share citation text + deep-link URLs + share orchestration |
+| `src/lib/quoteCard.ts` | Client canvas quote-card PNG (layout helpers + render) |
 | `src/content/types.ts` | Shared Work/Paragraph types |
 | `src/index.css` | Design tokens + themes (**colors only**) |
 | `scripts/parse-epub.mjs` | EPUB → JSON ingest |
@@ -102,14 +104,15 @@ If `check` fails, fix it. Do not skip hooks or weaken tests to greenwash.
 These are load-bearing. Violating them recreates fixed bugs.
 
 1. **Shared chrome bands** — Reserved top/bottom empty spacers; chrome *overlays* those bands. Showing/hiding chrome must never resize the reading surface.
-2. **Themes = colors only** — `[data-theme]` may override color tokens. Never change `--leading`, `--font-size-body`, or spacing via theme (pagination shifts).
-3. **Pages = CSS columns + hard clip** — `.paged-clip` is `overflow: hidden; contain: paint`. Content `width` **and** `columnWidth` must be the same integer page width. Do not use `width: auto` on the column box.
-4. **Measure with floored integers** — subpixel widths cause column bleed.
-5. **Footer stats are overlays** — page position and ETA always render in the bottom chrome when open; they must not change spacer height.
-6. **Position metrics** — Footer shows `page / pageCount` (+ shared ETA). Kindle-style location math stays in `src/lib/reading.ts` for library progress and tests.
-7. **Single content-anchored progress (Kindle-like)** — One `vitae.progress[workId]` float (0–1) = fraction of **words through the work** (cf. Kindle locations: a place in the text, not the viewport). Measure and restore **center-anchored** at the center of `.paged-clip` (`measureContentRatio`). **Pages restore** must resolve that anchor to the column/page that contains it (`pageIndexForContentRatio`), not `ratio × pageCount`.
-8. **Missing Comparisons** (e.g. Alexander–Caesar) are manuscript losses — UI may note absence; do not “invent” comparison text.
-9. **No monolith corpus in `public/`** — index + per-work JSON only (PWA caches accordingly).
+2. **Themes = colors only** — `[data-theme]` may override color tokens. Never change `--leading`, `--font-size-body`, or spacing via theme.
+3. **Type prefs remasure pages** — Font / size / leading / margins live in `vitae.reading` → `data-type-*` on `<html>` (see `src/lib/readingPrefs.ts`). Changing them **must** remasure columns and restore via content-anchored ratio (`layoutKey` on `PaginatedReader`) — never keep a stale page index.
+4. **Pages = CSS columns + hard clip** — `.paged-clip` is `overflow: hidden; contain: paint`. Content `width` **and** `columnWidth` must be the same integer page width. Do not use `width: auto` on the column box.
+5. **Measure with floored integers** — subpixel widths cause column bleed.
+6. **Footer stats are overlays** — page position and ETA always render in the bottom chrome when open; they must not change spacer height.
+7. **Position metrics** — Footer shows `page / pageCount` (+ shared ETA). Kindle-style location math stays in `src/lib/reading.ts` for library progress and tests.
+8. **Single content-anchored progress (Kindle-like)** — One `vitae.progress[workId]` float (0–1) = fraction of **words through the work** (cf. Kindle locations: a place in the text, not the viewport). Measure and restore **center-anchored** at the center of `.paged-clip` (`measureContentRatio`). **Pages restore** must resolve that anchor to the column/page that contains it (`pageIndexForContentRatio`), not `ratio × pageCount`.
+9. **Missing Comparisons** (e.g. Alexander–Caesar) are manuscript losses — UI may note absence; do not “invent” comparison text.
+10. **No monolith corpus in `public/`** — index + per-work JSON only (PWA caches accordingly).
 
 ## Content pipeline
 
@@ -138,12 +141,13 @@ Regenerate only when ingest/catalog/parser changes. Commit updated `public/data`
 
 | Key | Values |
 |-----|--------|
-| `vitae.theme` | `day` \| `night` \| `sepia` \| `eink` |
-| `vitae.progress` | `{ [workId]: 0..1 }` content word-fraction (see Invariant 7) |
+| `vitae.theme` | `day` \| `night` \| `sepia` \| `eink` (colors only) |
+| `vitae.reading` | `{ font, size, leading, margin }` type metrics — see `src/lib/readingPrefs.ts`. Applied via `data-type-*` on `<html>` for the **reader surface** (`.paged-content`); Library pins its own catalog type and must not inherit Aa shout. |
+| `vitae.progress` | `{ [workId]: 0..1 }` content word-fraction (see Invariant 8) |
 | `vitae.finished` | `string[]` |
 | `vitae.highlights` | `{ [workId]: Array<{ id, paraId, start, end, text, createdAt }> }` plain-text offsets (same space as charMatch) |
 
-API: `src/lib/prefs.ts`. Keep storage keys stable unless migrating.
+API: `src/lib/prefs.ts` (theme/progress/highlights) + `src/lib/readingPrefs.ts` (Aa sheet). Keep storage keys stable unless migrating.
 
 Reader deep links: `/read/<slug>?p=<paraId>` or `#para-<paraId>` resume at that paragraph (content ratio at para start). Share-on-X uses the same `?p=` shape.
 

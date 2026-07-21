@@ -20,6 +20,11 @@ export type PageStatus = {
 
 type Props = {
   contentKey: string
+  /**
+   * Typography / margin signature. When it changes, columns remasure and
+   * snap back to the content-anchored ratio (not page index × count).
+   */
+  layoutKey?: string
   children: ReactNode
   /** Content-anchored resume ratio (0–1). */
   initialProgress: number
@@ -50,6 +55,7 @@ type Props = {
  */
 export function PaginatedReader({
   contentKey,
+  layoutKey = '',
   children,
   initialProgress,
   measureProgress,
@@ -71,6 +77,9 @@ export function PaginatedReader({
   /** Soft page motion only after restore snap — never animate into saved place. */
   const [allowMotion, setAllowMotion] = useState(false)
   const restored = useRef(false)
+  const resumeRatioRef = useRef(initialProgress)
+  const initialProgressRef = useRef(initialProgress)
+  initialProgressRef.current = initialProgress
   const onStatusRef = useRef(onStatus)
   const measureRef = useRef(measureProgress)
   const resolveRef = useRef(resolvePageIndex)
@@ -86,6 +95,8 @@ export function PaginatedReader({
   pageCountRef.current = pageCount
   pageWidthRef.current = pageWidth
 
+  const layoutEpoch = `${contentKey}::${layoutKey}`
+
   const measure = useCallback(() => {
     const clip = clipRef.current
     const content = contentRef.current
@@ -99,6 +110,8 @@ export function PaginatedReader({
   }, [])
 
   useLayoutEffect(() => {
+    // Capture live content ratio at the moment type/layout invalidates.
+    resumeRatioRef.current = initialProgressRef.current
     restored.current = false
     setSettled(false)
     setAllowMotion(false)
@@ -128,13 +141,14 @@ export function PaginatedReader({
       cancelAnimationFrame(raf)
       stopObserve()
     }
-  }, [measure, contentKey])
+  }, [measure, layoutEpoch])
 
   // Content-anchored restore: snap transform before reveal — no tween to place.
   useLayoutEffect(() => {
     if (restored.current || pageCount < 1 || pageWidth === 0) return
     const content = contentRef.current
-    let next = pageIndexFromProgress(initialProgress, pageCount)
+    const ratio = resumeRatioRef.current
+    let next = pageIndexFromProgress(ratio, pageCount)
     if (content && resolveRef.current) {
       next = resolveRef.current(content, pageWidth, pageCount)
     }
@@ -144,7 +158,7 @@ export function PaginatedReader({
     if (content) setTransformX(content, -next * pageWidth)
     restored.current = true
     setSettled(true)
-  }, [initialProgress, pageCount, pageWidth, contentKey])
+  }, [pageCount, pageWidth, layoutEpoch])
 
   // Enable soft motion only after the snapped page has painted.
   useEffect(() => {
@@ -160,7 +174,7 @@ export function PaginatedReader({
       cancelAnimationFrame(raf1)
       cancelAnimationFrame(raf2)
     }
-  }, [settled, contentKey])
+  }, [settled, layoutEpoch])
 
   useEffect(() => {
     const clip = clipRef.current
@@ -215,6 +229,7 @@ export function PaginatedReader({
   usePageGestures({
     rootRef: viewportRef,
     clipRef,
+    contentRootRef: contentRef,
     pageRef,
     pageCountRef,
     pageWidthRef,

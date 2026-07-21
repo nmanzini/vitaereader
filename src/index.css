@@ -11,15 +11,75 @@
   --font-display: 'Cormorant Garamond', 'Palatino Linotype', Palatino, serif;
   --font-body: 'Source Serif 4', 'Iowan Old Style', 'Palatino Linotype', Palatino,
     serif;
-  /* Quiet Kindle density — root tokens only; themes never touch these. */
+  /* Quiet Kindle density — defaults; overridden by data-type-* (not themes). */
   --measure: 34rem;
   --pad-x: clamp(1.1rem, 4.5vw, 1.75rem);
-  /* Typography is theme-invariant so pagination never shifts with appearance. */
-  --font-size-body: clamp(1rem, 0.28vw + 0.96rem, 1.125rem);
+  /* Typography is theme-invariant so color changes never shift pagination. */
+  --font-size-body: clamp(1.05rem, 0.28vw + 1rem, 1.125rem);
   --leading: 1.55;
   --safe-bottom: env(safe-area-inset-bottom, 0px);
   --motion-page: 280ms cubic-bezier(0.25, 0.1, 0.25, 1);
   --motion-chrome: 220ms ease;
+}
+
+/* --- Reading type prefs (Kindle-like). Never set these from [data-theme]. --- */
+
+html[data-type-font='book'] {
+  --font-body: 'Source Serif 4', 'Iowan Old Style', 'Palatino Linotype', Palatino,
+    serif;
+  --font-display: 'Cormorant Garamond', 'Palatino Linotype', Palatino, serif;
+}
+html[data-type-font='classic'] {
+  --font-body: 'Palatino Linotype', Palatino, 'Book Antiqua', 'Iowan Old Style',
+    serif;
+  --font-display: 'Palatino Linotype', Palatino, 'Book Antiqua', serif;
+}
+html[data-type-font='literary'] {
+  --font-body: 'Cormorant Garamond', 'Palatino Linotype', Palatino, serif;
+  --font-display: 'Cormorant Garamond', 'Palatino Linotype', Palatino, serif;
+}
+html[data-type-font='georgia'] {
+  --font-body: Georgia, 'Times New Roman', Times, serif;
+  --font-display: Georgia, 'Times New Roman', Times, serif;
+}
+
+html[data-type-size='xs'] {
+  --font-size-body: clamp(0.9rem, 0.2vw + 0.86rem, 0.98rem);
+}
+html[data-type-size='sm'] {
+  --font-size-body: clamp(0.98rem, 0.24vw + 0.92rem, 1.06rem);
+}
+html[data-type-size='md'] {
+  --font-size-body: clamp(1.05rem, 0.28vw + 1rem, 1.125rem);
+}
+html[data-type-size='lg'] {
+  --font-size-body: clamp(1.15rem, 0.35vw + 1.08rem, 1.28rem);
+}
+html[data-type-size='xl'] {
+  --font-size-body: clamp(1.28rem, 0.45vw + 1.18rem, 1.45rem);
+}
+
+html[data-type-leading='tight'] {
+  --leading: 1.35;
+}
+html[data-type-leading='normal'] {
+  --leading: 1.55;
+}
+html[data-type-leading='relaxed'] {
+  --leading: 1.75;
+}
+
+html[data-type-margin='narrow'] {
+  --measure: 40rem;
+  --pad-x: clamp(0.65rem, 2.5vw, 1rem);
+}
+html[data-type-margin='normal'] {
+  --measure: 34rem;
+  --pad-x: clamp(1.1rem, 4.5vw, 1.75rem);
+}
+html[data-type-margin='wide'] {
+  --measure: 28rem;
+  --pad-x: clamp(1.5rem, 7vw, 2.5rem);
 }
 
 /* Themes may only override color tokens — never type metrics or spacing. */
@@ -70,10 +130,12 @@ body {
   min-height: 100dvh;
   background: var(--bg);
   color: var(--ink);
-  font-family: var(--font-body);
+  /* Catalog defaults — Aa prefs (data-type-*) apply on the reader surface only. */
+  font-family: 'Source Serif 4', 'Iowan Old Style', 'Palatino Linotype', Palatino,
+    serif;
   font-optical-sizing: auto;
-  font-size: var(--font-size-body);
-  line-height: var(--leading);
+  font-size: clamp(1.05rem, 0.28vw + 1rem, 1.125rem);
+  line-height: 1.55;
   -webkit-font-smoothing: antialiased;
 }
 

@@ -2,6 +2,7 @@ import {
   useCallback,
   useEffect,
   useMemo,
+  useRef,
   useState,
 } from 'react'
 import { Link, useNavigate, useParams, useSearchParams } from 'react-router-dom'
@@ -37,15 +38,11 @@ import {
 import {
   clearWindowSelection,
   hasTextSelection,
-  selectionInParagraph,
+  readWorkSelection,
   selectionToolbarAnchor,
-  type ParaSelection,
+  type WorkSelection,
 } from '../lib/selectionOffsets'
-import {
-  buildShareText,
-  twitterIntentUrl,
-  workShareUrl,
-} from '../lib/shareQuote'
+import { shareSelectionQuote } from '../lib/shareQuote'
 import {
   findContainingHighlight,
   normalizeRange,
@@ -54,6 +51,8 @@ import {
 import { formatEta } from '../lib/reading'
 import { siblingNav, workKicker } from '../lib/workMeta'
 import { useTheme } from '../lib/useTheme'
+import { useReadingPrefs } from '../lib/useReadingPrefs'
+import { readingPrefsLayoutKey } from '../lib/readingPrefs'
 import { useReaderChrome } from '../lib/useReaderChrome'
 import { SettingsSheet } from '../components/SettingsSheet'
 import { CharacterSheet } from '../components/CharacterSheet'
@@ -94,6 +93,14 @@ export function Reader() {
     null,
   )
   const [theme, setTheme] = useTheme()
+  const {
+    prefs: readingPrefs,
+    setFont,
+    setLeading,
+    setMargin,
+    nudgeSize,
+  } = useReadingPrefs()
+  const layoutKey = readingPrefsLayoutKey(readingPrefs)
   const [finished, setFinished] = useState(() => loadFinished())
   const [highlights, setHighlights] = useState<TextHighlight[]>([])
   const [settingsOpen, setSettingsOpen] = useState(false)
@@ -107,7 +114,7 @@ export function Reader() {
   })
   const [error, setError] = useState<string | null>(null)
   const [selection, setSelection] = useState<{
-    sel: ParaSelection
+    sel: WorkSelection
     anchor: DOMRect
   } | null>(null)
 
@@ -182,27 +189,40 @@ export function Reader() {
 
   const refreshSelectionUi = useCallback(() => {
     const shell = document.querySelector('.reader-shell')
-    const sel = selectionInParagraph(shell)
+    const sel = readWorkSelection(shell)
     const anchor = selectionToolbarAnchor()
     if (sel && anchor) setSelection({ sel, anchor })
     else setSelection(null)
   }, [])
 
   useEffect(() => {
-    let timer = 0
-    function onSelChange() {
-      window.clearTimeout(timer)
-      // Touch selection settles after a short delay.
-      timer = window.setTimeout(refreshSelectionUi, 80)
+    let showTimer = 0
+    let clearTimer = 0
+    function scheduleRefresh() {
+      window.clearTimeout(showTimer)
+      window.clearTimeout(clearTimer)
+      if (hasTextSelection()) {
+        // Settle briefly so touch handles stop thrashing the toolbar.
+        showTimer = window.setTimeout(() => {
+          refreshSelectionUi()
+        }, 140)
+      } else {
+        // Sticky clear — avoid flash when range briefly collapses mid-gesture.
+        clearTimer = window.setTimeout(() => {
+          if (!hasTextSelection()) setSelection(null)
+          else refreshSelectionUi()
+        }, 300)
+      }
     }
-    document.addEventListener('selectionchange', onSelChange)
-    document.addEventListener('mouseup', onSelChange)
-    document.addEventListener('touchend', onSelChange)
+    document.addEventListener('selectionchange', scheduleRefresh)
+    document.addEventListener('mouseup', scheduleRefresh)
+    document.addEventListener('touchend', scheduleRefresh)
     return () => {
-      window.clearTimeout(timer)
-      document.removeEventListener('selectionchange', onSelChange)
-      document.removeEventListener('mouseup', onSelChange)
-      document.removeEventListener('touchend', onSelChange)
+      window.clearTimeout(showTimer)
+      window.clearTimeout(clearTimer)
+      document.removeEventListener('selectionchange', scheduleRefresh)
+      document.removeEventListener('mouseup', scheduleRefresh)
+      document.removeEventListener('touchend', scheduleRefresh)
     }
   }, [refreshSelectionUi])
 
@@ -215,42 +235,52 @@ export function Reader() {
     (action: SelectionToolbarAction) => {
       if (!selection || !work || !slug) return
       const { sel } = selection
-      const para = work.paragraphs.find((p) => p.id === sel.paraId)
-      if (!para) return
-      const norm = normalizeRange(sel.start, sel.end, para.text.length)
-      if (!norm) return
-      const quote = para.text.slice(norm.start, norm.end)
+      const quote = sel.text
 
       if (action === 'highlight') {
-        const created = addHighlight(slug, {
-          paraId: sel.paraId,
-          start: norm.start,
-          end: norm.end,
-          text: quote,
-        })
-        setHighlights((prev) => [...prev, created])
+        const created: TextHighlight[] = []
+        for (const segment of sel.segments) {
+          const para = work.paragraphs.find((p) => p.id === segment.paraId)
+          if (!para) continue
+          const norm = normalizeRange(segment.start, segment.end, para.text.length)
+          if (!norm) continue
+          created.push(
+            addHighlight(slug, {
+              paraId: segment.paraId,
+              start: norm.start,
+              end: norm.end,
+              text: para.text.slice(norm.start, norm.end),
+            }),
+          )
+        }
+        if (created.length) setHighlights((prev) => [...prev, ...created])
         dismissSelection()
         return
       }
       if (action === 'remove') {
-        const hit = findContainingHighlight(
-          highlights
-            .filter((h) => h.paraId === sel.paraId)
-            .map((h) => ({ id: h.id, start: h.start, end: h.end })),
-          norm.start,
-          norm.end,
-        )
-        if (hit && removeHighlight(slug, hit.id)) {
-          setHighlights((prev) => prev.filter((h) => h.id !== hit.id))
+        for (const segment of sel.segments) {
+          const hit = findContainingHighlight(
+            highlights
+              .filter((h) => h.paraId === segment.paraId)
+              .map((h) => ({ id: h.id, start: h.start, end: h.end })),
+            segment.start,
+            segment.end,
+          )
+          if (hit && removeHighlight(slug, hit.id)) {
+            setHighlights((prev) => prev.filter((h) => h.id !== hit.id))
+          }
         }
         dismissSelection()
         return
       }
       if (action === 'share') {
-        const url = workShareUrl(work.id, sel.paraId)
-        const text = buildShareText(work.title, quote, url)
-        window.open(twitterIntentUrl(text), '_blank', 'noopener,noreferrer')
         dismissSelection()
+        void shareSelectionQuote({
+          quote,
+          workTitle: work.title,
+          workId: work.id,
+          paraId: sel.primary.paraId,
+        })
         return
       }
       if (action === 'copy') {
@@ -263,15 +293,14 @@ export function Reader() {
 
   const selectionCanRemove = useMemo(() => {
     if (!selection) return false
-    const { sel } = selection
-    return (
+    return selection.sel.segments.some((segment) =>
       findContainingHighlight(
         highlights
-          .filter((h) => h.paraId === sel.paraId)
+          .filter((h) => h.paraId === segment.paraId)
           .map((h) => ({ id: h.id, start: h.start, end: h.end })),
-        sel.start,
-        sel.end,
-      ) != null
+        segment.start,
+        segment.end,
+      ),
     )
   }, [selection, highlights])
 
@@ -282,6 +311,9 @@ export function Reader() {
       document.body.style.overflow = prev
     }
   }, [])
+
+  const progressRef = useRef(progress)
+  progressRef.current = progress
 
   const measurePageProgress = useCallback(
     (clip: HTMLElement) => {
@@ -299,10 +331,10 @@ export function Reader() {
         pageWidth,
         pageCount,
         wordIndex,
-        resumeAt,
+        progressRef.current,
       )
     },
-    [wordIndex, resumeAt],
+    [wordIndex],
   )
 
   const onPageStatus = useCallback(
@@ -453,6 +485,11 @@ export function Reader() {
         onClose={() => setSettingsOpen(false)}
         theme={theme}
         onTheme={setTheme}
+        reading={readingPrefs}
+        onFont={setFont}
+        onSizeNudge={nudgeSize}
+        onLeading={setLeading}
+        onMargin={setMargin}
       />
 
       <CharacterSheet
@@ -473,6 +510,7 @@ export function Reader() {
 
       <PaginatedReader
         contentKey={work.id}
+        layoutKey={layoutKey}
         initialProgress={resumeAt}
         measureProgress={measurePageProgress}
         resolvePageIndex={resolvePageIndex}

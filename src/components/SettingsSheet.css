@@ -11,7 +11,7 @@
 
 .settings-sheet {
   width: min(100%, 26rem);
-  max-height: min(88dvh, 36rem);
+  max-height: min(92dvh, 42rem);
   overflow: auto;
   background: var(--bg);
   color: var(--ink);
@@ -79,4 +79,73 @@
 
 .settings-section .theme-row {
   margin-bottom: 0;
+}
+
+.settings-chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.settings-chip {
+  font-size: 0.82rem;
+  line-height: 1.2;
+  padding: 0.42rem 0.65rem;
+  border-radius: 0.3rem;
+  color: var(--ink-muted);
+  border: 1px solid color-mix(in srgb, var(--ink) 10%, transparent);
+  background: color-mix(in srgb, var(--ink) 3%, transparent);
+}
+
+.settings-chip.is-active {
+  color: var(--ink);
+  border-color: color-mix(in srgb, var(--accent) 45%, transparent);
+  background: color-mix(in srgb, var(--accent) 10%, transparent);
+}
+
+.settings-size-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.settings-size-btn {
+  font-size: 0.95rem;
+  font-weight: 600;
+  min-width: 2.4rem;
+  padding: 0.4rem 0.5rem;
+  color: var(--ink);
+  border-radius: 0.3rem;
+  border: 1px solid color-mix(in srgb, var(--ink) 10%, transparent);
+}
+
+.settings-size-btn:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.settings-size-btn:not(:disabled):hover,
+.settings-size-btn:not(:disabled):focus-visible {
+  color: var(--accent);
+  border-color: color-mix(in srgb, var(--accent) 40%, transparent);
+}
+
+.settings-size-dots {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+}
+
+.settings-size-dot {
+  width: 0.4rem;
+  height: 0.4rem;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--ink) 18%, transparent);
+}
+
+.settings-size-dot.is-active {
+  background: var(--accent);
+  transform: scale(1.25);
 }

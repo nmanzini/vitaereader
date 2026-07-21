@@ -29,6 +29,30 @@
           }
           var meta = document.querySelector('meta[name="theme-color"]')
           if (meta) meta.setAttribute('content', colors[t] || colors.day)
+
+          // Type prefs before paint — avoid first-frame font/size jump.
+          var raw = localStorage.getItem('vitae.reading')
+          var r = raw ? JSON.parse(raw) : {}
+          var fonts = { book: 1, classic: 1, literary: 1, georgia: 1 }
+          var sizes = { xs: 1, sm: 1, md: 1, lg: 1, xl: 1 }
+          var leadings = { tight: 1, normal: 1, relaxed: 1 }
+          var margins = { narrow: 1, normal: 1, wide: 1 }
+          document.documentElement.setAttribute(
+            'data-type-font',
+            fonts[r.font] ? r.font : 'book',
+          )
+          document.documentElement.setAttribute(
+            'data-type-size',
+            sizes[r.size] ? r.size : 'md',
+          )
+          document.documentElement.setAttribute(
+            'data-type-leading',
+            leadings[r.leading] ? r.leading : 'normal',
+          )
+          document.documentElement.setAttribute(
+            'data-type-margin',
+            margins[r.margin] ? r.margin : 'normal',
+          )
         } catch (e) {}
       })()
     </script>

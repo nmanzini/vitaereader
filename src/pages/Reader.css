@@ -280,6 +280,8 @@
   column-gap: 0;
   -webkit-column-rule: none;
   column-rule: none;
+  /* Aa prefs live here (not on body) so Library stays a quiet catalog. */
+  font-family: var(--font-body);
   font-size: var(--font-size-body);
   line-height: var(--leading);
   /* Soft horizontal slide — user turns only; restore uses .no-motion. */

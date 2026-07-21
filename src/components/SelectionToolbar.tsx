@@ -63,13 +63,7 @@ export function SelectionToolbar({
   if (!open || !anchor) return null
 
   return (
-    <div
-      className="selection-toolbar-layer"
-      onPointerDown={(e) => {
-        // Clicks on the dim area clear; clicks on the bar stay.
-        if (e.target === e.currentTarget) onDismiss()
-      }}
-    >
+    <div className="selection-toolbar-layer">
       <div
         ref={barRef}
         className="selection-toolbar"

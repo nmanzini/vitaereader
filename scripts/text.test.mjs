@@ -47,6 +47,13 @@ import {
   truncateQuote,
   workShareUrl,
 } from '../src/lib/shareQuote.ts'
+import {
+  cardAttribution,
+  displaySiteHost,
+  fitLines,
+  truncateForCard,
+  wrapText,
+} from '../src/lib/quoteCard.ts'
 import { readFileSync } from 'node:fs'
 import { join, dirname } from 'node:path'
 import { fileURLToPath } from 'node:url'
@@ -381,6 +388,61 @@ describe('textRanges', () => {
   })
 })
 
+describe('readingPrefs', () => {
+  it('normalizes unknown payloads and steps size', async () => {
+    const {
+      normalizeReadingPrefs,
+      readingPrefsLayoutKey,
+      stepTypeSize,
+      DEFAULT_READING_PREFS,
+    } = await import('../src/lib/readingPrefs.ts')
+
+    assert.deepEqual(normalizeReadingPrefs(null), DEFAULT_READING_PREFS)
+    assert.deepEqual(normalizeReadingPrefs({ font: 'nope', size: 'lg' }), {
+      ...DEFAULT_READING_PREFS,
+      size: 'lg',
+    })
+    assert.equal(stepTypeSize('md', 1), 'lg')
+    assert.equal(stepTypeSize('xl', 1), 'xl')
+    assert.equal(stepTypeSize('xs', -1), 'xs')
+    assert.equal(
+      readingPrefsLayoutKey({
+        font: 'book',
+        size: 'md',
+        leading: 'normal',
+        margin: 'wide',
+      }),
+      'book:md:normal:wide',
+    )
+  })
+})
+
+describe('selectionOffsets', () => {
+  it('round-trips plain offsets through a paragraph DOM', async () => {
+    const { parseHTML } = await import('linkedom')
+    const { document, Node } = parseHTML(
+      '<!doctype html><p data-para-id="p1">Hello <em>world</em></p>',
+    )
+    globalThis.document = document
+    globalThis.Node = Node
+    const {
+      plainOffsetInElement,
+      domPointFromPlainOffset,
+      plainTextLength,
+    } = await import('../src/lib/selectionOffsets.ts')
+
+    const para = document.querySelector('[data-para-id="p1"]')
+    assert.ok(para)
+    assert.equal(plainTextLength(para), 11)
+    const mid = domPointFromPlainOffset(para, 6)
+    assert.ok(mid)
+    assert.equal(plainOffsetInElement(para, mid.node, mid.offset), 6)
+    const end = domPointFromPlainOffset(para, 11)
+    assert.ok(end)
+    assert.equal(plainOffsetInElement(para, end.node, end.offset), 11)
+  })
+})
+
 describe('shareQuote', () => {
   it('builds a deep link with para query', () => {
     assert.equal(
@@ -408,5 +470,45 @@ describe('shareQuote', () => {
     assert.ok(body.includes('“He was the founder of Athens.”'))
     assert.ok(body.includes('https://example.com/read/theseus?p=1'))
     assert.ok(body.length < 280)
+  })
+})
+
+describe('quoteCard layout helpers', () => {
+  const measure = (s) => s.length
+
+  it('wraps by measured width', () => {
+    assert.deepEqual(wrapText('one two three four', 8, measure), [
+      'one two',
+      'three',
+      'four',
+    ])
+    assert.deepEqual(wrapText('', 10, measure), [])
+  })
+
+  it('hard-breaks overlong tokens', () => {
+    assert.deepEqual(wrapText('abcdefghij', 4, measure), ['abcd', 'efgh', 'ij'])
+  })
+
+  it('fits lines with ellipsis', () => {
+    assert.deepEqual(fitLines(['a', 'b', 'c', 'd'], 2), ['a', 'b…'])
+    assert.deepEqual(fitLines(['only'], 3), ['only'])
+  })
+
+  it('formats attribution and site host', () => {
+    assert.deepEqual(cardAttribution('Theseus'), {
+      title: 'Theseus',
+      credit: 'Plutarch · Parallel Lives',
+    })
+    assert.equal(
+      displaySiteHost('https://nmanzini.github.io/vitaereader/'),
+      'nmanzini.github.io/vitaereader',
+    )
+  })
+
+  it('truncates long card quotes on a word boundary', () => {
+    const long = 'alpha '.repeat(80)
+    const t = truncateForCard(long, 40)
+    assert.ok(t.length <= 40)
+    assert.ok(t.endsWith('…'))
   })
 })

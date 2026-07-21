@@ -1,7 +1,15 @@
 .library {
+  /* Pin catalog type — do not inherit reader Aa prefs (data-type-*). */
+  --font-body: 'Source Serif 4', 'Iowan Old Style', 'Palatino Linotype', Palatino,
+    serif;
+  --font-display: 'Cormorant Garamond', 'Palatino Linotype', Palatino, serif;
+  --pad-x: clamp(1.1rem, 4.5vw, 1.75rem);
   max-width: 40rem;
   margin: 0 auto;
   padding: 2.25rem var(--pad-x) calc(2.75rem + var(--safe-bottom));
+  font-family: var(--font-body);
+  font-size: clamp(1.05rem, 0.28vw + 1rem, 1.125rem);
+  line-height: 1.55;
 }
 
 .library-hero {
@@ -75,8 +83,8 @@
 }
 
 .pair-num {
-  font-family: var(--font-display);
-  font-size: 0.95rem;
+  font-family: var(--font-body);
+  font-size: 0.88rem;
   color: color-mix(in srgb, var(--ink-muted) 85%, transparent);
   font-variant-numeric: tabular-nums;
 }
@@ -90,9 +98,11 @@
 
 .life-item {
   display: inline;
-  font-family: var(--font-display);
-  font-size: 1.15rem;
-  font-weight: 600;
+  /* Body face + medium weight — readable catalog, not chapter-title shout. */
+  font-family: var(--font-body);
+  font-size: 1.02rem;
+  font-weight: 500;
+  letter-spacing: 0.005em;
 }
 
 .life-sep {
@@ -132,7 +142,7 @@
 .life-link.is-finished,
 .life-link.is-finished:hover {
   color: color-mix(in srgb, var(--ink-muted) 85%, transparent);
-  font-weight: 500;
+  font-weight: 400;
   text-decoration: line-through;
   text-decoration-thickness: 1.5px;
   text-decoration-color: color-mix(in srgb, var(--ink-muted) 70%, transparent);

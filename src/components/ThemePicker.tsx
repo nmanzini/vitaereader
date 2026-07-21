@@ -11,7 +11,7 @@ export function ThemePicker({ theme, onChange, compact = false }: Props) {
     <div
       className={compact ? 'theme-mini' : 'theme-row'}
       role="group"
-      aria-label="Appearance"
+      aria-label="Color"
     >
       {THEMES.map((t) => (
         <button
