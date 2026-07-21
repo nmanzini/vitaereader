@@ -596,6 +596,272 @@
       "links": [
         {
           "characterId": "sinnis"
+        },
+        {
+          "characterId": "melanippus"
+        }
+      ]
+    },
+    {
+      "id": "theseus",
+      "names": [
+        "Theseus"
+      ],
+      "relation": "Subject; legendary founder of Athens",
+      "blurb": "Son of Aegeus (or Neptune) who cleared the roads of brigands, killed the Minotaur, and united Attica into one city under one law. His loyalty to Pirithous and the abduction of Helen brought his final ruin, yet Athens honoured him as hero and protector for centuries.",
+      "links": [
+        {
+          "characterId": "aegeus"
+        },
+        {
+          "characterId": "neptune"
+        },
+        {
+          "characterId": "pirithous"
+        }
+      ]
+    },
+    {
+      "id": "philochorus",
+      "names": [
+        "Philochorus"
+      ],
+      "relation": "Attic historian cited",
+      "blurb": "Athenian chronicler whose account of the tribute and Theseus's age Plutarch weighs against Homer and the tragedians when the sources multiply and conflict."
+    },
+    {
+      "id": "hellanicus",
+      "names": [
+        "Hellanicus"
+      ],
+      "relation": "Mythographer cited",
+      "blurb": "Lesbos historian who recorded an alternative account of Ariadne's companions on Naxos—one of the sources Plutarch sifts to find a fair reading of the abandonment."
+    },
+    {
+      "id": "pelops",
+      "names": [
+        "Pelops"
+      ],
+      "relation": "Ancestor linking Theseus to Hercules",
+      "blurb": "Tantalid hero from whom Pittheus descended; the shared pedigree made Theseus and Hercules cousin-german and gave the younger hero a heroic model to emulate and surpass.",
+      "links": [
+        {
+          "characterId": "pittheus"
+        },
+        {
+          "characterId": "hercules"
+        },
+        {
+          "characterId": "lysidice"
+        }
+      ]
+    },
+    {
+      "id": "homer",
+      "names": [
+        "Homer"
+      ],
+      "relation": "Poet invoked for the catalogue",
+      "blurb": "In the Iliad's catalogue of ships Menestheus commands Athens, not Theseus—an omission Plutarch reads as Homer's political sympathy for the usurper who displaced the founder.",
+      "links": [
+        {
+          "characterId": "menestheus"
+        }
+      ]
+    },
+    {
+      "id": "hesiod",
+      "names": [
+        "Hesiod"
+      ],
+      "relation": "Poet cited for heroic genealogy",
+      "blurb": "Alongside Homer among the earliest poets Plutarch consults when tracing heroic lineage and the myths surrounding Minos and the tribute of Athens."
+    },
+    {
+      "id": "aristotle",
+      "names": [
+        "Aristotle"
+      ],
+      "relation": "Source on the Cretan tribute",
+      "blurb": "His Constitution of the Bottiaeans is cited as evidence that the tribute children went as slaves, not sacrifices—a scholarly tradition Plutarch sets beside the tragic accounts.",
+      "links": [
+        {
+          "characterId": "minos"
+        }
+      ]
+    },
+    {
+      "id": "simonides",
+      "names": [
+        "Simonides"
+      ],
+      "relation": "Poet cited on Ariadne",
+      "blurb": "Cean lyric poet whose account of Ariadne's fate Plutarch compares with others, finding the versions irreconcilable but preserving each as a window on older tradition.",
+      "links": [
+        {
+          "characterId": "ariadne"
+        }
+      ]
+    },
+    {
+      "id": "euripides",
+      "names": [
+        "Euripides"
+      ],
+      "relation": "Tragedian of the Hippolytus story",
+      "blurb": "Plutarch defers to him and the other tragic poets for the Phaedra catastrophe, remarking that all the dramatists agree on the disaster even if they differ on its cause.",
+      "links": [
+        {
+          "characterId": "phaedra"
+        },
+        {
+          "characterId": "hippolytus"
+        }
+      ]
+    },
+    {
+      "id": "apollo",
+      "names": [
+        "Apollo"
+      ],
+      "relation": "God consulted at Delphi",
+      "blurb": "The Pythian oracle shadowed Aegeus's visit to Delphi before Theseus's conception and Theseus's own dedications when he returned victorious from Crete.",
+      "links": [
+        {
+          "characterId": "aegeus"
+        },
+        {
+          "characterId": "pittheus"
+        }
+      ]
+    },
+    {
+      "id": "herodorus",
+      "names": [
+        "Herodorus"
+      ],
+      "relation": "Historian of the Amazon tale",
+      "blurb": "From Heracleia; recorded a version in which Theseus received Antiope as a peaceful gift from her people rather than seizing her—one of several accounts Plutarch cannot adjudicate.",
+      "links": [
+        {
+          "characterId": "antiope"
+        }
+      ]
+    },
+    {
+      "id": "melanippus",
+      "names": [
+        "Melanippus"
+      ],
+      "relation": "Son by Perigune",
+      "blurb": "Theseus's son by the daughter of Sinnis. His descendants settled among Ionians in Asia who, for Perigune's sake, held the asparagus plant sacred and never burned it.",
+      "links": [
+        {
+          "characterId": "perigune"
+        },
+        {
+          "characterId": "sinnis"
+        }
+      ]
+    },
+    {
+      "id": "lysidice",
+      "names": [
+        "Lysidice"
+      ],
+      "relation": "Ancestral figure linking Theseus to Pelops",
+      "blurb": "Daughter of Pelops named in one genealogy as kin of Pittheus—the lineage that placed Theseus inside the great heroic pedigree and justified his emulation of Hercules.",
+      "links": [
+        {
+          "characterId": "pelops"
+        },
+        {
+          "characterId": "pittheus"
+        }
+      ]
+    },
+    {
+      "id": "aeschylus",
+      "names": [
+        "Aeschylus"
+      ],
+      "relation": "Tragedian cited on the Cretan myths",
+      "blurb": "Invoked alongside Euripides as a tragic authority whose treatment of Minos and the tribute Plutarch reads when weighing the differing poetic versions of the story.",
+      "links": [
+        {
+          "characterId": "euripides"
+        },
+        {
+          "characterId": "minos"
+        }
+      ]
+    },
+    {
+      "id": "bacchus",
+      "names": [
+        "Bacchus",
+        "Dionysus"
+      ],
+      "relation": "God who consoled Ariadne on Naxos",
+      "blurb": "In the tradition that exonerates Theseus, Dionysus found and loved Ariadne on Naxos—making the desertion almost a divine bequest rather than a cold betrayal.",
+      "links": [
+        {
+          "characterId": "ariadne"
+        }
+      ]
+    },
+    {
+      "id": "deucalion",
+      "names": [
+        "Deucalion"
+      ],
+      "relation": "Son of Minos; peacemaker",
+      "blurb": "In the tradition that separates Ariadne's story cleanly from Phaedra's, Deucalion struck a treaty with Theseus and bestowed Phaedra in marriage as its seal.",
+      "links": [
+        {
+          "characterId": "minos"
+        },
+        {
+          "characterId": "phaedra"
+        }
+      ]
+    },
+    {
+      "id": "leos",
+      "names": [
+        "Leos"
+      ],
+      "relation": "Betrayer of the Pallantid ambush",
+      "blurb": "Revealed the conspiracy of Pallas and his sons to Theseus, turning the planned ambush into a rout. The Attic deme Leontis preserved his name in civic memory.",
+      "links": [
+        {
+          "characterId": "pallantidae"
+        }
+      ]
+    },
+    {
+      "id": "nausithous",
+      "names": [
+        "Nausithous"
+      ],
+      "relation": "Pilot of the Cretan voyage",
+      "blurb": "Steered the tribute ship to Crete alongside Phaeax; both pilots were afterward honored at the Kyberneseia festival Theseus instituted in Athens.",
+      "links": [
+        {
+          "characterId": "phaeax-theseus"
+        }
+      ]
+    },
+    {
+      "id": "phaeax-theseus",
+      "names": [
+        "Phaeax"
+      ],
+      "relation": "Second pilot of the Cretan voyage",
+      "blurb": "Shared the helm with Nausithous on the passage to Crete; the Kyberneseia rites Theseus founded recalled both pilots' faithful service.",
+      "links": [
+        {
+          "characterId": "nausithous"
         }
       ]
     }

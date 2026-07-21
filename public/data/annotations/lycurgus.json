@@ -322,6 +322,206 @@
           "characterId": "brasidas"
         }
       ]
+    },
+    {
+      "id": "lycurgus",
+      "names": [
+        "Lycurgus"
+      ],
+      "relation": "Subject; Spartan lawgiver",
+      "blurb": "Spartan reformer who—whether by oracle, travel, or force of character—gave his city its lasting constitution of equality, common meals, and trained courage. He starved himself abroad at the last so Sparta could never undo its oath to keep his laws.",
+      "links": [
+        {
+          "characterId": "apollo"
+        },
+        {
+          "characterId": "charilaus"
+        }
+      ]
+    },
+    {
+      "id": "leonidas",
+      "names": [
+        "Leonidas"
+      ],
+      "relation": "Spartan king at Thermopylae",
+      "blurb": "The three hundred at Thermopylae are Plutarch's proof that Lycurgus's training produced men who could face death as a duty; Leonidas is the supreme example of the laws' endurance.",
+      "links": [
+        {
+          "characterId": "brasidas"
+        }
+      ]
+    },
+    {
+      "id": "agesilaus",
+      "names": [
+        "Agesilaus"
+      ],
+      "relation": "Great Spartan king; the laws' finest product",
+      "blurb": "Cited as the living proof that Lycurgus's discipline still produced great commanders centuries later—and that Sparta's decline set in when wealth broke the customs.",
+      "links": [
+        {
+          "characterId": "lysander"
+        }
+      ]
+    },
+    {
+      "id": "eurypon",
+      "names": [
+        "Eurypon"
+      ],
+      "relation": "Ancestor; founder of the royal line",
+      "blurb": "Early king of Sparta from whom the Eurypontid house took its name—the dynastic line Plutarch traces when establishing Lycurgus's right to reform the state.",
+      "links": [
+        {
+          "characterId": "sous"
+        }
+      ]
+    },
+    {
+      "id": "lysander",
+      "names": [
+        "Lysander"
+      ],
+      "relation": "Navarch who bent the laws with wealth",
+      "blurb": "Brilliant admiral whose victory at Aegospotami brought silver and gold flooding into Sparta—the wealth Lycurgus's iron currency was meant to exclude, and the beginning of decline.",
+      "links": [
+        {
+          "characterId": "agesilaus"
+        },
+        {
+          "characterId": "gylippus"
+        }
+      ]
+    },
+    {
+      "id": "homer",
+      "names": [
+        "Homer"
+      ],
+      "relation": "Poet Lycurgus brought to Greece",
+      "blurb": "Plutarch says Lycurgus found Homer's works in Ionia—or had them from Creophylus's descendants in Samos—and was the first to bring them to Greece in ordered form.",
+      "links": [
+        {
+          "characterId": "tyrtaeus"
+        }
+      ]
+    },
+    {
+      "id": "thucydides",
+      "names": [
+        "Thucydides"
+      ],
+      "relation": "Historian who assessed Sparta's power",
+      "blurb": "Noted that Sparta, stripped of its monuments, would seem small to later ages—while its true strength, the disciplined city Lycurgus built, would astonish them."
+    },
+    {
+      "id": "pindar",
+      "names": [
+        "Pindar"
+      ],
+      "relation": "Poet who praised Spartan virtue",
+      "blurb": "Called Sparta a city of divine men who held elder-counsel, young-courage, and choruses of the Muses—a phrase Plutarch cites to show what the whole Greek world saw in the Lycurgan order.",
+      "links": [
+        {
+          "characterId": "terpander"
+        }
+      ]
+    },
+    {
+      "id": "minerva",
+      "names": [
+        "Minerva",
+        "Athena"
+      ],
+      "relation": "Patron goddess of Sparta's Bronze House",
+      "blurb": "Athena Poliachos was worshipped at the famous Bronze House on the Spartan acropolis—the civic goddess whose temple framed Lycurgus's founding dedications.",
+      "links": [
+        {
+          "characterId": "apollo"
+        }
+      ]
+    },
+    {
+      "id": "timaeus",
+      "names": [
+        "Timaeus"
+      ],
+      "relation": "Historian who dates Lycurgus",
+      "blurb": "Sicilian historian cited when Plutarch tries to fix the generation in which Lycurgus lived—a question without a secure answer even in antiquity.",
+      "links": [
+        {
+          "characterId": "iphitus"
+        }
+      ]
+    },
+    {
+      "id": "geradas",
+      "names": [
+        "Geradas"
+      ],
+      "relation": "Ancient Spartan cited on divorce law",
+      "blurb": "A very old Spartan Plutarch quotes on the customs concerning divorce and women—his answers, laconic to the point of comedy, illustrate the Lycurgan spirit perfectly.",
+      "links": [
+        {
+          "characterId": "helots"
+        }
+      ]
+    },
+    {
+      "id": "archidamidas",
+      "names": [
+        "Archidamidas"
+      ],
+      "relation": "Spartan elder; example of Laconic wit",
+      "blurb": "Cited for one of the memorable one-line Spartan answers Plutarch collects—the kind of compressed wisdom Lycurgus's culture prized above all rhetorical flourish.",
+      "links": [
+        {
+          "characterId": "brasidas"
+        }
+      ]
+    },
+    {
+      "id": "aristoxenus",
+      "names": [
+        "Aristoxenus"
+      ],
+      "relation": "Musical theorist who noted Sparta's songs",
+      "blurb": "Peripatetic writer on music cited by Plutarch as evidence that Sparta cultivated disciplined song and lyre—the arts Lycurgus admitted because they served courage, not pleasure.",
+      "links": [
+        {
+          "characterId": "terpander"
+        },
+        {
+          "characterId": "tyrtaeus"
+        }
+      ]
+    },
+    {
+      "id": "antigonus",
+      "names": [
+        "Antigonus"
+      ],
+      "relation": "Macedonian king in an anecdote",
+      "blurb": "Asked an old Spartan what above all preserved Sparta; the answer—contempt for wealth—sums up the Lycurgan principle Plutarch repeats throughout the Life.",
+      "links": [
+        {
+          "characterId": "helots"
+        }
+      ]
+    },
+    {
+      "id": "chilon",
+      "names": [
+        "Chilon"
+      ],
+      "relation": "Spartan ephor and sage",
+      "blurb": "Later counted among the Seven Wise Men of Greece; associated with the ephoralty—the office Theopompus added as a check on kings—and with the terse wisdom Lycurgus's city bred.",
+      "links": [
+        {
+          "characterId": "theopompus"
+        }
+      ]
     }
   ]
 }

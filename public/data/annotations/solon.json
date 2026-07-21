@@ -381,6 +381,184 @@
           "workId": "lycurgus"
         }
       ]
+    },
+    {
+      "id": "solon",
+      "names": [
+        "Solon"
+      ],
+      "relation": "Subject; lawgiver and poet",
+      "blurb": "Athenian merchant-poet who cancelled debts, freed enslaved citizens, and gave Athens a written constitution—then left the city for ten years so no one could force him to repeal it. His verse survives as witness and self-defence.",
+      "links": [
+        {
+          "characterId": "pisistratus"
+        },
+        {
+          "characterId": "draco"
+        },
+        {
+          "characterId": "execestides"
+        }
+      ]
+    },
+    {
+      "id": "apollo",
+      "names": [
+        "Apollo"
+      ],
+      "relation": "God of the Delphic oracle",
+      "blurb": "Solon consulted Delphi before publishing his laws; Apollo's sanction gave the legislation a divine warranty to set beside its rational merit.",
+      "links": [
+        {
+          "characterId": "epimenides"
+        }
+      ]
+    },
+    {
+      "id": "homer",
+      "names": [
+        "Homer"
+      ],
+      "relation": "Poet Solon edited and recited",
+      "blurb": "Solon is said to have arranged and recited Homer's poems in a fixed order at the Panathenaia—one of his cultural acts alongside lawgiving.",
+      "links": [
+        {
+          "characterId": "thespis"
+        }
+      ]
+    },
+    {
+      "id": "aristotle",
+      "names": [
+        "Aristotle"
+      ],
+      "relation": "Philosopher who analyzed the constitution",
+      "blurb": "Plutarch draws on the Athenian Constitution attributed to Aristotle's school when reconstructing Solon's classes, courts, and the legal logic behind the Seisactheia.",
+      "links": [
+        {
+          "characterId": "seisacthea"
+        }
+      ]
+    },
+    {
+      "id": "hermippus",
+      "names": [
+        "Hermippus"
+      ],
+      "relation": "Biographer whose anecdotes Plutarch uses",
+      "blurb": "Alexandrian writer who listed stories of the philosophers and sages; Plutarch borrows several of his anecdotes about Solon's travels and wit.",
+      "links": [
+        {
+          "characterId": "thales"
+        }
+      ]
+    },
+    {
+      "id": "theophrastus",
+      "names": [
+        "Theophrastus"
+      ],
+      "relation": "Peripatetic source on the laws",
+      "blurb": "Aristotle's successor, cited by Plutarch for interpretations of specific Solonian statutes and their intention.",
+      "links": [
+        {
+          "characterId": "aristotle"
+        }
+      ]
+    },
+    {
+      "id": "mimnermus",
+      "names": [
+        "Mimnermus"
+      ],
+      "relation": "Elegist with whom Solon argued in verse",
+      "blurb": "Colophonian poet who set sixty as the happy limit of life; Solon wrote back in elegiac verse insisting eighty was a finer end—an argument conducted entirely in poetry.",
+      "links": [
+        {
+          "characterId": "thespis"
+        }
+      ]
+    },
+    {
+      "id": "ajax",
+      "names": [
+        "Ajax"
+      ],
+      "relation": "Homeric hero in the Salamis dispute",
+      "blurb": "Solon inserted lines about Ajax into a Homeric recitation to prove that Athens—not Megara—had ancestral claim on Salamis; the hero's Attic grave-site sealed the argument.",
+      "links": [
+        {
+          "characterId": "philaeus"
+        }
+      ]
+    },
+    {
+      "id": "philaeus",
+      "names": [
+        "Philaeus"
+      ],
+      "relation": "Son of Ajax who settled Attica",
+      "blurb": "Ajax's son who chose Athens over Salamis and gave the Athenians their genealogical claim to the island that Solon used in the arbitration dispute with Megara.",
+      "links": [
+        {
+          "characterId": "ajax"
+        }
+      ]
+    },
+    {
+      "id": "comias",
+      "names": [
+        "Comias"
+      ],
+      "relation": "Cousin who helped Solon recite on Salamis",
+      "blurb": "Solon's kinsman who accompanied him when he staged his mad recitation in the agora to rouse Athens for Salamis—one of the few named participants in the episode.",
+      "links": [
+        {
+          "characterId": "solon"
+        }
+      ]
+    },
+    {
+      "id": "myron",
+      "names": [
+        "Myron"
+      ],
+      "relation": "Athenian who prosecuted the Alcmaeonidae",
+      "blurb": "Brought formal charges against the Alcmaeonid family for the sacrilegious killing after Cylon's attempted coup—the pollution Solon's age still had to manage.",
+      "links": [
+        {
+          "characterId": "alcmaeon"
+        },
+        {
+          "characterId": "cylon"
+        }
+      ]
+    },
+    {
+      "id": "sappho",
+      "names": [
+        "Sappho"
+      ],
+      "relation": "Poet whose song Solon wished to learn",
+      "blurb": "In the famous anecdote, Solon heard his nephew sing one of Sappho's songs at table and asked to be taught it—he said he wished to know it before he died.",
+      "links": [
+        {
+          "characterId": "solon"
+        }
+      ]
+    },
+    {
+      "id": "dropides",
+      "names": [
+        "Dropides"
+      ],
+      "relation": "Solon's kinsman; link to the Atlantis tale",
+      "blurb": "Solon's relative through whom the story of Atlantis, told him by Egyptian priests, eventually reached Critias and so Plato's dialogues.",
+      "links": [
+        {
+          "characterId": "plato"
+        }
+      ]
     }
   ]
 }

@@ -324,6 +324,166 @@
           "characterId": "artabanus"
         }
       ]
+    },
+    {
+      "id": "themistocles",
+      "names": [
+        "Themistocles"
+      ],
+      "relation": "Subject; architect of Salamis",
+      "blurb": "Athenian of middling birth whose foresight built the Piraeus and the fleet that broke Xerxes at Salamis. Ostracized by the city he saved, he fled to Persia, accepted a satrapy, and died—whether by choice or poison—before he could fight Athens again.",
+      "links": [
+        {
+          "characterId": "xerxes"
+        },
+        {
+          "characterId": "aristides"
+        },
+        {
+          "characterId": "neocles"
+        }
+      ]
+    },
+    {
+      "id": "abrotonon",
+      "names": [
+        "Abrotonon",
+        "Habrotonon"
+      ],
+      "relation": "Possible mother; Thracian woman",
+      "blurb": "One tradition named a Thracian woman called Abrotonon (or Euterpe of Halicarnassus in another) as Themistocles's mother—his obscure birth part of what drove his ferocious ambition.",
+      "links": [
+        {
+          "characterId": "neocles"
+        }
+      ]
+    },
+    {
+      "id": "herodotus",
+      "names": [
+        "Herodotus"
+      ],
+      "relation": "Historian who praised his foresight",
+      "blurb": "Gave Themistocles his most famous endorsement—the praise of his ability to see at a glance what a situation required—which Thucydides and Plutarch repeat and refine.",
+      "links": [
+        {
+          "characterId": "thucydides"
+        }
+      ]
+    },
+    {
+      "id": "theopompus",
+      "names": [
+        "Theopompus"
+      ],
+      "relation": "Historian who counted his children",
+      "blurb": "Chian historian Plutarch cites for a different, larger reckoning of Themistocles's children and marriages—evidence that the general's domestic life was as various as his politics.",
+      "links": [
+        {
+          "characterId": "mnesiptolema"
+        }
+      ]
+    },
+    {
+      "id": "mnesiphilus",
+      "names": [
+        "Mnesiphilus"
+      ],
+      "relation": "Wise adviser before Salamis",
+      "blurb": "Athenian who told Themistocles, before the allied council could dissolve, that the one thing needed was to fight in the strait—the counsel Themistocles brought to Eurybiades as if it were his own.",
+      "links": [
+        {
+          "characterId": "eurybiades"
+        },
+        {
+          "characterId": "aristides"
+        }
+      ]
+    },
+    {
+      "id": "xanthippus",
+      "names": [
+        "Xanthippus"
+      ],
+      "relation": "Rival general; victor at Mycale",
+      "blurb": "Led Athenian forces in the destruction of the Persian fleet at Mycale after Salamis; as a political rival, he also once prosecuted Miltiades—a reminder that Athenian gratitude was never lasting.",
+      "links": [
+        {
+          "characterId": "miltiades"
+        },
+        {
+          "characterId": "cimon"
+        }
+      ]
+    },
+    {
+      "id": "ariamenes",
+      "names": [
+        "Ariamenes"
+      ],
+      "relation": "Xerxes's admiral-brother who fell at Salamis",
+      "blurb": "Xerxes's bravest brother commanded part of the Persian fleet; his death in the battle of Salamis removed the most formidable of the king's naval commanders.",
+      "links": [
+        {
+          "characterId": "xerxes"
+        },
+        {
+          "characterId": "eurybiades"
+        }
+      ]
+    },
+    {
+      "id": "neanthes",
+      "names": [
+        "Neanthes"
+      ],
+      "relation": "Historian of Cyzicus cited",
+      "blurb": "Cited by Plutarch for details about the children of Themistocles, including the daughter's marriages—one of the minor sources that cluster around the exile years.",
+      "links": [
+        {
+          "characterId": "mnesiptolema"
+        }
+      ]
+    },
+    {
+      "id": "diana",
+      "names": [
+        "Diana",
+        "Artemis Aristoboule"
+      ],
+      "relation": "Goddess of the temple he built and named",
+      "blurb": "Themistocles built a shrine to Artemis 'of the Best Counsel' in his deme Melite—naming the goddess after his own strategic gift, a typical piece of Themistoclean self-promotion.",
+      "links": [
+        {
+          "characterId": "themistocles"
+        }
+      ]
+    },
+    {
+      "id": "antiphates",
+      "names": [
+        "Antiphates"
+      ],
+      "relation": "Son who recovered his bones for Athens",
+      "blurb": "Named as the son who eventually brought Themistocles's bones back from Magnesia to be re-buried secretly in Attica, according to the exiled general's own wish.",
+      "links": [
+        {
+          "characterId": "magnesia"
+        }
+      ]
+    },
+    {
+      "id": "cleophantus",
+      "names": [
+        "Cleophantus"
+      ],
+      "relation": "Son famous for horsemanship",
+      "blurb": "Among the children of Themistocles, Cleophantus was remembered as a brilliant horseman—a fact Plutarch preserves from Plato's dialogue on teachable virtue.",
+      "links": [
+        {
+          "characterId": "plato"
+        }
+      ]
     }
   ]
 }

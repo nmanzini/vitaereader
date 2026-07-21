@@ -435,6 +435,230 @@
           "characterId": "pericles"
         }
       ]
+    },
+    {
+      "id": "alcibiades",
+      "names": [
+        "Alcibiades"
+      ],
+      "relation": "Subject; brilliant, ruinous Athenian",
+      "blurb": "Ward of Pericles whose beauty, wealth, and audacity made him the most desired and most dangerous man in Athens. He won great victories, betrayed every city that trusted him, and died by assassins' fire in a Phrygian village—with only Timandra to wrap his body.",
+      "links": [
+        {
+          "characterId": "socrates"
+        },
+        {
+          "characterId": "pericles"
+        },
+        {
+          "characterId": "timandra"
+        }
+      ]
+    },
+    {
+      "id": "theramenes",
+      "names": [
+        "Theramenes"
+      ],
+      "relation": "Oligarch and rival in the revolution",
+      "blurb": "Played all sides in the 411 coup and its collapse; his moves against Alcibiades and Phrynichus illustrate the lethal politics of the age of the Thirty.",
+      "links": [
+        {
+          "characterId": "phrynichus"
+        },
+        {
+          "characterId": "critias"
+        }
+      ]
+    },
+    {
+      "id": "anytus",
+      "names": [
+        "Anytus"
+      ],
+      "relation": "Democratic politician; Alcibiades's enemy",
+      "blurb": "Wealthy tanner-politician who suffered Alcibiades's contemptuous treatment in youth—Plutarch tells the story of wine thrown in his face, which Anytus's admirers found charming rather than insulting.",
+      "links": [
+        {
+          "characterId": "socrates"
+        }
+      ]
+    },
+    {
+      "id": "timon",
+      "names": [
+        "Timon"
+      ],
+      "relation": "Misanthrope who favored him alone",
+      "blurb": "The famous Athenian misanthrope who despised all mankind except Alcibiades—because, he said, the young man would one day cause great calamity to Athens. Plutarch records the prophecy with evident irony.",
+      "links": [
+        {
+          "characterId": "socrates"
+        }
+      ]
+    },
+    {
+      "id": "androcles",
+      "names": [
+        "Androcles"
+      ],
+      "relation": "Demagogue hostile to Alcibiades",
+      "blurb": "Popular leader who stoked the Mysteries panic to drive Alcibiades from the city before the Sicilian fleet sailed; he was himself later killed in the political violence that followed.",
+      "links": [
+        {
+          "characterId": "nicias"
+        },
+        {
+          "characterId": "hyperbolus"
+        }
+      ]
+    },
+    {
+      "id": "ariphron",
+      "names": [
+        "Ariphron"
+      ],
+      "relation": "Guardian alongside Pericles",
+      "blurb": "Pericles's brother who shared legal guardianship of Alcibiades and Clinias after their father's death—but it was Pericles's household that shaped the boy.",
+      "links": [
+        {
+          "characterId": "pericles"
+        },
+        {
+          "characterId": "clinias"
+        }
+      ]
+    },
+    {
+      "id": "plato",
+      "names": [
+        "Plato"
+      ],
+      "relation": "Philosopher who wrote him into the dialogues",
+      "blurb": "Wrote the Symposium and the two Alcibiades dialogues; his portrait of the brilliant, vain, and beloved young man is the deepest literary account Plutarch cites.",
+      "links": [
+        {
+          "characterId": "socrates"
+        }
+      ]
+    },
+    {
+      "id": "thucydides",
+      "names": [
+        "Thucydides"
+      ],
+      "relation": "Historian who assessed him",
+      "blurb": "Judged Alcibiades's conduct of the war brilliantly but his private life disastrously; his cool assessment of the Sicilian expedition as genius undone by personal scandal stands behind Plutarch's account.",
+      "links": [
+        {
+          "characterId": "nicias"
+        }
+      ]
+    },
+    {
+      "id": "aristophanes",
+      "names": [
+        "Aristophanes"
+      ],
+      "relation": "Comic poet who portrayed him",
+      "blurb": "In the Frogs and elsewhere Aristophanes caught Athens's ambivalence about Alcibiades—that the city both longed for him and feared him, missing him as it damned him.",
+      "links": [
+        {
+          "characterId": "andocides"
+        }
+      ]
+    },
+    {
+      "id": "antiphon",
+      "names": [
+        "Antiphon"
+      ],
+      "relation": "Orator and oligarch",
+      "blurb": "Brilliant speechwriter involved in the Four Hundred's revolution; named among the clever, dangerous figures whose careers intersect Alcibiades's last Athenian years.",
+      "links": [
+        {
+          "characterId": "phrynichus"
+        },
+        {
+          "characterId": "critias"
+        }
+      ]
+    },
+    {
+      "id": "diomedes",
+      "names": [
+        "Diomedes"
+      ],
+      "relation": "Owner whose horse Alcibiades kept",
+      "blurb": "An Athenian who gave Alcibiades money to buy a horse at Olympia; Alcibiades entered it under his own name instead—a piece of shameless appropriation Plutarch records without softening.",
+      "links": [
+        {
+          "characterId": "alcibiades"
+        }
+      ]
+    },
+    {
+      "id": "mercury",
+      "names": [
+        "Mercury",
+        "Hermes"
+      ],
+      "relation": "God whose statues were mutilated",
+      "blurb": "The Hermae—herm-pillars of Hermes—were mutilated on the eve of the Sicilian fleet's departure; the sacrilege was blamed on Alcibiades's circle and ignited the Mysteries panic.",
+      "links": [
+        {
+          "characterId": "andocides"
+        },
+        {
+          "characterId": "nicias"
+        }
+      ]
+    },
+    {
+      "id": "ceres",
+      "names": [
+        "Ceres",
+        "Demeter"
+      ],
+      "relation": "Goddess of the parodied Mysteries",
+      "blurb": "The Eleusinian Mysteries of Demeter and Persephone were said to have been parodied at Alcibiades's private parties—the charge that made him a target for prosecution even as the fleet sailed.",
+      "links": [
+        {
+          "characterId": "mercury"
+        },
+        {
+          "characterId": "andocides"
+        }
+      ]
+    },
+    {
+      "id": "theano",
+      "names": [
+        "Theano"
+      ],
+      "relation": "Priestess who refused to curse him",
+      "blurb": "When the assembly ordered Athenian priests to curse Alcibiades formally, Theano alone refused, saying she was a priestess to pray, not to curse—a moment of quiet dignity Plutarch admires.",
+      "links": [
+        {
+          "characterId": "ceres"
+        }
+      ]
+    },
+    {
+      "id": "polytion",
+      "names": [
+        "Polytion"
+      ],
+      "relation": "Wealthy host of the Mysteries parody",
+      "blurb": "Named alongside others at whose houses the sacred Eleusinian rites were reportedly mocked—the social network of the scandal that drove Alcibiades to defect to Sparta.",
+      "links": [
+        {
+          "characterId": "andocides"
+        },
+        {
+          "characterId": "ceres"
+        }
+      ]
     }
   ]
 }

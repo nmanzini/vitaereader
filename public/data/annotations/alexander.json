@@ -682,6 +682,375 @@
           "workId": "caesar"
         }
       ]
+    },
+    {
+      "id": "alexander",
+      "names": [
+        "Alexander"
+      ],
+      "relation": "Subject; conqueror of the Persian Empire",
+      "blurb": "Son of Philip and Olympias who crossed into Asia at twenty-two and never came back. He destroyed the Persian Empire, carried Greek culture to the edges of India, and died at Babylon before he was thirty-three—leaving the world divided among his generals and the question of his greatness permanently open.",
+      "links": [
+        {
+          "characterId": "philip"
+        },
+        {
+          "characterId": "olympias"
+        },
+        {
+          "characterId": "hephaestion"
+        }
+      ]
+    },
+    {
+      "id": "achilles",
+      "names": [
+        "Achilles"
+      ],
+      "relation": "Heroic model he carried to Asia",
+      "blurb": "Alexander kept the Iliad (in Aristotle's recension) under his pillow with a dagger, treating Achilles as his ancestor through Olympias and his ideal of glorious, brief life.",
+      "links": [
+        {
+          "characterId": "homer"
+        },
+        {
+          "characterId": "hephaestion"
+        }
+      ]
+    },
+    {
+      "id": "hercules",
+      "names": [
+        "Hercules"
+      ],
+      "relation": "Divine ancestor through Philip's line",
+      "blurb": "Philip's Argead house claimed Heraclid descent; Alexander invoked Hercules as a competing model alongside Achilles—the laborious civilizer against the glorious warrior.",
+      "links": [
+        {
+          "characterId": "philip"
+        },
+        {
+          "characterId": "bacchus"
+        }
+      ]
+    },
+    {
+      "id": "apollo",
+      "names": [
+        "Apollo"
+      ],
+      "relation": "God of Delphi and the Philippus oracle",
+      "blurb": "The Pythian oracle at Delphi saluted Alexander as son of the god before the campaign—one of the divine endorsements he collected to frame his conquest as heaven-blessed.",
+      "links": [
+        {
+          "characterId": "ammon"
+        }
+      ]
+    },
+    {
+      "id": "bacchus",
+      "names": [
+        "Bacchus",
+        "Dionysus"
+      ],
+      "relation": "Divine ancestor through Olympias's line",
+      "blurb": "Through the Aeacid–Dionysiac lineage Olympias claimed, Alexander was kin to Dionysus, whose Indian conquest he measured himself against and competed to surpass.",
+      "links": [
+        {
+          "characterId": "olympias"
+        },
+        {
+          "characterId": "hercules"
+        }
+      ]
+    },
+    {
+      "id": "ammon",
+      "names": [
+        "Jupiter Ammon",
+        "Ammon"
+      ],
+      "relation": "Oracle god at Siwa; possible divine father",
+      "blurb": "At the oracle of Zeus Ammon in the Libyan desert the priest addressed Alexander as son of the god—an answer he neither confirmed nor denied, and which colored every later claim to divinity.",
+      "links": [
+        {
+          "characterId": "apollo"
+        },
+        {
+          "characterId": "olympias"
+        }
+      ]
+    },
+    {
+      "id": "phoenix",
+      "names": [
+        "Phoenix"
+      ],
+      "relation": "Legendary figure Lysimachus enacted",
+      "blurb": "Tutor Lysimachus cast himself as Phoenix to Alexander's Achilles—a schoolroom fiction that still carried weight when the two travelled together on campaign.",
+      "links": [
+        {
+          "characterId": "lysimachus"
+        },
+        {
+          "characterId": "achilles"
+        }
+      ]
+    },
+    {
+      "id": "peucestes",
+      "names": [
+        "Peucestes"
+      ],
+      "relation": "Bodyguard who shielded him among the Malli",
+      "blurb": "Covered the wounded Alexander with the sacred shield from Ilion when the king leaped alone into the Mallian town; his courage saved Alexander's life in the most reckless moment of the whole campaign.",
+      "links": [
+        {
+          "characterId": "craterus"
+        }
+      ]
+    },
+    {
+      "id": "cassander",
+      "names": [
+        "Cassander"
+      ],
+      "relation": "Antipater's son; object of Alexander's hatred",
+      "blurb": "Laughed at Persians doing proskynesis—and received a near-fatal grip on his hair from Alexander in return. Plutarch records his hatred of Alexander's memory and the poisoning rumor that followed.",
+      "links": [
+        {
+          "characterId": "antipater"
+        }
+      ]
+    },
+    {
+      "id": "aristobulus",
+      "names": [
+        "Aristobulus"
+      ],
+      "relation": "Companion-historian of the campaign",
+      "blurb": "Wrote memoirs of the expedition that Plutarch cites alongside Ptolemy—more sympathetic to Alexander than Callisthenes, less candid than Cleitarchus.",
+      "links": [
+        {
+          "characterId": "ptolemy"
+        },
+        {
+          "characterId": "callisthenes"
+        }
+      ]
+    },
+    {
+      "id": "chares",
+      "names": [
+        "Chares"
+      ],
+      "relation": "Court usher and anecdotist",
+      "blurb": "Royal chamberlain who recorded the dinner-table stories and ceremonies of Alexander's court—the source behind many of Plutarch's intimate scenes and drinking anecdotes.",
+      "links": [
+        {
+          "characterId": "hephaestion"
+        }
+      ]
+    },
+    {
+      "id": "limnus",
+      "names": [
+        "Limnus"
+      ],
+      "relation": "Conspirator who implicated Philotas",
+      "blurb": "Man from Chalaestra whose plot against Alexander first surfaced through a lover rather than through proper military channels—the initial link in the chain that destroyed Philotas and Parmenio.",
+      "links": [
+        {
+          "characterId": "philotas"
+        },
+        {
+          "characterId": "parmenio"
+        }
+      ]
+    },
+    {
+      "id": "amyntas",
+      "names": [
+        "Amyntas"
+      ],
+      "relation": "Macedonian exile who fought for Darius",
+      "blurb": "Fled Philip's Macedon to the Persian court and served Darius, appearing among the opponents at Issus—one of the Greeks who chose the wrong side of history.",
+      "links": [
+        {
+          "characterId": "darius"
+        }
+      ]
+    },
+    {
+      "id": "pixodarus",
+      "names": [
+        "Pixodarus"
+      ],
+      "relation": "Carian dynast in the marriage dispute",
+      "blurb": "Sought a Macedonian bride for his daughter; Philip planned Arrhidaeus for the match, but Alexander secretly intervened—a rash act that revealed his fear of being supplanted.",
+      "links": [
+        {
+          "characterId": "arrhidaeus"
+        },
+        {
+          "characterId": "thessalus"
+        }
+      ]
+    },
+    {
+      "id": "thessalus",
+      "names": [
+        "Thessalus"
+      ],
+      "relation": "Actor sent by Alexander to Pixodarus",
+      "blurb": "Tragic actor Alexander dispatched secretly to Caria to offer himself instead of Arrhidaeus—the blunder that led Philip to exile Alexander's closest friends.",
+      "links": [
+        {
+          "characterId": "pixodarus"
+        },
+        {
+          "characterId": "philip"
+        }
+      ]
+    },
+    {
+      "id": "dandamis",
+      "names": [
+        "Dandamis"
+      ],
+      "relation": "Indian sage who refused Alexander's summons",
+      "blurb": "Senior gymnosophist who told Alexander's envoy that he needed nothing the king could give and feared nothing he could take away—the encounter Plutarch uses to test Alexander's own claim to philosophy.",
+      "links": [
+        {
+          "characterId": "calanus"
+        }
+      ]
+    },
+    {
+      "id": "lysippus",
+      "names": [
+        "Lysippus"
+      ],
+      "relation": "Sculptor allowed to portray Alexander",
+      "blurb": "The only artist Alexander permitted to carve his likeness in bronze; Lysippus alone, Plutarch says, caught the tilt of the head and the liquid glance of the eyes.",
+      "links": [
+        {
+          "characterId": "apelles"
+        }
+      ]
+    },
+    {
+      "id": "apelles",
+      "names": [
+        "Apelles"
+      ],
+      "relation": "Painter authorized to portray him",
+      "blurb": "The greatest painter of the age and the only one Alexander commissioned for his official image—paired with Lysippus as the two artists who captured the king's likeness for posterity.",
+      "links": [
+        {
+          "characterId": "lysippus"
+        }
+      ]
+    },
+    {
+      "id": "rhoesaces",
+      "names": [
+        "Rhoesaces"
+      ],
+      "relation": "Persian who struck him at the Granicus",
+      "blurb": "Delivered a sword blow that sheared Alexander's helmet at the Granicus ford—saved from death only when Clitus cut down Rhoesaces from behind.",
+      "links": [
+        {
+          "characterId": "clitus"
+        },
+        {
+          "characterId": "spithridates"
+        }
+      ]
+    },
+    {
+      "id": "spithridates",
+      "names": [
+        "Spithridates"
+      ],
+      "relation": "Persian satrap who nearly killed him at the Granicus",
+      "blurb": "Raised his sword to cut down Alexander from behind after Rhoesaces's blow; Clitus severed his sword-arm in time—one of the closest moments of the whole campaign.",
+      "links": [
+        {
+          "characterId": "clitus"
+        },
+        {
+          "characterId": "rhoesaces"
+        }
+      ]
+    },
+    {
+      "id": "philoxenus",
+      "names": [
+        "Philoxenus"
+      ],
+      "relation": "Agent who offered Alexander beautiful slaves",
+      "blurb": "Wrote from the coast asking whether the king wished to buy beautiful boys—an offer Alexander found offensive and answered with sharp reproof for imputing such desires to him.",
+      "links": [
+        {
+          "characterId": "hagnon"
+        }
+      ]
+    },
+    {
+      "id": "hagnon",
+      "names": [
+        "Hagnon"
+      ],
+      "relation": "Companion who sent lavish gifts",
+      "blurb": "Sent the king silver-studded boots and other costly presents from Asia; Alexander's rebuke of him and Philoxenus illustrates his early restraint in luxury before the later Eastern habits took hold.",
+      "links": [
+        {
+          "characterId": "philoxenus"
+        }
+      ]
+    },
+    {
+      "id": "artabazus",
+      "names": [
+        "Artabazus"
+      ],
+      "relation": "Elderly Persian satrap; father of Barsine",
+      "blurb": "Old Persian nobleman who had lived at Philip's court as an exile; his long familiarity with Macedonians made him and his daughter Barsine figures Alexander treated with unusual warmth.",
+      "links": [
+        {
+          "characterId": "barsine"
+        }
+      ]
+    },
+    {
+      "id": "thalestris",
+      "names": [
+        "Thalestris"
+      ],
+      "relation": "Amazon queen in the disputed tale",
+      "blurb": "Said to have come with three hundred warrior women to meet Alexander and conceive a child by him; Plutarch lists the many sources who deny the story ever happened.",
+      "links": [
+        {
+          "characterId": "nearchus"
+        }
+      ]
+    },
+    {
+      "id": "medius",
+      "names": [
+        "Medius"
+      ],
+      "relation": "Host of Alexander's last banquet",
+      "blurb": "Larissaean companion at whose party Alexander drank heavily—the night from which he never recovered. Plutarch weighs the feast against the poisoning rumor.",
+      "links": [
+        {
+          "characterId": "cassander"
+        },
+        {
+          "characterId": "antipater"
+        }
+      ]
     }
   ],
   "nameResolutions": [
