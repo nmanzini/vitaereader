@@ -1,0 +1,567 @@
+{
+  "meta": {
+    "gutenbergId": 674,
+    "title": "Plutarch's Lives",
+    "translator": "John Dryden et al.",
+    "editor": "A. H. Clough",
+    "sourceUrl": "https://www.gutenberg.org/ebooks/674",
+    "sourceFormat": "epub",
+    "license": "Public domain in the USA (Project Gutenberg)"
+  },
+  "pairs": [
+    {
+      "id": "theseus-romulus",
+      "slug": "theseus-romulus",
+      "title": "Theseus & Romulus",
+      "greek": [
+        {
+          "id": "theseus",
+          "title": "Theseus",
+          "wordCount": 11957
+        }
+      ],
+      "roman": [
+        {
+          "id": "romulus",
+          "title": "Romulus",
+          "wordCount": 12505
+        }
+      ],
+      "comparison": {
+        "id": "comparison-of-romulus-with-theseus",
+        "title": "Comparison of Romulus with Theseus",
+        "wordCount": 1514
+      }
+    },
+    {
+      "id": "lycurgus-numa",
+      "slug": "lycurgus-numa",
+      "title": "Lycurgus & Numa",
+      "greek": [
+        {
+          "id": "lycurgus",
+          "title": "Lycurgus",
+          "wordCount": 14215
+        }
+      ],
+      "roman": [
+        {
+          "id": "numa-pompilius",
+          "title": "Numa Pompilius",
+          "wordCount": 10610
+        }
+      ],
+      "comparison": {
+        "id": "comparison-of-numa-with-lycurgus",
+        "title": "Comparison of Numa with Lycurgus",
+        "wordCount": 2349
+      }
+    },
+    {
+      "id": "solon-poplicola",
+      "slug": "solon-poplicola",
+      "title": "Solon & Poplicola",
+      "greek": [
+        {
+          "id": "solon",
+          "title": "Solon",
+          "wordCount": 10680
+        }
+      ],
+      "roman": [
+        {
+          "id": "poplicola",
+          "title": "Poplicola",
+          "wordCount": 7355
+        }
+      ],
+      "comparison": {
+        "id": "comparison-of-poplicola-with-solon",
+        "title": "Comparison of Poplicola with Solon",
+        "wordCount": 1238
+      }
+    },
+    {
+      "id": "themistocles-camillus",
+      "slug": "themistocles-camillus",
+      "title": "Themistocles & Camillus",
+      "greek": [
+        {
+          "id": "themistocles",
+          "title": "Themistocles",
+          "wordCount": 12012
+        }
+      ],
+      "roman": [
+        {
+          "id": "camillus",
+          "title": "Camillus",
+          "wordCount": 15913
+        }
+      ],
+      "comparison": null
+    },
+    {
+      "id": "pericles-fabius",
+      "slug": "pericles-fabius",
+      "title": "Pericles & Fabius",
+      "greek": [
+        {
+          "id": "pericles",
+          "title": "Pericles",
+          "wordCount": 16902
+        }
+      ],
+      "roman": [
+        {
+          "id": "fabius",
+          "title": "Fabius",
+          "wordCount": 10995
+        }
+      ],
+      "comparison": {
+        "id": "comparison-of-pericles-with-fabius",
+        "title": "Comparison of Pericles with Fabius",
+        "wordCount": 978
+      }
+    },
+    {
+      "id": "alcibiades-coriolanus",
+      "slug": "alcibiades-coriolanus",
+      "title": "Alcibiades & Coriolanus",
+      "greek": [
+        {
+          "id": "alcibiades",
+          "title": "Alcibiades",
+          "wordCount": 16218
+        }
+      ],
+      "roman": [
+        {
+          "id": "coriolanus",
+          "title": "Coriolanus",
+          "wordCount": 15756
+        }
+      ],
+      "comparison": {
+        "id": "comparison-of-alcibiades-with-coriolanus",
+        "title": "Comparison of Alcibiades with Coriolanus",
+        "wordCount": 1623
+      }
+    },
+    {
+      "id": "timoleon-aemilius",
+      "slug": "timoleon-aemilius",
+      "title": "Timoleon & Aemilius Paulus",
+      "greek": [
+        {
+          "id": "timoleon",
+          "title": "Timoleon",
+          "wordCount": 15622
+        }
+      ],
+      "roman": [
+        {
+          "id": "aemilius-paulus",
+          "title": "Aemilius Paulus",
+          "wordCount": 14260
+        }
+      ],
+      "comparison": {
+        "id": "comparison-of-timoleon-with-aemilius-paulus",
+        "title": "Comparison of Timoleon with Aemilius Paulus",
+        "wordCount": 757
+      }
+    },
+    {
+      "id": "pelopidas-marcellus",
+      "slug": "pelopidas-marcellus",
+      "title": "Pelopidas & Marcellus",
+      "greek": [
+        {
+          "id": "pelopidas",
+          "title": "Pelopidas",
+          "wordCount": 11703
+        }
+      ],
+      "roman": [
+        {
+          "id": "marcellus",
+          "title": "Marcellus",
+          "wordCount": 12005
+        }
+      ],
+      "comparison": {
+        "id": "comparison-of-pelopidas-with-marcellus",
+        "title": "Comparison of Pelopidas with Marcellus",
+        "wordCount": 1202
+      }
+    },
+    {
+      "id": "aristides-marcus-cato",
+      "slug": "aristides-marcus-cato",
+      "title": "Aristides & Marcus Cato",
+      "greek": [
+        {
+          "id": "aristides",
+          "title": "Aristides",
+          "wordCount": 11219
+        }
+      ],
+      "roman": [
+        {
+          "id": "marcus-cato",
+          "title": "Marcus Cato",
+          "wordCount": 11991
+        }
+      ],
+      "comparison": {
+        "id": "comparison-of-aristides-with-marcus-cato",
+        "title": "Comparison of Aristides with Marcus Cato",
+        "wordCount": 1991
+      }
+    },
+    {
+      "id": "philopoemen-flamininus",
+      "slug": "philopoemen-flamininus",
+      "title": "Philopoemen & Flamininus",
+      "greek": [
+        {
+          "id": "philopoemen",
+          "title": "Philopoemen",
+          "wordCount": 7687
+        }
+      ],
+      "roman": [
+        {
+          "id": "flamininus",
+          "title": "Flamininus",
+          "wordCount": 9191
+        }
+      ],
+      "comparison": {
+        "id": "comparison-of-philopoemen-with-flamininus",
+        "title": "Comparison of Philopoemen with Flamininus",
+        "wordCount": 874
+      }
+    },
+    {
+      "id": "pyrrhus-caius-marius",
+      "slug": "pyrrhus-caius-marius",
+      "title": "Pyrrhus & Caius Marius",
+      "greek": [
+        {
+          "id": "pyrrhus",
+          "title": "Pyrrhus",
+          "wordCount": 15298
+        }
+      ],
+      "roman": [
+        {
+          "id": "caius-marius",
+          "title": "Caius Marius",
+          "wordCount": 17993
+        }
+      ],
+      "comparison": null
+    },
+    {
+      "id": "lysander-sylla",
+      "slug": "lysander-sylla",
+      "title": "Lysander & Sylla",
+      "greek": [
+        {
+          "id": "lysander",
+          "title": "Lysander",
+          "wordCount": 11608
+        }
+      ],
+      "roman": [
+        {
+          "id": "sylla",
+          "title": "Sylla",
+          "wordCount": 16059
+        }
+      ],
+      "comparison": {
+        "id": "comparison-of-lysander-with-sylla",
+        "title": "Comparison of Lysander with Sylla",
+        "wordCount": 1705
+      }
+    },
+    {
+      "id": "cimon-lucullus",
+      "slug": "cimon-lucullus",
+      "title": "Cimon & Lucullus",
+      "greek": [
+        {
+          "id": "cimon",
+          "title": "Cimon",
+          "wordCount": 8656
+        }
+      ],
+      "roman": [
+        {
+          "id": "lucullus",
+          "title": "Lucullus",
+          "wordCount": 18178
+        }
+      ],
+      "comparison": {
+        "id": "comparison-of-lucullus-with-cimon",
+        "title": "Comparison of Lucullus with Cimon",
+        "wordCount": 1242
+      }
+    },
+    {
+      "id": "nicias-crassus",
+      "slug": "nicias-crassus",
+      "title": "Nicias & Crassus",
+      "greek": [
+        {
+          "id": "nicias",
+          "title": "Nicias",
+          "wordCount": 13066
+        }
+      ],
+      "roman": [
+        {
+          "id": "crassus",
+          "title": "Crassus",
+          "wordCount": 14427
+        }
+      ],
+      "comparison": {
+        "id": "comparison-of-crassus-with-nicias",
+        "title": "Comparison of Crassus with Nicias",
+        "wordCount": 1756
+      }
+    },
+    {
+      "id": "sertorius-eumenes",
+      "slug": "sertorius-eumenes",
+      "title": "Sertorius & Eumenes",
+      "greek": [
+        {
+          "id": "eumenes",
+          "title": "Eumenes",
+          "wordCount": 7666
+        }
+      ],
+      "roman": [
+        {
+          "id": "sertorius",
+          "title": "Sertorius",
+          "wordCount": 11066
+        }
+      ],
+      "comparison": {
+        "id": "comparison-of-sertorius-with-eumenes",
+        "title": "Comparison of Sertorius with Eumenes",
+        "wordCount": 682
+      }
+    },
+    {
+      "id": "agesilaus-pompey",
+      "slug": "agesilaus-pompey",
+      "title": "Agesilaus & Pompey",
+      "greek": [
+        {
+          "id": "agesilaus",
+          "title": "Agesilaus",
+          "wordCount": 15748
+        }
+      ],
+      "roman": [
+        {
+          "id": "pompey",
+          "title": "Pompey",
+          "wordCount": 33803
+        }
+      ],
+      "comparison": {
+        "id": "comparison-of-pompey-and-agesilaus",
+        "title": "Comparison of Pompey and Agesilaus",
+        "wordCount": 1967
+      }
+    },
+    {
+      "id": "alexander-caesar",
+      "slug": "alexander-caesar",
+      "title": "Alexander & Caesar",
+      "greek": [
+        {
+          "id": "alexander",
+          "title": "Alexander",
+          "wordCount": 31473
+        }
+      ],
+      "roman": [
+        {
+          "id": "caesar",
+          "title": "Caesar",
+          "wordCount": 24080
+        }
+      ],
+      "comparison": null
+    },
+    {
+      "id": "phocion-cato-younger",
+      "slug": "phocion-cato-younger",
+      "title": "Phocion & Cato the Younger",
+      "greek": [
+        {
+          "id": "phocion",
+          "title": "Phocion",
+          "wordCount": 12787
+        }
+      ],
+      "roman": [
+        {
+          "id": "cato-the-younger",
+          "title": "Cato the Younger",
+          "wordCount": 24695
+        }
+      ],
+      "comparison": null
+    },
+    {
+      "id": "agis-gracchi",
+      "slug": "agis-gracchi",
+      "title": "Agis & Cleomenes with the Gracchi",
+      "greek": [
+        {
+          "id": "agis",
+          "title": "Agis",
+          "wordCount": 6980
+        },
+        {
+          "id": "cleomenes",
+          "title": "Cleomenes",
+          "wordCount": 12343
+        }
+      ],
+      "roman": [
+        {
+          "id": "tiberius-gracchus",
+          "title": "Tiberius Gracchus",
+          "wordCount": 7966
+        },
+        {
+          "id": "caius-gracchus",
+          "title": "Caius Gracchus",
+          "wordCount": 6769
+        }
+      ],
+      "comparison": {
+        "id": "comparison-of-tiberius-and-caius-gracchus-with-agis-and-cleomenes",
+        "title": "Comparison of Tiberius and Caius Gracchus with Agis and Cleomenes",
+        "wordCount": 1546
+      }
+    },
+    {
+      "id": "demosthenes-cicero",
+      "slug": "demosthenes-cicero",
+      "title": "Demosthenes & Cicero",
+      "greek": [
+        {
+          "id": "demosthenes",
+          "title": "Demosthenes",
+          "wordCount": 10634
+        }
+      ],
+      "roman": [
+        {
+          "id": "cicero",
+          "title": "Cicero",
+          "wordCount": 16914
+        }
+      ],
+      "comparison": {
+        "id": "comparison-of-demosthenes-and-cicero",
+        "title": "Comparison of Demosthenes and Cicero",
+        "wordCount": 1428
+      }
+    },
+    {
+      "id": "demetrius-antony",
+      "slug": "demetrius-antony",
+      "title": "Demetrius & Antony",
+      "greek": [
+        {
+          "id": "demetrius",
+          "title": "Demetrius",
+          "wordCount": 18630
+        }
+      ],
+      "roman": [
+        {
+          "id": "antony",
+          "title": "Antony",
+          "wordCount": 27912
+        }
+      ],
+      "comparison": {
+        "id": "comparison-of-demetrius-and-antony",
+        "title": "Comparison of Demetrius and Antony",
+        "wordCount": 1169
+      }
+    },
+    {
+      "id": "dion-marcus-brutus",
+      "slug": "dion-marcus-brutus",
+      "title": "Dion & Marcus Brutus",
+      "greek": [
+        {
+          "id": "dion",
+          "title": "Dion",
+          "wordCount": 17855
+        }
+      ],
+      "roman": [
+        {
+          "id": "marcus-brutus",
+          "title": "Marcus Brutus",
+          "wordCount": 19491
+        }
+      ],
+      "comparison": {
+        "id": "comparison-of-dion-and-brutus",
+        "title": "Comparison of Dion and Brutus",
+        "wordCount": 1330
+      }
+    }
+  ],
+  "unpaired": [
+    {
+      "id": "aratus",
+      "title": "Aratus",
+      "wordCount": 17201,
+      "culture": "greek"
+    },
+    {
+      "id": "artaxerxes",
+      "title": "Artaxerxes",
+      "wordCount": 11320,
+      "culture": "greek"
+    },
+    {
+      "id": "galba",
+      "title": "Galba",
+      "wordCount": 9172,
+      "culture": "roman"
+    },
+    {
+      "id": "otho",
+      "title": "Otho",
+      "wordCount": 6105,
+      "culture": "roman"
+    }
+  ],
+  "totals": {
+    "works": 68,
+    "pairs": 22,
+    "unpaired": 4,
+    "words": 740042
+  }
+}

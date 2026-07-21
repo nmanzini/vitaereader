@@ -1,0 +1,35 @@
+{
+  "name": "vitaereader",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "npm run typecheck && vite build",
+    "build:content": "npm run content && npm run build",
+    "content": "node scripts/parse-epub.mjs",
+    "test": "node --experimental-strip-types --test scripts/*.test.mjs",
+    "smoke": "node scripts/smoke.mjs",
+    "lint": "oxlint",
+    "typecheck": "tsc -b",
+    "check": "npm test && npm run lint && npm run typecheck",
+    "verify": "npm run check && npm run smoke",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
+    "react-router-dom": "^7.18.1"
+  },
+  "devDependencies": {
+    "@types/node": "^24.13.2",
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.3",
+    "linkedom": "^0.18.13",
+    "oxlint": "^1.71.0",
+    "typescript": "~6.0.2",
+    "vite": "^8.1.1",
+    "vite-plugin-pwa": "^1.3.0"
+  }
+}

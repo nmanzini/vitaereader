@@ -1,0 +1,119 @@
+.settings-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  background: color-mix(in srgb, var(--ink) 28%, transparent);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 0;
+}
+
+.settings-sheet {
+  width: min(100%, 28rem);
+  max-height: min(88dvh, 40rem);
+  overflow: auto;
+  background: var(--bg-elevated);
+  color: var(--ink);
+  border-radius: 1rem 1rem 0 0;
+  padding: 1.25rem 1.25rem calc(1.5rem + var(--safe-bottom));
+  box-shadow: 0 -12px 40px color-mix(in srgb, var(--ink) 18%, transparent);
+}
+
+@media (min-width: 640px) {
+  .settings-backdrop {
+    align-items: center;
+    padding: 1.5rem;
+  }
+
+  .settings-sheet {
+    border-radius: 0.75rem;
+    padding-bottom: 1.5rem;
+  }
+}
+
+.settings-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.settings-header h2 {
+  font-size: 1.5rem;
+}
+
+.settings-close {
+  font-size: 0.9rem;
+  color: var(--accent);
+}
+
+.settings-section {
+  margin-bottom: 1.35rem;
+}
+
+.settings-section:last-child {
+  margin-bottom: 0;
+}
+
+.settings-section h3 {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  margin-bottom: 0.65rem;
+}
+
+.settings-section .theme-row {
+  margin-bottom: 0;
+}
+
+.settings-segment {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+}
+
+.settings-segment button {
+  text-align: left;
+  padding: 0.85rem 0.9rem;
+  border: 1px solid var(--rule);
+  border-radius: 0.5rem;
+  background: var(--bg);
+}
+
+.settings-segment button.is-active {
+  border-color: var(--ink);
+  background: color-mix(in srgb, var(--ink) 6%, var(--bg));
+}
+
+.settings-segment-label {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+.settings-segment-hint {
+  display: block;
+  margin-top: 0.2rem;
+  font-size: 0.8rem;
+  color: var(--ink-muted);
+}
+
+.settings-action {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--rule);
+  border-radius: 0.5rem;
+  text-align: left;
+  font-size: 0.95rem;
+}
+
+.settings-action[aria-pressed='true'] {
+  border-color: var(--accent);
+  color: var(--accent);
+}

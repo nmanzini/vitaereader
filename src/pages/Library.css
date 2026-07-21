@@ -1,0 +1,116 @@
+.library {
+  max-width: 42rem;
+  margin: 0 auto;
+  padding: 2.5rem var(--pad-x) calc(3rem + var(--safe-bottom));
+}
+
+.library-hero {
+  padding-bottom: 2.5rem;
+  border-bottom: 1px solid var(--rule);
+  margin-bottom: 2.5rem;
+}
+
+.library-brand {
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 10vw, 4.5rem);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  line-height: 0.95;
+  margin: 0 0 0.75rem;
+}
+
+.library-hero h1 {
+  font-size: clamp(1.35rem, 3vw, 1.7rem);
+  font-weight: 500;
+  color: var(--ink-muted);
+  margin-bottom: 1rem;
+}
+
+.library-lede {
+  margin: 0 0 1.5rem;
+  color: var(--ink-muted);
+  max-width: 32rem;
+}
+
+.library-meta {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--ink-muted);
+}
+
+.library-section h2 {
+  font-size: 1.1rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+  margin-bottom: 1rem;
+}
+
+.pair-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.pair-card {
+  display: grid;
+  grid-template-columns: 2.5rem 1fr;
+  gap: 0.75rem;
+  align-items: baseline;
+  padding: 0.85rem 0.25rem;
+  text-decoration: none;
+  border-bottom: 1px solid var(--rule);
+}
+
+.pair-card:hover .pair-title {
+  color: var(--accent);
+}
+
+.pair-num {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  color: var(--ink-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.pair-title {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 600;
+}
+
+.pair-sub {
+  display: block;
+  margin-top: 0.2rem;
+  font-size: 0.92rem;
+  color: var(--ink-muted);
+}
+
+.pair-list li.is-finished .pair-title::after {
+  content: ' · finished';
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: var(--accent);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.library-footer {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--rule);
+  font-size: 0.85rem;
+  color: var(--ink-muted);
+}
+
+.library-loading,
+.library-error {
+  padding: 4rem var(--pad-x);
+  text-align: center;
+  color: var(--ink-muted);
+}
