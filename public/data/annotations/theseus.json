@@ -4,213 +4,600 @@
   "characters": [
     {
       "id": "aegeus",
-      "names": ["Aegeus"],
+      "names": [
+        "Aegeus"
+      ],
       "relation": "Father; king of Athens",
-      "blurb": "King of Athens who left tokens under a stone at Troezen. He later recognized Theseus by the sword, then leapt to his death when the tribute ship returned without the white sail."
+      "blurb": "King of Athens who left tokens under a stone at Troezen. He later recognized Theseus by the sword, then leapt to his death when the tribute ship returned without the white sail.",
+      "links": [
+        {
+          "characterId": "aethra"
+        },
+        {
+          "characterId": "pittheus"
+        },
+        {
+          "characterId": "medea"
+        }
+      ]
     },
     {
       "id": "aethra",
-      "names": ["Aethra"],
+      "names": [
+        "Aethra"
+      ],
       "relation": "Mother",
-      "blurb": "Daughter of Pittheus and mother of Theseus. She revealed his true parentage and later was taken with Helen when Castor and Pollux recovered their sister."
+      "blurb": "Daughter of Pittheus and mother of Theseus. She revealed his true parentage and later was taken with Helen when Castor and Pollux recovered their sister.",
+      "links": [
+        {
+          "characterId": "aegeus"
+        },
+        {
+          "characterId": "pittheus"
+        },
+        {
+          "characterId": "helen"
+        },
+        {
+          "characterId": "dioscuri"
+        }
+      ]
     },
     {
       "id": "pittheus",
-      "names": ["Pittheus"],
+      "names": [
+        "Pittheus"
+      ],
       "relation": "Maternal grandfather; king of Troezen",
-      "blurb": "Wise ruler of Troezen who raised Theseus and steered Aegeus into Aethra’s bed by reading the Delphic oracle to his own advantage."
+      "blurb": "Wise ruler of Troezen who raised Theseus and steered Aegeus into Aethra’s bed by reading the Delphic oracle to his own advantage.",
+      "links": [
+        {
+          "characterId": "aegeus"
+        },
+        {
+          "characterId": "aethra"
+        },
+        {
+          "characterId": "neptune"
+        }
+      ]
     },
     {
       "id": "erechtheus",
-      "names": ["Erechtheus"],
+      "names": [
+        "Erechtheus"
+      ],
       "relation": "Ancestral king of Athens",
-      "blurb": "Early king of Attica from whom Theseus’s paternal house claimed descent—a pedigree Menestheus and the Pallantidae later disputed."
+      "blurb": "Early king of Attica from whom Theseus’s paternal house claimed descent—a pedigree Menestheus and the Pallantidae later disputed.",
+      "links": [
+        {
+          "characterId": "menestheus"
+        },
+        {
+          "characterId": "pallantidae"
+        }
+      ]
     },
     {
       "id": "pallantidae",
-      "names": ["Pallantidae", "Pallas"],
+      "names": [
+        "Pallantidae",
+        "Pallas"
+      ],
       "relation": "Uncle and cousins; rivals for Athens",
-      "blurb": "Pallas and his fifty sons opposed Aegeus and then Theseus. Their ambush failed after Leos betrayed them; the survivors fled."
+      "blurb": "Pallas and his fifty sons opposed Aegeus and then Theseus. Their ambush failed after Leos betrayed them; the survivors fled.",
+      "links": [
+        {
+          "characterId": "aegeus"
+        },
+        {
+          "characterId": "erechtheus"
+        }
+      ]
     },
     {
       "id": "medea",
-      "names": ["Medea"],
+      "names": [
+        "Medea"
+      ],
       "relation": "Aegeus’s consort; nearly poisoned him",
-      "blurb": "Fled Corinth to Aegeus and, fearing a rival heir, nearly had Theseus poisoned at a banquet before Aegeus knew his son."
+      "blurb": "Fled Corinth to Aegeus and, fearing a rival heir, nearly had Theseus poisoned at a banquet before Aegeus knew his son.",
+      "links": [
+        {
+          "characterId": "aegeus"
+        }
+      ]
     },
     {
       "id": "hercules",
-      "names": ["Hercules"],
+      "names": [
+        "Hercules"
+      ],
       "relation": "Cousin and model; later rescuer",
-      "blurb": "The hero Theseus most admired and emulated. Related through Pelops’s line, he later freed Theseus from Aidoneus’s prison in Epirus."
+      "blurb": "The hero Theseus most admired and emulated. Related through Pelops’s line, he later freed Theseus from Aidoneus’s prison in Epirus.",
+      "links": [
+        {
+          "characterId": "aidoneus"
+        },
+        {
+          "characterId": "pirithous"
+        }
+      ]
     },
     {
       "id": "periphetes",
-      "names": ["Periphetes", "Corynetes"],
+      "names": [
+        "Periphetes",
+        "Corynetes"
+      ],
       "relation": "First road villain he slew",
-      "blurb": "Club-bearer near Epidaurus, also called Corynetes. Theseus killed him in combat and kept the club as Hercules kept the lion’s skin."
+      "blurb": "Club-bearer near Epidaurus, also called Corynetes. Theseus killed him in combat and kept the club as Hercules kept the lion’s skin.",
+      "links": [
+        {
+          "characterId": "hercules"
+        },
+        {
+          "characterId": "sinnis"
+        }
+      ]
     },
     {
       "id": "sinnis",
-      "names": ["Sinnis"],
+      "names": [
+        "Sinnis"
+      ],
       "relation": "Pine-bender slain on the Isthmus",
-      "blurb": "Robber who killed travelers by bending pines. Theseus destroyed him the same way and later took his daughter Perigune."
+      "blurb": "Robber who killed travelers by bending pines. Theseus destroyed him the same way and later took his daughter Perigune.",
+      "links": [
+        {
+          "characterId": "perigune"
+        },
+        {
+          "characterId": "sciron"
+        }
+      ]
     },
     {
       "id": "sciron",
-      "names": ["Sciron"],
+      "names": [
+        "Sciron"
+      ],
       "relation": "Cliff robber on the Megarian border",
-      "blurb": "Forced strangers to wash his feet, then kicked them into the sea. Theseus cast him down the same rocks; Megarians later disputed the tale."
+      "blurb": "Forced strangers to wash his feet, then kicked them into the sea. Theseus cast him down the same rocks; Megarians later disputed the tale.",
+      "links": [
+        {
+          "characterId": "sinnis"
+        },
+        {
+          "characterId": "cercyon"
+        }
+      ]
     },
     {
       "id": "cercyon",
-      "names": ["Cercyon"],
+      "names": [
+        "Cercyon"
+      ],
       "relation": "Wrestler at Eleusis",
-      "blurb": "Arcadian who challenged passers-by at Eleusis. Theseus beat him at his own sport and killed him."
+      "blurb": "Arcadian who challenged passers-by at Eleusis. Theseus beat him at his own sport and killed him.",
+      "links": [
+        {
+          "characterId": "sciron"
+        },
+        {
+          "characterId": "procrustes"
+        }
+      ]
     },
     {
       "id": "procrustes",
-      "names": ["Procrustes", "Damastes"],
+      "names": [
+        "Procrustes",
+        "Damastes"
+      ],
       "relation": "Stretcher of strangers’ bodies",
-      "blurb": "Also called Damastes: he forced guests to fit his bed. Theseus fitted him to it in turn, in the style of Hercules’s reprisals."
+      "blurb": "Also called Damastes: he forced guests to fit his bed. Theseus fitted him to it in turn, in the style of Hercules’s reprisals.",
+      "links": [
+        {
+          "characterId": "hercules"
+        },
+        {
+          "characterId": "cercyon"
+        }
+      ]
     },
     {
       "id": "hecale",
-      "names": ["Hecale", "Hecalene"],
+      "names": [
+        "Hecale",
+        "Hecalene"
+      ],
       "relation": "Hostess on the Marathon road",
       "blurb": "Elderly woman who sheltered young Theseus before the Marathonian bull. He later honored her with the Hecalesia rites."
     },
     {
       "id": "minos",
-      "names": ["Minos"],
+      "names": [
+        "Minos"
+      ],
       "relation": "King of Crete; imposed the tribute",
-      "blurb": "Cretan king who warred on Athens after Androgeus’s death and exacted the seven youths and seven maidens. Athenian tragedy blackened his name."
+      "blurb": "Cretan king who warred on Athens after Androgeus’s death and exacted the seven youths and seven maidens. Athenian tragedy blackened his name.",
+      "links": [
+        {
+          "characterId": "androgeus"
+        },
+        {
+          "characterId": "ariadne"
+        },
+        {
+          "characterId": "minotaur"
+        },
+        {
+          "characterId": "daedalus"
+        }
+      ]
     },
     {
       "id": "androgeus",
-      "names": ["Androgeus"],
+      "names": [
+        "Androgeus"
+      ],
       "relation": "Son of Minos; his death sparked the tribute",
-      "blurb": "Murdered in Attica; Minos’s revenge and the gods’ plague drove Athens into the deadly Cretan tribute."
+      "blurb": "Murdered in Attica; Minos’s revenge and the gods’ plague drove Athens into the deadly Cretan tribute.",
+      "links": [
+        {
+          "characterId": "minos"
+        }
+      ]
     },
     {
       "id": "minotaur",
-      "names": ["Minotaur", "Taurus"],
+      "names": [
+        "Minotaur",
+        "Taurus"
+      ],
       "relation": "Cretan monster (or champion) he overcame",
-      "blurb": "In the poetic tale, a bull-man in the labyrinth. Some Cretans say “Taurus” was a cruel games champion; either way, Theseus ended the tribute."
+      "blurb": "In the poetic tale, a bull-man in the labyrinth. Some Cretans say “Taurus” was a cruel games champion; either way, Theseus ended the tribute.",
+      "links": [
+        {
+          "characterId": "minos"
+        },
+        {
+          "characterId": "ariadne"
+        },
+        {
+          "characterId": "daedalus"
+        }
+      ]
     },
     {
       "id": "ariadne",
-      "names": ["Ariadne"],
+      "names": [
+        "Ariadne"
+      ],
       "relation": "Daughter of Minos; helper, then deserted",
-      "blurb": "Gave Theseus the clue through the labyrinth and sailed with him. Stories differ—desertion, Naxos, Cyprus—but she is central to his Cretan fame."
+      "blurb": "Gave Theseus the clue through the labyrinth and sailed with him. Stories differ—desertion, Naxos, Cyprus—but she is central to his Cretan fame.",
+      "links": [
+        {
+          "characterId": "minos"
+        },
+        {
+          "characterId": "minotaur"
+        },
+        {
+          "characterId": "aegle"
+        },
+        {
+          "characterId": "hersilia",
+          "label": "Romulus’s Life",
+          "workId": "romulus"
+        }
+      ]
     },
     {
       "id": "daedalus",
-      "names": ["Daedalus"],
+      "names": [
+        "Daedalus"
+      ],
       "relation": "Craftsman; kin and Cretan guide",
-      "blurb": "Famed artisan who fled Crete to Athens. Theseus claimed him as cousin-german and, in one tradition, used him as a guide against Crete."
+      "blurb": "Famed artisan who fled Crete to Athens. Theseus claimed him as cousin-german and, in one tradition, used him as a guide against Crete.",
+      "links": [
+        {
+          "characterId": "minos"
+        },
+        {
+          "characterId": "minotaur"
+        }
+      ]
     },
     {
       "id": "antiope",
-      "names": ["Antiope", "Hippolyta"],
+      "names": [
+        "Antiope",
+        "Hippolyta"
+      ],
       "relation": "Amazon wife; mother of Hippolytus",
-      "blurb": "Amazon taken (or given) in the Euxine expedition. Historians call her Antiope or Hippolyta; she bore Hippolytus and died in the Amazon war on Attica."
+      "blurb": "Amazon taken (or given) in the Euxine expedition. Historians call her Antiope or Hippolyta; she bore Hippolytus and died in the Amazon war on Attica.",
+      "links": [
+        {
+          "characterId": "hippolytus"
+        },
+        {
+          "characterId": "phaedra"
+        }
+      ]
     },
     {
       "id": "phaedra",
-      "names": ["Phaedra"],
+      "names": [
+        "Phaedra"
+      ],
       "relation": "Later wife; mother of the tragic house",
-      "blurb": "Married after Antiope’s death. Plutarch leaves her calamities with Hippolytus to the tragic poets, who agree on the disaster."
+      "blurb": "Married after Antiope’s death. Plutarch leaves her calamities with Hippolytus to the tragic poets, who agree on the disaster.",
+      "links": [
+        {
+          "characterId": "antiope"
+        },
+        {
+          "characterId": "hippolytus"
+        }
+      ]
     },
     {
       "id": "hippolytus",
-      "names": ["Hippolytus"],
+      "names": [
+        "Hippolytus"
+      ],
       "relation": "Son by Antiope",
-      "blurb": "Son of Theseus and Antiope. His ruin with Phaedra is the stuff of Attic tragedy; Plutarch will not contradict the dramatists."
+      "blurb": "Son of Theseus and Antiope. His ruin with Phaedra is the stuff of Attic tragedy; Plutarch will not contradict the dramatists.",
+      "links": [
+        {
+          "characterId": "antiope"
+        },
+        {
+          "characterId": "phaedra"
+        }
+      ]
     },
     {
       "id": "pirithous",
-      "names": ["Pirithous"],
+      "names": [
+        "Pirithous"
+      ],
       "relation": "Closest friend and brother-in-arms",
-      "blurb": "Lapith prince who tested Theseus by cattle-raiding, then swore friendship. They fought the Centaurs together and later stole Helen—and tried for Aidoneus’s daughter."
+      "blurb": "Lapith prince who tested Theseus by cattle-raiding, then swore friendship. They fought the Centaurs together and later stole Helen—and tried for Aidoneus’s daughter.",
+      "links": [
+        {
+          "characterId": "helen"
+        },
+        {
+          "characterId": "aidoneus"
+        },
+        {
+          "characterId": "hercules"
+        }
+      ]
     },
     {
       "id": "helen",
-      "names": ["Helen"],
+      "names": [
+        "Helen"
+      ],
       "relation": "Abducted as a child; cause of his fall",
-      "blurb": "Taken from Sparta with Pirithous while still too young to marry, then hidden at Aphidnae. Her brothers’ war opened Athens to Menestheus."
+      "blurb": "Taken from Sparta with Pirithous while still too young to marry, then hidden at Aphidnae. Her brothers’ war opened Athens to Menestheus.",
+      "links": [
+        {
+          "characterId": "pirithous"
+        },
+        {
+          "characterId": "dioscuri"
+        },
+        {
+          "characterId": "menestheus"
+        },
+        {
+          "characterId": "academus"
+        }
+      ]
     },
     {
       "id": "dioscuri",
-      "names": ["Castor and Pollux", "Dioscuri", "Anaces"],
+      "names": [
+        "Castor and Pollux",
+        "Dioscuri",
+        "Anaces",
+        "Castor",
+        "Pollux"
+      ],
       "relation": "Helen’s brothers; invaded Attica",
-      "blurb": "Recovered Helen from Aphidnae, were welcomed by Menestheus, and honored at Athens as Anaces. Their war sealed Theseus’s political ruin."
+      "blurb": "Recovered Helen from Aphidnae, were welcomed by Menestheus, and honored at Athens as Anaces. Their war sealed Theseus’s political ruin.",
+      "links": [
+        {
+          "characterId": "helen"
+        },
+        {
+          "characterId": "menestheus"
+        },
+        {
+          "characterId": "academus"
+        }
+      ]
     },
     {
       "id": "menestheus",
-      "names": ["Menestheus"],
+      "names": [
+        "Menestheus"
+      ],
       "relation": "Demagogue who usurped Athens",
-      "blurb": "Descendant of Erechtheus who courted the people against Theseus, aided Castor and Pollux, and held the kingdom until he died in the Trojan war."
+      "blurb": "Descendant of Erechtheus who courted the people against Theseus, aided Castor and Pollux, and held the kingdom until he died in the Trojan war.",
+      "links": [
+        {
+          "characterId": "dioscuri"
+        },
+        {
+          "characterId": "erechtheus"
+        },
+        {
+          "characterId": "lycomedes"
+        }
+      ]
     },
     {
       "id": "academus",
-      "names": ["Academus"],
+      "names": [
+        "Academus"
+      ],
       "relation": "Revealed Helen’s hiding place",
-      "blurb": "Told Castor and Pollux that Helen was at Aphidnae. The Academy was later spared by Spartans for his sake."
+      "blurb": "Told Castor and Pollux that Helen was at Aphidnae. The Academy was later spared by Spartans for his sake.",
+      "links": [
+        {
+          "characterId": "helen"
+        },
+        {
+          "characterId": "dioscuri"
+        },
+        {
+          "characterId": "aphidnus"
+        }
+      ]
     },
     {
       "id": "aphidnus",
-      "names": ["Aphidnus"],
+      "names": [
+        "Aphidnus"
+      ],
       "relation": "Ally who kept Helen at Aphidnae",
-      "blurb": "Trusted with Helen (and Aethra) at Aphidnae. He later adopted Castor and Pollux when they were initiated at Athens."
+      "blurb": "Trusted with Helen (and Aethra) at Aphidnae. He later adopted Castor and Pollux when they were initiated at Athens.",
+      "links": [
+        {
+          "characterId": "helen"
+        },
+        {
+          "characterId": "aethra"
+        },
+        {
+          "characterId": "dioscuri"
+        }
+      ]
     },
     {
       "id": "aidoneus",
-      "names": ["Aidoneus", "Pluto"],
+      "names": [
+        "Aidoneus",
+        "Pluto"
+      ],
       "relation": "Molossian king who imprisoned him",
-      "blurb": "King in Epirus who styled his household after the underworld. He threw Pirithous to his dog and jailed Theseus until Hercules begged his release."
+      "blurb": "King in Epirus who styled his household after the underworld. He threw Pirithous to his dog and jailed Theseus until Hercules begged his release.",
+      "links": [
+        {
+          "characterId": "pirithous"
+        },
+        {
+          "characterId": "hercules"
+        }
+      ]
     },
     {
       "id": "lycomedes",
-      "names": ["Lycomedes"],
+      "names": [
+        "Lycomedes"
+      ],
       "relation": "King of Scyros; agent of his death",
-      "blurb": "Host on Scyros who—jealous, or to please Menestheus—hurled Theseus from a cliff. Others say Theseus slipped after supper."
+      "blurb": "Host on Scyros who—jealous, or to please Menestheus—hurled Theseus from a cliff. Others say Theseus slipped after supper.",
+      "links": [
+        {
+          "characterId": "menestheus"
+        },
+        {
+          "characterId": "cimon"
+        }
+      ]
     },
     {
       "id": "elephenor",
-      "names": ["Elephenor"],
+      "names": [
+        "Elephenor"
+      ],
       "relation": "Guardian of Theseus’s children",
-      "blurb": "Son of Chalcodon in Euboea; Theseus sent his children to him before sailing to Scyros. They later went with him to Troy."
+      "blurb": "Son of Chalcodon in Euboea; Theseus sent his children to him before sailing to Scyros. They later went with him to Troy.",
+      "links": [
+        {
+          "characterId": "lycomedes"
+        }
+      ]
     },
     {
       "id": "cimon",
-      "names": ["Cimon"],
+      "names": [
+        "Cimon"
+      ],
       "relation": "Later recovered his bones for Athens",
-      "blurb": "Athenian general who took Scyros and, guided by an eagle, found Theseus’s coffin and brought the relics home in state."
+      "blurb": "Athenian general who took Scyros and, guided by an eagle, found Theseus’s coffin and brought the relics home in state.",
+      "links": [
+        {
+          "characterId": "lycomedes"
+        },
+        {
+          "characterId": "cimon-life",
+          "label": "Cimon’s Life",
+          "workId": "cimon"
+        }
+      ]
     },
     {
       "id": "neptune",
-      "names": ["Neptune"],
+      "names": [
+        "Neptune"
+      ],
       "relation": "Reputed divine father",
-      "blurb": "Troezen’s chief god; Pittheus spread the story that Neptune, not Aegeus, had begotten Theseus—a claim that fed his heroic prestige."
+      "blurb": "Troezen’s chief god; Pittheus spread the story that Neptune, not Aegeus, had begotten Theseus—a claim that fed his heroic prestige.",
+      "links": [
+        {
+          "characterId": "pittheus"
+        },
+        {
+          "characterId": "aegeus"
+        }
+      ]
     },
     {
       "id": "aegle",
-      "names": ["Aegle"],
+      "names": [
+        "Aegle"
+      ],
       "relation": "Love for whom he deserted Ariadne",
-      "blurb": "Daughter of Panopeus. One tradition says desire for her made Theseus leave Ariadne—a charge Plutarch calls neither just nor honorable."
+      "blurb": "Daughter of Panopeus. One tradition says desire for her made Theseus leave Ariadne—a charge Plutarch calls neither just nor honorable.",
+      "links": [
+        {
+          "characterId": "ariadne"
+        }
+      ]
     },
     {
       "id": "phaea",
-      "names": ["Phaea"],
+      "names": [
+        "Phaea"
+      ],
       "relation": "Crommyonian sow (or woman-robber)",
-      "blurb": "The savage Crommyonian sow—or, in another telling, a cruel woman nicknamed Sow—whom Theseus sought out and killed."
+      "blurb": "The savage Crommyonian sow—or, in another telling, a cruel woman nicknamed Sow—whom Theseus sought out and killed.",
+      "links": [
+        {
+          "characterId": "sinnis"
+        }
+      ]
     },
     {
       "id": "perigune",
-      "names": ["Perigune"],
+      "names": [
+        "Perigune"
+      ],
       "relation": "Daughter of Sinnis; bore him Melanippus",
-      "blurb": "Hid among brush after her father’s death, then came out on Theseus’s promise. She bore him Melanippus and later married Deioneus."
+      "blurb": "Hid among brush after her father’s death, then came out on Theseus’s promise. She bore him Melanippus and later married Deioneus.",
+      "links": [
+        {
+          "characterId": "sinnis"
+        }
+      ]
     }
   ]
 }

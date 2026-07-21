@@ -1,0 +1,440 @@
+{
+  "workId": "alcibiades",
+  "subject": "Alcibiades",
+  "characters": [
+    {
+      "id": "socrates",
+      "names": [
+        "Socrates"
+      ],
+      "relation": "Lover-teacher who tried to rein him",
+      "blurb": "Sought Alcibiades’s soul more than his beauty; saved his life in battle and stood as the one man he truly feared to shame.",
+      "links": [
+        {
+          "characterId": "clinias"
+        },
+        {
+          "characterId": "hipparete"
+        },
+        {
+          "characterId": "tullus",
+          "label": "Coriolanus’s Life",
+          "workId": "coriolanus"
+        }
+      ]
+    },
+    {
+      "id": "nicias",
+      "names": [
+        "Nicias"
+      ],
+      "relation": "Cautious rival for the demos",
+      "blurb": "Wealthy dove who opposed the Sicilian dream. Ostracism nearly took one of them; Hyperbolus fell instead—and Sicily ruined both.",
+      "links": [
+        {
+          "characterId": "lamachus"
+        },
+        {
+          "characterId": "hyperbolus"
+        },
+        {
+          "characterId": "gylippus"
+        }
+      ]
+    },
+    {
+      "id": "pericles",
+      "names": [
+        "Pericles"
+      ],
+      "relation": "Guardian of his youth",
+      "blurb": "Kinsman who raised Alcibiades after Clinias’s death—the standard of glory the ward both imitated and outraged.",
+      "links": [
+        {
+          "characterId": "clinias"
+        },
+        {
+          "characterId": "socrates"
+        },
+        {
+          "characterId": "pericles-life",
+          "label": "Pericles’s Life",
+          "workId": "pericles"
+        }
+      ]
+    },
+    {
+      "id": "clinias",
+      "names": [
+        "Clinias"
+      ],
+      "relation": "Father; fallen in battle",
+      "blurb": "Died at Coronea; his fame and Alcmaeonid ties left Alcibiades rich, brilliant, and dangerously unsupervised.",
+      "links": [
+        {
+          "characterId": "pericles"
+        },
+        {
+          "characterId": "socrates"
+        }
+      ]
+    },
+    {
+      "id": "hipparete",
+      "names": [
+        "Hipparete"
+      ],
+      "relation": "Wife",
+      "blurb": "Daughter of Hipponicus; tried to leave Alcibiades over his courtesans, then was fetched home from the archon’s office.",
+      "links": [
+        {
+          "characterId": "hipponicus"
+        },
+        {
+          "characterId": "callias"
+        },
+        {
+          "characterId": "socrates"
+        }
+      ]
+    },
+    {
+      "id": "hipponicus",
+      "names": [
+        "Hipponicus"
+      ],
+      "relation": "Father-in-law; richest Athenian",
+      "blurb": "Torch-bearer of the Mysteries whose wealth and daughter tied Alcibiades to the first houses of Athens.",
+      "links": [
+        {
+          "characterId": "hipparete"
+        },
+        {
+          "characterId": "callias"
+        }
+      ]
+    },
+    {
+      "id": "callias",
+      "names": [
+        "Callias"
+      ],
+      "relation": "Brother-in-law",
+      "blurb": "Heir of Hipponicus; tangled with Alcibiades in money, marriage, and the gossip of high Athens.",
+      "links": [
+        {
+          "characterId": "hipponicus"
+        },
+        {
+          "characterId": "hipparete"
+        }
+      ]
+    },
+    {
+      "id": "pharnabazus",
+      "names": [
+        "Pharnabazus"
+      ],
+      "relation": "Persian satrap; final host and killer",
+      "blurb": "Phrygian satrap who alternately helped and hunted him; Lysander finally had him arrange Alcibiades’s murder.",
+      "links": [
+        {
+          "characterId": "tisaphernes"
+        },
+        {
+          "characterId": "lysander"
+        },
+        {
+          "characterId": "timandra"
+        }
+      ]
+    },
+    {
+      "id": "tisaphernes",
+      "names": [
+        "Tisaphernes"
+      ],
+      "relation": "Satrap Alcibiades courted",
+      "blurb": "Persian governor in Asia whom Alcibiades dazzled and advised—playing Persia against Sparta for Athens’s sake (and his own).",
+      "links": [
+        {
+          "characterId": "pharnabazus"
+        },
+        {
+          "characterId": "lysander"
+        },
+        {
+          "characterId": "agis"
+        }
+      ]
+    },
+    {
+      "id": "lysander",
+      "names": [
+        "Lysander"
+      ],
+      "relation": "Spartan who engineered his death",
+      "blurb": "Navarch who closed the war at Aegospotami and would not leave Alcibiades alive to threaten the new order.",
+      "links": [
+        {
+          "characterId": "pharnabazus"
+        },
+        {
+          "characterId": "agis"
+        },
+        {
+          "characterId": "lysander-life",
+          "label": "Lysander’s Life",
+          "workId": "lysander"
+        }
+      ]
+    },
+    {
+      "id": "lamachus",
+      "names": [
+        "Lamachus"
+      ],
+      "relation": "Third general for Sicily",
+      "blurb": "Blunt soldier who wanted to attack Syracuse at once; died early, leaving Nicias alone with a war he hated.",
+      "links": [
+        {
+          "characterId": "nicias"
+        },
+        {
+          "characterId": "gylippus"
+        }
+      ]
+    },
+    {
+      "id": "gylippus",
+      "names": [
+        "Gylippus"
+      ],
+      "relation": "Spartan savior of Syracuse",
+      "blurb": "Arrived to stiffen Sicily against Athens; his skill sealed the disaster Alcibiades had sold to the demos.",
+      "links": [
+        {
+          "characterId": "nicias"
+        },
+        {
+          "characterId": "lamachus"
+        }
+      ]
+    },
+    {
+      "id": "andocides",
+      "names": [
+        "Andocides"
+      ],
+      "relation": "Orator tangled in the Mysteries scandal",
+      "blurb": "Named in the Hermae/Mysteries panic that exploded as the Sicilian fleet sailed—the storm that drove Alcibiades to flee.",
+      "links": [
+        {
+          "characterId": "nicias"
+        },
+        {
+          "characterId": "phrynichus"
+        }
+      ]
+    },
+    {
+      "id": "hyperbolus",
+      "names": [
+        "Hyperbolus"
+      ],
+      "relation": "Demagogue ruined by ostracism",
+      "blurb": "Tried to ostracize Alcibiades or Nicias; they combined and ostracized him instead—the last such vote.",
+      "links": [
+        {
+          "characterId": "nicias"
+        },
+        {
+          "characterId": "phaeax"
+        }
+      ]
+    },
+    {
+      "id": "phaeax",
+      "names": [
+        "Phaeax"
+      ],
+      "relation": "Orator in the ostracism triangle",
+      "blurb": "Third man in the political fight that ended Hyperbolus; polished speaker without Alcibiades’s force.",
+      "links": [
+        {
+          "characterId": "hyperbolus"
+        },
+        {
+          "characterId": "nicias"
+        }
+      ]
+    },
+    {
+      "id": "agis",
+      "names": [
+        "Agis"
+      ],
+      "relation": "Spartan king; cuckolded in rumor",
+      "blurb": "Host at Sparta whose wife Timaea was said to bear Alcibiades a child—personal hate atop policy.",
+      "links": [
+        {
+          "characterId": "timaea"
+        },
+        {
+          "characterId": "lysander"
+        },
+        {
+          "characterId": "tisaphernes"
+        }
+      ]
+    },
+    {
+      "id": "timaea",
+      "names": [
+        "Timaea"
+      ],
+      "relation": "Wife of Agis",
+      "blurb": "Queen whispered to have loved Alcibiades; the scandal sharpened Agis’s enmity.",
+      "links": [
+        {
+          "characterId": "agis"
+        }
+      ]
+    },
+    {
+      "id": "phrynichus",
+      "names": [
+        "Phrynichus"
+      ],
+      "relation": "Oligarchic enemy at Samos",
+      "blurb": "General who opposed recalling Alcibiades; later murdered after playing all sides in the 411 revolution.",
+      "links": [
+        {
+          "characterId": "thrasybulus"
+        },
+        {
+          "characterId": "tisaphernes"
+        }
+      ]
+    },
+    {
+      "id": "thrasybulus",
+      "names": [
+        "Thrasybulus"
+      ],
+      "relation": "Captain of the Samos democrats",
+      "blurb": "Helped bring Alcibiades back to the fleet; later restorer of democracy at Athens.",
+      "links": [
+        {
+          "characterId": "thrasyllus"
+        },
+        {
+          "characterId": "phrynichus"
+        }
+      ]
+    },
+    {
+      "id": "thrasyllus",
+      "names": [
+        "Thrasyllus"
+      ],
+      "relation": "Colleague in the Hellespont wars",
+      "blurb": "Shared commands in the Ionian and Hellespontine campaigns of Alcibiades’s second Athenian career.",
+      "links": [
+        {
+          "characterId": "thrasybulus"
+        },
+        {
+          "characterId": "mindarus"
+        }
+      ]
+    },
+    {
+      "id": "mindarus",
+      "names": [
+        "Mindarus"
+      ],
+      "relation": "Spartan admiral beaten at Cyzicus",
+      "blurb": "Fell when Alcibiades and the Athenian captains destroyed his fleet—the peak of the recall years.",
+      "links": [
+        {
+          "characterId": "thrasyllus"
+        },
+        {
+          "characterId": "pharnabazus"
+        }
+      ]
+    },
+    {
+      "id": "antiochus",
+      "names": [
+        "Antiochus"
+      ],
+      "relation": "Pilot whose folly lost Notion",
+      "blurb": "Left in charge against orders, he provoked Lysander and lost ships—the excuse Athens used to cashier Alcibiades again.",
+      "links": [
+        {
+          "characterId": "lysander"
+        }
+      ]
+    },
+    {
+      "id": "timandra",
+      "names": [
+        "Timandra"
+      ],
+      "relation": "Companion at his death",
+      "blurb": "Courtesan who was with him in Phrygia and wrapped his body after the assassins burned him out.",
+      "links": [
+        {
+          "characterId": "pharnabazus"
+        },
+        {
+          "characterId": "lysander"
+        }
+      ]
+    },
+    {
+      "id": "astyochus",
+      "names": [
+        "Astyochus"
+      ],
+      "relation": "Spartan navarch in Ionia",
+      "blurb": "Commander entangled in the Persian–Spartan deals Alcibiades tried to manage through Tisaphernes.",
+      "links": [
+        {
+          "characterId": "tisaphernes"
+        },
+        {
+          "characterId": "phrynichus"
+        }
+      ]
+    },
+    {
+      "id": "critias",
+      "names": [
+        "Critias"
+      ],
+      "relation": "Later oligarch; once associate",
+      "blurb": "Appears among the clever, dangerous young men of Alcibiades’s set—foreshadowing the Thirty.",
+      "links": [
+        {
+          "characterId": "socrates"
+        }
+      ]
+    },
+    {
+      "id": "euryptolemus",
+      "names": [
+        "Euryptolemus"
+      ],
+      "relation": "Kinsman who spoke for him",
+      "blurb": "Relative who defended Alcibiades’s interests in the assembly during the recalls and accusations.",
+      "links": [
+        {
+          "characterId": "pericles"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,330 @@
+{
+  "workId": "fabius",
+  "subject": "Fabius",
+  "characters": [
+    {
+      "id": "hannibal",
+      "names": [
+        "Hannibal"
+      ],
+      "relation": "Carthaginian invader he refused to rush",
+      "blurb": "Master of Trasimene and Cannae. Fabius’s delays denied him a decisive Roman ruin—and earned Fabius the mockery of hotter Romans.",
+      "links": [
+        {
+          "characterId": "minucius"
+        },
+        {
+          "characterId": "varro"
+        },
+        {
+          "characterId": "marcellus"
+        },
+        {
+          "characterId": "gisco"
+        }
+      ]
+    },
+    {
+      "id": "minucius",
+      "names": [
+        "Minucius"
+      ],
+      "relation": "Master of the Horse who forced a fight",
+      "blurb": "Made co-dictator by popular anger at delay; his rash advance nearly destroyed the army until Fabius marched to save him.",
+      "links": [
+        {
+          "characterId": "hannibal"
+        },
+        {
+          "characterId": "metilius"
+        }
+      ]
+    },
+    {
+      "id": "scipio",
+      "names": [
+        "Scipio"
+      ],
+      "relation": "Younger Africanus; opposed his caution",
+      "blurb": "Pushed the war into Africa against Fabius’s advice. History favored Scipio’s boldness—Plutarch still honors Fabius’s earlier salvation.",
+      "links": [
+        {
+          "characterId": "hannibal"
+        },
+        {
+          "characterId": "marcellus"
+        }
+      ]
+    },
+    {
+      "id": "flaminius",
+      "names": [
+        "Flaminius"
+      ],
+      "relation": "Consul routed at Trasimene",
+      "blurb": "Popular general who ignored auspices and Fabius’s temper; Hannibal trapped him at the lake and killed him with the army.",
+      "links": [
+        {
+          "characterId": "hannibal"
+        },
+        {
+          "characterId": "varro"
+        }
+      ]
+    },
+    {
+      "id": "varro",
+      "names": [
+        "Varro"
+      ],
+      "relation": "Consul of Cannae",
+      "blurb": "Plebeian consul who forced battle at Cannae against Paulus’s caution; the disaster vindicated Fabius’s strategy too late.",
+      "links": [
+        {
+          "characterId": "aemilius"
+        },
+        {
+          "characterId": "hannibal"
+        },
+        {
+          "characterId": "flaminius"
+        }
+      ]
+    },
+    {
+      "id": "aemilius",
+      "names": [
+        "Aemilius Paulus",
+        "Aemilius",
+        "Paulus"
+      ],
+      "relation": "Colleague fallen at Cannae",
+      "blurb": "Patrician consul who preferred Fabian delay; died fighting at Cannae after Varro’s aggression.",
+      "links": [
+        {
+          "characterId": "varro"
+        },
+        {
+          "characterId": "hannibal"
+        }
+      ]
+    },
+    {
+      "id": "marcellus",
+      "names": [
+        "Marcellus"
+      ],
+      "relation": "Sword beside Fabius’s shield",
+      "blurb": "Aggressive counterpart in the later war—the pair Romans called the shield and sword of the Republic against Hannibal.",
+      "links": [
+        {
+          "characterId": "hannibal"
+        },
+        {
+          "characterId": "scipio"
+        },
+        {
+          "characterId": "marcellus-life",
+          "label": "Marcellus’s Life",
+          "workId": "marcellus"
+        }
+      ]
+    },
+    {
+      "id": "metilius",
+      "names": [
+        "Metilius"
+      ],
+      "relation": "Tribune who elevated Minucius",
+      "blurb": "Attacked Fabius’s dictatorship in the assembly and carried the law that made Minucius equal in command.",
+      "links": [
+        {
+          "characterId": "minucius"
+        },
+        {
+          "characterId": "hannibal"
+        }
+      ]
+    },
+    {
+      "id": "gisco",
+      "names": [
+        "Gisco"
+      ],
+      "relation": "Carthaginian in Hannibal’s camp",
+      "blurb": "Officer who, looking at the small Roman camp, wondered that they still dared show themselves after so many defeats.",
+      "links": [
+        {
+          "characterId": "hannibal"
+        }
+      ]
+    },
+    {
+      "id": "tarentum",
+      "names": [
+        "Tarentum"
+      ],
+      "relation": "Great city Fabius recovered",
+      "blurb": "Greek city in Italy Hannibal held by treachery; Fabius retook it and kept his famous refusal to plunder the gods’ colossus lightly.",
+      "links": [
+        {
+          "characterId": "hannibal"
+        },
+        {
+          "characterId": "bruttian"
+        }
+      ]
+    },
+    {
+      "id": "bruttian",
+      "names": [
+        "Bruttian"
+      ],
+      "relation": "Southern Italians in Hannibal’s web",
+      "blurb": "Region and people caught between Rome and Carthage; Fabius’s operations against Tarentum turn on their betrayals.",
+      "links": [
+        {
+          "characterId": "tarentum"
+        },
+        {
+          "characterId": "hannibal"
+        }
+      ]
+    },
+    {
+      "id": "maximus",
+      "names": [
+        "Maximus"
+      ],
+      "relation": "Family surname of the Delayer",
+      "blurb": "Title of Fabius’s house—already great before he became Cunctator by saving Rome through patience.",
+      "links": [
+        {
+          "characterId": "verrucosus"
+        }
+      ]
+    },
+    {
+      "id": "verrucosus",
+      "names": [
+        "Verrucosus",
+        "Ovicula"
+      ],
+      "relation": "Nicknames from wart and mildness",
+      "blurb": "Called Verrucosus for a wart above the lip, and Ovicula for a soft youthful manner that hid a stubborn will.",
+      "links": [
+        {
+          "characterId": "maximus"
+        }
+      ]
+    },
+    {
+      "id": "livius",
+      "names": [
+        "Livius"
+      ],
+      "relation": "Colleague in later commands",
+      "blurb": "Appears among the consular generation that fought on after Cannae while Fabius’s authority still steadied Rome.",
+      "links": [
+        {
+          "characterId": "hannibal"
+        },
+        {
+          "characterId": "marcellus"
+        }
+      ]
+    },
+    {
+      "id": "carthage",
+      "names": [
+        "Carthage"
+      ],
+      "relation": "Enemy city across the sea",
+      "blurb": "Mother city of Hannibal’s war. Fabius feared a young Scipio would leave Italy bare to strike it.",
+      "links": [
+        {
+          "characterId": "hannibal"
+        },
+        {
+          "characterId": "scipio"
+        }
+      ]
+    },
+    {
+      "id": "hercules",
+      "names": [
+        "Hercules"
+      ],
+      "relation": "God of a vow after Trasimene",
+      "blurb": "Fabius vowed a sacred spring and games to Hercules (and other rites) to steady Roman religion after the lake disaster.",
+      "links": [
+        {
+          "characterId": "flaminius"
+        }
+      ]
+    },
+    {
+      "id": "claudius",
+      "names": [
+        "Claudius"
+      ],
+      "relation": "Claudian colleagues in the Fasti",
+      "blurb": "Members of the Claudii share the consular years of the Hannibalic war beside Fabius’s dictatorships.",
+      "links": [
+        {
+          "characterId": "livius"
+        }
+      ]
+    },
+    {
+      "id": "pericles-cross",
+      "names": [
+        "Pericles"
+      ],
+      "relation": "Greek pair in the Parallel Lives",
+      "blurb": "Pericles is Fabius’s match: each a deliberate leader accused of softness by men who loved quick battles.",
+      "links": [
+        {
+          "characterId": "archidamus",
+          "label": "Pericles’s Life",
+          "workId": "pericles"
+        }
+      ]
+    },
+    {
+      "id": "carthaginians",
+      "names": [
+        "Carthaginians"
+      ],
+      "relation": "Hannibal’s people",
+      "blurb": "The Punic enemy in Italy and Spain; Fabius’s strategy was to wear them down without offering another Cannae.",
+      "links": [
+        {
+          "characterId": "hannibal"
+        },
+        {
+          "characterId": "carthage"
+        }
+      ]
+    },
+    {
+      "id": "fabius-maximus",
+      "names": [
+        "Fabius Maximus"
+      ],
+      "relation": "Full honorific of the Delayer",
+      "blurb": "The name Romans used for the dictator who saved the state by refusing Hannibal’s invitations to ruin.",
+      "links": [
+        {
+          "characterId": "hannibal"
+        },
+        {
+          "characterId": "minucius"
+        },
+        {
+          "characterId": "maximus"
+        }
+      ]
+    }
+  ]
+}

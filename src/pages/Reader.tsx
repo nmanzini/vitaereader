@@ -454,6 +454,8 @@ export function Reader() {
         open={activeChar != null}
         character={activeChar}
         subject={annotations?.subject ?? work.title}
+        characters={annotations?.characters ?? []}
+        currentWorkId={work.id}
         onClose={() => setActiveChar(null)}
       />
 

@@ -1,0 +1,327 @@
+{
+  "workId": "lycurgus",
+  "subject": "Lycurgus",
+  "characters": [
+    {
+      "id": "polydectes",
+      "names": [
+        "Polydectes"
+      ],
+      "relation": "Elder brother; king before him",
+      "blurb": "King of Sparta whose death left a pregnant queen. Lycurgus ruled as guardian until Charilaus was born.",
+      "links": [
+        {
+          "characterId": "charilaus"
+        }
+      ]
+    },
+    {
+      "id": "charilaus",
+      "names": [
+        "Charilaus",
+        "Charillus"
+      ],
+      "relation": "Infant nephew; king he protected",
+      "blurb": "Son of Polydectes. Lycurgus placed the child on the throne and later fled suspicion—then returned with the great reforms.",
+      "links": [
+        {
+          "characterId": "polydectes"
+        }
+      ]
+    },
+    {
+      "id": "eunomus",
+      "names": [
+        "Eunomus"
+      ],
+      "relation": "Father (in one genealogy)",
+      "blurb": "Named among Lycurgus’s ancestors in the Eurypontid line; part of the tangled royal pedigree Plutarch rehearses.",
+      "links": [
+        {
+          "characterId": "sous"
+        }
+      ]
+    },
+    {
+      "id": "sous",
+      "names": [
+        "Sous"
+      ],
+      "relation": "Ancestor who enlarged Sparta",
+      "blurb": "Early king who pressed Helots and Arcadians; cited to show how martial the house was before Lycurgus’s laws.",
+      "links": [
+        {
+          "characterId": "eunomus"
+        }
+      ]
+    },
+    {
+      "id": "prytanis",
+      "names": [
+        "Prytanis"
+      ],
+      "relation": "Royal ancestor",
+      "blurb": "Link in the Eurypontid king-list Plutarch gives when tracing Lycurgus’s blood.",
+      "links": [
+        {
+          "characterId": "sous"
+        }
+      ]
+    },
+    {
+      "id": "iphitus",
+      "names": [
+        "Iphitus"
+      ],
+      "relation": "Co-founder of the Olympic truce",
+      "blurb": "Elian who, with Lycurgus, is said to have ordered the Olympic games and the sacred armistice."
+    },
+    {
+      "id": "theopompus",
+      "names": [
+        "Theopompus"
+      ],
+      "relation": "King who added the ephors",
+      "blurb": "Later Spartan king who instituted (or strengthened) the ephorate—the check on kings that tempered Lycurgus’s design.",
+      "links": [
+        {
+          "characterId": "agis"
+        }
+      ]
+    },
+    {
+      "id": "agis",
+      "names": [
+        "Agis"
+      ],
+      "relation": "King who tried to restore the laws",
+      "blurb": "Reformer-king who sought to revive Lycurgus’s equality; Plutarch’s fuller tale of him is another Life.",
+      "links": [
+        {
+          "characterId": "theopompus"
+        },
+        {
+          "characterId": "agis-life",
+          "label": "Agis’s Life",
+          "workId": "agis"
+        }
+      ]
+    },
+    {
+      "id": "alcander",
+      "names": [
+        "Alcander"
+      ],
+      "relation": "Youth who struck out his eye",
+      "blurb": "Angry young Spartan who blinded Lycurgus in one eye during a riot over the messes; Lycurgus made him a household pupil instead of punishing him."
+    },
+    {
+      "id": "polydorus",
+      "names": [
+        "Polydorus"
+      ],
+      "relation": "King associated with the rhetra",
+      "blurb": "Named with Theopompus in traditions about amending the Great Rhetra after the people grew bold in assembly.",
+      "links": [
+        {
+          "characterId": "theopompus"
+        },
+        {
+          "characterId": "rhetra"
+        }
+      ]
+    },
+    {
+      "id": "rhetra",
+      "names": [
+        "Rhetra"
+      ],
+      "relation": "Great Rhetra; Apollo’s ordinance",
+      "blurb": "The Delphic “constitution” Lycurgus brought home: tribes, elders, assembly—and later a clause curbing popular amendments.",
+      "links": [
+        {
+          "characterId": "apollo"
+        },
+        {
+          "characterId": "babyca"
+        },
+        {
+          "characterId": "egeria",
+          "label": "Numa’s Life",
+          "workId": "numa-pompilius"
+        }
+      ]
+    },
+    {
+      "id": "apollo",
+      "names": [
+        "Apollo"
+      ],
+      "relation": "God of the Delphic sanction",
+      "blurb": "Through Delphi Lycurgus sought divine warrant for his laws; the rhetra is cast as Apollo’s voice.",
+      "links": [
+        {
+          "characterId": "rhetra"
+        }
+      ]
+    },
+    {
+      "id": "babyca",
+      "names": [
+        "Babyca"
+      ],
+      "relation": "Assembly landmark (with Cnacion)",
+      "blurb": "One of the two places named in the rhetra between which the Spartan assembly was to meet.",
+      "links": [
+        {
+          "characterId": "cnacion"
+        },
+        {
+          "characterId": "rhetra"
+        }
+      ]
+    },
+    {
+      "id": "cnacion",
+      "names": [
+        "Cnacion"
+      ],
+      "relation": "Assembly landmark (with Babyca)",
+      "blurb": "Stream or bridge paired with Babyca as the bounds of the Lycurgan assembly ground.",
+      "links": [
+        {
+          "characterId": "babyca"
+        },
+        {
+          "characterId": "rhetra"
+        }
+      ]
+    },
+    {
+      "id": "helots",
+      "names": [
+        "Helots"
+      ],
+      "relation": "Enslaved agrarian underclass",
+      "blurb": "Subject population bound to the land. Lycurgus’s system rested on their labor—and on the crypteia’s terror."
+    },
+    {
+      "id": "terpander",
+      "names": [
+        "Terpander"
+      ],
+      "relation": "Musician who calmed Sparta",
+      "blurb": "Lesbian lyre-poet said to have settled civic strife at Sparta with music—an art Lycurgus’s city still prized.",
+      "links": [
+        {
+          "characterId": "tyrtaeus"
+        }
+      ]
+    },
+    {
+      "id": "tyrtaeus",
+      "names": [
+        "Tyrtaeus"
+      ],
+      "relation": "War-poet of Sparta",
+      "blurb": "Elegist whose marching songs stiffened Spartan courage; cited among the cultural props of the Lycurgan city.",
+      "links": [
+        {
+          "characterId": "terpander"
+        },
+        {
+          "characterId": "brasidas"
+        }
+      ]
+    },
+    {
+      "id": "thales",
+      "names": [
+        "Thales"
+      ],
+      "relation": "Cretan (or Lesbian) lyric influence",
+      "blurb": "Musician-sage Plutarch links to the civilizing arts Sparta admitted even while distrusting fancy rhetoric.",
+      "links": [
+        {
+          "characterId": "terpander"
+        }
+      ]
+    },
+    {
+      "id": "brasidas",
+      "names": [
+        "Brasidas"
+      ],
+      "relation": "Later Spartan who seemed Lycurgan",
+      "blurb": "Fifth-century general Plutarch cites as proof that Lycurgus’s breed of austere courage still appeared in later wars.",
+      "links": [
+        {
+          "characterId": "tyrtaeus"
+        }
+      ]
+    },
+    {
+      "id": "plato",
+      "names": [
+        "Plato"
+      ],
+      "relation": "Philosopher who praised the politeia",
+      "blurb": "Often invoked when Plutarch weighs Sparta’s mixed constitution against ideal schemes.",
+      "links": [
+        {
+          "characterId": "aristotle"
+        }
+      ]
+    },
+    {
+      "id": "aristotle",
+      "names": [
+        "Aristotle"
+      ],
+      "relation": "Critic of parts of the system",
+      "blurb": "Noted flaws in Spartan women, property, and ephors even while granting Lycurgus’s stature as a lawgiver.",
+      "links": [
+        {
+          "characterId": "plato"
+        }
+      ]
+    },
+    {
+      "id": "hercules",
+      "names": [
+        "Hercules"
+      ],
+      "relation": "Ancestor of the dual kingship",
+      "blurb": "Both Spartan royal houses claimed Heraclid blood—the pedigree that framed Lycurgus’s right to reshape the state."
+    },
+    {
+      "id": "hermippus",
+      "names": [
+        "Hermippus"
+      ],
+      "relation": "Biographer cited",
+      "blurb": "Author whose anecdotes about Lycurgus’s travels and death Plutarch sometimes follows."
+    },
+    {
+      "id": "aristocrates",
+      "names": [
+        "Aristocrates"
+      ],
+      "relation": "Source on Lycurgus’s end",
+      "blurb": "Cited for the story that Lycurgus starved himself abroad so Sparta would not alter his laws."
+    },
+    {
+      "id": "gylippus",
+      "names": [
+        "Gylippus"
+      ],
+      "relation": "Later Spartan general (example)",
+      "blurb": "Appears among later Spartans whose careers show the city’s long martial afterlife under Lycurgan habits.",
+      "links": [
+        {
+          "characterId": "brasidas"
+        }
+      ]
+    }
+  ]
+}

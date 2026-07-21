@@ -1,0 +1,361 @@
+{
+  "workId": "poplicola",
+  "subject": "Poplicola",
+  "characters": [
+    {
+      "id": "tarquin",
+      "names": [
+        "Tarquin"
+      ],
+      "relation": "Expelled king; lasting enemy",
+      "blurb": "Last king of Rome. After Lucretia’s death the people drove him out; he warred to return with Tuscan and Latin aid.",
+      "links": [
+        {
+          "characterId": "brutus"
+        },
+        {
+          "characterId": "lucretia"
+        },
+        {
+          "characterId": "aruns"
+        },
+        {
+          "characterId": "porsenna"
+        }
+      ]
+    },
+    {
+      "id": "brutus",
+      "names": [
+        "Brutus"
+      ],
+      "relation": "Liberator; first consul with Collatinus",
+      "blurb": "Led the expulsion of the Tarquins after Lucretia’s rape. As consul he executed his own sons for conspiring to restore the kings.",
+      "links": [
+        {
+          "characterId": "tarquin"
+        },
+        {
+          "characterId": "collatinus"
+        },
+        {
+          "characterId": "lucretia"
+        },
+        {
+          "characterId": "vindicius"
+        }
+      ]
+    },
+    {
+      "id": "collatinus",
+      "names": [
+        "Collatinus"
+      ],
+      "relation": "Lucretia’s husband; briefly consul",
+      "blurb": "Co-consul with Brutus, but the Tarquin name made the people uneasy; he laid down office and went into exile.",
+      "links": [
+        {
+          "characterId": "lucretia"
+        },
+        {
+          "characterId": "brutus"
+        },
+        {
+          "characterId": "tarquin"
+        }
+      ]
+    },
+    {
+      "id": "lucretia",
+      "names": [
+        "Lucretia"
+      ],
+      "relation": "Her death sparked the Republic",
+      "blurb": "Chaste wife of Collatinus; violated by Sextus Tarquinius, she killed herself before her kinsmen and so fired the revolt.",
+      "links": [
+        {
+          "characterId": "collatinus"
+        },
+        {
+          "characterId": "brutus"
+        },
+        {
+          "characterId": "tarquin"
+        }
+      ]
+    },
+    {
+      "id": "lucretius",
+      "names": [
+        "Lucretius"
+      ],
+      "relation": "Father of Lucretia",
+      "blurb": "Present at his daughter’s death-oath; counted among the first men of the free Republic.",
+      "links": [
+        {
+          "characterId": "lucretia"
+        },
+        {
+          "characterId": "brutus"
+        }
+      ]
+    },
+    {
+      "id": "valerius",
+      "names": [
+        "Valerius"
+      ],
+      "relation": "Poplicola before his surname",
+      "blurb": "Publius Valerius won the people by lowering the fasces, building lower on the Velia, and passing appeal from the consuls.",
+      "links": [
+        {
+          "characterId": "brutus"
+        },
+        {
+          "characterId": "porsenna"
+        },
+        {
+          "characterId": "valeria"
+        },
+        {
+          "characterId": "solon-cross",
+          "label": "Solon"
+        }
+      ]
+    },
+    {
+      "id": "porsenna",
+      "names": [
+        "Porsenna"
+      ],
+      "relation": "Etruscan king who besieged Rome",
+      "blurb": "Came to restore Tarquin, took the Janiculum, and tested Roman courage through Horatius, Mucius, and Cloelia before making peace.",
+      "links": [
+        {
+          "characterId": "tarquin"
+        },
+        {
+          "characterId": "horatius"
+        },
+        {
+          "characterId": "mucius"
+        },
+        {
+          "characterId": "cloelia"
+        }
+      ]
+    },
+    {
+      "id": "horatius",
+      "names": [
+        "Horatius"
+      ],
+      "relation": "Held the bridge",
+      "blurb": "Defended the Tiber bridge until it was cut behind him, then swam back in armor—Rome’s first great republican exemplar.",
+      "links": [
+        {
+          "characterId": "porsenna"
+        },
+        {
+          "characterId": "mucius"
+        },
+        {
+          "characterId": "herminius"
+        }
+      ]
+    },
+    {
+      "id": "mucius",
+      "names": [
+        "Mucius"
+      ],
+      "relation": "Burned his hand before Porsenna",
+      "blurb": "Entered the Tuscan camp to kill Porsenna, slew the wrong man, and thrust his hand into the fire to prove Roman resolve.",
+      "links": [
+        {
+          "characterId": "porsenna"
+        },
+        {
+          "characterId": "cloelia"
+        },
+        {
+          "characterId": "horatius"
+        }
+      ]
+    },
+    {
+      "id": "cloelia",
+      "names": [
+        "Cloelia"
+      ],
+      "relation": "Hostage who swam the Tiber",
+      "blurb": "Given to Porsenna as hostage; she led the girls across the river, was honorably returned, and was rewarded with a horse.",
+      "links": [
+        {
+          "characterId": "porsenna"
+        },
+        {
+          "characterId": "mucius"
+        },
+        {
+          "characterId": "valeria"
+        }
+      ]
+    },
+    {
+      "id": "vindicius",
+      "names": [
+        "Vindicius"
+      ],
+      "relation": "Slave who exposed the conspiracy",
+      "blurb": "Overheard the Vitellii and Aquillii plotting Tarquin’s return; his tip let Brutus catch the traitors—including Brutus’s sons.",
+      "links": [
+        {
+          "characterId": "brutus"
+        },
+        {
+          "characterId": "aquillii"
+        },
+        {
+          "characterId": "vitellii"
+        }
+      ]
+    },
+    {
+      "id": "aquillii",
+      "names": [
+        "Aquillii"
+      ],
+      "relation": "Conspirators for Tarquin",
+      "blurb": "Noble house caught plotting to restore the kings; exposed by Vindicius’s warning and their own letters.",
+      "links": [
+        {
+          "characterId": "vindicius"
+        },
+        {
+          "characterId": "vitellii"
+        },
+        {
+          "characterId": "tarquin"
+        }
+      ]
+    },
+    {
+      "id": "vitellii",
+      "names": [
+        "Vitellii"
+      ],
+      "relation": "Kin who plotted with the Aquillii",
+      "blurb": "Related to Brutus’s household; their royalist plot forced the liberator to judge his own sons.",
+      "links": [
+        {
+          "characterId": "aquillii"
+        },
+        {
+          "characterId": "brutus"
+        },
+        {
+          "characterId": "vindicius"
+        }
+      ]
+    },
+    {
+      "id": "aruns",
+      "names": [
+        "Aruns"
+      ],
+      "relation": "Tarquin’s son; fell with Brutus",
+      "blurb": "Met Brutus in single combat in the first war of the Republic; both died on each other’s spears.",
+      "links": [
+        {
+          "characterId": "tarquin"
+        },
+        {
+          "characterId": "brutus"
+        }
+      ]
+    },
+    {
+      "id": "valeria",
+      "names": [
+        "Valeria"
+      ],
+      "relation": "Valerian kinswoman in the hostage tale",
+      "blurb": "Named among the Roman women tied to Cloelia’s escape; the family’s popularity underwrites Valerius’s rise.",
+      "links": [
+        {
+          "characterId": "cloelia"
+        },
+        {
+          "characterId": "valerius"
+        }
+      ]
+    },
+    {
+      "id": "clausus",
+      "names": [
+        "Clausus",
+        "Appius"
+      ],
+      "relation": "Sabine founder of the Claudii",
+      "blurb": "Sabine leader welcomed to Rome with his clients; his migration shows Poplicola’s open franchise.",
+      "links": [
+        {
+          "characterId": "valerius"
+        }
+      ]
+    },
+    {
+      "id": "herminius",
+      "names": [
+        "Herminius"
+      ],
+      "relation": "Companion at the bridge",
+      "blurb": "Named among those who held the bridge beside Horatius before the final swim.",
+      "links": [
+        {
+          "characterId": "horatius"
+        }
+      ]
+    },
+    {
+      "id": "domitian",
+      "names": [
+        "Domitian"
+      ],
+      "relation": "Later tyrant used as foil",
+      "blurb": "Plutarch glances at Domitian’s pride as the opposite of Poplicola’s voluntary lowering of consular show."
+    },
+    {
+      "id": "marcus",
+      "names": [
+        "Marcus"
+      ],
+      "relation": "Consular colleague named in the wars",
+      "blurb": "Appears among early republican commanders in the Tuscan and Latin fighting after the kings.",
+      "links": [
+        {
+          "characterId": "valerius"
+        },
+        {
+          "characterId": "brutus"
+        }
+      ]
+    },
+    {
+      "id": "solon-cross",
+      "names": [
+        "Solon"
+      ],
+      "relation": "Greek pair in the Parallel Lives",
+      "blurb": "Athenian lawgiver Plutarch sets beside Poplicola—both refused crowns and armed citizens with lawful appeal.",
+      "links": [
+        {
+          "characterId": "pisistratus",
+          "label": "Solon’s Life",
+          "workId": "solon"
+        }
+      ]
+    }
+  ]
+}

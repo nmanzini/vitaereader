@@ -3,12 +3,24 @@
  * Pure: no DOM. Prefer longer surface forms first; never break mid-word.
  */
 
+/** Tappable related-profile ref from a character sheet. */
+export type CharacterLink = {
+  /** Target character `id` (same-work unless `workId` is set). */
+  characterId: string
+  /** Other Life’s annotation file; omit for same-work links. */
+  workId?: string
+  /** Button label; defaults to the target’s first name when same-work. */
+  label?: string
+}
+
 export type CharacterAnnotation = {
   id: string
   /** Surface forms to match; put longer / canonical first in data. */
   names: string[]
   blurb: string
   relation: string
+  /** Related profiles (same-work preferred; optional cross-life). */
+  links?: CharacterLink[]
 }
 
 export type WorkAnnotations = {

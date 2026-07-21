@@ -1,0 +1,377 @@
+{
+  "workId": "camillus",
+  "subject": "Camillus",
+  "characters": [
+    {
+      "id": "brennus",
+      "names": [
+        "Brennus"
+      ],
+      "relation": "Gallic chief who took Rome",
+      "blurb": "Led the Senones that crushed Rome at the Allia and held the city for ransom until Camillus returned as dictator.",
+      "links": [
+        {
+          "characterId": "manlius"
+        },
+        {
+          "characterId": "allia"
+        },
+        {
+          "characterId": "sulpicius"
+        }
+      ]
+    },
+    {
+      "id": "veii",
+      "names": [
+        "Veii"
+      ],
+      "relation": "Etruscan city he finally captured",
+      "blurb": "Rome’s rich rival across the Tiber. Camillus took it after a long siege—by tunnel into Juno’s temple, in the famous tale.",
+      "links": [
+        {
+          "characterId": "juno"
+        },
+        {
+          "characterId": "furius"
+        }
+      ]
+    },
+    {
+      "id": "juno",
+      "names": [
+        "Juno"
+      ],
+      "relation": "Goddess brought from Veii to Rome",
+      "blurb": "Juno Regina nodded (they say) when asked to go to Rome; Camillus’s evocatio made her a Roman goddess.",
+      "links": [
+        {
+          "characterId": "veii"
+        }
+      ]
+    },
+    {
+      "id": "manlius",
+      "names": [
+        "Manlius",
+        "Manlius Capitolinus"
+      ],
+      "relation": "Saved the Capitol; later rival",
+      "blurb": "Heard the sacred geese and held the Tarpeian rock against the Gauls; later courted the debtors and fell as a demagogue.",
+      "links": [
+        {
+          "characterId": "brennus"
+        },
+        {
+          "characterId": "capitolinus"
+        }
+      ]
+    },
+    {
+      "id": "capitolinus",
+      "names": [
+        "Capitolinus"
+      ],
+      "relation": "Manlius’s surname from the rock",
+      "blurb": "Title of Marcus Manlius after defending the Capitol—glory that later curdled into sedition against Camillus’s order.",
+      "links": [
+        {
+          "characterId": "manlius"
+        },
+        {
+          "characterId": "brennus"
+        }
+      ]
+    },
+    {
+      "id": "faliscans",
+      "names": [
+        "Faliscans",
+        "Falerians"
+      ],
+      "relation": "People of Falerii; schoolmaster tale",
+      "blurb": "When their schoolmaster betrayed the boys to Camillus, he returned the traitor unbound and won the city by justice.",
+      "links": [
+        {
+          "characterId": "furius"
+        }
+      ]
+    },
+    {
+      "id": "furius",
+      "names": [
+        "Furius"
+      ],
+      "relation": "Camillus’s gentile name",
+      "blurb": "Marcus Furius Camillus—five times dictator—the man Plutarch paints as a second Romulus after the Gallic sack.",
+      "links": [
+        {
+          "characterId": "veii"
+        },
+        {
+          "characterId": "brennus"
+        },
+        {
+          "characterId": "romulus"
+        },
+        {
+          "characterId": "aspasia",
+          "label": "Pericles’s Life",
+          "workId": "pericles"
+        }
+      ]
+    },
+    {
+      "id": "romulus",
+      "names": [
+        "Romulus"
+      ],
+      "relation": "Founder Camillus is likened to",
+      "blurb": "After the sack some urged abandoning Rome; Camillus argued like a re-founder that the site itself was sacred.",
+      "links": [
+        {
+          "characterId": "furius"
+        },
+        {
+          "characterId": "brennus"
+        },
+        {
+          "characterId": "romulus-life",
+          "label": "Romulus’s Life",
+          "workId": "romulus"
+        }
+      ]
+    },
+    {
+      "id": "allia",
+      "names": [
+        "Allia"
+      ],
+      "relation": "River of the Gallic disaster",
+      "blurb": "Stream where the Gauls destroyed the Roman army on a dies ater still marked in the calendar.",
+      "links": [
+        {
+          "characterId": "brennus"
+        },
+        {
+          "characterId": "manlius"
+        }
+      ]
+    },
+    {
+      "id": "sutrium",
+      "names": [
+        "Sutrium"
+      ],
+      "relation": "Ally Camillus rescued",
+      "blurb": "Etruscan-facing town taken and retaken in the wars; Camillus restored it in a single day’s hard fighting.",
+      "links": [
+        {
+          "characterId": "furius"
+        }
+      ]
+    },
+    {
+      "id": "ardea",
+      "names": [
+        "Ardea",
+        "Ardeatians"
+      ],
+      "relation": "City of his exile; base of return",
+      "blurb": "Camillus was living in exile there when the Gauls came; from Ardea he gathered strength to relieve Rome.",
+      "links": [
+        {
+          "characterId": "brennus"
+        },
+        {
+          "characterId": "furius"
+        }
+      ]
+    },
+    {
+      "id": "pontius",
+      "names": [
+        "Pontius",
+        "Pontius Cominius"
+      ],
+      "relation": "Messenger who swam the Tiber",
+      "blurb": "Carried word through the enemy to the Capitol—and brought the Senate’s recall of Camillus as dictator.",
+      "links": [
+        {
+          "characterId": "manlius"
+        },
+        {
+          "characterId": "brennus"
+        }
+      ]
+    },
+    {
+      "id": "caedicius",
+      "names": [
+        "Marcus Caedicius",
+        "Caedicius"
+      ],
+      "relation": "Heard the night warning",
+      "blurb": "Plebeian who reported a divine voice in the Via Nova foretelling the Gallic onset—ignored until too late.",
+      "links": [
+        {
+          "characterId": "brennus"
+        },
+        {
+          "characterId": "allia"
+        }
+      ]
+    },
+    {
+      "id": "fabii",
+      "names": [
+        "Fabii",
+        "Fabius"
+      ],
+      "relation": "Clan prominent in the Veientine war",
+      "blurb": "Their private war at the Cremera and later commands frame the generation Camillus dominated.",
+      "links": [
+        {
+          "characterId": "veii"
+        }
+      ]
+    },
+    {
+      "id": "sulpicius",
+      "names": [
+        "Sulpicius"
+      ],
+      "relation": "Negotiated the Gallic ransom",
+      "blurb": "Tribune or commander who weighed the thousand pounds of gold before Camillus forbade the shameful bargain.",
+      "links": [
+        {
+          "characterId": "brennus"
+        },
+        {
+          "characterId": "manlius"
+        }
+      ]
+    },
+    {
+      "id": "volscians",
+      "names": [
+        "Volscians"
+      ],
+      "relation": "Italian enemies after the sack",
+      "blurb": "Pressed Rome while she was weak; Camillus’s dictatorships repeatedly broke their invasions.",
+      "links": [
+        {
+          "characterId": "aequians"
+        },
+        {
+          "characterId": "furius"
+        }
+      ]
+    },
+    {
+      "id": "aequians",
+      "names": [
+        "Aequians"
+      ],
+      "relation": "Hill foes allied against Rome",
+      "blurb": "Fought beside Volscians in the post-Gallic wars Camillus was called to master.",
+      "links": [
+        {
+          "characterId": "volscians"
+        }
+      ]
+    },
+    {
+      "id": "tuscans",
+      "names": [
+        "Tuscans"
+      ],
+      "relation": "Etruscan enemies beyond Veii",
+      "blurb": "Broader Etruscan front—Capena, Falerii, and others—against which Camillus earned his early fame.",
+      "links": [
+        {
+          "characterId": "veii"
+        },
+        {
+          "characterId": "faliscans"
+        }
+      ]
+    },
+    {
+      "id": "lucius",
+      "names": [
+        "Lucius"
+      ],
+      "relation": "Colleagues and kinsmen in command",
+      "blurb": "Several Lucii share Camillus’s Fasti as consular tribunes and fellow generals in the long Veientine struggle.",
+      "links": [
+        {
+          "characterId": "furius"
+        }
+      ]
+    },
+    {
+      "id": "postumius",
+      "names": [
+        "Postumius"
+      ],
+      "relation": "Rival magistrate in the traditions",
+      "blurb": "Named among Camillus’s awkward colleagues when politics cut short a command or triumph.",
+      "links": [
+        {
+          "characterId": "furius"
+        }
+      ]
+    },
+    {
+      "id": "numa",
+      "names": [
+        "Numa"
+      ],
+      "relation": "Peaceful king invoked after the sack",
+      "blurb": "When Romans debated moving to Veii, Camillus’s speech leaned on Numa’s religious founding of the city’s sites.",
+      "links": [
+        {
+          "characterId": "romulus"
+        },
+        {
+          "characterId": "numa-life",
+          "label": "Numa’s Life",
+          "workId": "numa-pompilius"
+        }
+      ]
+    },
+    {
+      "id": "clusium",
+      "names": [
+        "Clusium"
+      ],
+      "relation": "Town whose quarrel brought the Gauls",
+      "blurb": "Etruscan city that invited Roman envoys against the Gauls—and so drew Brennus south on Rome.",
+      "links": [
+        {
+          "characterId": "brennus"
+        },
+        {
+          "characterId": "aruns"
+        }
+      ]
+    },
+    {
+      "id": "aruns",
+      "names": [
+        "Aruns"
+      ],
+      "relation": "Clusian who fetched the Gauls",
+      "blurb": "Lucumo wronged at Clusium who guided the Gallic mercenaries into Etruria—and toward Rome.",
+      "links": [
+        {
+          "characterId": "clusium"
+        },
+        {
+          "characterId": "brennus"
+        }
+      ]
+    }
+  ]
+}

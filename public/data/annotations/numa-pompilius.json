@@ -1,0 +1,425 @@
+{
+  "workId": "numa-pompilius",
+  "subject": "Numa Pompilius",
+  "characters": [
+    {
+      "id": "egeria",
+      "names": [
+        "Egeria"
+      ],
+      "relation": "Nymph counselor and reputed consort",
+      "blurb": "Divine muse who met Numa in the sacred grove and taught him rites. Skeptics said he invented her to awe the people.",
+      "links": [
+        {
+          "characterId": "muses"
+        },
+        {
+          "characterId": "pythagoras"
+        },
+        {
+          "characterId": "lycurgus-cross",
+          "label": "Lycurgus"
+        }
+      ]
+    },
+    {
+      "id": "tatius",
+      "names": [
+        "Tatius"
+      ],
+      "relation": "Sabine co-king under Romulus",
+      "blurb": "Former Sabine king whose people Numa came from. His murder left Rome ready for a peaceful successor to Romulus.",
+      "links": [
+        {
+          "characterId": "romulus"
+        },
+        {
+          "characterId": "tatia"
+        }
+      ]
+    },
+    {
+      "id": "tatia",
+      "names": [
+        "Tatia"
+      ],
+      "relation": "First wife; daughter of Tatius",
+      "blurb": "Sabine wife who died young; through her Numa was tied to Tatius’s house before he took Rome’s throne.",
+      "links": [
+        {
+          "characterId": "tatius"
+        },
+        {
+          "characterId": "pompilia"
+        }
+      ]
+    },
+    {
+      "id": "pompilia",
+      "names": [
+        "Pompilia"
+      ],
+      "relation": "Daughter; mother of Ancus’s line",
+      "blurb": "Numa’s daughter, married (in one account) to Marcius; grandmother of Ancus Marcius, Rome’s fourth king.",
+      "links": [
+        {
+          "characterId": "marcius"
+        },
+        {
+          "characterId": "ancus"
+        },
+        {
+          "characterId": "tatia"
+        }
+      ]
+    },
+    {
+      "id": "marcius",
+      "names": [
+        "Marcius"
+      ],
+      "relation": "Son-in-law; father of Ancus",
+      "blurb": "Rival candidate when Numa died; father of Ancus Marcius. His line kept Sabine blood on the throne.",
+      "links": [
+        {
+          "characterId": "pompilia"
+        },
+        {
+          "characterId": "ancus"
+        },
+        {
+          "characterId": "tullus"
+        }
+      ]
+    },
+    {
+      "id": "ancus",
+      "names": [
+        "Ancus",
+        "Ancus Marcius"
+      ],
+      "relation": "Grandson; later king",
+      "blurb": "Ancus Marcius, fourth king of Rome, sprung from Pompilia—Numa’s peaceful blood continued after Tullus’s wars.",
+      "links": [
+        {
+          "characterId": "pompilia"
+        },
+        {
+          "characterId": "marcius"
+        },
+        {
+          "characterId": "tullus"
+        }
+      ]
+    },
+    {
+      "id": "tullus",
+      "names": [
+        "Tullus Hostilius",
+        "Tullus",
+        "Hostilius"
+      ],
+      "relation": "Warlike successor",
+      "blurb": "Third king who scorned Numa’s quiet rites, filled Rome with war, and finally tried to imitate Numa’s Jupiter cult—badly.",
+      "links": [
+        {
+          "characterId": "ancus"
+        },
+        {
+          "characterId": "jupiter"
+        },
+        {
+          "characterId": "romulus"
+        }
+      ]
+    },
+    {
+      "id": "romulus",
+      "names": [
+        "Romulus"
+      ],
+      "relation": "Predecessor; warlike founder",
+      "blurb": "First king whose arms left Rome fierce. The people chose Numa to temper that spirit with religion and law.",
+      "links": [
+        {
+          "characterId": "tatius"
+        },
+        {
+          "characterId": "quirinus"
+        },
+        {
+          "characterId": "romulus-life",
+          "label": "Romulus’s Life",
+          "workId": "romulus"
+        }
+      ]
+    },
+    {
+      "id": "quirinus",
+      "names": [
+        "Quirinus"
+      ],
+      "relation": "Deified Romulus",
+      "blurb": "The god Romulus became; Numa gave him priests and a quieter civic religion beside Jupiter and Mars.",
+      "links": [
+        {
+          "characterId": "romulus"
+        },
+        {
+          "characterId": "mars"
+        }
+      ]
+    },
+    {
+      "id": "pythagoras",
+      "names": [
+        "Pythagoras"
+      ],
+      "relation": "Sage some linked to Numa",
+      "blurb": "Greek philosopher whose doctrines of silence, numbers, and abstinence later writers foisted onto Numa—Plutarch weighs the chronology carefully.",
+      "links": [
+        {
+          "characterId": "egeria"
+        },
+        {
+          "characterId": "pythagoreans"
+        }
+      ]
+    },
+    {
+      "id": "pythagoreans",
+      "names": [
+        "Pythagoreans"
+      ],
+      "relation": "School compared to Numa’s discipline",
+      "blurb": "Followers whose shared meals, music, and sacred rules reminded Romans of Numa’s priesthoods—whether or not he met their master.",
+      "links": [
+        {
+          "characterId": "pythagoras"
+        }
+      ]
+    },
+    {
+      "id": "jupiter",
+      "names": [
+        "Jupiter",
+        "Jupiter Elicius"
+      ],
+      "relation": "Chief god of his sky-rites",
+      "blurb": "Numa bargained with Jupiter over thunderbolt expiations and kept Terminus and Fides in the Capitol’s settlement of gods.",
+      "links": [
+        {
+          "characterId": "terminus"
+        },
+        {
+          "characterId": "vesta"
+        },
+        {
+          "characterId": "mars"
+        }
+      ]
+    },
+    {
+      "id": "mars",
+      "names": [
+        "Mars"
+      ],
+      "relation": "War-god given Salii and peace-bound spears",
+      "blurb": "Numa instituted the Salii for Mars and taught that the god’s spears should rest while justice held—war as last resort.",
+      "links": [
+        {
+          "characterId": "salii"
+        },
+        {
+          "characterId": "jupiter"
+        },
+        {
+          "characterId": "quirinus"
+        }
+      ]
+    },
+    {
+      "id": "vesta",
+      "names": [
+        "Vesta"
+      ],
+      "relation": "Hearth goddess; Vestal order",
+      "blurb": "Numa founded (or ordered) the Vestal Virgins and the undying fire—the city’s sacred hearth.",
+      "links": [
+        {
+          "characterId": "jupiter"
+        },
+        {
+          "characterId": "salii"
+        }
+      ]
+    },
+    {
+      "id": "salii",
+      "names": [
+        "Salii"
+      ],
+      "relation": "Dancing priests of Mars",
+      "blurb": "Twelve priests who carried the ancilia and leapt in armor; Numa founded their college after the shield fell from heaven.",
+      "links": [
+        {
+          "characterId": "mars"
+        },
+        {
+          "characterId": "mamurius"
+        },
+        {
+          "characterId": "ancile"
+        }
+      ]
+    },
+    {
+      "id": "ancile",
+      "names": [
+        "Ancilia"
+      ],
+      "relation": "Heaven-sent shield",
+      "blurb": "Shield said to fall from the sky as a pledge of empire. Numa had eleven copies made so thieves could not steal the true one.",
+      "links": [
+        {
+          "characterId": "salii"
+        },
+        {
+          "characterId": "mamurius"
+        }
+      ]
+    },
+    {
+      "id": "mamurius",
+      "names": [
+        "Mamurius",
+        "Mamurius Veturius",
+        "Veturius"
+      ],
+      "relation": "Smith of the ancilia copies",
+      "blurb": "Craftsman who forged eleven duplicate shields; rewarded by having his name sung in the Salian hymn.",
+      "links": [
+        {
+          "characterId": "salii"
+        },
+        {
+          "characterId": "ancile"
+        }
+      ]
+    },
+    {
+      "id": "terminus",
+      "names": [
+        "Terminus"
+      ],
+      "relation": "God of boundaries",
+      "blurb": "Boundary-stone god who refused to yield even to Jupiter on the Capitol—emblem of Numa’s settled property and peace.",
+      "links": [
+        {
+          "characterId": "jupiter"
+        }
+      ]
+    },
+    {
+      "id": "muses",
+      "names": [
+        "Muses",
+        "Camenae"
+      ],
+      "relation": "Goddesses of his grove",
+      "blurb": "Numa’s sacred spring and grove belonged to the Camenae/Muses; Egeria was their chief counselor in the legend.",
+      "links": [
+        {
+          "characterId": "egeria"
+        }
+      ]
+    },
+    {
+      "id": "picus",
+      "names": [
+        "Picus"
+      ],
+      "relation": "Early Italian prophetic figure",
+      "blurb": "Mythic king or woodpecker-spirit named among Italy’s oldest religious lore that Numa’s age still remembered.",
+      "links": [
+        {
+          "characterId": "faunus"
+        }
+      ]
+    },
+    {
+      "id": "faunus",
+      "names": [
+        "Faunus"
+      ],
+      "relation": "Rustic prophetic god",
+      "blurb": "Italian woodland god paired with Picus in tales of early Latium’s oracles and rites.",
+      "links": [
+        {
+          "characterId": "picus"
+        }
+      ]
+    },
+    {
+      "id": "plato",
+      "names": [
+        "Plato"
+      ],
+      "relation": "Philosopher cited on kingship",
+      "blurb": "Invoked when Plutarch compares Numa’s philosopher-king ideal to Greek schemes of rule.",
+      "links": [
+        {
+          "characterId": "pythagoras"
+        }
+      ]
+    },
+    {
+      "id": "fabius",
+      "names": [
+        "Fabius",
+        "Fabius Pictor"
+      ],
+      "relation": "Early Roman annalist cited",
+      "blurb": "Among the Roman authorities Plutarch consults for Numa’s chronology and institutions."
+    },
+    {
+      "id": "antias",
+      "names": [
+        "Antias",
+        "Valerius Antias"
+      ],
+      "relation": "Annalist cited",
+      "blurb": "Roman historian whose numbers and marvels Plutarch sometimes repeats with caution."
+    },
+    {
+      "id": "gauls",
+      "names": [
+        "Gauls"
+      ],
+      "relation": "Later sackers who tested his peace",
+      "blurb": "Their capture of Rome generations later frames how fragile Numa’s unarmed quiet proved without martial heirs.",
+      "links": [
+        {
+          "characterId": "camillus",
+          "label": "Camillus",
+          "workId": "camillus"
+        }
+      ]
+    },
+    {
+      "id": "lycurgus-cross",
+      "names": [
+        "Lycurgus"
+      ],
+      "relation": "Greek pair in the Parallel Lives",
+      "blurb": "Spartan lawgiver Plutarch sets beside Numa—both civilizers, one by austerity, one by rites.",
+      "links": [
+        {
+          "characterId": "rhetra",
+          "label": "Lycurgus’s Life",
+          "workId": "lycurgus"
+        }
+      ]
+    }
+  ]
+}

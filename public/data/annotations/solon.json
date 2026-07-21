@@ -1,0 +1,386 @@
+{
+  "workId": "solon",
+  "subject": "Solon",
+  "characters": [
+    {
+      "id": "pisistratus",
+      "names": [
+        "Pisistratus"
+      ],
+      "relation": "Tyrant who courted him, then seized power",
+      "blurb": "Kinsman who flattered Solon’s reforms, staged a wound, and took a bodyguard—beginning the tyranny Solon alone opposed aloud.",
+      "links": [
+        {
+          "characterId": "megacles"
+        },
+        {
+          "characterId": "brutus",
+          "label": "Poplicola’s Life",
+          "workId": "poplicola"
+        }
+      ]
+    },
+    {
+      "id": "croesus",
+      "names": [
+        "Croesus"
+      ],
+      "relation": "Lydian king; dialogue on happiness",
+      "blurb": "Showed Solon his treasure and asked who was happiest; Solon’s “Call no man happy until dead” outlived Croesus’s fall to Cyrus.",
+      "links": [
+        {
+          "characterId": "tellus"
+        },
+        {
+          "characterId": "cyrus"
+        },
+        {
+          "characterId": "cleobis"
+        }
+      ]
+    },
+    {
+      "id": "thales",
+      "names": [
+        "Thales"
+      ],
+      "relation": "Milesian sage; fellow wise man",
+      "blurb": "One of the Seven Sages. Stories pair him with Solon on travel, politics, and the limits of private life.",
+      "links": [
+        {
+          "characterId": "anacharsis"
+        },
+        {
+          "characterId": "bias"
+        },
+        {
+          "characterId": "croesus"
+        }
+      ]
+    },
+    {
+      "id": "anacharsis",
+      "names": [
+        "Anacharsis"
+      ],
+      "relation": "Scythian sage who visited Athens",
+      "blurb": "Mocked Solon’s written laws—like spider-webs that catch the weak—yet lodged with him as a friend.",
+      "links": [
+        {
+          "characterId": "thales"
+        }
+      ]
+    },
+    {
+      "id": "draco",
+      "names": [
+        "Draco"
+      ],
+      "relation": "Earlier lawgiver of bloody codes",
+      "blurb": "His homicide laws Solon kept; the rest of Draco’s death-penalties Solon repealed as written in blood.",
+      "links": [
+        {
+          "characterId": "seisacthea"
+        }
+      ]
+    },
+    {
+      "id": "megacles",
+      "names": [
+        "Megacles"
+      ],
+      "relation": "Alcmaeonid rival of Pisistratus",
+      "blurb": "Head of a great house; married his daughter to Pisistratus, then quarreled when the tyrant insulted her.",
+      "links": [
+        {
+          "characterId": "pisistratus"
+        },
+        {
+          "characterId": "alcmaeon"
+        },
+        {
+          "characterId": "cylon"
+        }
+      ]
+    },
+    {
+      "id": "alcmaeon",
+      "names": [
+        "Alcmaeon"
+      ],
+      "relation": "Ancestor of Megacles’ house",
+      "blurb": "Founder-figure of the Alcmaeonidae, the clan tangled in Cylon’s curse and later in Pisistratus’s feuds.",
+      "links": [
+        {
+          "characterId": "megacles"
+        },
+        {
+          "characterId": "cylon"
+        }
+      ]
+    },
+    {
+      "id": "cylon",
+      "names": [
+        "Cylon"
+      ],
+      "relation": "Olympic victor; botched coup",
+      "blurb": "Tried to seize the Acropolis; his killers’ sacrilege stained the Alcmaeonidae—a pollution Solon’s age still managed.",
+      "links": [
+        {
+          "characterId": "megacles"
+        },
+        {
+          "characterId": "alcmaeon"
+        }
+      ]
+    },
+    {
+      "id": "tellus",
+      "names": [
+        "Tellus"
+      ],
+      "relation": "Athenian Solon called happiest",
+      "blurb": "Modest citizen who lived well, saw children settled, and died gloriously in battle—Solon’s answer to Croesus.",
+      "links": [
+        {
+          "characterId": "croesus"
+        },
+        {
+          "characterId": "cleobis"
+        }
+      ]
+    },
+    {
+      "id": "cleobis",
+      "names": [
+        "Cleobis"
+      ],
+      "relation": "Argive youth (with Biton)",
+      "blurb": "With Biton he drew his mother’s ox-cart to Hera’s temple and died in his glory—Solon’s second example of happiness.",
+      "links": [
+        {
+          "characterId": "biton"
+        },
+        {
+          "characterId": "croesus"
+        },
+        {
+          "characterId": "tellus"
+        }
+      ]
+    },
+    {
+      "id": "biton",
+      "names": [
+        "Biton"
+      ],
+      "relation": "Brother of Cleobis",
+      "blurb": "Shared Cleobis’s pious labor and blessed death; Herodotus’s tale Solon retells at Sardis.",
+      "links": [
+        {
+          "characterId": "cleobis"
+        },
+        {
+          "characterId": "croesus"
+        }
+      ]
+    },
+    {
+      "id": "cyrus",
+      "names": [
+        "Cyrus"
+      ],
+      "relation": "Persian conqueror of Croesus",
+      "blurb": "Took Sardis and nearly burned Croesus; the Lydian’s cry of Solon’s name spared him in the famous story.",
+      "links": [
+        {
+          "characterId": "croesus"
+        }
+      ]
+    },
+    {
+      "id": "philocyprus",
+      "names": [
+        "Philocyprus"
+      ],
+      "relation": "Cypriot king he advised",
+      "blurb": "Ruler of Soli in Cyprus who took Solon’s advice on relocating his city; Solon praised him in verse."
+    },
+    {
+      "id": "thespis",
+      "names": [
+        "Thespis"
+      ],
+      "relation": "Early tragic actor Solon rebuked",
+      "blurb": "When Thespis’s drama lied for sport, old Solon struck his staff and warned that play-lies would breed political ones.",
+      "links": [
+        {
+          "characterId": "pisistratus"
+        }
+      ]
+    },
+    {
+      "id": "epimenides",
+      "names": [
+        "Epimenides"
+      ],
+      "relation": "Cretan purifier of Athens",
+      "blurb": "Brought in to cleanse the city after pollution; his visit belongs to the generation of Solon’s reforms.",
+      "links": [
+        {
+          "characterId": "cylon"
+        }
+      ]
+    },
+    {
+      "id": "periander",
+      "names": [
+        "Periander"
+      ],
+      "relation": "Corinthian tyrant among the sages",
+      "blurb": "Named with the Seven Sages; his harsh rule is a foil to Solon’s refusal of tyranny.",
+      "links": [
+        {
+          "characterId": "thales"
+        },
+        {
+          "characterId": "pittacus"
+        }
+      ]
+    },
+    {
+      "id": "pittacus",
+      "names": [
+        "Pittacus"
+      ],
+      "relation": "Mytilenean sage-lawgiver",
+      "blurb": "Another of the Seven; like Solon he held power briefly to settle stasis, then laid it down.",
+      "links": [
+        {
+          "characterId": "periander"
+        },
+        {
+          "characterId": "thales"
+        }
+      ]
+    },
+    {
+      "id": "bias",
+      "names": [
+        "Bias"
+      ],
+      "relation": "Prienean sage",
+      "blurb": "Counted among the Seven Wise Men; appears in the traveling company of wisdom stories around Solon.",
+      "links": [
+        {
+          "characterId": "thales"
+        },
+        {
+          "characterId": "anacharsis"
+        }
+      ]
+    },
+    {
+      "id": "aesop",
+      "names": [
+        "Aesop"
+      ],
+      "relation": "Fabulist Solon met at Croesus’s court",
+      "blurb": "In one anecdote Aesop advises Solon how to speak to kings—then suffers Croesus’s anger himself.",
+      "links": [
+        {
+          "characterId": "croesus"
+        }
+      ]
+    },
+    {
+      "id": "execestides",
+      "names": [
+        "Execestides"
+      ],
+      "relation": "Father",
+      "blurb": "Solon’s father, of good birth but moderate means—the pedigree of a reformer who still worked in trade."
+    },
+    {
+      "id": "heraclides",
+      "names": [
+        "Heraclides Ponticus",
+        "Heraclides"
+      ],
+      "relation": "Philosopher-source cited",
+      "blurb": "Academic writer Plutarch quotes on Solon’s laws, travels, and the Atlantis tale shared with Plato.",
+      "links": [
+        {
+          "characterId": "plato"
+        }
+      ]
+    },
+    {
+      "id": "plato",
+      "names": [
+        "Plato"
+      ],
+      "relation": "Preserves the Atlantis story from Solon",
+      "blurb": "Says Critias heard of Atlantis through Dropides from Solon—the Egyptian priests’ tale.",
+      "links": [
+        {
+          "characterId": "heraclides"
+        }
+      ]
+    },
+    {
+      "id": "seisacthea",
+      "names": [
+        "Seisacthea",
+        "Seisachthea"
+      ],
+      "relation": "Shaking-off of debts",
+      "blurb": "Solon’s cancellation of debts and debt-slavery—the centerpiece of his social peace, hated by some creditors.",
+      "links": [
+        {
+          "characterId": "draco"
+        },
+        {
+          "characterId": "pisistratus"
+        }
+      ]
+    },
+    {
+      "id": "areopagus",
+      "names": [
+        "Areopagus"
+      ],
+      "relation": "Council he preserved and empowered",
+      "blurb": "Old homicide court and council of ex-archons; Solon kept it as a guardian of the laws.",
+      "links": [
+        {
+          "characterId": "draco"
+        }
+      ]
+    },
+    {
+      "id": "phanias",
+      "names": [
+        "Phanias"
+      ],
+      "relation": "Source on Solon’s life",
+      "blurb": "Eresian writer Plutarch cites for anecdotes of Solon’s politics and private sayings."
+    },
+    {
+      "id": "lycurgus",
+      "names": [
+        "Lycurgus"
+      ],
+      "relation": "Spartan lawgiver compared",
+      "blurb": "Greek foil: Lycurgus could bind Sparta by oath and absence; Solon’s Athens rewrote his laws in his lifetime.",
+      "links": [
+        {
+          "characterId": "lycurgus-life",
+          "label": "Lycurgus’s Life",
+          "workId": "lycurgus"
+        }
+      ]
+    }
+  ]
+}

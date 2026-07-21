@@ -1,0 +1,329 @@
+{
+  "workId": "themistocles",
+  "subject": "Themistocles",
+  "characters": [
+    {
+      "id": "neocles",
+      "names": [
+        "Neocles"
+      ],
+      "relation": "Father",
+      "blurb": "Athenian of decent but middling house; Themistocles’s hunger for greatness began in that modest shadow."
+    },
+    {
+      "id": "xerxes",
+      "names": [
+        "Xerxes"
+      ],
+      "relation": "Persian king at Salamis",
+      "blurb": "Invaded Greece with a vast host. Themistocles’s messages and timing at Salamis drew the Persian fleet into the narrows.",
+      "links": [
+        {
+          "characterId": "artabanus"
+        },
+        {
+          "characterId": "eurybiades"
+        },
+        {
+          "characterId": "aristides"
+        },
+        {
+          "characterId": "sicinnus"
+        }
+      ]
+    },
+    {
+      "id": "aristides",
+      "names": [
+        "Aristides"
+      ],
+      "relation": "Rival called the Just",
+      "blurb": "Ostracized amid Themistocles’s rise, then recalled against Xerxes; at Salamis the old enemies worked as one.",
+      "links": [
+        {
+          "characterId": "xerxes"
+        },
+        {
+          "characterId": "cimon"
+        }
+      ]
+    },
+    {
+      "id": "eurybiades",
+      "names": [
+        "Eurybiades"
+      ],
+      "relation": "Spartan admiral of the allied fleet",
+      "blurb": "Nominal commander at Artemisium and Salamis; Themistocles managed him with argument, threats, and bribes.",
+      "links": [
+        {
+          "characterId": "xerxes"
+        },
+        {
+          "characterId": "aristides"
+        }
+      ]
+    },
+    {
+      "id": "pausanias",
+      "names": [
+        "Pausanias"
+      ],
+      "relation": "Spartan regent; later traitor",
+      "blurb": "Victor of Plataea whose Medism and arrogance later tainted Sparta—and entangled Themistocles in suspicion.",
+      "links": [
+        {
+          "characterId": "aristides"
+        },
+        {
+          "characterId": "admetus"
+        }
+      ]
+    },
+    {
+      "id": "cimon",
+      "names": [
+        "Cimon"
+      ],
+      "relation": "Younger rival; son of Miltiades",
+      "blurb": "Rose as Themistocles faded; more acceptable to the aristocrats, he inherited Athens’s war against Persia.",
+      "links": [
+        {
+          "characterId": "miltiades"
+        },
+        {
+          "characterId": "aristides"
+        },
+        {
+          "characterId": "cimon-life",
+          "label": "Cimon’s Life",
+          "workId": "cimon"
+        }
+      ]
+    },
+    {
+      "id": "miltiades",
+      "names": [
+        "Miltiades"
+      ],
+      "relation": "Marathon victor; Cimon’s father",
+      "blurb": "His glory at Marathon was the standard Themistocles burned to surpass by making Athens a sea power.",
+      "links": [
+        {
+          "characterId": "cimon"
+        },
+        {
+          "characterId": "xerxes"
+        }
+      ]
+    },
+    {
+      "id": "artabanus",
+      "names": [
+        "Artabanus"
+      ],
+      "relation": "Persian court figure in the exile tale",
+      "blurb": "Named in the intrigue around Themistocles’s reception in Asia after his flight from Greece.",
+      "links": [
+        {
+          "characterId": "xerxes"
+        },
+        {
+          "characterId": "nicogenes"
+        }
+      ]
+    },
+    {
+      "id": "sicinnus",
+      "names": [
+        "Sicinnus"
+      ],
+      "relation": "Trusted servant; false message to Xerxes",
+      "blurb": "Pedagogue sent to tell Xerxes the Greeks were trapped and ready to flee—so the King would fight in the straits.",
+      "links": [
+        {
+          "characterId": "xerxes"
+        },
+        {
+          "characterId": "aristides"
+        }
+      ]
+    },
+    {
+      "id": "admetus",
+      "names": [
+        "Admetus"
+      ],
+      "relation": "Molossian king who sheltered him",
+      "blurb": "Former enemy who received Themistocles as a suppliant at the hearth when Athens and Sparta hunted him.",
+      "links": [
+        {
+          "characterId": "pausanias"
+        }
+      ]
+    },
+    {
+      "id": "nicogenes",
+      "names": [
+        "Nicogenes"
+      ],
+      "relation": "Host on the road to the King",
+      "blurb": "Aeolian who hid Themistocles and conveyed him inland toward the Persian court in a closed litter.",
+      "links": [
+        {
+          "characterId": "artabanus"
+        }
+      ]
+    },
+    {
+      "id": "timocreon",
+      "names": [
+        "Timocreon"
+      ],
+      "relation": "Rhodesian poet-enemy",
+      "blurb": "Abusive lyric poet who lampooned Themistocles as corrupt and Medizing—a voice of the hate he left behind."
+    },
+    {
+      "id": "simonides",
+      "names": [
+        "Simonides"
+      ],
+      "relation": "Poet and friend",
+      "blurb": "Cean poet who shared Themistocles’s company; Plutarch uses their exchanges to show the general’s wit and vanity."
+    },
+    {
+      "id": "mnesiptolema",
+      "names": [
+        "Mnesiptolema"
+      ],
+      "relation": "Daughter",
+      "blurb": "Named among Themistocles’s children; her marriages mark how his house spread even in exile’s shadow."
+    },
+    {
+      "id": "epicydes",
+      "names": [
+        "Epicydes"
+      ],
+      "relation": "Unworthy rival for command",
+      "blurb": "Ambitious man Themistocles bought off so he would not hold a generalship in the Persian crisis."
+    },
+    {
+      "id": "architeles",
+      "names": [
+        "Architeles"
+      ],
+      "relation": "Athenian captain at Artemisium",
+      "blurb": "Commander Themistocles coaxed (and paid) to stay and fight when the Greek fleet wavered.",
+      "links": [
+        {
+          "characterId": "eurybiades"
+        }
+      ]
+    },
+    {
+      "id": "mardonius",
+      "names": [
+        "Mardonius"
+      ],
+      "relation": "Persian general left in Greece",
+      "blurb": "Xerxes’s lieutenant who stayed to finish the land war after Salamis; background to Plataea’s later victory.",
+      "links": [
+        {
+          "characterId": "xerxes"
+        },
+        {
+          "characterId": "pausanias"
+        }
+      ]
+    },
+    {
+      "id": "stesimbrotus",
+      "names": [
+        "Stesimbrotus"
+      ],
+      "relation": "Biographical source cited",
+      "blurb": "Thasian writer Plutarch quotes for anecdotes of Themistocles, Cimon, and Pericles.",
+      "links": [
+        {
+          "characterId": "cimon"
+        },
+        {
+          "characterId": "pericles"
+        }
+      ]
+    },
+    {
+      "id": "pericles",
+      "names": [
+        "Pericles"
+      ],
+      "relation": "Next generation of Athenian power",
+      "blurb": "Mentioned as the statesman who inherited the naval Athens Themistocles had forced into being.",
+      "links": [
+        {
+          "characterId": "pericles-life",
+          "label": "Pericles’s Life",
+          "workId": "pericles"
+        }
+      ]
+    },
+    {
+      "id": "hiero",
+      "names": [
+        "Hiero"
+      ],
+      "relation": "Syracusan tyrant in an anecdote",
+      "blurb": "Appears in a story illustrating Themistocles’s sharp tongue among foreign princes."
+    },
+    {
+      "id": "phanias",
+      "names": [
+        "Phanias"
+      ],
+      "relation": "Source on his end",
+      "blurb": "Eresian author cited for details of Themistocles’s reception in Persia and death.",
+      "links": [
+        {
+          "characterId": "nicogenes"
+        }
+      ]
+    },
+    {
+      "id": "thucydides",
+      "names": [
+        "Thucydides"
+      ],
+      "relation": "Historian of his later reputation",
+      "blurb": "Praised Themistocles’s foresight—especially the Piraeus—more coolly than comic poets had."
+    },
+    {
+      "id": "plato",
+      "names": [
+        "Plato"
+      ],
+      "relation": "Philosopher who judged him",
+      "blurb": "Among later writers who weighed Themistocles’s cleverness against Aristides’s virtue.",
+      "links": [
+        {
+          "characterId": "aristides"
+        }
+      ]
+    },
+    {
+      "id": "magnesia",
+      "names": [
+        "Magnesia"
+      ],
+      "relation": "City of his Persian fief",
+      "blurb": "Asian Greek city from which Themistocles drew bread, meat, and wine in the King’s grant—gilded exile.",
+      "links": [
+        {
+          "characterId": "xerxes"
+        },
+        {
+          "characterId": "artabanus"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,391 @@
+{
+  "workId": "romulus",
+  "subject": "Romulus",
+  "characters": [
+    {
+      "id": "remus",
+      "names": [
+        "Remus"
+      ],
+      "relation": "Twin brother; slain at the founding",
+      "blurb": "Twin of Romulus. Captured while raiding Amulius’s herds, then killed—by Romulus or by Celer—when he mocked the new walls.",
+      "links": [
+        {
+          "characterId": "amulius"
+        },
+        {
+          "characterId": "celer"
+        },
+        {
+          "characterId": "faustulus"
+        },
+        {
+          "characterId": "pirithous",
+          "label": "Theseus’s Life",
+          "workId": "theseus"
+        }
+      ]
+    },
+    {
+      "id": "numitor",
+      "names": [
+        "Numitor"
+      ],
+      "relation": "Maternal grandfather; rightful king of Alba",
+      "blurb": "Deposed by Amulius, he recognized the twins and with them recovered Alba Longa before they founded Rome.",
+      "links": [
+        {
+          "characterId": "amulius"
+        },
+        {
+          "characterId": "remus"
+        }
+      ]
+    },
+    {
+      "id": "amulius",
+      "names": [
+        "Amulius"
+      ],
+      "relation": "Usurping great-uncle at Alba",
+      "blurb": "Seized Numitor’s throne, forced Rhea Silvia into Vestal vows, and ordered the twins drowned. They returned and killed him.",
+      "links": [
+        {
+          "characterId": "numitor"
+        },
+        {
+          "characterId": "rhea-silvia"
+        },
+        {
+          "characterId": "remus"
+        }
+      ]
+    },
+    {
+      "id": "rhea-silvia",
+      "names": [
+        "Rhea Silvia",
+        "Ilia"
+      ],
+      "relation": "Mother of the twins",
+      "blurb": "Daughter of Numitor, made a Vestal by Amulius. Mars (or a lover) fathered Romulus and Remus upon her.",
+      "links": [
+        {
+          "characterId": "numitor"
+        },
+        {
+          "characterId": "amulius"
+        },
+        {
+          "characterId": "mars"
+        }
+      ]
+    },
+    {
+      "id": "mars",
+      "names": [
+        "Mars"
+      ],
+      "relation": "Reputed divine father",
+      "blurb": "War-god said to have fathered the twins on Rhea Silvia—the pedigree Rome claimed for its martial destiny.",
+      "links": [
+        {
+          "characterId": "rhea-silvia"
+        }
+      ]
+    },
+    {
+      "id": "faustulus",
+      "names": [
+        "Faustulus"
+      ],
+      "relation": "Shepherd foster-father",
+      "blurb": "Royal herdsman who found the twins at the fig-tree and raised them with Larentia. He later revealed their birth to Numitor.",
+      "links": [
+        {
+          "characterId": "larentia"
+        },
+        {
+          "characterId": "remus"
+        },
+        {
+          "characterId": "numitor"
+        }
+      ]
+    },
+    {
+      "id": "larentia",
+      "names": [
+        "Larentia",
+        "Acca Larentia",
+        "Acca"
+      ],
+      "relation": "Foster-mother",
+      "blurb": "Wife of Faustulus who nursed the twins. Some say “Lupa” was her nickname as a courtesan; others keep the wolf literal.",
+      "links": [
+        {
+          "characterId": "faustulus"
+        }
+      ]
+    },
+    {
+      "id": "tatius",
+      "names": [
+        "Tatius"
+      ],
+      "relation": "Sabine co-king",
+      "blurb": "King of the Sabines who warred on Rome after the rape of the women, then shared the throne with Romulus until he was murdered at Lavinium.",
+      "links": [
+        {
+          "characterId": "hersilia"
+        },
+        {
+          "characterId": "tarpeia"
+        }
+      ]
+    },
+    {
+      "id": "hersilia",
+      "names": [
+        "Hersilia"
+      ],
+      "relation": "Wife; peacemaker with the Sabines",
+      "blurb": "Chief among the stolen Sabine women. She begged peace between fathers and husbands and later was said to share Romulus’s divine honors.",
+      "links": [
+        {
+          "characterId": "tatius"
+        }
+      ]
+    },
+    {
+      "id": "tarpeia",
+      "names": [
+        "Tarpeia"
+      ],
+      "relation": "Betrayer of the Capitol",
+      "blurb": "Daughter of the citadel’s commander; she opened the gate to Tatius for what the Sabines wore on their left arms—and was crushed under their shields.",
+      "links": [
+        {
+          "characterId": "tatius"
+        },
+        {
+          "characterId": "tarpeius"
+        }
+      ]
+    },
+    {
+      "id": "tarpeius",
+      "names": [
+        "Tarpeius"
+      ],
+      "relation": "Commander of the Capitol",
+      "blurb": "Father of Tarpeia; entrusted with the Capitoline when the Sabines attacked. His daughter’s treachery cost Rome the rock.",
+      "links": [
+        {
+          "characterId": "tarpeia"
+        },
+        {
+          "characterId": "tatius"
+        }
+      ]
+    },
+    {
+      "id": "acron",
+      "names": [
+        "Acron"
+      ],
+      "relation": "King of Caenina; first spolia opima",
+      "blurb": "Ruler of Caenina who challenged Romulus after the rape. Romulus killed him and dedicated the first spolia opima to Jupiter Feretrius."
+    },
+    {
+      "id": "celer",
+      "names": [
+        "Celer"
+      ],
+      "relation": "Wall-guard who may have killed Remus",
+      "blurb": "One tradition makes this swift lieutenant, not Romulus, the man who struck Remus for leaping the unfinished wall.",
+      "links": [
+        {
+          "characterId": "remus"
+        }
+      ]
+    },
+    {
+      "id": "hostilius",
+      "names": [
+        "Hostilius"
+      ],
+      "relation": "Early Sabine war casualty; ancestor of Tullus",
+      "blurb": "Roman who fell fighting the Sabines; his grandson Tullus Hostilius later became king. Plutarch marks the family among the first mixed houses.",
+      "links": [
+        {
+          "characterId": "tatius"
+        },
+        {
+          "characterId": "tullus",
+          "label": "Tullus Hostilius",
+          "workId": "numa-pompilius"
+        }
+      ]
+    },
+    {
+      "id": "aeneas",
+      "names": [
+        "Aeneas"
+      ],
+      "relation": "Trojan ancestor of the Alban line",
+      "blurb": "Trojan exile whose Italian settlement founded the line of Alba Longa—Numitor, Rhea Silvia, and so the twins.",
+      "links": [
+        {
+          "characterId": "numitor"
+        }
+      ]
+    },
+    {
+      "id": "evander",
+      "names": [
+        "Evander"
+      ],
+      "relation": "Earlier settler on the Palatine",
+      "blurb": "Arcadian who held the Palatine before Romulus; his rites of Hercules and the Lupercal color Rome’s oldest cults.",
+      "links": [
+        {
+          "characterId": "hercules"
+        }
+      ]
+    },
+    {
+      "id": "hercules",
+      "names": [
+        "Hercules"
+      ],
+      "relation": "Hero honored at the Ara Maxima",
+      "blurb": "Evander’s guest-hero whose altar Romulus’s Rome kept. His cult marks the Greek strand in early Roman religion.",
+      "links": [
+        {
+          "characterId": "evander"
+        }
+      ]
+    },
+    {
+      "id": "quirinus",
+      "names": [
+        "Quirinus"
+      ],
+      "relation": "Divine name after his vanishing",
+      "blurb": "The god Romulus became when he disappeared in the storm—or so Proculus Julius swore to the mourning people.",
+      "links": [
+        {
+          "characterId": "proculus"
+        }
+      ]
+    },
+    {
+      "id": "proculus",
+      "names": [
+        "Proculus",
+        "Proculus Julius",
+        "Julius"
+      ],
+      "relation": "Witness of Romulus’s apotheosis",
+      "blurb": "Patrician who swore Romulus met him on the road as Quirinus and ordered the Romans to cultivate arms and know their city would rule.",
+      "links": [
+        {
+          "characterId": "quirinus"
+        }
+      ]
+    },
+    {
+      "id": "talasius",
+      "names": [
+        "Talasius"
+      ],
+      "relation": "Name cried at Roman weddings",
+      "blurb": "Companion (or cry) tied to the rape of the Sabine women; Romans later shouted “Talasio” at marriages as a lucky omen.",
+      "links": [
+        {
+          "characterId": "hersilia"
+        },
+        {
+          "characterId": "tatius"
+        }
+      ]
+    },
+    {
+      "id": "tarchetius",
+      "names": [
+        "Tarchetius"
+      ],
+      "relation": "Alternate Alban founder-tale king",
+      "blurb": "In one strange variant, an Alban king whose hearth-phallus story rivals the Mars-and-Rhea birth of the twins.",
+      "links": [
+        {
+          "characterId": "tarrutius"
+        },
+        {
+          "characterId": "rhea-silvia"
+        }
+      ]
+    },
+    {
+      "id": "tarrutius",
+      "names": [
+        "Tarrutius"
+      ],
+      "relation": "Husband in the Tarchetius variant",
+      "blurb": "Wealthy man married to a handmaid in the alternate birth story Tarchetius’s court produced.",
+      "links": [
+        {
+          "characterId": "tarchetius"
+        }
+      ]
+    },
+    {
+      "id": "fidenae",
+      "names": [
+        "Fidenae"
+      ],
+      "relation": "Neighbor city Romulus took",
+      "blurb": "Latin town Romulus seized after it stirred against Rome—one of the early wars that widened his territory.",
+      "links": [
+        {
+          "characterId": "veientes"
+        }
+      ]
+    },
+    {
+      "id": "veientes",
+      "names": [
+        "Veientes"
+      ],
+      "relation": "Etruscan neighbors; early foes",
+      "blurb": "People of Veii who fought Romulus after Fidenae fell. Their wars foreshadow Camillus’s later siege.",
+      "links": [
+        {
+          "characterId": "fidenae"
+        },
+        {
+          "characterId": "camillus",
+          "label": "Camillus",
+          "workId": "camillus"
+        }
+      ]
+    },
+    {
+      "id": "juba",
+      "names": [
+        "Juba"
+      ],
+      "relation": "Historian cited on early Rome",
+      "blurb": "Learned king whose antiquarian notes Plutarch quotes among conflicting accounts of Rome’s beginnings."
+    },
+    {
+      "id": "varro",
+      "names": [
+        "Varro"
+      ],
+      "relation": "Roman antiquarian cited",
+      "blurb": "Marcus Terentius Varro, whose chronology and lore Plutarch weighs against other founders’ dates."
+    }
+  ]
+}

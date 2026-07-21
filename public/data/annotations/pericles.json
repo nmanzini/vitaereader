@@ -1,0 +1,402 @@
+{
+  "workId": "pericles",
+  "subject": "Pericles",
+  "characters": [
+    {
+      "id": "xanthippus",
+      "names": [
+        "Xanthippus"
+      ],
+      "relation": "Father; victor at Mycale",
+      "blurb": "Persian War commander who married Agariste; Pericles inherited both Alcmaeonid blood and martial expectation.",
+      "links": [
+        {
+          "characterId": "agariste"
+        },
+        {
+          "characterId": "cimon"
+        }
+      ]
+    },
+    {
+      "id": "agariste",
+      "names": [
+        "Agariste"
+      ],
+      "relation": "Mother; Alcmaeonid",
+      "blurb": "Niece of Cleisthenes; her dream of a lion foreshadowed Pericles’s birth in the family stories.",
+      "links": [
+        {
+          "characterId": "xanthippus"
+        }
+      ]
+    },
+    {
+      "id": "aspasia",
+      "names": [
+        "Aspasia"
+      ],
+      "relation": "Companion; witty Milesian",
+      "blurb": "Foreign partner blamed and praised for Pericles’s rhetoric and the Samian war; Socrates and the comics both haunt her door.",
+      "links": [
+        {
+          "characterId": "anaxagoras"
+        },
+        {
+          "characterId": "phidias"
+        },
+        {
+          "characterId": "alcibiades"
+        }
+      ]
+    },
+    {
+      "id": "anaxagoras",
+      "names": [
+        "Anaxagoras"
+      ],
+      "relation": "Philosopher teacher",
+      "blurb": "Clazomenian who taught Pericles natural philosophy; later prosecuted for impiety as a way of wounding Pericles.",
+      "links": [
+        {
+          "characterId": "aspasia"
+        },
+        {
+          "characterId": "damon"
+        },
+        {
+          "characterId": "phidias"
+        }
+      ]
+    },
+    {
+      "id": "phidias",
+      "names": [
+        "Phidias"
+      ],
+      "relation": "Sculptor of the Parthenon program",
+      "blurb": "Directed the great Athena and the works on the Acropolis; enemies accused him of embezzlement to strike at Pericles.",
+      "links": [
+        {
+          "characterId": "aspasia"
+        },
+        {
+          "characterId": "anaxagoras"
+        }
+      ]
+    },
+    {
+      "id": "cimon",
+      "names": [
+        "Cimon"
+      ],
+      "relation": "Aristocratic rival; then recalled",
+      "blurb": "Son of Miltiades, generous and pro-Spartan. Pericles’s party ostracized him, then brought him back when Sparta snubbed him.",
+      "links": [
+        {
+          "characterId": "elpinice"
+        },
+        {
+          "characterId": "ephialtes"
+        },
+        {
+          "characterId": "cimon-life",
+          "label": "Cimon’s Life",
+          "workId": "cimon"
+        }
+      ]
+    },
+    {
+      "id": "elpinice",
+      "names": [
+        "Elpinice"
+      ],
+      "relation": "Cimon’s sister; sharp tongue",
+      "blurb": "Twitted Pericles after the Samian triumph; Plutarch keeps her as a voice of the old Cimonian house.",
+      "links": [
+        {
+          "characterId": "cimon"
+        }
+      ]
+    },
+    {
+      "id": "ephialtes",
+      "names": [
+        "Ephialtes"
+      ],
+      "relation": "Ally who stripped the Areopagus",
+      "blurb": "Democratic reformer who broke the Areopagus’s power; assassinated, leaving Pericles heir to the popular leadership.",
+      "links": [
+        {
+          "characterId": "cimon"
+        },
+        {
+          "characterId": "areopagus"
+        }
+      ]
+    },
+    {
+      "id": "thucydides",
+      "names": [
+        "Thucydides"
+      ],
+      "relation": "Oligarchic opponent (son of Melesias)",
+      "blurb": "Organized the “good and fair” against Pericles until ostracism removed him—not the historian, though Plutarch cites that Thucydides too.",
+      "links": [
+        {
+          "characterId": "cimon"
+        },
+        {
+          "characterId": "ephialtes"
+        }
+      ]
+    },
+    {
+      "id": "archidamus",
+      "names": [
+        "Archidamus"
+      ],
+      "relation": "Spartan king in the first invasions",
+      "blurb": "Led Peloponnesians into Attica; Pericles’s strategy was to refuse land battle and trust the walls and fleet.",
+      "links": [
+        {
+          "characterId": "tolmides"
+        },
+        {
+          "characterId": "cleon"
+        }
+      ]
+    },
+    {
+      "id": "tolmides",
+      "names": [
+        "Tolmides"
+      ],
+      "relation": "General whose boldness Pericles checked",
+      "blurb": "Pushed an over-bold Boeotian campaign; his disaster vindicated Pericles’s caution—too late for the dead.",
+      "links": [
+        {
+          "characterId": "archidamus"
+        }
+      ]
+    },
+    {
+      "id": "cleon",
+      "names": [
+        "Cleon"
+      ],
+      "relation": "Demagogue after Pericles",
+      "blurb": "Tanner-politician who inherited the people’s ear when plague and war had worn Pericles down.",
+      "links": [
+        {
+          "characterId": "archidamus"
+        },
+        {
+          "characterId": "aspasia"
+        }
+      ]
+    },
+    {
+      "id": "damon",
+      "names": [
+        "Damon"
+      ],
+      "relation": "Music teacher and political coach",
+      "blurb": "Trained Pericles in music and, enemies said, in the arts of managing the demos; ostracized as too clever.",
+      "links": [
+        {
+          "characterId": "anaxagoras"
+        }
+      ]
+    },
+    {
+      "id": "paralus",
+      "names": [
+        "Paralus"
+      ],
+      "relation": "Son who died in the plague",
+      "blurb": "Legitimate son lost to the plague; Pericles’s public composure broke when he placed the burial wreath. His elder brother Xanthippus died in the same dark years.",
+      "links": [
+        {
+          "characterId": "xanthippus"
+        },
+        {
+          "characterId": "aspasia"
+        }
+      ]
+    },
+    {
+      "id": "hipponicus",
+      "names": [
+        "Hipponicus"
+      ],
+      "relation": "Rich in-law of the house",
+      "blurb": "Father of Callias; tied to the web of marriages around Pericles’s later household.",
+      "links": [
+        {
+          "characterId": "callias"
+        },
+        {
+          "characterId": "aspasia"
+        }
+      ]
+    },
+    {
+      "id": "callias",
+      "names": [
+        "Callias"
+      ],
+      "relation": "Torch-bearer; rich relative",
+      "blurb": "Heir of Hipponicus; appears in the gossipy edges of Aspasia’s and Alcibiades’s circle.",
+      "links": [
+        {
+          "characterId": "hipponicus"
+        },
+        {
+          "characterId": "alcibiades"
+        }
+      ]
+    },
+    {
+      "id": "alcibiades",
+      "names": [
+        "Alcibiades"
+      ],
+      "relation": "Ward raised in his house",
+      "blurb": "Young kinsman Pericles brought up—brilliant, unstable, and destined for his own Life of glory and ruin.",
+      "links": [
+        {
+          "characterId": "aspasia"
+        },
+        {
+          "characterId": "alcibiades-life",
+          "label": "Alcibiades’s Life",
+          "workId": "alcibiades"
+        }
+      ]
+    },
+    {
+      "id": "cratinus",
+      "names": [
+        "Cratinus"
+      ],
+      "relation": "Comic poet who mocked him",
+      "blurb": "Old comedian who ridiculed Pericles’s “onion-head” and Aspasia; Plutarch mines the stage for contemporary color.",
+      "links": [
+        {
+          "characterId": "aspasia"
+        },
+        {
+          "characterId": "phidias"
+        }
+      ]
+    },
+    {
+      "id": "melissus",
+      "names": [
+        "Melissus"
+      ],
+      "relation": "Samian admiral-philosopher",
+      "blurb": "Eleatic thinker who commanded Samos against Athens; briefly bested Pericles at sea in the Samian war.",
+      "links": [
+        {
+          "characterId": "aspasia"
+        },
+        {
+          "characterId": "phidias"
+        }
+      ]
+    },
+    {
+      "id": "myronides",
+      "names": [
+        "Myronides"
+      ],
+      "relation": "Earlier democratic general",
+      "blurb": "Hero of Oenophyta’s generation; cited among the captains who made Athens bold before Pericles’s long ascendancy.",
+      "links": [
+        {
+          "characterId": "tolmides"
+        }
+      ]
+    },
+    {
+      "id": "lampon",
+      "names": [
+        "Lampon"
+      ],
+      "relation": "Seer of the Thurii colony",
+      "blurb": "Prophet involved in the Italian colony project—an outlet for Athens’s energy in Pericles’s peacetime."
+    },
+    {
+      "id": "anthemocritus",
+      "names": [
+        "Anthemocritus"
+      ],
+      "relation": "Herald murdered by Megara",
+      "blurb": "Athenian envoy whose death sharpened the Megarian decree quarrel on the eve of the Peloponnesian War.",
+      "links": [
+        {
+          "characterId": "archidamus"
+        },
+        {
+          "characterId": "cleon"
+        }
+      ]
+    },
+    {
+      "id": "lacedaemonius",
+      "names": [
+        "Lacedaemonius"
+      ],
+      "relation": "Cimon’s son; sent to Corcyra",
+      "blurb": "Dispatched with few ships—enemies said Pericles meant the name to insult Sparta while giving scant help.",
+      "links": [
+        {
+          "characterId": "cimon"
+        }
+      ]
+    },
+    {
+      "id": "zeno",
+      "names": [
+        "Zeno"
+      ],
+      "relation": "Eleatic who visited Athens",
+      "blurb": "Philosopher said to have taught in Pericles’s circle beside Anaxagoras.",
+      "links": [
+        {
+          "characterId": "anaxagoras"
+        }
+      ]
+    },
+    {
+      "id": "areopagus",
+      "names": [
+        "Areopagus"
+      ],
+      "relation": "Council Ephialtes curtailed",
+      "blurb": "Old guardian council stripped of political power in the reforms that opened Pericles’s democratic primacy.",
+      "links": [
+        {
+          "characterId": "ephialtes"
+        }
+      ]
+    },
+    {
+      "id": "fabius-cross",
+      "names": [
+        "Fabius"
+      ],
+      "relation": "Roman pair in the Parallel Lives",
+      "blurb": "Fabius Maximus, the delayer, is Pericles’s match—each a cautious savior accused of cowardice by hotter men.",
+      "links": [
+        {
+          "characterId": "hannibal",
+          "label": "Fabius’s Life",
+          "workId": "fabius"
+        }
+      ]
+    }
+  ]
+}

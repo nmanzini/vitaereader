@@ -1,0 +1,286 @@
+{
+  "workId": "coriolanus",
+  "subject": "Coriolanus",
+  "characters": [
+    {
+      "id": "marcius",
+      "names": [
+        "Marcius"
+      ],
+      "relation": "Birth name of Coriolanus",
+      "blurb": "Caius Marcius, later Coriolanus for Corioli. Proud patrician warrior who could beat Volscians but not court the Roman demos.",
+      "links": [
+        {
+          "characterId": "volumnia"
+        },
+        {
+          "characterId": "tullus"
+        },
+        {
+          "characterId": "cominius"
+        }
+      ]
+    },
+    {
+      "id": "tullus",
+      "names": [
+        "Tullus",
+        "Tullus Aufidius",
+        "Aufidius"
+      ],
+      "relation": "Volscian rival, then ally",
+      "blurb": "Chief of the Volscians who first hated Marcius, then used him against Rome, then had him killed when peace returned.",
+      "links": [
+        {
+          "characterId": "marcius"
+        },
+        {
+          "characterId": "volumnia"
+        },
+        {
+          "characterId": "antium"
+        }
+      ]
+    },
+    {
+      "id": "volumnia",
+      "names": [
+        "Volumnia"
+      ],
+      "relation": "Mother who saved Rome",
+      "blurb": "Led the women’s embassy that shamed Coriolanus into sparing the city—love of mother over revenge.",
+      "links": [
+        {
+          "characterId": "vergilia"
+        },
+        {
+          "characterId": "valeria"
+        },
+        {
+          "characterId": "marcius"
+        },
+        {
+          "characterId": "tullus"
+        },
+        {
+          "characterId": "socrates",
+          "label": "Alcibiades’s Life",
+          "workId": "alcibiades"
+        }
+      ]
+    },
+    {
+      "id": "vergilia",
+      "names": [
+        "Vergilia"
+      ],
+      "relation": "Wife",
+      "blurb": "Went with Volumnia and the matrons to the Volscian camp; her silence and tears weigh beside the mother’s speech.",
+      "links": [
+        {
+          "characterId": "volumnia"
+        },
+        {
+          "characterId": "marcius"
+        }
+      ]
+    },
+    {
+      "id": "cominius",
+      "names": [
+        "Cominius"
+      ],
+      "relation": "Consul at Corioli",
+      "blurb": "Commander who witnessed Marcius’s storm of Corioli and bestowed the surname Coriolanus.",
+      "links": [
+        {
+          "characterId": "marcius"
+        },
+        {
+          "characterId": "corioli"
+        }
+      ]
+    },
+    {
+      "id": "corioli",
+      "names": [
+        "Corioli"
+      ],
+      "relation": "Volscian town that named him",
+      "blurb": "City Marcius took almost alone while the main army faltered; from it he wore the name Coriolanus.",
+      "links": [
+        {
+          "characterId": "cominius"
+        },
+        {
+          "characterId": "marcius"
+        },
+        {
+          "characterId": "tullus"
+        }
+      ]
+    },
+    {
+      "id": "valeria",
+      "names": [
+        "Valeria"
+      ],
+      "relation": "Matron who urged the women’s embassy",
+      "blurb": "Inspired Volumnia and the Roman women to go as suppliants—the civic counterpart to male arms.",
+      "links": [
+        {
+          "characterId": "volumnia"
+        },
+        {
+          "characterId": "vergilia"
+        }
+      ]
+    },
+    {
+      "id": "sicinnius",
+      "names": [
+        "Sicinnius",
+        "Sicinius"
+      ],
+      "relation": "Tribune who prosecuted him",
+      "blurb": "Plebeian leader who drove the charge that ended in Coriolanus’s exile when he opposed cheap grain and popular power.",
+      "links": [
+        {
+          "characterId": "brutus"
+        },
+        {
+          "characterId": "marcius"
+        }
+      ]
+    },
+    {
+      "id": "brutus",
+      "names": [
+        "Brutus"
+      ],
+      "relation": "Tribune colleague against him",
+      "blurb": "Named with Sicinnius among the tribunes who made Coriolanus’s contempt for the people a capital quarrel.",
+      "links": [
+        {
+          "characterId": "sicinnius"
+        },
+        {
+          "characterId": "marcius"
+        }
+      ]
+    },
+    {
+      "id": "lartius",
+      "names": [
+        "Lartius"
+      ],
+      "relation": "Roman captain at Corioli",
+      "blurb": "Commander in the Volscian campaign who shared the day Marcius won his surname.",
+      "links": [
+        {
+          "characterId": "cominius"
+        },
+        {
+          "characterId": "marcius"
+        }
+      ]
+    },
+    {
+      "id": "antium",
+      "names": [
+        "Antium",
+        "Antiates"
+      ],
+      "relation": "Volscian capital he used against Rome",
+      "blurb": "City of Tullus’s power; Coriolanus made it the base of the invasion that brought Rome to its knees.",
+      "links": [
+        {
+          "characterId": "tullus"
+        },
+        {
+          "characterId": "volscians"
+        }
+      ]
+    },
+    {
+      "id": "volscians",
+      "names": [
+        "Volscians",
+        "Volscian"
+      ],
+      "relation": "People he led against Rome",
+      "blurb": "Italian nation Rome fought for generations; Coriolanus’s exile made their arms nearly fatal to his mother city.",
+      "links": [
+        {
+          "characterId": "tullus"
+        },
+        {
+          "characterId": "corioli"
+        },
+        {
+          "characterId": "antium"
+        }
+      ]
+    },
+    {
+      "id": "menenius",
+      "names": [
+        "Menenius",
+        "Menenius Agrippa",
+        "Agrippa"
+      ],
+      "relation": "Patrician conciliator (in the wider tale)",
+      "blurb": "Appears in the early Republic’s class strife that frames Coriolanus’s refusal to flatter the plebs.",
+      "links": [
+        {
+          "characterId": "sicinnius"
+        }
+      ]
+    },
+    {
+      "id": "jupiter",
+      "names": [
+        "Jupiter"
+      ],
+      "relation": "God of the Capitol he nearly took",
+      "blurb": "Rome’s chief god; the city’s prayers and the women’s embassy turn on piety Coriolanus still feared to outrage.",
+      "links": [
+        {
+          "characterId": "volumnia"
+        }
+      ]
+    },
+    {
+      "id": "aediles",
+      "names": [
+        "Aediles"
+      ],
+      "relation": "Magistrates in the grain quarrel",
+      "blurb": "Market officers tangled in the dearth and distributions that inflamed Coriolanus’s contempt for popular relief.",
+      "links": [
+        {
+          "characterId": "sicinnius"
+        },
+        {
+          "characterId": "marcius"
+        }
+      ]
+    },
+    {
+      "id": "latins",
+      "names": [
+        "Latin"
+      ],
+      "relation": "Neighbors in the early wars",
+      "blurb": "Latin allies and foes form the Italian background to Volscian campaigns that made Marcius famous.",
+      "links": [
+        {
+          "characterId": "volscians"
+        },
+        {
+          "characterId": "corioli"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,628 @@
+{
+  "workId": "alexander",
+  "subject": "Alexander",
+  "characters": [
+    {
+      "id": "philip",
+      "names": [
+        "Philip"
+      ],
+      "relation": "Father; king of Macedon",
+      "blurb": "Unified Macedon and Greece’s leash at Chaeronea. Murdered in 336; Alexander inherited his war on Persia—and his tangled court.",
+      "links": [
+        {
+          "characterId": "olympias"
+        },
+        {
+          "characterId": "attalus"
+        },
+        {
+          "characterId": "pausanias"
+        },
+        {
+          "characterId": "aristotle"
+        }
+      ]
+    },
+    {
+      "id": "olympias",
+      "names": [
+        "Olympias"
+      ],
+      "relation": "Mother; fierce Molossian",
+      "blurb": "Claimed divine dreams about her son’s birth. Her feuds with Philip and later with Antipater darken Alexander’s rear.",
+      "links": [
+        {
+          "characterId": "philip"
+        },
+        {
+          "characterId": "arrhidaeus"
+        },
+        {
+          "characterId": "antipater"
+        }
+      ]
+    },
+    {
+      "id": "darius",
+      "names": [
+        "Darius"
+      ],
+      "relation": "Persian Great King he overthrew",
+      "blurb": "Lost at Issus and Gaugamela, fled, and was murdered by Bessus. Alexander buried him royally and took his household.",
+      "links": [
+        {
+          "characterId": "parmenio"
+        },
+        {
+          "characterId": "bessus"
+        },
+        {
+          "characterId": "statira"
+        }
+      ]
+    },
+    {
+      "id": "parmenio",
+      "names": [
+        "Parmenio"
+      ],
+      "relation": "Senior general; later executed’s father",
+      "blurb": "Philip’s old marshal, useful and cautious. After Philotas’s fall Alexander had him killed before news could fly to Ecbatana.",
+      "links": [
+        {
+          "characterId": "philotas"
+        },
+        {
+          "characterId": "clitus"
+        },
+        {
+          "characterId": "darius"
+        }
+      ]
+    },
+    {
+      "id": "philotas",
+      "names": [
+        "Philotas"
+      ],
+      "relation": "Parmenio’s son; executed for conspiracy",
+      "blurb": "Commander of the Companions, arrogant in prosperity. Tortured and killed when a plot touched his silence.",
+      "links": [
+        {
+          "characterId": "parmenio"
+        },
+        {
+          "characterId": "craterus"
+        },
+        {
+          "characterId": "hephaestion"
+        }
+      ]
+    },
+    {
+      "id": "hephaestion",
+      "names": [
+        "Hephaestion"
+      ],
+      "relation": "Closest friend; “Patroclus”",
+      "blurb": "Boyhood companion and chiliarch. His death at Ecbatana broke Alexander into extravagant mourning and divine honors.",
+      "links": [
+        {
+          "characterId": "craterus"
+        },
+        {
+          "characterId": "roxana"
+        },
+        {
+          "characterId": "perdiccas"
+        }
+      ]
+    },
+    {
+      "id": "aristotle",
+      "names": [
+        "Aristotle"
+      ],
+      "relation": "Tutor at Mieza",
+      "blurb": "Taught the young prince Homer and philosophy. Later cooled when Alexander killed Callisthenes and ruled as a god.",
+      "links": [
+        {
+          "characterId": "philip"
+        },
+        {
+          "characterId": "callisthenes"
+        },
+        {
+          "characterId": "homer"
+        }
+      ]
+    },
+    {
+      "id": "callisthenes",
+      "names": [
+        "Callisthenes"
+      ],
+      "relation": "Historian who refused prostration",
+      "blurb": "Aristotle’s kinsman who recorded the march, opposed proskynesis, and died in custody after the pages’ conspiracy.",
+      "links": [
+        {
+          "characterId": "aristotle"
+        },
+        {
+          "characterId": "anaxarchus"
+        },
+        {
+          "characterId": "clitus"
+        }
+      ]
+    },
+    {
+      "id": "clitus",
+      "names": [
+        "Clitus"
+      ],
+      "relation": "Saved him, then slain at dinner",
+      "blurb": "Black Clitus cut down the Persian at the Granicus who would have killed Alexander—then died by Alexander’s spear in a drunken quarrel.",
+      "links": [
+        {
+          "characterId": "parmenio"
+        },
+        {
+          "characterId": "callisthenes"
+        },
+        {
+          "characterId": "hephaestion"
+        }
+      ]
+    },
+    {
+      "id": "antipater",
+      "names": [
+        "Antipater"
+      ],
+      "relation": "Regent in Macedon",
+      "blurb": "Held Europe while Alexander conquered. Olympias’s enemy; his summons to Asia and his son Cassander haunt the Life’s end.",
+      "links": [
+        {
+          "characterId": "olympias"
+        },
+        {
+          "characterId": "craterus"
+        }
+      ]
+    },
+    {
+      "id": "craterus",
+      "names": [
+        "Craterus"
+      ],
+      "relation": "Loyal marshal; rival of Hephaestion",
+      "blurb": "Blunt Macedonian favorite for traditional ways. Alexander joked Hephaestion loved Alexander, Craterus the king.",
+      "links": [
+        {
+          "characterId": "hephaestion"
+        },
+        {
+          "characterId": "philotas"
+        },
+        {
+          "characterId": "antipater"
+        }
+      ]
+    },
+    {
+      "id": "nearchus",
+      "names": [
+        "Nearchus"
+      ],
+      "relation": "Admiral of the Ocean voyage",
+      "blurb": "Cretan friend who sailed from the Indus to the Persian Gulf and told Alexander the sea tales he craved.",
+      "links": [
+        {
+          "characterId": "onesicritus"
+        },
+        {
+          "characterId": "porus"
+        }
+      ]
+    },
+    {
+      "id": "onesicritus",
+      "names": [
+        "Onesicritus"
+      ],
+      "relation": "Helmsman-historian",
+      "blurb": "Cynic-trained writer who steered the fleet and embroidered the Indian wonders Plutarch sometimes doubts.",
+      "links": [
+        {
+          "characterId": "nearchus"
+        },
+        {
+          "characterId": "calanus"
+        }
+      ]
+    },
+    {
+      "id": "aristander",
+      "names": [
+        "Aristander"
+      ],
+      "relation": "Seer of good omens",
+      "blurb": "Telmessian soothsayer who read entrails and birds for the king from the Granicus to Babylon’s last days.",
+      "links": [
+        {
+          "characterId": "philip"
+        },
+        {
+          "characterId": "darius"
+        }
+      ]
+    },
+    {
+      "id": "porus",
+      "names": [
+        "Porus"
+      ],
+      "relation": "Indian king fought at the Hydaspes",
+      "blurb": "Tall opponent who lost elephants and army yet kept his kingdom by asking to be treated “like a king.”",
+      "links": [
+        {
+          "characterId": "bucephalas"
+        },
+        {
+          "characterId": "nearchus"
+        }
+      ]
+    },
+    {
+      "id": "bucephalas",
+      "names": [
+        "Bucephalas"
+      ],
+      "relation": "Famous war-horse",
+      "blurb": "The stallion only Alexander could tame; died in India and gave his name to a city.",
+      "links": [
+        {
+          "characterId": "philip"
+        },
+        {
+          "characterId": "porus"
+        }
+      ]
+    },
+    {
+      "id": "cleopatra",
+      "names": [
+        "Cleopatra"
+      ],
+      "relation": "Philip’s last wife (Attalus’s niece)",
+      "blurb": "Marriage that enraged Olympias and insulted Alexander at the wedding feast—prelude to Philip’s murder.",
+      "links": [
+        {
+          "characterId": "philip"
+        },
+        {
+          "characterId": "attalus"
+        },
+        {
+          "characterId": "olympias"
+        }
+      ]
+    },
+    {
+      "id": "attalus",
+      "names": [
+        "Attalus"
+      ],
+      "relation": "Uncle of Cleopatra; insulted Alexander",
+      "blurb": "Prayed at the wedding for a “legitimate” heir; Alexander flung a cup, fled, and later had him killed in Asia.",
+      "links": [
+        {
+          "characterId": "philip"
+        },
+        {
+          "characterId": "cleopatra"
+        }
+      ]
+    },
+    {
+      "id": "diogenes",
+      "names": [
+        "Diogenes"
+      ],
+      "relation": "Cynic at Corinth",
+      "blurb": "Asked only that Alexander stand out of his sun—the meeting Plutarch keeps as a mirror to royal vanity.",
+      "links": [
+        {
+          "characterId": "aristotle"
+        }
+      ]
+    },
+    {
+      "id": "perdiccas",
+      "names": [
+        "Perdiccas"
+      ],
+      "relation": "Bodyguard; later regent",
+      "blurb": "Trusted after Hephaestion’s death with the ring in some tales; already a leading Companion in the Indian years.",
+      "links": [
+        {
+          "characterId": "hephaestion"
+        },
+        {
+          "characterId": "ptolemy"
+        }
+      ]
+    },
+    {
+      "id": "harpalus",
+      "names": [
+        "Harpalus"
+      ],
+      "relation": "Treasurer who fled with gold",
+      "blurb": "Boyhood friend left with the treasure; absconded to Athens with stolen wealth when Alexander’s return neared.",
+      "links": [
+        {
+          "characterId": "antipater"
+        }
+      ]
+    },
+    {
+      "id": "anaxarchus",
+      "names": [
+        "Anaxarchus"
+      ],
+      "relation": "Flattering philosopher",
+      "blurb": "Urged divine honors and mocked Callisthenes; the court foil to freer speech.",
+      "links": [
+        {
+          "characterId": "callisthenes"
+        }
+      ]
+    },
+    {
+      "id": "calanus",
+      "names": [
+        "Calanus"
+      ],
+      "relation": "Indian gymnosophist",
+      "blurb": "Ascetic who followed the march and burned himself alive when illness came—astonishing the Macedonians.",
+      "links": [
+        {
+          "characterId": "onesicritus"
+        }
+      ]
+    },
+    {
+      "id": "leonidas",
+      "names": [
+        "Leonidas"
+      ],
+      "relation": "Strict childhood tutor",
+      "blurb": "Antsman kinsman of Olympias who trained the boy hard and scolded him for lavish incense—until Asia’s wealth repaid the jest.",
+      "links": [
+        {
+          "characterId": "olympias"
+        },
+        {
+          "characterId": "aristotle"
+        }
+      ]
+    },
+    {
+      "id": "lysimachus",
+      "names": [
+        "Lysimachus"
+      ],
+      "relation": "Tutor who played Phoenix",
+      "blurb": "Called himself Phoenix to Alexander’s Achilles; later a Successor, here still the schoolroom courtier.",
+      "links": [
+        {
+          "characterId": "leonidas"
+        },
+        {
+          "characterId": "homer"
+        }
+      ]
+    },
+    {
+      "id": "homer",
+      "names": [
+        "Homer"
+      ],
+      "relation": "Poet he slept beside",
+      "blurb": "Kept the Iliad (Aristotle’s recension) under his pillow with a dagger—Achilles always the pattern.",
+      "links": [
+        {
+          "characterId": "aristotle"
+        },
+        {
+          "characterId": "hephaestion"
+        }
+      ]
+    },
+    {
+      "id": "roxana",
+      "names": [
+        "Roxana"
+      ],
+      "relation": "Bactrian wife",
+      "blurb": "Captured beauty Alexander married in the northeast; mother of his posthumous son in the wider tradition.",
+      "links": [
+        {
+          "characterId": "statira"
+        },
+        {
+          "characterId": "hephaestion"
+        }
+      ]
+    },
+    {
+      "id": "statira",
+      "names": [
+        "Statira"
+      ],
+      "relation": "Darius’s daughter; later wife",
+      "blurb": "Royal Persian bride in the Susa mass marriages—union of conqueror and Achaemenid house.",
+      "links": [
+        {
+          "characterId": "darius"
+        },
+        {
+          "characterId": "roxana"
+        }
+      ]
+    },
+    {
+      "id": "barsine",
+      "names": [
+        "Barsine"
+      ],
+      "relation": "Mentor’s daughter; earlier companion",
+      "blurb": "Persian or Greek-Persian noblewoman remembered among Alexander’s loves before the eastern queens.",
+      "links": [
+        {
+          "characterId": "memnon"
+        },
+        {
+          "characterId": "statira"
+        }
+      ]
+    },
+    {
+      "id": "bessus",
+      "names": [
+        "Bessus"
+      ],
+      "relation": "Satrap who murdered Darius",
+      "blurb": "Killed his king and took the upright tiara; Alexander hunted him down and punished the regicide.",
+      "links": [
+        {
+          "characterId": "darius"
+        }
+      ]
+    },
+    {
+      "id": "memnon",
+      "names": [
+        "Memnon"
+      ],
+      "relation": "Greek general for Persia",
+      "blurb": "Rhodian who nearly undid the invasion in Asia Minor; his death eased Alexander’s first campaigns.",
+      "links": [
+        {
+          "characterId": "darius"
+        },
+        {
+          "characterId": "barsine"
+        }
+      ]
+    },
+    {
+      "id": "ptolemy",
+      "names": [
+        "Ptolemy"
+      ],
+      "relation": "Bodyguard; later historian-king",
+      "blurb": "Companion whose memoirs (via others) feed the tradition; already trusted in India and at the festivals.",
+      "links": [
+        {
+          "characterId": "perdiccas"
+        },
+        {
+          "characterId": "seleucus"
+        }
+      ]
+    },
+    {
+      "id": "seleucus",
+      "names": [
+        "Seleucus"
+      ],
+      "relation": "Companion; future king",
+      "blurb": "Named among the rising officers of the later years—another Successor latent in the Life.",
+      "links": [
+        {
+          "characterId": "ptolemy"
+        },
+        {
+          "characterId": "perdiccas"
+        }
+      ]
+    },
+    {
+      "id": "arrhidaeus",
+      "names": [
+        "Arrhidaeus"
+      ],
+      "relation": "Half-brother; unfit heir",
+      "blurb": "Philip’s son by Philinna, impaired in mind; Olympias’s cruelty toward rivals frames his shadowed claim.",
+      "links": [
+        {
+          "characterId": "philip"
+        },
+        {
+          "characterId": "olympias"
+        }
+      ]
+    },
+    {
+      "id": "pausanias",
+      "names": [
+        "Pausanias"
+      ],
+      "relation": "Assassin of Philip",
+      "blurb": "Bodyguard who murdered Philip in the theater—motive tangled in court outrage Alexander’s enemies later exploited.",
+      "links": [
+        {
+          "characterId": "philip"
+        },
+        {
+          "characterId": "attalus"
+        }
+      ]
+    },
+    {
+      "id": "demaratus",
+      "names": [
+        "Demaratus"
+      ],
+      "relation": "Corinthian friend of the house",
+      "blurb": "Wept for Greece’s wars when he saw Alexander in Persia’s halls; old guest-friend of Philip’s court.",
+      "links": [
+        {
+          "characterId": "philip"
+        }
+      ]
+    },
+    {
+      "id": "ada",
+      "names": [
+        "Ada"
+      ],
+      "relation": "Carian queen he restored",
+      "blurb": "Hecatomnid ruler Alexander adopted as mother in Caria—local politics with a personal face.",
+      "links": [
+        {
+          "characterId": "philip"
+        }
+      ]
+    },
+    {
+      "id": "caesar-cross",
+      "names": [
+        "Caesar"
+      ],
+      "relation": "Roman pair in the Parallel Lives",
+      "blurb": "Julius Caesar is his match: world-conquerors whose courage and fortune Plutarch weighs side by side.",
+      "links": [
+        {
+          "characterId": "pompey",
+          "label": "Caesar’s Life",
+          "workId": "caesar"
+        }
+      ]
+    }
+  ]
+}

@@ -63,20 +63,45 @@ function main() {
   assert.equal(theseus.kind, 'life')
   assert.ok(theseus.paragraphs[0].text.length > 40)
 
-  // Optional per-work character annotations (pilot: theseus).
+  // Optional per-work character annotations.
   const annDir = join(DATA, 'annotations')
   if (existsSync(annDir)) {
-    const theseusAnnPath = join(annDir, 'theseus.json')
-    assert.ok(existsSync(theseusAnnPath), 'missing annotations/theseus.json')
-    const ann = readJson(theseusAnnPath)
-    assert.equal(ann.workId, 'theseus')
-    assert.equal(ann.subject, 'Theseus')
-    assert.ok(Array.isArray(ann.characters) && ann.characters.length > 0)
-    assert.ok(ann.characters.length <= 40, 'theseus annotations too large')
-    for (const c of ann.characters) {
-      assert.ok(c.id && Array.isArray(c.names) && c.names.length > 0)
-      assert.ok(typeof c.blurb === 'string' && c.blurb.length > 10)
-      assert.ok(typeof c.relation === 'string' && c.relation.length > 0)
+    const annFiles = readdirSync(annDir).filter((f) => f.endsWith('.json'))
+    assert.ok(annFiles.length > 0, 'annotations dir empty')
+    for (const file of annFiles) {
+      const id = file.replace(/\.json$/, '')
+      const ann = readJson(join(annDir, file))
+      assert.equal(ann.workId, id, `${file}: workId must match filename`)
+      assert.ok(typeof ann.subject === 'string' && ann.subject.length > 0)
+      assert.ok(Array.isArray(ann.characters) && ann.characters.length > 0)
+      assert.ok(
+        ann.characters.length <= 45,
+        `${file}: too many characters (${ann.characters.length})`,
+      )
+      const ids = new Set(ann.characters.map((c) => c.id))
+      assert.equal(ids.size, ann.characters.length, `${file}: duplicate character id`)
+      for (const c of ann.characters) {
+        assert.ok(c.id && Array.isArray(c.names) && c.names.length > 0)
+        assert.ok(typeof c.blurb === 'string' && c.blurb.length > 10)
+        assert.ok(typeof c.relation === 'string' && c.relation.length > 0)
+        if (c.links) {
+          assert.ok(Array.isArray(c.links), `${file}/${c.id}: links must be array`)
+          for (const link of c.links) {
+            assert.ok(link.characterId, `${file}/${c.id}: link missing characterId`)
+            if (link.workId == null || link.workId === id) {
+              assert.ok(
+                ids.has(link.characterId),
+                `${file}/${c.id}: same-work link to missing ${link.characterId}`,
+              )
+            } else {
+              assert.ok(
+                workIds.has(link.workId),
+                `${file}/${c.id}: link workId unknown: ${link.workId}`,
+              )
+            }
+          }
+        }
+      }
     }
   }
 

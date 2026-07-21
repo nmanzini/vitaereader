@@ -6,7 +6,7 @@ Read it before changing code. Prefer this file over chat memory or `README.md`.
 ## North star
 
 Vitae is a calm, mobile-first PWA for Plutarch’s *Parallel Lives* (Dryden/Clough, Gutenberg #674).
-Readers move **pair-first**: Library → Pair → Life/Comparison reader.
+Readers move **pair-grouped, link-direct**: Library lists pairs with direct links to each Life/Comparison (no intermediate pair page).
 The product should feel like a quiet book, not a dashboard.
 
 ## Stack
@@ -63,11 +63,14 @@ If `check` fails, fix it. Do not skip hooks or weaken tests to greenwash.
 
 | Path | Owns |
 |------|------|
-| `src/pages/` | Route screens: Library, PairView, Reader shell |
-| `src/components/` | Reusable UI (PaginatedReader, SettingsSheet, CharacterSheet, …) |
+| `src/pages/` | Route screens: Library, Reader shell |
+| `src/components/` | Reusable UI (PaginatedReader, SettingsSheet, CharacterSheet, SelectionToolbar, …) |
 | `src/lib/` | Pure helpers, prefs, corpus loaders, reader hooks |
 | `src/lib/scrollLayout.ts` | Scroll clip height → N × body line-height |
 | `src/lib/charMatch.ts` | Character-name longest-match + text segmentation |
+| `src/lib/textRanges.ts` | Highlight range helpers + compose with char refs |
+| `src/lib/selectionOffsets.ts` | DOM selection → paragraph plain-text offsets |
+| `src/lib/shareQuote.ts` | Share citation text + deep-link URLs |
 | `src/content/types.ts` | Shared Work/Paragraph types |
 | `src/index.css` | Design tokens + themes (**colors only**) |
 | `scripts/parse-epub.mjs` | EPUB → JSON ingest |
@@ -85,8 +88,8 @@ If `check` fails, fix it. Do not skip hooks or weaken tests to greenwash.
 
 | Path | Screen |
 |------|--------|
-| `/` | Library (one chronological list: pairs + unpaired woven in) |
-| `/pair/:slug` | Pair overview |
+| `/` | Library (chronological pairs + unpaired; each life/comparison is a direct link) |
+| `/pair/:slug` | Redirects to `/` (legacy) |
 | `/read/:slug` | Reader (life or comparison) |
 
 ## Reader invariants (do not break)
@@ -135,8 +138,11 @@ Regenerate only when ingest/catalog/parser changes. Commit updated `public/data`
 | `vitae.layout` | `scroll` \| `pages` |
 | `vitae.progress` | `{ [workId]: 0..1 }` content word-fraction (see Invariant 7) |
 | `vitae.finished` | `string[]` |
+| `vitae.highlights` | `{ [workId]: Array<{ id, paraId, start, end, text, createdAt }> }` plain-text offsets (same space as charMatch) |
 
 API: `src/lib/prefs.ts`. Keep storage keys stable unless migrating.
+
+Reader deep links: `/read/<slug>?p=<paraId>` or `#para-<paraId>` resume at that paragraph (content ratio at para start). Share-on-X uses the same `?p=` shape.
 
 ## Browser verification (reader / UI)
 
@@ -150,7 +156,7 @@ npm run dev -- --host 127.0.0.1 --port 5175
 Minimum path:
 
 1. `/` — library loads; totals visible.
-2. `/pair/theseus-romulus` — pair links work.
+2. `/` — pair rows link straight to lives/comparisons with word counts.
 3. `/read/theseus` — scroll: top+bottom spacers exist; footer shows `Loc …` when bottom chrome open.
 4. Switch layout to Pages (Settings):
    - Stable hooks: `[data-testid="reader-show-menu"]` then `[data-testid="reader-settings"]`.

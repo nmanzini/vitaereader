@@ -1,0 +1,620 @@
+{
+  "workId": "caesar",
+  "subject": "Caesar",
+  "characters": [
+    {
+      "id": "pompey",
+      "names": [
+        "Pompey"
+      ],
+      "relation": "Partner, son-in-law, then enemy",
+      "blurb": "Shared the three-headed pact with Caesar and Crassus, married Julia, then fought Caesar’s civil war to death in Egypt.",
+      "links": [
+        {
+          "characterId": "crassus"
+        },
+        {
+          "characterId": "julia"
+        },
+        {
+          "characterId": "cato"
+        },
+        {
+          "characterId": "cleopatra"
+        }
+      ]
+    },
+    {
+      "id": "brutus",
+      "names": [
+        "Brutus"
+      ],
+      "relation": "Protégé who joined the murder",
+      "blurb": "Favorite whom Caesar spared and advanced; led the Ides conspiracy with Cassius and fell at Philippi.",
+      "links": [
+        {
+          "characterId": "cassius"
+        },
+        {
+          "characterId": "antony"
+        },
+        {
+          "characterId": "cato"
+        }
+      ]
+    },
+    {
+      "id": "cato",
+      "names": [
+        "Cato"
+      ],
+      "relation": "Stoic enemy of his rise",
+      "blurb": "Unyielding optimate who fought Caesar’s laws, fled after Pharsalus, and killed himself at Utica rather than take pardon.",
+      "links": [
+        {
+          "characterId": "pompey"
+        },
+        {
+          "characterId": "cicero"
+        },
+        {
+          "characterId": "scipio"
+        }
+      ]
+    },
+    {
+      "id": "cicero",
+      "names": [
+        "Cicero"
+      ],
+      "relation": "Orator; uneasy ally and critic",
+      "blurb": "Consulted, flattered, and disappointed; his consular prestige and letters frame Caesar’s civilian wars.",
+      "links": [
+        {
+          "characterId": "cato"
+        },
+        {
+          "characterId": "clodius"
+        },
+        {
+          "characterId": "antony"
+        },
+        {
+          "characterId": "cicero-life",
+          "label": "Cicero’s Life",
+          "workId": "cicero"
+        }
+      ]
+    },
+    {
+      "id": "marius",
+      "names": [
+        "Marius"
+      ],
+      "relation": "Uncle by marriage; populares model",
+      "blurb": "Seven-times consul whose memory Caesar revived against Sulla’s party—the inheritance of a populares name.",
+      "links": [
+        {
+          "characterId": "sylla"
+        },
+        {
+          "characterId": "cinna"
+        }
+      ]
+    },
+    {
+      "id": "antony",
+      "names": [
+        "Antony"
+      ],
+      "relation": "Lieutenant; later triumvir",
+      "blurb": "Master of the Horse and loyal civil-war captain; gave Caesar’s funeral speech and inherited his popular mantle.",
+      "links": [
+        {
+          "characterId": "cleopatra"
+        },
+        {
+          "characterId": "brutus"
+        },
+        {
+          "characterId": "cicero"
+        }
+      ]
+    },
+    {
+      "id": "sylla",
+      "names": [
+        "Sylla"
+      ],
+      "relation": "Dictator who nearly proscribed him",
+      "blurb": "Spared young Caesar reluctantly—“in that young man I see many Mariuses”—after the refusal to divorce Cornelia.",
+      "links": [
+        {
+          "characterId": "marius"
+        },
+        {
+          "characterId": "cinna"
+        },
+        {
+          "characterId": "pompey"
+        }
+      ]
+    },
+    {
+      "id": "crassus",
+      "names": [
+        "Crassus"
+      ],
+      "relation": "Rich partner of the first compact",
+      "blurb": "Bankrolled debts and politics until Carrhae killed him and broke the three-way balance with Pompey.",
+      "links": [
+        {
+          "characterId": "pompey"
+        },
+        {
+          "characterId": "clodius"
+        }
+      ]
+    },
+    {
+      "id": "cassius",
+      "names": [
+        "Cassius"
+      ],
+      "relation": "Chief author of the Ides",
+      "blurb": "Lean, hungry conspirator who drew Brutus in; Caesar’s mistrust of his pale look is Plutarch’s omen.",
+      "links": [
+        {
+          "characterId": "brutus"
+        },
+        {
+          "characterId": "antony"
+        }
+      ]
+    },
+    {
+      "id": "clodius",
+      "names": [
+        "Clodius"
+      ],
+      "relation": "Demagogue of the Bona Dea scandal",
+      "blurb": "Tried (they said) to reach Pompeia at the women’s rite; Caesar divorced her—“Caesar’s wife must be above suspicion.”",
+      "links": [
+        {
+          "characterId": "pompeia"
+        },
+        {
+          "characterId": "cicero"
+        },
+        {
+          "characterId": "crassus"
+        }
+      ]
+    },
+    {
+      "id": "julia",
+      "names": [
+        "Julia"
+      ],
+      "relation": "Daughter; bond to Pompey",
+      "blurb": "Married to Pompey to seal the alliance; her death in childbirth loosened the last personal tie between the dynasts.",
+      "links": [
+        {
+          "characterId": "pompey"
+        },
+        {
+          "characterId": "calpurnia"
+        }
+      ]
+    },
+    {
+      "id": "pompeia",
+      "names": [
+        "Pompeia"
+      ],
+      "relation": "Wife divorced after Bona Dea",
+      "blurb": "Second wife, dismissed though perhaps innocent, when Clodius’s intrusion stained her household.",
+      "links": [
+        {
+          "characterId": "clodius"
+        },
+        {
+          "characterId": "aurelia"
+        }
+      ]
+    },
+    {
+      "id": "calpurnia",
+      "names": [
+        "Calpurnia"
+      ],
+      "relation": "Last wife; dreamed the Ides",
+      "blurb": "Warned Caesar not to go to the Senate; her fears and the omens fill the night before the murder.",
+      "links": [
+        {
+          "characterId": "brutus"
+        },
+        {
+          "characterId": "cassius"
+        },
+        {
+          "characterId": "julia"
+        }
+      ]
+    },
+    {
+      "id": "cleopatra",
+      "names": [
+        "Cleopatra"
+      ],
+      "relation": "Egyptian queen; ally and lover",
+      "blurb": "Smuggled into Caesar’s quarters at Alexandria; her cause and Caesarion tied Rome’s civil war to the Nile.",
+      "links": [
+        {
+          "characterId": "pothinus"
+        },
+        {
+          "characterId": "achillas"
+        },
+        {
+          "characterId": "antony"
+        },
+        {
+          "characterId": "pompey"
+        }
+      ]
+    },
+    {
+      "id": "pothinus",
+      "names": [
+        "Pothinus"
+      ],
+      "relation": "Eunuch minister at Alexandria",
+      "blurb": "Guided young Ptolemy against Cleopatra and insulted Caesar; executed when the palace war turned.",
+      "links": [
+        {
+          "characterId": "cleopatra"
+        },
+        {
+          "characterId": "achillas"
+        },
+        {
+          "characterId": "theodotus"
+        }
+      ]
+    },
+    {
+      "id": "achillas",
+      "names": [
+        "Achillas"
+      ],
+      "relation": "Egyptian general of the siege",
+      "blurb": "Commanded the forces that trapped Caesar in Alexandria after Pompey’s murder.",
+      "links": [
+        {
+          "characterId": "pothinus"
+        },
+        {
+          "characterId": "cleopatra"
+        }
+      ]
+    },
+    {
+      "id": "theodotus",
+      "names": [
+        "Theodotus"
+      ],
+      "relation": "Advisor who urged Pompey’s murder",
+      "blurb": "Rhetor who argued that killing Pompey would please Caesar—and so stained Egypt’s welcome.",
+      "links": [
+        {
+          "characterId": "pompey"
+        },
+        {
+          "characterId": "pothinus"
+        }
+      ]
+    },
+    {
+      "id": "scipio",
+      "names": [
+        "Scipio"
+      ],
+      "relation": "Optimate commander in Africa",
+      "blurb": "Metellus Scipio, Cato’s ally, who held Africa against Caesar and fell after Thapsus.",
+      "links": [
+        {
+          "characterId": "cato"
+        },
+        {
+          "characterId": "juba"
+        }
+      ]
+    },
+    {
+      "id": "metellus",
+      "names": [
+        "Metellus"
+      ],
+      "relation": "Name in the optimate Fasti",
+      "blurb": "Several Metelli oppose Caesar; the Life’s “Metellus” often marks that senatorial bloc beside Cato.",
+      "links": [
+        {
+          "characterId": "cato"
+        },
+        {
+          "characterId": "scipio"
+        }
+      ]
+    },
+    {
+      "id": "lentulus",
+      "names": [
+        "Lentulus"
+      ],
+      "relation": "Consular enemy in the civil war",
+      "blurb": "Named among the Pompeian consulars who fled Rome and stiffened the Senate’s war party.",
+      "links": [
+        {
+          "characterId": "pompey"
+        },
+        {
+          "characterId": "cato"
+        }
+      ]
+    },
+    {
+      "id": "domitius",
+      "names": [
+        "Domitius"
+      ],
+      "relation": "Held Corfinium; later at Pharsalus",
+      "blurb": "Domitius Ahenobarbus, early Pompeian opponent Caesar pardoned—then faced again in the Greek campaign.",
+      "links": [
+        {
+          "characterId": "pompey"
+        },
+        {
+          "characterId": "labienus"
+        }
+      ]
+    },
+    {
+      "id": "aurelia",
+      "names": [
+        "Aurelia"
+      ],
+      "relation": "Mother",
+      "blurb": "Watched over Caesar’s house in the Bona Dea affair; a disciplined mother for a famously ambitious son.",
+      "links": [
+        {
+          "characterId": "pompeia"
+        },
+        {
+          "characterId": "cinna"
+        }
+      ]
+    },
+    {
+      "id": "ariovistus",
+      "names": [
+        "Ariovistus"
+      ],
+      "relation": "German king in Gaul",
+      "blurb": "Suebian leader Caesar beat early in the Gallic War—the first taste of northern kings as Roman clients or corpses.",
+      "links": [
+        {
+          "characterId": "labienus"
+        }
+      ]
+    },
+    {
+      "id": "labienus",
+      "names": [
+        "Labienus"
+      ],
+      "relation": "Top legate who deserted to Pompey",
+      "blurb": "Right hand in Gaul who chose Pompey in 49 and died in the African or Spanish wars against his old chief.",
+      "links": [
+        {
+          "characterId": "pompey"
+        },
+        {
+          "characterId": "ariovistus"
+        }
+      ]
+    },
+    {
+      "id": "dolabella",
+      "names": [
+        "Dolabella"
+      ],
+      "relation": "Young lieutenant; later consul",
+      "blurb": "Trusted in the civil war’s navy and politics; a Caesarian of the next generation.",
+      "links": [
+        {
+          "characterId": "antony"
+        },
+        {
+          "characterId": "cicero"
+        }
+      ]
+    },
+    {
+      "id": "catulus",
+      "names": [
+        "Catulus"
+      ],
+      "relation": "Optimate who opposed his early offices",
+      "blurb": "Princeps senatus who fought Caesar’s bid for the chief pontificate and other populares moves.",
+      "links": [
+        {
+          "characterId": "cicero"
+        },
+        {
+          "characterId": "cato"
+        }
+      ]
+    },
+    {
+      "id": "juba",
+      "names": [
+        "Juba"
+      ],
+      "relation": "Numidian king with the Pompeians",
+      "blurb": "Brought African cavalry against Caesar; defeated after Thapsus’s campaign wrecked the republican remnant.",
+      "links": [
+        {
+          "characterId": "scipio"
+        },
+        {
+          "characterId": "cato"
+        }
+      ]
+    },
+    {
+      "id": "afranius",
+      "names": [
+        "Afranius"
+      ],
+      "relation": "Pompeian in Spain",
+      "blurb": "Legate beaten in the Ilerda campaign when Caesar first broke Pompey’s Spanish armies.",
+      "links": [
+        {
+          "characterId": "pompey"
+        },
+        {
+          "characterId": "labienus"
+        }
+      ]
+    },
+    {
+      "id": "piso",
+      "names": [
+        "Piso",
+        "Calpurnius"
+      ],
+      "relation": "Father-in-law",
+      "blurb": "Calpurnia’s father; consular connection that tied Caesar to a respectable optimate house even as he broke the Republic.",
+      "links": [
+        {
+          "characterId": "calpurnia"
+        }
+      ]
+    },
+    {
+      "id": "bibulus",
+      "names": [
+        "Bibulus"
+      ],
+      "relation": "Colleague who “watched the skies”",
+      "blurb": "Co-consul of 59 who tried to void Caesar’s laws by omen-watching; Romans joked the year was of Julius and Caesar.",
+      "links": [
+        {
+          "characterId": "cato"
+        },
+        {
+          "characterId": "pompey"
+        }
+      ]
+    },
+    {
+      "id": "curio",
+      "names": [
+        "Curio"
+      ],
+      "relation": "Tribune bought for his cause",
+      "blurb": "Brilliant spendthrift who carried Caesar’s vetoes in 50 and died for him in Africa.",
+      "links": [
+        {
+          "characterId": "antony"
+        },
+        {
+          "characterId": "pompey"
+        }
+      ]
+    },
+    {
+      "id": "cinna",
+      "names": [
+        "Cinna"
+      ],
+      "relation": "Father-in-law of his youth",
+      "blurb": "Marian leader whose daughter Cornelia Caesar refused to divorce at Sulla’s order.",
+      "links": [
+        {
+          "characterId": "sylla"
+        },
+        {
+          "characterId": "marius"
+        },
+        {
+          "characterId": "aurelia"
+        }
+      ]
+    },
+    {
+      "id": "catiline",
+      "names": [
+        "Catiline"
+      ],
+      "relation": "Conspirator he was whispered to favor",
+      "blurb": "Caesar’s mildness in the Catilinarian debate let enemies smear him; Plutarch weighs the suspicion carefully.",
+      "links": [
+        {
+          "characterId": "cicero"
+        },
+        {
+          "characterId": "cato"
+        }
+      ]
+    },
+    {
+      "id": "favonius",
+      "names": [
+        "Favonius"
+      ],
+      "relation": "Cato’s noisy follower",
+      "blurb": "Ape of Cato who heckled the dynasts; comic relief in the Senate’s last years.",
+      "links": [
+        {
+          "characterId": "cato"
+        },
+        {
+          "characterId": "pompey"
+        }
+      ]
+    },
+    {
+      "id": "octavius",
+      "names": [
+        "Octavius"
+      ],
+      "relation": "Young great-nephew; heir",
+      "blurb": "Named in Caesar’s will as adopted son—the Octavius who becomes Augustus after the Life’s curtain.",
+      "links": [
+        {
+          "characterId": "antony"
+        },
+        {
+          "characterId": "brutus"
+        }
+      ]
+    },
+    {
+      "id": "alexander-cross",
+      "names": [
+        "Alexander"
+      ],
+      "relation": "Greek pair in the Parallel Lives",
+      "blurb": "Alexander is his match: ambition measured against a world map, and a death that leaves the empire to quarreling heirs.",
+      "links": [
+        {
+          "characterId": "hephaestion",
+          "label": "Alexander’s Life",
+          "workId": "alexander"
+        }
+      ]
+    }
+  ]
+}
