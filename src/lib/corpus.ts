@@ -36,16 +36,22 @@ export interface CorpusIndex {
 
 let indexCache: CorpusIndex | null = null
 
+/** Respect Vite `base` (e.g. `/vitaereader/` on GitHub Pages). */
+function dataUrl(path: string): string {
+  const base = import.meta.env.BASE_URL
+  return `${base}data/${path}`
+}
+
 export async function loadIndex(): Promise<CorpusIndex> {
   if (indexCache) return indexCache
-  const res = await fetch('/data/index.json')
+  const res = await fetch(dataUrl('index.json'))
   if (!res.ok) throw new Error('Failed to load corpus index')
   indexCache = (await res.json()) as CorpusIndex
   return indexCache
 }
 
 export async function loadWork(slug: string): Promise<Work> {
-  const res = await fetch(`/data/works/${slug}.json`)
+  const res = await fetch(dataUrl(`works/${slug}.json`))
   if (!res.ok) throw new Error(`Work not found: ${slug}`)
   return res.json() as Promise<Work>
 }
