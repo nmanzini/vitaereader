@@ -160,6 +160,7 @@ export function Reader() {
     topOpen,
     bottomOpen,
     revealChrome,
+    hideChrome,
     scheduleHideChrome,
     toggleChrome,
   } = useReaderChrome(settingsOpen)
@@ -564,6 +565,11 @@ export function Reader() {
         className="reader-chrome"
         onMouseEnter={revealChrome}
         onMouseLeave={scheduleHideChrome}
+        onClick={(e) => {
+          // Empty bar tap hides; Library / Settings keep their own actions.
+          if ((e.target as Element | null)?.closest?.('a, button')) return
+          hideChrome()
+        }}
       >
         <div className="reader-chrome-row">
           <Link to="/">Library</Link>
@@ -655,6 +661,7 @@ export function Reader() {
         className="reader-bottom"
         onMouseEnter={revealChrome}
         onMouseLeave={scheduleHideChrome}
+        onClick={hideChrome}
       >
         <div className="reader-bottom-row">
           <span className="reader-bottom-pos">
