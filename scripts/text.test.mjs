@@ -33,6 +33,18 @@ import {
   findCharacterMatches,
   segmentText,
 } from '../src/lib/charMatch.ts'
+import {
+  findContainingHighlight,
+  mergeHighlightSpans,
+  normalizeRange,
+  rangesOverlap,
+  segmentWithHighlights,
+} from '../src/lib/textRanges.ts'
+import {
+  buildShareText,
+  truncateQuote,
+  workShareUrl,
+} from '../src/lib/shareQuote.ts'
 import { readFileSync } from 'node:fs'
 import { join, dirname } from 'node:path'
 import { fileURLToPath } from 'node:url'
@@ -276,5 +288,100 @@ describe('charMatch', () => {
 
   it('returns plain text when there are no characters', () => {
     assert.deepEqual(segmentText('Hello', []), [{ type: 'text', text: 'Hello' }])
+  })
+})
+
+describe('textRanges', () => {
+  it('normalizes and rejects empty ranges', () => {
+    assert.deepEqual(normalizeRange(2, 8, 10), { start: 2, end: 8 })
+    assert.equal(normalizeRange(5, 5, 10), null)
+    assert.deepEqual(normalizeRange(-2, 99, 10), { start: 0, end: 10 })
+  })
+
+  it('detects overlap and merges same-id spans', () => {
+    assert.equal(rangesOverlap(0, 5, 4, 8), true)
+    assert.equal(rangesOverlap(0, 4, 4, 8), false)
+    assert.deepEqual(
+      mergeHighlightSpans([
+        { id: 'a', start: 0, end: 4 },
+        { id: 'a', start: 3, end: 7 },
+        { id: 'b', start: 10, end: 12 },
+      ]),
+      [
+        { id: 'a', start: 0, end: 7 },
+        { id: 'b', start: 10, end: 12 },
+      ],
+    )
+  })
+
+  it('composes highlights with character matches', () => {
+    const text = 'Aegeus met Castor.'
+    const chars = findCharacterMatches(text, [
+      {
+        id: 'aegeus',
+        names: ['Aegeus'],
+        blurb: 'Father',
+        relation: 'Father',
+      },
+    ])
+    const segs = segmentWithHighlights(text, chars, [
+      { id: 'h1', start: 0, end: 10 },
+    ])
+    assert.deepEqual(
+      segs.map((s) => ({
+        t: s.type,
+        text: s.text,
+        hl: s.highlightIds,
+        c: s.type === 'char' ? s.characterId : null,
+      })),
+      [
+        { t: 'char', text: 'Aegeus', hl: ['h1'], c: 'aegeus' },
+        { t: 'text', text: ' met', hl: ['h1'], c: null },
+        { t: 'text', text: ' Castor.', hl: [], c: null },
+      ],
+    )
+  })
+
+  it('finds a containing highlight', () => {
+    const hit = findContainingHighlight(
+      [{ id: 'h1', start: 2, end: 10 }],
+      3,
+      6,
+    )
+    assert.equal(hit?.id, 'h1')
+    assert.equal(
+      findContainingHighlight([{ id: 'h1', start: 2, end: 10 }], 1, 6),
+      null,
+    )
+  })
+})
+
+describe('shareQuote', () => {
+  it('builds a deep link with para query', () => {
+    assert.equal(
+      workShareUrl(
+        'theseus',
+        'p-12',
+        'https://nmanzini.github.io',
+        '/vitaereader/',
+      ),
+      'https://nmanzini.github.io/vitaereader/read/theseus?p=p-12',
+    )
+  })
+
+  it('keeps share text short and tasteful', () => {
+    const long = 'word '.repeat(80)
+    const q = truncateQuote(long, 40)
+    assert.ok(q.length <= 40)
+    assert.ok(q.endsWith('…'))
+    const body = buildShareText(
+      'Theseus',
+      'He was the founder of Athens.',
+      'https://example.com/read/theseus?p=1',
+    )
+    assert.ok(body.includes('Theseus'))
+    assert.ok(body.includes('“He was the founder of Athens.”'))
+    assert.ok(body.includes('https://example.com/read/theseus?p=1'))
+    assert.ok(body.length < 280)
   })
 })

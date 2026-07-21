@@ -1,4 +1,5 @@
 import { useEffect, type RefObject } from 'react'
+import { hasTextSelection } from './selectionOffsets'
 
 type Opts = {
   rootRef: RefObject<HTMLElement | null>
@@ -33,21 +34,43 @@ export function usePageGestures({
     let active = false
     let didDrag = false
     let pointerId: number | null = null
+    let captured = false
+
+    function releaseCapture(id: number) {
+      if (!captured) return
+      try {
+        root.releasePointerCapture(id)
+      } catch {
+        /* already released */
+      }
+      captured = false
+    }
 
     function onDown(e: PointerEvent) {
       if (e.button !== 0) return
       const target = e.target as Element | null
-      if (target?.closest?.('a, button')) return
+      if (target?.closest?.('a, button, .selection-toolbar')) return
+      // Don’t steal the gesture while a selection is active / being made.
+      if (hasTextSelection()) return
       active = true
       didDrag = false
       pointerId = e.pointerId
       startX = e.clientX
       startY = e.clientY
-      root.setPointerCapture(e.pointerId)
+      // Delay capture until a horizontal page-drag is confirmed so long-press
+      // text selection can start on touch devices.
     }
 
     function onMove(e: PointerEvent) {
       if (!active || e.pointerId !== pointerId) return
+      if (hasTextSelection()) {
+        active = false
+        releaseCapture(e.pointerId)
+        onDragging(false)
+        onDragOffset(0)
+        return
+      }
+
       const dx = e.clientX - startX
       const dy = e.clientY - startY
 
@@ -61,6 +84,12 @@ export function usePageGestures({
         }
         didDrag = true
         onDragging(true)
+        try {
+          root.setPointerCapture(e.pointerId)
+          captured = true
+        } catch {
+          captured = false
+        }
       }
 
       const page = pageRef.current
@@ -76,6 +105,13 @@ export function usePageGestures({
       if (!active || e.pointerId !== pointerId) return
       active = false
       pointerId = null
+      releaseCapture(e.pointerId)
+
+      if (hasTextSelection()) {
+        onDragging(false)
+        onDragOffset(0)
+        return
+      }
 
       const dx = e.clientX - startX
       const dy = e.clientY - startY

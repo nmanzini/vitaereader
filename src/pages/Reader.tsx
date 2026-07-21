@@ -6,7 +6,7 @@ import {
   useRef,
   useState,
 } from 'react'
-import { Link, useNavigate, useParams } from 'react-router-dom'
+import { Link, useNavigate, useParams, useSearchParams } from 'react-router-dom'
 import type { Work } from '../content/types'
 import {
   findPairForWork,
@@ -20,19 +20,41 @@ import {
   type WorkAnnotations,
 } from '../lib/charMatch'
 import {
+  addHighlight,
   loadFinished,
+  loadHighlightsFor,
   loadProgress,
+  removeHighlight,
   saveProgress,
   toggleFinished,
+  type TextHighlight,
 } from '../lib/prefs'
 import {
   buildWordIndex,
   clampRatio,
   measureContentRatio,
   pageIndexForContentRatio,
+  ratioFromAnchor,
   scrollViewportToRatio,
   snapViewportTopToLine,
 } from '../lib/contentProgress'
+import {
+  clearWindowSelection,
+  hasTextSelection,
+  selectionInParagraph,
+  selectionToolbarAnchor,
+  type ParaSelection,
+} from '../lib/selectionOffsets'
+import {
+  buildShareText,
+  twitterIntentUrl,
+  workShareUrl,
+} from '../lib/shareQuote'
+import {
+  findContainingHighlight,
+  normalizeRange,
+  type HighlightSpan,
+} from '../lib/textRanges'
 import { applyScrollClipLineFit } from '../lib/scrollLayout'
 import {
   formatEta,
@@ -47,15 +69,34 @@ import { SettingsSheet } from '../components/SettingsSheet'
 import { CharacterSheet } from '../components/CharacterSheet'
 import { ParagraphView } from '../components/ParagraphView'
 import {
+  SelectionToolbar,
+  type SelectionToolbarAction,
+} from '../components/SelectionToolbar'
+import {
   PaginatedReader,
   type PageStatus,
 } from '../components/PaginatedReader'
 import { GearIcon } from '../components/GearIcon'
 import './Reader.css'
 
+/** Deep-link paragraph from `?p=` or `#para-<id>`. */
+function paraIdFromLocation(
+  search: URLSearchParams,
+  hash: string,
+): string | null {
+  const q = search.get('p')?.trim()
+  if (q) return q
+  if (hash.startsWith('#para-')) {
+    const id = decodeURIComponent(hash.slice('#para-'.length)).trim()
+    return id || null
+  }
+  return null
+}
+
 export function Reader() {
   const { slug } = useParams<{ slug: string }>()
   const navigate = useNavigate()
+  const [searchParams] = useSearchParams()
   const scrollRef = useRef<HTMLDivElement>(null)
   const progressRef = useRef(0)
   /** Suppress top-line settle right after a center-anchored resume restore. */
@@ -69,6 +110,7 @@ export function Reader() {
   const [theme, setTheme] = useTheme()
   const [layout, setLayout] = useLayout()
   const [finished, setFinished] = useState(() => loadFinished())
+  const [highlights, setHighlights] = useState<TextHighlight[]>([])
   const [settingsOpen, setSettingsOpen] = useState(false)
   const [progress, setProgress] = useState(0)
   /** Content ratio used to resume when work or layout changes. */
@@ -79,6 +121,10 @@ export function Reader() {
     ratio: 0,
   })
   const [error, setError] = useState<string | null>(null)
+  const [selection, setSelection] = useState<{
+    sel: ParaSelection
+    anchor: DOMRect
+  } | null>(null)
 
   const pagesMode = layout === 'pages'
   const {
@@ -96,6 +142,16 @@ export function Reader() {
     [work],
   )
 
+  const highlightsByPara = useMemo(() => {
+    const map = new Map<string, HighlightSpan[]>()
+    for (const h of highlights) {
+      const list = map.get(h.paraId) ?? []
+      list.push({ id: h.id, start: h.start, end: h.end })
+      map.set(h.paraId, list)
+    }
+    return map
+  }, [highlights])
+
   const commitProgress = useCallback(
     (ratio: number) => {
       const next = clampRatio(ratio)
@@ -111,19 +167,28 @@ export function Reader() {
     setWork(null)
     setAnnotations(null)
     setActiveChar(null)
+    setSelection(null)
+    setHighlights(loadHighlightsFor(slug))
     setError(null)
+    const deepPara = paraIdFromLocation(searchParams, window.location.hash)
     Promise.all([loadWork(slug), loadIndex(), loadAnnotations(slug)])
       .then(([w, index, ann]) => {
         setWork(w)
         setPair(findPairForWork(index, slug))
         setAnnotations(ann)
         const saved = clampRatio(loadProgress()[slug] ?? 0)
-        progressRef.current = saved
-        setProgress(saved)
-        setResumeAt(saved)
+        const wi = buildWordIndex(w.paragraphs)
+        let start = saved
+        if (deepPara) {
+          const paraIndex = wi.ids.indexOf(deepPara)
+          if (paraIndex >= 0) start = ratioFromAnchor(paraIndex, 0, wi)
+        }
+        progressRef.current = start
+        setProgress(start)
+        setResumeAt(start)
       })
       .catch((e: Error) => setError(e.message))
-  }, [slug])
+  }, [slug, searchParams])
 
   const openCharacter = useCallback(
     (characterId: string) => {
@@ -132,6 +197,101 @@ export function Reader() {
     },
     [annotations],
   )
+
+  const refreshSelectionUi = useCallback(() => {
+    const shell = document.querySelector('.reader-shell')
+    const sel = selectionInParagraph(shell)
+    const anchor = selectionToolbarAnchor()
+    if (sel && anchor) setSelection({ sel, anchor })
+    else setSelection(null)
+  }, [])
+
+  useEffect(() => {
+    let timer = 0
+    function onSelChange() {
+      window.clearTimeout(timer)
+      // Touch selection settles after a short delay.
+      timer = window.setTimeout(refreshSelectionUi, 80)
+    }
+    document.addEventListener('selectionchange', onSelChange)
+    document.addEventListener('mouseup', onSelChange)
+    document.addEventListener('touchend', onSelChange)
+    return () => {
+      window.clearTimeout(timer)
+      document.removeEventListener('selectionchange', onSelChange)
+      document.removeEventListener('mouseup', onSelChange)
+      document.removeEventListener('touchend', onSelChange)
+    }
+  }, [refreshSelectionUi])
+
+  const dismissSelection = useCallback(() => {
+    clearWindowSelection()
+    setSelection(null)
+  }, [])
+
+  const onSelectionAction = useCallback(
+    (action: SelectionToolbarAction) => {
+      if (!selection || !work || !slug) return
+      const { sel } = selection
+      const para = work.paragraphs.find((p) => p.id === sel.paraId)
+      if (!para) return
+      const norm = normalizeRange(sel.start, sel.end, para.text.length)
+      if (!norm) return
+      const quote = para.text.slice(norm.start, norm.end)
+
+      if (action === 'highlight') {
+        const created = addHighlight(slug, {
+          paraId: sel.paraId,
+          start: norm.start,
+          end: norm.end,
+          text: quote,
+        })
+        setHighlights((prev) => [...prev, created])
+        dismissSelection()
+        return
+      }
+      if (action === 'remove') {
+        const hit = findContainingHighlight(
+          highlights
+            .filter((h) => h.paraId === sel.paraId)
+            .map((h) => ({ id: h.id, start: h.start, end: h.end })),
+          norm.start,
+          norm.end,
+        )
+        if (hit && removeHighlight(slug, hit.id)) {
+          setHighlights((prev) => prev.filter((h) => h.id !== hit.id))
+        }
+        dismissSelection()
+        return
+      }
+      if (action === 'share') {
+        const url = workShareUrl(work.id, sel.paraId)
+        const text = buildShareText(work.title, quote, url)
+        window.open(twitterIntentUrl(text), '_blank', 'noopener,noreferrer')
+        dismissSelection()
+        return
+      }
+      if (action === 'copy') {
+        void navigator.clipboard?.writeText(quote)
+        dismissSelection()
+      }
+    },
+    [selection, work, slug, highlights, dismissSelection],
+  )
+
+  const selectionCanRemove = useMemo(() => {
+    if (!selection) return false
+    const { sel } = selection
+    return (
+      findContainingHighlight(
+        highlights
+          .filter((h) => h.paraId === sel.paraId)
+          .map((h) => ({ id: h.id, start: h.start, end: h.end })),
+        sel.start,
+        sel.end,
+      ) != null
+    )
+  }, [selection, highlights])
 
   // Layout switch: resume from the live center-measured ratio (progressRef),
   // not a stale load-time value. Pages←scroll uses pageIndexForContentRatio;
@@ -342,6 +502,7 @@ export function Reader() {
             key={p.id}
             paragraph={p}
             characters={annotations?.characters}
+            highlights={highlightsByPara.get(p.id)}
             onCharacter={annotations ? openCharacter : undefined}
           />
         ))}
@@ -459,6 +620,14 @@ export function Reader() {
         onClose={() => setActiveChar(null)}
       />
 
+      <SelectionToolbar
+        open={selection != null}
+        anchor={selection?.anchor ?? null}
+        canRemove={selectionCanRemove}
+        onAction={onSelectionAction}
+        onDismiss={dismissSelection}
+      />
+
       {pagesMode ? (
         <PaginatedReader
           contentKey={work.id}
@@ -466,7 +635,10 @@ export function Reader() {
           measureProgress={measurePageProgress}
           resolvePageIndex={resolvePageIndex}
           onStatus={onPageStatus}
-          onToggleChrome={toggleChrome}
+          onToggleChrome={() => {
+            if (hasTextSelection() || selection) return
+            toggleChrome()
+          }}
           onExhausted={() => {
             if (next) navigate(`/read/${next.id}`)
             else if (pair) navigate(`/pair/${pair.slug}`)
@@ -482,6 +654,7 @@ export function Reader() {
             onClick={(e) => {
               const target = e.target as Element | null
               if (target?.closest?.('a, button')) return
+              if (hasTextSelection() || selection) return
               toggleChrome()
             }}
           >

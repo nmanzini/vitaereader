@@ -187,9 +187,17 @@
 }
 
 .reader-shell.layout-pages .paged-viewport {
-  touch-action: none;
+  /* pan-y: allow vertical; horizontal page-turns stay in usePageGestures.
+     Avoid touch-action:none — it blocks native text selection on touch. */
+  touch-action: pan-y;
   cursor: grab;
-  user-select: none;
+  user-select: text;
+  -webkit-user-select: text;
+}
+
+.reader-shell.layout-pages .paged-content {
+  user-select: text;
+  -webkit-user-select: text;
 }
 
 .reader-shell.layout-scroll .reader-scroll-viewport {
@@ -208,6 +216,8 @@
   contain: paint;
   scrollbar-width: none;
   -ms-overflow-style: none;
+  user-select: text;
+  -webkit-user-select: text;
 }
 
 .reader-shell.layout-scroll .reader-scroll-clip::-webkit-scrollbar {
@@ -403,4 +413,25 @@
 .char-ref:focus-visible {
   outline: 1px solid color-mix(in srgb, var(--accent) 35%, transparent);
   outline-offset: 2px;
+}
+
+/* User highlights — soft theme-token wash (not neon). */
+mark.text-highlight {
+  color: inherit;
+  background: color-mix(in srgb, var(--accent) 18%, transparent);
+  border-radius: 0.1em;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+[data-theme='night'] mark.text-highlight {
+  background: color-mix(in srgb, var(--accent) 22%, transparent);
+}
+
+[data-theme='eink'] mark.text-highlight {
+  background: color-mix(in srgb, var(--ink) 12%, transparent);
+}
+
+mark.text-highlight .char-ref {
+  text-decoration-color: color-mix(in srgb, var(--ink) 28%, transparent);
 }

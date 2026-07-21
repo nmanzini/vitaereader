@@ -5,6 +5,19 @@ const THEME_KEY = 'vitae.theme'
 const LAYOUT_KEY = 'vitae.layout'
 const PROGRESS_KEY = 'vitae.progress'
 const FINISHED_KEY = 'vitae.finished'
+const HIGHLIGHTS_KEY = 'vitae.highlights'
+
+/** Local user highlight — offsets into plain paragraph text. */
+export type TextHighlight = {
+  id: string
+  paraId: string
+  start: number
+  end: number
+  text: string
+  createdAt: number
+}
+
+export type HighlightsMap = Record<string, TextHighlight[]>
 
 export const THEMES: { id: ThemeId; label: string }[] = [
   { id: 'day', label: 'Day' },
@@ -73,4 +86,62 @@ export function toggleFinished(id: string): Set<string> {
 export function formatWords(n: number): string {
   if (n >= 1000) return `${(n / 1000).toFixed(n >= 10000 ? 0 : 1)}k words`
   return `${n} words`
+}
+
+function newHighlightId(): string {
+  if (typeof crypto !== 'undefined' && 'randomUUID' in crypto) {
+    return crypto.randomUUID()
+  }
+  return `hl-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 8)}`
+}
+
+export function loadHighlights(): HighlightsMap {
+  try {
+    const raw = JSON.parse(
+      localStorage.getItem(HIGHLIGHTS_KEY) ?? '{}',
+    ) as HighlightsMap
+    if (!raw || typeof raw !== 'object') return {}
+    return raw
+  } catch {
+    return {}
+  }
+}
+
+export function loadHighlightsFor(workId: string): TextHighlight[] {
+  const list = loadHighlights()[workId]
+  return Array.isArray(list) ? list : []
+}
+
+export function addHighlight(
+  workId: string,
+  input: Omit<TextHighlight, 'id' | 'createdAt'> & {
+    id?: string
+    createdAt?: number
+  },
+): TextHighlight {
+  const map = loadHighlights()
+  const list = Array.isArray(map[workId]) ? [...map[workId]!] : []
+  const highlight: TextHighlight = {
+    id: input.id ?? newHighlightId(),
+    paraId: input.paraId,
+    start: input.start,
+    end: input.end,
+    text: input.text,
+    createdAt: input.createdAt ?? Date.now(),
+  }
+  list.push(highlight)
+  map[workId] = list
+  localStorage.setItem(HIGHLIGHTS_KEY, JSON.stringify(map))
+  return highlight
+}
+
+export function removeHighlight(workId: string, highlightId: string): boolean {
+  const map = loadHighlights()
+  const list = map[workId]
+  if (!Array.isArray(list)) return false
+  const next = list.filter((h) => h.id !== highlightId)
+  if (next.length === list.length) return false
+  map[workId] = next
+  localStorage.setItem(HIGHLIGHTS_KEY, JSON.stringify(map))
+  return true
 }
