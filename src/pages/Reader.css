@@ -1,10 +1,14 @@
 .reader-shell {
   --reader-chrome-h: calc(2.9rem + env(safe-area-inset-top, 0px));
   --reader-bottom-h: calc(2.9rem + var(--safe-bottom));
+  height: 100vh;
   height: 100dvh;
+  min-height: 100vh;
   min-height: 100dvh;
   overflow: hidden;
+  display: -webkit-flex;
   display: flex;
+  -webkit-flex-direction: column;
   flex-direction: column;
   background: var(--bg);
 }
@@ -170,6 +174,7 @@
 .reader-shell .paged-viewport {
   position: relative;
   /* basis 0 so flex assigns a definite height; content cannot grow the shell */
+  -webkit-flex: 1 1 0;
   flex: 1 1 0;
   min-height: 0;
   width: 100%;
@@ -209,16 +214,21 @@
   margin: 0;
   padding: 0;
   border: 0;
+  -webkit-column-fill: auto;
   column-fill: auto;
+  -webkit-column-gap: 0;
   column-gap: 0;
+  -webkit-column-rule: none;
   column-rule: none;
   font-size: var(--font-size-body);
   line-height: var(--leading);
+  -webkit-transition: -webkit-transform 280ms cubic-bezier(0.22, 1, 0.36, 1);
   transition: transform 280ms cubic-bezier(0.22, 1, 0.36, 1);
   will-change: transform;
 }
 
 .paged-content.is-dragging {
+  -webkit-transition: none;
   transition: none;
 }
 

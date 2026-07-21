@@ -20,6 +20,17 @@ export function applyColumnPageSize(
   el.style.columnGap = '0px'
   el.style.columnFill = 'auto'
   el.style.columnRule = 'none'
+  // Older WebKit (Kindle/Silk) needs -webkit-column-*
+  const webkit = el.style as CSSStyleDeclaration & {
+    webkitColumnWidth?: string
+    webkitColumnGap?: string
+    webkitColumnFill?: string
+    webkitColumnRule?: string
+  }
+  webkit.webkitColumnWidth = `${w}px`
+  webkit.webkitColumnGap = '0px'
+  webkit.webkitColumnFill = 'auto'
+  webkit.webkitColumnRule = 'none'
 
   void el.offsetWidth
   return pageCountFor(el.scrollWidth, w)

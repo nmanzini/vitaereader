@@ -12,7 +12,20 @@ type Opts = {
   onDragging: (dragging: boolean) => void
 }
 
-/** Pointer drag / tap zones for Kindle-style page turns. */
+type Point = { x: number; y: number; id: number }
+
+function pointFromTouch(t: Touch): Point {
+  return { x: t.clientX, y: t.clientY, id: t.identifier }
+}
+
+function pointFromPointer(e: PointerEvent): Point {
+  return { x: e.clientX, y: e.clientY, id: e.pointerId }
+}
+
+/**
+ * Pointer drag / tap zones for page turns.
+ * Falls back to touch events when PointerEvent is missing (older Kindle/WebKit).
+ */
 export function usePageGestures({
   rootRef,
   pageRef,
@@ -26,7 +39,6 @@ export function usePageGestures({
   useEffect(() => {
     const current = rootRef.current
     if (!current) return
-    // Fresh binding so nested handlers keep a non-null HTMLElement type.
     const root: HTMLElement = current
 
     let startX = 0
@@ -35,9 +47,10 @@ export function usePageGestures({
     let didDrag = false
     let pointerId: number | null = null
     let captured = false
+    const usePointer = typeof window.PointerEvent === 'function'
 
     function releaseCapture(id: number) {
-      if (!captured) return
+      if (!captured || !usePointer) return
       try {
         root.releasePointerCapture(id)
       } catch {
@@ -46,33 +59,29 @@ export function usePageGestures({
       captured = false
     }
 
-    function onDown(e: PointerEvent) {
-      if (e.button !== 0) return
-      const target = e.target as Element | null
-      if (target?.closest?.('a, button, .selection-toolbar')) return
-      // Don’t steal the gesture while a selection is active / being made.
+    function onDown(p: Point, target: EventTarget | null) {
+      const el = target as Element | null
+      if (el && el.closest && el.closest('a, button, .selection-toolbar')) return
       if (hasTextSelection()) return
       active = true
       didDrag = false
-      pointerId = e.pointerId
-      startX = e.clientX
-      startY = e.clientY
-      // Delay capture until a horizontal page-drag is confirmed so long-press
-      // text selection can start on touch devices.
+      pointerId = p.id
+      startX = p.x
+      startY = p.y
     }
 
-    function onMove(e: PointerEvent) {
-      if (!active || e.pointerId !== pointerId) return
+    function onMove(p: Point) {
+      if (!active || p.id !== pointerId) return
       if (hasTextSelection()) {
         active = false
-        releaseCapture(e.pointerId)
+        releaseCapture(p.id)
         onDragging(false)
         onDragOffset(0)
         return
       }
 
-      const dx = e.clientX - startX
-      const dy = e.clientY - startY
+      const dx = p.x - startX
+      const dy = p.y - startY
 
       if (!didDrag) {
         if (Math.abs(dx) < 10) return
@@ -84,11 +93,13 @@ export function usePageGestures({
         }
         didDrag = true
         onDragging(true)
-        try {
-          root.setPointerCapture(e.pointerId)
-          captured = true
-        } catch {
-          captured = false
+        if (usePointer) {
+          try {
+            root.setPointerCapture(p.id)
+            captured = true
+          } catch {
+            captured = false
+          }
         }
       }
 
@@ -101,11 +112,11 @@ export function usePageGestures({
       onDragOffset(offset)
     }
 
-    function finish(e: PointerEvent) {
-      if (!active || e.pointerId !== pointerId) return
+    function finish(p: Point) {
+      if (!active || p.id !== pointerId) return
       active = false
       pointerId = null
-      releaseCapture(e.pointerId)
+      releaseCapture(p.id)
 
       if (hasTextSelection()) {
         onDragging(false)
@@ -113,8 +124,8 @@ export function usePageGestures({
         return
       }
 
-      const dx = e.clientX - startX
-      const dy = e.clientY - startY
+      const dx = p.x - startX
+      const dy = p.y - startY
       const width = pageWidthRef.current || root.clientWidth
       const threshold = Math.min(64, width * 0.18)
 
@@ -129,22 +140,61 @@ export function usePageGestures({
 
       if (Math.abs(dx) > 12 || Math.abs(dy) > 12) return
       const rect = root.getBoundingClientRect()
-      const x = e.clientX - rect.left
+      const x = p.x - rect.left
       const third = rect.width / 3
       if (x < third) onGo(-1)
       else if (x > third * 2) onGo(1)
       else onTapCenter()
     }
 
-    root.addEventListener('pointerdown', onDown)
-    root.addEventListener('pointermove', onMove)
-    root.addEventListener('pointerup', finish)
-    root.addEventListener('pointercancel', finish)
+    if (usePointer) {
+      function onPointerDown(e: PointerEvent) {
+        if (e.button !== 0) return
+        onDown(pointFromPointer(e), e.target)
+      }
+      function onPointerMove(e: PointerEvent) {
+        onMove(pointFromPointer(e))
+      }
+      function onPointerUp(e: PointerEvent) {
+        finish(pointFromPointer(e))
+      }
+      root.addEventListener('pointerdown', onPointerDown)
+      root.addEventListener('pointermove', onPointerMove)
+      root.addEventListener('pointerup', onPointerUp)
+      root.addEventListener('pointercancel', onPointerUp)
+      return () => {
+        root.removeEventListener('pointerdown', onPointerDown)
+        root.removeEventListener('pointermove', onPointerMove)
+        root.removeEventListener('pointerup', onPointerUp)
+        root.removeEventListener('pointercancel', onPointerUp)
+      }
+    }
+
+    function onTouchStart(e: TouchEvent) {
+      if (e.touches.length !== 1) return
+      onDown(pointFromTouch(e.touches[0]!), e.target)
+    }
+    function onTouchMove(e: TouchEvent) {
+      if (!active || e.touches.length !== 1) return
+      const t = e.touches[0]!
+      if (didDrag) e.preventDefault()
+      onMove(pointFromTouch(t))
+    }
+    function onTouchEnd(e: TouchEvent) {
+      const t = e.changedTouches[0]
+      if (!t) return
+      finish(pointFromTouch(t))
+    }
+
+    root.addEventListener('touchstart', onTouchStart, { passive: true })
+    root.addEventListener('touchmove', onTouchMove, { passive: false })
+    root.addEventListener('touchend', onTouchEnd)
+    root.addEventListener('touchcancel', onTouchEnd)
     return () => {
-      root.removeEventListener('pointerdown', onDown)
-      root.removeEventListener('pointermove', onMove)
-      root.removeEventListener('pointerup', finish)
-      root.removeEventListener('pointercancel', finish)
+      root.removeEventListener('touchstart', onTouchStart)
+      root.removeEventListener('touchmove', onTouchMove)
+      root.removeEventListener('touchend', onTouchEnd)
+      root.removeEventListener('touchcancel', onTouchEnd)
     }
   }, [
     rootRef,

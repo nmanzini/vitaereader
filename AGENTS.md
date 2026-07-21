@@ -10,6 +10,8 @@ Readers move **pair-grouped, link-direct**: Library lists pairs with direct link
 Reading is **CSS-column pages only** (swipe like a book) — no scroll layout.
 The product should feel like a quiet book, not a dashboard.
 
+**Kindle note:** Fire tablets (Silk) are supported with legacy build + touch/column fallbacks. The e-ink **Experimental Browser** is too old for React/modern JS — we show a calm boot message instead of a blank crash (`src/lib/kindleCompat.ts`).
+
 ## Stack
 
 - Vite 8 + React 19 + TypeScript + React Router
@@ -68,6 +70,7 @@ If `check` fails, fix it. Do not skip hooks or weaken tests to greenwash.
 | `src/components/` | Reusable UI (PaginatedReader, SettingsSheet, CharacterSheet, SelectionToolbar, …) |
 | `src/lib/` | Pure helpers, prefs, corpus loaders, reader hooks |
 | `src/lib/paginationLayout.ts` | Floored page width + CSS column sizing |
+| `src/lib/kindleCompat.ts` | Legacy Kindle/Silk detection + ResizeObserver/transform helpers |
 | `src/lib/contentProgress.ts` | Word-fraction progress + page restore from anchors |
 | `src/lib/charMatch.ts` | Character-name longest-match + text segmentation |
 | `src/lib/textRanges.ts` | Highlight range helpers + compose with char refs |

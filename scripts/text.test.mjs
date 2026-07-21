@@ -22,6 +22,7 @@ import {
   struckCharCount,
   WORDS_PER_LIBRARY_PAGE,
 } from '../src/lib/reading.ts'
+import { isLegacyKindleBrowser } from '../src/lib/kindleCompat.ts'
 import { libraryEntries } from '../src/lib/libraryOrder.ts'
 import {
   anchorFromRatio,
@@ -160,6 +161,23 @@ describe('pagination math', () => {
     assert.equal(locationFromProgress(1, 100), 100)
     assert.equal(locationFromProgress(0.5, 5), 3)
     assert.equal(locationFromProgress(0, 1), 1)
+  })
+})
+
+describe('kindleCompat', () => {
+  it('detects legacy e-ink Experimental Browser, not modern Silk', () => {
+    assert.equal(
+      isLegacyKindleBrowser(
+        'Mozilla/5.0 (X11; U; Linux armv7l like Android; en-us) AppleWebKit/531.2+ (KHTML, like Gecko) Version/5.0 Safari/533.2+ Kindle/3.0+',
+      ),
+      true,
+    )
+    assert.equal(
+      isLegacyKindleBrowser(
+        'Mozilla/5.0 (Linux; Android 9; KFMAWI) AppleWebKit/537.36 (KHTML, like Gecko) Silk/119.0 versionCode 1190025647 Safari/537.36',
+      ),
+      false,
+    )
   })
 })
 

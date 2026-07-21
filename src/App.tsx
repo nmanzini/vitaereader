@@ -1,9 +1,6 @@
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 import { Library } from './pages/Library'
 import { Reader } from './pages/Reader'
-import { loadTheme, setTheme } from './lib/prefs'
-
-setTheme(loadTheme())
 
 const basename = import.meta.env.BASE_URL.replace(/\/$/, '') || undefined
 

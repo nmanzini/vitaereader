@@ -2,6 +2,7 @@ import { copyFileSync, existsSync } from 'node:fs'
 import { join } from 'node:path'
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
+import legacy from '@vitejs/plugin-legacy'
 import { VitePWA } from 'vite-plugin-pwa'
 
 /** Project Pages need `/repo/`; local/dev and most hosts use `/`. */
@@ -11,6 +12,19 @@ export default defineConfig({
   base,
   plugins: [
     react(),
+    legacy({
+      // Fire Silk / older mobile WebKit. E-ink Experimental Browser is too old
+      // for React; kindleCompat shows a boot message there instead.
+      targets: [
+        'Safari >= 12',
+        'iOS >= 12',
+        'Chrome >= 70',
+        'Firefox >= 68',
+        'Android >= 8',
+      ],
+      modernPolyfills: true,
+      additionalLegacyPolyfills: ['regenerator-runtime/runtime'],
+    }),
     VitePWA({
       registerType: 'autoUpdate',
       includeAssets: ['favicon.svg'],

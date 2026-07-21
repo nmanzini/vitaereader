@@ -8,6 +8,7 @@ import {
 } from 'react'
 import { pageIndexFromProgress, progressFromPage } from '../lib/reading'
 import { applyColumnPageSize } from '../lib/paginationLayout'
+import { observeSize, setTransformX } from '../lib/kindleCompat'
 import { usePageGestures } from '../lib/usePageGestures'
 
 export type PageStatus = {
@@ -105,13 +106,15 @@ export function PaginatedReader({
     raf = requestAnimationFrame(waitForLayout)
 
     const clip = clipRef.current
-    const ro = new ResizeObserver(() => measure())
-    if (clip) ro.observe(clip)
-    document.fonts?.ready.then(() => measure())
+    const stopObserve = clip ? observeSize(clip, measure) : () => {}
+    const fonts = document.fonts
+    if (fonts && fonts.ready) {
+      void fonts.ready.then(() => measure())
+    }
 
     return () => {
       cancelAnimationFrame(raf)
-      ro.disconnect()
+      stopObserve()
     }
   }, [measure, contentKey])
 
@@ -183,13 +186,17 @@ export function PaginatedReader({
 
   const x = pageWidth > 0 ? -page * pageWidth + dragOffset : dragOffset
 
+  useLayoutEffect(() => {
+    const el = contentRef.current
+    if (el) setTransformX(el, x)
+  }, [x])
+
   return (
     <div className="paged-viewport">
       <div className="paged-clip" ref={clipRef}>
         <div
           className={`paged-content${dragging ? ' is-dragging' : ''}`}
           ref={contentRef}
-          style={{ transform: `translate3d(${x}px, 0, 0)` }}
         >
           {children}
         </div>
