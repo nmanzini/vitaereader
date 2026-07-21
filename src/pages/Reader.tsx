@@ -16,6 +16,7 @@ import {
 } from '../lib/corpus'
 import {
   type CharacterAnnotation,
+  type LocationAnnotation,
   type WorkAnnotations,
 } from '../lib/charMatch'
 import {
@@ -58,6 +59,7 @@ import { readingPrefsLayoutKey } from '../lib/readingPrefs'
 import { useReaderChrome } from '../lib/useReaderChrome'
 import { SettingsSheet } from '../components/SettingsSheet'
 import { CharacterSheet } from '../components/CharacterSheet'
+import { LocationSheet } from '../components/LocationSheet'
 import {
   ShareSheet,
   type ShareSheetPayload,
@@ -125,6 +127,7 @@ export function Reader() {
   const [activeChar, setActiveChar] = useState<CharacterAnnotation | null>(
     null,
   )
+  const [activeLoc, setActiveLoc] = useState<LocationAnnotation | null>(null)
   const [theme, setTheme] = useTheme()
   const {
     prefs: readingPrefs,
@@ -193,6 +196,7 @@ export function Reader() {
     setWork(null)
     setAnnotations(null)
     setActiveChar(null)
+    setActiveLoc(null)
     setSelection(null)
     setHighlights(loadHighlightsFor(slug))
     setError(null)
@@ -224,7 +228,21 @@ export function Reader() {
   const openCharacter = useCallback(
     (characterId: string) => {
       const hit = annotations?.characters.find((c) => c.id === characterId)
-      if (hit) setActiveChar(hit)
+      if (hit) {
+        setActiveLoc(null)
+        setActiveChar(hit)
+      }
+    },
+    [annotations],
+  )
+
+  const openLocation = useCallback(
+    (locationId: string) => {
+      const hit = annotations?.locations?.find((l) => l.id === locationId)
+      if (hit) {
+        setActiveChar(null)
+        setActiveLoc(hit)
+      }
     },
     [annotations],
   )
@@ -489,8 +507,10 @@ export function Reader() {
             key={p.id}
             paragraph={p}
             characters={annotations?.characters}
+            locations={annotations?.locations}
             highlights={highlightsByPara.get(p.id)}
-            onCharacter={annotations ? openCharacter : undefined}
+            onCharacter={annotations?.characters ? openCharacter : undefined}
+            onLocation={annotations?.locations?.length ? openLocation : undefined}
             onHighlight={onHighlightTap}
           />
         ))}
@@ -600,6 +620,14 @@ export function Reader() {
         subject={annotations?.subject ?? work.title}
         characters={annotations?.characters ?? []}
         onClose={() => setActiveChar(null)}
+      />
+
+      <LocationSheet
+        open={activeLoc != null}
+        location={activeLoc}
+        subject={annotations?.subject ?? work.title}
+        locations={annotations?.locations ?? []}
+        onClose={() => setActiveLoc(null)}
       />
 
       <ShareSheet

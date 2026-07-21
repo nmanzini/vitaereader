@@ -58,7 +58,7 @@ export async function loadWork(slug: string): Promise<Work> {
 }
 
 /**
- * Per-work character highlights. Missing file → null (no highlights).
+ * Per-work character / location highlights. Missing file → null.
  * Safe corpus-wide: works without annotations simply skip the feature.
  */
 export async function loadAnnotations(
@@ -70,6 +70,7 @@ export async function loadAnnotations(
   try {
     const data = (await res.json()) as WorkAnnotations
     if (!data?.workId || !Array.isArray(data.characters)) return null
+    if (data.locations != null && !Array.isArray(data.locations)) return null
     return data
   } catch {
     return null
