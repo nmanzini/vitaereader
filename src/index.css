@@ -11,12 +11,15 @@
   --font-display: 'Cormorant Garamond', 'Palatino Linotype', Palatino, serif;
   --font-body: 'Source Serif 4', 'Iowan Old Style', 'Palatino Linotype', Palatino,
     serif;
-  --measure: 36rem;
-  --pad-x: clamp(1.25rem, 5vw, 2rem);
+  /* Quiet Kindle density — root tokens only; themes never touch these. */
+  --measure: 34rem;
+  --pad-x: clamp(1.1rem, 4.5vw, 1.75rem);
   /* Typography is theme-invariant so pagination never shifts with appearance. */
-  --font-size-body: clamp(1.05rem, 0.35vw + 1rem, 1.2rem);
-  --leading: 1.65;
+  --font-size-body: clamp(1rem, 0.28vw + 0.96rem, 1.125rem);
+  --leading: 1.55;
   --safe-bottom: env(safe-area-inset-bottom, 0px);
+  --motion-page: 280ms cubic-bezier(0.25, 0.1, 0.25, 1);
+  --motion-chrome: 220ms ease;
 }
 
 /* Themes may only override color tokens — never type metrics or spacing. */
@@ -118,40 +121,52 @@ h3 {
 .theme-row {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.35rem;
+  gap: 0.15rem 0.65rem;
   margin-bottom: 1.25rem;
 }
 
 .theme-row button {
-  padding: 0.35rem 0.75rem;
-  border: 1px solid var(--rule);
-  border-radius: 999px;
-  font-size: 0.85rem;
+  padding: 0.2rem 0;
+  border: 0;
+  border-bottom: 1px solid transparent;
+  border-radius: 0;
+  font-size: 0.82rem;
+  letter-spacing: 0.02em;
   color: var(--ink-muted);
 }
 
 .theme-row button.is-active {
-  background: var(--ink);
-  color: var(--bg);
-  border-color: var(--ink);
+  color: var(--ink);
+  border-bottom-color: color-mix(in srgb, var(--ink) 45%, transparent);
+  background: none;
 }
 
 .theme-mini {
   display: flex;
-  gap: 0.15rem;
+  gap: 0.35rem;
 }
 
 .theme-mini button {
-  width: 1.6rem;
-  height: 1.6rem;
-  border: 1px solid var(--rule);
-  border-radius: 999px;
-  font-size: 0.7rem;
+  width: auto;
+  min-width: 1.5rem;
+  height: auto;
+  padding: 0.15rem 0.2rem;
+  border: 0;
+  border-bottom: 1px solid transparent;
+  border-radius: 0;
+  font-size: 0.72rem;
   color: var(--ink-muted);
 }
 
 .theme-mini button.is-active {
-  background: var(--ink);
-  color: var(--bg);
-  border-color: var(--ink);
+  color: var(--ink);
+  border-bottom-color: color-mix(in srgb, var(--ink) 45%, transparent);
+  background: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --motion-page: 0ms;
+    --motion-chrome: 0ms;
+  }
 }

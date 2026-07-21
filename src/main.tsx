@@ -20,7 +20,7 @@ function showBootFallback() {
 
 const ua = typeof navigator !== 'undefined' ? navigator.userAgent : ''
 
-// Prefer high-contrast e-ink theme on Amazon devices when unset.
+// Re-apply theme (index.html already set data-theme before paint to avoid FOUC).
 try {
   if (/Kindle|Silk/i.test(ua) && !localStorage.getItem('vitae.theme')) {
     setTheme('eink')

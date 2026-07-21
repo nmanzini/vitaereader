@@ -315,18 +315,27 @@ export function Reader() {
 
   if (error) {
     return (
-      <main className="reader">
-        <p className="reader-msg">{error}</p>
-        <Link to="/">Library</Link>
-      </main>
+      <div className="reader-shell">
+        <div className="reader-top-spacer" aria-hidden="true" />
+        <main className="reader-boot">
+          <p className="reader-msg">{error}</p>
+          <Link to="/">Library</Link>
+        </main>
+        <div className="reader-bottom-spacer" aria-hidden="true" />
+      </div>
     )
   }
 
   if (!work) {
+    // Same chrome-band shell as reading — no layout jump when work arrives.
     return (
-      <main className="reader">
-        <p className="reader-msg">Setting the type…</p>
-      </main>
+      <div className="reader-shell">
+        <div className="reader-top-spacer" aria-hidden="true" />
+        <main className="reader-boot" aria-busy="true">
+          <p className="reader-msg">Setting the type…</p>
+        </main>
+        <div className="reader-bottom-spacer" aria-hidden="true" />
+      </div>
     )
   }
 

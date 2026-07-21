@@ -1,49 +1,56 @@
 .library {
-  max-width: 42rem;
+  max-width: 40rem;
   margin: 0 auto;
-  padding: 2.5rem var(--pad-x) calc(3rem + var(--safe-bottom));
+  padding: 2.25rem var(--pad-x) calc(2.75rem + var(--safe-bottom));
 }
 
 .library-hero {
-  padding-bottom: 2.5rem;
-  border-bottom: 1px solid var(--rule);
-  margin-bottom: 2.5rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid color-mix(in srgb, var(--ink) 10%, transparent);
+  margin-bottom: 2rem;
 }
 
 .library-brand {
   font-family: var(--font-display);
-  font-size: clamp(2.8rem, 10vw, 4.5rem);
+  font-size: clamp(2.5rem, 9vw, 4rem);
   font-weight: 600;
   letter-spacing: 0.04em;
   line-height: 0.95;
-  margin: 0 0 0.75rem;
+  margin: 0 0 0.65rem;
 }
 
 .library-hero h1 {
-  font-size: clamp(1.35rem, 3vw, 1.7rem);
+  font-size: clamp(1.2rem, 2.8vw, 1.5rem);
   font-weight: 500;
   color: var(--ink-muted);
-  margin-bottom: 1rem;
+  margin-bottom: 0.85rem;
 }
 
 .library-lede {
-  margin: 0 0 1.5rem;
+  margin: 0 0 1.25rem;
   color: var(--ink-muted);
   max-width: 32rem;
+  font-size: 0.95rem;
 }
 
 .library-meta {
-  margin: 0;
-  font-size: 0.9rem;
-  color: var(--ink-muted);
+  margin: 0.85rem 0 0;
+  font-size: 0.82rem;
+  color: color-mix(in srgb, var(--ink-muted) 90%, transparent);
+  min-height: 1.25em;
+}
+
+.library-meta-skel {
+  visibility: hidden;
 }
 
 .library-section h2 {
-  font-size: 1.1rem;
-  letter-spacing: 0.08em;
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--ink-muted);
-  margin-bottom: 1rem;
+  margin-bottom: 0.85rem;
+  font-weight: 600;
 }
 
 .pair-list {
@@ -52,22 +59,25 @@
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 0.15rem;
+  gap: 0;
 }
 
 .pair-row {
   display: grid;
-  grid-template-columns: 2.5rem 1fr;
-  gap: 0.75rem;
+  grid-template-columns: 2.35rem 1fr;
+  gap: 0.65rem;
   align-items: baseline;
-  padding: 0.85rem 0.25rem;
-  border-bottom: 1px solid var(--rule);
+  /* Fixed vertical rhythm — skeleton uses the same metrics. */
+  min-height: 2.85rem;
+  padding: 0.75rem 0.15rem;
+  border-bottom: 1px solid color-mix(in srgb, var(--ink) 8%, transparent);
+  box-sizing: border-box;
 }
 
 .pair-num {
   font-family: var(--font-display);
-  font-size: 1.05rem;
-  color: var(--ink-muted);
+  font-size: 0.95rem;
+  color: color-mix(in srgb, var(--ink-muted) 85%, transparent);
   font-variant-numeric: tabular-nums;
 }
 
@@ -75,19 +85,19 @@
   display: flex;
   flex-wrap: wrap;
   align-items: baseline;
-  row-gap: 0.35rem;
+  row-gap: 0.3rem;
 }
 
 .life-item {
   display: inline;
   font-family: var(--font-display);
-  font-size: 1.25rem;
+  font-size: 1.15rem;
   font-weight: 600;
 }
 
 .life-sep {
   display: inline-block;
-  margin: 0 0.55rem;
+  margin: 0 0.45rem;
   color: var(--ink-muted);
   font-weight: 400;
   text-decoration: none;
@@ -96,8 +106,8 @@
 .life-link {
   text-decoration: underline;
   text-decoration-thickness: 1px;
-  text-underline-offset: 0.18em;
-  text-decoration-color: color-mix(in srgb, var(--ink) 35%, transparent);
+  text-underline-offset: 0.16em;
+  text-decoration-color: color-mix(in srgb, var(--ink) 28%, transparent);
   color: var(--ink);
 }
 
@@ -128,17 +138,30 @@
   text-decoration-color: color-mix(in srgb, var(--ink-muted) 70%, transparent);
 }
 
+/* Loading skeleton — same row box as real pairs (no list jump). */
+.pair-row-skel .pair-num {
+  opacity: 0.35;
+}
+
+.life-skel {
+  display: block;
+  height: 0.95rem;
+  margin-top: 0.2rem;
+  max-width: 14rem;
+  border-radius: 0.15rem;
+  background: color-mix(in srgb, var(--ink) 7%, transparent);
+}
+
 .library-footer {
-  margin-top: 3rem;
-  padding-top: 1.5rem;
-  border-top: 1px solid var(--rule);
-  font-size: 0.85rem;
+  margin-top: 2.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid color-mix(in srgb, var(--ink) 10%, transparent);
+  font-size: 0.8rem;
   color: var(--ink-muted);
 }
 
-.library-loading,
 .library-error {
-  padding: 4rem var(--pad-x);
-  text-align: center;
+  margin: 1.5rem 0 0;
   color: var(--ink-muted);
+  font-size: 0.92rem;
 }

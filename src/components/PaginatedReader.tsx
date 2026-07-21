@@ -45,6 +45,8 @@ type Props = {
  * Critical: the column box width is locked to exactly one page width so only
  * one column is visible inside the clip; extra columns overflow horizontally
  * and we translate by that same page width.
+ *
+ * Viewport is full-bleed for margin tap zones; the stage/clip stays measure-wide.
  */
 export function PaginatedReader({
   contentKey,
@@ -56,6 +58,7 @@ export function PaginatedReader({
   onToggleChrome,
   onExhausted,
 }: Props) {
+  const viewportRef = useRef<HTMLDivElement>(null)
   const clipRef = useRef<HTMLDivElement>(null)
   const contentRef = useRef<HTMLDivElement>(null)
   const [page, setPage] = useState(0)
@@ -63,6 +66,10 @@ export function PaginatedReader({
   const [pageWidth, setPageWidth] = useState(0)
   const [dragOffset, setDragOffset] = useState(0)
   const [dragging, setDragging] = useState(false)
+  /** Hidden until columns + resume page are positioned (no flash). */
+  const [settled, setSettled] = useState(false)
+  /** Soft page motion only after restore snap — never animate into saved place. */
+  const [allowMotion, setAllowMotion] = useState(false)
   const restored = useRef(false)
   const onStatusRef = useRef(onStatus)
   const measureRef = useRef(measureProgress)
@@ -93,6 +100,8 @@ export function PaginatedReader({
 
   useLayoutEffect(() => {
     restored.current = false
+    setSettled(false)
+    setAllowMotion(false)
     setPage(0)
     setDragOffset(0)
 
@@ -107,9 +116,12 @@ export function PaginatedReader({
 
     const clip = clipRef.current
     const stopObserve = clip ? observeSize(clip, measure) : () => {}
+    // display=optional fonts: remasure only after restore if a face activates.
     const fonts = document.fonts
     if (fonts && fonts.ready) {
-      void fonts.ready.then(() => measure())
+      void fonts.ready.then(() => {
+        if (restored.current) measure()
+      })
     }
 
     return () => {
@@ -118,6 +130,7 @@ export function PaginatedReader({
     }
   }, [measure, contentKey])
 
+  // Content-anchored restore: snap transform before reveal — no tween to place.
   useLayoutEffect(() => {
     if (restored.current || pageCount < 1 || pageWidth === 0) return
     const content = contentRef.current
@@ -125,9 +138,29 @@ export function PaginatedReader({
     if (content && resolveRef.current) {
       next = resolveRef.current(content, pageWidth, pageCount)
     }
+    next = Math.max(0, Math.min(next, pageCount - 1))
     setPage(next)
+    pageRef.current = next
+    if (content) setTransformX(content, -next * pageWidth)
     restored.current = true
+    setSettled(true)
   }, [initialProgress, pageCount, pageWidth, contentKey])
+
+  // Enable soft motion only after the snapped page has painted.
+  useEffect(() => {
+    if (!settled) {
+      setAllowMotion(false)
+      return
+    }
+    let raf2 = 0
+    const raf1 = requestAnimationFrame(() => {
+      raf2 = requestAnimationFrame(() => setAllowMotion(true))
+    })
+    return () => {
+      cancelAnimationFrame(raf1)
+      cancelAnimationFrame(raf2)
+    }
+  }, [settled, contentKey])
 
   useEffect(() => {
     const clip = clipRef.current
@@ -146,8 +179,9 @@ export function PaginatedReader({
     return () => cancelAnimationFrame(raf)
   }, [page, pageCount])
 
-  const go = useCallback((delta: number) => {
+  const go = useCallback((delta: number, instant = false) => {
     const count = pageCountRef.current
+    if (instant) setAllowMotion(false)
     setPage((p) => {
       const next = p + delta
       if (next < 0) return 0
@@ -157,6 +191,11 @@ export function PaginatedReader({
       }
       return next
     })
+    if (instant) {
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => setAllowMotion(true))
+      })
+    }
   }, [])
 
   useEffect(() => {
@@ -174,7 +213,8 @@ export function PaginatedReader({
   }, [go])
 
   usePageGestures({
-    rootRef: clipRef,
+    rootRef: viewportRef,
+    clipRef,
     pageRef,
     pageCountRef,
     pageWidthRef,
@@ -187,18 +227,29 @@ export function PaginatedReader({
   const x = pageWidth > 0 ? -page * pageWidth + dragOffset : dragOffset
 
   useLayoutEffect(() => {
+    // Skip fighting the restore snap until settled; restore effect sets X once.
+    if (!settled && !restored.current) return
     const el = contentRef.current
     if (el) setTransformX(el, x)
-  }, [x])
+  }, [x, settled])
 
   return (
-    <div className="paged-viewport">
-      <div className="paged-clip" ref={clipRef}>
-        <div
-          className={`paged-content${dragging ? ' is-dragging' : ''}`}
-          ref={contentRef}
-        >
-          {children}
+    <div className="paged-viewport" ref={viewportRef}>
+      <div className="paged-stage">
+        <div className="paged-clip" ref={clipRef}>
+          <div
+            className={[
+              'paged-content',
+              dragging ? 'is-dragging' : '',
+              settled ? '' : 'is-settling',
+              allowMotion ? '' : 'no-motion',
+            ]
+              .filter(Boolean)
+              .join(' ')}
+            ref={contentRef}
+          >
+            {children}
+          </div>
         </div>
       </div>
     </div>

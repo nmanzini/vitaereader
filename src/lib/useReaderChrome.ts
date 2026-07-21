@@ -32,11 +32,12 @@ export function useReaderChrome(settingsOpen: boolean) {
   }, [settingsOpen, clearTop, setTopOn])
 
   const scheduleHideTop = useCallback(() => {
-    scheduleTopHide(700, settingsOpen)
+    // Quiet Kindle: chrome retreats quickly after peek.
+    scheduleTopHide(520, settingsOpen)
   }, [scheduleTopHide, settingsOpen])
 
   const scheduleHideBottom = useCallback(() => {
-    scheduleBottomHide(700)
+    scheduleBottomHide(520)
   }, [scheduleBottomHide])
 
   const toggleChrome = useCallback(() => {

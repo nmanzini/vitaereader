@@ -210,7 +210,7 @@ Do not add heavy React Testing Library stacks unless explicitly requested — ke
 
 ## Design constraints
 
-- Calm reading UI: measure ~`36rem`, serif display/body (see `src/index.css`).
+- Calm reading UI: measure ~`34rem`, serif display/body (see `src/index.css`).
 - Mobile-first; respect safe areas.
 - Avoid dashboard chrome, card grids in the reader, and novelty UI.
 - PWA: cache `data/index.json` precache + runtime CacheFirst for `/data/works/*.json` and `/data/annotations/*.json` (200 only).

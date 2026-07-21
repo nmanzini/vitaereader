@@ -122,9 +122,31 @@ export function Library() {
       .catch((e: Error) => setError(e.message))
   }, [])
 
+  const hero = (
+    <header className="library-hero">
+      <p className="library-brand">Vitae</p>
+      <h1>Plutarch’s Parallel Lives</h1>
+      <p className="library-lede">
+        Dryden’s translation, revised by A. H. Clough.
+      </p>
+      <ThemePicker theme={theme} onChange={setTheme} />
+      {index ? (
+        <p className="library-meta">
+          {index.totals.pairs} pairs · {index.totals.unpaired} unpaired ·{' '}
+          {formatWords(index.totals.words)}
+        </p>
+      ) : (
+        <p className="library-meta library-meta-skel" aria-hidden="true">
+          &nbsp;
+        </p>
+      )}
+    </header>
+  )
+
   if (error) {
     return (
       <main className="library">
+        {hero}
         <p className="library-error">{error}</p>
       </main>
     )
@@ -133,7 +155,20 @@ export function Library() {
   if (!index) {
     return (
       <main className="library">
-        <p className="library-loading">Opening the Lives…</p>
+        {hero}
+        <section className="library-section" aria-labelledby="lives-heading">
+          <h2 id="lives-heading">Lives</h2>
+          <ol className="pair-list" aria-busy="true" aria-label="Loading lives">
+            {Array.from({ length: 10 }, (_, i) => (
+              <li key={i}>
+                <div className="pair-row pair-row-skel">
+                  <span className="pair-num">{String(i + 1).padStart(2, '0')}</span>
+                  <span className="life-skel" />
+                </div>
+              </li>
+            ))}
+          </ol>
+        </section>
       </main>
     )
   }
@@ -142,18 +177,7 @@ export function Library() {
 
   return (
     <main className="library">
-      <header className="library-hero">
-        <p className="library-brand">Vitae</p>
-        <h1>Plutarch’s Parallel Lives</h1>
-        <p className="library-lede">
-          Dryden’s translation, revised by A. H. Clough.
-        </p>
-        <ThemePicker theme={theme} onChange={setTheme} />
-        <p className="library-meta">
-          {index.totals.pairs} pairs · {index.totals.unpaired} unpaired ·{' '}
-          {formatWords(index.totals.words)}
-        </p>
-      </header>
+      {hero}
 
       <section className="library-section" aria-labelledby="lives-heading">
         <h2 id="lives-heading">Lives</h2>

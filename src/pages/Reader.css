@@ -1,6 +1,6 @@
 .reader-shell {
-  --reader-chrome-h: calc(2.9rem + env(safe-area-inset-top, 0px));
-  --reader-bottom-h: calc(2.9rem + var(--safe-bottom));
+  --reader-chrome-h: calc(2.55rem + env(safe-area-inset-top, 0px));
+  --reader-bottom-h: calc(2.55rem + var(--safe-bottom));
   height: 100vh;
   height: 100dvh;
   min-height: 100vh;
@@ -18,15 +18,17 @@
   top: 0;
   left: 0;
   right: 0;
-  height: 2px;
+  height: 1px;
   z-index: 40;
   background: transparent;
+  pointer-events: none;
 }
 
 .reader-progress > div {
   height: 100%;
-  background: var(--progress);
-  transition: width 80ms linear;
+  background: color-mix(in srgb, var(--progress) 55%, transparent);
+  -webkit-transition: width 120ms linear;
+  transition: width 120ms linear;
 }
 
 /* Top chrome overlays the reserved blank band — never affects layout */
@@ -39,17 +41,30 @@
   height: var(--reader-chrome-h);
   padding: 0 var(--pad-x);
   padding-top: env(safe-area-inset-top, 0px);
+  display: -webkit-flex;
   display: flex;
+  -webkit-align-items: center;
   align-items: center;
-  background: color-mix(in srgb, var(--bg) 92%, transparent);
-  backdrop-filter: blur(8px);
-  border-bottom: 1px solid var(--rule);
-  transform: translateY(-110%);
-  transition: transform 220ms ease;
+  /* Solid wash — no backdrop-filter (costly / uneven on Silk tablets). */
+  background: var(--bg);
+  border-bottom: 1px solid color-mix(in srgb, var(--ink) 8%, transparent);
+  opacity: 0;
+  pointer-events: none;
+  -webkit-transform: translateY(-8px);
+  transform: translateY(-8px);
+  -webkit-transition:
+    opacity var(--motion-chrome),
+    -webkit-transform var(--motion-chrome);
+  transition:
+    opacity var(--motion-chrome),
+    transform var(--motion-chrome);
   box-sizing: border-box;
 }
 
 .reader-shell.top-open .reader-chrome {
+  opacity: 1;
+  pointer-events: auto;
+  -webkit-transform: translateY(0);
   transform: translateY(0);
 }
 
@@ -64,6 +79,7 @@
 }
 
 .reader-top-spacer {
+  -webkit-flex: 0 0 var(--reader-chrome-h);
   flex: 0 0 var(--reader-chrome-h);
   background: var(--bg);
 }
@@ -72,40 +88,62 @@
   width: 100%;
   max-width: var(--measure);
   margin: 0 auto;
+  display: -webkit-flex;
   display: flex;
+  -webkit-align-items: center;
   align-items: center;
+  -webkit-justify-content: space-between;
   justify-content: space-between;
   gap: 1rem;
-  font-size: 0.85rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.01em;
 }
 
 .reader-chrome a {
   text-decoration: none;
+  color: color-mix(in srgb, var(--ink-muted) 88%, transparent);
+}
+
+.reader-chrome a:hover,
+.reader-chrome a:focus-visible {
   color: var(--ink-muted);
 }
 
 .reader-chrome-actions {
+  display: -webkit-flex;
   display: flex;
+  -webkit-align-items: center;
   align-items: center;
-  gap: 0.75rem;
+  gap: 0.5rem;
 }
 
 .reader-chrome-actions > button {
-  font-size: 0.8rem;
-  color: var(--ink-muted);
+  font-size: 0.78rem;
+  color: color-mix(in srgb, var(--ink-muted) 88%, transparent);
 }
 
 .reader-gear {
+  display: -webkit-inline-flex;
   display: inline-flex;
+  -webkit-align-items: center;
   align-items: center;
+  -webkit-justify-content: center;
   justify-content: center;
-  width: 2rem;
-  height: 2rem;
+  width: 1.85rem;
+  height: 1.85rem;
+  color: color-mix(in srgb, var(--ink-muted) 88%, transparent);
+  opacity: 0.85;
+}
+
+.reader-gear:hover,
+.reader-gear:focus-visible {
+  opacity: 1;
   color: var(--ink-muted);
 }
 
 /* Bottom bar overlays reserved blank band — never affects layout */
 .reader-bottom-spacer {
+  -webkit-flex: 0 0 var(--reader-bottom-h);
   flex: 0 0 var(--reader-bottom-h);
   background: var(--bg);
 }
@@ -129,17 +167,29 @@
   height: var(--reader-bottom-h);
   padding: 0 var(--pad-x);
   padding-bottom: var(--safe-bottom);
+  display: -webkit-flex;
   display: flex;
+  -webkit-align-items: center;
   align-items: center;
-  background: color-mix(in srgb, var(--bg) 92%, transparent);
-  backdrop-filter: blur(8px);
-  border-top: 1px solid var(--rule);
-  transform: translateY(110%);
-  transition: transform 220ms ease;
+  background: var(--bg);
+  border-top: 1px solid color-mix(in srgb, var(--ink) 8%, transparent);
+  opacity: 0;
+  pointer-events: none;
+  -webkit-transform: translateY(8px);
+  transform: translateY(8px);
+  -webkit-transition:
+    opacity var(--motion-chrome),
+    -webkit-transform var(--motion-chrome);
+  transition:
+    opacity var(--motion-chrome),
+    transform var(--motion-chrome);
   box-sizing: border-box;
 }
 
 .reader-shell.bottom-open .reader-bottom {
+  opacity: 1;
+  pointer-events: auto;
+  -webkit-transform: translateY(0);
   transform: translateY(0);
 }
 
@@ -147,17 +197,20 @@
   width: 100%;
   max-width: var(--measure);
   margin: 0 auto;
+  display: -webkit-flex;
   display: flex;
+  -webkit-align-items: center;
   align-items: center;
+  -webkit-justify-content: space-between;
   justify-content: space-between;
   gap: 1rem;
-  font-size: 0.85rem;
-  color: var(--ink-muted);
+  font-size: 0.76rem;
+  color: color-mix(in srgb, var(--ink-muted) 82%, transparent);
   font-variant-numeric: tabular-nums;
 }
 
 .reader-bottom-pos {
-  letter-spacing: 0.02em;
+  letter-spacing: 0.04em;
 }
 
 .reader-bottom-eta {
@@ -170,7 +223,7 @@
   padding: 4.5rem var(--pad-x) calc(4rem + var(--safe-bottom));
 }
 
-/* Pages reading surface */
+/* Pages reading surface — full-bleed viewport so left/right margins are tappable. */
 .reader-shell .paged-viewport {
   position: relative;
   /* basis 0 so flex assigns a definite height; content cannot grow the shell */
@@ -178,26 +231,33 @@
   flex: 1 1 0;
   min-height: 0;
   width: 100%;
-  max-width: var(--measure);
-  margin: 0 auto;
+  max-width: none;
+  margin: 0;
   box-sizing: border-box;
-  padding: 1.1rem var(--pad-x) 1.35rem;
+  padding: 0.95rem 0 1.15rem;
   overflow: hidden;
   /* pan-y: allow vertical; horizontal page-turns stay in usePageGestures.
      Avoid touch-action:none — it blocks native text selection on touch. */
   touch-action: pan-y;
-  cursor: grab;
+  cursor: default;
   user-select: text;
   -webkit-user-select: text;
+  -webkit-touch-callout: default;
+}
+
+/* Measure-constrained stage; margins outside remain in the viewport hit area. */
+.paged-stage {
+  width: 100%;
+  max-width: var(--measure);
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 var(--pad-x);
+  box-sizing: border-box;
 }
 
 .reader-shell .paged-content {
   user-select: text;
   -webkit-user-select: text;
-}
-
-.reader-shell .paged-viewport:active {
-  cursor: grabbing;
 }
 
 .paged-clip {
@@ -222,14 +282,41 @@
   column-rule: none;
   font-size: var(--font-size-body);
   line-height: var(--leading);
-  -webkit-transition: -webkit-transform 280ms cubic-bezier(0.22, 1, 0.36, 1);
-  transition: transform 280ms cubic-bezier(0.22, 1, 0.36, 1);
+  /* Soft horizontal slide — user turns only; restore uses .no-motion. */
+  -webkit-transition: -webkit-transform var(--motion-page);
+  transition: transform var(--motion-page);
   will-change: transform;
 }
 
-.paged-content.is-dragging {
+.paged-content.is-dragging,
+.paged-content.is-settling,
+.paged-content.no-motion {
   -webkit-transition: none;
   transition: none;
+}
+
+/* Hold paint until resume page + column width settle (no flash / jump). */
+.paged-content.is-settling {
+  visibility: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .paged-content {
+    -webkit-transition: none;
+    transition: none;
+    will-change: auto;
+  }
+
+  .reader-chrome,
+  .reader-bottom {
+    -webkit-transition: none;
+    transition: none;
+  }
+
+  .reader-progress > div {
+    -webkit-transition: none;
+    transition: none;
+  }
 }
 
 .reader-paged,
@@ -254,31 +341,33 @@
 }
 
 .reader-header {
-  margin-bottom: 2.25rem;
-  padding-bottom: 1.5rem;
-  border-bottom: 1px solid var(--rule);
+  margin-bottom: 1.75rem;
+  padding-bottom: 1.15rem;
+  border-bottom: 1px solid color-mix(in srgb, var(--ink) 10%, transparent);
 }
 
 .reader-kicker {
-  margin: 0 0 0.5rem;
-  font-size: 0.8rem;
-  letter-spacing: 0.1em;
+  margin: 0 0 0.4rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--ink-muted);
 }
 
 .reader-header h1 {
-  font-size: clamp(2.2rem, 7vw, 3.2rem);
+  font-size: clamp(1.85rem, 6vw, 2.65rem);
+  font-weight: 600;
+  line-height: 1.12;
 }
 
 .reader-body .p-prose,
 .reader-body .p-noindent,
 .reader-body .p-poem {
-  margin: 0 0 0.95em;
+  margin: 0 0 0.82em;
 }
 
 .reader-body .p-prose {
-  text-indent: 1.15em;
+  text-indent: 1.1em;
 }
 
 .reader-body .p-prose:first-child {
@@ -291,20 +380,20 @@
 
 .reader-body .p-poem {
   text-indent: 0;
-  margin-left: 1.25rem;
+  margin-left: 1.15rem;
   margin-right: 0.5rem;
   font-style: italic;
   color: var(--ink-muted);
-  line-height: 1.45;
+  line-height: 1.42;
 }
 
 .reader-footer-nav {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1rem;
-  margin-top: 3rem;
-  padding-top: 1.5rem;
-  border-top: 1px solid var(--rule);
+  margin-top: 2.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid color-mix(in srgb, var(--ink) 10%, transparent);
 }
 
 .reader-mark-finished {
@@ -315,7 +404,7 @@
   border: none;
   background: none;
   font-family: var(--font-body);
-  font-size: 0.95rem;
+  font-size: 0.88rem;
   color: var(--ink-muted);
   text-decoration: underline;
   text-underline-offset: 0.2em;
@@ -337,22 +426,40 @@
 
 .nav-label {
   display: block;
-  font-size: 0.75rem;
-  letter-spacing: 0.08em;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--ink-muted);
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.2rem;
 }
 
 .nav-title {
   font-family: var(--font-display);
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: 600;
 }
 
+.reader-boot {
+  -webkit-flex: 1 1 0;
+  flex: 1 1 0;
+  min-height: 0;
+  width: 100%;
+  max-width: var(--measure);
+  margin: 0 auto;
+  padding: 0.95rem var(--pad-x) 1.15rem;
+  box-sizing: border-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+
 .reader-msg {
-  padding: 4rem var(--pad-x);
-  color: var(--ink-muted);
+  margin: 0;
+  color: color-mix(in srgb, var(--ink-muted) 90%, transparent);
+  font-size: 0.92rem;
 }
 
 /* Character name highlights — quiet Kindle-like cue (italic + soft underline). */
@@ -368,7 +475,7 @@
   color: inherit;
   cursor: pointer;
   text-decoration: underline;
-  text-decoration-color: color-mix(in srgb, var(--ink) 18%, transparent);
+  text-decoration-color: color-mix(in srgb, var(--ink) 16%, transparent);
   text-decoration-thickness: from-font;
   text-underline-offset: 0.14em;
   -webkit-tap-highlight-color: color-mix(in srgb, var(--accent) 12%, transparent);
