@@ -3,8 +3,8 @@
  *
  * Stored value is a single 0–1 ratio = fraction of words through the work
  * (same idea as Kindle “locations”: a place in the text, not a viewport).
- * Scroll restores by paragraph; Pages restores by finding which column/page
- * actually contains that place after layout — not ratio × pageCount.
+ * Pages restores by finding which column/page actually contains that place
+ * after layout — not ratio × pageCount.
  */
 
 export type WordIndex = {
@@ -154,22 +154,6 @@ export function contentSamplePoints(
 }
 
 /**
- * Scroll offset that places a content Y (relative to content top) at the
- * vertical center of the viewport.
- */
-export function scrollTopForCenterAnchor(
-  anchorOffsetInContent: number,
-  viewportHeight: number,
-  maxScroll: number,
-): number {
-  if (maxScroll <= 0) return 0
-  return Math.min(
-    maxScroll,
-    Math.max(0, anchorOffsetInContent - viewportHeight / 2),
-  )
-}
-
-/**
  * Measure content progress at an absolute client point inside `viewport`.
  * Returns null if nothing measurable at that point.
  */
@@ -200,8 +184,8 @@ export function measureContentRatioAt(
 }
 
 /**
- * Read content progress from the center of a viewport (scroll clip or paged
- * clip). Location = middle of what’s on screen. Returns null if unmeasurable.
+ * Read content progress from the center of a paged clip. Returns null if
+ * unmeasurable.
  */
 export function measureContentRatio(
   viewport: HTMLElement,
@@ -225,61 +209,6 @@ export function measureContentRatio(
   }
 
   return null
-}
-
-/**
- * Soft line settle: browsers do not snap scroll to line boxes natively.
- * After scrolling stops, nudge so the top edge sits on a line — only when
- * already close (proximity), so it feels invisible rather than magnetic.
- * Returns true if scrollTop changed.
- */
-export function snapViewportTopToLine(viewport: HTMLElement): boolean {
-  const max = viewport.scrollHeight - viewport.clientHeight
-  if (max <= 0) return false
-  if (viewport.scrollTop <= 1 || viewport.scrollTop >= max - 1) return false
-
-  const view = viewport.getBoundingClientRect()
-  const x = view.left + Math.min(40, view.width * 0.15)
-  const y = view.top + 2
-
-  const doc = document as Document & {
-    caretPositionFromPoint?: (
-      x: number,
-      y: number,
-    ) => { offsetNode: Node; offset: number } | null
-    caretRangeFromPoint?: (x: number, y: number) => Range | null
-  }
-
-  let range: Range | null = null
-  if (typeof doc.caretPositionFromPoint === 'function') {
-    const pos = doc.caretPositionFromPoint(x, y)
-    if (pos?.offsetNode) {
-      range = document.createRange()
-      range.setStart(pos.offsetNode, pos.offset)
-      range.collapse(true)
-    }
-  } else if (typeof doc.caretRangeFromPoint === 'function') {
-    range = doc.caretRangeFromPoint(x, y)
-  }
-  if (!range) return false
-
-  const node =
-    range.startContainer.nodeType === Node.ELEMENT_NODE
-      ? (range.startContainer as Element)
-      : range.startContainer.parentElement
-  if (!node || !viewport.contains(node)) return false
-  if (node.closest('.reader-header, .reader-footer-nav')) return false
-
-  const rects = range.getClientRects()
-  const line = rects.length > 0 ? rects[0] : range.getBoundingClientRect()
-  if (!line || (line.height === 0 && line.width === 0)) return false
-
-  const delta = line.top - view.top
-  const limit = Math.min(40, Math.max(12, line.height * 0.55))
-  if (Math.abs(delta) < 0.75 || Math.abs(delta) > limit) return false
-
-  viewport.scrollTop = Math.min(max, Math.max(0, viewport.scrollTop + delta))
-  return true
 }
 
 /** Map a horizontal flow offset to a page index in the multicol strip. */
@@ -372,81 +301,4 @@ export function pageIndexForContentRatio(
   const flowX = caretFlowX(contentRoot, paraEl, frac)
   if (flowX == null || !Number.isFinite(flowX)) return fallback
   return pageIndexFromFlowX(flowX, pageWidth, pageCount)
-}
-
-function caretOffsetYInParagraph(
-  paraEl: HTMLElement,
-  frac: number,
-): number | null {
-  const text = paraEl.textContent ?? ''
-  if (!text.length) return 0
-
-  const target = Math.min(
-    text.length,
-    Math.max(0, Math.floor(clampRatio(frac) * text.length)),
-  )
-  const walk = document.createTreeWalker(paraEl, NodeFilter.SHOW_TEXT)
-  let counted = 0
-  let node: Node | null
-  while ((node = walk.nextNode())) {
-    const len = node.textContent?.length ?? 0
-    if (counted + len >= target) {
-      const range = document.createRange()
-      range.setStart(node, Math.min(len, Math.max(0, target - counted)))
-      range.collapse(true)
-      const rects = range.getClientRects()
-      const box = rects.length > 0 ? rects[0] : range.getBoundingClientRect()
-      if (!box || (box.height === 0 && box.width === 0)) break
-      return box.top - paraEl.getBoundingClientRect().top
-    }
-    counted += len
-  }
-  return null
-}
-
-/** Scroll mode: place the content anchor at the vertical center of the clip. */
-export function scrollViewportToRatio(
-  viewport: HTMLElement,
-  index: WordIndex,
-  ratio: number,
-): void {
-  if (index.ids.length === 0) {
-    viewport.scrollTop = 0
-    return
-  }
-
-  const max = Math.max(0, viewport.scrollHeight - viewport.clientHeight)
-  const r = clampRatio(ratio)
-  if (r <= 0.005) {
-    viewport.scrollTop = 0
-    return
-  }
-  if (r >= 0.995) {
-    viewport.scrollTop = max
-    return
-  }
-
-  const { paraIndex, frac } = anchorFromRatio(r, index)
-  const id = index.ids[paraIndex]
-  const paraEl = viewport.querySelector(
-    `[data-para-id="${CSS.escape(id)}"]`,
-  ) as HTMLElement | null
-  if (!paraEl) {
-    viewport.scrollTop = r * max
-    return
-  }
-
-  const viewTop = viewport.getBoundingClientRect().top
-  const paraTop =
-    paraEl.getBoundingClientRect().top - viewTop + viewport.scrollTop
-  const caretY = caretOffsetYInParagraph(paraEl, frac)
-  const anchorY =
-    caretY != null
-      ? paraTop + caretY
-      : paraTop + frac * (paraEl.offsetHeight || 0)
-  viewport.scrollTop = scrollTopForCenterAnchor(
-    anchorY,
-    viewport.clientHeight,
-    max,
-  )
 }

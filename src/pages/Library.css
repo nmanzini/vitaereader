@@ -86,6 +86,8 @@
 }
 
 .life-sep {
+  display: inline-block;
+  margin: 0 0.55rem;
   color: var(--ink-muted);
   font-weight: 400;
   text-decoration: none;
@@ -116,16 +118,14 @@
   text-decoration-color: color-mix(in srgb, var(--ink) 55%, transparent);
 }
 
-/* Marked finished: dull, no underline, no strike. */
-.life-link.is-finished {
-  color: color-mix(in srgb, var(--ink-muted) 85%, transparent);
-  text-decoration: none;
-  font-weight: 500;
-}
-
+/* Finished: fully struck through and dull. */
+.life-link.is-finished,
 .life-link.is-finished:hover {
-  color: var(--ink-muted);
-  text-decoration: none;
+  color: color-mix(in srgb, var(--ink-muted) 85%, transparent);
+  font-weight: 500;
+  text-decoration: line-through;
+  text-decoration-thickness: 1.5px;
+  text-decoration-color: color-mix(in srgb, var(--ink-muted) 70%, transparent);
 }
 
 .library-footer {

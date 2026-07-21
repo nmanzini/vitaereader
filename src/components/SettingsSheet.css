@@ -70,36 +70,3 @@
 .settings-section .theme-row {
   margin-bottom: 0;
 }
-
-.settings-segment {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0.5rem;
-}
-
-.settings-segment button {
-  text-align: left;
-  padding: 0.85rem 0.9rem;
-  border: 1px solid var(--rule);
-  border-radius: 0.5rem;
-  background: var(--bg);
-}
-
-.settings-segment button.is-active {
-  border-color: var(--ink);
-  background: color-mix(in srgb, var(--ink) 6%, var(--bg));
-}
-
-.settings-segment-label {
-  display: block;
-  font-family: var(--font-display);
-  font-size: 1.15rem;
-  font-weight: 600;
-}
-
-.settings-segment-hint {
-  display: block;
-  margin-top: 0.2rem;
-  font-size: 0.8rem;
-  color: var(--ink-muted);
-}

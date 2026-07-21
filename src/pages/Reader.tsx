@@ -1,9 +1,7 @@
 import {
   useCallback,
   useEffect,
-  useLayoutEffect,
   useMemo,
-  useRef,
   useState,
 } from 'react'
 import { Link, useNavigate, useParams, useSearchParams } from 'react-router-dom'
@@ -35,8 +33,6 @@ import {
   measureContentRatio,
   pageIndexForContentRatio,
   ratioFromAnchor,
-  scrollViewportToRatio,
-  snapViewportTopToLine,
 } from '../lib/contentProgress'
 import {
   clearWindowSelection,
@@ -55,15 +51,9 @@ import {
   normalizeRange,
   type HighlightSpan,
 } from '../lib/textRanges'
-import { applyScrollClipLineFit } from '../lib/scrollLayout'
-import {
-  formatEta,
-  locationCountFor,
-  locationFromProgress,
-} from '../lib/reading'
+import { formatEta } from '../lib/reading'
 import { siblingNav, workKicker } from '../lib/workMeta'
 import { useTheme } from '../lib/useTheme'
-import { useLayout } from '../lib/useLayout'
 import { useReaderChrome } from '../lib/useReaderChrome'
 import { SettingsSheet } from '../components/SettingsSheet'
 import { CharacterSheet } from '../components/CharacterSheet'
@@ -97,10 +87,6 @@ export function Reader() {
   const { slug } = useParams<{ slug: string }>()
   const navigate = useNavigate()
   const [searchParams] = useSearchParams()
-  const scrollRef = useRef<HTMLDivElement>(null)
-  const progressRef = useRef(0)
-  /** Suppress top-line settle right after a center-anchored resume restore. */
-  const restoreLockRef = useRef(false)
   const [work, setWork] = useState<Work | null>(null)
   const [pair, setPair] = useState<IndexPair | null>(null)
   const [annotations, setAnnotations] = useState<WorkAnnotations | null>(null)
@@ -108,12 +94,11 @@ export function Reader() {
     null,
   )
   const [theme, setTheme] = useTheme()
-  const [layout, setLayout] = useLayout()
   const [finished, setFinished] = useState(() => loadFinished())
   const [highlights, setHighlights] = useState<TextHighlight[]>([])
   const [settingsOpen, setSettingsOpen] = useState(false)
   const [progress, setProgress] = useState(0)
-  /** Content ratio used to resume when work or layout changes. */
+  /** Content ratio used to resume when work changes. */
   const [resumeAt, setResumeAt] = useState(0)
   const [pageStatus, setPageStatus] = useState<PageStatus>({
     page: 1,
@@ -126,7 +111,6 @@ export function Reader() {
     anchor: DOMRect
   } | null>(null)
 
-  const pagesMode = layout === 'pages'
   const {
     topOpen,
     bottomOpen,
@@ -155,7 +139,6 @@ export function Reader() {
   const commitProgress = useCallback(
     (ratio: number) => {
       const next = clampRatio(ratio)
-      progressRef.current = next
       setProgress(next)
       if (slug) saveProgress(slug, next)
     },
@@ -183,7 +166,6 @@ export function Reader() {
           const paraIndex = wi.ids.indexOf(deepPara)
           if (paraIndex >= 0) start = ratioFromAnchor(paraIndex, 0, wi)
         }
-        progressRef.current = start
         setProgress(start)
         setResumeAt(start)
       })
@@ -293,14 +275,6 @@ export function Reader() {
     )
   }, [selection, highlights])
 
-  // Layout switch: resume from the live center-measured ratio (progressRef),
-  // not a stale load-time value. Pages←scroll uses pageIndexForContentRatio;
-  // pages→scroll restores that anchor to the scroll clip center.
-  useEffect(() => {
-    if (!work) return
-    setResumeAt(progressRef.current)
-  }, [layout, work])
-
   useEffect(() => {
     const prev = document.body.style.overflow
     document.body.style.overflow = 'hidden'
@@ -308,133 +282,6 @@ export function Reader() {
       document.body.style.overflow = prev
     }
   }, [])
-
-  // Floor scroll clip height to N × body line-height so clip edges don’t
-  // bisect glyphs. Leftover space becomes margins — chrome bands stay put.
-  useLayoutEffect(() => {
-    if (pagesMode || !work) return
-    const clip = scrollRef.current
-    if (!clip) return
-
-    let unlockTimer = 0
-    let frames = 0
-    let raf = 0
-
-    const apply = () => {
-      applyScrollClipLineFit(clip)
-      if (!wordIndex) return
-      restoreLockRef.current = true
-      scrollViewportToRatio(clip, wordIndex, progressRef.current)
-      const measured = measureContentRatio(clip, wordIndex)
-      if (measured != null) commitProgress(measured)
-      window.clearTimeout(unlockTimer)
-      unlockTimer = window.setTimeout(() => {
-        restoreLockRef.current = false
-      }, 200)
-    }
-
-    const warm = () => {
-      frames += 1
-      apply()
-      if (frames < 4) raf = requestAnimationFrame(warm)
-    }
-    apply()
-    raf = requestAnimationFrame(warm)
-
-    const band = clip.parentElement
-    const ro = new ResizeObserver(() => apply())
-    if (band) ro.observe(band)
-    void document.fonts?.ready.then(() => apply())
-
-    return () => {
-      cancelAnimationFrame(raf)
-      window.clearTimeout(unlockTimer)
-      ro.disconnect()
-      clip.style.flex = ''
-      clip.style.height = ''
-      clip.style.marginTop = ''
-      clip.style.marginBottom = ''
-      restoreLockRef.current = false
-    }
-  }, [pagesMode, work, wordIndex, commitProgress])
-
-  useEffect(() => {
-    if (!work || pagesMode || !wordIndex) return
-    const el = scrollRef.current
-    if (!el) return
-    const target = resumeAt
-    let unlockTimer = 0
-    restoreLockRef.current = true
-    const raf = requestAnimationFrame(() => {
-      scrollViewportToRatio(el, wordIndex, target)
-      // Commit the center-of-scroll measurement so Loc/storage match the view.
-      // Skip top-line settle here — it would shift the center anchor.
-      const measured = measureContentRatio(el, wordIndex)
-      if (measured != null) commitProgress(measured)
-      unlockTimer = window.setTimeout(() => {
-        restoreLockRef.current = false
-      }, 200)
-    })
-    return () => {
-      cancelAnimationFrame(raf)
-      window.clearTimeout(unlockTimer)
-      restoreLockRef.current = false
-    }
-  }, [work, pagesMode, resumeAt, wordIndex, commitProgress])
-
-  useEffect(() => {
-    if (pagesMode || !wordIndex) return
-    const index = wordIndex
-    const current = scrollRef.current
-    if (!current) return
-    const root: HTMLDivElement = current
-
-    let raf = 0
-    let settleTimer = 0
-
-    function captureProgress() {
-      const measured = measureContentRatio(root, index)
-      if (measured == null) {
-        const max = root.scrollHeight - root.clientHeight
-        commitProgress(max > 0 ? root.scrollTop / max : 0)
-        return
-      }
-      commitProgress(measured)
-    }
-
-    function settleToLine() {
-      if (restoreLockRef.current) {
-        captureProgress()
-        return false
-      }
-      const moved = snapViewportTopToLine(root)
-      captureProgress()
-      return moved
-    }
-
-    function onScroll() {
-      cancelAnimationFrame(raf)
-      raf = requestAnimationFrame(captureProgress)
-
-      // Fallback when scrollend is unavailable.
-      window.clearTimeout(settleTimer)
-      settleTimer = window.setTimeout(settleToLine, 140)
-    }
-
-    function onScrollEnd() {
-      window.clearTimeout(settleTimer)
-      settleToLine()
-    }
-
-    root.addEventListener('scroll', onScroll, { passive: true })
-    root.addEventListener('scrollend', onScrollEnd)
-    return () => {
-      cancelAnimationFrame(raf)
-      window.clearTimeout(settleTimer)
-      root.removeEventListener('scroll', onScroll)
-      root.removeEventListener('scrollend', onScrollEnd)
-    }
-  }, [pagesMode, work, wordIndex, commitProgress])
 
   const measurePageProgress = useCallback(
     (clip: HTMLElement) => {
@@ -486,8 +333,6 @@ export function Reader() {
   const { prev, next } = siblingNav(pair, work.id)
   const kicker = workKicker(work, pair)
   const eta = formatEta(Math.round(work.wordCount * (1 - progress)))
-  const locCount = locationCountFor(work.wordCount)
-  const loc = locationFromProgress(progress, locCount)
 
   const articleInner = (
     <>
@@ -544,7 +389,6 @@ export function Reader() {
     <div
       className={[
         'reader-shell',
-        `layout-${layout}`,
         topOpen ? 'top-open' : '',
         bottomOpen ? 'bottom-open' : '',
       ]
@@ -600,8 +444,6 @@ export function Reader() {
         onClose={() => setSettingsOpen(false)}
         theme={theme}
         onTheme={setTheme}
-        layout={layout}
-        onLayout={setLayout}
       />
 
       <CharacterSheet
@@ -620,40 +462,23 @@ export function Reader() {
         onDismiss={dismissSelection}
       />
 
-      {pagesMode ? (
-        <PaginatedReader
-          contentKey={work.id}
-          initialProgress={resumeAt}
-          measureProgress={measurePageProgress}
-          resolvePageIndex={resolvePageIndex}
-          onStatus={onPageStatus}
-          onToggleChrome={() => {
-            if (hasTextSelection() || selection) return
-            toggleChrome()
-          }}
-          onExhausted={() => {
-            if (next) navigate(`/read/${next.id}`)
-            else navigate('/')
-          }}
-        >
-          <article className="reader reader-paged">{articleInner}</article>
-        </PaginatedReader>
-      ) : (
-        <div className="reader-scroll-viewport">
-          <div
-            className="reader-scroll-clip"
-            ref={scrollRef}
-            onClick={(e) => {
-              const target = e.target as Element | null
-              if (target?.closest?.('a, button')) return
-              if (hasTextSelection() || selection) return
-              toggleChrome()
-            }}
-          >
-            <article className="reader reader-scroll">{articleInner}</article>
-          </div>
-        </div>
-      )}
+      <PaginatedReader
+        contentKey={work.id}
+        initialProgress={resumeAt}
+        measureProgress={measurePageProgress}
+        resolvePageIndex={resolvePageIndex}
+        onStatus={onPageStatus}
+        onToggleChrome={() => {
+          if (hasTextSelection() || selection) return
+          toggleChrome()
+        }}
+        onExhausted={() => {
+          if (next) navigate(`/read/${next.id}`)
+          else navigate('/')
+        }}
+      >
+        <article className="reader reader-paged">{articleInner}</article>
+      </PaginatedReader>
 
       <div className="reader-bottom-spacer" aria-hidden="true" />
       <div
@@ -678,9 +503,7 @@ export function Reader() {
       >
         <div className="reader-bottom-row">
           <span className="reader-bottom-pos">
-            {pagesMode
-              ? `${pageStatus.page} / ${pageStatus.pageCount}`
-              : `Loc ${loc} / ${locCount}`}
+            {pageStatus.page} / {pageStatus.pageCount}
           </span>
           <span className="reader-bottom-eta">{eta}</span>
         </div>

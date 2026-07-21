@@ -7,6 +7,7 @@ Read it before changing code. Prefer this file over chat memory or `README.md`.
 
 Vitae is a calm, mobile-first PWA for Plutarch’s *Parallel Lives* (Dryden/Clough, Gutenberg #674).
 Readers move **pair-grouped, link-direct**: Library lists pairs with direct links to each Life/Comparison (no intermediate pair page).
+Reading is **CSS-column pages only** (swipe like a book) — no scroll layout.
 The product should feel like a quiet book, not a dashboard.
 
 ## Stack
@@ -66,7 +67,8 @@ If `check` fails, fix it. Do not skip hooks or weaken tests to greenwash.
 | `src/pages/` | Route screens: Library, Reader shell |
 | `src/components/` | Reusable UI (PaginatedReader, SettingsSheet, CharacterSheet, SelectionToolbar, …) |
 | `src/lib/` | Pure helpers, prefs, corpus loaders, reader hooks |
-| `src/lib/scrollLayout.ts` | Scroll clip height → N × body line-height |
+| `src/lib/paginationLayout.ts` | Floored page width + CSS column sizing |
+| `src/lib/contentProgress.ts` | Word-fraction progress + page restore from anchors |
 | `src/lib/charMatch.ts` | Character-name longest-match + text segmentation |
 | `src/lib/textRanges.ts` | Highlight range helpers + compose with char refs |
 | `src/lib/selectionOffsets.ts` | DOM selection → paragraph plain-text offsets |
@@ -96,16 +98,15 @@ If `check` fails, fix it. Do not skip hooks or weaken tests to greenwash.
 
 These are load-bearing. Violating them recreates fixed bugs.
 
-1. **Shared chrome bands** — Scroll and Pages use the same shell: reserved top/bottom empty spacers; chrome *overlays* those bands. Showing/hiding chrome must never resize the reading surface.
+1. **Shared chrome bands** — Reserved top/bottom empty spacers; chrome *overlays* those bands. Showing/hiding chrome must never resize the reading surface.
 2. **Themes = colors only** — `[data-theme]` may override color tokens. Never change `--leading`, `--font-size-body`, or spacing via theme (pagination shifts).
 3. **Pages = CSS columns + hard clip** — `.paged-clip` is `overflow: hidden; contain: paint`. Content `width` **and** `columnWidth` must be the same integer page width. Do not use `width: auto` on the column box.
 4. **Measure with floored integers** — subpixel widths cause column bleed.
-5. **Footer stats are overlays** — position & time always render in the bottom chrome when open; they must not change spacer height.
-6. **Position metrics** — Pages: `page / pageCount`. Scroll: Kindle-style `Loc X / Y` from `src/lib/reading.ts` (+ shared ETA).
-7. **Single content-anchored progress (Kindle-like)** — One `vitae.progress[workId]` float (0–1) = fraction of **words through the work** (cf. Kindle locations: a place in the text, not the viewport). Measure and restore **center-anchored**: Scroll samples/restores at the vertical center of `.reader-scroll-clip`; Pages at the center of `.paged-clip` (`measureContentRatio` / `scrollViewportToRatio`). **Pages restore** must resolve that anchor to the column/page that contains it (`pageIndexForContentRatio`), not `ratio × pageCount`. Layout switches resume from the live `progressRef` ratio so Pages→Scroll stays on the same text (center restore + commit) and Scroll→Pages seeks the containing page (at most ~½ page).
-8. **Scroll fits and settles on line boxes** — The scroll clip (`.reader-scroll-clip`) height is floored to an integer multiple of body `line-height` (`applyScrollClipLineFit` in `src/lib/scrollLayout.ts`); leftover band space becomes vertical margins so chrome spacers stay fixed. Native overflow scroll is still pixel-continuous (no OS line-snap). On scroll end, proximity-nudge the top edge onto the nearest line (`snapViewportTopToLine`) so resting frames don’t bisect glyphs. Do not use hard scroll-snap magnets.
-9. **Missing Comparisons** (e.g. Alexander–Caesar) are manuscript losses — UI may note absence; do not “invent” comparison text.
-10. **No monolith corpus in `public/`** — index + per-work JSON only (PWA caches accordingly).
+5. **Footer stats are overlays** — page position and ETA always render in the bottom chrome when open; they must not change spacer height.
+6. **Position metrics** — Footer shows `page / pageCount` (+ shared ETA). Kindle-style location math stays in `src/lib/reading.ts` for library progress and tests.
+7. **Single content-anchored progress (Kindle-like)** — One `vitae.progress[workId]` float (0–1) = fraction of **words through the work** (cf. Kindle locations: a place in the text, not the viewport). Measure and restore **center-anchored** at the center of `.paged-clip` (`measureContentRatio`). **Pages restore** must resolve that anchor to the column/page that contains it (`pageIndexForContentRatio`), not `ratio × pageCount`.
+8. **Missing Comparisons** (e.g. Alexander–Caesar) are manuscript losses — UI may note absence; do not “invent” comparison text.
+9. **No monolith corpus in `public/`** — index + per-work JSON only (PWA caches accordingly).
 
 ## Content pipeline
 
@@ -135,7 +136,6 @@ Regenerate only when ingest/catalog/parser changes. Commit updated `public/data`
 | Key | Values |
 |-----|--------|
 | `vitae.theme` | `day` \| `night` \| `sepia` \| `eink` |
-| `vitae.layout` | `scroll` \| `pages` |
 | `vitae.progress` | `{ [workId]: 0..1 }` content word-fraction (see Invariant 7) |
 | `vitae.finished` | `string[]` |
 | `vitae.highlights` | `{ [workId]: Array<{ id, paraId, start, end, text, createdAt }> }` plain-text offsets (same space as charMatch) |
@@ -156,12 +156,10 @@ npm run dev -- --host 127.0.0.1 --port 5175
 Minimum path:
 
 1. `/` — library loads; totals visible.
-2. `/` — pair rows are name links only (Theseus - Romulus - Comparison); unread underlined, mid-read progressive strikethrough after ~1 page, finished dull/no underline.
-3. `/read/theseus` — scroll: top+bottom spacers exist; footer shows `Loc …` when bottom chrome open.
-4. Switch layout to Pages (Settings):
-   - Stable hooks: `[data-testid="reader-show-menu"]` then `[data-testid="reader-settings"]`.
-   - Playwright click by label often fails while chrome is `translateY(-110%)` off-screen — reveal first, or open via eval below.
-5. Pages: `.paged-content` style `width === columnWidth` (integers); footer `N / M`; no adjacent-column bleed.
+2. `/` — pair rows are name links only (Theseus · Romulus · Comparison); unread underlined, mid-read progressive strikethrough after ~1 page, finished fully struck + dull.
+3. `/read/theseus` — top+bottom spacers exist; footer shows `N / M` when bottom chrome open.
+4. Open settings via stable hooks: `[data-testid="reader-show-menu"]` then `[data-testid="reader-settings"]`. Playwright click by label often fails while chrome is `translateY(-110%)` off-screen — reveal first, or open via eval below.
+5. `.paged-content` style `width === columnWidth` (integers); footer `N / M`; no adjacent-column bleed.
 6. Toggle themes — page breaks must not jump.
 7. End of work shows Mark as read / Marked finished; spacer heights unchanged when bottom chrome toggles.
 
@@ -225,6 +223,7 @@ Do not add heavy React Testing Library stacks unless explicitly requested — ke
 
 ## What not to do
 
+- Do not reintroduce a Scroll layout mode or dual layout prefs.
 - Do not change pagination to vertical windowing / absolute line clipping.
 - Do not let themes alter line-height or font-size.
 - Do not reintroduce a single `corpus.json` blob in `public/`.

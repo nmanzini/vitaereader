@@ -1,10 +1,6 @@
 import { useEffect, useId } from 'react'
 import { ThemePicker } from './ThemePicker'
-import {
-  LAYOUTS,
-  type LayoutId,
-  type ThemeId,
-} from '../lib/prefs'
+import { type ThemeId } from '../lib/prefs'
 import './SettingsSheet.css'
 
 type Props = {
@@ -12,8 +8,6 @@ type Props = {
   onClose: () => void
   theme: ThemeId
   onTheme: (theme: ThemeId) => void
-  layout: LayoutId
-  onLayout: (layout: LayoutId) => void
 }
 
 export function SettingsSheet({
@@ -21,8 +15,6 @@ export function SettingsSheet({
   onClose,
   theme,
   onTheme,
-  layout,
-  onLayout,
 }: Props) {
   const titleId = useId()
 
@@ -56,24 +48,6 @@ export function SettingsSheet({
         <section className="settings-section">
           <h3>Appearance</h3>
           <ThemePicker theme={theme} onChange={onTheme} />
-        </section>
-
-        <section className="settings-section">
-          <h3>Layout</h3>
-          <div className="settings-segment" role="group" aria-label="Layout">
-            {LAYOUTS.map((item) => (
-              <button
-                key={item.id}
-                type="button"
-                className={layout === item.id ? 'is-active' : undefined}
-                onClick={() => onLayout(item.id)}
-                aria-pressed={layout === item.id}
-              >
-                <span className="settings-segment-label">{item.label}</span>
-                <span className="settings-segment-hint">{item.hint}</span>
-              </button>
-            ))}
-          </div>
         </section>
       </div>
     </div>

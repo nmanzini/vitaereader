@@ -1,8 +1,6 @@
 export type ThemeId = 'day' | 'night' | 'sepia' | 'eink'
-export type LayoutId = 'scroll' | 'pages'
 
 const THEME_KEY = 'vitae.theme'
-const LAYOUT_KEY = 'vitae.layout'
 const PROGRESS_KEY = 'vitae.progress'
 const FINISHED_KEY = 'vitae.finished'
 const HIGHLIGHTS_KEY = 'vitae.highlights'
@@ -26,11 +24,6 @@ export const THEMES: { id: ThemeId; label: string }[] = [
   { id: 'eink', label: 'E-ink' },
 ]
 
-export const LAYOUTS: { id: LayoutId; label: string; hint: string }[] = [
-  { id: 'scroll', label: 'Scroll', hint: 'Continuous reading' },
-  { id: 'pages', label: 'Pages', hint: 'Swipe like a book' },
-]
-
 export function loadTheme(): ThemeId {
   const v = localStorage.getItem(THEME_KEY) as ThemeId | null
   return THEMES.some((t) => t.id === v) ? (v as ThemeId) : 'day'
@@ -39,15 +32,6 @@ export function loadTheme(): ThemeId {
 export function setTheme(theme: ThemeId) {
   localStorage.setItem(THEME_KEY, theme)
   document.documentElement.setAttribute('data-theme', theme)
-}
-
-export function loadLayout(): LayoutId {
-  const v = localStorage.getItem(LAYOUT_KEY) as LayoutId | null
-  return LAYOUTS.some((l) => l.id === v) ? (v as LayoutId) : 'scroll'
-}
-
-export function setLayout(layout: LayoutId) {
-  localStorage.setItem(LAYOUT_KEY, layout)
 }
 
 export type ProgressMap = Record<string, number>

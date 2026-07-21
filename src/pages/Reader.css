@@ -1,7 +1,12 @@
 .reader-shell {
   --reader-chrome-h: calc(2.9rem + env(safe-area-inset-top, 0px));
   --reader-bottom-h: calc(2.9rem + var(--safe-bottom));
+  height: 100dvh;
   min-height: 100dvh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg);
 }
 
 .reader-progress {
@@ -161,18 +166,8 @@
   padding: 4.5rem var(--pad-x) calc(4rem + var(--safe-bottom));
 }
 
-/* Shared shell: blank bands + middle reading surface */
-.reader-shell.layout-pages,
-.reader-shell.layout-scroll {
-  height: 100dvh;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  background: var(--bg);
-}
-
-.reader-shell.layout-pages .paged-viewport,
-.reader-shell.layout-scroll .reader-scroll-viewport {
+/* Pages reading surface */
+.reader-shell .paged-viewport {
   position: relative;
   /* basis 0 so flex assigns a definite height; content cannot grow the shell */
   flex: 1 1 0;
@@ -181,12 +176,8 @@
   max-width: var(--measure);
   margin: 0 auto;
   box-sizing: border-box;
-  /* Inset outside the reading surface — matches pages & scroll */
   padding: 1.1rem var(--pad-x) 1.35rem;
   overflow: hidden;
-}
-
-.reader-shell.layout-pages .paged-viewport {
   /* pan-y: allow vertical; horizontal page-turns stay in usePageGestures.
      Avoid touch-action:none — it blocks native text selection on touch. */
   touch-action: pan-y;
@@ -195,44 +186,12 @@
   -webkit-user-select: text;
 }
 
-.reader-shell.layout-pages .paged-content {
+.reader-shell .paged-content {
   user-select: text;
   -webkit-user-select: text;
 }
 
-.reader-shell.layout-scroll .reader-scroll-viewport {
-  display: flex;
-  flex-direction: column;
-}
-
-/* Inner scroller: long paragraphs may exceed this box; paint stays clipped here */
-.reader-shell.layout-scroll .reader-scroll-clip {
-  flex: 1 1 0;
-  min-height: 0;
-  overflow-x: hidden;
-  overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
-  overscroll-behavior: contain;
-  contain: paint;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-  user-select: text;
-  -webkit-user-select: text;
-}
-
-.reader-shell.layout-scroll .reader-scroll-clip::-webkit-scrollbar {
-  display: none;
-  width: 0;
-  height: 0;
-}
-
-.reader-shell.layout-scroll .reader-scroll {
-  max-width: none;
-  margin: 0;
-  padding: 0;
-}
-
-.reader-shell.layout-pages .paged-viewport:active {
+.reader-shell .paged-viewport:active {
   cursor: grabbing;
 }
 

@@ -29,9 +29,7 @@ import {
   contentSamplePoints,
   pageIndexFromFlowX,
   ratioFromAnchor,
-  scrollTopForCenterAnchor,
 } from '../src/lib/contentProgress.ts'
-import { fitHeightToLineMultiple } from '../src/lib/scrollLayout.ts'
 import {
   findCharacterMatches,
   segmentText,
@@ -244,23 +242,6 @@ describe('content progress', () => {
     assert.equal(ys[0], 400)
     assert.ok(ys[1] < 400 && ys[2] > 400)
     assert.deepEqual(contentSamplePoints(1, 1), { x: 0, ys: [] })
-  })
-
-  it('centers scroll restore on the content anchor', () => {
-    assert.equal(scrollTopForCenterAnchor(400, 800, 2000), 0)
-    assert.equal(scrollTopForCenterAnchor(1000, 800, 2000), 600)
-    assert.equal(scrollTopForCenterAnchor(5000, 800, 2000), 2000)
-    assert.equal(scrollTopForCenterAnchor(100, 800, 0), 0)
-  })
-})
-
-describe('scrollLayout', () => {
-  it('floors viewport height to whole line multiples', () => {
-    assert.equal(fitHeightToLineMultiple(500, 26.4), 475)
-    assert.equal(fitHeightToLineMultiple(528, 26.4), 528)
-    assert.equal(fitHeightToLineMultiple(26, 26.4), 26)
-    assert.equal(fitHeightToLineMultiple(0, 26.4), 0)
-    assert.equal(fitHeightToLineMultiple(100.9, 20), 100)
   })
 })
 

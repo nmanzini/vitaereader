@@ -94,8 +94,7 @@ function LifeLinks({
         <span key={work.id} className="life-item">
           {i > 0 ? (
             <span className="life-sep" aria-hidden="true">
-              {' '}
-              -{' '}
+              ·
             </span>
           ) : null}
           <WorkLink
