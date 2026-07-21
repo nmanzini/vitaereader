@@ -1,0 +1,782 @@
+{
+  "workId": "sertorius",
+  "subject": "Sertorius",
+  "characters": [
+    {
+      "id": "sertorius",
+      "names": [
+        "Sertorius",
+        "Quintus Sertorius"
+      ],
+      "relation": "Subject; Roman commander in Spain",
+      "blurb": "Born at Nursia of a noble Sabine family, Quintus Sertorius lost his eye in the Marsian war and his country to Sulla, yet held Spain against Rome's greatest generals for nearly a decade through stratagems, speed, and the unwavering affection of his soldiers. Plutarch pairs him with Eumenes as a foreigner commanding strangers, destroyed at last not by any enemy in the field but by the treachery of those seated beside him at supper.",
+      "links": [
+        {
+          "characterId": "perpenna"
+        },
+        {
+          "characterId": "pompey"
+        },
+        {
+          "characterId": "metellus"
+        },
+        {
+          "characterId": "eumenes-cross",
+          "label": "Life of Eumenes",
+          "workId": "eumenes"
+        }
+      ]
+    },
+    {
+      "id": "rhea",
+      "names": [
+        "Rhea"
+      ],
+      "relation": "His mother; center of his private world",
+      "blurb": "Sertorius's mother, who raised him carefully after his father's early death and whom he loved with an intensity Plutarch regards as one of the true keys to his character. When news reached him in Spain that she had died, he shut himself in his tent for seven days without giving the watchword or seeing his officers, and was only brought out by the persuasion of his generals.",
+      "links": [
+        {
+          "characterId": "sertorius"
+        }
+      ]
+    },
+    {
+      "id": "marius",
+      "names": [
+        "Marius",
+        "Caius Marius"
+      ],
+      "relation": "Seven-times consul; Sertorius's patron",
+      "blurb": "Sertorius served under Marius in the Cimbrian wars and fought alongside him when Marius retook Rome with Cinna, always loyal to the Marian cause even when he opposed Marius's worst cruelties. When Marius's freed slaves committed atrocities, Sertorius had the whole corps—four thousand men—cut down by his soldiers' javelins.",
+      "links": [
+        {
+          "characterId": "cinna"
+        },
+        {
+          "characterId": "sylla"
+        },
+        {
+          "characterId": "younger-marius"
+        }
+      ]
+    },
+    {
+      "id": "sylla",
+      "names": [
+        "Sylla",
+        "Sulla"
+      ],
+      "relation": "Dictator; the power Sertorius resisted",
+      "blurb": "The loss of the tribuneship to Sulla's party was the first wound in a lifelong enmity; when Sulla seized Rome, Sertorius departed for Spain rather than watch the Marian cause collapse around him. The whole of Sertorius's Spanish command is framed as resistance to the Sullan order, and even the comparison with Eumenes notes that he had to contend with Sulla's military skill as a permanent opponent.",
+      "links": [
+        {
+          "characterId": "marius"
+        },
+        {
+          "characterId": "cinna"
+        },
+        {
+          "characterId": "perpenna"
+        }
+      ]
+    },
+    {
+      "id": "cinna",
+      "names": [
+        "Cinna"
+      ],
+      "relation": "Consul allied with Marius",
+      "blurb": "Sertorius joined Cinna's party against the Sullan consul Octavius and served as one of three commanders alongside Cinna and Marius in the reconquest of Rome. He privately urged Cinna to use his victory with moderation, foreseeing that Marius's rages would bring all things to ruin—a warning that proved accurate.",
+      "links": [
+        {
+          "characterId": "marius"
+        },
+        {
+          "characterId": "sertorius"
+        }
+      ]
+    },
+    {
+      "id": "caepio",
+      "names": [
+        "Caepio"
+      ],
+      "relation": "Commander under whom Sertorius first served",
+      "blurb": "Sertorius's first experience of war was under Caepio in the disastrous campaign against the Cimbri and Teutones, when the Romans were routed and put to flight. Wounded in many places and losing his horse, he swam the Rhone in full armor against the current—the first proof of the extraordinary physical endurance that would define his whole career.",
+      "links": [
+        {
+          "characterId": "sertorius"
+        },
+        {
+          "characterId": "marius"
+        }
+      ]
+    },
+    {
+      "id": "perpenna",
+      "names": [
+        "Perpenna",
+        "Perpenna Vento"
+      ],
+      "relation": "Noble rival who organized the murder",
+      "blurb": "Puffed up by the grandeur of his birth and riches, Perpenna came to Spain with his own army and money yet was forced by his soldiers to serve under Sertorius, whom they refused to leave. Years of resentment finally issued in the conspiracy: Perpenna arranged the fatal banquet, gave the signal with a dropped cup, and watched Sertorius stabbed at the table—only to be captured and executed by Pompey within months.",
+      "links": [
+        {
+          "characterId": "sertorius"
+        },
+        {
+          "characterId": "manlius"
+        },
+        {
+          "characterId": "aufidius"
+        },
+        {
+          "characterId": "pompey"
+        }
+      ]
+    },
+    {
+      "id": "pompey",
+      "names": [
+        "Pompey",
+        "Pompey the Great"
+      ],
+      "relation": "The young general sent when Metellus could not prevail",
+      "blurb": "Rome sent Pompey the Great with large forces when Metellus was reduced to extremity, yet the duel of stratagems that followed—Lauron, the Sucro, Saguntum—only increased Sertorius's fame, since Pompey bore already the name of Magnus and wore a man's triumph before his beard had grown. After Sertorius's murder, Pompey prudently burned all his correspondence unread rather than expose the Roman senators who had written inviting him to Italy.",
+      "links": [
+        {
+          "characterId": "sertorius"
+        },
+        {
+          "characterId": "metellus"
+        },
+        {
+          "characterId": "afranius"
+        },
+        {
+          "characterId": "perpenna"
+        }
+      ]
+    },
+    {
+      "id": "metellus",
+      "names": [
+        "Metellus"
+      ],
+      "relation": "Senior Roman general; repeatedly outmaneuvered",
+      "blurb": "Metellus Pius, one of the most approved Roman commanders of his day, found himself continually baffled by Sertorius's speed and his soldiers' familiarity with the mountains; when he could not forage, could not water, and could not find a target for his heavy legions, he was forced to write to Rome admitting he had spent his own fortune. His proclamation offering a hundred talents for Sertorius's head was the public measure of how desperate the war had become.",
+      "links": [
+        {
+          "characterId": "sertorius"
+        },
+        {
+          "characterId": "pompey"
+        },
+        {
+          "characterId": "aquinus"
+        }
+      ]
+    },
+    {
+      "id": "mithridates",
+      "names": [
+        "Mithridates"
+      ],
+      "relation": "King of Pontus; proposed alliance with Sertorius",
+      "blurb": "Recovering from Sulla's defeat, Mithridates sent ambassadors to Sertorius with ships, money, and a request for recognition of his claims in Asia. Sertorius refused to hand over Bithynia and Cappadocia as Roman provinces, though he accepted a narrower arrangement—and Mithridates, astonished at such principled severity from a man driven to the edge of the Atlantic, remarked that if Sertorius ever reached Rome he would indeed set bounds to kings.",
+      "links": [
+        {
+          "characterId": "sertorius"
+        },
+        {
+          "characterId": "marcus-marius"
+        }
+      ]
+    },
+    {
+      "id": "marcus-marius",
+      "names": [
+        "Marcus Marius"
+      ],
+      "relation": "Roman senator sent as Sertorius's general to Asia",
+      "blurb": "A Roman senator who had fled to Sertorius's camp; he was sent to Asia to coordinate with Mithridates and entered the liberated cities with the rods and axes of Roman authority borne before him, while the king himself followed in second place. The theater was deliberate: Sertorius wished it known that his commission was Roman, not personal, and that Asia's liberation came from him.",
+      "links": [
+        {
+          "characterId": "sertorius"
+        },
+        {
+          "characterId": "mithridates"
+        }
+      ]
+    },
+    {
+      "id": "julius-salinator",
+      "names": [
+        "Julius Salinator"
+      ],
+      "relation": "Commander sent to hold the Pyrenean passes",
+      "blurb": "Sertorius sent Julius immediately with six thousand men to fortify the Pyrenees against the Sullan general Caius Annius; he held his ground until he was treacherously murdered by Calpurnius Lanarius, at which point his soldiers abandoned the heights and the enemy poured through uncontested.",
+      "links": [
+        {
+          "characterId": "caius-annius"
+        },
+        {
+          "characterId": "sertorius"
+        }
+      ]
+    },
+    {
+      "id": "caius-annius",
+      "names": [
+        "Caius Annius"
+      ],
+      "relation": "Sullan general who broke through the Pyrenees",
+      "blurb": "He sat helpless at the foot of the Pyrenees while Julius Salinator held the passes, and passed through only after Calpurnius murdered Julius and the garrison dispersed. With a large force at his back he then drove all before him, forcing Sertorius to retreat to New Carthage, take ship, and eventually reach Africa.",
+      "links": [
+        {
+          "characterId": "julius-salinator"
+        },
+        {
+          "characterId": "sertorius"
+        }
+      ]
+    },
+    {
+      "id": "ascalis",
+      "names": [
+        "Ascalis"
+      ],
+      "relation": "Mauritanian king supported by Sulla",
+      "blurb": "Son of the Mauritanian king Iphtha, Ascalis had been supported by Sulla's general Paccianus and was besieged by Sertorius, who defeated Paccianus in the field, absorbed his forces, and drove Ascalis with his brothers into Tingis. His overthrow gave Sertorius command of all Mauritania and the loyalty of the Africans who came to him there.",
+      "links": [
+        {
+          "characterId": "paccianus"
+        },
+        {
+          "characterId": "sertorius"
+        }
+      ]
+    },
+    {
+      "id": "paccianus",
+      "names": [
+        "Paccianus"
+      ],
+      "relation": "Sullan general killed by Sertorius in Mauritania",
+      "blurb": "Sent by Sulla to relieve the siege of Ascalis with a powerful reinforcement, Paccianus instead met Sertorius in battle, was killed, and had his entire force absorbed by the victor. His defeat was the turning point that gave Sertorius undisputed control of Mauritania.",
+      "links": [
+        {
+          "characterId": "ascalis"
+        },
+        {
+          "characterId": "sertorius"
+        }
+      ]
+    },
+    {
+      "id": "afranius",
+      "names": [
+        "Afranius"
+      ],
+      "relation": "Pompey's legate at the battle of the Sucro",
+      "blurb": "He commanded the left wing of the Roman army at the Sucro while Pompey held the right; Afranius drove back the Sertoriani on his flank and plundered their camp into the night, unaware that Pompey's wing had been shattered. When Sertorius returned victorious in the dark and fell on his disordered men, Afranius suffered severe losses before the army could regroup.",
+      "links": [
+        {
+          "characterId": "pompey"
+        },
+        {
+          "characterId": "sertorius"
+        }
+      ]
+    },
+    {
+      "id": "memmius",
+      "names": [
+        "Memmius"
+      ],
+      "relation": "Pompey's best commander; killed near Saguntum",
+      "blurb": "Described by Plutarch as the most capable officer in Pompey's army, Memmius fell in the fighting near Saguntum when Sertorius himself drove forward and pressed against the Roman line. His death was the most distinguished individual loss the Romans sustained in the entire Spanish war.",
+      "links": [
+        {
+          "characterId": "pompey"
+        },
+        {
+          "characterId": "sertorius"
+        }
+      ]
+    },
+    {
+      "id": "carbo",
+      "names": [
+        "Carbo"
+      ],
+      "relation": "Marian faction leader in Italy",
+      "blurb": "He and Norbanus led the Marian armies against Sulla's advance on Rome; their repeated failures persuaded Sertorius that resistance in Italy was hopeless, and he departed for Spain while the republican cause still had something left to save elsewhere. After Carbo's collapse Sertorius was effectively the last Marian commander in the field.",
+      "links": [
+        {
+          "characterId": "sylla"
+        },
+        {
+          "characterId": "sertorius"
+        }
+      ]
+    },
+    {
+      "id": "younger-marius",
+      "names": [
+        "the younger Marius"
+      ],
+      "relation": "Marius's son; made himself consul illegally",
+      "blurb": "After Cinna's murder and Marius's death, the younger Marius made himself consul against all law and against Sertorius's opposition; Sertorius refused to serve him. Plutarch uses the refusal to mark Sertorius's principled independence from the mere faction-politics of the civil wars.",
+      "links": [
+        {
+          "characterId": "marius"
+        },
+        {
+          "characterId": "sertorius"
+        }
+      ]
+    },
+    {
+      "id": "diana",
+      "names": [
+        "Diana"
+      ],
+      "relation": "Goddess in whose name the white hind was given",
+      "blurb": "Sertorius told his Spanish soldiers that the white hind had been given him by the goddess Diana, who revealed Roman movements in his sleep and directed the campaigns. The ruse, sustained for years and only interrupted when the hind was briefly lost, kept an uncivilized people obedient and eager in the conviction that they were led by a favorite of heaven.",
+      "links": [
+        {
+          "characterId": "sertorius"
+        }
+      ]
+    },
+    {
+      "id": "antaeus",
+      "names": [
+        "Antaeus"
+      ],
+      "relation": "Mythological giant buried at Tingis",
+      "blurb": "The Africans told Sertorius that Antaeus was buried in Tingis, and Sertorius had the tomb opened; finding the body, Plutarch reports, measured sixty cubits, he was struck with astonishment, sacrificed, heaped the grave again, and lent his authority to the story. The episode illustrates Sertorius's practical piety: he neither mocked the tradition nor exploited it beyond what the moment required.",
+      "links": [
+        {
+          "characterId": "hercules"
+        }
+      ]
+    },
+    {
+      "id": "hercules",
+      "names": [
+        "Hercules"
+      ],
+      "relation": "God linked to the founding myth of Tingis",
+      "blurb": "The Africans told Sertorius that after Antaeus's death, Hercules had lived with Antaeus's wife Tinga and fathered Sophax, who gave the city his mother's name; Sophax in turn fathered Diodorus, conqueror of the Libyan tribes. Plutarch preserves the legend partly for the sake of king Juba, whose ancestors were said to spring from that line.",
+      "links": [
+        {
+          "characterId": "antaeus"
+        }
+      ]
+    },
+    {
+      "id": "manlius",
+      "names": [
+        "Manlius"
+      ],
+      "relation": "Officer in Perpenna's conspiracy",
+      "blurb": "He was one of the conspirators who, to win a boy's affections, boasted of the power he would soon hold—and so revealed the plot to someone who told Aufidius instead. The indiscretion forced Perpenna to act before the conspiracy could be exposed to Sertorius, and the banquet was arranged in haste.",
+      "links": [
+        {
+          "characterId": "perpenna"
+        },
+        {
+          "characterId": "aufidius"
+        }
+      ]
+    },
+    {
+      "id": "aufidius",
+      "names": [
+        "Aufidius"
+      ],
+      "relation": "Officer who exposed the conspiracy's timing",
+      "blurb": "He was himself one of the conspirators, yet learning from a boy that Manlius had also joined alarmed him enough to warn Perpenna at once; the overlap of secrets meant the plot had become too widely known to be safe. He outlived all the others, dying in extreme poverty and hatred in an obscure Spanish village.",
+      "links": [
+        {
+          "characterId": "perpenna"
+        },
+        {
+          "characterId": "manlius"
+        }
+      ]
+    },
+    {
+      "id": "antonius-conspirator",
+      "names": [
+        "Antonius"
+      ],
+      "relation": "Conspirator who struck Sertorius at the banquet",
+      "blurb": "Seated next to Sertorius when Perpenna dropped the cup as the signal, Antonius immediately drew his sword and wounded him; when Sertorius turned and tried to rise, Antonius threw himself on his chest and pinned both his hands so that the other blows could fall. Sertorius died without being able to defend himself.",
+      "links": [
+        {
+          "characterId": "perpenna"
+        },
+        {
+          "characterId": "sertorius"
+        }
+      ]
+    },
+    {
+      "id": "aquinus",
+      "names": [
+        "Aquinus"
+      ],
+      "relation": "Metellus's legate captured in a Sertoriani ambush",
+      "blurb": "Sent by Metellus with six thousand soldiers to replenish the army's food supply, Aquinus fell into an ambush Sertorius had set in a wooded watercourse; attacked simultaneously in the front and from the rear, most of his force was destroyed. He escaped on foot having lost both horse and armor.",
+      "links": [
+        {
+          "characterId": "metellus"
+        },
+        {
+          "characterId": "sertorius"
+        }
+      ]
+    },
+    {
+      "id": "didius",
+      "names": [
+        "Didius"
+      ],
+      "relation": "Roman general under whom Sertorius first served in Spain",
+      "blurb": "Sertorius served under Didius with a thousand men and wintered in the Celtiberian city of Castulo, where the soldiers' drunken insolence gave the neighbors occasion to attack and slaughter many of them in the night. Sertorius's swift retaliation—disguising his men in barbarian armor to be admitted into the attackers' own city—was the first of the strategic deceptions that would define his career.",
+      "links": [
+        {
+          "characterId": "sertorius"
+        }
+      ]
+    },
+    {
+      "id": "eumenes-cross",
+      "names": [
+        "Eumenes of Cardia",
+        "Eumenes"
+      ],
+      "relation": "Greek pair in the Parallel Lives",
+      "blurb": "Named by Plutarch in the very first paragraph as Sertorius's best Greek parallel: both were foreigners commanding strangers, both mastered every opponent in the field, and both were finally destroyed not by any enemy but by those they trusted most. The short Comparison that follows their two Lives argues the differences of character and circumstance that set them apart.",
+      "links": [
+        {
+          "characterId": "eumenes",
+          "label": "Life of Eumenes",
+          "workId": "eumenes"
+        }
+      ]
+    },
+    {
+      "id": "hannibal",
+      "names": [
+        "Hannibal"
+      ],
+      "relation": "Carthaginian commander in the comparison of one-eyed generals",
+      "blurb": "Plutarch names him alongside Philip of Macedon and Antigonus as great one-eyed commanders, setting Sertorius in that line; yet Sertorius, he judges, was more merciful to his enemies than Hannibal. At Mithridates's court the flattering comparison of Sertorius to Hannibal was used to argue that Rome would be crushed between two such men attacking at once.",
+      "links": [
+        {
+          "characterId": "sertorius"
+        },
+        {
+          "characterId": "mithridates"
+        }
+      ]
+    },
+    {
+      "id": "philip-mac",
+      "names": [
+        "Philip of Macedon"
+      ],
+      "relation": "Macedonian king in the list of famous one-eyed generals",
+      "blurb": "Plutarch opens the Life by placing Sertorius in the tradition of great one-eyed commanders—Philip of Macedon, Antigonus, and Hannibal—and notes that Sertorius was more continent than Philip, more faithful than Antigonus, and more merciful than Hannibal, yet inferior to all of them in fortune.",
+      "links": [
+        {
+          "characterId": "antigonus-mac"
+        },
+        {
+          "characterId": "hannibal"
+        }
+      ]
+    },
+    {
+      "id": "antigonus-mac",
+      "names": [
+        "Antigonus"
+      ],
+      "relation": "Macedonian general in the list of famous one-eyed commanders",
+      "blurb": "One of the one-eyed commanders named at the Life's opening alongside Philip and Hannibal; Plutarch judges Sertorius more faithful to his friends than Antigonus—a quiet reproach to the man who starved Eumenes in a cage and handed the Argyraspids to Sibyrtius for destruction.",
+      "links": [
+        {
+          "characterId": "philip-mac"
+        },
+        {
+          "characterId": "hannibal"
+        }
+      ]
+    }
+  ],
+  "locations": [
+    {
+      "id": "nursia",
+      "names": [
+        "Nursia"
+      ],
+      "relation": "Sertorius's birthplace in the Sabine country",
+      "modern": "Norcia, Italy",
+      "lat": 42.79,
+      "lon": 13.09,
+      "blurb": "A Sabine hill-town whose noble family produced Sertorius; he was carefully educated there by his mother after his father's early death, studying rhetoric before war claimed him for good."
+    },
+    {
+      "id": "rome",
+      "names": [
+        "Rome"
+      ],
+      "relation": "City of his exile and longing",
+      "modern": "Rome, Italy",
+      "lat": 41.9,
+      "lon": 12.5,
+      "blurb": "Sertorius told Metellus and Pompey that he was ready to lay down his arms for the life of the meanest citizen in Rome, rather than be supreme commander of all other cities in exile; Plutarch regards this longing as real, nourished by the memory of his mother and the habits of a civilian life he never managed to resume."
+    },
+    {
+      "id": "spain",
+      "names": [
+        "Spain"
+      ],
+      "relation": "Primary theater of war",
+      "modern": "Spain",
+      "lat": 40.0,
+      "lon": -3.0,
+      "blurb": "The country where Sertorius first served under Didius, then returned as proconsul, and finally commanded for nearly a decade against the full power of Rome. He won the Spaniards' affection by remitting taxes, exempting them from billeting soldiers, and sending their sons to school at Osca."
+    },
+    {
+      "id": "lusitania",
+      "names": [
+        "Lusitania"
+      ],
+      "relation": "His main command; the region that invited him as general",
+      "modern": "Portugal and western Spain",
+      "lat": 39.5,
+      "lon": -7.0,
+      "blurb": "The Lusitanians sent ambassadors all the way to Mauritania to ask Sertorius to be their general, having been assured of his valor and character by those who knew him; he accepted, crossed into their country, and began the long war that made his name. Their fierce loyalty—carrying him on their shoulders through a rout to save his life—never faltered until the end."
+    },
+    {
+      "id": "pyrenees",
+      "names": [
+        "Pyrenees"
+      ],
+      "relation": "Mountain barrier he fortified and lost",
+      "modern": "Pyrenees, Spain/France border",
+      "lat": 42.5,
+      "lon": 1.0,
+      "blurb": "Sertorius sent Julius Salinator with six thousand men to hold the passes against Caius Annius; the fortification was impregnable until Julius was treacherously murdered, the soldiers abandoned their heights, and the Sullan forces poured through. From that moment Sertorius was always on the retreat toward the sea."
+    },
+    {
+      "id": "gaul",
+      "names": [
+        "Gaul",
+        "Gallia"
+      ],
+      "relation": "Where Sertorius first went to war",
+      "modern": "France",
+      "lat": 46.0,
+      "lon": 2.0,
+      "blurb": "Under Caepio's command the Romans were routed here by the Cimbri and Teutones; Sertorius swam the Rhone in full armor and returned the only proof he needed that his body could endure anything the wars required. Later, Metellus wintered his exhausted army in Gallia Narbonensis, having been driven from Spain entirely."
+    },
+    {
+      "id": "rhone",
+      "names": [
+        "Rhone",
+        "Rhodanus"
+      ],
+      "relation": "River he swam in armor after the rout",
+      "modern": "Rhône River, France",
+      "lat": 45.5,
+      "lon": 4.8,
+      "blurb": "After the defeat of the Romans under Caepio, Sertorius—wounded, horseless—swam the Rhone in his breastplate and shield against the current; Plutarch presents the crossing as the founding proof of a body built for war."
+    },
+    {
+      "id": "africa",
+      "names": [
+        "Africa"
+      ],
+      "relation": "Where he won victories before returning to Spain",
+      "modern": "North Africa",
+      "lat": 33.0,
+      "lon": 5.0,
+      "blurb": "Forced from Spain and then from Pityussa by wind and Annius's fleet, Sertorius eventually reached Africa and won command of Mauritania by defeating Paccianus and besieging Tingis. The African campaign gave him an army and a reputation that preceded him back to Lusitania."
+    },
+    {
+      "id": "mauritania",
+      "names": [
+        "Mauritania"
+      ],
+      "relation": "The region he conquered before returning to Spain",
+      "modern": "northern Morocco",
+      "lat": 33.0,
+      "lon": -5.0,
+      "blurb": "He arrived in Mauritania as a refugee and left it as master of the whole country, having defeated the Sullan general Paccianus, besieged Ascalis into Tingis, and opened the tomb of Antaeus. The Moors, grateful for his fairness to those who yielded, provided the men and confidence he carried back to Lusitania."
+    },
+    {
+      "id": "tingis",
+      "names": [
+        "Tingis"
+      ],
+      "relation": "City of Antaeus; last stronghold of Ascalis",
+      "modern": "Tangier, Morocco",
+      "lat": 35.77,
+      "lon": -5.8,
+      "blurb": "City where Ascalis and his brothers took refuge when Sertorius besieged them, and where the Africans showed Sertorius the tomb of Antaeus. He had it opened, sacrificed to the spirit of the place, heaped the grave again, and confirmed the legend—a gesture at once pious and politic."
+    },
+    {
+      "id": "new-carthage",
+      "names": [
+        "New Carthage"
+      ],
+      "relation": "Port where Sertorius took ship for Africa",
+      "modern": "Cartagena, Spain",
+      "lat": 37.6,
+      "lon": -0.99,
+      "blurb": "Sertorius retreated here with three thousand men when he was too weak to face Caius Annius in the field, took shipping, crossed to Africa, and began the journey that would eventually take him to Mauritania and then to Lusitania."
+    },
+    {
+      "id": "pityussa",
+      "names": [
+        "Pityussa"
+      ],
+      "relation": "Island he briefly seized from Annius's garrison",
+      "modern": "Ibiza, Spain",
+      "lat": 38.9,
+      "lon": 1.4,
+      "blurb": "Joined by Cilician pirate ships, Sertorius landed here and overpowered Annius's garrison, only to be blockaded by Annius's fleet of five thousand men; a violent west wind wrecked many of his vessels and he was tossed about for ten days between sea and enemy before escaping."
+    },
+    {
+      "id": "atlantic-islands",
+      "names": [
+        "Atlantic islands",
+        "Islands of the Blest"
+      ],
+      "relation": "Elysian isles Sertorius longed to reach",
+      "modern": "Canary Islands, Spain",
+      "lat": 28.0,
+      "lon": -15.0,
+      "blurb": "Sailors described to him two islands ten thousand furlongs from Africa where gentle rain and westerly breezes kept the soil so fertile it needed no labor, and where the firm belief was that Homer's Elysian Fields were to be found. Sertorius was seized with a longing to go there and rest from war; the Cilician pirates, wanting no peace, abandoned him and sailed back to Ascalis instead."
+    },
+    {
+      "id": "osca",
+      "names": [
+        "Osca"
+      ],
+      "relation": "City where Spanish children were educated",
+      "modern": "Huesca, Spain",
+      "lat": 42.14,
+      "lon": -0.41,
+      "blurb": "Sertorius sent the sons of the most noble Spanish families to a school he founded at Osca, appointing masters to teach them Greek and Roman learning, giving them Roman gowns trimmed with purple and golden bosses for their necks. Their fathers were delighted; the boys were, though none admitted it, hostages."
+    },
+    {
+      "id": "lauron",
+      "names": [
+        "Lauron"
+      ],
+      "relation": "City whose siege humiliated Pompey",
+      "modern": "near Llíria, Spain",
+      "lat": 39.63,
+      "lon": -0.6,
+      "blurb": "Sertorius besieged Lauron; Pompey came to relieve it and seized a hill thinking he had enclosed Sertorius between his army and the city walls. Sertorius smiled, showed Pompey the six thousand men left in his old camp who could fall on Pompey's rear, and burned the city at leisure while Pompey watched the smoke, unable to interfere."
+    },
+    {
+      "id": "sucro",
+      "names": [
+        "Sucro"
+      ],
+      "relation": "River; battle where Pompey was nearly killed",
+      "modern": "Júcar River, Spain",
+      "lat": 39.1,
+      "lon": -1.0,
+      "blurb": "Pompey forced a battle here before Metellus could share the credit; Sertorius held his right wing against Afranius and attacked Pompey's wing himself, driving Pompey from the field wounded, his horse captured by Africans who stopped to divide its golden trappings and so lost the pursuit. Afranius plundered the Sertoriani camp that night, and Sertorius returned in the dark to fall on him in disorder."
+    },
+    {
+      "id": "saguntum",
+      "names": [
+        "Saguntum"
+      ],
+      "relation": "City near which Metellus was wounded in battle",
+      "modern": "Sagunto, Spain",
+      "lat": 39.68,
+      "lon": -0.27,
+      "blurb": "In the battle forced near Saguntum, Sertorius killed Memmius, Pompey's best commander, and pressed on toward Metellus, who was wounded with a lance—an event that shamed his soldiers into rallying furiously and repulsing the Spanish attack. Sertorius withdrew in good order and raised fresh forces, leaving the Romans a victory they could barely afford."
+    },
+    {
+      "id": "tagus",
+      "names": [
+        "Tagus"
+      ],
+      "relation": "River of the Characitanians",
+      "modern": "Tagus River, Spain",
+      "lat": 39.68,
+      "lon": -3.68,
+      "blurb": "The Characitanians lived in the caves of a great hill beyond this river, secure against all force; Sertorius discovered that the mouth of every cave faced north into the same prevailing wind and spent two days having his soldiers heap the light dust of the valley floor into a mound, then turned it loose in the wind until the caves were choked with powder and the inhabitants surrendered on the third day."
+    },
+    {
+      "id": "baetis",
+      "names": [
+        "Baetis",
+        "Baetica"
+      ],
+      "relation": "Southern Spanish river and province",
+      "modern": "Guadalquivir River, Spain",
+      "lat": 37.85,
+      "lon": -5.5,
+      "blurb": "Sertorius routed the governor Fufidius near the river Baetis with the loss of two thousand Romans, one of the early victories that made his reputation in Spain. He also landed near the river's Atlantic mouth after his Atlantic wandering and heard from the sailors there of the Islands of the Blest."
+    },
+    {
+      "id": "ebro",
+      "names": [
+        "Ebro",
+        "Hiberus"
+      ],
+      "relation": "River where the allied cities united under his command",
+      "modern": "Ebro River, Spain",
+      "lat": 41.6,
+      "lon": -1.0,
+      "blurb": "When all the cities on this side of the Ebro joined his cause, Sertorius's army grew rapidly, men flowing in from every direction. The river marked a strategic threshold: beyond it his power was consolidated; below it the Romans still contested the ground."
+    },
+    {
+      "id": "pontus",
+      "names": [
+        "Pontus"
+      ],
+      "relation": "Mithridates's kingdom on the Black Sea",
+      "modern": "northern Turkey / Black Sea coast",
+      "lat": 41.3,
+      "lon": 36.5,
+      "blurb": "It was from Pontus that Mithridates's ambassadors sailed to find Sertorius with offers of ships, money, and a grand alliance; the merchants coming west from the Black Sea had carried Sertorius's fame all the way to the Pontic court, making him as celebrated there as a new Hannibal."
+    },
+    {
+      "id": "cappadocia-s",
+      "names": [
+        "Cappadocia"
+      ],
+      "relation": "Province Sertorius refused to cede to Mithridates",
+      "modern": "central Turkey",
+      "lat": 38.5,
+      "lon": 35.0,
+      "blurb": "Sertorius refused to authorize Mithridates's possession of Cappadocia as a Roman province, agreeing only to Bithynia; he would enlarge Roman territories by arms, he said, not diminish them by treaty. The principled refusal astonished Mithridates and is Plutarch's chief evidence for Sertorius's sincere Roman patriotism."
+    },
+    {
+      "id": "bithynia",
+      "names": [
+        "Bithynia"
+      ],
+      "relation": "Province conceded to Mithridates in the treaty",
+      "modern": "northwestern Turkey",
+      "lat": 40.5,
+      "lon": 29.5,
+      "blurb": "The senate that Sertorius convened from Roman exiles agreed to let Mithridates keep Bithynia and Cappadocia; Sertorius held out for Bithynia only, the kingdom accustomed to monarchical government and not previously Roman. The distinction—yielding barbarian kingdoms, not Roman provinces—was the legal boundary he refused to cross."
+    }
+  ],
+  "nameResolutions": []
+}

@@ -1,0 +1,741 @@
+{
+  "workId": "eumenes",
+  "subject": "Eumenes",
+  "characters": [
+    {
+      "id": "eumenes",
+      "names": [
+        "Eumenes"
+      ],
+      "relation": "Subject; Cardian secretary turned general",
+      "blurb": "Son of a poor wagoner in Cardia who rose to be Alexander's principal secretary and, after Alexander's death, the ablest general in the wars of the Successors. Neither Macedonian blood nor popular affection could protect him from the jealousy of men who thought the pen had no business commanding the spear.",
+      "links": [
+        {
+          "characterId": "alexander"
+        },
+        {
+          "characterId": "perdiccas"
+        },
+        {
+          "characterId": "antigonus"
+        },
+        {
+          "characterId": "sertorius-cross",
+          "label": "Life of Sertorius",
+          "workId": "sertorius"
+        }
+      ]
+    },
+    {
+      "id": "philip",
+      "names": [
+        "Philip"
+      ],
+      "relation": "Philip II of Macedon; Eumenes's first patron",
+      "blurb": "Passing through Cardia he was struck by the young Eumenes's wrestling and intelligence, and took him into his service—or so the story went, the friendship with his father being the likelier reason. After Philip's murder, Eumenes transferred the same loyal service to Alexander.",
+      "links": [
+        {
+          "characterId": "alexander"
+        },
+        {
+          "characterId": "hecataeus"
+        }
+      ]
+    },
+    {
+      "id": "philip-arrhidaeus",
+      "names": [
+        "Philip the king",
+        "Philip Arrhidaeus"
+      ],
+      "relation": "Alexander's half-brother; nominal king",
+      "blurb": "Alexander's impaired half-brother who became, as Philip III, a cipher around which all Successor rivalry turned; he and Olympias were the names in whose authority Polysperchon commissioned Eumenes's last generalship.",
+      "links": [
+        {
+          "characterId": "olympias"
+        },
+        {
+          "characterId": "polysperchon"
+        }
+      ]
+    },
+    {
+      "id": "alexander",
+      "names": [
+        "Alexander"
+      ],
+      "relation": "Eumenes's master; conqueror of Persia",
+      "blurb": "Alexander raised Eumenes from secretary to general and made him a kind of kinsman by the distribution of Barsine's sister among his captains. After his death in Babylon, Eumenes staged a spirit-throne in Alexander's name to overcome the Macedonians' reluctance to obey a foreigner.",
+      "links": [
+        {
+          "characterId": "eumenes"
+        },
+        {
+          "characterId": "hephaestion"
+        },
+        {
+          "characterId": "perdiccas"
+        },
+        {
+          "characterId": "olympias"
+        }
+      ]
+    },
+    {
+      "id": "perdiccas",
+      "names": [
+        "Perdiccas"
+      ],
+      "relation": "Regent of the empire; Eumenes's protector",
+      "blurb": "He marched into Cappadocia with Eumenes, subdued Ariarathes, and installed Eumenes as governor—the moment Eumenes first exercised real territorial power. Perdiccas's murder in Egypt dissolved that protection overnight, and the Macedonians decreed Eumenes's death within two days.",
+      "links": [
+        {
+          "characterId": "eumenes"
+        },
+        {
+          "characterId": "ariarathes"
+        },
+        {
+          "characterId": "alcetas"
+        }
+      ]
+    },
+    {
+      "id": "hephaestion",
+      "names": [
+        "Hephaestion"
+      ],
+      "relation": "Alexander's intimate; rival of Eumenes",
+      "blurb": "Eumenes quarreled repeatedly with him over quartering and gifts, and Alexander's grief at Hephaestion's death fell heavily on all who had disputed with him. Eumenes turned the danger to advantage by proposing the most elaborate honors for Hephaestion's memory.",
+      "links": [
+        {
+          "characterId": "alexander"
+        },
+        {
+          "characterId": "eumenes"
+        }
+      ]
+    },
+    {
+      "id": "neoptolemus",
+      "names": [
+        "Neoptolemus"
+      ],
+      "relation": "Commander who fought Eumenes and was killed by him",
+      "blurb": "Proud captain of Alexander's lifeguard who mocked Eumenes for following the king with pen and paper rather than shield and spear. In Armenia he turned traitor and was defeated twice—in the second fight he and Eumenes unhorsed each other and wrestled on the ground until Eumenes's sword found his neck.",
+      "links": [
+        {
+          "characterId": "eumenes"
+        },
+        {
+          "characterId": "craterus"
+        },
+        {
+          "characterId": "antipater"
+        }
+      ]
+    },
+    {
+      "id": "antigonus",
+      "names": [
+        "Antigonus"
+      ],
+      "relation": "One-eyed general; Eumenes's last adversary",
+      "blurb": "He besieged Eumenes at Nora, negotiated in person, and finally received him as a prisoner from the Argyraspids who had just won a victory under his command. Unwilling to execute a man he had once befriended, he starved him slowly and sent an executioner only when the camp was ready to move.",
+      "links": [
+        {
+          "characterId": "eumenes"
+        },
+        {
+          "characterId": "craterus"
+        },
+        {
+          "characterId": "hieronymus"
+        }
+      ]
+    },
+    {
+      "id": "antipater",
+      "names": [
+        "Antipater"
+      ],
+      "relation": "Macedonian regent; Eumenes's persistent enemy",
+      "blurb": "Long feared by Eumenes as an enemy who would use Hecataeus to destroy him, and later the adversary whose armies—under Craterus—Eumenes defeated in the field. When Antipater offered friendship after the victory, Eumenes refused, and the Macedonian regent's death in Macedon finally gave Eumenes his last great commission.",
+      "links": [
+        {
+          "characterId": "eumenes"
+        },
+        {
+          "characterId": "craterus"
+        },
+        {
+          "characterId": "neoptolemus"
+        }
+      ]
+    },
+    {
+      "id": "craterus",
+      "names": [
+        "Craterus"
+      ],
+      "relation": "Beloved Macedonian general slain in battle with Eumenes",
+      "blurb": "The soldiers loved him because he had often incurred Alexander's displeasure by resisting Eastern fashions, and so Eumenes concealed his identity from his own infantry before the battle. Craterus fought bravely, received a Thracian lance in his side, and died slowly on the field while Eumenes dismounted beside him and wept.",
+      "links": [
+        {
+          "characterId": "eumenes"
+        },
+        {
+          "characterId": "antigonus"
+        },
+        {
+          "characterId": "neoptolemus"
+        }
+      ]
+    },
+    {
+      "id": "leonnatus",
+      "names": [
+        "Leonnatus"
+      ],
+      "relation": "General who confided his royal ambitions to Eumenes",
+      "blurb": "He descended into Phrygia to install Eumenes in his satrapy, then in a moment of candor showed him Cleopatra's letters and revealed his plan to seize the kingdom of Macedon. Eumenes judged him rash and unsafe, slipped away by night with all his men and treasure, and brought the intelligence straight to Perdiccas.",
+      "links": [
+        {
+          "characterId": "eumenes"
+        },
+        {
+          "characterId": "hecataeus"
+        },
+        {
+          "characterId": "cleopatra"
+        }
+      ]
+    },
+    {
+      "id": "hecataeus",
+      "names": [
+        "Hecataeus"
+      ],
+      "relation": "Tyrant of Cardia; Eumenes's hereditary enemy",
+      "blurb": "Eumenes had publicly denounced Hecataeus as a tyrant and urged Alexander to restore the Cardians their liberty; the feud was therefore old and personal. When Leonnatus invited Eumenes to join the relief of Antipater, citing Hecataeus's request, Eumenes used the enmity as his excuse to refuse and depart.",
+      "links": [
+        {
+          "characterId": "leonnatus"
+        },
+        {
+          "characterId": "eumenes"
+        }
+      ]
+    },
+    {
+      "id": "cleopatra",
+      "names": [
+        "Cleopatra"
+      ],
+      "relation": "Alexander's sister; in Sardis",
+      "blurb": "She invited Leonnatus to Pella with promises to marry him, letters that Eumenes was the first to see and that gave Perdiccas his warning. Later, when Eumenes wished to display his cavalry in the plains of Lydia near Sardis, she begged him not to, fearing umbrage to Antipater, and he changed his route at her request.",
+      "links": [
+        {
+          "characterId": "leonnatus"
+        },
+        {
+          "characterId": "eumenes"
+        }
+      ]
+    },
+    {
+      "id": "ariarathes",
+      "names": [
+        "Ariarathes"
+      ],
+      "relation": "King of Cappadocia overthrown by Perdiccas",
+      "blurb": "He had kept Cappadocia as an independent kingdom outside Macedonian control until Perdiccas marched in with his full army, took him prisoner, and subdued the whole country to give it to Eumenes. The province became Eumenes's base of operations and his first real territorial command.",
+      "links": [
+        {
+          "characterId": "perdiccas"
+        },
+        {
+          "characterId": "eumenes"
+        }
+      ]
+    },
+    {
+      "id": "barsine",
+      "names": [
+        "Barsine"
+      ],
+      "relation": "Daughter of Artabazus; given to Eumenes by Alexander",
+      "blurb": "Sister of Alexander's mistress—the Barsine who bore him a son named Hercules—she was assigned to Eumenes in the distribution of Persian noble women among Alexander's captains. Through this union Plutarch reckons Eumenes a kind of kinsman of the king himself.",
+      "links": [
+        {
+          "characterId": "artabazus"
+        },
+        {
+          "characterId": "eumenes"
+        }
+      ]
+    },
+    {
+      "id": "artabazus",
+      "names": [
+        "Artabazus"
+      ],
+      "relation": "Persian satrap; father of Barsine and Pharnabazus",
+      "blurb": "Old Persian nobleman who had long been familiar with the Macedonian court as an exile; Philip had once been his host. His son Pharnabazus commanded one of the foreign cavalry squadrons Eumenes used against Craterus.",
+      "links": [
+        {
+          "characterId": "barsine"
+        },
+        {
+          "characterId": "pharnabazus-jr"
+        }
+      ]
+    },
+    {
+      "id": "pharnabazus-jr",
+      "names": [
+        "Pharnabazus"
+      ],
+      "relation": "Son of Artabazus; cavalry commander against Craterus",
+      "blurb": "Assigned alongside Phoenix of Tenedos to charge Craterus's wing with orders to attack at once and give the enemy no time to speak or parley. His foreign horsemen were the instrument of Craterus's fall, chosen precisely because they did not know—and would not waver upon learning—who commanded the enemy.",
+      "links": [
+        {
+          "characterId": "artabazus"
+        },
+        {
+          "characterId": "craterus"
+        }
+      ]
+    },
+    {
+      "id": "phoenix-of-tenedos",
+      "names": [
+        "Phoenix of Tenedos",
+        "Phoenix"
+      ],
+      "relation": "Cavalry officer; co-commander against Craterus",
+      "blurb": "Led the second of the two foreign horse-troops ordered to charge Craterus's flank without delay or negotiation. Paired with Pharnabazus under Eumenes's sealed orders, he represents the deliberate use of men who had no prior loyalty to the man they were about to kill.",
+      "links": [
+        {
+          "characterId": "pharnabazus-jr"
+        },
+        {
+          "characterId": "craterus"
+        }
+      ]
+    },
+    {
+      "id": "olympias",
+      "names": [
+        "Olympias"
+      ],
+      "relation": "Alexander's mother; political authority Eumenes invoked",
+      "blurb": "She wrote from Macedon inviting Eumenes to come and protect Alexander's infant son, and Eumenes rewrote the oath of loyalty at Nora to bind himself to Olympias and the kings rather than to Antigonus alone. The Macedonians around the siege voted in Eumenes's version, and raised the blockade.",
+      "links": [
+        {
+          "characterId": "alexander"
+        },
+        {
+          "characterId": "philip-arrhidaeus"
+        },
+        {
+          "characterId": "polysperchon"
+        }
+      ]
+    },
+    {
+      "id": "nearchus",
+      "names": [
+        "Nearchus"
+      ],
+      "relation": "Admiral; argued to preserve Eumenes",
+      "blurb": "He had once borrowed three hundred talents from Eumenes on Alexander's behalf and received only a hundred, an episode that ended with Eumenes's tent burned in suspicion. At the very end, Nearchus and Demetrius were the only voices in Antigonus's council to argue for Eumenes's life, against the unanimous demand for his death.",
+      "links": [
+        {
+          "characterId": "eumenes"
+        },
+        {
+          "characterId": "antigonus"
+        }
+      ]
+    },
+    {
+      "id": "antigenes",
+      "names": [
+        "Antigenes"
+      ],
+      "relation": "Commander of the Argyraspids; conspirator against Eumenes",
+      "blurb": "He envied Eumenes's authority yet agreed to use him in battle before destroying him, a calculation undone when Eudamus warned Eumenes in time. After the defeat and Eumenes's capture, Antigonus handed Antigenes and the Argyraspids to Sibyrtius of Arachosia with orders that not one of them should ever reach the sea again.",
+      "links": [
+        {
+          "characterId": "teutamus"
+        },
+        {
+          "characterId": "eumenes"
+        },
+        {
+          "characterId": "sibyrtius"
+        }
+      ]
+    },
+    {
+      "id": "teutamus",
+      "names": [
+        "Teutamus"
+      ],
+      "relation": "Co-commander of the Argyraspids; betrayer of Eumenes",
+      "blurb": "He sent to Antigonus after the battle demanding the return of the baggage—and accepted Eumenes as the price. When the Argyraspids bound their general with his own girdle and handed him over, Eumenes was led through the army and made his last speech to men who shouted him down to save their camp-goods.",
+      "links": [
+        {
+          "characterId": "antigenes"
+        },
+        {
+          "characterId": "eumenes"
+        },
+        {
+          "characterId": "antigonus"
+        }
+      ]
+    },
+    {
+      "id": "peucestes",
+      "names": [
+        "Peucestes"
+      ],
+      "relation": "Satrap in the east; failed at the decisive battle",
+      "blurb": "He welcomed Eumenes with a magnificent entertainment in Persia and joined the eastern coalition with large forces, only to behave negligently in the final battle, allowing Antigonus to seize the baggage while the Macedonian infantry was being routed by men old enough to be their fathers.",
+      "links": [
+        {
+          "characterId": "eumenes"
+        },
+        {
+          "characterId": "antigonus"
+        }
+      ]
+    },
+    {
+      "id": "alcetas",
+      "names": [
+        "Alcetas"
+      ],
+      "relation": "Perdiccas's brother; refused to serve under Eumenes",
+      "blurb": "When Perdiccas ordered his commanders to obey Eumenes, Alcetas flatly refused: his Macedonians were ashamed to fight Antipater and too fond of Craterus to resist him. Later at Celaenae he was among those disputing the chief command, an argument Eumenes settled with a dry proverb about destruction and punctilios.",
+      "links": [
+        {
+          "characterId": "perdiccas"
+        },
+        {
+          "characterId": "eumenes"
+        }
+      ]
+    },
+    {
+      "id": "polysperchon",
+      "names": [
+        "Polysperchon"
+      ],
+      "relation": "Macedonian regent; commissioned Eumenes's last command",
+      "blurb": "He wrote jointly with Olympias and the king after Antipater's death to appoint Eumenes general in the upper satrapies, authorizing him to draw five hundred talents from the treasury at Quinda for his own losses and to levy as much more as the war required. The commission gave Eumenes the Argyraspids as his most dangerous subordinates.",
+      "links": [
+        {
+          "characterId": "olympias"
+        },
+        {
+          "characterId": "philip-arrhidaeus"
+        }
+      ]
+    },
+    {
+      "id": "menander",
+      "names": [
+        "Menander"
+      ],
+      "relation": "Antigonus's baggage-master; spared by Eumenes",
+      "blurb": "Entrusted with Antigonus's vast baggage-train when Eumenes overtook it in Cappadocia, he was saved by a private warning from Eumenes himself, who sent him word to move to higher ground before the attack. Antigonus later saw through the courtesy—Eumenes had been loath, he said, to wear so many shackles while he was still trying to escape.",
+      "links": [
+        {
+          "characterId": "antigonus"
+        },
+        {
+          "characterId": "eumenes"
+        }
+      ]
+    },
+    {
+      "id": "eudamus",
+      "names": [
+        "Eudamus"
+      ],
+      "relation": "Master of the war-elephants; warned Eumenes of the conspiracy",
+      "blurb": "He and Phaedimus brought Eumenes word of the plot to use him in battle and then kill him—not from friendship, Plutarch notes, but to recover the money they had lent him. The warning came in time for Eumenes to tear up his correspondence, make his will, and prepare himself for whatever followed.",
+      "links": [
+        {
+          "characterId": "eumenes"
+        },
+        {
+          "characterId": "antigenes"
+        }
+      ]
+    },
+    {
+      "id": "hieronymus",
+      "names": [
+        "Hieronymus"
+      ],
+      "relation": "Antigonus's envoy to Nora; later historian",
+      "blurb": "He came to Nora bearing Antigonus's proposed oath and found Eumenes ready to rewrite its terms on the spot, substituting Olympias and the kings for Antigonus alone. The Macedonians outside the walls voted in Eumenes's version and raised the siege—a diplomatic victory conducted without a sword.",
+      "links": [
+        {
+          "characterId": "antigonus"
+        },
+        {
+          "characterId": "eumenes"
+        }
+      ]
+    },
+    {
+      "id": "sibyrtius",
+      "names": [
+        "Sibyrtius"
+      ],
+      "relation": "Governor of Arachosia; destroyer of the Argyraspids",
+      "blurb": "To him Antigonus delivered the men who had betrayed Eumenes, commanding him by all ways and means to destroy and exterminate them so that not one should ever reach Macedon or see the Greek sea. Plutarch regards this as the working of divine justice, allotted without mortal contrivance.",
+      "links": [
+        {
+          "characterId": "antigenes"
+        },
+        {
+          "characterId": "antigonus"
+        }
+      ]
+    },
+    {
+      "id": "minerva",
+      "names": [
+        "Minerva"
+      ],
+      "relation": "Goddess on the losing side of Eumenes's dream",
+      "blurb": "In the night before battle, Eumenes dreamed of two Alexanders in opposing phalanxes: one aided by Minerva was defeated, one aided by Ceres prevailed. He read the omen for himself—he was fighting across a plain thick with young grain—and gave his men ears of wheat to crown their helmets instead of Minerva's watchword.",
+      "links": [
+        {
+          "characterId": "ceres"
+        },
+        {
+          "characterId": "eumenes"
+        }
+      ]
+    },
+    {
+      "id": "ceres",
+      "names": [
+        "Ceres"
+      ],
+      "relation": "Goddess of the harvest; omen of Eumenes's victory",
+      "blurb": "In Eumenes's dream she crowned the victorious Alexander with ears of corn, and he claimed the sign for his own army, camped on a plain sown thick with grain. His soldiers went into the fight against Craterus wearing wheat-garlands, their watchword Ceres and Alexander.",
+      "links": [
+        {
+          "characterId": "minerva"
+        },
+        {
+          "characterId": "eumenes"
+        }
+      ]
+    },
+    {
+      "id": "sertorius-cross",
+      "names": [
+        "Sertorius"
+      ],
+      "relation": "Roman pair in the Parallel Lives",
+      "blurb": "Quintus Sertorius is Eumenes's Roman match: both foreigners commanding strangers, both outgeneraling every opponent in the field, and both destroyed by the treachery of those they led rather than by any enemy arms.",
+      "links": [
+        {
+          "characterId": "sertorius",
+          "label": "Life of Sertorius",
+          "workId": "sertorius"
+        }
+      ]
+    }
+  ],
+  "locations": [
+    {
+      "id": "cardia",
+      "names": [
+        "Cardia"
+      ],
+      "relation": "Eumenes's birthplace",
+      "modern": "Gelibolu area, Turkey",
+      "lat": 40.4,
+      "lon": 26.7,
+      "blurb": "City on the Thracian Chersonesus where Philip stopped and noticed the promising young Eumenes; the same city whose tyrant Hecataeus was Eumenes's hereditary enemy for a lifetime."
+    },
+    {
+      "id": "chersonesus",
+      "names": [
+        "Chersonesus",
+        "Thracian Chersonesus"
+      ],
+      "relation": "Eumenes's homeland peninsula",
+      "modern": "Gallipoli Peninsula, Turkey",
+      "lat": 40.35,
+      "lon": 26.55,
+      "blurb": "The narrow tongue of European land facing the Hellespont, homeland of Cardia and site of Eumenes's origins; Plutarch identifies him as the Cardian throughout the Life to remind readers of his foreign standing among Macedonians."
+    },
+    {
+      "id": "cappadocia",
+      "names": [
+        "Cappadocia"
+      ],
+      "relation": "Eumenes's satrapy",
+      "modern": "central Turkey",
+      "lat": 38.5,
+      "lon": 35.0,
+      "blurb": "Assigned to Eumenes by the Babylon settlement and won for him in person by Perdiccas, who subdued Ariarathes and handed over the whole country. Eumenes raised his cavalry force here and defended it as the base from which all his campaigns began."
+    },
+    {
+      "id": "nora",
+      "names": [
+        "Nora"
+      ],
+      "relation": "Mountain fortress; Eumenes's refuge under siege",
+      "modern": "near Niğde, Turkey",
+      "lat": 37.8,
+      "lon": 34.2,
+      "blurb": "A fort of barely two furlongs in compass on the confines of Lycaonia and Cappadocia, where Eumenes held out against Antigonus with five hundred horse and two hundred foot. He kept horses fit by suspending them from the roof and men fit by walking the longest room—twenty-one feet—until the oath was renegotiated and the siege raised."
+    },
+    {
+      "id": "lycaonia",
+      "names": [
+        "Lycaonia"
+      ],
+      "relation": "Region bordering Cappadocia near Nora",
+      "modern": "Konya province, Turkey",
+      "lat": 37.5,
+      "lon": 33.0,
+      "blurb": "Named alongside Cappadocia as the territory whose confines held the fort of Nora; the rugged interior of south-central Anatolia that gave Eumenes his last defensible strongpoint before the eastern satrapies."
+    },
+    {
+      "id": "phrygia",
+      "names": [
+        "Phrygia"
+      ],
+      "relation": "Province where Eumenes wintered at Celaenae",
+      "modern": "west-central Turkey",
+      "lat": 39.5,
+      "lon": 30.5,
+      "blurb": "Inland Anatolia through which Eumenes marched after the great victories over Neoptolemus and Craterus; he wintered at Celaenae in upper Phrygia while Alcetas, Polemon, and Docimus squabbled over the command, and Eumenes silenced them with a proverb."
+    },
+    {
+      "id": "celaenae",
+      "names": [
+        "Celaenae"
+      ],
+      "relation": "Phrygian city where Eumenes wintered",
+      "modern": "Dinar, Turkey",
+      "lat": 38.06,
+      "lon": 30.16,
+      "blurb": "Chief city of upper Phrygia, where Eumenes established winter quarters and sold off the farms and estates of the surrounding country to pay his soldiers three months' arrears in three days—a financial improvisation that bought him enough popularity for the Macedonians to volunteer as his bodyguard."
+    },
+    {
+      "id": "armenia",
+      "names": [
+        "Armenia"
+      ],
+      "relation": "Province adjacent to Cappadocia; Neoptolemus's posting",
+      "modern": "eastern Turkey / Armenia",
+      "lat": 40.0,
+      "lon": 44.0,
+      "blurb": "Perdiccas sent Eumenes to Armenia when he left Cilicia, both to extend his command and to bring order to a province unsettled by Neoptolemus's intrigues. It was here that Eumenes first raised his six thousand cavalry by exempting horsemen from taxation."
+    },
+    {
+      "id": "cilicia",
+      "names": [
+        "Cilicia"
+      ],
+      "relation": "Province where Perdiccas dismissed Eumenes to his command",
+      "modern": "Çukurova, Turkey",
+      "lat": 37.0,
+      "lon": 35.0,
+      "blurb": "The gateway province of southeastern Anatolia where Perdiccas, still in the field, dismissed Eumenes under color of sending him to his satrapy—really to secure Armenia on the frontier. It was the last moment the two men were together before Perdiccas's murder in Egypt."
+    },
+    {
+      "id": "babylon",
+      "names": [
+        "Babylon"
+      ],
+      "relation": "Alexander's last capital; seat of the settlement",
+      "modern": "Hillah area, Iraq",
+      "lat": 32.54,
+      "lon": 44.42,
+      "blurb": "When Alexander died here, Eumenes stayed behind while others fled, working to pacify the foot-soldiers and arrange an accommodation between the phalanx and the officers. The settlement that divided the empire was reached at Babylon and gave Eumenes Cappadocia."
+    },
+    {
+      "id": "macedon",
+      "names": [
+        "Macedon",
+        "Macedonia"
+      ],
+      "relation": "Home kingdom of the Successors",
+      "modern": "northern Greece / North Macedonia",
+      "lat": 40.8,
+      "lon": 22.4,
+      "blurb": "The kingdom whose soldiers Eumenes commanded throughout his career without ever being one of them; the news from Macedon—Antipater's death, Cassander's quarrel with Polysperchon—dictated the terms of every campaign he fought."
+    },
+    {
+      "id": "lydia",
+      "names": [
+        "Lydia"
+      ],
+      "relation": "Western Anatolian region; planned field of cavalry display",
+      "modern": "western Turkey",
+      "lat": 38.5,
+      "lon": 28.0,
+      "blurb": "Eumenes planned to display his new cavalry force in the plains of Lydia near Sardis, where Cleopatra could see its strength; at her request he changed route entirely, unwilling to give Antipater cause for alarm by appearing in force so close to her."
+    },
+    {
+      "id": "sardis",
+      "names": [
+        "Sardis"
+      ],
+      "relation": "Lydian capital; Cleopatra's residence",
+      "modern": "Sart, Turkey",
+      "lat": 38.49,
+      "lon": 28.04,
+      "blurb": "The old Lydian capital where Alexander's sister Cleopatra had her court; Eumenes intended to bring his cavalry past her walls as a display of strength, and was diverted only by her own plea not to provoke Antipater."
+    },
+    {
+      "id": "paphlagonia",
+      "names": [
+        "Paphlagonia"
+      ],
+      "relation": "Northern province included in Eumenes's satrapal grant",
+      "modern": "Kastamonu area, Turkey",
+      "lat": 41.5,
+      "lon": 33.5,
+      "blurb": "Named alongside Cappadocia and the Pontic coast in the settlement that gave Eumenes his territory; he was made governor of all the coast as far as Trebizond, though he depended on Leonnatus and Antigonus to secure it, and Antigonus ignored the commission entirely."
+    },
+    {
+      "id": "india",
+      "names": [
+        "India"
+      ],
+      "relation": "Eastern theater where Eumenes first commanded troops",
+      "modern": "NW India / Pakistan",
+      "lat": 30.0,
+      "lon": 72.0,
+      "blurb": "In the Indian expedition Eumenes went with troops under his immediate command as general—the first time his role moved beyond the secretariat—and on his return succeeded to Perdiccas's post after Perdiccas was promoted to Hephaestion's."
+    },
+    {
+      "id": "arachosia",
+      "names": [
+        "Arachosia"
+      ],
+      "relation": "Far eastern province; graveyard of the Argyraspids",
+      "modern": "Kandahar area, Afghanistan",
+      "lat": 31.6,
+      "lon": 65.7,
+      "blurb": "To Sibyrtius, its governor, Antigonus consigned the Argyraspids after they had traded Eumenes for their baggage—ordering him to destroy and exterminate them so that not one should ever return to Macedon or see the Greek sea. Divine justice, Plutarch writes, required no other instrument."
+    }
+  ],
+  "nameResolutions": []
+}

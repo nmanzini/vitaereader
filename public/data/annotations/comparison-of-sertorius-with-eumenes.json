@@ -1,0 +1,67 @@
+{
+  "workId": "comparison-of-sertorius-with-eumenes",
+  "subject": "Comparison of Sertorius with Eumenes",
+  "characters": [
+    {
+      "id": "eumenes-comp",
+      "names": [
+        "Eumenes"
+      ],
+      "relation": "Greek subject; the measure for comparison",
+      "blurb": "Secretary who commanded armies, foreigner who led Macedonians—Plutarch's Eumenes is measured here against Sertorius in character, fortune, and manner of death. He chose his dangerous rivalry with Antigonus freely, from ambition, and died a captive who had petitioned for his life: the comparison finds this the less admirable end.",
+      "links": [
+        {
+          "characterId": "eumenes",
+          "label": "Life of Eumenes",
+          "workId": "eumenes"
+        }
+      ]
+    },
+    {
+      "id": "sertorius-comp",
+      "names": [
+        "Sertorius"
+      ],
+      "relation": "Roman subject; the favored figure of the comparison",
+      "blurb": "Banished Roman who held Spain against the whole power of Rome for nearly a decade; Plutarch gives him the better character in freely-given followership, the better death (though it came by treachery, at least it was sudden and unforewarned), and the better motive for war—he fought because he was given no peace, not because he craved command.",
+      "links": [
+        {
+          "characterId": "sertorius",
+          "label": "Life of Sertorius",
+          "workId": "sertorius"
+        }
+      ]
+    },
+    {
+      "id": "antigonus-comp",
+      "names": [
+        "Antigonus"
+      ],
+      "relation": "Eumenes's last adversary; named in the comparison",
+      "blurb": "Plutarch invokes Antigonus as the power whose favor Eumenes might have kept, had he been content with the second place. The argument turns on motive: Eumenes chose rivalry over safety from ambition, while Sertorius had no such choice—Pompey's friends would never have permitted him to live quietly.",
+      "links": [
+        {
+          "characterId": "antigonus",
+          "label": "Life of Eumenes",
+          "workId": "eumenes"
+        }
+      ]
+    },
+    {
+      "id": "pompey-comp",
+      "names": [
+        "Pompey"
+      ],
+      "relation": "Sertorius's Roman adversary; named in the comparison",
+      "blurb": "Pompey's friends, Plutarch observes, would never have permitted Sertorius to retire to private life even if he had wished to—forcing war upon him rather than leaving it to his ambition. This is what distinguishes Sertorius from Eumenes: one fought to survive, the other to prevail.",
+      "links": [
+        {
+          "characterId": "pompey",
+          "label": "Life of Sertorius",
+          "workId": "sertorius"
+        }
+      ]
+    }
+  ],
+  "nameResolutions": []
+}
