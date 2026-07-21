@@ -244,9 +244,10 @@
   max-width: none;
   margin: 0;
   box-sizing: border-box;
-  padding: 0.95rem 0 1.15rem;
+  /* Top-fill columns (book-like); equal pad so the block does not sit high. */
+  padding: 1.15rem 0;
   overflow: hidden;
-  /* pan-y: allow vertical; horizontal page-turns stay in usePageGestures.
+  /* pan-y: browser owns vertical; horizontal page-turns stay in usePageGestures.
      Avoid touch-action:none — it blocks native text selection on touch. */
   touch-action: pan-y;
   cursor: default;
@@ -299,6 +300,9 @@
   /* Soft horizontal slide — user turns only; restore uses .no-motion. */
   -webkit-transition: -webkit-transform var(--motion-page);
   transition: transform var(--motion-page);
+}
+
+.paged-content.is-dragging {
   will-change: transform;
 }
 
@@ -318,7 +322,6 @@
   .paged-content {
     -webkit-transition: none;
     transition: none;
-    will-change: auto;
   }
 
   .reader-chrome,
@@ -460,7 +463,7 @@
   width: 100%;
   max-width: var(--measure);
   margin: 0 auto;
-  padding: 0.95rem var(--pad-x) 1.15rem;
+  padding: 1.15rem var(--pad-x);
   box-sizing: border-box;
   display: -webkit-flex;
   display: flex;

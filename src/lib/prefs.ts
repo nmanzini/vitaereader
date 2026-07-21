@@ -36,17 +36,26 @@ export function setTheme(theme: ThemeId) {
 
 export type ProgressMap = Record<string, number>
 
+/** In-memory cache — page turns must not re-parse localStorage every time. */
+let progressCache: ProgressMap | null = null
+
 export function loadProgress(): ProgressMap {
+  if (progressCache) return progressCache
   try {
-    return JSON.parse(localStorage.getItem(PROGRESS_KEY) ?? '{}') as ProgressMap
+    progressCache = JSON.parse(
+      localStorage.getItem(PROGRESS_KEY) ?? '{}',
+    ) as ProgressMap
   } catch {
-    return {}
+    progressCache = {}
   }
+  return progressCache
 }
 
 export function saveProgress(workId: string, ratio: number) {
   const map = loadProgress()
-  map[workId] = Math.min(1, Math.max(0, ratio))
+  const next = Math.min(1, Math.max(0, ratio))
+  if (map[workId] === next) return
+  map[workId] = next
   localStorage.setItem(PROGRESS_KEY, JSON.stringify(map))
 }
 

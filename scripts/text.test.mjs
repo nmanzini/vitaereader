@@ -81,6 +81,12 @@ import {
   wrapText,
 } from '../src/lib/quoteCard.ts'
 import { tapZoneAt } from '../src/lib/tapZones.ts'
+import {
+  dragSlopPx,
+  PAGE_DRAG_SLOP,
+  pendingMoveDecision,
+  TEXT_PAGE_DRAG_SLOP,
+} from '../src/lib/pageGestureIntent.ts'
 import { readFileSync } from 'node:fs'
 import { join, dirname } from 'node:path'
 import { fileURLToPath } from 'node:url'
@@ -205,6 +211,20 @@ describe('pagination math', () => {
     assert.equal(tapZoneAt(880, 400, 500), 'next') // right of text column
     assert.equal(tapZoneAt(1200, 400, 500), 'next') // right gutter
     assert.equal(tapZoneAt(0, 0, 0), 'center')
+  })
+
+  it('page-swipe intent locks paging on clear horizontal text drags', () => {
+    // Empty gutter / non-text: tight slop.
+    assert.equal(dragSlopPx(false, 20, 2), PAGE_DRAG_SLOP)
+    // Ambiguous text drag: extra slack to protect selection.
+    assert.equal(dragSlopPx(true, 20, 18), TEXT_PAGE_DRAG_SLOP)
+    // Clear sideways on text: same tight slop as gutters (whole-page feel).
+    assert.equal(dragSlopPx(true, 30, 4), PAGE_DRAG_SLOP)
+
+    assert.equal(pendingMoveDecision(true, 8, 2), 'wait')
+    assert.equal(pendingMoveDecision(true, 30, 4), 'paging')
+    assert.equal(pendingMoveDecision(true, 10, 40), 'selecting')
+    assert.equal(pendingMoveDecision(false, 20, 40), 'cancel')
   })
 })
 

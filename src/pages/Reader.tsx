@@ -186,7 +186,7 @@ export function Reader() {
   const commitProgress = useCallback(
     (ratio: number) => {
       const next = clampRatio(ratio)
-      setProgress(next)
+      setProgress((prev) => (prev === next ? prev : next))
       if (slug) saveProgress(slug, next)
     },
     [slug],
@@ -459,7 +459,13 @@ export function Reader() {
 
   const onPageStatus = useCallback(
     (status: PageStatus) => {
-      setPageStatus(status)
+      setPageStatus((prev) =>
+        prev.page === status.page &&
+        prev.pageCount === status.pageCount &&
+        prev.ratio === status.ratio
+          ? prev
+          : status,
+      )
       commitProgress(status.ratio)
     },
     [commitProgress],
