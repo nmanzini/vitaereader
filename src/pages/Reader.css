@@ -43,8 +43,10 @@
   padding-top: env(safe-area-inset-top, 0px);
   display: -webkit-flex;
   display: flex;
-  -webkit-align-items: center;
-  align-items: center;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  -webkit-justify-content: center;
+  justify-content: center;
   /* Solid wash — no backdrop-filter (costly / uneven on Silk tablets). */
   background: var(--bg);
   border-bottom: 1px solid color-mix(in srgb, var(--ink) 8%, transparent);
@@ -87,6 +89,7 @@
 .reader-chrome-row {
   width: 100%;
   max-width: var(--measure);
+  height: 2.55rem;
   margin: 0 auto;
   display: -webkit-flex;
   display: flex;
@@ -96,6 +99,7 @@
   justify-content: space-between;
   gap: 1rem;
   font-size: 0.78rem;
+  line-height: 1;
   letter-spacing: 0.01em;
 }
 
@@ -164,13 +168,16 @@
   right: 0;
   bottom: 0;
   z-index: 30;
+  /* Content band is 2.55rem; safe-area sits below the text (not extra padding above it). */
   height: var(--reader-bottom-h);
   padding: 0 var(--pad-x);
   padding-bottom: var(--safe-bottom);
   display: -webkit-flex;
   display: flex;
-  -webkit-align-items: center;
-  align-items: center;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  -webkit-justify-content: center;
+  justify-content: center;
   background: var(--bg);
   border-top: 1px solid color-mix(in srgb, var(--ink) 8%, transparent);
   opacity: 0;
@@ -196,6 +203,7 @@
 .reader-bottom-row {
   width: 100%;
   max-width: var(--measure);
+  height: 2.55rem;
   margin: 0 auto;
   display: -webkit-flex;
   display: flex;
@@ -205,6 +213,7 @@
   justify-content: space-between;
   gap: 1rem;
   font-size: 0.76rem;
+  line-height: 1;
   color: color-mix(in srgb, var(--ink-muted) 82%, transparent);
   font-variant-numeric: tabular-nums;
 }

@@ -159,10 +159,8 @@ export function Reader() {
   const {
     topOpen,
     bottomOpen,
-    revealTop,
-    scheduleHideTop,
-    revealBottom,
-    scheduleHideBottom,
+    revealChrome,
+    scheduleHideChrome,
     toggleChrome,
   } = useReaderChrome(settingsOpen)
 
@@ -552,20 +550,20 @@ export function Reader() {
         role="button"
         tabIndex={0}
         aria-label="Show menu"
-        onMouseEnter={revealTop}
-        onClick={revealTop}
+        onMouseEnter={revealChrome}
+        onClick={revealChrome}
         onKeyDown={(e) => {
           if (e.key === 'Enter' || e.key === ' ') {
             e.preventDefault()
-            revealTop()
+            revealChrome()
           }
         }}
       />
 
       <header
         className="reader-chrome"
-        onMouseEnter={revealTop}
-        onMouseLeave={scheduleHideTop}
+        onMouseEnter={revealChrome}
+        onMouseLeave={scheduleHideChrome}
       >
         <div className="reader-chrome-row">
           <Link to="/">Library</Link>
@@ -644,19 +642,19 @@ export function Reader() {
         role="button"
         tabIndex={0}
         aria-label="Show reading position"
-        onMouseEnter={revealBottom}
-        onClick={revealBottom}
+        onMouseEnter={revealChrome}
+        onClick={revealChrome}
         onKeyDown={(e) => {
           if (e.key === 'Enter' || e.key === ' ') {
             e.preventDefault()
-            revealBottom()
+            revealChrome()
           }
         }}
       />
       <footer
         className="reader-bottom"
-        onMouseEnter={revealBottom}
-        onMouseLeave={scheduleHideBottom}
+        onMouseEnter={revealChrome}
+        onMouseLeave={scheduleHideChrome}
       >
         <div className="reader-bottom-row">
           <span className="reader-bottom-pos">
