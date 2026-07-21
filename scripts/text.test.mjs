@@ -46,13 +46,19 @@ import {
   buildCitationText,
   buildShareText,
   cardSiteHome,
+  readerBaseUrl,
   threadsIntentUrl,
   truncateQuote,
   twitterIntentUrl,
   workShareUrl,
 } from '../src/lib/shareQuote.ts'
 import {
+  decodeSelectionRanges,
+  encodeSelectionRanges,
+} from '../src/lib/selectionLink.ts'
+import {
   cardAttribution,
+  displayCardUrl,
   displaySiteHost,
   fitLines,
   measureQuoteCard,
@@ -537,23 +543,42 @@ describe('selectionOffsets', () => {
 describe('shareQuote', () => {
   it('builds a deep link with para query', () => {
     assert.equal(
-      workShareUrl(
-        'theseus',
-        'p-12',
-        'https://nmanzini.github.io',
-        '/vitaereader/',
-      ),
+      workShareUrl('theseus', {
+        paraId: 'p-12',
+        origin: 'https://nmanzini.github.io',
+        base: '/vitaereader/',
+      }),
       'https://nmanzini.github.io/vitaereader/read/theseus?p=p-12',
     )
   })
 
-  it('bakes canonical home for quote-card footers', () => {
+  it('builds a selection deep link with r token', () => {
+    const ranges = [{ paraId: 'p-12', start: 10, end: 42 }]
+    const url = workShareUrl('theseus', {
+      paraId: 'p-12',
+      ranges,
+      origin: 'https://nmanzini.github.io',
+      base: '/vitaereader/',
+    })
+    assert.ok(url.startsWith('https://nmanzini.github.io/vitaereader/read/theseus?'))
+    const qs = new URL(url).searchParams
+    assert.equal(qs.get('p'), 'p-12')
+    const token = qs.get('r')
+    assert.ok(token)
+    assert.deepEqual(decodeSelectionRanges(token), ranges)
+  })
+
+  it('uses live origin+base for card site home', () => {
     assert.equal(
-      cardSiteHome('/'),
+      cardSiteHome('http://127.0.0.1:5175', '/'),
+      'http://127.0.0.1:5175/',
+    )
+    assert.equal(
+      cardSiteHome('https://nmanzini.github.io', '/vitaereader/'),
       'https://nmanzini.github.io/vitaereader/',
     )
     assert.equal(
-      cardSiteHome('/vitaereader/'),
+      readerBaseUrl('https://nmanzini.github.io', '/vitaereader/'),
       'https://nmanzini.github.io/vitaereader/',
     )
   })
@@ -597,6 +622,35 @@ describe('shareQuote', () => {
   })
 })
 
+describe('selectionLink', () => {
+  it('round-trips a single range', () => {
+    const ranges = [{ paraId: 'p-12', start: 0, end: 18 }]
+    const token = encodeSelectionRanges(ranges)
+    assert.ok(token)
+    assert.ok(!token.includes('+'))
+    assert.ok(!token.includes('/'))
+    assert.ok(!token.includes('='))
+    assert.deepEqual(decodeSelectionRanges(token), ranges)
+  })
+
+  it('round-trips multi-para ranges', () => {
+    const ranges = [
+      { paraId: 'p-12', start: 10, end: 40 },
+      { paraId: 'p-13', start: 0, end: 22 },
+    ]
+    const token = encodeSelectionRanges(ranges)
+    assert.deepEqual(decodeSelectionRanges(token), ranges)
+  })
+
+  it('rejects empty and malformed tokens', () => {
+    assert.equal(encodeSelectionRanges([]), null)
+    assert.equal(encodeSelectionRanges([{ paraId: '', start: 0, end: 1 }]), null)
+    assert.equal(decodeSelectionRanges(''), null)
+    assert.equal(decodeSelectionRanges('!!!'), null)
+    assert.equal(decodeSelectionRanges('AAAA'), null)
+  })
+})
+
 describe('quoteCard layout helpers', () => {
   const measure = (s) => s.length
 
@@ -626,6 +680,12 @@ describe('quoteCard layout helpers', () => {
     assert.equal(
       displaySiteHost('https://nmanzini.github.io/vitaereader/'),
       'nmanzini.github.io/vitaereader',
+    )
+    assert.equal(
+      displayCardUrl(
+        'https://nmanzini.github.io/vitaereader/read/theseus?p=p-12&r=abc',
+      ),
+      'nmanzini.github.io/vitaereader/read/theseus',
     )
   })
 

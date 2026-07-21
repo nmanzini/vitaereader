@@ -80,6 +80,7 @@ If `check` fails, fix it. Do not skip hooks or weaken tests to greenwash.
 | `src/lib/textRanges.ts` | Highlight range helpers + compose with char refs |
 | `src/lib/selectionOffsets.ts` | DOM selection → paragraph plain-text offsets |
 | `src/lib/shareQuote.ts` | Share citation text + X/Threads intents + copy quote/image orchestration |
+| `src/lib/selectionLink.ts` | Compact base64url encode/decode for share selection ranges (`?r=`) |
 | `src/lib/quoteCard.ts` | Client canvas quote-card PNG (layout helpers + render) |
 | `src/content/types.ts` | Shared Work/Paragraph types |
 | `src/index.css` | Design tokens + themes (**colors only**) |
@@ -153,7 +154,7 @@ Regenerate only when ingest/catalog/parser changes. Commit updated `public/data`
 
 API: `src/lib/prefs.ts` (theme/progress/highlights) + `src/lib/readingPrefs.ts` (Aa sheet). Keep storage keys stable unless migrating.
 
-Reader deep links: `/read/<slug>?p=<paraId>` or `#para-<paraId>` resume at that paragraph (content ratio at para start). Share-on-X uses the same `?p=` shape.
+Reader deep links: `/read/<slug>?p=<paraId>` or `#para-<paraId>` resume at that paragraph (content ratio at para start). Share selection links add `&r=<base64url>` (compact binary token of one or more `{paraId,start,end}` ranges from `selectionLink.ts`). On load, `r` is decoded and each range is **ensured** as a highlight in `vitae.highlights` (exact-range dedupe); reading still resumes via `p` (or the first range’s para). Citation / X / Threads / quote-card footer use the live `readerBaseUrl()` deep link (current origin + Vite base — GH Pages or local).
 
 ## Browser verification (reader / UI)
 

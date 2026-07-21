@@ -119,6 +119,24 @@ export function addHighlight(
   return highlight
 }
 
+/**
+ * Return an existing exact-range highlight, or create one.
+ * Used when opening a share deep-link (`?r=`) so the passage shows marked.
+ */
+export function ensureHighlight(
+  workId: string,
+  input: Omit<TextHighlight, 'id' | 'createdAt'>,
+): TextHighlight {
+  const existing = loadHighlightsFor(workId).find(
+    (h) =>
+      h.paraId === input.paraId &&
+      h.start === input.start &&
+      h.end === input.end,
+  )
+  if (existing) return existing
+  return addHighlight(workId, input)
+}
+
 export function removeHighlight(workId: string, highlightId: string): boolean {
   const map = loadHighlights()
   const list = map[workId]

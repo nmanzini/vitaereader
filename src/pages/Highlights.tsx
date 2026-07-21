@@ -17,6 +17,7 @@ import {
   removeHighlight,
   type HighlightsMap,
 } from '../lib/prefs'
+import { encodeSelectionRanges } from '../lib/selectionLink'
 import './Highlights.css'
 
 type SortMode = 'recent' | 'book'
@@ -25,6 +26,16 @@ function excerpt(text: string, max = 140): string {
   const t = text.replace(/\s+/g, ' ').trim()
   if (t.length <= max) return t
   return `${t.slice(0, max - 1).trimEnd()}…`
+}
+
+function highlightReadPath(entry: HighlightEntry): string {
+  const params = new URLSearchParams()
+  params.set('p', entry.paraId)
+  const token = encodeSelectionRanges([
+    { paraId: entry.paraId, start: entry.start, end: entry.end },
+  ])
+  if (token) params.set('r', token)
+  return `/read/${entry.workId}?${params.toString()}`
 }
 
 function HighlightRow({
@@ -39,7 +50,7 @@ function HighlightRow({
   return (
     <li className="hl-item">
       <Link
-        to={`/read/${entry.workId}?p=${encodeURIComponent(entry.paraId)}`}
+        to={highlightReadPath(entry)}
         className="hl-row"
       >
         <p className="hl-quote">“{excerpt(entry.text)}”</p>
@@ -108,6 +119,13 @@ export function Highlights() {
       workTitle: entry.workTitle,
       workId: entry.workId,
       paraId: entry.paraId,
+      ranges: [
+        {
+          paraId: entry.paraId,
+          start: entry.start,
+          end: entry.end,
+        },
+      ],
     })
   }
 

@@ -13,6 +13,8 @@ export type ShareSheetPayload = {
   workTitle: string
   workId: string
   paraId?: string
+  /** Exact ranges for `?r=` deep-link (multi-para when present). */
+  ranges?: Array<{ paraId: string; start: number; end: number }>
 }
 
 type Props = {

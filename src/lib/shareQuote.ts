@@ -1,13 +1,19 @@
 /**
  * Tasteful short citation + deep-link URL for share intents.
  * Quote-card PNG rendering: `quoteCard.ts` (loaded on share via dynamic import).
+ * Selection tokens: `selectionLink.ts`.
  */
 
+import {
+  encodeSelectionRanges,
+  type SelectionRange,
+} from './selectionLink.ts'
+
 const PRODUCTION_ORIGIN = 'https://nmanzini.github.io'
-/** Public Pages home — always baked into quote-card footers (never localhost). */
-const PRODUCTION_HOME_PATH = '/vitaereader/'
 const MAX_QUOTE = 180
 const MAX_CITATION_QUOTE = 480
+
+export type { SelectionRange }
 
 export function truncateQuote(text: string, max = MAX_QUOTE): string {
   const cleaned = text.replace(/\s+/g, ' ').trim()
@@ -18,7 +24,7 @@ export function truncateQuote(text: string, max = MAX_QUOTE): string {
   return `${base}…`
 }
 
-/** App origin+base for share links (prod Pages or current host+Vite base). */
+/** App origin+base for share links (current host + Vite base, or prod fallback). */
 export function readerBaseUrl(
   origin = typeof window !== 'undefined' ? window.location.origin : '',
   base = typeof import.meta !== 'undefined' ? import.meta.env.BASE_URL : '/',
@@ -29,29 +35,47 @@ export function readerBaseUrl(
 }
 
 /**
- * Canonical public home for quote-card footers.
- * Uses known host + Vite base when base is the Pages path; otherwise production path
- * so local `BASE_URL=/` never paints `127.0.0.1` onto the card.
+ * Site home for card footers when no quote deep-link is available.
+ * Uses the live origin + Vite base (local or GH Pages).
  */
 export function cardSiteHome(
+  origin = typeof window !== 'undefined' ? window.location.origin : '',
   base = typeof import.meta !== 'undefined' ? import.meta.env.BASE_URL : '/',
 ): string {
-  const raw = base && base !== '/' ? base : PRODUCTION_HOME_PATH
-  const path = raw.endsWith('/') ? raw : `${raw}/`
-  return `${PRODUCTION_ORIGIN}${path}`
+  return readerBaseUrl(origin, base).replace(/\/?$/, '/')
 }
 
-/** Deep link to a work, optionally anchored on a paragraph. */
+export type WorkShareOptions = {
+  paraId?: string
+  /** Exact quote range(s); encoded as `r=` when present. */
+  ranges?: readonly SelectionRange[]
+  origin?: string
+  base?: string
+}
+
+/**
+ * Deep link to a work.
+ * - `?p=<paraId>` resumes at that paragraph
+ * - `?r=<base64url>` encodes selection range(s) for highlight restore
+ */
 export function workShareUrl(
   workSlug: string,
-  paraId?: string,
-  origin?: string,
-  base?: string,
+  options?: WorkShareOptions,
 ): string {
-  const root = readerBaseUrl(origin, base).replace(/\/?$/, '/')
+  const root = readerBaseUrl(options?.origin, options?.base).replace(
+    /\/?$/,
+    '/',
+  )
   const path = `read/${encodeURIComponent(workSlug)}`
-  const qs = paraId ? `?p=${encodeURIComponent(paraId)}` : ''
-  return `${root}${path}${qs}`
+  const params = new URLSearchParams()
+  const paraId = options?.paraId ?? options?.ranges?.[0]?.paraId
+  if (paraId) params.set('p', paraId)
+  if (options?.ranges?.length) {
+    const token = encodeSelectionRanges(options.ranges)
+    if (token) params.set('r', token)
+  }
+  const qs = params.toString()
+  return qs ? `${root}${path}?${qs}` : `${root}${path}`
 }
 
 /** Tweet/X status body: title + short quote + URL (keep under ~280). */
@@ -155,8 +179,12 @@ export async function prepareShareAssets(opts: {
   workTitle: string
   workId: string
   paraId?: string
+  ranges?: readonly SelectionRange[]
 }): Promise<ShareAssets> {
-  const deepLink = workShareUrl(opts.workId, opts.paraId)
+  const deepLink = workShareUrl(opts.workId, {
+    paraId: opts.paraId,
+    ranges: opts.ranges,
+  })
   const shareText = buildShareText(opts.workTitle, opts.quote, deepLink)
   const citation = buildCitationText(opts.workTitle, opts.quote, {
     url: deepLink,
@@ -164,10 +192,11 @@ export async function prepareShareAssets(opts: {
 
   const { quoteCardFileName, renderQuoteCardPng } = await import('./quoteCard')
   const filename = quoteCardFileName(opts.workTitle)
+  // Card footer: tasteful deep link to this quote (current origin + base).
   const blob = await renderQuoteCardPng({
     quote: opts.quote,
     workTitle: opts.workTitle,
-    siteUrl: cardSiteHome(),
+    siteUrl: deepLink,
   })
 
   return { citation, shareText, deepLink, blob, filename }

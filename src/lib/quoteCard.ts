@@ -46,7 +46,7 @@ export type QuoteCardInput = {
   author?: string
   /** Default: Parallel Lives */
   collection?: string
-  /** Home URL baked into the card (e.g. https://nmanzini.github.io/vitaereader/) */
+  /** Deep link or site URL baked into the card footer (current origin + base). */
   siteUrl: string
 }
 
@@ -182,6 +182,24 @@ export function displaySiteHost(url: string): string {
     .replace(/\/+$/, '')
 }
 
+/**
+ * Card footer label: prefer path without long `?r=` tokens; ellipsize if needed.
+ * Full deep link still goes in citation / X / Threads text.
+ */
+export function displayCardUrl(url: string, maxLen = 52): string {
+  const trimmed = url.trim()
+  if (!trimmed) return ''
+  let label = displaySiteHost(trimmed)
+  // Drop query/hash so a long selection token doesn't dominate the card.
+  const q = label.indexOf('?')
+  if (q >= 0) label = label.slice(0, q)
+  const h = label.indexOf('#')
+  if (h >= 0) label = label.slice(0, h)
+  label = label.replace(/\/+$/, '')
+  if (label.length <= maxLen) return label
+  return `${label.slice(0, Math.max(1, maxLen - 1))}…`
+}
+
 export function truncateForCard(text: string, max = MAX_CARD_QUOTE): string {
   const cleaned = text.replace(/\s+/g, ' ').trim()
   if (cleaned.length <= max) return cleaned
@@ -235,7 +253,7 @@ export async function drawQuoteCard(
     input.author,
     input.collection,
   )
-  const siteLabel = displaySiteHost(input.siteUrl)
+  const siteLabel = displayCardUrl(input.siteUrl)
 
   // Measure title wrap first (affects max quote lines under height cap).
   ctx.font =

@@ -20,6 +20,7 @@ import {
 } from '../lib/charMatch'
 import {
   addHighlight,
+  ensureHighlight,
   loadFinished,
   loadHighlightsFor,
   loadProgress,
@@ -43,6 +44,7 @@ import {
   selectionToolbarAnchor,
   type WorkSelection,
 } from '../lib/selectionOffsets'
+import { decodeSelectionRanges } from '../lib/selectionLink'
 import {
   findContainingHighlight,
   normalizeRange,
@@ -84,6 +86,33 @@ function paraIdFromLocation(
     return id || null
   }
   return null
+}
+
+/** Apply `?r=` selection token: ensure highlights for each range (no dupes). */
+function applySelectionToken(
+  workId: string,
+  work: Work,
+  token: string | null,
+): TextHighlight[] | null {
+  if (!token?.trim()) return null
+  const ranges = decodeSelectionRanges(token)
+  if (!ranges?.length) return null
+  const created: TextHighlight[] = []
+  for (const range of ranges) {
+    const para = work.paragraphs.find((p) => p.id === range.paraId)
+    if (!para) continue
+    const norm = normalizeRange(range.start, range.end, para.text.length)
+    if (!norm) continue
+    created.push(
+      ensureHighlight(workId, {
+        paraId: range.paraId,
+        start: norm.start,
+        end: norm.end,
+        text: para.text.slice(norm.start, norm.end),
+      }),
+    )
+  }
+  return created.length ? created : null
 }
 
 export function Reader() {
@@ -170,16 +199,22 @@ export function Reader() {
     setHighlights(loadHighlightsFor(slug))
     setError(null)
     const deepPara = paraIdFromLocation(searchParams, window.location.hash)
+    const rangeToken = searchParams.get('r')
     Promise.all([loadWork(slug), loadIndex(), loadAnnotations(slug)])
       .then(([w, index, ann]) => {
         setWork(w)
         setPair(findPairForWork(index, slug))
         setAnnotations(ann)
+        // Share deep-link: persist exact ranges as highlights (deduped).
+        const fromLink = applySelectionToken(slug, w, rangeToken)
+        if (fromLink) setHighlights(loadHighlightsFor(slug))
         const saved = clampRatio(loadProgress()[slug] ?? 0)
         const wi = buildWordIndex(w.paragraphs)
         let start = saved
-        if (deepPara) {
-          const paraIndex = wi.ids.indexOf(deepPara)
+        const resumePara =
+          deepPara ?? fromLink?.[0]?.paraId ?? null
+        if (resumePara) {
+          const paraIndex = wi.ids.indexOf(resumePara)
           if (paraIndex >= 0) start = ratioFromAnchor(paraIndex, 0, wi)
         }
         setProgress(start)
@@ -346,6 +381,11 @@ export function Reader() {
           workTitle: work.title,
           workId: work.id,
           paraId: sel.primary.paraId,
+          ranges: sel.segments.map((segment) => ({
+            paraId: segment.paraId,
+            start: segment.start,
+            end: segment.end,
+          })),
         })
         dismissSelection()
         return
