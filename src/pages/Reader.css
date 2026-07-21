@@ -293,7 +293,8 @@
   column-rule: none;
   /* Aa prefs live here (not on body) so Library stays a quiet catalog. */
   font-family: var(--font-body);
-  font-size: var(--font-size-body);
+  /* Optical factor balances Georgia (large) vs Literary (small) at one size. */
+  font-size: calc(var(--font-size-body) * var(--font-optical, 1));
   line-height: var(--leading);
   /* Soft horizontal slide — user turns only; restore uses .no-motion. */
   -webkit-transition: -webkit-transform var(--motion-page);
@@ -488,9 +489,11 @@
   color: inherit;
   cursor: pointer;
   text-decoration: underline;
-  text-decoration-color: color-mix(in srgb, var(--ink) 16%, transparent);
-  text-decoration-thickness: from-font;
-  text-underline-offset: 0.14em;
+  /* Fixed 1px — from-font is heavy under Georgia and uneven across faces. */
+  text-decoration-color: var(--char-underline);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+  text-decoration-skip-ink: auto;
   -webkit-tap-highlight-color: color-mix(in srgb, var(--accent) 12%, transparent);
 }
 
@@ -507,19 +510,11 @@
 /* User highlights — soft theme-token wash (not neon). Tappable to remove. */
 mark.text-highlight {
   color: inherit;
-  background: color-mix(in srgb, var(--accent) 18%, transparent);
+  background: var(--highlight);
   border-radius: 0.1em;
   box-decoration-break: clone;
   -webkit-box-decoration-break: clone;
   cursor: pointer;
-}
-
-[data-theme='night'] mark.text-highlight {
-  background: color-mix(in srgb, var(--accent) 22%, transparent);
-}
-
-[data-theme='eink'] mark.text-highlight {
-  background: color-mix(in srgb, var(--ink) 12%, transparent);
 }
 
 mark.text-highlight .char-ref {
