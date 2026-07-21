@@ -19,6 +19,7 @@ export function useReaderChrome(settingsOpen: boolean) {
     setOn: setBottomOn,
     reveal: revealBottomOnly,
     scheduleHide: scheduleBottomHide,
+    clear: clearBottom,
   } = useTimedFlag(false)
 
   const topOnRef = useRef(topOn)
@@ -43,16 +44,30 @@ export function useReaderChrome(settingsOpen: boolean) {
     scheduleBottomHide(520)
   }, [scheduleTopHide, scheduleBottomHide, settingsOpen])
 
+  /** Dismiss both bars (second tap on an open chrome band). */
+  const hideChrome = useCallback(() => {
+    if (settingsOpen) return
+    clearTop()
+    clearBottom()
+    setTopOn(false)
+    setBottomOn(false)
+  }, [settingsOpen, clearTop, clearBottom, setTopOn, setBottomOn])
+
+  /** Center tap — show/hide both together. */
   const toggleChrome = useCallback(() => {
+    if (settingsOpen) return
+    clearTop()
+    clearBottom()
     const next = !topOnRef.current
     setTopOn(next)
     setBottomOn(next)
-  }, [setTopOn, setBottomOn])
+  }, [settingsOpen, clearTop, clearBottom, setTopOn, setBottomOn])
 
   return {
     topOpen: topOn || settingsOpen,
     bottomOpen: bottomOn,
     revealChrome,
+    hideChrome,
     scheduleHideChrome,
     toggleChrome,
   }
