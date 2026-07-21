@@ -146,7 +146,7 @@ nameResolutions: [{ paraId, start, end, characterId, note? }]
 
 Each entry is an LLM/reviewer decision for one span (read surrounding paragraphs; score who is meant). Unique longer forms still match without a resolution. Unresolved ambiguous spans stay plain text. Sheet blurbs fall back to the first cast member that owns the name.
 
-Expected shape (asserted by tests/smoke): **68 works, 22 pairs, 4 unpaired, ~740k words**.
+Expected shape (asserted by tests/smoke): **68 works, 22 pairs, 4 unpaired, ~740k words**. Per-work character annotations stay modest (smoke caps at **100** cast members); prefer people who appear in the text over encyclopedic completeness.
 
 Regenerate only when ingest/catalog/parser changes. Commit updated `public/data` with those changes.
 

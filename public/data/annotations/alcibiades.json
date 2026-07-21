@@ -659,6 +659,49 @@
           "characterId": "ceres"
         }
       ]
+    },
+    {
+      "id": "homer-alc",
+      "names": [
+        "Homer"
+      ],
+      "relation": "Poet Alcibiades sought from a schoolmaster",
+      "blurb": "When a teacher said he had no Homer, Alcibiades struck him—Plutarch uses the story to show the young man's ferocious expectations of learning.",
+      "links": [
+        {
+          "characterId": "socrates"
+        }
+      ]
+    },
+    {
+      "id": "euripides-alc",
+      "names": [
+        "Euripides"
+      ],
+      "relation": "Tragedian cited for the Sicilian glory",
+      "blurb": "Euripides's account of the Sicilian spectacle is invoked by Plutarch alongside Thucydides when describing the splendor of the expedition Alcibiades championed.",
+      "links": [
+        {
+          "characterId": "thucydides"
+        }
+      ]
+    },
+    {
+      "id": "theodorus",
+      "names": [
+        "Theodorus",
+        "Theodorus of Phegaea"
+      ],
+      "relation": "Herald in the Mysteries parody; later refused to curse",
+      "blurb": "Played herald in the private Mysteries parody; afterward, when the priesthood was ordered to curse Alcibiades, Theodorus of Phegaea alone refused, saying he was a priest to pray, not to curse.",
+      "links": [
+        {
+          "characterId": "ceres"
+        },
+        {
+          "characterId": "andocides"
+        }
+      ]
     }
   ]
 }

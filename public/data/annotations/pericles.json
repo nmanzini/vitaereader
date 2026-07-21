@@ -514,7 +514,9 @@
     {
       "id": "artemon",
       "names": [
-        "Artemon"
+        "Artemon",
+        "Periphoretus",
+        "Artemon Periphoretus"
       ],
       "relation": "Engineer of the Samian siege machines",
       "blurb": "Mechanic said to have designed the engines that broke down Samos's walls; his litter-bound life on site gave him the nickname Periphoretus—though Plutarch doubts the chronology.",
@@ -619,6 +621,76 @@
       "links": [
         {
           "characterId": "agariste"
+        }
+      ]
+    },
+    {
+      "id": "juno-pericles",
+      "names": [
+        "Juno",
+        "Hera"
+      ],
+      "relation": "Goddess whose statue rivaled Phidias's Athena",
+      "blurb": "Plutarch mentions the statue of Juno at Argos by Polycletus as a work that impresses but does not inspire emulation—a foil to Athena's statue that crowned Pericles's building program.",
+      "links": [
+        {
+          "characterId": "phidias"
+        }
+      ]
+    },
+    {
+      "id": "jupiter-pericles",
+      "names": [
+        "Jupiter",
+        "Zeus"
+      ],
+      "relation": "God invoked in comic mockery of Pericles",
+      "blurb": "Comedy compared Pericles to Zeus Olympian for his long head and regal bearing; the joke also appears in political context when comics styled his authority as godlike.",
+      "links": [
+        {
+          "characterId": "cratinus"
+        }
+      ]
+    },
+    {
+      "id": "anacreon",
+      "names": [
+        "Anacreon"
+      ],
+      "relation": "Lyric poet whose verses disprove Artemon's story",
+      "blurb": "His poems mention Artemon Periphoretus several generations before the Samian war—evidence Heraclides Ponticus uses to refute the tale that Artemon was the siege engineer.",
+      "links": [
+        {
+          "characterId": "artemon"
+        }
+      ]
+    },
+    {
+      "id": "pisistratus-pericles",
+      "names": [
+        "Pisistratus"
+      ],
+      "relation": "Tyrant whose voice and manner Pericles recalled",
+      "blurb": "Old men who heard both noted the similarity of voice and gentleness of manner—a comparison Plutarch records without embarrassment, since Pisistratus too had once been the friend of the better sort.",
+      "links": [
+        {
+          "characterId": "pericles"
+        }
+      ]
+    },
+    {
+      "id": "callicrates",
+      "names": [
+        "Callicrates"
+      ],
+      "relation": "Architect of the Parthenon",
+      "blurb": "Named alongside Ictinus as builder of the Parthenon—one of the master craftsmen of the Acropolis program Pericles directed.",
+      "links": [
+        {
+          "characterId": "phidias"
+        },
+        {
+          "characterId": "minerva"
         }
       ]
     }

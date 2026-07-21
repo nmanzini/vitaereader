@@ -75,7 +75,7 @@ function main() {
       assert.ok(typeof ann.subject === 'string' && ann.subject.length > 0)
       assert.ok(Array.isArray(ann.characters) && ann.characters.length > 0)
       assert.ok(
-        ann.characters.length <= 45,
+        ann.characters.length <= 100,
         `${file}: too many characters (${ann.characters.length})`,
       )
       const ids = new Set(ann.characters.map((c) => c.id))

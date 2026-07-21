@@ -353,7 +353,9 @@
     {
       "id": "lentulus",
       "names": [
-        "Lentulus"
+        "Lentulus",
+        "Lentulus Spinther",
+        "Spinther"
       ],
       "relation": "Consular enemy in the civil war",
       "blurb": "Named among the Pompeian consulars who fled Rome and stiffened the Senate’s war party.",
@@ -794,6 +796,33 @@
         },
         {
           "characterId": "domitius"
+        }
+      ]
+    },
+    {
+      "id": "bacchus-caesar",
+      "names": [
+        "Bacchus",
+        "Dionysus"
+      ],
+      "relation": "God whose feast-day marked Pharsalus",
+      "blurb": "The battle of Pharsalus was won on the feast of Bacchus—the very day Pompey had four years before set out to war. Plutarch also notes the Bona Dea rites were kept for the mother of Bacchus.",
+      "links": [
+        {
+          "characterId": "pompey"
+        }
+      ]
+    },
+    {
+      "id": "vergentorix",
+      "names": [
+        "Vergentorix"
+      ],
+      "relation": "Gallic paramount chief",
+      "blurb": "Supreme Gallic commander whose father had been put to death for aiming at tyranny. He surrendered to Caesar at Alesia in full armor and was kept for the triumph.",
+      "links": [
+        {
+          "characterId": "labienus"
         }
       ]
     }

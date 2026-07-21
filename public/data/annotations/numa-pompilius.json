@@ -576,6 +576,48 @@
           "workId": "camillus"
         }
       ]
+    },
+    {
+      "id": "juba-numa",
+      "names": [
+        "Juba"
+      ],
+      "relation": "Learned king who explained Roman words",
+      "blurb": "Cited twice for etymologies of Roman priestly vocabulary and the robe called Laena—a polymath king eager to trace Roman institutions back to Greek origins.",
+      "links": [
+        {
+          "characterId": "pythagoras"
+        }
+      ]
+    },
+    {
+      "id": "aemilius-numa",
+      "names": [
+        "Aemilius"
+      ],
+      "relation": "Eponymous ancestor of the house of Aemilii",
+      "blurb": "Numa gave his son Mamercus the surname Aemilius for his graceful speech; that son became the eponym of the ancient patrician family.",
+      "links": [
+        {
+          "characterId": "mamercus"
+        }
+      ]
+    },
+    {
+      "id": "janus",
+      "names": [
+        "Janus"
+      ],
+      "relation": "God of beginnings; gave January its name",
+      "blurb": "Numa placed January before March in the calendar, naming it from Janus and giving precedence to the god of peaceful beginnings over Mars the war-god.",
+      "links": [
+        {
+          "characterId": "mars"
+        },
+        {
+          "characterId": "jupiter"
+        }
+      ]
     }
   ]
 }

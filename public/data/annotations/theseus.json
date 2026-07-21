@@ -864,6 +864,110 @@
           "characterId": "nausithous"
         }
       ]
+    },
+    {
+      "id": "scirus",
+      "names": [
+        "Scirus"
+      ],
+      "relation": "Salaminian soothsayer who sent pilots to Theseus",
+      "blurb": "Diviner from Salamis who provided Theseus with Nausithous as steersman and Phaeax as look-out man for the Cretan voyage—distinct from the robber Sciron.",
+      "links": [
+        {
+          "characterId": "nausithous"
+        },
+        {
+          "characterId": "phaeax-theseus"
+        }
+      ]
+    },
+    {
+      "id": "soloon",
+      "names": [
+        "Soloon"
+      ],
+      "relation": "Amazon-voyage companion who died for love",
+      "blurb": "One of Theseus's companions on the Euxine expedition; fell in love with Antiope, confided in a friend, and drowned himself—the death that bound Theseus to the Amazon by pity.",
+      "links": [
+        {
+          "characterId": "antiope"
+        }
+      ]
+    },
+    {
+      "id": "alycus",
+      "names": [
+        "Alycus"
+      ],
+      "relation": "Son of Sciron; slain at Aphidnae",
+      "blurb": "Sciron's son who died fighting on the Dioscuri's side when they recovered Helen from Aphidnae—his tomb was pointed out on the Megarian plain.",
+      "links": [
+        {
+          "characterId": "sciron"
+        },
+        {
+          "characterId": "dioscuri"
+        }
+      ]
+    },
+    {
+      "id": "jupiter-theseus",
+      "names": [
+        "Jupiter"
+      ],
+      "relation": "God honored in Theseus's institutions",
+      "blurb": "Theseus instituted the Isthmian games in honor of Neptune but also kept Jupiter's rites; the paean and olive branch belonged to Jupiter Hecaleius.",
+      "links": [
+        {
+          "characterId": "neptune"
+        }
+      ]
+    },
+    {
+      "id": "mercury-theseus",
+      "names": [
+        "Mercury",
+        "Hermes"
+      ],
+      "relation": "God whose image stood at the city gate",
+      "blurb": "A figure of Hermes at Aegeus's gate and an honored shrine in the Amazon Quarter recalled the god's connection to Theseus's family.",
+      "links": [
+        {
+          "characterId": "aegeus"
+        }
+      ]
+    },
+    {
+      "id": "venus-theseus",
+      "names": [
+        "Venus",
+        "Aphrodite"
+      ],
+      "relation": "Goddess Theseus invoked before the Cretan voyage",
+      "blurb": "The oracle at Delphi told Theseus to make Venus his guide and invoke her as companion before sailing to Crete; her grove at Naxos later received Ariadne.",
+      "links": [
+        {
+          "characterId": "ariadne"
+        },
+        {
+          "characterId": "apollo"
+        }
+      ]
+    },
+    {
+      "id": "romulus-theseus",
+      "names": [
+        "Romulus"
+      ],
+      "relation": "Roman pair in the Parallel Lives",
+      "blurb": "Romulus is paired with Theseus—both founders born out of wedlock, both men who slew kinsmen and lost their thrones through bad deeds.",
+      "links": [
+        {
+          "characterId": "romulus-life",
+          "label": "Romulus's Life",
+          "workId": "romulus"
+        }
+      ]
     }
   ]
 }

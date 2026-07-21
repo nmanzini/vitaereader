@@ -641,6 +641,19 @@
           "characterId": "tarpeius"
         }
       ]
+    },
+    {
+      "id": "postumius-rom",
+      "names": [
+        "Postumius"
+      ],
+      "relation": "Latin commander who menaced Rome after the Gallic sack",
+      "blurb": "Livius Postumius led a Latin army against the weakened city; Plutarch records his demand for Roman wives and the ruse of the handmaids that saved Rome.",
+      "links": [
+        {
+          "characterId": "romulus"
+        }
+      ]
     }
   ]
 }

@@ -559,6 +559,22 @@
           "characterId": "plato"
         }
       ]
+    },
+    {
+      "id": "hippocrates-solon",
+      "names": [
+        "Hippocrates"
+      ],
+      "relation": "Mathematician cited; father of Pisistratus",
+      "blurb": "Plutarch mentions Hippocrates the mathematician among those who traded; and separately, Solon addressed Pisistratus as 'son of Hippocrates,' comparing him unfavorably to Homer's Ulysses.",
+      "links": [
+        {
+          "characterId": "pisistratus"
+        },
+        {
+          "characterId": "thales"
+        }
+      ]
     }
   ]
 }

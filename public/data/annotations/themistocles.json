@@ -484,6 +484,85 @@
           "characterId": "plato"
         }
       ]
+    },
+    {
+      "id": "minerva-them",
+      "names": [
+        "Minerva",
+        "Athena"
+      ],
+      "relation": "Goddess whose serpent deserted Athens before Salamis",
+      "blurb": "The sacred serpent kept in Athena's temple disappeared before the battle—a portent the priests used to urge Athenians to abandon the city. Plutarch also tells the story of Athena and Neptune disputing for Athens.",
+      "links": [
+        {
+          "characterId": "themistocles"
+        }
+      ]
+    },
+    {
+      "id": "jupiter-them",
+      "names": [
+        "Jupiter"
+      ],
+      "relation": "God whose oracle directed Themistocles in exile",
+      "blurb": "The oracle of Dodona commanded Themistocles to go to the man who bore a name like Jupiter's own—leading him to Admetus.",
+      "links": [
+        {
+          "characterId": "admetus"
+        }
+      ]
+    },
+    {
+      "id": "hercules-them",
+      "names": [
+        "Hercules"
+      ],
+      "relation": "Demi-god compared to the low-born achiever",
+      "blurb": "Plutarch invokes Hercules—himself of mixed divine and mortal blood—as an analogy for Themistocles, who was born outside full civic standing yet surpassed those of pure birth.",
+      "links": [
+        {
+          "characterId": "themistocles"
+        }
+      ]
+    },
+    {
+      "id": "anaxagoras-them",
+      "names": [
+        "Anaxagoras"
+      ],
+      "relation": "Philosopher said to have taught him",
+      "blurb": "Some sources place Themistocles among Anaxagoras's hearers, though Plutarch notes this is chronologically improbable—Melissus commanded Samos decades after Salamis.",
+      "links": [
+        {
+          "characterId": "melissus-them"
+        }
+      ]
+    },
+    {
+      "id": "melissus-them",
+      "names": [
+        "Melissus"
+      ],
+      "relation": "Philosopher said to have taught him",
+      "blurb": "Eleatic philosopher named alongside Anaxagoras as a possible teacher of Themistocles—an attribution Plutarch doubts on chronological grounds.",
+      "links": [
+        {
+          "characterId": "anaxagoras-them"
+        }
+      ]
+    },
+    {
+      "id": "lysimachus-them",
+      "names": [
+        "Lysimachus"
+      ],
+      "relation": "Father of Aristides",
+      "blurb": "Father of Aristides the Just—named by Plutarch to identify the rival whom Themistocles spent his youth contesting.",
+      "links": [
+        {
+          "characterId": "aristides"
+        }
+      ]
     }
   ]
 }

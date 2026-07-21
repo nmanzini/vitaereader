@@ -884,6 +884,7 @@
     {
       "id": "pixodarus",
       "names": [
+        "Pixodorus",
         "Pixodarus"
       ],
       "relation": "Carian dynast in the marriage dispute",
@@ -1049,6 +1050,113 @@
         },
         {
           "characterId": "antipater"
+        }
+      ]
+    },
+    {
+      "id": "athenodorus",
+      "names": [
+        "Athenodorus"
+      ],
+      "relation": "Actor who performed at Alexander's court",
+      "blurb": "One of the two most celebrated tragic actors of the age; performed at the contests Alexander staged in Asia.",
+      "links": [
+        {
+          "characterId": "hephaestion"
+        }
+      ]
+    },
+    {
+      "id": "tireus",
+      "names": [
+        "Tireus"
+      ],
+      "relation": "Eunuch who fled and betrayed Darius's family",
+      "blurb": "Among the women of Darius's household; escaped the camp on horseback and carried word to Darius.",
+      "links": [
+        {
+          "characterId": "darius"
+        },
+        {
+          "characterId": "statira"
+        }
+      ]
+    },
+    {
+      "id": "bagoas",
+      "names": [
+        "Bagoas"
+      ],
+      "relation": "Favorite eunuch",
+      "blurb": "Persian eunuch who won a dancing prize and was kissed by Alexander before the whole army—one of Plutarch's glimpses of the Eastern court.",
+      "links": [
+        {
+          "characterId": "alexander"
+        }
+      ]
+    },
+    {
+      "id": "sisimithres",
+      "names": [
+        "Sisimithres"
+      ],
+      "relation": "Bactrian chief on an impregnable rock",
+      "blurb": "Held a sheer-sided rock Alexander chose to besiege; surrendered on terms and supplied Alexander with supplies.",
+      "links": [
+        {
+          "characterId": "roxana"
+        }
+      ]
+    },
+    {
+      "id": "cyrus-persian",
+      "names": [
+        "Cyrus"
+      ],
+      "relation": "Persian founder-king; model and comparison",
+      "blurb": "Alexander found Cyrus's tomb violated, punished the desecration, and measured his own conquests against the Persian founder's—the throne of Cyrus was a recurring symbolic prize.",
+      "links": [
+        {
+          "characterId": "darius"
+        }
+      ]
+    },
+    {
+      "id": "euripides-alex",
+      "names": [
+        "Euripides"
+      ],
+      "relation": "Tragedian quoted at court",
+      "blurb": "Lines from Euripides were quoted by Alexander and those around him on several occasions—Medea and Andromache especially—reflecting the literary culture of his Macedonian court.",
+      "links": [
+        {
+          "characterId": "aristotle"
+        }
+      ]
+    },
+    {
+      "id": "pythagoras-seer",
+      "names": [
+        "Pythagoras"
+      ],
+      "relation": "Soothsayer consulted at Babylon",
+      "blurb": "Diviner Alexander summoned at Babylon after Apollodorus had sacrificed; he reported the liver defective—an omen Alexander took gravely in his final days.",
+      "links": [
+        {
+          "characterId": "aristander"
+        }
+      ]
+    },
+    {
+      "id": "eratosthenes",
+      "names": [
+        "Eratosthenes"
+      ],
+      "relation": "Scholar-historian who recorded Olympias's words",
+      "blurb": "Cited by Plutarch for the tradition that Olympias told Alexander the secret of his divine birth as he set out on campaign—one of several sources Plutarch weighs.",
+      "links": [
+        {
+          "characterId": "olympias"
         }
       ]
     }
