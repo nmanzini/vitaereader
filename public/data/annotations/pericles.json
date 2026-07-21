@@ -397,6 +397,302 @@
           "workId": "fabius"
         }
       ]
+    },
+    {
+      "id": "pericles",
+      "names": [
+        "Pericles"
+      ],
+      "relation": "Subject; first citizen of Athens",
+      "blurb": "Son of Xanthippus and Agariste who shaped Athens for three decades—building the Acropolis, leading the demos with gravity and restraint, and steering a cautious strategy into the Peloponnesian War. The plague took his sons and then him, and the city he had made never quite recovered.",
+      "links": [
+        {
+          "characterId": "xanthippus"
+        },
+        {
+          "characterId": "aspasia"
+        },
+        {
+          "characterId": "anaxagoras"
+        }
+      ]
+    },
+    {
+      "id": "aristotle",
+      "names": [
+        "Aristotle"
+      ],
+      "relation": "Philosopher who analyzed his nature",
+      "blurb": "Cited when Plutarch describes Pericles's natural endowment and the effect of Anaxagoras's philosophy on his temper—the combination that made him serene in public and cool under insult.",
+      "links": [
+        {
+          "characterId": "anaxagoras"
+        }
+      ]
+    },
+    {
+      "id": "plato",
+      "names": [
+        "Plato"
+      ],
+      "relation": "Philosopher who praised his rhetoric",
+      "blurb": "In the Phaedrus Plato named Pericles the greatest of all orators—trained by Anaxagoras's cosmic philosophy to speak with weight and comprehension above common politicians.",
+      "links": [
+        {
+          "characterId": "anaxagoras"
+        }
+      ]
+    },
+    {
+      "id": "socrates",
+      "names": [
+        "Socrates"
+      ],
+      "relation": "Philosopher in Aspasia's circle",
+      "blurb": "Said to have visited Aspasia and brought friends along; the anecdote illustrates how her house became a meeting-point for the finest minds of Pericles's Athens.",
+      "links": [
+        {
+          "characterId": "aspasia"
+        }
+      ]
+    },
+    {
+      "id": "stesimbrotus",
+      "names": [
+        "Stesimbrotus"
+      ],
+      "relation": "Hostile biographer Plutarch cites",
+      "blurb": "Thasian writer whose malicious anecdotes about Pericles, Cimon, and Themistocles Plutarch reads critically—useful for color, suspect for accuracy.",
+      "links": [
+        {
+          "characterId": "cimon"
+        }
+      ]
+    },
+    {
+      "id": "sophocles",
+      "names": [
+        "Sophocles"
+      ],
+      "relation": "Tragedian who served as general with him",
+      "blurb": "Served as fellow general on the Samian expedition; Pericles teased him for admiring a beautiful boy, reminding him that a general must have clean hands as well as clean eyes.",
+      "links": [
+        {
+          "characterId": "melissus"
+        }
+      ]
+    },
+    {
+      "id": "ion",
+      "names": [
+        "Ion"
+      ],
+      "relation": "Chian poet who met him",
+      "blurb": "Ion of Chios dined with Pericles and found him cold, haughty, and contemptuous of small talk—a contrast with Cimon's easy charm that Plutarch preserves as character testimony.",
+      "links": [
+        {
+          "characterId": "cimon"
+        }
+      ]
+    },
+    {
+      "id": "theophrastus",
+      "names": [
+        "Theophrastus"
+      ],
+      "relation": "Peripatetic source on his delivery",
+      "blurb": "Cited for the story that Pericles prepared his speeches carefully and prayed before mounting the bema—evidence for the gravity Anaxagoras's teaching gave his public manner.",
+      "links": [
+        {
+          "characterId": "anaxagoras"
+        },
+        {
+          "characterId": "damon"
+        }
+      ]
+    },
+    {
+      "id": "artemon",
+      "names": [
+        "Artemon",
+        "Periphoretus",
+        "Artemon Periphoretus"
+      ],
+      "relation": "Engineer of the Samian siege machines",
+      "blurb": "Mechanic said to have designed the engines that broke down Samos's walls; his litter-bound life on site gave him the nickname Periphoretus—though Plutarch doubts the chronology.",
+      "links": [
+        {
+          "characterId": "melissus"
+        }
+      ]
+    },
+    {
+      "id": "eupolis",
+      "names": [
+        "Eupolis"
+      ],
+      "relation": "Comic poet who mocked him",
+      "blurb": "Wrote Demes and other comedies ridiculing Pericles and his associates; Plutarch mines the stage for the hostile testimony that shadows official accounts.",
+      "links": [
+        {
+          "characterId": "cratinus"
+        }
+      ]
+    },
+    {
+      "id": "teleclides",
+      "names": [
+        "Teleclides"
+      ],
+      "relation": "Comic poet who attacked Pericles",
+      "blurb": "Listed Pericles's allies and targets in hostile verse that Plutarch quotes as evidence for how the demos perceived his power at its height.",
+      "links": [
+        {
+          "characterId": "eupolis"
+        },
+        {
+          "characterId": "cratinus"
+        }
+      ]
+    },
+    {
+      "id": "plistoanax",
+      "names": [
+        "Plistoanax"
+      ],
+      "relation": "Spartan king said to have been bribed",
+      "blurb": "Led the Peloponnesian invasion into Attica in 446 and then withdrew without fighting; enemies of Pericles claimed he had been bribed, and the king was fined and exiled.",
+      "links": [
+        {
+          "characterId": "archidamus"
+        },
+        {
+          "characterId": "cleandrides"
+        }
+      ]
+    },
+    {
+      "id": "cleandrides",
+      "names": [
+        "Cleandrides"
+      ],
+      "relation": "Spartan general exiled for bribery",
+      "blurb": "Commanded with Plistoanax on the Attic invasion; condemned in absentia for taking bribes, he fled to Thurii and there served as general—a cautionary tale in Pericles's Life.",
+      "links": [
+        {
+          "characterId": "plistoanax"
+        }
+      ]
+    },
+    {
+      "id": "idomeneus",
+      "names": [
+        "Idomeneus"
+      ],
+      "relation": "Source on Ephialtes's death",
+      "blurb": "Epicurean writer cited for the claim that Pericles, not Aristodicus, killed Ephialtes—a charge Plutarch finds incredible but records as part of the hostile tradition.",
+      "links": [
+        {
+          "characterId": "ephialtes"
+        }
+      ]
+    },
+    {
+      "id": "minerva",
+      "names": [
+        "Minerva",
+        "Athena"
+      ],
+      "relation": "Goddess of the Acropolis program",
+      "blurb": "Athena's great chryselephantine statue by Phidias was the crown of the Parthenon and the center of the Acropolis building program Pericles directed—divine patroness and political statement in one.",
+      "links": [
+        {
+          "characterId": "phidias"
+        }
+      ]
+    },
+    {
+      "id": "cleisthenes",
+      "names": [
+        "Cleisthenes"
+      ],
+      "relation": "Great-uncle; Alcmaeonid reformer",
+      "blurb": "Agariste's uncle who gave Athens the deme-based democracy Pericles later inherited and deepened; his blood in Pericles's veins carried both the Alcmaeonid curse and the democratic tradition.",
+      "links": [
+        {
+          "characterId": "agariste"
+        }
+      ]
+    },
+    {
+      "id": "juno-pericles",
+      "names": [
+        "Juno",
+        "Hera"
+      ],
+      "relation": "Goddess whose statue rivaled Phidias's Athena",
+      "blurb": "Plutarch mentions the statue of Juno at Argos by Polycletus as a work that impresses but does not inspire emulation—a foil to Athena's statue that crowned Pericles's building program.",
+      "links": [
+        {
+          "characterId": "phidias"
+        }
+      ]
+    },
+    {
+      "id": "jupiter-pericles",
+      "names": [
+        "Jupiter",
+        "Zeus"
+      ],
+      "relation": "God invoked in comic mockery of Pericles",
+      "blurb": "Comedy compared Pericles to Zeus Olympian for his long head and regal bearing; the joke also appears in political context when comics styled his authority as godlike.",
+      "links": [
+        {
+          "characterId": "cratinus"
+        }
+      ]
+    },
+    {
+      "id": "anacreon",
+      "names": [
+        "Anacreon"
+      ],
+      "relation": "Lyric poet whose verses disprove Artemon's story",
+      "blurb": "His poems mention Artemon Periphoretus several generations before the Samian war—evidence Heraclides Ponticus uses to refute the tale that Artemon was the siege engineer.",
+      "links": [
+        {
+          "characterId": "artemon"
+        }
+      ]
+    },
+    {
+      "id": "pisistratus-pericles",
+      "names": [
+        "Pisistratus"
+      ],
+      "relation": "Tyrant whose voice and manner Pericles recalled",
+      "blurb": "Old men who heard both noted the similarity of voice and gentleness of manner—a comparison Plutarch records without embarrassment, since Pisistratus too had once been the friend of the better sort.",
+      "links": [
+        {
+          "characterId": "pericles"
+        }
+      ]
+    },
+    {
+      "id": "callicrates",
+      "names": [
+        "Callicrates"
+      ],
+      "relation": "Architect of the Parthenon",
+      "blurb": "Named alongside Ictinus as builder of the Parthenon—one of the master craftsmen of the Acropolis program Pericles directed.",
+      "links": [
+        {
+          "characterId": "phidias"
+        },
+        {
+          "characterId": "minerva"
+        }
+      ]
     }
   ]
 }

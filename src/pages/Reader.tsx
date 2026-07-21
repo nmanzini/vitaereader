@@ -509,6 +509,7 @@ export function Reader() {
             paragraph={p}
             characters={annotations?.characters}
             locations={annotations?.locations}
+            nameResolutions={annotations?.nameResolutions}
             highlights={highlightsByPara.get(p.id)}
             onCharacter={annotations?.characters ? openCharacter : undefined}
             onLocation={annotations?.locations?.length ? openLocation : undefined}

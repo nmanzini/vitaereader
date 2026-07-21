@@ -75,7 +75,9 @@
     {
       "id": "varro",
       "names": [
-        "Varro"
+        "Varro",
+        "Terentius",
+        "Terentius Varro"
       ],
       "relation": "Consul of Cannae",
       "blurb": "Plebeian consul who forced battle at Cannae against Paulus’s caution; the disaster vindicated Fabius’s strategy too late.",
@@ -310,7 +312,10 @@
     {
       "id": "fabius-maximus",
       "names": [
-        "Fabius Maximus"
+        "Fabius Maximus",
+        "Fabius",
+        "Quintus Fabius Maximus",
+        "Cunctator"
       ],
       "relation": "Full honorific of the Delayer",
       "blurb": "The name Romans used for the dictator who saved the state by refusing Hannibal’s invitations to ruin.",
@@ -323,6 +328,39 @@
         },
         {
           "characterId": "maximus"
+        }
+      ]
+    },
+    {
+      "id": "lentulus-fab",
+      "names": [
+        "Cornelius Lentulus",
+        "Lentulus"
+      ],
+      "relation": "Young patrician who found Fabius after Cannae",
+      "blurb": "Recognized Fabius alone and on foot in the ruins after Cannae, dismounted to offer him his horse, and wept at the old man’s calm refusal of the consolation.",
+      "links": [
+        {
+          "characterId": "fabius-maximus"
+        },
+        {
+          "characterId": "hannibal"
+        }
+      ]
+    },
+    {
+      "id": "crassus-fab",
+      "names": [
+        "Crassus"
+      ],
+      "relation": "Colleague who refused to support Scipio against Fabius",
+      "blurb": "The Crassus who was Scipio’s consular colleague; Fabius urged him to block Scipio’s Africa expedition, but Crassus declined to move against his partner.",
+      "links": [
+        {
+          "characterId": "scipio"
+        },
+        {
+          "characterId": "fabius-maximus"
         }
       ]
     }

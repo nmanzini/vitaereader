@@ -359,6 +359,107 @@ describe('charMatch', () => {
     assert.deepEqual(segmentText('Hello', []), [{ type: 'text', text: 'Hello' }])
   })
 
+  it('requires resolutions for shared names in body text', () => {
+    const philips = [
+      {
+        id: 'philip',
+        names: ['Philip'],
+        blurb: 'King of Macedon and Alexander’s father.',
+        relation: 'Father',
+      },
+      {
+        id: 'philip-acarnanian',
+        names: ['Philip', 'Philip, the Acarnanian'],
+        blurb: 'Physician who cured Alexander in Cilicia.',
+        relation: 'Physician',
+      },
+      {
+        id: 'philip-india',
+        names: ['Philip'],
+        blurb: 'Friend appointed to a large Indian satrapy.',
+        relation: 'Friend; satrap',
+      },
+    ]
+    const text =
+      'His father Philip ruled Macedon. Till Philip, the Acarnanian, cured him. He appointed Philip, one of his friends.'
+    // Without resolutions, only the unique longer form links.
+    const bare = findCharacterMatches(text, philips)
+    assert.equal(bare.length, 1)
+    assert.equal(bare[0].characterId, 'philip-acarnanian')
+    assert.equal(bare[0].text, 'Philip, the Acarnanian')
+
+    const resolutions = [
+      {
+        paraId: 'p1',
+        start: 11,
+        end: 17,
+        characterId: 'philip',
+        note: 'father',
+      },
+      {
+        paraId: 'p1',
+        start: text.indexOf('appointed Philip') + 'appointed '.length,
+        end: text.indexOf('appointed Philip') + 'appointed '.length + 6,
+        characterId: 'philip-india',
+        note: 'friend satrap after Porus',
+      },
+    ]
+    const resolved = findCharacterMatches(text, philips, {
+      paraId: 'p1',
+      resolutions,
+      ambiguous: 'skip',
+    })
+    assert.deepEqual(
+      resolved.map((h) => h.characterId),
+      ['philip', 'philip-acarnanian', 'philip-india'],
+    )
+  })
+
+  it('falls back to first cast member for ambiguous sheet blurbs', () => {
+    const philips = [
+      {
+        id: 'philip',
+        names: ['Philip'],
+        blurb: 'Father',
+        relation: 'Father',
+      },
+      {
+        id: 'philip-india',
+        names: ['Philip'],
+        blurb: 'Satrap',
+        relation: 'Friend',
+      },
+    ]
+    const hits = findCharacterMatches('Feuds with Philip followed.', philips, {
+      ambiguous: 'first',
+    })
+    assert.equal(hits.length, 1)
+    assert.equal(hits[0].characterId, 'philip')
+  })
+
+  it('resolves Alexander’s shared Philip citations from committed review data', () => {
+    const root = join(dirname(fileURLToPath(import.meta.url)), '..')
+    const ann = JSON.parse(
+      readFileSync(join(root, 'public/data/annotations/alexander.json'), 'utf8'),
+    )
+    const work = JSON.parse(
+      readFileSync(join(root, 'public/data/works/alexander.json'), 'utf8'),
+    )
+    const para = work.paragraphs.find((p) => p.id === 'alexander-p088')
+    assert.ok(para)
+    const hits = findCharacterMatches(para.text, ann.characters, {
+      paraId: para.id,
+      resolutions: ann.nameResolutions,
+      ambiguous: 'skip',
+    })
+    const philip = hits.find((h) => h.text === 'Philip')
+    assert.ok(philip)
+    assert.equal(philip.characterId, 'philip-india')
+    assert.ok(
+      para.text.slice(philip.start, philip.end + 20).includes('one of his friends'),
+    )
+  })
+
   it('matches locations and prefers characters on equal-length ties', () => {
     const locs = [
       {

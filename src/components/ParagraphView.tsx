@@ -4,6 +4,7 @@ import {
   findAnnotationMatches,
   type CharacterAnnotation,
   type LocationAnnotation,
+  type NameResolution,
 } from '../lib/charMatch'
 import {
   segmentWithHighlights,
@@ -15,6 +16,8 @@ type Props = {
   paragraph: Paragraph
   characters?: readonly CharacterAnnotation[]
   locations?: readonly LocationAnnotation[]
+  /** LLM/reviewer span → characterId for ambiguous names in this work. */
+  nameResolutions?: readonly NameResolution[]
   highlights?: readonly HighlightSpan[]
   onCharacter?: (characterId: string) => void
   onLocation?: (locationId: string) => void
@@ -58,13 +61,19 @@ function renderSegments(
   onLocation: ((locationId: string) => void) | undefined,
   onHighlight: ((highlightId: string, markEl: HTMLElement) => void) | undefined,
   keyPrefix: string,
+  paraId: string,
+  nameResolutions: readonly NameResolution[] | undefined,
 ): ReactNode {
   const chars = characters?.length ? characters : []
   const locs = locations?.length ? locations : []
   const hl = highlights?.length ? highlights : []
   if (chars.length === 0 && locs.length === 0 && hl.length === 0) return text
 
-  const matches = findAnnotationMatches(text, chars, locs)
+  const matches = findAnnotationMatches(text, chars, locs, {
+    paraId,
+    resolutions: nameResolutions,
+    ambiguous: 'skip',
+  })
   const entities: EntitySpan[] = matches.map((m) =>
     m.kind === 'char'
       ? { kind: 'char', start: m.start, end: m.end, id: m.characterId }
@@ -125,6 +134,7 @@ export function ParagraphView({
   paragraph,
   characters,
   locations,
+  nameResolutions,
   highlights,
   onCharacter,
   onLocation,
@@ -146,6 +156,8 @@ export function ParagraphView({
           onLocation,
           onHighlight,
           paragraph.id,
+          paragraph.id,
+          nameResolutions,
         )}
       </p>
     )
@@ -172,6 +184,20 @@ export function ParagraphView({
           })
           .filter((h): h is HighlightSpan => h != null)
 
+        // Poem lines are sliced; shift resolutions into line-local offsets.
+        const lineResolutions = (nameResolutions ?? [])
+          .filter(
+            (r) =>
+              r.paraId === paragraph.id &&
+              r.start >= lineStart &&
+              r.end <= lineStart + line.length,
+          )
+          .map((r) => ({
+            ...r,
+            start: r.start - lineStart,
+            end: r.end - lineStart,
+          }))
+
         return (
           <span key={i}>
             {renderSegments(
@@ -183,6 +209,8 @@ export function ParagraphView({
               onLocation,
               onHighlight,
               `${paragraph.id}-L${i}`,
+              paragraph.id,
+              lineResolutions,
             )}
             {i < lines.length - 1 ? <br /> : null}
           </span>

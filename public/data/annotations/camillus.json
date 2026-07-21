@@ -100,6 +100,8 @@
     {
       "id": "furius",
       "names": [
+        "Marcus Furius Camillus",
+        "Camillus",
         "Furius"
       ],
       "relation": "Camillus’s gentile name",
@@ -370,6 +372,155 @@
         },
         {
           "characterId": "brennus"
+        }
+      ]
+    },
+    {
+      "id": "stolo",
+      "names": [
+        "Licinius Stolo",
+        "Stolo",
+        "Licinius"
+      ],
+      "relation": "Tribune of the people; reforming land-law agitator",
+      "blurb": "Raised a great sedition demanding that no one hold more than five hundred acres; the senate needed a dictator to pass the law, then caught Stolo himself violating it.",
+      "links": [
+        {
+          "characterId": "furius"
+        },
+        {
+          "characterId": "ambustus"
+        }
+      ]
+    },
+    {
+      "id": "ambustus",
+      "names": [
+        "Fabius Ambustus",
+        "Quintus Ambustus",
+        "Ambustus"
+      ],
+      "relation": "Envoy and soldier in the Gallic crisis",
+      "blurb": "Fabius Ambustus was one of the envoys who visited Delphi before the Veii siege; Quintus Ambustus, well-mounted, charged a Gaul in the hill skirmish that drew the Senones south.",
+      "links": [
+        {
+          "characterId": "stolo"
+        },
+        {
+          "characterId": "brennus"
+        }
+      ]
+    },
+    {
+      "id": "albinius",
+      "names": [
+        "Lucius Albinius",
+        "Albinius"
+      ],
+      "relation": "Devout citizen who rescued the Vestal Virgins",
+      "blurb": "Traveling by cart with his family during the Gallic rout, he made his own family walk so the Vestals and their sacred objects could ride to safety at Caere.",
+      "links": [
+        {
+          "characterId": "brennus"
+        },
+        {
+          "characterId": "juno"
+        }
+      ]
+    },
+    {
+      "id": "papirius",
+      "names": [
+        "Marcus Papirius",
+        "Papirius"
+      ],
+      "relation": "Senator who struck a Gaul with his staff",
+      "blurb": "Old senator sitting still in his chair in the Forum when the Gauls entered; struck a Gaul who stroked his beard, and was the first to die in the sack of the city.",
+      "links": [
+        {
+          "characterId": "brennus"
+        },
+        {
+          "characterId": "manlius"
+        }
+      ]
+    },
+    {
+      "id": "philotis",
+      "names": [
+        "Philotis",
+        "Tutula"
+      ],
+      "relation": "Handmaid who saved Rome from the Latins by deception",
+      "blurb": "Called Philotis or Tutula, this slave-woman persuaded the magistrates to send her and other handmaids disguised as free women into the Latin camp; she lit the signal fire.",
+      "links": [
+        {
+          "characterId": "furius"
+        }
+      ]
+    },
+    {
+      "id": "lucretius-cam",
+      "names": [
+        "Lucius Lucretius",
+        "Lucretius"
+      ],
+      "relation": "Magistrate who voted first on moving to Veii",
+      "blurb": "Senior officer whose turn it was to speak first when Rome debated abandoning the burned city for Veii; a centurion’s chance command interrupted him as a divine sign.",
+      "links": [
+        {
+          "characterId": "furius"
+        },
+        {
+          "characterId": "veii"
+        }
+      ]
+    },
+    {
+      "id": "heraclides",
+      "names": [
+        "Heraclides Ponticus",
+        "Heraclides"
+      ],
+      "relation": "Philosopher-historian who recorded the Gallic sack in Greece",
+      "blurb": "Wrote of a great army from the far west destroying a Greek city called Rome—Plutarch’s earliest Greek evidence for the sack, though he calls Heraclides high-flown.",
+      "links": [
+        {
+          "characterId": "brennus"
+        }
+      ]
+    },
+    {
+      "id": "aeneas-cam",
+      "names": [
+        "Aeneas"
+      ],
+      "relation": "Trojan ancestor invoked in the debate on Rome’s site",
+      "blurb": "Plutarch notes that the Palladium and Samothracian images were said to have come with Aeneas to Italy—relics stored in the inmost shrine whose rites Numa founded.",
+      "links": [
+        {
+          "characterId": "numa"
+        },
+        {
+          "characterId": "romulus"
+        }
+      ]
+    },
+    {
+      "id": "alexander-cam",
+      "names": [
+        "Alexander"
+      ],
+      "relation": "Macedonian king compared to Camillus in hypothetical match",
+      "blurb": "Plutarch entertains the conjecture of what would have happened had Alexander marched west and met Rome—Camillus’s Rome is the implied Roman champion.",
+      "links": [
+        {
+          "characterId": "furius"
+        },
+        {
+          "characterId": "alexander-life",
+          "label": "Alexander’s Life",
+          "workId": "alexander"
         }
       ]
     }

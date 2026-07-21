@@ -25,6 +25,65 @@
       ]
     },
     {
+      "id": "philip-acarnanian",
+      "names": [
+        "Philip, the Acarnanian",
+        "Philip"
+      ],
+      "relation": "Physician; friend who cured him in Cilicia",
+      "blurb": "Trusted Acarnanian doctor who risked the potion while Parmenio warned against him—Alexander drank and recovered.",
+      "links": [
+        {
+          "characterId": "parmenio"
+        },
+        {
+          "characterId": "darius"
+        }
+      ]
+    },
+    {
+      "id": "philip-theangela",
+      "names": [
+        "Philip of Theangela"
+      ],
+      "relation": "Historian cited on the Amazon visit",
+      "blurb": "One of the writers Plutarch lists who dismiss the Amazon tale as fiction, alongside Philip the Chalcidian.",
+      "links": [
+        {
+          "characterId": "philip-chalcidian"
+        }
+      ]
+    },
+    {
+      "id": "philip-chalcidian",
+      "names": [
+        "Philip the Chalcidian"
+      ],
+      "relation": "Historian cited on the Amazon visit",
+      "blurb": "Paired with Philip of Theangela among authorities who call the Amazon episode a fiction.",
+      "links": [
+        {
+          "characterId": "philip-theangela"
+        }
+      ]
+    },
+    {
+      "id": "philip-india",
+      "names": [
+        "Philip"
+      ],
+      "relation": "Friend; satrap after Porus",
+      "blurb": "After the Hydaspes, Alexander left Porus his kingdom and gave another friend—this Philip—a far larger neighboring government.",
+      "links": [
+        {
+          "characterId": "porus"
+        },
+        {
+          "characterId": "hephaestion"
+        }
+      ]
+    },
+    {
       "id": "olympias",
       "names": [
         "Olympias"
@@ -623,6 +682,779 @@
           "workId": "caesar"
         }
       ]
+    },
+    {
+      "id": "alexander",
+      "names": [
+        "Alexander"
+      ],
+      "relation": "Subject; conqueror of the Persian Empire",
+      "blurb": "Son of Philip and Olympias who crossed into Asia at twenty-two and never came back. He destroyed the Persian Empire, carried Greek culture to the edges of India, and died at Babylon before he was thirty-three—leaving the world divided among his generals and the question of his greatness permanently open.",
+      "links": [
+        {
+          "characterId": "philip"
+        },
+        {
+          "characterId": "olympias"
+        },
+        {
+          "characterId": "hephaestion"
+        }
+      ]
+    },
+    {
+      "id": "achilles",
+      "names": [
+        "Achilles"
+      ],
+      "relation": "Heroic model he carried to Asia",
+      "blurb": "Alexander kept the Iliad (in Aristotle's recension) under his pillow with a dagger, treating Achilles as his ancestor through Olympias and his ideal of glorious, brief life.",
+      "links": [
+        {
+          "characterId": "homer"
+        },
+        {
+          "characterId": "hephaestion"
+        }
+      ]
+    },
+    {
+      "id": "hercules",
+      "names": [
+        "Hercules"
+      ],
+      "relation": "Divine ancestor through Philip's line",
+      "blurb": "Philip's Argead house claimed Heraclid descent; Alexander invoked Hercules as a competing model alongside Achilles—the laborious civilizer against the glorious warrior.",
+      "links": [
+        {
+          "characterId": "philip"
+        },
+        {
+          "characterId": "bacchus"
+        }
+      ]
+    },
+    {
+      "id": "apollo",
+      "names": [
+        "Apollo"
+      ],
+      "relation": "God of Delphi and the Philippus oracle",
+      "blurb": "The Pythian oracle at Delphi saluted Alexander as son of the god before the campaign—one of the divine endorsements he collected to frame his conquest as heaven-blessed.",
+      "links": [
+        {
+          "characterId": "ammon"
+        }
+      ]
+    },
+    {
+      "id": "bacchus",
+      "names": [
+        "Bacchus",
+        "Dionysus"
+      ],
+      "relation": "Divine ancestor through Olympias's line",
+      "blurb": "Through the Aeacid–Dionysiac lineage Olympias claimed, Alexander was kin to Dionysus, whose Indian conquest he measured himself against and competed to surpass.",
+      "links": [
+        {
+          "characterId": "olympias"
+        },
+        {
+          "characterId": "hercules"
+        }
+      ]
+    },
+    {
+      "id": "ammon",
+      "names": [
+        "Jupiter Ammon",
+        "Ammon"
+      ],
+      "relation": "Oracle god at Siwa; possible divine father",
+      "blurb": "At the oracle of Zeus Ammon in the Libyan desert the priest addressed Alexander as son of the god—an answer he neither confirmed nor denied, and which colored every later claim to divinity.",
+      "links": [
+        {
+          "characterId": "apollo"
+        },
+        {
+          "characterId": "olympias"
+        }
+      ]
+    },
+    {
+      "id": "phoenix",
+      "names": [
+        "Phoenix"
+      ],
+      "relation": "Legendary figure Lysimachus enacted",
+      "blurb": "Tutor Lysimachus cast himself as Phoenix to Alexander's Achilles—a schoolroom fiction that still carried weight when the two travelled together on campaign.",
+      "links": [
+        {
+          "characterId": "lysimachus"
+        },
+        {
+          "characterId": "achilles"
+        }
+      ]
+    },
+    {
+      "id": "peucestes",
+      "names": [
+        "Peucestes"
+      ],
+      "relation": "Bodyguard who shielded him among the Malli",
+      "blurb": "Covered the wounded Alexander with the sacred shield from Ilion when the king leaped alone into the Mallian town; his courage saved Alexander's life in the most reckless moment of the whole campaign.",
+      "links": [
+        {
+          "characterId": "craterus"
+        }
+      ]
+    },
+    {
+      "id": "cassander",
+      "names": [
+        "Cassander"
+      ],
+      "relation": "Antipater's son; object of Alexander's hatred",
+      "blurb": "Laughed at Persians doing proskynesis—and received a near-fatal grip on his hair from Alexander in return. Plutarch records his hatred of Alexander's memory and the poisoning rumor that followed.",
+      "links": [
+        {
+          "characterId": "antipater"
+        }
+      ]
+    },
+    {
+      "id": "aristobulus",
+      "names": [
+        "Aristobulus"
+      ],
+      "relation": "Companion-historian of the campaign",
+      "blurb": "Wrote memoirs of the expedition that Plutarch cites alongside Ptolemy—more sympathetic to Alexander than Callisthenes, less candid than Cleitarchus.",
+      "links": [
+        {
+          "characterId": "ptolemy"
+        },
+        {
+          "characterId": "callisthenes"
+        }
+      ]
+    },
+    {
+      "id": "chares",
+      "names": [
+        "Chares"
+      ],
+      "relation": "Court usher and anecdotist",
+      "blurb": "Royal chamberlain who recorded the dinner-table stories and ceremonies of Alexander's court—the source behind many of Plutarch's intimate scenes and drinking anecdotes.",
+      "links": [
+        {
+          "characterId": "hephaestion"
+        }
+      ]
+    },
+    {
+      "id": "limnus",
+      "names": [
+        "Limnus"
+      ],
+      "relation": "Conspirator who implicated Philotas",
+      "blurb": "Man from Chalaestra whose plot against Alexander first surfaced through a lover rather than through proper military channels—the initial link in the chain that destroyed Philotas and Parmenio.",
+      "links": [
+        {
+          "characterId": "philotas"
+        },
+        {
+          "characterId": "parmenio"
+        }
+      ]
+    },
+    {
+      "id": "amyntas",
+      "names": [
+        "Amyntas"
+      ],
+      "relation": "Macedonian exile who fought for Darius",
+      "blurb": "Fled Philip's Macedon to the Persian court and served Darius, appearing among the opponents at Issus—one of the Greeks who chose the wrong side of history.",
+      "links": [
+        {
+          "characterId": "darius"
+        }
+      ]
+    },
+    {
+      "id": "pixodarus",
+      "names": [
+        "Pixodorus",
+        "Pixodarus"
+      ],
+      "relation": "Carian dynast in the marriage dispute",
+      "blurb": "Sought a Macedonian bride for his daughter; Philip planned Arrhidaeus for the match, but Alexander secretly intervened—a rash act that revealed his fear of being supplanted.",
+      "links": [
+        {
+          "characterId": "arrhidaeus"
+        },
+        {
+          "characterId": "thessalus"
+        }
+      ]
+    },
+    {
+      "id": "thessalus",
+      "names": [
+        "Thessalus"
+      ],
+      "relation": "Actor sent by Alexander to Pixodarus",
+      "blurb": "Tragic actor Alexander dispatched secretly to Caria to offer himself instead of Arrhidaeus—the blunder that led Philip to exile Alexander's closest friends.",
+      "links": [
+        {
+          "characterId": "pixodarus"
+        },
+        {
+          "characterId": "philip"
+        }
+      ]
+    },
+    {
+      "id": "dandamis",
+      "names": [
+        "Dandamis"
+      ],
+      "relation": "Indian sage who refused Alexander's summons",
+      "blurb": "Senior gymnosophist who told Alexander's envoy that he needed nothing the king could give and feared nothing he could take away—the encounter Plutarch uses to test Alexander's own claim to philosophy.",
+      "links": [
+        {
+          "characterId": "calanus"
+        }
+      ]
+    },
+    {
+      "id": "lysippus",
+      "names": [
+        "Lysippus"
+      ],
+      "relation": "Sculptor allowed to portray Alexander",
+      "blurb": "The only artist Alexander permitted to carve his likeness in bronze; Lysippus alone, Plutarch says, caught the tilt of the head and the liquid glance of the eyes.",
+      "links": [
+        {
+          "characterId": "apelles"
+        }
+      ]
+    },
+    {
+      "id": "apelles",
+      "names": [
+        "Apelles"
+      ],
+      "relation": "Painter authorized to portray him",
+      "blurb": "The greatest painter of the age and the only one Alexander commissioned for his official image—paired with Lysippus as the two artists who captured the king's likeness for posterity.",
+      "links": [
+        {
+          "characterId": "lysippus"
+        }
+      ]
+    },
+    {
+      "id": "rhoesaces",
+      "names": [
+        "Rhoesaces"
+      ],
+      "relation": "Persian who struck him at the Granicus",
+      "blurb": "Delivered a sword blow that sheared Alexander's helmet at the Granicus ford—saved from death only when Clitus cut down Rhoesaces from behind.",
+      "links": [
+        {
+          "characterId": "clitus"
+        },
+        {
+          "characterId": "spithridates"
+        }
+      ]
+    },
+    {
+      "id": "spithridates",
+      "names": [
+        "Spithridates"
+      ],
+      "relation": "Persian satrap who nearly killed him at the Granicus",
+      "blurb": "Raised his sword to cut down Alexander from behind after Rhoesaces's blow; Clitus severed his sword-arm in time—one of the closest moments of the whole campaign.",
+      "links": [
+        {
+          "characterId": "clitus"
+        },
+        {
+          "characterId": "rhoesaces"
+        }
+      ]
+    },
+    {
+      "id": "philoxenus",
+      "names": [
+        "Philoxenus"
+      ],
+      "relation": "Agent who offered Alexander beautiful slaves",
+      "blurb": "Wrote from the coast asking whether the king wished to buy beautiful boys—an offer Alexander found offensive and answered with sharp reproof for imputing such desires to him.",
+      "links": [
+        {
+          "characterId": "hagnon"
+        }
+      ]
+    },
+    {
+      "id": "hagnon",
+      "names": [
+        "Hagnon"
+      ],
+      "relation": "Companion who sent lavish gifts",
+      "blurb": "Sent the king silver-studded boots and other costly presents from Asia; Alexander's rebuke of him and Philoxenus illustrates his early restraint in luxury before the later Eastern habits took hold.",
+      "links": [
+        {
+          "characterId": "philoxenus"
+        }
+      ]
+    },
+    {
+      "id": "artabazus",
+      "names": [
+        "Artabazus"
+      ],
+      "relation": "Elderly Persian satrap; father of Barsine",
+      "blurb": "Old Persian nobleman who had lived at Philip's court as an exile; his long familiarity with Macedonians made him and his daughter Barsine figures Alexander treated with unusual warmth.",
+      "links": [
+        {
+          "characterId": "barsine"
+        }
+      ]
+    },
+    {
+      "id": "thalestris",
+      "names": [
+        "Thalestris"
+      ],
+      "relation": "Amazon queen in the disputed tale",
+      "blurb": "Said to have come with three hundred warrior women to meet Alexander and conceive a child by him; Plutarch lists the many sources who deny the story ever happened.",
+      "links": [
+        {
+          "characterId": "nearchus"
+        }
+      ]
+    },
+    {
+      "id": "medius",
+      "names": [
+        "Medius"
+      ],
+      "relation": "Host of Alexander's last banquet",
+      "blurb": "Larissaean companion at whose party Alexander drank heavily—the night from which he never recovered. Plutarch weighs the feast against the poisoning rumor.",
+      "links": [
+        {
+          "characterId": "cassander"
+        },
+        {
+          "characterId": "antipater"
+        }
+      ]
+    },
+    {
+      "id": "athenodorus",
+      "names": [
+        "Athenodorus"
+      ],
+      "relation": "Actor who performed at Alexander's court",
+      "blurb": "One of the two most celebrated tragic actors of the age; performed at the contests Alexander staged in Asia.",
+      "links": [
+        {
+          "characterId": "hephaestion"
+        }
+      ]
+    },
+    {
+      "id": "tireus",
+      "names": [
+        "Tireus"
+      ],
+      "relation": "Eunuch who fled and betrayed Darius's family",
+      "blurb": "Among the women of Darius's household; escaped the camp on horseback and carried word to Darius.",
+      "links": [
+        {
+          "characterId": "darius"
+        },
+        {
+          "characterId": "statira"
+        }
+      ]
+    },
+    {
+      "id": "bagoas",
+      "names": [
+        "Bagoas"
+      ],
+      "relation": "Favorite eunuch",
+      "blurb": "Persian eunuch who won a dancing prize and was kissed by Alexander before the whole army—one of Plutarch's glimpses of the Eastern court.",
+      "links": [
+        {
+          "characterId": "alexander"
+        }
+      ]
+    },
+    {
+      "id": "sisimithres",
+      "names": [
+        "Sisimithres"
+      ],
+      "relation": "Bactrian chief on an impregnable rock",
+      "blurb": "Held a sheer-sided rock Alexander chose to besiege; surrendered on terms and supplied Alexander with supplies.",
+      "links": [
+        {
+          "characterId": "roxana"
+        }
+      ]
+    },
+    {
+      "id": "cyrus-persian",
+      "names": [
+        "Cyrus"
+      ],
+      "relation": "Persian founder-king; model and comparison",
+      "blurb": "Alexander found Cyrus's tomb violated, punished the desecration, and measured his own conquests against the Persian founder's—the throne of Cyrus was a recurring symbolic prize.",
+      "links": [
+        {
+          "characterId": "darius"
+        }
+      ]
+    },
+    {
+      "id": "euripides-alex",
+      "names": [
+        "Euripides"
+      ],
+      "relation": "Tragedian quoted at court",
+      "blurb": "Lines from Euripides were quoted by Alexander and those around him on several occasions—Medea and Andromache especially—reflecting the literary culture of his Macedonian court.",
+      "links": [
+        {
+          "characterId": "aristotle"
+        }
+      ]
+    },
+    {
+      "id": "pythagoras-seer",
+      "names": [
+        "Pythagoras"
+      ],
+      "relation": "Soothsayer consulted at Babylon",
+      "blurb": "Diviner Alexander summoned at Babylon after Apollodorus had sacrificed; he reported the liver defective—an omen Alexander took gravely in his final days.",
+      "links": [
+        {
+          "characterId": "aristander"
+        }
+      ]
+    },
+    {
+      "id": "eratosthenes",
+      "names": [
+        "Eratosthenes"
+      ],
+      "relation": "Scholar-historian who recorded Olympias's words",
+      "blurb": "Cited by Plutarch for the tradition that Olympias told Alexander the secret of his divine birth as he set out on campaign—one of several sources Plutarch weighs.",
+      "links": [
+        {
+          "characterId": "olympias"
+        }
+      ]
+    }
+  ],
+  "nameResolutions": [
+    {
+      "paraId": "alexander-p002",
+      "start": 167,
+      "end": 173,
+      "characterId": "philip",
+      "note": "Father; king of Macedon (context)"
+    },
+    {
+      "paraId": "alexander-p002",
+      "start": 666,
+      "end": 672,
+      "characterId": "philip",
+      "note": "Father; king of Macedon (context)"
+    },
+    {
+      "paraId": "alexander-p002",
+      "start": 872,
+      "end": 878,
+      "characterId": "philip",
+      "note": "Father; king of Macedon (context)"
+    },
+    {
+      "paraId": "alexander-p002",
+      "start": 1264,
+      "end": 1270,
+      "characterId": "philip",
+      "note": "Father; king of Macedon (context)"
+    },
+    {
+      "paraId": "alexander-p003",
+      "start": 0,
+      "end": 6,
+      "characterId": "philip",
+      "note": "Father; king of Macedon (context)"
+    },
+    {
+      "paraId": "alexander-p005",
+      "start": 11,
+      "end": 17,
+      "characterId": "philip",
+      "note": "Father; king of Macedon (context)"
+    },
+    {
+      "paraId": "alexander-p006",
+      "start": 1801,
+      "end": 1807,
+      "characterId": "philip",
+      "note": "Father; king of Macedon (context)"
+    },
+    {
+      "paraId": "alexander-p007",
+      "start": 590,
+      "end": 596,
+      "characterId": "philip",
+      "note": "Father; king of Macedon (context)"
+    },
+    {
+      "paraId": "alexander-p007",
+      "start": 719,
+      "end": 725,
+      "characterId": "philip",
+      "note": "Father; king of Macedon (context)"
+    },
+    {
+      "paraId": "alexander-p008",
+      "start": 682,
+      "end": 688,
+      "characterId": "philip",
+      "note": "Father; king of Macedon (context)"
+    },
+    {
+      "paraId": "alexander-p009",
+      "start": 58,
+      "end": 64,
+      "characterId": "philip",
+      "note": "Father; king of Macedon (context)"
+    },
+    {
+      "paraId": "alexander-p009",
+      "start": 309,
+      "end": 315,
+      "characterId": "philip",
+      "note": "Father; king of Macedon (context)"
+    },
+    {
+      "paraId": "alexander-p009",
+      "start": 526,
+      "end": 532,
+      "characterId": "philip",
+      "note": "Father; king of Macedon (context)"
+    },
+    {
+      "paraId": "alexander-p009",
+      "start": 918,
+      "end": 924,
+      "characterId": "philip",
+      "note": "Father; king of Macedon (context)"
+    },
+    {
+      "paraId": "alexander-p009",
+      "start": 1880,
+      "end": 1886,
+      "characterId": "philip",
+      "note": "Father; king of Macedon (context)"
+    },
+    {
+      "paraId": "alexander-p014",
+      "start": 6,
+      "end": 12,
+      "characterId": "philip",
+      "note": "Father; king of Macedon (context)"
+    },
+    {
+      "paraId": "alexander-p014",
+      "start": 829,
+      "end": 835,
+      "characterId": "philip",
+      "note": "Father; king of Macedon (context)"
+    },
+    {
+      "paraId": "alexander-p015",
+      "start": 473,
+      "end": 479,
+      "characterId": "philip",
+      "note": "Father; king of Macedon (context)"
+    },
+    {
+      "paraId": "alexander-p015",
+      "start": 814,
+      "end": 820,
+      "characterId": "philip",
+      "note": "Father; king of Macedon (context)"
+    },
+    {
+      "paraId": "alexander-p015",
+      "start": 1282,
+      "end": 1288,
+      "characterId": "philip",
+      "note": "Father; king of Macedon (context)"
+    },
+    {
+      "paraId": "alexander-p016",
+      "start": 152,
+      "end": 158,
+      "characterId": "philip",
+      "note": "Father; king of Macedon (context)"
+    },
+    {
+      "paraId": "alexander-p016",
+      "start": 212,
+      "end": 218,
+      "characterId": "philip",
+      "note": "Father; king of Macedon (context)"
+    },
+    {
+      "paraId": "alexander-p016",
+      "start": 739,
+      "end": 745,
+      "characterId": "philip",
+      "note": "Father; king of Macedon (context)"
+    },
+    {
+      "paraId": "alexander-p016",
+      "start": 948,
+      "end": 954,
+      "characterId": "philip",
+      "note": "Father; king of Macedon (context)"
+    },
+    {
+      "paraId": "alexander-p016",
+      "start": 1344,
+      "end": 1350,
+      "characterId": "philip",
+      "note": "Father; king of Macedon (context)"
+    },
+    {
+      "paraId": "alexander-p017",
+      "start": 169,
+      "end": 175,
+      "characterId": "philip",
+      "note": "Father; king of Macedon (context)"
+    },
+    {
+      "paraId": "alexander-p020",
+      "start": 291,
+      "end": 297,
+      "characterId": "philip",
+      "note": "Father; king of Macedon (context)"
+    },
+    {
+      "paraId": "alexander-p021",
+      "start": 2522,
+      "end": 2528,
+      "characterId": "philip",
+      "note": "Father; king of Macedon (context)"
+    },
+    {
+      "paraId": "alexander-p027",
+      "start": 3927,
+      "end": 3933,
+      "characterId": "philip",
+      "note": "Father; king of Macedon (context)"
+    },
+    {
+      "paraId": "alexander-p032",
+      "start": 1837,
+      "end": 1843,
+      "characterId": "philip-acarnanian",
+      "note": "Physician curing Alexander; Parmenio’s warning"
+    },
+    {
+      "paraId": "alexander-p032",
+      "start": 2095,
+      "end": 2101,
+      "characterId": "philip-acarnanian",
+      "note": "Physician curing Alexander; Parmenio’s warning"
+    },
+    {
+      "paraId": "alexander-p032",
+      "start": 2306,
+      "end": 2312,
+      "characterId": "philip-acarnanian",
+      "note": "Physician curing Alexander; Parmenio’s warning"
+    },
+    {
+      "paraId": "alexander-p032",
+      "start": 3037,
+      "end": 3043,
+      "characterId": "philip-acarnanian",
+      "note": "Physician curing Alexander; Parmenio’s warning"
+    },
+    {
+      "paraId": "alexander-p043",
+      "start": 2383,
+      "end": 2389,
+      "characterId": "philip",
+      "note": "Father; king of Macedon (context)"
+    },
+    {
+      "paraId": "alexander-p043",
+      "start": 2549,
+      "end": 2555,
+      "characterId": "philip",
+      "note": "Father; king of Macedon (context)"
+    },
+    {
+      "paraId": "alexander-p044",
+      "start": 839,
+      "end": 845,
+      "characterId": "philip",
+      "note": "Father; king of Macedon (context)"
+    },
+    {
+      "paraId": "alexander-p069",
+      "start": 4757,
+      "end": 4763,
+      "characterId": "philip",
+      "note": "Father; king of Macedon (context)"
+    },
+    {
+      "paraId": "alexander-p070",
+      "start": 2570,
+      "end": 2576,
+      "characterId": "philip",
+      "note": "Father; king of Macedon (context)"
+    },
+    {
+      "paraId": "alexander-p077",
+      "start": 339,
+      "end": 345,
+      "characterId": "philip",
+      "note": "Father; king of Macedon (context)"
+    },
+    {
+      "paraId": "alexander-p088",
+      "start": 1343,
+      "end": 1349,
+      "characterId": "philip-india",
+      "note": "Friend appointed to a larger government after Porus"
+    },
+    {
+      "paraId": "alexander-p098",
+      "start": 1072,
+      "end": 1078,
+      "characterId": "philip",
+      "note": "Father; king of Macedon (context)"
+    },
+    {
+      "paraId": "alexander-p105",
+      "start": 578,
+      "end": 584,
+      "characterId": "philip",
+      "note": "Father; king of Macedon (context)"
     }
   ],
   "locations": [
