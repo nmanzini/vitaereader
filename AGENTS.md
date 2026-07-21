@@ -121,10 +121,10 @@ Optional character highlights (hand-authored, not from EPUB):
 
 ```
 public/data/annotations/<workId>.json
-  { workId, subject, characters: [{ id, names[], blurb, relation }] }
+  { workId, subject, characters: [{ id, names[], blurb, relation, links? }] }
 ```
 
-`names` are surface forms to match in paragraph text (longer first). Missing annotation files → no highlights (safe corpus-wide). Pilot: `theseus`.
+`names` are surface forms to match in paragraph text and in character-sheet blurbs (longer first). In the sheet, other cast names inside the blurb are tappable (same-work profile hop + Back). Optional `links` are validated by smoke but unused in UI. Missing annotation files → no highlights (safe corpus-wide).
 
 Expected shape (asserted by tests/smoke): **68 works, 22 pairs, 4 unpaired, ~740k words**.
 
@@ -156,7 +156,7 @@ npm run dev -- --host 127.0.0.1 --port 5175
 Minimum path:
 
 1. `/` — library loads; totals visible.
-2. `/` — pair rows are name links only (Theseus - Romulus - Comparison).
+2. `/` — pair rows are name links only (Theseus - Romulus - Comparison); unread underlined, mid-read progressive strikethrough after ~1 page, finished dull/no underline.
 3. `/read/theseus` — scroll: top+bottom spacers exist; footer shows `Loc …` when bottom chrome open.
 4. Switch layout to Pages (Settings):
    - Stable hooks: `[data-testid="reader-show-menu"]` then `[data-testid="reader-settings"]`.

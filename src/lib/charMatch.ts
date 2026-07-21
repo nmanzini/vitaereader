@@ -3,13 +3,10 @@
  * Pure: no DOM. Prefer longer surface forms first; never break mid-word.
  */
 
-/** Tappable related-profile ref from a character sheet. */
+/** Optional related-profile ref (smoke-validated; sheet uses in-blurb names). */
 export type CharacterLink = {
-  /** Target character `id` (same-work unless `workId` is set). */
   characterId: string
-  /** Other Life’s annotation file; omit for same-work links. */
   workId?: string
-  /** Button label; defaults to the target’s first name when same-work. */
   label?: string
 }
 
@@ -19,7 +16,7 @@ export type CharacterAnnotation = {
   names: string[]
   blurb: string
   relation: string
-  /** Related profiles (same-work preferred; optional cross-life). */
+  /** Optional; not rendered — blurb name-match drives in-sheet hops. */
   links?: CharacterLink[]
 }
 

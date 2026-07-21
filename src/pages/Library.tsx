@@ -1,32 +1,80 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, type ReactNode } from 'react'
 import { Link } from 'react-router-dom'
-import { formatWords, loadFinished } from '../lib/prefs'
+import {
+  formatWords,
+  loadFinished,
+  loadProgress,
+  type ProgressMap,
+} from '../lib/prefs'
 import {
   loadIndex,
-  pairWorks,
   type CorpusIndex,
+  type IndexPair,
   type IndexWorkRef,
 } from '../lib/corpus'
 import { libraryEntries } from '../lib/libraryOrder'
+import { libraryLinkState, struckCharCount } from '../lib/reading'
 import { useTheme } from '../lib/useTheme'
 import { ThemePicker } from '../components/ThemePicker'
 import './Library.css'
+
+type LinkItem = { work: IndexWorkRef; label: string }
+
+function pairLinkItems(pair: IndexPair): LinkItem[] {
+  return [
+    ...pair.greek.map((w) => ({ work: w, label: w.title })),
+    ...pair.roman.map((w) => ({ work: w, label: w.title })),
+    ...(pair.comparison
+      ? [{ work: pair.comparison, label: 'Comparison' }]
+      : []),
+  ]
+}
 
 function WorkLink({
   work,
   label,
   finished,
+  progress,
 }: {
   work: IndexWorkRef
   label: string
   finished: boolean
+  progress: number
 }) {
+  const state = libraryLinkState(progress, work.wordCount, finished)
+  const className = [
+    'life-link',
+    state === 'finished' ? 'is-finished' : '',
+    state === 'reading' ? 'is-reading' : '',
+  ]
+    .filter(Boolean)
+    .join(' ')
+
+  let body: ReactNode = label
+  if (state === 'reading') {
+    const n = struckCharCount(label, progress)
+    const chars = [...label]
+    body = (
+      <>
+        <span className="life-link-struck">{chars.slice(0, n).join('')}</span>
+        {chars.slice(n).join('')}
+      </>
+    )
+  }
+
   return (
     <Link
       to={`/read/${work.id}`}
-      className={finished ? 'life-link is-finished' : 'life-link'}
+      className={className}
+      aria-label={
+        state === 'finished'
+          ? `${label}, finished`
+          : state === 'reading'
+            ? `${label}, ${Math.round(progress * 100)} percent`
+            : undefined
+      }
     >
-      {label}
+      {body}
     </Link>
   )
 }
@@ -34,9 +82,11 @@ function WorkLink({
 function LifeLinks({
   items,
   finished,
+  progress,
 }: {
-  items: { work: IndexWorkRef; label: string }[]
+  items: LinkItem[]
   finished: Set<string>
+  progress: ProgressMap
 }) {
   return (
     <div className="life-links">
@@ -52,6 +102,7 @@ function LifeLinks({
             work={work}
             label={label}
             finished={finished.has(work.id)}
+            progress={progress[work.id] ?? 0}
           />
         </span>
       ))}
@@ -63,6 +114,7 @@ export function Library() {
   const [index, setIndex] = useState<CorpusIndex | null>(null)
   const [theme, setTheme] = useTheme()
   const [finished] = useState(() => loadFinished())
+  const [progress] = useState(() => loadProgress())
   const [error, setError] = useState<string | null>(null)
 
   useEffect(() => {
@@ -111,31 +163,14 @@ export function Library() {
             const num = String(i + 1).padStart(2, '0')
             if (entry.kind === 'pair') {
               const { pair } = entry
-              const done = pairWorks(pair).every((w) => finished.has(w.id))
               return (
-                <li key={pair.id} className={done ? 'is-finished' : undefined}>
+                <li key={pair.id}>
                   <div className="pair-row">
                     <span className="pair-num">{num}</span>
                     <LifeLinks
                       finished={finished}
-                      items={[
-                        ...pair.greek.map((w) => ({
-                          work: w,
-                          label: w.title,
-                        })),
-                        ...pair.roman.map((w) => ({
-                          work: w,
-                          label: w.title,
-                        })),
-                        ...(pair.comparison
-                          ? [
-                              {
-                                work: pair.comparison,
-                                label: 'Comparison',
-                              },
-                            ]
-                          : []),
-                      ]}
+                      progress={progress}
+                      items={pairLinkItems(pair)}
                     />
                   </div>
                 </li>
@@ -144,14 +179,12 @@ export function Library() {
 
             const { work } = entry
             return (
-              <li
-                key={work.id}
-                className={finished.has(work.id) ? 'is-finished' : undefined}
-              >
+              <li key={work.id}>
                 <div className="pair-row">
                   <span className="pair-num">{num}</span>
                   <LifeLinks
                     finished={finished}
+                    progress={progress}
                     items={[{ work, label: work.title }]}
                   />
                 </div>

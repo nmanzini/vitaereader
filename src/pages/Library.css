@@ -104,8 +104,28 @@
   text-decoration-color: color-mix(in srgb, var(--accent) 55%, transparent);
 }
 
+/* Mid-read: no underline; strike grows with word-fraction progress. */
+.life-link.is-reading,
+.life-link.is-reading:hover {
+  text-decoration: none;
+}
+
+.life-link-struck {
+  text-decoration: line-through;
+  text-decoration-thickness: 1.5px;
+  text-decoration-color: color-mix(in srgb, var(--ink) 55%, transparent);
+}
+
+/* Marked finished: dull, no underline, no strike. */
 .life-link.is-finished {
+  color: color-mix(in srgb, var(--ink-muted) 85%, transparent);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.life-link.is-finished:hover {
   color: var(--ink-muted);
+  text-decoration: none;
 }
 
 .library-footer {

@@ -13,11 +13,14 @@ import {
 } from '../scripts/text.mjs'
 import {
   formatEta,
+  libraryLinkState,
   locationCountFor,
   locationFromProgress,
   pageCountFor,
   pageIndexFromProgress,
   progressFromPage,
+  struckCharCount,
+  WORDS_PER_LIBRARY_PAGE,
 } from '../src/lib/reading.ts'
 import { libraryEntries } from '../src/lib/libraryOrder.ts'
 import {
@@ -159,6 +162,29 @@ describe('pagination math', () => {
     assert.equal(locationFromProgress(1, 100), 100)
     assert.equal(locationFromProgress(0.5, 5), 3)
     assert.equal(locationFromProgress(0, 1), 1)
+  })
+})
+
+describe('library link progress', () => {
+  it('stays unread until past one page of words', () => {
+    const words = 10_000
+    assert.equal(libraryLinkState(0, words, false), 'unread')
+    assert.equal(
+      libraryLinkState(WORDS_PER_LIBRARY_PAGE / words, words, false),
+      'unread',
+    )
+    assert.equal(
+      libraryLinkState((WORDS_PER_LIBRARY_PAGE + 1) / words, words, false),
+      'reading',
+    )
+    assert.equal(libraryLinkState(0.1, words, true), 'finished')
+  })
+
+  it('strikes at least the first letter, then grows with progress', () => {
+    assert.equal(struckCharCount('Theseus', 0.01), 1)
+    assert.equal(struckCharCount('Theseus', 0.5), 4)
+    assert.equal(struckCharCount('Theseus', 1), 7)
+    assert.equal(struckCharCount('', 0.5), 0)
   })
 })
 

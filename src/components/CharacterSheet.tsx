@@ -1,25 +1,17 @@
 import { useEffect, useId, useState } from 'react'
-import { Link } from 'react-router-dom'
-import type { CharacterAnnotation, CharacterLink } from '../lib/charMatch'
+import {
+  segmentText,
+  type CharacterAnnotation,
+} from '../lib/charMatch'
 import './CharacterSheet.css'
 
 type Props = {
   open: boolean
   character: CharacterAnnotation | null
   subject: string
-  /** Full cast for resolving same-work link targets. */
+  /** Full cast for resolving same-work name matches in the blurb. */
   characters: readonly CharacterAnnotation[]
-  currentWorkId: string
   onClose: () => void
-}
-
-function linkLabel(
-  link: CharacterLink,
-  characters: readonly CharacterAnnotation[],
-): string {
-  if (link.label?.trim()) return link.label.trim()
-  const hit = characters.find((c) => c.id === link.characterId)
-  return hit?.names[0] ?? link.characterId
 }
 
 /** Small Kindle-like popup: tap outside or Close to dismiss. */
@@ -28,7 +20,6 @@ export function CharacterSheet({
   character,
   subject,
   characters,
-  currentWorkId,
   onClose,
 }: Props) {
   const titleId = useId()
@@ -58,14 +49,15 @@ export function CharacterSheet({
 
   if (!open || !viewing) return null
 
-  const name = viewing.names[0] ?? viewing.id
-  const links = viewing.links ?? []
+  const current = viewing
+  const name = current.names[0] ?? current.id
+  const others = characters.filter((c) => c.id !== current.id)
+  const blurbSegments = segmentText(current.blurb, others)
 
-  function openSameWork(characterId: string) {
+  function openProfile(characterId: string) {
     const next = characters.find((c) => c.id === characterId)
-    if (!next || !viewing) return
-    if (next.id === viewing.id) return
-    setHistory((h) => [...h, viewing])
+    if (!next || next.id === current.id) return
+    setHistory((h) => [...h, current])
     setViewing(next)
   }
 
@@ -106,48 +98,27 @@ export function CharacterSheet({
           </button>
         </header>
         <p className="char-sheet-relation">
-          {viewing.relation}
+          {current.relation}
           {subject ? (
             <span className="char-sheet-subject"> · re {subject}</span>
           ) : null}
         </p>
-        <p className="char-sheet-blurb">{viewing.blurb}</p>
-        {links.length > 0 ? (
-          <nav className="char-sheet-links" aria-label="Related profiles">
-            {links.map((link) => {
-              const cross =
-                link.workId != null && link.workId !== currentWorkId
-              const label = linkLabel(link, characters)
-              if (cross) {
-                return (
-                  <Link
-                    key={`${link.workId}:${link.characterId}:${label}`}
-                    className="char-sheet-link"
-                    to={`/read/${link.workId}`}
-                    onClick={onClose}
-                  >
-                    {label}
-                    <span className="char-sheet-link-note"> · other Life</span>
-                  </Link>
-                )
-              }
-              const available = characters.some(
-                (c) => c.id === link.characterId,
-              )
-              if (!available) return null
-              return (
-                <button
-                  key={`same:${link.characterId}:${label}`}
-                  type="button"
-                  className="char-sheet-link"
-                  onClick={() => openSameWork(link.characterId)}
-                >
-                  {label}
-                </button>
-              )
-            })}
-          </nav>
-        ) : null}
+        <p className="char-sheet-blurb">
+          {blurbSegments.map((seg, i) =>
+            seg.type === 'char' ? (
+              <button
+                key={`${seg.characterId}:${i}`}
+                type="button"
+                className="char-sheet-inline"
+                onClick={() => openProfile(seg.characterId)}
+              >
+                {seg.text}
+              </button>
+            ) : (
+              <span key={`t:${i}`}>{seg.text}</span>
+            ),
+          )}
+        </p>
       </div>
     </div>
   )

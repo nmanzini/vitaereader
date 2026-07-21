@@ -76,33 +76,30 @@
   line-height: var(--leading);
 }
 
-.char-sheet-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.45rem 0.65rem;
-  margin-top: 1rem;
-  padding-top: 0.85rem;
-  border-top: 1px solid color-mix(in srgb, var(--ink) 12%, transparent);
-}
-
-.char-sheet-link {
-  font-size: 0.92rem;
-  color: var(--accent);
-  text-decoration: none;
-  padding: 0.2rem 0;
+/* Names in the blurb that already have a profile — tap opens that sheet. */
+.char-sheet-inline {
+  display: inline;
+  margin: 0;
+  padding: 0;
+  border: 0;
   background: none;
-  border: none;
+  font: inherit;
+  color: inherit;
   cursor: pointer;
-  font-family: inherit;
-  line-height: 1.35;
-}
-
-.char-sheet-link:hover,
-.char-sheet-link:focus-visible {
+  font-style: italic;
   text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.14em;
+  text-decoration-color: color-mix(in srgb, var(--ink) 28%, transparent);
 }
 
-.char-sheet-link-note {
-  color: var(--ink-muted);
-  font-size: 0.82em;
+.char-sheet-inline:hover,
+.char-sheet-inline:focus-visible {
+  color: var(--accent);
+  text-decoration-color: color-mix(in srgb, var(--accent) 50%, transparent);
+}
+
+.char-sheet-inline:focus-visible {
+  outline: 2px solid color-mix(in srgb, var(--accent) 45%, transparent);
+  outline-offset: 2px;
 }

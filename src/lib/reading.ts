@@ -61,3 +61,34 @@ export function locationFromProgress(
     Math.max(1, Math.round(clamped * (locationCount - 1)) + 1),
   )
 }
+
+/**
+ * Approx. words on one mobile reading “page” — library progress UI ignores
+ * anything short of this so a peek at the first screen doesn’t mark started.
+ */
+export const WORDS_PER_LIBRARY_PAGE = 250
+
+export type LibraryLinkState = 'unread' | 'reading' | 'finished'
+
+/** Library name-link visual state from prefs. */
+export function libraryLinkState(
+  progress: number,
+  wordCount: number,
+  finished: boolean,
+): LibraryLinkState {
+  if (finished) return 'finished'
+  const wordsRead = Math.min(1, Math.max(0, progress)) * Math.max(0, wordCount)
+  if (wordsRead > WORDS_PER_LIBRARY_PAGE) return 'reading'
+  return 'unread'
+}
+
+/**
+ * How many leading characters of a label to strikethrough while reading.
+ * At least one (first letter) once past the one-page gate; grows with progress.
+ */
+export function struckCharCount(label: string, progress: number): number {
+  const len = [...label].length
+  if (len <= 0) return 0
+  const clamped = Math.min(1, Math.max(0, progress))
+  return Math.min(len, Math.max(1, Math.round(clamped * len)))
+}
