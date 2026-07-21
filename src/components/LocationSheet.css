@@ -104,10 +104,10 @@
   color: inherit;
   cursor: pointer;
   text-decoration: underline;
-  text-decoration-style: dotted;
+  text-decoration-style: dashed;
   text-decoration-thickness: 1px;
   text-underline-offset: 0.14em;
-  text-decoration-color: color-mix(in srgb, var(--ink) 28%, transparent);
+  text-decoration-color: var(--loc-underline);
 }
 
 .loc-sheet-inline:hover,

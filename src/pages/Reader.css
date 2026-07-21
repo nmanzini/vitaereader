@@ -507,7 +507,8 @@
   outline-offset: 2px;
 }
 
-/* Place highlights — dotted underline (not italic) so they read apart from people. */
+/* Place highlights — dashed underline (not italic) so they read apart from people.
+   Dashed renders more reliably than dotted on mobile WebKit/Silk. */
 .loc-ref {
   display: inline;
   padding: 0;
@@ -519,9 +520,9 @@
   color: inherit;
   cursor: pointer;
   text-decoration: underline;
-  text-decoration-style: dotted;
-  /* Fixed 1px — from-font is heavy under Georgia; theme token for night balance. */
-  text-decoration-color: var(--char-underline);
+  text-decoration-style: dashed;
+  /* Fixed 1px — stronger token so places stay visible on mobile. */
+  text-decoration-color: var(--loc-underline);
   text-decoration-thickness: 1px;
   text-underline-offset: 0.18em;
   text-decoration-skip-ink: auto;
@@ -530,7 +531,7 @@
 
 .loc-ref:hover,
 .loc-ref:focus-visible {
-  text-decoration-color: color-mix(in srgb, var(--accent) 45%, transparent);
+  text-decoration-color: color-mix(in srgb, var(--accent) 55%, transparent);
 }
 
 .loc-ref:focus-visible {
