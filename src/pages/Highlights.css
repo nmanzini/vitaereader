@@ -27,8 +27,8 @@
   color: var(--ink-muted);
   text-decoration: underline;
   text-decoration-thickness: 1px;
-  text-underline-offset: 0.14em;
-  text-decoration-color: color-mix(in srgb, var(--ink) 22%, transparent);
+  text-underline-offset: 0.2em;
+  text-decoration-color: var(--link-underline);
 }
 
 .highlights-back a:hover {
@@ -135,8 +135,8 @@
   padding: 0.15rem 0;
   text-decoration: underline;
   text-decoration-thickness: 1px;
-  text-underline-offset: 0.14em;
-  text-decoration-color: color-mix(in srgb, var(--ink) 20%, transparent);
+  text-underline-offset: 0.2em;
+  text-decoration-color: var(--link-underline);
 }
 
 .hl-action:hover,

@@ -77,6 +77,7 @@ export function SettingsSheet({
               <button
                 key={f.id}
                 type="button"
+                data-font={f.id}
                 className={
                   reading.font === f.id
                     ? 'settings-chip is-active'
