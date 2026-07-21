@@ -1,0 +1,507 @@
+{
+  "workId": "agesilaus",
+  "subject": "Agesilaus",
+  "characters": [
+    {
+      "id": "agesilaus",
+      "names": ["Agesilaus"],
+      "relation": "Subject; king of Sparta",
+      "blurb": "Lame from birth yet the most formidable Spartan commander of his era, who drove Persian satraps from their provinces and held Sparta against Epaminondas's invasion. He died sailing home from Egyptian mercenary service in his eighty-fourth year, still earning his country's wages.",
+      "links": [
+        {"characterId": "lysander"},
+        {"characterId": "epaminondas"},
+        {"characterId": "archidamus"}
+      ]
+    },
+    {
+      "id": "archidamus",
+      "names": ["Archidamus"],
+      "relation": "Father; king of Sparta before him",
+      "blurb": "Archidamus II, son of Zeuxidamus, who left two sons—Agis the elder by Lampido, and Agesilaus the younger by Eupolia. His reign is the starting point from which Plutarch traces Agesilaus's unexpected path to the throne.",
+      "links": [
+        {"characterId": "agis"},
+        {"characterId": "agesilaus"},
+        {"characterId": "eupolia"}
+      ]
+    },
+    {
+      "id": "eupolia",
+      "names": ["Eupolia"],
+      "relation": "Mother of Agesilaus; daughter of Melesippidas",
+      "blurb": "Second queen of Archidamus whose son's junior birth destined him for a private life under Sparta's communal discipline. Chance and Lysander's ambition changed that, raising Eupolia's younger boy to the throne over his brother's disputed heir.",
+      "links": [
+        {"characterId": "archidamus"},
+        {"characterId": "agesilaus"}
+      ]
+    },
+    {
+      "id": "agis",
+      "names": ["Agis"],
+      "relation": "Elder brother; king whose succession was disputed",
+      "blurb": "Agis II held the throne before Agesilaus. He refused to acknowledge his queen Timaea's child as his own, claiming Alcibiades was the father—a suspicion that left Leotychides vulnerable to the bastardy charge Agesilaus would later exploit.",
+      "links": [
+        {"characterId": "leotychides"},
+        {"characterId": "alcibiades"},
+        {"characterId": "timaea"}
+      ]
+    },
+    {
+      "id": "leotychides",
+      "names": ["Leotychides"],
+      "relation": "Disputed heir; Agis's rejected son",
+      "blurb": "Publicly acknowledged as Agis's son but suspected of being Alcibiades's child. Lysander turned the oracle's warning against him, and Agesilaus used the bastard charge to exclude him entirely from the succession and seize the private estate of Agis as well as his throne.",
+      "links": [
+        {"characterId": "agis"},
+        {"characterId": "lysander"}
+      ]
+    },
+    {
+      "id": "lysander",
+      "names": ["Lysander"],
+      "relation": "Naval hero who secured Agesilaus's succession",
+      "blurb": "The architect of Spartan naval supremacy after Aegospotami, who championed Agesilaus for the throne and joined the Asian campaign expecting to rule through his protégé. He found himself pointedly sidelined—Agesilaus made it clear that all favors must flow through the king—and was sent off to the Hellespont to cool his ambitions.",
+      "links": [
+        {"characterId": "agesilaus"},
+        {"characterId": "spithridates"},
+        {"characterId": "leotychides"}
+      ]
+    },
+    {
+      "id": "alcibiades",
+      "names": ["Alcibiades"],
+      "relation": "Athenian exile; seduced Queen Timaea",
+      "blurb": "Came to Sparta as an Athenian exile after Sicily and became intimate with Queen Timaea while Agis was away at war. The subsequent doubt over Leotychides's parentage indirectly cleared the path for Agesilaus by exposing the succession to challenge.",
+      "links": [
+        {"characterId": "agis"},
+        {"characterId": "timaea"}
+      ]
+    },
+    {
+      "id": "timaea",
+      "names": ["Timaea"],
+      "relation": "Queen of Agis; Alcibiades's lover",
+      "blurb": "Wife of King Agis who, according to the historian Duris, was not entirely displeased by the rumor of Alcibiades's paternity and whispered the child's true name in private. Her intimacy with Alcibiades made Leotychides's legitimacy a perpetual question that Agesilaus turned to his advantage.",
+      "links": [
+        {"characterId": "agis"},
+        {"characterId": "alcibiades"}
+      ]
+    },
+    {
+      "id": "tisaphernes",
+      "names": ["Tisaphernes"],
+      "relation": "Persian satrap of Lydia; broke his treaty",
+      "blurb": "At first afraid of Agesilaus and willing to treat for Greek liberty, he broke faith once he had gathered sufficient force. His repeated treachery gave Agesilaus the moral high ground and led directly to the Greek cavalry victories on the plain of Sardis.",
+      "links": [
+        {"characterId": "agesilaus"},
+        {"characterId": "pharnabazus"}
+      ]
+    },
+    {
+      "id": "pharnabazus",
+      "names": ["Pharnabazus"],
+      "relation": "Persian satrap of Phrygia; dignified adversary",
+      "blurb": "Met Agesilaus in an open-field conference—arriving with rich carpets to recline upon, he saw Agesilaus lying on the grass and chose to sit beside him. Their mutual respect could not prevent conflict; Pharnabazus later used Persian gold to turn Greek city-states against Sparta and drive Agesilaus from Asia.",
+      "links": [
+        {"characterId": "tisaphernes"},
+        {"characterId": "apollophanes"},
+        {"characterId": "spithridates"}
+      ]
+    },
+    {
+      "id": "spithridates",
+      "names": ["Spithridates"],
+      "relation": "Persian noble who defected to the Greeks",
+      "blurb": "A Persian of Pharnabazus's province whom Lysander procured for the Greek cause, bringing two hundred horsemen and a large supply of money. When Herippidas's excessive accounting of plunder insulted him, Spithridates abandoned the Greeks—a loss Agesilaus felt deeply.",
+      "links": [
+        {"characterId": "pharnabazus"},
+        {"characterId": "herippidas"},
+        {"characterId": "lysander"}
+      ]
+    },
+    {
+      "id": "herippidas",
+      "names": ["Herippidas"],
+      "relation": "Spartan general who drove away the ally Spithridates",
+      "blurb": "Commanded the force that raided Pharnabazus's camp and collected great plunder, then alienated Spithridates by insisting on a strict accounting of every item seized—a piece of Spartan parsimony that cost the Greeks their most valuable Persian ally.",
+      "links": [
+        {"characterId": "spithridates"},
+        {"characterId": "agesilaus"}
+      ]
+    },
+    {
+      "id": "apollophanes",
+      "names": ["Apollophanes"],
+      "relation": "Cyzican host who arranged the Pharnabazus conference",
+      "blurb": "Guest-friend to both Agesilaus and Pharnabazus, he brokered the famous open-air meeting between the two commanders—one of the few moments in the campaign when honest words passed across the battle lines without deception.",
+      "links": [
+        {"characterId": "pharnabazus"},
+        {"characterId": "agesilaus"}
+      ]
+    },
+    {
+      "id": "cotys",
+      "names": ["Cotys"],
+      "relation": "King of Paphlagonia; allied with Agesilaus",
+      "blurb": "Joined Agesilaus's league willingly, drawn by the Spartan's reputation for personal honesty and virtue rather than by force or inducement. His alliance extended Greek influence toward the Black Sea coast and showed how Agesilaus's character could win allies that arms alone could not.",
+      "links": [
+        {"characterId": "agesilaus"}
+      ]
+    },
+    {
+      "id": "epaminondas",
+      "names": ["Epaminondas"],
+      "relation": "Theban general; broke Spartan supremacy at Leuctra",
+      "blurb": "Victor of Leuctra and Mantinea, who invaded the Laconian heartland for the first time in six centuries and marched within sight of Sparta itself. He treated Agesilaus with the courtesy due a great commander even as he stripped Sparta of everything but its ancient walls, and died at Mantinea in the very moment of his greatest victory.",
+      "links": [
+        {"characterId": "agesilaus"},
+        {"characterId": "anticrates"}
+      ]
+    },
+    {
+      "id": "phoebidas",
+      "names": ["Phoebidas"],
+      "relation": "Spartan general who seized the Cadmea in peacetime",
+      "blurb": "Surprised and garrisoned the Theban citadel during a march to Olynthus, an act of naked aggression in peacetime for which he was fined but not stripped of command—Agesilaus argued that the deed was beneficial regardless of the doer's authority. The injustice lit a slow fuse that exploded at Leuctra.",
+      "links": [
+        {"characterId": "agesilaus"},
+        {"characterId": "sphodrias"}
+      ]
+    },
+    {
+      "id": "sphodrias",
+      "names": ["Sphodrias"],
+      "relation": "Spartan officer acquitted despite raiding Attica",
+      "blurb": "Attempted a night march to seize the Piraeus and plunder Attica—an adventure that failed and drew Athens into the war against Sparta. Agesilaus contrived his acquittal to spare his son Archidamus the grief of losing Cleonymus's father; the political cost to Sparta in credibility was severe.",
+      "links": [
+        {"characterId": "phoebidas"},
+        {"characterId": "archidamus-son"},
+        {"characterId": "cleonymus"}
+      ]
+    },
+    {
+      "id": "archidamus-son",
+      "names": ["Archidamus, son of Agesilaus"],
+      "relation": "Agesilaus's son; later king of Sparta",
+      "blurb": "Pleaded tearfully with his father for Sphodrias's acquittal, out of his love for Cleonymus. Later he led the Lacedaemonians to victory in the Tearless Battle against the Arcadians, a heartening if isolated triumph after Leuctra, and succeeded Agesilaus on the throne.",
+      "links": [
+        {"characterId": "sphodrias"},
+        {"characterId": "cleonymus"},
+        {"characterId": "agesilaus"}
+      ]
+    },
+    {
+      "id": "cleonymus",
+      "names": ["Cleonymus"],
+      "relation": "Sphodrias's son; beloved by Archidamus",
+      "blurb": "Beautiful son of the reckless Sphodrias, whose tears and appeals moved Archidamus to risk his father's displeasure by begging for the acquittal. His private friendship had public consequences: Agesilaus's indulgence of his son's love broke Sparta's credit with Athens.",
+      "links": [
+        {"characterId": "sphodrias"},
+        {"characterId": "archidamus-son"}
+      ]
+    },
+    {
+      "id": "xenophon",
+      "names": ["Xenophon"],
+      "relation": "Historian and admirer of Agesilaus",
+      "blurb": "Soldier and writer who had led the Ten Thousand home through Persia and remained devoted to Agesilaus's memory. Plutarch notes that even Xenophon's partiality—a privilege allowed him as a special reward for his other merits—could not honestly place Agesilaus's victories level with Pompey's trophies.",
+      "links": [
+        {"characterId": "agesilaus"}
+      ]
+    },
+    {
+      "id": "antalcidas",
+      "names": ["Antalcidas"],
+      "relation": "Spartan diplomat; architect of the King's Peace",
+      "blurb": "Negotiated the peace of 387 BC under which Persia became the guarantor of Greek autonomy—a settlement Agesilaus exploited to settle scores with Thebes while resenting the humiliation of Persian arbitration. Agesilaus himself acknowledged that a thousand Persian archers, meaning their gold, had driven him out of Asia.",
+      "links": [
+        {"characterId": "agesilaus"}
+      ]
+    },
+    {
+      "id": "dionysius",
+      "names": ["Dionysius"],
+      "relation": "Tyrant of Syracuse; sent military aid to Sparta",
+      "blurb": "Dispatched reinforcements from Sicily that allowed Archidamus to win the Tearless Battle against the Arcadians—a clean victory without a single Spartan killed. The aid showed that Sparta could still win in the open field even in the long shadow of Leuctra.",
+      "links": [
+        {"characterId": "archidamus-son"}
+      ]
+    },
+    {
+      "id": "anticrates",
+      "names": ["Anticrates"],
+      "relation": "Laconian who fatally wounded Epaminondas at Mantinea",
+      "blurb": "Struck Epaminondas with a spear—or, as Dioscorides says, a sword—in the moment of the Theban's final victory. The Spartans so dreaded Epaminondas that they honored Anticrates's descendants with the honorary surname 'swordsmen' down to Plutarch's own time.",
+      "links": [
+        {"characterId": "epaminondas"}
+      ]
+    },
+    {
+      "id": "tachos",
+      "names": ["Tachos"],
+      "relation": "Egyptian rebel pharaoh who hired Agesilaus",
+      "blurb": "Engaged Agesilaus and his Greek mercenaries for his revolt against Persia but reserved the supreme command for himself and gave the fleet to Chabrias, leaving Agesilaus captain of the mercenaries only. His arrogance and vanity drove Agesilaus to abandon him for Nectanabis when the opportunity arose.",
+      "links": [
+        {"characterId": "agesilaus"},
+        {"characterId": "chabrias"},
+        {"characterId": "nectanabis"}
+      ]
+    },
+    {
+      "id": "nectanabis",
+      "names": ["Nectanabis", "Nectanebo"],
+      "relation": "Rebel Egyptian prince; Agesilaus's last patron",
+      "blurb": "Rose from the Mendesian province against Tachos and won Agesilaus's allegiance by granting him the supreme command—the respect Tachos had denied. With Agesilaus's tactical genius he outmaneuvered a besieging force of a hundred thousand men and secured the Egyptian throne.",
+      "links": [
+        {"characterId": "tachos"},
+        {"characterId": "agesilaus"}
+      ]
+    },
+    {
+      "id": "chabrias",
+      "names": ["Chabrias"],
+      "relation": "Athenian general; commanded the Egyptian fleet under Tachos",
+      "blurb": "Distinguished Athenian commander who held the naval appointment while Agesilaus led the mercenaries on land—two distinguished exiles in the service of the same Egyptian master, each watching the other with professional interest and personal reserve.",
+      "links": [
+        {"characterId": "tachos"},
+        {"characterId": "agesilaus"}
+      ]
+    },
+    {
+      "id": "agamemnon",
+      "names": ["Agamemnon"],
+      "relation": "Mythic model; appeared in Agesilaus's dream at Aulis",
+      "blurb": "In a dream at Aulis a figure told Agesilaus he was only the second commander ever to lead all the Greeks—Agamemnon being the first—and urged him to sacrifice there as Agamemnon had before sailing for Troy. Theban priests interrupted the rite, a shadow over the whole campaign.",
+      "links": [
+        {"characterId": "agesilaus"}
+      ]
+    },
+    {
+      "id": "demaratus",
+      "names": ["Demaratus"],
+      "relation": "Corinthian guest-friend invoked in the comparison",
+      "blurb": "A Corinthian who wept for joy on seeing Alexander seated on the throne of Darius, saying those Greeks who missed the sight had lost a great pleasure. Plutarch turns the remark against him: what was truly lost was the chance that Agesilaus—had he not been recalled—might have been the one to sit there.",
+      "links": [
+        {"characterId": "agesilaus"}
+      ]
+    },
+    {
+      "id": "pompey-cross",
+      "names": ["Pompey"],
+      "relation": "Roman pair in the Parallel Lives",
+      "blurb": "Pompey the Great is Agesilaus's Roman parallel: both rose through powerful patrons they ultimately outgrew, both commanded vast eastern campaigns that ended in political frustration, and both died far from home—Agesilaus on the African coast, Pompey on an Egyptian shore.",
+      "links": [
+        {"characterId": "pompey", "workId": "pompey"}
+      ]
+    }
+  ],
+  "nameResolutions": [],
+  "locations": [
+    {
+      "id": "sparta",
+      "names": ["Sparta", "Lacedaemon"],
+      "relation": "Agesilaus's city and throne",
+      "modern": "Sparti, Greece",
+      "lat": 37.07,
+      "lon": 22.43,
+      "blurb": "Agesilaus ruled here for nearly forty years, defending it against Epaminondas's invasion—the first enemy army to enter Laconia in six centuries—without walls and without retreating. He kept his hold on it by courage, cunning, and the willingness to make his person the city's only rampart."
+    },
+    {
+      "id": "laconia",
+      "names": ["Laconia"],
+      "relation": "Spartan heartland held inviolate for six centuries",
+      "modern": "Laconia, Greece",
+      "lat": 36.9,
+      "lon": 22.5,
+      "blurb": "The territory Sparta had kept from enemy feet for six hundred years until Epaminondas led his great army in after Leuctra, burning estates and testing the Spartans' nerve. Agesilaus chose to hold the city rather than face the invaders in the open field."
+    },
+    {
+      "id": "eurotas",
+      "names": ["Eurotas"],
+      "relation": "River of Sparta; barrier against Epaminondas",
+      "modern": "Evrotas River, Greece",
+      "lat": 36.95,
+      "lon": 22.52,
+      "blurb": "Swollen with snowmelt when Epaminondas tried to force a crossing and attack Sparta directly. The icy flood and Agesilaus's steady positioning on the high bank made the passage too costly, and the Thebans withdrew."
+    },
+    {
+      "id": "aulis",
+      "names": ["Aulis"],
+      "relation": "Boeotian port where Agesilaus sacrificed before Asia",
+      "modern": "Avlis, Greece",
+      "lat": 38.42,
+      "lon": 23.6,
+      "blurb": "The harbour from which Agamemnon's fleet had sailed for Troy. Agesilaus began a sacrifice here in deliberate imitation of that voyage, but Theban priests interrupted the rite, scattering what had been offered—a bad omen that shadowed the campaign from its start."
+    },
+    {
+      "id": "ephesus",
+      "names": ["Ephesus"],
+      "relation": "Agesilaus's main Asian base of operations",
+      "modern": "Selçuk, Turkey",
+      "lat": 37.94,
+      "lon": 27.34,
+      "blurb": "Where Agesilaus found Lysander's influence insufferably great and moved swiftly to diminish it. He used the city to raise and discipline his cavalry, displayed stripped Persian prisoners to show Greeks what soft opponents they faced, and turned it into the engine of his Asian campaign."
+    },
+    {
+      "id": "hellespont",
+      "names": ["Hellespont"],
+      "relation": "Strait into Asia; where Lysander was sent",
+      "modern": "Dardanelles, Turkey",
+      "lat": 40.2,
+      "lon": 26.4,
+      "blurb": "The narrow crossing into Asia Minor from which Lysander procured Spithridates's defection and the money that helped launch the inland campaign. Agesilaus used the posting to remove his over-mighty patron from the army's centre of gravity."
+    },
+    {
+      "id": "phrygia",
+      "names": ["Phrygia"],
+      "relation": "Province of Pharnabazus; scene of the famous conference",
+      "modern": "Central Anatolia, Turkey",
+      "lat": 39.5,
+      "lon": 30.0,
+      "blurb": "The inland satrapy where Agesilaus met Pharnabazus in their celebrated open-air exchange, and where Herippidas's raid on Pharnabazus's camp produced great plunder but cost the Greeks their Persian ally Spithridates."
+    },
+    {
+      "id": "cyzicus",
+      "names": ["Cyzicus"],
+      "relation": "City of Apollophanes; site of the Pharnabazus meeting",
+      "modern": "Kapıdağ Peninsula, Turkey",
+      "lat": 40.37,
+      "lon": 27.89,
+      "blurb": "Propontine city whose notable citizen Apollophanes served as guest-friend to both Agesilaus and Pharnabazus, brokering their celebrated encounter on a strip of open ground and allowing honest words to pass between two adversaries who each understood the other."
+    },
+    {
+      "id": "paphlagonia",
+      "names": ["Paphlagonia"],
+      "relation": "Northern kingdom whose king allied willingly with Agesilaus",
+      "modern": "Kastamonu–Bartın region, Turkey",
+      "lat": 41.5,
+      "lon": 33.0,
+      "blurb": "Remote coastal region north of Phrygia whose king Cotys joined Agesilaus's league from personal admiration rather than compulsion—evidence that the Spartan's reputation for virtue could open doors that force alone could not."
+    },
+    {
+      "id": "lydia",
+      "names": ["Lydia"],
+      "relation": "Satrap Tisaphernes's base; scene of Greek cavalry victory",
+      "modern": "İzmir–Manisa region, Turkey",
+      "lat": 38.6,
+      "lon": 27.8,
+      "blurb": "When Agesilaus announced he would march into Lydia, Tisaphernes dismissed it as a feint and was caught wrong-footed. Agesilaus marched straight in and defeated the satrap's cavalry on the plain of Sardis, turning the Asian war's initiative firmly in Sparta's favour."
+    },
+    {
+      "id": "sardis",
+      "names": ["Sardis"],
+      "relation": "Lydian capital near the plain of Greek cavalry victory",
+      "modern": "Sart, Turkey",
+      "lat": 38.49,
+      "lon": 28.04,
+      "blurb": "The great plain below the Lydian capital where Agesilaus defeated Tisaphernes's cavalry and ravaged Persian estates. He had obliged the rich men of Ephesus who preferred not to fight to furnish armed horsemen instead—and those horsemen proved their worth here."
+    },
+    {
+      "id": "asia",
+      "names": ["Asia"],
+      "relation": "Continent of the Persian campaign",
+      "modern": "Asia Minor / Anatolia",
+      "lat": 39.0,
+      "lon": 35.0,
+      "blurb": "Agesilaus came closer than any Greek commander before Alexander to carrying the war into Persia's heartland, threatening Susa and Ecbatana. Persian gold paid to Greek demagogues did what Persian armies could not: it summoned him home before he could deliver the blow."
+    },
+    {
+      "id": "boeotia",
+      "names": ["Boeotia"],
+      "relation": "Theban region; the recall that ended Agesilaus's Asian campaign",
+      "modern": "Boeotia, Greece",
+      "lat": 38.4,
+      "lon": 23.1,
+      "blurb": "When Thebes and its allies rose against Sparta with Athenian and Persian support, Agesilaus abandoned his Asian march and crossed back to Greece. It was, Plutarch reflects, the Greeks themselves who brought the war home and let Persia breathe."
+    },
+    {
+      "id": "thebes",
+      "names": ["Thebes"],
+      "relation": "Spartan rival; home of Epaminondas",
+      "modern": "Thiva, Greece",
+      "lat": 38.32,
+      "lon": 23.32,
+      "blurb": "The city whose citadel Phoebidas seized and which eventually broke Spartan power at Leuctra. Epaminondas made it the dominant force in Greece—the outcome of injustices Agesilaus had excused, and a judgment that hung over the old king's final years."
+    },
+    {
+      "id": "cadmea",
+      "names": ["Cadmea"],
+      "relation": "Theban citadel seized by Phoebidas in peacetime",
+      "modern": "Kadmeia hill, Thiva, Greece",
+      "lat": 38.32,
+      "lon": 23.31,
+      "blurb": "The acropolis of Thebes, garrisoned without provocation by the Spartan Phoebidas on his march to Olynthus. Agesilaus defended the act for its political usefulness; the resentment it planted among the Thebans flowered into the campaign that ended at Leuctra."
+    },
+    {
+      "id": "corinth",
+      "names": ["Corinth"],
+      "relation": "Greek city on the isthmus; guest-friend's home",
+      "modern": "Corinth, Greece",
+      "lat": 37.91,
+      "lon": 22.88,
+      "blurb": "Home of Demaratus the Corinthian, whose famous remark about Alexander's fortune Plutarch turns back to reflect on Agesilaus's truncated campaign. The isthmus was also the strategic gateway between the Peloponnese and the wider Greek world."
+    },
+    {
+      "id": "athens",
+      "names": ["Athens"],
+      "relation": "Athenian rival; turned hostile after Sphodrias's raid",
+      "modern": "Athens, Greece",
+      "lat": 37.97,
+      "lon": 23.72,
+      "blurb": "Sphodrias's failed night march on Piraeus gave Athens a grievance Agesilaus could not remedy, and the city took up arms against Sparta. The acquittal of Sphodrias—arranged to please Archidamus—destroyed whatever goodwill remained between the two powers."
+    },
+    {
+      "id": "peloponnesus",
+      "names": ["Peloponnesus"],
+      "relation": "Peninsula of Sparta and her allies",
+      "modern": "Peloponnese, Greece",
+      "lat": 37.5,
+      "lon": 22.3,
+      "blurb": "Epaminondas led seventy thousand men into the Peloponnese after Leuctra, reaching the Eurotas itself. The invasion shook the foundations of a supremacy Sparta had exercised for generations, and Agesilaus's defence of the city became the last emblem of the old order."
+    },
+    {
+      "id": "leuctra",
+      "names": ["Leuctra"],
+      "relation": "Battle site where Sparta was crushed by Thebes (371 BC)",
+      "modern": "near Thespiae, Boeotia, Greece",
+      "lat": 38.2,
+      "lon": 23.17,
+      "blurb": "Epaminondas shattered the Spartan army here, killing hundreds of Spartiates and shattering the myth of Spartan invincibility in the open field. The oracle's old warning about a halting king now seemed to the Spartans a divine judgment on Agesilaus's succession."
+    },
+    {
+      "id": "tegyrae",
+      "names": ["Tegyrae"],
+      "relation": "Site of first Theban victory over Sparta in pitched battle",
+      "modern": "near Orchomenos, Boeotia, Greece",
+      "lat": 38.49,
+      "lon": 22.98,
+      "blurb": "Before Leuctra, the Thebans first defeated a Lacedaemonian force in set battle at Tegyrae—the earliest proof that Epaminondas's oblique formation could crack what had seemed unbreakable, and the harbinger of what was to come."
+    },
+    {
+      "id": "mantinea",
+      "names": ["Mantinea"],
+      "relation": "Final battle where Epaminondas died (362 BC)",
+      "modern": "near Tripoli, Arcadia, Greece",
+      "lat": 37.61,
+      "lon": 22.38,
+      "blurb": "Epaminondas routed the Lacedaemonians here but was fatally struck in the pursuit by Anticrates the Laconian. His death brought a general peace—and left Messenia permanently free, a wound Agesilaus never accepted and refused to heal."
+    },
+    {
+      "id": "persia",
+      "names": ["Persia"],
+      "relation": "The Persian Empire; Agesilaus's eastern adversary",
+      "modern": "Iran and surrounding region",
+      "lat": 32.0,
+      "lon": 53.0,
+      "blurb": "Agesilaus resolved to march on Susa and Ecbatana and attack the Great King in his own home, but was turned back before he could strike. Persian gold—paid through channels like Antalcidas to demagogues in Thebes and Athens—accomplished what Persian arms could not."
+    },
+    {
+      "id": "egypt",
+      "names": ["Egypt"],
+      "relation": "Scene of Agesilaus's final campaign as mercenary",
+      "modern": "Egypt",
+      "lat": 26.5,
+      "lon": 30.0,
+      "blurb": "Agesilaus spent his last year as a hired commander in Egypt, serving first Tachos then Nectanabis. His final tactical masterpiece secured an Egyptian throne; he died at sea on the voyage home, past eighty, his last campaign paid in gold he never saw."
+    }
+  ]
+}

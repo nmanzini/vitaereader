@@ -1,0 +1,153 @@
+{
+  "workId": "comparison-of-pompey-and-agesilaus",
+  "subject": "Comparison of Pompey and Agesilaus",
+  "characters": [
+    {
+      "id": "pompey",
+      "names": ["Pompey"],
+      "relation": "Roman subject of the pair",
+      "blurb": "Plutarch credits Pompey with a fairer rise than Agesilaus—he earned his greatness through his own effort and through honest service to Sylla, without injustice to rivals. Yet Pompey's friendship could lead him to bend his own laws, a weakness Agesilaus matched with a different kind of partiality.",
+      "links": [
+        {"characterId": "pompey", "workId": "pompey"}
+      ]
+    },
+    {
+      "id": "agesilaus",
+      "names": ["Agesilaus"],
+      "relation": "Greek subject of the pair",
+      "blurb": "Plutarch judges that Agesilaus obtained his throne by questionable means, exploiting Lysander's influence and the bastardy charge against Leotychides. Yet his military record—holding Sparta in person through Epaminondas's invasion, commanding to the very end—speaks louder than the politics of his succession.",
+      "links": [
+        {"characterId": "agesilaus", "workId": "agesilaus"}
+      ]
+    },
+    {
+      "id": "sylla",
+      "names": ["Sylla"],
+      "relation": "Pompey's patron; analogue of Lysander",
+      "blurb": "Pompey rendered Sylla important service in delivering Italy from its tyrants and earned his advancement honestly—in contrast to Agesilaus, who used Lysander's counsel not to advance a cause but to secure a throne. Sylla himself was uneasy at how quickly his protégé grew.",
+      "links": [
+        {"characterId": "sylla", "workId": "pompey"}
+      ]
+    },
+    {
+      "id": "lysander",
+      "names": ["Lysander"],
+      "relation": "Agesilaus's patron; analogue of Sylla",
+      "blurb": "Lysander's counsel and influence were the tools Agesilaus used to subvert the law and gain the throne—a transaction Plutarch contrasts unfavorably with Pompey's honest service to Sylla. The relationship soured once Agesilaus had what he needed and Lysander found himself merely an ambassador sent to the Hellespont.",
+      "links": [
+        {"characterId": "lysander", "workId": "agesilaus"}
+      ]
+    },
+    {
+      "id": "leotychides",
+      "names": ["Leotychides"],
+      "relation": "The legitimate heir Agesilaus displaced",
+      "blurb": "Son of Agis, publicly recognised as legitimate, yet excluded by Agesilaus through the bastardy charge. The comparison opens with Plutarch noting this injustice as the defining moral difference between the two lives: Pompey harmed no rival to rise, while Agesilaus set aside a son of his brother.",
+      "links": [
+        {"characterId": "leotychides", "workId": "agesilaus"}
+      ]
+    },
+    {
+      "id": "xenophon",
+      "names": ["Xenophon"],
+      "relation": "Historian of Agesilaus; Plutarch's acknowledged partial witness",
+      "blurb": "Plutarch says that even Xenophon himself—allowed as a special indulgence to write whatever he pleased in Agesilaus's favour—would not have the honesty to place Agesilaus's victories in the balance with Pompey's campaigns, trophies, and the multitude of nations he subdued.",
+      "links": [
+        {"characterId": "xenophon", "workId": "agesilaus"}
+      ]
+    },
+    {
+      "id": "caesar",
+      "names": ["Caesar"],
+      "relation": "The rival who exposed Pompey's fatal weakness",
+      "blurb": "Caesar, though the weaker in numbers and position, successfully declined pitched battle until it suited him, forced Pompey's hand through his allies' impatience, and won at Pharsalus. Plutarch pairs this with Agesilaus's contrasting quality of always remaining invincible by forcing battle only when strong and avoiding it when weak.",
+      "links": [
+        {"characterId": "caesar", "workId": "caesar"}
+      ]
+    }
+  ],
+  "nameResolutions": [],
+  "locations": [
+    {
+      "id": "sparta",
+      "names": ["Sparta", "Lacedaemon"],
+      "relation": "Agesilaus's city; seat of the laws he manipulated",
+      "modern": "Sparti, Greece",
+      "lat": 37.07,
+      "lon": 22.43,
+      "blurb": "Plutarch notes that Agesilaus's famous decree letting the laws sleep for a day—to spare disgraced Leuctra survivors from their legal penalties—was a piece of politic sophistry without parallel in Pompey's career; a kindness and a constitutional sleight of hand at once."
+    },
+    {
+      "id": "rome",
+      "names": ["Rome"],
+      "relation": "Pompey's city and the republic he failed to save",
+      "modern": "Rome, Italy",
+      "lat": 41.9,
+      "lon": 12.5,
+      "blurb": "Pompey's Rome expected him to govern it as he governed provinces—by presence, command, and personal authority. He proved less suited to its internal politics than to its external wars, and in the end left it rather than fight in the streets for it."
+    },
+    {
+      "id": "italy",
+      "names": ["Italy"],
+      "relation": "The homeland Pompey delivered from tyrants for Sylla",
+      "modern": "Italy",
+      "lat": 42.5,
+      "lon": 12.5,
+      "blurb": "Plutarch credits Pompey's service in delivering Italy from its Marian tyrants as the foundation of his honest advancement—the contrast with Agesilaus's more ambiguous succession lies precisely here, in the openness and legitimacy of this early achievement."
+    },
+    {
+      "id": "greece",
+      "names": ["Greece"],
+      "relation": "The arena of Agesilaus's wars and Pompey's last campaigns",
+      "modern": "Greece",
+      "lat": 39.0,
+      "lon": 22.0,
+      "blurb": "Greece is the shared background of both lives—the world Agesilaus tried to dominate from Sparta and the stage on which Pompey's civil war found its decisive field at Pharsalus. In both cases, what seemed a Greek theatre of operations proved fatal to the commander."
+    },
+    {
+      "id": "asia",
+      "names": ["Asia"],
+      "relation": "Continent both men campaigned in",
+      "modern": "Asia Minor and beyond",
+      "lat": 39.0,
+      "lon": 35.0,
+      "blurb": "Both Agesilaus and Pompey found their greatest military successes in Asia and both were ultimately drawn back from it by events in the west. Plutarch's comparison emphasises that Pompey's eastern achievement dwarfed Agesilaus's in scale, if not in personal daring."
+    },
+    {
+      "id": "egypt",
+      "names": ["Egypt"],
+      "relation": "Country where both men ended their careers ingloriously",
+      "modern": "Egypt",
+      "lat": 26.5,
+      "lon": 30.0,
+      "blurb": "Plutarch closes the comparison with Egypt: Pompey was driven there by necessity and murdered; Agesilaus went not by necessity but as a mercenary soldier, fighting for pay from a barbarian king. The Egyptians who charge Pompey with trusting them too much charge Agesilaus with abandoning them when convenient."
+    },
+    {
+      "id": "thebes",
+      "names": ["Thebes"],
+      "relation": "City whose rise broke Spartan power and tested Agesilaus",
+      "modern": "Thiva, Greece",
+      "lat": 38.32,
+      "lon": 23.32,
+      "blurb": "The defeat at Leuctra near Thebes is Agesilaus's defining moment of reversal in the comparison—the point at which his unjust accumulation of power began to be repaid in Spartan blood. Plutarch uses it to measure the limits of a greatness built on flawed foundations."
+    },
+    {
+      "id": "leuctra",
+      "names": ["Leuctra"],
+      "relation": "Battle that reversed Spartan supremacy; central to the comparison",
+      "modern": "near Thespiae, Boeotia, Greece",
+      "lat": 38.2,
+      "lon": 23.17,
+      "blurb": "After Leuctra, Agesilaus's politic decree letting the laws sleep showed his genius for crisis management—but it was a crisis of his own making, the harvest of injustices he had tolerated or encouraged. Plutarch cites no equivalent moment of recovery in Pompey's career."
+    },
+    {
+      "id": "pharsalus",
+      "names": ["Pharsalus"],
+      "relation": "Battle that destroyed Pompey; compared to Leuctra for Agesilaus",
+      "modern": "Farsala, Thessaly, Greece",
+      "lat": 39.3,
+      "lon": 22.38,
+      "blurb": "Caesar forced Pompey into battle at Pharsalus when Pompey was the weaker in spirit—not in numbers. The comparison holds this up against Agesilaus's consistent ability to force or avoid battle according to his own strength, a generalship quality Plutarch finds superior in the Spartan."
+    }
+  ]
+}

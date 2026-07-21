@@ -1,0 +1,852 @@
+{
+  "workId": "pompey",
+  "subject": "Pompey",
+  "characters": [
+    {
+      "id": "pompey",
+      "names": ["Pompey", "Pompeius Magnus"],
+      "relation": "Subject; Pompey the Great",
+      "blurb": "Rome's most celebrated general before Caesar, who cleared the Mediterranean of pirates, ended the Mithridatic War, reorganized the East, and then found himself on the wrong side of a civil war he was ill-suited to fight. He died on an Egyptian shore by the treachery of men he had come to for help, mourned by the very enemy who had defeated him.",
+      "links": [
+        {"characterId": "strabo"},
+        {"characterId": "sylla"},
+        {"characterId": "caesar"}
+      ]
+    },
+    {
+      "id": "strabo",
+      "names": ["Strabo"],
+      "relation": "Father; hated general whose estate Pompey inherited",
+      "blurb": "Gnaeus Pompeius Strabo was a formidable commander whom the Roman people loathed: they dragged his body from its bier after his death and heaped it with reproaches. Pompey inherited not only his estate but the lawsuit over its embezzled treasury—and by clever prosecution turned that liability into an introduction to Sylla's notice.",
+      "links": [
+        {"characterId": "pompey"},
+        {"characterId": "cinna"}
+      ]
+    },
+    {
+      "id": "cinna",
+      "names": ["Cinna"],
+      "relation": "Marian dictator; Strabo's last commander",
+      "blurb": "Lucius Cornelius Cinna held Rome by force after Marius and before Sylla's return. Pompey served under him unwillingly as a young man and barely escaped when Cinna's soldiers, corrupted by Lucius Terentius, conspired to murder him—Pompey talked them out of it and slipped away in the confusion.",
+      "links": [
+        {"characterId": "strabo"},
+        {"characterId": "lucius-terentius"},
+        {"characterId": "carbo"}
+      ]
+    },
+    {
+      "id": "lucius-terentius",
+      "names": ["Lucius Terentius"],
+      "relation": "Pompey's companion corrupted by Cinna",
+      "blurb": "Shared Pompey's tent during Strabo's campaign against Cinna, then accepted a bribe to kill his comrade. Pompey overheard the plot, outwardly pretended nothing was wrong, and by sheer personal charm prevented the conspiracy from gathering momentum—his first recorded exercise in winning dangerous men over.",
+      "links": [
+        {"characterId": "cinna"},
+        {"characterId": "pompey"}
+      ]
+    },
+    {
+      "id": "sylla",
+      "names": ["Sylla", "Sulla"],
+      "relation": "Dictator and patron who shaped Pompey's rise",
+      "blurb": "Greeted the young Pompey as Imperator and Saluted him Magnus, the Great—honors that set the pattern of Pompey's career and its central tension. Sylla was uneasy watching his protégé rise so fast; he observed that Fortune does not always favor the older men, meaning himself.",
+      "links": [
+        {"characterId": "pompey"},
+        {"characterId": "lepidus"},
+        {"characterId": "demetrius"}
+      ]
+    },
+    {
+      "id": "carbo",
+      "names": ["Carbo"],
+      "relation": "Marian commander; Pompey's first major enemy",
+      "blurb": "Took command of the Marian cause after Cinna and proved, in Plutarch's phrase, a tyrant yet more senseless. Pompey hunted him down in Sicily, captured him, and had him executed in his praetor's robes—an act of severity that earned him the first whispers of a cruel name.",
+      "links": [
+        {"characterId": "cinna"},
+        {"characterId": "perpenna"},
+        {"characterId": "sertorius"}
+      ]
+    },
+    {
+      "id": "lepidus",
+      "names": ["Lepidus"],
+      "relation": "Rebel consul who tried to reverse Sylla's order",
+      "blurb": "Marcus Aemilius Lepidus proposed to succeed to all Sylla's power at once, raised forces, and was quickly reduced by Pompey and others loyal to the senate. Sylla had foreseen the trouble, warning Pompey not to underestimate Lepidus over Catulus—the younger man was the more dangerous.",
+      "links": [
+        {"characterId": "sylla"},
+        {"characterId": "pompey"}
+      ]
+    },
+    {
+      "id": "perpenna",
+      "names": ["Perpenna"],
+      "relation": "Lieutenant who murdered Sertorius and was then captured",
+      "blurb": "One of Lepidus's remnant officers who fled to Spain and served under Sertorius, then conspired to murder him at a dinner party. He attempted to take command himself, but Pompey defeated him, captured him with Sertorius's papers, and had him put to death—making sure those treacherous letters were never read aloud.",
+      "links": [
+        {"characterId": "sertorius"},
+        {"characterId": "carbo"}
+      ]
+    },
+    {
+      "id": "domitius",
+      "names": ["Lucius Domitius", "Domitius"],
+      "relation": "Senatorial opponent; Pharsalus left-wing commander",
+      "blurb": "Cato urged Lucius Domitius not to abandon his consulship candidacy even under Caesar's threats, saying the contest was for liberty, not office. He commanded the left wing at Pharsalus, where it was overrun by Caesar's battle-hardened infantry.",
+      "links": [
+        {"characterId": "pompey"},
+        {"characterId": "caesar"},
+        {"characterId": "cato"}
+      ]
+    },
+    {
+      "id": "metellus-pius",
+      "names": ["Metellus Pius"],
+      "relation": "Sullan general; Pompey's senior partner in Spain",
+      "blurb": "Quintus Caecilius Metellus Pius held Spain for Sylla's cause, fighting Sertorius with mixed results before Pompey arrived. The two commanders cooperated with elaborate courtesies—each lowering his rods to the other—while competing for the glory of finishing the war.",
+      "links": [
+        {"characterId": "pompey"},
+        {"characterId": "sertorius"}
+      ]
+    },
+    {
+      "id": "sertorius",
+      "names": ["Sertorius"],
+      "relation": "Marian commander of the Spanish resistance",
+      "blurb": "Quintus Sertorius held Spain for years against Rome's best generals, combining guerrilla skill with a gift for winning native allies. He kept a white fawn as a sacred emblem and used it to inspire his troops. Only treachery from within—Perpenna's conspiracy—ended a war that neither Metellus nor Pompey could conclude in the field.",
+      "links": [
+        {"characterId": "metellus-pius"},
+        {"characterId": "perpenna"},
+        {"characterId": "afranius"}
+      ]
+    },
+    {
+      "id": "lucullus",
+      "names": ["Lucullus"],
+      "relation": "Eastern commander replaced by Pompey; lifelong rival",
+      "blurb": "Lucius Licinius Lucullus had fought Mithridates and Tigranes for years and very nearly finished the war before supply troubles and mutinous soldiers stalled him. Pompey succeeded to his command and immediately reversed all Lucullus's dispositions—earning a resentment that lasted for decades and expressed itself in Senate opposition.",
+      "links": [
+        {"characterId": "mithridates"},
+        {"characterId": "pompey"},
+        {"characterId": "bibulus"}
+      ]
+    },
+    {
+      "id": "demetrius",
+      "names": ["Demetrius"],
+      "relation": "Pompey's freed slave; his most influential friend",
+      "blurb": "A Greek freedman of great understanding whose influence over Pompey was so conspicuous that Cato, visiting Antioch, refused to enter the city when he saw Demetrius seated in state at the gates receiving the foremost men. His favour was the quickest road to Pompey's ear.",
+      "links": [
+        {"characterId": "pompey"},
+        {"characterId": "cato"}
+      ]
+    },
+    {
+      "id": "flora",
+      "names": ["Flora"],
+      "relation": "Courtesan; Pompey's early love",
+      "blurb": "The celebrated courtesan who, in old age, remembered her youth with Pompey fondly and said she could never part after being with him without a bite. She was passed, by Pompey's arrangement, to his companion Geminius—a transaction Plutarch notes without quite approving.",
+      "links": [
+        {"characterId": "geminius"},
+        {"characterId": "pompey"}
+      ]
+    },
+    {
+      "id": "geminius",
+      "names": ["Geminius"],
+      "relation": "Companion of Pompey; successor to Flora",
+      "blurb": "A companion who fell violently in love with Flora and confessed it to Pompey. Pompey obligingly surrendered her, but—Plutarch notes—he never touched her himself again after that, behaving in this matter more like a gentleman than either a lover or a friend.",
+      "links": [
+        {"characterId": "flora"},
+        {"characterId": "pompey"}
+      ]
+    },
+    {
+      "id": "gabinius",
+      "names": ["Gabinius"],
+      "relation": "Tribune who proposed Pompey's piracy command",
+      "blurb": "Aulus Gabinius brought the bill that gave Pompey extraordinary command over the whole Mediterranean and its coasts to fifty miles inland—a concentration of power without precedent. The senate was appalled; the people carried it over their opposition, and the corn price fell the very day Pompey was named.",
+      "links": [
+        {"characterId": "pompey"},
+        {"characterId": "catulus"}
+      ]
+    },
+    {
+      "id": "catulus",
+      "names": ["Catulus"],
+      "relation": "Senior senator who opposed Pompey's piracy command",
+      "blurb": "Quintus Lutatius Catulus was among those who stood up against giving one man such a command, asking the assembly what they would do if Pompey were killed—to which the crowd answered 'elect you.' He represented the old republican scruple that a single man's glory was Rome's danger.",
+      "links": [
+        {"characterId": "gabinius"},
+        {"characterId": "pompey"}
+      ]
+    },
+    {
+      "id": "manlius",
+      "names": ["Manlius"],
+      "relation": "Tribune who moved Pompey's eastern command",
+      "blurb": "The tribune Manlius preferred the bill that transferred Lucullus's forces and provinces to Pompey, adding Bithynia under Glabrio, and charged him with finishing the war against Mithridates and Tigranes. Cicero spoke in its favor; the Roman people passed it enthusiastically.",
+      "links": [
+        {"characterId": "pompey"},
+        {"characterId": "lucullus"}
+      ]
+    },
+    {
+      "id": "mithridates",
+      "names": ["Mithridates"],
+      "relation": "King of Pontus; Pompey's greatest eastern opponent",
+      "blurb": "Mithridates VI had fought Rome for decades and survived Lucullus's campaigns by retreating into Armenia. Pompey finally cornered him in a night battle and destroyed his army, but Mithridates escaped north to the Bosporus, still scheming, until his own son Pharnaces's revolt left him no choice but death.",
+      "links": [
+        {"characterId": "lucullus"},
+        {"characterId": "tigranes"},
+        {"characterId": "pharnaces"}
+      ]
+    },
+    {
+      "id": "tigranes",
+      "names": ["Tigranes"],
+      "relation": "King of Armenia; surrendered to Pompey",
+      "blurb": "Tigranes the Great appeared before Pompey to surrender, removing his diadem—which Pompey raised and returned—and was allowed to keep his own kingdom as a client. Plutarch uses the moment to show Pompey's clemency in victory: the Armenian king lost his conquests but not his dignity.",
+      "links": [
+        {"characterId": "mithridates"},
+        {"characterId": "tigranes-son"},
+        {"characterId": "phraates"}
+      ]
+    },
+    {
+      "id": "tigranes-son",
+      "names": ["young Tigranes"],
+      "relation": "Armenian prince; rebel against his father, then Pompey's prisoner",
+      "blurb": "Invited Pompey into Armenia by rebelling against his father Tigranes, then found himself a prisoner after his father's submission. He was kept in the triumph, tried to organize an escape, and served as a useful pawn in Pompey's diplomacy with Parthia.",
+      "links": [
+        {"characterId": "tigranes"},
+        {"characterId": "pompey"},
+        {"characterId": "phraates"}
+      ]
+    },
+    {
+      "id": "phraates",
+      "names": ["Phraates"],
+      "relation": "King of Parthia; sought Euphrates boundary with Pompey",
+      "blurb": "Sent envoys requesting young Tigranes as his son-in-law and the Euphrates as the permanent boundary between empires. Pompey replied that young Tigranes belonged more to his own father, and that boundaries would be set by right and justice—a polite refusal that left Parthia uncertain of Rome's intentions.",
+      "links": [
+        {"characterId": "tigranes"},
+        {"characterId": "pompey"}
+      ]
+    },
+    {
+      "id": "pharnaces",
+      "names": ["Pharnaces"],
+      "relation": "Mithridates's son; revolted and hastened his father's death",
+      "blurb": "Raised a rebellion in the Bosporan kingdom that cut off Mithridates's last refuge and left him no honourable escape. Pharnaces sent his father's body to Pompey along with presents, hoping to secure recognition—Pompey received the corpse respectfully and buried it royally at Sinope.",
+      "links": [
+        {"characterId": "mithridates"},
+        {"characterId": "pompey"}
+      ]
+    },
+    {
+      "id": "stratonice",
+      "names": ["Stratonice"],
+      "relation": "Mithridates's favorite concubine; surrendered his richest fortress",
+      "blurb": "Held the king's most treasured castle on his behalf. When Pharnaces revolted and the cause was lost, she surrendered the fortress to Pompey and revealed where the royal treasure was hidden—hoping her son might benefit. Pompey kept his word and saw to the boy's care.",
+      "links": [
+        {"characterId": "mithridates"},
+        {"characterId": "pharnaces"}
+      ]
+    },
+    {
+      "id": "caesar",
+      "names": ["Caesar"],
+      "relation": "Triumvirate partner; then the man who destroyed him",
+      "blurb": "Julius Caesar observed that Pompey and Crassus each made the other stronger by their mutual jealousy, so he bound them together in a three-headed pact and used it to launch his own consulship and Gallic command. When the pact dissolved and Julia died, the rivalry left nowhere to go but war—and at Pharsalus Caesar proved the better general.",
+      "links": [
+        {"characterId": "pompey"},
+        {"characterId": "crassus"},
+        {"characterId": "julia"}
+      ]
+    },
+    {
+      "id": "crassus",
+      "names": ["Crassus"],
+      "relation": "Triumvirate partner; wealthiest man in Rome",
+      "blurb": "Marcus Licinius Crassus stood aside from Pompey, each man too proud to reconcile with the other, until Caesar joined them in a three-part compact. He departed for Parthia seeking military glory to match theirs, and died at Carrhae—his death removing the last check on the collision between Pompey and Caesar.",
+      "links": [
+        {"characterId": "caesar"},
+        {"characterId": "pompey"},
+        {"characterId": "publius-crassus"}
+      ]
+    },
+    {
+      "id": "julia",
+      "names": ["Julia"],
+      "relation": "Caesar's daughter; Pompey's wife and bond of the alliance",
+      "blurb": "Caesar's daughter who became Pompey's wife and, in Plutarch's telling, the living tie that kept the triumvirate from fracturing. She won Pompey's genuine affection and the people's regard; her death in childbirth took the only human bond that might have delayed the civil war.",
+      "links": [
+        {"characterId": "caesar"},
+        {"characterId": "pompey"},
+        {"characterId": "cornelia"}
+      ]
+    },
+    {
+      "id": "cornelia",
+      "names": ["Cornelia"],
+      "relation": "Pompey's last wife; daughter of Metellus Scipio",
+      "blurb": "Daughter of Metellus Scipio and widow of Publius Crassus, she brought youth, beauty, and remarkable learning—geometry, philosophy, and skill on the lute. She watched her husband's murder from a galley in the Egyptian harbour and fled with his ashes across the sea.",
+      "links": [
+        {"characterId": "scipio-metellus"},
+        {"characterId": "publius-crassus"},
+        {"characterId": "pompey"}
+      ]
+    },
+    {
+      "id": "publius-crassus",
+      "names": ["Publius, the son of Crassus"],
+      "relation": "Cornelia's first husband; killed in Parthia",
+      "blurb": "Son of the triumvir Crassus, he led a cavalry charge at Carrhae and was killed in the disaster there. His widow Cornelia, after his death, became Pompey's last wife—a union that connected the two surviving members of the broken triumvirate by marriage.",
+      "links": [
+        {"characterId": "crassus"},
+        {"characterId": "cornelia"}
+      ]
+    },
+    {
+      "id": "scipio-metellus",
+      "names": ["Metellus Scipio", "Scipio"],
+      "relation": "Pompey's father-in-law; commander of the Pharsalus centre",
+      "blurb": "Quintus Caecilius Metellus Pius Scipio Nasica, Cornelia's father, was summoned by Pompey from Syria to take joint command. He commanded the centre at Pharsalus against Lucius Calvinus, and after the defeat continued resistance in Africa until his final defeat at Thapsus.",
+      "links": [
+        {"characterId": "cornelia"},
+        {"characterId": "pompey"},
+        {"characterId": "lucius-calvinus"}
+      ]
+    },
+    {
+      "id": "labienus",
+      "names": ["Labienus"],
+      "relation": "Caesar's general who defected to Pompey",
+      "blurb": "Titus Labienus had been Caesar's most trusted legate throughout the Gallic wars, yet crossed to Pompey before the civil war began. At the Pharsalus council of war he swore in public that he would not leave the battle without routing the enemy—a boast Caesar's veterans quietly deflated.",
+      "links": [
+        {"characterId": "caesar"},
+        {"characterId": "pompey"}
+      ]
+    },
+    {
+      "id": "antony",
+      "names": ["Antony"],
+      "relation": "Caesar's wing commander at Pharsalus",
+      "blurb": "Mark Antony commanded Caesar's left wing at Pharsalus, facing Pompey's right. As a tribune before the war he had opposed the senatorial motion that gave Pompey emergency command against Caesar—a foretaste of whose side he would be on when the fighting started.",
+      "links": [
+        {"characterId": "caesar"},
+        {"characterId": "pompey"}
+      ]
+    },
+    {
+      "id": "afranius",
+      "names": ["Afranius"],
+      "relation": "Pompey's legate in Spain and Armenia",
+      "blurb": "Left in charge of Armenia while Pompey chased Mithridates toward the Caucasus, and earlier one of Pompey's Spanish commanders. At Pharsalus and afterwards he remained loyal to the Pompeian cause, fighting on in Africa after the battle.",
+      "links": [
+        {"characterId": "pompey"},
+        {"characterId": "sertorius"}
+      ]
+    },
+    {
+      "id": "bibulus",
+      "names": ["Bibulus"],
+      "relation": "Caesar's co-consul; kept indoors for eight months",
+      "blurb": "Marcus Calpurnius Bibulus shared the consulship with Caesar but found himself powerless—forced from the forum by violence, he retired indoors and governed by issuing proclamations that nobody heeded. Pompey accompanied Lucullus and Cato in the procession that ended in Caesar's mob throwing ordure on Bibulus's head.",
+      "links": [
+        {"characterId": "caesar"},
+        {"characterId": "lucullus"},
+        {"characterId": "cato"}
+      ]
+    },
+    {
+      "id": "cato",
+      "names": ["Cato"],
+      "relation": "Stoic senator; Pompey's reluctant moral measure",
+      "blurb": "The younger Cato opposed Pompey's extraordinary commands on principle—the senate rejoiced when Pompey was insulted in the forum, seeing it as just punishment for his alliance with Caesar. Yet Cato chose to fight for Pompey's cause as the lesser evil when civil war came, because the cause was the republic's.",
+      "links": [
+        {"characterId": "bibulus"},
+        {"characterId": "pompey"},
+        {"characterId": "cicero"}
+      ]
+    },
+    {
+      "id": "cicero",
+      "names": ["Cicero"],
+      "relation": "Orator; uneasy ally of Pompey",
+      "blurb": "Spoke for Pompey's eastern command in the Manilian law and later joined his side in the civil war, but never with enthusiasm—Plutarch notes that Pompey was wounded by the senate's gloating over his public humiliation and sensed that Cicero shared in the satisfaction.",
+      "links": [
+        {"characterId": "cato"},
+        {"characterId": "pompey"},
+        {"characterId": "clodius"}
+      ]
+    },
+    {
+      "id": "theophanes",
+      "names": ["Theophanes"],
+      "relation": "Pompey's court historian and closest literary friend",
+      "blurb": "A Mytilenaean who interceded with Pompey to give his city its freedom, and stayed as Pompey's literary companion—recording his campaigns, shaping his reputation, and drafting the dispatches that kept Rome informed of eastern victories. Plutarch notes Pompey gave him citizenship and the Mytilenaeans divine honours.",
+      "links": [
+        {"characterId": "pompey"}
+      ]
+    },
+    {
+      "id": "ptolemy",
+      "names": ["Ptolemy"],
+      "relation": "King of Egypt; consented to Pompey's murder",
+      "blurb": "The young Ptolemy XII Auletes, guided by advisors who feared a Pompey victorious as much as a Pompey defeated, allowed Achillas and Septimius to lure him ashore in a small boat and kill him. Caesar, arriving shortly after, wept when presented with Pompey's severed head.",
+      "links": [
+        {"characterId": "achillas"},
+        {"characterId": "pompey"}
+      ]
+    },
+    {
+      "id": "achillas",
+      "names": ["Achillas"],
+      "relation": "Egyptian general who organized Pompey's assassination",
+      "blurb": "The Egyptian minister who rowed out to Pompey's galley with Septimius and Salvius and beckoned the Roman general into a small boat, where he was stabbed from behind before he reached the shore. His presence as an Egyptian official gave the operation a veneer of official welcome.",
+      "links": [
+        {"characterId": "ptolemy"},
+        {"characterId": "septimius"},
+        {"characterId": "salvius"}
+      ]
+    },
+    {
+      "id": "septimius",
+      "names": ["Septimius"],
+      "relation": "Former centurion under Pompey; struck the first blow",
+      "blurb": "A man who had once served under Pompey, now in Egyptian service, who drew his sword in the small boat and stabbed his former commander from behind. Pompey covered his face with his toga and endured the end without a word or outcry—the last composure of a very great man.",
+      "links": [
+        {"characterId": "achillas"},
+        {"characterId": "salvius"}
+      ]
+    },
+    {
+      "id": "salvius",
+      "names": ["Salvius"],
+      "relation": "Centurion; co-conspirator in Pompey's murder",
+      "blurb": "Another centurion in Achillas's party who helped carry out the murder in the small boat alongside Septimius. Plutarch lists him to show that Pompey died by the hands not of strangers but of Romans—soldiers of the kind he had once commanded—in service of a foreign king.",
+      "links": [
+        {"characterId": "achillas"},
+        {"characterId": "septimius"}
+      ]
+    },
+    {
+      "id": "philip-freedman",
+      "names": ["Philip"],
+      "relation": "Pompey's freedman; washed and buried his body",
+      "blurb": "Stayed on the Egyptian shore after the murder and found his master's headless body washed up with a faithful slave named Cordus. Together they gathered enough wood to build a poor funeral pyre, and Philip buried him there—the only tender act in an otherwise shameful death.",
+      "links": [
+        {"characterId": "pompey"},
+        {"characterId": "cornelia"}
+      ]
+    },
+    {
+      "id": "caius-aurelius",
+      "names": ["Caius Aurelius"],
+      "relation": "Roman knight who reported Jupiter's vision",
+      "blurb": "A knight who had never before appeared in public affairs mounted the speaker's platform and declared that Jupiter had appeared to him in a dream, commanding Pompey and Crassus to end their quarrel. Pompey could not but admire the frankness of the appeal, and the two men formally reconciled—for a time.",
+      "links": [
+        {"characterId": "pompey"}
+      ]
+    },
+    {
+      "id": "carinna",
+      "names": ["Carinna"],
+      "relation": "Marian commander who besieged young Pompey",
+      "blurb": "One of three Marian generals—with Cloelius and Brutus—who drew their armies in a cordon around young Pompey to crush him before he could join Sylla. Pompey broke through by feigning a march in one direction and striking unexpectedly in another, scattering all three.",
+      "links": [
+        {"characterId": "cloelius"},
+        {"characterId": "brutus-marian"}
+      ]
+    },
+    {
+      "id": "cloelius",
+      "names": ["Cloelius"],
+      "relation": "Marian commander encircling young Pompey",
+      "blurb": "Joined Carinna and Brutus in a triple encirclement of Pompey's march to Sylla, hoping that numbers and surrounding terrain would overwhelm the young commander. The plan failed when Pompey chose a bold night passage that none of the three anticipated.",
+      "links": [
+        {"characterId": "carinna"},
+        {"characterId": "brutus-marian"}
+      ]
+    },
+    {
+      "id": "brutus-marian",
+      "names": ["Brutus"],
+      "relation": "Marian commander; one of three besieging Pompey",
+      "blurb": "Marcus Junius Brutus the Elder, a Marian general who was part of the triple cordon drawn around Pompey during his march to join Sylla. He was defeated and later surrendered to Pompey, meeting his end in the consolidation of Sullan power over northern Italy.",
+      "links": [
+        {"characterId": "carinna"},
+        {"characterId": "cloelius"}
+      ]
+    },
+    {
+      "id": "lucius-calvinus",
+      "names": ["Lucius Calvinus"],
+      "relation": "Caesar's centre commander at Pharsalus",
+      "blurb": "Gnaeus Domitius Calvinus held Caesar's centre against Metellus Scipio at Pharsalus, keeping the two wings apart while Caesar's decisive infantry manoeuvre settled the battle on the flanks. His role was holding rather than striking, and he performed it well.",
+      "links": [
+        {"characterId": "caesar"},
+        {"characterId": "scipio-metellus"}
+      ]
+    },
+    {
+      "id": "crassianus",
+      "names": ["Crassianus", "Caius Crassianus"],
+      "relation": "Caesar's centurion who opened the battle of Pharsalus",
+      "blurb": "Commanded a company of a hundred and twenty men and was the first to advance out of Caesar's line at Pharsalus, shouting that he would either deserve Caesar's thanks living or dead. He was cut down fighting toward Pompey's standards—Plutarch preserves his name as the soldier who made the first charge.",
+      "links": [
+        {"characterId": "caesar"},
+        {"characterId": "pompey"}
+      ]
+    },
+    {
+      "id": "asinius-pollio",
+      "names": ["Asinius Pollio"],
+      "relation": "Historian who fought at Pharsalus on Caesar's side",
+      "blurb": "Gaius Asinius Pollio, soldier and literary historian, fought at Pharsalus and later wrote a history of the civil war that Plutarch cites for the casualty figures. He gives the Pompeian dead as six thousand—one of the few eyewitness accounts Plutarch names explicitly.",
+      "links": [
+        {"characterId": "caesar"},
+        {"characterId": "pompey"}
+      ]
+    },
+    {
+      "id": "scipio-africanus",
+      "names": ["Scipio the elder"],
+      "relation": "Republican hero invoked as precedent against Pompey's triumph",
+      "blurb": "Scipio Africanus, conqueror of Carthage in Spain and Africa, never petitioned for a triumph because he had never been consul—and the law required it. Pompey was reminded of this when he sought his first triumph as a young equestrian; he argued back vigorously and won, but the comparison was already being made.",
+      "links": [
+        {"characterId": "pompey"}
+      ]
+    },
+    {
+      "id": "clodius",
+      "names": ["Clodius"],
+      "relation": "Tribune; Pompey's nemesis in the city",
+      "blurb": "Publius Clodius Pulcher, armed with the tribunate and his own gangs, made Rome too dangerous for Pompey to appear in public without an armed escort. Pompey eventually armed his own followers and appealed to Cicero's return as a counterweight—finding in city politics an enemy more uncomfortable than any foreign king.",
+      "links": [
+        {"characterId": "cicero"},
+        {"characterId": "pompey"}
+      ]
+    },
+    {
+      "id": "cnaeus-son",
+      "names": ["Cnaeus"],
+      "relation": "Pompey's son; sent to Syria for the fleet",
+      "blurb": "Gnaeus Pompeius the Younger was sent together with Metellus Scipio to Syria to raise a fleet before Pharsalus. He continued the Pompeian cause after his father's death and was eventually killed in Spain—the last significant resistance under the family name.",
+      "links": [
+        {"characterId": "pompey"},
+        {"characterId": "scipio-metellus"}
+      ]
+    },
+    {
+      "id": "marcellus",
+      "names": ["Marcellus"],
+      "relation": "Consul who formally commissioned Pompey against Caesar",
+      "blurb": "Gaius Claudius Marcellus, accompanied by the senate in procession through the forum, presented Pompey with a sword and the formal charge to defend Italy, levy troops, and employ the forces already under his command. It was the legal gesture that turned Pompey's standing army into a constitutional fact.",
+      "links": [
+        {"characterId": "pompey"},
+        {"characterId": "caesar"}
+      ]
+    },
+    {
+      "id": "piso",
+      "names": ["Piso"],
+      "relation": "Consul who obstructed Pompey's piracy preparations",
+      "blurb": "The consul Lucius Calpurnius Piso Caesoninus checked Pompey's piracy preparations by withholding stores and discharging sailors—an act that so enraged the Roman people that Pompey needed only to appear in Tuscany to draw cheering crowds as if he had already won the war.",
+      "links": [
+        {"characterId": "pompey"}
+      ]
+    },
+    {
+      "id": "agesilaus-cross",
+      "names": ["Agesilaus"],
+      "relation": "Greek pair in the Parallel Lives",
+      "blurb": "Agesilaus is Pompey's Greek parallel: both owed their initial power to a patron they ultimately outgrew—Lysander for Agesilaus, Sylla for Pompey—and both ended their careers in Egyptian waters, the one as a hired soldier, the other as a fugitive.",
+      "links": [
+        {"characterId": "agesilaus", "workId": "agesilaus"}
+      ]
+    }
+  ],
+  "nameResolutions": [],
+  "locations": [
+    {
+      "id": "rome",
+      "names": ["Rome"],
+      "relation": "City Pompey served and could not master",
+      "modern": "Rome, Italy",
+      "lat": 41.9,
+      "lon": 12.5,
+      "blurb": "The centre of the world Pompey reorganized yet never controlled. He entered it in triumph three times, left it in flight once, and never came back—his real dominion always lay in camps and provinces rather than the city's factional streets."
+    },
+    {
+      "id": "italy",
+      "names": ["Italy"],
+      "relation": "The peninsula Pompey defended and then abandoned",
+      "modern": "Italy",
+      "lat": 42.5,
+      "lon": 12.5,
+      "blurb": "Pompey won Italy for Sylla as a very young man, then surrendered it to Caesar without a battle—a calculated withdrawal that baffled contemporaries and was only vindicated in strategy when Caesar had to follow him east rather than consolidate at home."
+    },
+    {
+      "id": "sicily",
+      "names": ["Sicily"],
+      "relation": "Pompey's first major command; grain reservoir",
+      "modern": "Sicily, Italy",
+      "lat": 37.6,
+      "lon": 14.0,
+      "blurb": "Pompey cleared Sicily of Marian resistance and captured Carbo, sending him to execution in his praetor's robes. Later, as grain commissioner, he sailed to Sicily and Sardinia to fill Rome's empty markets—each time the island served as a strategic pivot."
+    },
+    {
+      "id": "africa",
+      "names": ["Africa"],
+      "relation": "Scene of Pompey's first triumph and African campaign",
+      "modern": "North Africa (Tunisia / Libya region)",
+      "lat": 33.0,
+      "lon": 13.0,
+      "blurb": "Pompey crossed to Africa, defeated Domitius Ahenobarbus's larger army, and was hailed Imperator by his troops—his first such honor, though he declined it until he had stormed the last enemy camp. His triumph for this and Sicily was the first ever voted to a man below senatorial rank."
+    },
+    {
+      "id": "numidia",
+      "names": ["Numidia"],
+      "relation": "African kingdom Pompey overran in ten days",
+      "modern": "northeastern Algeria",
+      "lat": 36.0,
+      "lon": 6.0,
+      "blurb": "After finishing the main African campaign, Pompey invaded Numidia and marched many days into the interior, subduing all before him and reviving the terror of Roman power throughout a region that had begun to forget it. He claimed to have conquered it in ten days."
+    },
+    {
+      "id": "spain",
+      "names": ["Spain", "Iberia", "Hispania"],
+      "relation": "The province where Pompey fought Sertorius",
+      "modern": "Spain and Portugal",
+      "lat": 40.0,
+      "lon": -3.5,
+      "blurb": "Pompey crossed the Alps and brought the war to Sertorius in Spain for five years—a frustrating campaign against a guerrilla commander who outmanoeuvred him repeatedly. Perpenna's treachery ended what neither Pompey nor Metellus could finish in the field."
+    },
+    {
+      "id": "gaul",
+      "names": ["Gaul"],
+      "relation": "Caesar's province of conquest; source of his army",
+      "modern": "France and surrounding region",
+      "lat": 46.0,
+      "lon": 2.0,
+      "blurb": "Caesar's ten-year Gallic command built the army that he eventually turned on Rome. Plutarch shows Pompey watching from a distance as his former partner forged an instrument in Gaul that would ultimately decide their private war at Pharsalus."
+    },
+    {
+      "id": "alps",
+      "names": ["Alps"],
+      "relation": "Mountain barrier Pompey crossed to Spain without a road",
+      "modern": "Alps, Europe",
+      "lat": 46.0,
+      "lon": 8.0,
+      "blurb": "Unlike Hannibal, Pompey crossed the Alps by cutting an entirely new pass through the mountains. It was an early demonstration of the engineering confidence that would later build causeways across harbours and lay out naval harbours for a pirate war."
+    },
+    {
+      "id": "cilicia",
+      "names": ["Cilicia"],
+      "relation": "Original home of the pirate power Pompey destroyed",
+      "modern": "Çukurova, southern Turkey",
+      "lat": 37.0,
+      "lon": 35.0,
+      "blurb": "The rugged southern coast of Asia Minor where piracy had its obscure beginning before growing, in the chaos of the Mithridatic wars, into a force that controlled the whole Mediterranean. Pompey settled many surrendered pirates in Cilician towns rather than slaughtering them."
+    },
+    {
+      "id": "mediterranean",
+      "names": ["Mediterranean Sea"],
+      "relation": "The sea Pompey cleared of pirates in three months",
+      "modern": "Mediterranean Sea",
+      "lat": 35.0,
+      "lon": 18.0,
+      "blurb": "Divided into thirteen zones with a fleet and admiral for each, Pompey swept the entire sea in three months—a campaign of extraordinary logistical precision. The corn price at Rome fell the very day his fleet put to sea, and ships could sail again without fear."
+    },
+    {
+      "id": "pontus",
+      "names": ["Pontus"],
+      "relation": "Mithridates's kingdom on the Black Sea",
+      "modern": "Sinop–Trabzon region, Turkey",
+      "lat": 41.2,
+      "lon": 35.0,
+      "blurb": "Mithridates's ancestral kingdom on the southern shore of the Euxine, which he had built into a power capable of challenging Rome from the Aegean to the Crimea. Pompey's night battle dissolved the last Pontic army and left the king a fugitive rather than a king."
+    },
+    {
+      "id": "armenia",
+      "names": ["Armenia"],
+      "relation": "Tigranes's kingdom; Pompey's eastern settlement pivot",
+      "modern": "Armenia and eastern Turkey",
+      "lat": 40.0,
+      "lon": 45.0,
+      "blurb": "Tigranes the Great met Pompey here with his diadem in his hands, surrendered his conquests, and kept his own ancestral kingdom as a client. Pompey left Afranius to hold it and pushed north into the Caucasus in pursuit of Mithridates."
+    },
+    {
+      "id": "bithynia",
+      "names": ["Bithynia"],
+      "relation": "Province added to Pompey's eastern command",
+      "modern": "Bursa–Kocaeli region, Turkey",
+      "lat": 40.5,
+      "lon": 30.0,
+      "blurb": "Bithynia under Glabrio was bundled into Pompey's sweeping eastern commission along with Lucullus's forces. Its harbours and revenues made it a useful base for the long pursuit of Mithridates across the Pontic coast and into the Caucasus."
+    },
+    {
+      "id": "cappadocia",
+      "names": ["Cappadocia"],
+      "relation": "Inland Anatolian kingdom in Pompey's eastern settlement",
+      "modern": "Nevşehir–Kayseri region, Turkey",
+      "lat": 38.5,
+      "lon": 34.5,
+      "blurb": "One of the kingdoms Pompey reorganized in his sweeping eastern settlement, distributing client rulers and fixing boundaries with the diplomatic authority of a conquering general who had just reshaped the map of Asia from the Caucasus to the Red Sea."
+    },
+    {
+      "id": "syria",
+      "names": ["Syria"],
+      "relation": "Province organized by Pompey; fleet base in the civil war",
+      "modern": "Syria",
+      "lat": 35.0,
+      "lon": 38.0,
+      "blurb": "Pompey annexed Syria as a Roman province during his eastern settlement, ending the Seleucid dynasty and drawing a new map of the Near East. At the start of the civil war he sent his son Cnaeus and Metellus Scipio there to raise a fleet."
+    },
+    {
+      "id": "judea",
+      "names": ["Judea", "Jerusalem"],
+      "relation": "Province whose temple Pompey entered",
+      "modern": "Israel / Palestine",
+      "lat": 31.78,
+      "lon": 35.23,
+      "blurb": "Pompey besieged Jerusalem during his eastern settlement and famously entered the Holy of Holies in the Temple—a profanation that left a deep mark on Jewish memory. He touched nothing of the treasure but left the administration reorganized under Roman oversight."
+    },
+    {
+      "id": "caucasus",
+      "names": ["Caucasus"],
+      "relation": "Mountain range Pompey pushed into pursuing Mithridates",
+      "modern": "Caucasus Mountains",
+      "lat": 42.5,
+      "lon": 44.0,
+      "blurb": "Pompey marched north through the Caucasian peoples—Albanians and Iberians—fighting difficult campaigns in mountain terrain before being turned back by venomous serpents and the news that Mithridates had escaped to the Bosporan kingdom beyond the Maeotis."
+    },
+    {
+      "id": "caspian-sea",
+      "names": ["Caspian Sea"],
+      "relation": "Pompey's desired eastern limit; reached within three days' march",
+      "modern": "Caspian Sea",
+      "lat": 42.0,
+      "lon": 51.0,
+      "blurb": "Pompey advanced to within three days' march of the Caspian before venomous serpents in the passes forced him to retreat—the easternmost point of a campaign that had already reached the Euphrates, the Caucasus, and the shore of the Black Sea."
+    },
+    {
+      "id": "euphrates",
+      "names": ["Euphrates"],
+      "relation": "River Parthia sought as boundary; limit of Roman ambition",
+      "modern": "Euphrates River, Turkey / Iraq",
+      "lat": 36.5,
+      "lon": 38.5,
+      "blurb": "Phraates asked Pompey to recognize the Euphrates as the permanent boundary between Rome and Parthia. Pompey gave a non-committal answer that left the question open—a diplomatic vagueness that Crassus's Parthian ambition would try to resolve by force, fatally."
+    },
+    {
+      "id": "red-sea",
+      "names": ["Red Sea"],
+      "relation": "Pompey's desired southern limit of eastern conquest",
+      "modern": "Red Sea",
+      "lat": 20.0,
+      "lon": 38.0,
+      "blurb": "Pompey had a great desire to march through Arabia to the Red Sea, completing a circuit of conquest from the Atlantic to all three surrounding seas. He was diverted by Mithridates's activity in the north before he could attempt it."
+    },
+    {
+      "id": "greece",
+      "names": ["Greece"],
+      "relation": "Theatre of the civil war after the crossing from Brundusium",
+      "modern": "Greece",
+      "lat": 39.0,
+      "lon": 22.0,
+      "blurb": "Pompey fell back to Greece after abandoning Italy, gathering a great army and fleet on its coasts. He spent more than a year manoeuvring against Caesar in Epirus, winning tactical advantages he was ultimately forced by his impatient allies to throw away at Pharsalus."
+    },
+    {
+      "id": "thessaly",
+      "names": ["Thessaly"],
+      "relation": "Province where Caesar retreated and Pompey followed",
+      "modern": "Thessaly, Greece",
+      "lat": 39.5,
+      "lon": 22.0,
+      "blurb": "Caesar withdrew through Athamania into Thessaly when provisions failed, and Pompey followed—losing his best chance to strangle the enemy by siege and being pressed by his allies into the pitched battle he had been wise enough to avoid."
+    },
+    {
+      "id": "pharsalus",
+      "names": ["Pharsalus", "Pharsalia"],
+      "relation": "Site of the decisive battle (48 BC)",
+      "modern": "Farsala, Thessaly, Greece",
+      "lat": 39.3,
+      "lon": 22.38,
+      "blurb": "The plain where thirty-four years of military glory were settled in a single afternoon. Pompey's larger army, pressed into battle before it was ready, was broken by Caesar's veterans. Pompey sat speechless in his tent as the camp was stormed, then rode away—never to command again."
+    },
+    {
+      "id": "brundusium",
+      "names": ["Brundusium"],
+      "relation": "Italian port from which Pompey crossed to Greece",
+      "modern": "Brindisi, Italy",
+      "lat": 40.63,
+      "lon": 17.94,
+      "blurb": "Pompey embarked thirty cohorts of foot and the two consuls here, bound for Dyrrhachium, then blocked the harbour-mouth against Caesar's pursuit before crossing himself. The manoeuvre was admired even by Caesar as a fine piece of generalship under pressure."
+    },
+    {
+      "id": "dyrrhachium",
+      "names": ["Dyrrhachium"],
+      "relation": "Pompeian base on the Adriatic coast of Greece",
+      "modern": "Durrës, Albania",
+      "lat": 41.32,
+      "lon": 19.46,
+      "blurb": "The Adriatic port where Pompey concentrated his forces after the crossing from Italy. Caesar besieged it with a long line of earthworks and was eventually driven off in a sharp reverse—the last time Pompey's forces had the upper hand before Pharsalus."
+    },
+    {
+      "id": "lesbos",
+      "names": ["Lesbos", "Mitylene"],
+      "relation": "Island where Cornelia waited; Pompey gave it its freedom",
+      "modern": "Lesbos, Greece",
+      "lat": 39.2,
+      "lon": 26.35,
+      "blurb": "After Pharsalus Pompey sailed to Mitylene, where Cornelia was waiting, ignorant of the disaster. He had given the island its freedom earlier, at Theophanes's intercession, and attended its poetry festival where all the poets sang of his own deeds."
+    },
+    {
+      "id": "amphipolis",
+      "names": ["Amphipolis"],
+      "relation": "Macedonian city Pompey sailed by after Pharsalus",
+      "modern": "Amfipoli, Greece",
+      "lat": 40.82,
+      "lon": 23.85,
+      "blurb": "Pompey issued proclamations here calling on young men for service after the defeat at Pharsalus, then sailed on to Lesbos—a last gesture of military organisation by a general who knew his army was gone but had not yet admitted the war was over."
+    },
+    {
+      "id": "pamphylia",
+      "names": ["Pamphylia"],
+      "relation": "Coastal region where Pompey rallied after Pharsalus",
+      "modern": "Antalya region, Turkey",
+      "lat": 36.9,
+      "lon": 31.0,
+      "blurb": "At Attalia in Pamphylia, Pompey received galleys from Cilicia and began to assess what forces remained to him—a last attempt to rebuild a coalition from the fragments of a lost war before deciding to seek refuge in Egypt."
+    },
+    {
+      "id": "egypt",
+      "names": ["Egypt"],
+      "relation": "Country where Pompey was murdered (48 BC)",
+      "modern": "Egypt",
+      "lat": 26.5,
+      "lon": 30.0,
+      "blurb": "Pompey chose Egypt as his last refuge, trusting a king his father had helped restore. Achillas and Septimius came out to meet him in a small boat and stabbed him before he could reach the shore. Caesar arrived shortly after and wept."
+    },
+    {
+      "id": "adriatic",
+      "names": ["Adriatic Sea"],
+      "relation": "Sea between Italy and Greece in the civil war",
+      "modern": "Adriatic Sea",
+      "lat": 43.0,
+      "lon": 15.5,
+      "blurb": "The crossing Pompey made with his army from Brundusium to Dyrrhachium established Greece as the theatre of the civil war and gave him the naval advantage—he had five hundred warships to Caesar's none when the sea mattered."
+    },
+    {
+      "id": "campus-martius",
+      "names": ["Campus Martius"],
+      "relation": "Rome's great field; site of Pompey's theatre",
+      "modern": "Campo Marzio, Rome, Italy",
+      "lat": 41.9,
+      "lon": 12.47,
+      "blurb": "Pompey dedicated a theatre here that bore his name—the first permanent stone theatre in Rome—along with a temple to Venus Victrix. He celebrated its opening with games, hunts, and five hundred lions: the monument of a man who knew how to please a city while also feeding it with grain."
+    }
+  ]
+}
