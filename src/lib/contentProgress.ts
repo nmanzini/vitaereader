@@ -139,8 +139,69 @@ function caretFractionInParagraph(
 }
 
 /**
- * Read content progress from whatever is under the top of a viewport
- * (scroll container or paged clip). Returns null if nothing measurable.
+ * Relative sample points inside a viewport (origin = top-left).
+ * Center-anchored with a small vertical cluster for hit-testing gaps.
+ */
+export function contentSamplePoints(
+  width: number,
+  height: number,
+): { x: number; ys: number[] } {
+  if (width < 2 || height < 2) return { x: 0, ys: [] }
+  const x = Math.min(Math.max(width * 0.5, 8), width - 8)
+  const midY = height * 0.5
+  const dy = Math.min(18, height * 0.06)
+  return { x, ys: [midY, midY - dy, midY + dy] }
+}
+
+/**
+ * Scroll offset that places a content Y (relative to content top) at the
+ * vertical center of the viewport.
+ */
+export function scrollTopForCenterAnchor(
+  anchorOffsetInContent: number,
+  viewportHeight: number,
+  maxScroll: number,
+): number {
+  if (maxScroll <= 0) return 0
+  return Math.min(
+    maxScroll,
+    Math.max(0, anchorOffsetInContent - viewportHeight / 2),
+  )
+}
+
+/**
+ * Measure content progress at an absolute client point inside `viewport`.
+ * Returns null if nothing measurable at that point.
+ */
+export function measureContentRatioAt(
+  viewport: HTMLElement,
+  index: WordIndex,
+  clientX: number,
+  clientY: number,
+): number | null {
+  if (index.ids.length === 0) return 0
+
+  const el = document.elementFromPoint(clientX, clientY)
+  if (!el || !viewport.contains(el)) return null
+  if (el.closest('.reader-footer-nav')) return 1
+  if (el.closest('.reader-header') && !el.closest('[data-para-id]')) {
+    return 0
+  }
+
+  const paraEl = el.closest('[data-para-id]') as HTMLElement | null
+  if (!paraEl || !viewport.contains(paraEl)) return null
+  const id = paraEl.getAttribute('data-para-id')
+  if (!id) return null
+  const paraIndex = index.ids.indexOf(id)
+  if (paraIndex < 0) return null
+
+  const frac = caretFractionInParagraph(paraEl, clientX, clientY) ?? 0
+  return ratioFromAnchor(paraIndex, frac, index)
+}
+
+/**
+ * Read content progress from the center of a viewport (scroll clip or paged
+ * clip). Location = middle of what’s on screen. Returns null if unmeasurable.
  */
 export function measureContentRatio(
   viewport: HTMLElement,
@@ -150,30 +211,17 @@ export function measureContentRatio(
   const rect = viewport.getBoundingClientRect()
   if (rect.width < 2 || rect.height < 2) return null
 
-  const x = rect.left + Math.min(32, rect.width * 0.12)
-  const ys = [
-    rect.top + Math.min(24, rect.height * 0.1),
-    rect.top + rect.height * 0.35,
-    rect.top + rect.height * 0.55,
-  ]
+  const { x: relX, ys } = contentSamplePoints(rect.width, rect.height)
+  const x = rect.left + relX
 
-  for (const y of ys) {
-    const el = document.elementFromPoint(x, y)
-    if (!el || !viewport.contains(el)) continue
-    if (el.closest('.reader-footer-nav')) return 1
-    if (el.closest('.reader-header') && !el.closest('[data-para-id]')) {
-      return 0
-    }
-
-    const paraEl = el.closest('[data-para-id]') as HTMLElement | null
-    if (!paraEl || !viewport.contains(paraEl)) continue
-    const id = paraEl.getAttribute('data-para-id')
-    if (!id) continue
-    const paraIndex = index.ids.indexOf(id)
-    if (paraIndex < 0) continue
-
-    const frac = caretFractionInParagraph(paraEl, x, y) ?? 0
-    return ratioFromAnchor(paraIndex, frac, index)
+  for (const relY of ys) {
+    const measured = measureContentRatioAt(
+      viewport,
+      index,
+      x,
+      rect.top + relY,
+    )
+    if (measured != null) return measured
   }
 
   return null
@@ -326,7 +374,37 @@ export function pageIndexForContentRatio(
   return pageIndexFromFlowX(flowX, pageWidth, pageCount)
 }
 
-/** Scroll mode: place the anchored paragraph near the top of the viewport. */
+function caretOffsetYInParagraph(
+  paraEl: HTMLElement,
+  frac: number,
+): number | null {
+  const text = paraEl.textContent ?? ''
+  if (!text.length) return 0
+
+  const target = Math.min(
+    text.length,
+    Math.max(0, Math.floor(clampRatio(frac) * text.length)),
+  )
+  const walk = document.createTreeWalker(paraEl, NodeFilter.SHOW_TEXT)
+  let counted = 0
+  let node: Node | null
+  while ((node = walk.nextNode())) {
+    const len = node.textContent?.length ?? 0
+    if (counted + len >= target) {
+      const range = document.createRange()
+      range.setStart(node, Math.min(len, Math.max(0, target - counted)))
+      range.collapse(true)
+      const rects = range.getClientRects()
+      const box = rects.length > 0 ? rects[0] : range.getBoundingClientRect()
+      if (!box || (box.height === 0 && box.width === 0)) break
+      return box.top - paraEl.getBoundingClientRect().top
+    }
+    counted += len
+  }
+  return null
+}
+
+/** Scroll mode: place the content anchor at the vertical center of the clip. */
 export function scrollViewportToRatio(
   viewport: HTMLElement,
   index: WordIndex,
@@ -337,13 +415,14 @@ export function scrollViewportToRatio(
     return
   }
 
+  const max = Math.max(0, viewport.scrollHeight - viewport.clientHeight)
   const r = clampRatio(ratio)
   if (r <= 0.005) {
     viewport.scrollTop = 0
     return
   }
   if (r >= 0.995) {
-    viewport.scrollTop = viewport.scrollHeight
+    viewport.scrollTop = max
     return
   }
 
@@ -353,14 +432,21 @@ export function scrollViewportToRatio(
     `[data-para-id="${CSS.escape(id)}"]`,
   ) as HTMLElement | null
   if (!paraEl) {
-    const max = viewport.scrollHeight - viewport.clientHeight
-    viewport.scrollTop = r * Math.max(0, max)
+    viewport.scrollTop = r * max
     return
   }
 
   const viewTop = viewport.getBoundingClientRect().top
   const paraTop =
     paraEl.getBoundingClientRect().top - viewTop + viewport.scrollTop
-  const paraHeight = paraEl.offsetHeight || 0
-  viewport.scrollTop = Math.max(0, paraTop + frac * paraHeight - 4)
+  const caretY = caretOffsetYInParagraph(paraEl, frac)
+  const anchorY =
+    caretY != null
+      ? paraTop + caretY
+      : paraTop + frac * (paraEl.offsetHeight || 0)
+  viewport.scrollTop = scrollTopForCenterAnchor(
+    anchorY,
+    viewport.clientHeight,
+    max,
+  )
 }

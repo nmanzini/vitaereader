@@ -46,6 +46,8 @@ export function Reader() {
   const navigate = useNavigate()
   const scrollRef = useRef<HTMLDivElement>(null)
   const progressRef = useRef(0)
+  /** Suppress top-line settle right after a center-anchored resume restore. */
+  const restoreLockRef = useRef(false)
   const [work, setWork] = useState<Work | null>(null)
   const [pair, setPair] = useState<IndexPair | null>(null)
   const [theme, setTheme] = useTheme()
@@ -105,7 +107,9 @@ export function Reader() {
       .catch((e: Error) => setError(e.message))
   }, [slug])
 
-  // Layout switch: resume from the live content ratio, not a stale load-time value.
+  // Layout switch: resume from the live center-measured ratio (progressRef),
+  // not a stale load-time value. Pages←scroll uses pageIndexForContentRatio;
+  // pages→scroll restores that anchor to the scroll clip center.
   useEffect(() => {
     if (!work) return
     setResumeAt(progressRef.current)
@@ -124,11 +128,24 @@ export function Reader() {
     const el = scrollRef.current
     if (!el) return
     const target = resumeAt
-    requestAnimationFrame(() => {
+    let unlockTimer = 0
+    restoreLockRef.current = true
+    const raf = requestAnimationFrame(() => {
       scrollViewportToRatio(el, wordIndex, target)
-      snapViewportTopToLine(el)
+      // Commit the center-of-scroll measurement so Loc/storage match the view.
+      // Skip top-line settle here — it would shift the center anchor.
+      const measured = measureContentRatio(el, wordIndex)
+      if (measured != null) commitProgress(measured)
+      unlockTimer = window.setTimeout(() => {
+        restoreLockRef.current = false
+      }, 200)
     })
-  }, [work, pagesMode, resumeAt, wordIndex])
+    return () => {
+      cancelAnimationFrame(raf)
+      window.clearTimeout(unlockTimer)
+      restoreLockRef.current = false
+    }
+  }, [work, pagesMode, resumeAt, wordIndex, commitProgress])
 
   useEffect(() => {
     if (pagesMode || !wordIndex) return
@@ -151,6 +168,10 @@ export function Reader() {
     }
 
     function settleToLine() {
+      if (restoreLockRef.current) {
+        captureProgress()
+        return false
+      }
       const moved = snapViewportTopToLine(root)
       captureProgress()
       return moved

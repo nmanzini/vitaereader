@@ -23,8 +23,10 @@ import { libraryEntries } from '../src/lib/libraryOrder.ts'
 import {
   anchorFromRatio,
   buildWordIndex,
+  contentSamplePoints,
   pageIndexFromFlowX,
   ratioFromAnchor,
+  scrollTopForCenterAnchor,
 } from '../src/lib/contentProgress.ts'
 import { readFileSync } from 'node:fs'
 import { join, dirname } from 'node:path'
@@ -190,5 +192,21 @@ describe('content progress', () => {
     assert.equal(pageIndexFromFlowX(400, 400, 10), 1)
     assert.equal(pageIndexFromFlowX(801, 400, 10), 2)
     assert.equal(pageIndexFromFlowX(9999, 400, 10), 9)
+  })
+
+  it('samples progress at viewport center with a small Y cluster', () => {
+    const { x, ys } = contentSamplePoints(400, 800)
+    assert.equal(x, 200)
+    assert.equal(ys.length, 3)
+    assert.equal(ys[0], 400)
+    assert.ok(ys[1] < 400 && ys[2] > 400)
+    assert.deepEqual(contentSamplePoints(1, 1), { x: 0, ys: [] })
+  })
+
+  it('centers scroll restore on the content anchor', () => {
+    assert.equal(scrollTopForCenterAnchor(400, 800, 2000), 0)
+    assert.equal(scrollTopForCenterAnchor(1000, 800, 2000), 600)
+    assert.equal(scrollTopForCenterAnchor(5000, 800, 2000), 2000)
+    assert.equal(scrollTopForCenterAnchor(100, 800, 0), 0)
   })
 })
