@@ -376,7 +376,7 @@
   color: var(--ink-muted);
 }
 
-/* Character name highlights — subtle, tap-first (not link-loud). */
+/* Character name highlights — quiet Kindle-like cue (italic + soft underline). */
 .char-ref {
   display: inline;
   padding: 0;
@@ -385,22 +385,22 @@
   border-radius: 0;
   background: none;
   font: inherit;
+  font-style: italic;
   color: inherit;
   cursor: pointer;
   text-decoration: underline;
-  text-decoration-color: color-mix(in srgb, var(--accent) 42%, transparent);
-  text-decoration-thickness: 1px;
-  text-underline-offset: 0.16em;
-  -webkit-tap-highlight-color: color-mix(in srgb, var(--accent) 18%, transparent);
+  text-decoration-color: color-mix(in srgb, var(--ink) 18%, transparent);
+  text-decoration-thickness: from-font;
+  text-underline-offset: 0.14em;
+  -webkit-tap-highlight-color: color-mix(in srgb, var(--accent) 12%, transparent);
 }
 
 .char-ref:hover,
 .char-ref:focus-visible {
-  text-decoration-color: var(--accent);
-  color: color-mix(in srgb, var(--accent) 55%, var(--ink));
+  text-decoration-color: color-mix(in srgb, var(--accent) 40%, transparent);
 }
 
 .char-ref:focus-visible {
-  outline: 1px solid color-mix(in srgb, var(--accent) 50%, transparent);
+  outline: 1px solid color-mix(in srgb, var(--accent) 35%, transparent);
   outline-offset: 2px;
 }
