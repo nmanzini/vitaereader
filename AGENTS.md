@@ -156,7 +156,7 @@ npm run dev -- --host 127.0.0.1 --port 5175
 Minimum path:
 
 1. `/` — library loads; totals visible.
-2. `/` — pair rows link straight to lives/comparisons with word counts.
+2. `/` — pair rows are name links only (Theseus - Romulus - Comparison).
 3. `/read/theseus` — scroll: top+bottom spacers exist; footer shows `Loc …` when bottom chrome open.
 4. Switch layout to Pages (Settings):
    - Stable hooks: `[data-testid="reader-show-menu"]` then `[data-testid="reader-settings"]`.

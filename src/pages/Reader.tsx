@@ -530,11 +530,6 @@ export function Reader() {
             <span className="nav-label">Next</span>
             <span className="nav-title">{next.title}</span>
           </Link>
-        ) : pair ? (
-          <Link to={`/pair/${pair.slug}`} className="nav-next">
-            <span className="nav-label">Pair</span>
-            <span className="nav-title">Back to {pair.title}</span>
-          </Link>
         ) : (
           <Link to="/" className="nav-next">
             <span className="nav-label">Library</span>
@@ -584,9 +579,7 @@ export function Reader() {
         onMouseLeave={scheduleHideTop}
       >
         <div className="reader-chrome-row">
-          <Link to={pair ? `/pair/${pair.slug}` : '/'}>
-            {pair ? pair.title : 'Library'}
-          </Link>
+          <Link to="/">Library</Link>
           <div className="reader-chrome-actions">
             <button
               type="button"
@@ -641,7 +634,7 @@ export function Reader() {
           }}
           onExhausted={() => {
             if (next) navigate(`/read/${next.id}`)
-            else if (pair) navigate(`/pair/${pair.slug}`)
+            else navigate('/')
           }}
         >
           <article className="reader reader-paged">{articleInner}</article>

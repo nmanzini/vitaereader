@@ -55,18 +55,13 @@
   gap: 0.15rem;
 }
 
-.pair-card {
+.pair-row {
   display: grid;
   grid-template-columns: 2.5rem 1fr;
   gap: 0.75rem;
   align-items: baseline;
   padding: 0.85rem 0.25rem;
-  text-decoration: none;
   border-bottom: 1px solid var(--rule);
-}
-
-.pair-card:hover .pair-title {
-  color: var(--accent);
 }
 
 .pair-num {
@@ -76,28 +71,41 @@
   font-variant-numeric: tabular-nums;
 }
 
-.pair-title {
-  display: block;
+.life-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  row-gap: 0.35rem;
+}
+
+.life-item {
+  display: inline;
   font-family: var(--font-display);
-  font-size: 1.35rem;
+  font-size: 1.25rem;
   font-weight: 600;
 }
 
-.pair-sub {
-  display: block;
-  margin-top: 0.2rem;
-  font-size: 0.92rem;
+.life-sep {
   color: var(--ink-muted);
+  font-weight: 400;
+  text-decoration: none;
 }
 
-.pair-list li.is-finished .pair-title::after {
-  content: ' · finished';
-  font-family: var(--font-body);
-  font-size: 0.75rem;
-  font-weight: 400;
+.life-link {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+  text-decoration-color: color-mix(in srgb, var(--ink) 35%, transparent);
+  color: var(--ink);
+}
+
+.life-link:hover {
   color: var(--accent);
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
+  text-decoration-color: color-mix(in srgb, var(--accent) 55%, transparent);
+}
+
+.life-link.is-finished {
+  color: var(--ink-muted);
 }
 
 .library-footer {

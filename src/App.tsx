@@ -1,6 +1,5 @@
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 import { Library } from './pages/Library'
-import { PairView } from './pages/PairView'
 import { Reader } from './pages/Reader'
 import { loadTheme, setTheme } from './lib/prefs'
 
@@ -13,7 +12,7 @@ export default function App() {
     <BrowserRouter basename={basename}>
       <Routes>
         <Route path="/" element={<Library />} />
-        <Route path="/pair/:slug" element={<PairView />} />
+        <Route path="/pair/:slug" element={<Navigate to="/" replace />} />
         <Route path="/read/:slug" element={<Reader />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>

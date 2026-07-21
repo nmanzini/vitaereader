@@ -1,11 +1,63 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { formatWords, loadFinished } from '../lib/prefs'
-import { loadIndex, pairWorks, type CorpusIndex } from '../lib/corpus'
+import {
+  loadIndex,
+  pairWorks,
+  type CorpusIndex,
+  type IndexWorkRef,
+} from '../lib/corpus'
 import { libraryEntries } from '../lib/libraryOrder'
 import { useTheme } from '../lib/useTheme'
 import { ThemePicker } from '../components/ThemePicker'
 import './Library.css'
+
+function WorkLink({
+  work,
+  label,
+  finished,
+}: {
+  work: IndexWorkRef
+  label: string
+  finished: boolean
+}) {
+  return (
+    <Link
+      to={`/read/${work.id}`}
+      className={finished ? 'life-link is-finished' : 'life-link'}
+    >
+      {label}
+    </Link>
+  )
+}
+
+function LifeLinks({
+  items,
+  finished,
+}: {
+  items: { work: IndexWorkRef; label: string }[]
+  finished: Set<string>
+}) {
+  return (
+    <div className="life-links">
+      {items.map(({ work, label }, i) => (
+        <span key={work.id} className="life-item">
+          {i > 0 ? (
+            <span className="life-sep" aria-hidden="true">
+              {' '}
+              -{' '}
+            </span>
+          ) : null}
+          <WorkLink
+            work={work}
+            label={label}
+            finished={finished.has(work.id)}
+          />
+        </span>
+      ))}
+    </div>
+  )
+}
 
 export function Library() {
   const [index, setIndex] = useState<CorpusIndex | null>(null)
@@ -43,9 +95,7 @@ export function Library() {
         <p className="library-brand">Vitae</p>
         <h1>Plutarch’s Parallel Lives</h1>
         <p className="library-lede">
-          Dryden’s translation, revised by A. H. Clough. Pairs of Greek and
-          Roman lives in order — with the few unpaired lives kept where they
-          belong in the sequence.
+          Dryden’s translation, revised by A. H. Clough.
         </p>
         <ThemePicker theme={theme} onChange={setTheme} />
         <p className="library-meta">
@@ -64,41 +114,47 @@ export function Library() {
               const done = pairWorks(pair).every((w) => finished.has(w.id))
               return (
                 <li key={pair.id} className={done ? 'is-finished' : undefined}>
-                  <Link to={`/pair/${pair.slug}`} className="pair-card">
+                  <div className="pair-row">
                     <span className="pair-num">{num}</span>
-                    <span className="pair-body">
-                      <span className="pair-title">{pair.title}</span>
-                      <span className="pair-sub">
-                        {pair.greek.map((g) => g.title).join(' · ')}
-                        <span aria-hidden="true"> — </span>
-                        {pair.roman.map((r) => r.title).join(' · ')}
-                        {pair.comparison ? ' · Comparison' : ''}
-                      </span>
-                    </span>
-                  </Link>
+                    <LifeLinks
+                      finished={finished}
+                      items={[
+                        ...pair.greek.map((w) => ({
+                          work: w,
+                          label: w.title,
+                        })),
+                        ...pair.roman.map((w) => ({
+                          work: w,
+                          label: w.title,
+                        })),
+                        ...(pair.comparison
+                          ? [
+                              {
+                                work: pair.comparison,
+                                label: 'Comparison',
+                              },
+                            ]
+                          : []),
+                      ]}
+                    />
+                  </div>
                 </li>
               )
             }
 
             const { work } = entry
-            const done = finished.has(work.id)
-            const culture =
-              work.culture === 'roman'
-                ? 'Roman'
-                : work.culture === 'greek'
-                  ? 'Greek'
-                  : 'Unpaired'
             return (
-              <li key={work.id} className={done ? 'is-finished' : undefined}>
-                <Link to={`/read/${work.id}`} className="pair-card">
+              <li
+                key={work.id}
+                className={finished.has(work.id) ? 'is-finished' : undefined}
+              >
+                <div className="pair-row">
                   <span className="pair-num">{num}</span>
-                  <span className="pair-body">
-                    <span className="pair-title">{work.title}</span>
-                    <span className="pair-sub">
-                      {culture} · unpaired · {formatWords(work.wordCount)}
-                    </span>
-                  </span>
-                </Link>
+                  <LifeLinks
+                    finished={finished}
+                    items={[{ work, label: work.title }]}
+                  />
+                </div>
               </li>
             )
           })}
