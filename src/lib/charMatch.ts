@@ -65,6 +65,35 @@ export type WorkAnnotations = {
   nameResolutions?: NameResolution[]
 }
 
+/**
+ * True when this cast member is the Life’s subject (e.g. Alexander in
+ * Alexander). Reader body text should not highlight the subject — you’re
+ * already reading their story.
+ */
+export function isSubjectCharacter(
+  character: CharacterAnnotation,
+  subject: string,
+  workId?: string,
+): boolean {
+  const subj = subject.trim().toLowerCase()
+  if (!subj) return false
+  if (workId && character.id === workId) return true
+  const slug = subj.replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '')
+  if (slug && (character.id === slug || character.id === `${slug}-subject`)) {
+    return true
+  }
+  return character.names.some((n) => n.trim().toLowerCase() === subj)
+}
+
+/** Cast used for reader body highlights — subject of the Life omitted. */
+export function charactersForReaderBody(
+  characters: readonly CharacterAnnotation[],
+  subject: string,
+  workId?: string,
+): CharacterAnnotation[] {
+  return characters.filter((c) => !isSubjectCharacter(c, subject, workId))
+}
+
 export type CharMatch = {
   start: number
   end: number

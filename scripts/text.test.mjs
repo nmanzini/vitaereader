@@ -35,6 +35,8 @@ import {
   findAnnotationMatches,
   findCharacterMatches,
   findLocationMatches,
+  charactersForReaderBody,
+  isSubjectCharacter,
   segmentAnnotationText,
   segmentText,
 } from '../src/lib/charMatch.ts'
@@ -458,6 +460,36 @@ describe('charMatch', () => {
     assert.ok(
       para.text.slice(philip.start, philip.end + 20).includes('one of his friends'),
     )
+  })
+
+  it('omits the Life subject from reader-body cast matching', () => {
+    const cast = [
+      {
+        id: 'alexander',
+        names: ['Alexander'],
+        blurb: 'The king himself.',
+        relation: 'Subject',
+      },
+      {
+        id: 'hephaestion',
+        names: ['Hephaestion'],
+        blurb: 'Closest friend.',
+        relation: 'Friend',
+      },
+    ]
+    assert.equal(isSubjectCharacter(cast[0], 'Alexander', 'alexander'), true)
+    assert.equal(isSubjectCharacter(cast[1], 'Alexander', 'alexander'), false)
+    const body = charactersForReaderBody(cast, 'Alexander', 'alexander')
+    assert.deepEqual(
+      body.map((c) => c.id),
+      ['hephaestion'],
+    )
+    const hits = findCharacterMatches(
+      'Alexander rode with Hephaestion.',
+      body,
+    )
+    assert.equal(hits.length, 1)
+    assert.equal(hits[0].characterId, 'hephaestion')
   })
 
   it('matches locations and prefers characters on equal-length ties', () => {

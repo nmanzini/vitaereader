@@ -2,6 +2,7 @@ import type { ReactNode } from 'react'
 import type { Paragraph } from '../content/types'
 import {
   findAnnotationMatches,
+  charactersForReaderBody,
   type CharacterAnnotation,
   type LocationAnnotation,
   type NameResolution,
@@ -14,6 +15,9 @@ import {
 
 type Props = {
   paragraph: Paragraph
+  /** Work subject (Life title) — their name is not highlighted in the body. */
+  subject?: string
+  workId?: string
   characters?: readonly CharacterAnnotation[]
   locations?: readonly LocationAnnotation[]
   /** LLM/reviewer span → characterId for ambiguous names in this work. */
@@ -63,8 +67,12 @@ function renderSegments(
   keyPrefix: string,
   paraId: string,
   nameResolutions: readonly NameResolution[] | undefined,
+  subject: string | undefined,
+  workId: string | undefined,
 ): ReactNode {
-  const chars = characters?.length ? characters : []
+  const chars = characters?.length
+    ? charactersForReaderBody(characters, subject ?? '', workId)
+    : []
   const locs = locations?.length ? locations : []
   const hl = highlights?.length ? highlights : []
   if (chars.length === 0 && locs.length === 0 && hl.length === 0) return text
@@ -132,6 +140,8 @@ function renderSegments(
 
 export function ParagraphView({
   paragraph,
+  subject,
+  workId,
   characters,
   locations,
   nameResolutions,
@@ -158,6 +168,8 @@ export function ParagraphView({
           paragraph.id,
           paragraph.id,
           nameResolutions,
+          subject,
+          workId,
         )}
       </p>
     )
@@ -211,6 +223,8 @@ export function ParagraphView({
               `${paragraph.id}-L${i}`,
               paragraph.id,
               lineResolutions,
+              subject,
+              workId,
             )}
             {i < lines.length - 1 ? <br /> : null}
           </span>

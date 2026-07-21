@@ -507,6 +507,8 @@ export function Reader() {
           <ParagraphView
             key={p.id}
             paragraph={p}
+            subject={annotations?.subject ?? work.title}
+            workId={work.id}
             characters={annotations?.characters}
             locations={annotations?.locations}
             nameResolutions={annotations?.nameResolutions}
