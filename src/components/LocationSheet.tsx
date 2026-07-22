@@ -4,6 +4,7 @@ import {
   type LocationAnnotation,
 } from '../lib/charMatch'
 import {
+  boundsAroundPoint,
   boundsForPoints,
   journeyStops,
   locationPresence,
@@ -82,8 +83,16 @@ export function LocationSheet({
     visitKind: s.kind,
     visitOrder: s.order,
   }))
-  const mapBounds = boundsForPoints(
+  // Collapsed: zoom in on this place. Expanded: zoom out over the whole cast of places.
+  const focusBounds = boundsAroundPoint(
+    { lat: current.lat, lon: current.lon },
+    5,
+  )
+  const overviewBounds = boundsForPoints(
     locations.map((l) => ({ lat: l.lat, lon: l.lon })),
+    7,
+    undefined,
+    14,
   )
 
   function openLocation(locationId: string) {
@@ -193,7 +202,7 @@ export function LocationSheet({
               others={peerMarkers}
               journey={journeyMarkers}
               expanded
-              bounds={mapBounds}
+              bounds={overviewBounds}
               label={
                 stops.length >= 2
                   ? `Map showing ${name} and ${subject}'s journey`
@@ -210,7 +219,7 @@ export function LocationSheet({
                 visitKind: visitKindOf(current),
               }}
               expanded={false}
-              bounds={mapBounds}
+              bounds={focusBounds}
               label={`Map showing ${name}`}
             />
           )}

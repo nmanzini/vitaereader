@@ -104,6 +104,7 @@ export function boundsForPoints(
   points: readonly GeoPoint[],
   padding = 5,
   fallback: MapBounds = CAMPAIGN_BOUNDS,
+  minSpan = 8,
 ): MapBounds {
   if (points.length === 0) return { ...fallback }
 
@@ -119,7 +120,6 @@ export function boundsForPoints(
   }
 
   // Minimum span so a single pin (or tight cluster) still frames as a map.
-  const minSpan = 8
   const lonSpan = east - west
   const latSpan = north - south
   if (lonSpan < minSpan) {
@@ -145,4 +145,21 @@ export function boundsForPoints(
 
   if (east <= west || north <= south) return { ...fallback }
   return { west, east, south, north }
+}
+
+/**
+ * Collapsed-sheet zoom: a local window centered on one place.
+ * `halfSpan` is degrees from center to each edge (~5° ≈ regional).
+ */
+export function boundsAroundPoint(
+  point: GeoPoint,
+  halfSpan = 5,
+): MapBounds {
+  const span = Math.max(1, halfSpan)
+  return {
+    west: Math.max(-180, point.lon - span),
+    east: Math.min(180, point.lon + span),
+    south: Math.max(-90, point.lat - span),
+    north: Math.min(90, point.lat + span),
+  }
 }
