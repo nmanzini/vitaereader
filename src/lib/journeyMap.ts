@@ -4,12 +4,12 @@
  * visits (ordered + typed) draw the expanded-map path and icons.
  */
 
-import type { LocationAnnotation } from './charMatch'
+import type { LocationAnnotation } from './charMatch.ts'
 import {
   CAMPAIGN_BOUNDS,
   type GeoPoint,
   type MapBounds,
-} from './geoMap'
+} from './geoMap.ts'
 
 /** Why a place is annotated in the work. Default when omitted: named. */
 export type LocationPresence = 'named' | 'visited'
