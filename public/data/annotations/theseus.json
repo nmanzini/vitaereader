@@ -969,5 +969,265 @@
         }
       ]
     }
+  ],
+  "locations": [
+    {
+      "id": "troezen",
+      "names": [
+        "Troezen"
+      ],
+      "relation": "Birthplace under Pittheus",
+      "modern": "Troezen, Greece",
+      "lat": 37.5,
+      "lon": 23.35,
+      "presence": "visited",
+      "visitKind": "city",
+      "visitOrder": 1,
+      "travel": "land",
+      "blurb": "Raised at Pittheus’s court in Troezen—Aethra’s home—before the road of labors toward Athens."
+    },
+    {
+      "id": "epidaurus",
+      "names": [
+        "Epidaurus"
+      ],
+      "relation": "First labor on the Isthmus road",
+      "modern": "Epidavros, Greece",
+      "lat": 37.6,
+      "lon": 23.08,
+      "presence": "visited",
+      "visitKind": "battle",
+      "visitOrder": 2,
+      "travel": "land",
+      "blurb": "Where he met Periphetes the Club-bearer and took the weapon that marked his clearing of the road."
+    },
+    {
+      "id": "crommyon",
+      "names": [
+        "Crommyon"
+      ],
+      "relation": "Haunt of the Crommyonian sow",
+      "modern": "near Corinth’s east coast",
+      "lat": 37.9,
+      "lon": 23.1,
+      "presence": "visited",
+      "visitKind": "battle",
+      "visitOrder": 3,
+      "travel": "land",
+      "blurb": "Along the Saronic shore he slew the Crommyonian sow—another terror cleared for travelers to Athens."
+    },
+    {
+      "id": "megara",
+      "names": [
+        "Megara"
+      ],
+      "relation": "Cliffs of Sciron",
+      "modern": "Megara / Kakia Skala, Greece",
+      "lat": 37.99,
+      "lon": 23.34,
+      "presence": "visited",
+      "visitKind": "battle",
+      "visitOrder": 4,
+      "travel": "land",
+      "blurb": "Sciron’s cliff road above the sea—Theseus hurled the robber down the way he had cast strangers."
+    },
+    {
+      "id": "eleusis",
+      "names": [
+        "Eleusis"
+      ],
+      "relation": "Wrestling ground of Cercyon",
+      "modern": "Elefsina, Greece",
+      "lat": 38.04,
+      "lon": 23.54,
+      "presence": "visited",
+      "visitKind": "battle",
+      "visitOrder": 5,
+      "travel": "land",
+      "blurb": "At Eleusis he overthrew Cercyon in wrestling—then Procrustes farther on—before entering Attica as hero."
+    },
+    {
+      "id": "athens",
+      "names": [
+        "Athens"
+      ],
+      "relation": "City he claimed and later ruled",
+      "modern": "Athens, Greece",
+      "lat": 37.97,
+      "lon": 23.72,
+      "presence": "visited",
+      "visitKind": "city",
+      "visitOrder": 6,
+      "travel": "land",
+      "blurb": "Recognized by the sword and sandals, he entered Athens—heir of Aegeus, founder-figure of the democracy’s myth."
+    },
+    {
+      "id": "marathon",
+      "names": [
+        "Marathon"
+      ],
+      "relation": "Bull of Marathon",
+      "modern": "Marathon, Greece",
+      "lat": 38.15,
+      "lon": 23.95,
+      "presence": "visited",
+      "visitKind": "battle",
+      "visitOrder": 7,
+      "travel": "land",
+      "blurb": "He captured the Marathonian bull and drove it to Athens—Attica’s countryside made safe in the same spirit as the Isthmus road."
+    },
+    {
+      "id": "crete",
+      "names": [
+        "Crete",
+        "Labyrinth"
+      ],
+      "relation": "Labyrinth and the Minotaur",
+      "modern": "Crete, Greece",
+      "lat": 35.3,
+      "lon": 25,
+      "presence": "visited",
+      "visitKind": "battle",
+      "visitOrder": 8,
+      "travel": "sea",
+      "blurb": "Sailed as tribute to Minos; with Ariadne’s thread he entered the Labyrinth and slew the Minotaur."
+    },
+    {
+      "id": "naxos",
+      "names": [
+        "Naxos"
+      ],
+      "relation": "Where Ariadne was left",
+      "modern": "Naxos, Greece",
+      "lat": 37.1,
+      "lon": 25.4,
+      "presence": "visited",
+      "visitKind": "city",
+      "visitOrder": 9,
+      "travel": "sea",
+      "blurb": "On the voyage home Ariadne was left at Naxos—love and desertion tangled in the same island stop."
+    },
+    {
+      "id": "delos",
+      "names": [
+        "Delos"
+      ],
+      "relation": "Sacred island of thanksgiving",
+      "modern": "Delos, Greece",
+      "lat": 37.39,
+      "lon": 25.27,
+      "presence": "visited",
+      "visitKind": "oracle",
+      "visitOrder": 10,
+      "travel": "sea",
+      "blurb": "He put in at Delos to dance the Crane and thank Apollo—vow and thanksgiving after Crete."
+    },
+    {
+      "id": "thermodon",
+      "names": [
+        "Thermodon"
+      ],
+      "relation": "River of the Amazons",
+      "modern": "Terme River, Turkey",
+      "lat": 41.2,
+      "lon": 36.95,
+      "presence": "visited",
+      "visitKind": "battle",
+      "visitOrder": 11,
+      "travel": "sea",
+      "blurb": "Far north on the Black Sea shore he fought Amazons and took Hippolyta—war that later returned to Attica."
+    },
+    {
+      "id": "aphidnae",
+      "names": [
+        "Aphidnae",
+        "Aphidna"
+      ],
+      "relation": "Refuge with Helen",
+      "modern": "Afidnes area, Attica",
+      "lat": 38.2,
+      "lon": 23.85,
+      "presence": "visited",
+      "visitKind": "camp",
+      "visitOrder": 12,
+      "travel": "land",
+      "blurb": "He hid young Helen at Aphidnae; the Dioscuri stormed it—Attica paid for the abduction."
+    },
+    {
+      "id": "scyros",
+      "names": [
+        "Scyros"
+      ],
+      "relation": "Island of his death",
+      "modern": "Skyros, Greece",
+      "lat": 38.9,
+      "lon": 24.5,
+      "presence": "visited",
+      "visitKind": "city",
+      "visitOrder": 13,
+      "travel": "sea",
+      "blurb": "Exiled to Scyros, he fell—or was cast—from the cliff by Lycomedes; later Cimon brought his bones home."
+    },
+    {
+      "id": "corinth",
+      "names": [
+        "Corinth",
+        "Isthmus"
+      ],
+      "relation": "Neighbor on the Isthmus road",
+      "modern": "near Corinth, Greece",
+      "lat": 37.91,
+      "lon": 22.88,
+      "presence": "named",
+      "blurb": "The Isthmus corridor of his youthful labors—Corinth’s land between two gulfs, gateway toward Athens."
+    },
+    {
+      "id": "sparta",
+      "names": [
+        "Sparta"
+      ],
+      "relation": "Home of Helen and the Dioscuri",
+      "modern": "Sparta, Greece",
+      "lat": 37.08,
+      "lon": 22.43,
+      "presence": "named",
+      "blurb": "Helen’s city—her seizure at Aphidnae drew Castor and Pollux north against Theseus’s Attica."
+    },
+    {
+      "id": "thebes",
+      "names": [
+        "Thebes"
+      ],
+      "relation": "Boeotian neighbor in the legends",
+      "modern": "Thiva, Greece",
+      "lat": 38.32,
+      "lon": 23.32,
+      "presence": "named",
+      "blurb": "Named among Greek lands around Attica’s politics and wars in the Theseus cycle."
+    },
+    {
+      "id": "colchis",
+      "names": [
+        "Colchis"
+      ],
+      "relation": "Eastern edge of heroic geography",
+      "modern": "western Georgia",
+      "lat": 42,
+      "lon": 42,
+      "presence": "named",
+      "blurb": "Far shore of myth—paired in Greek story with Black Sea voyages beyond the Thermodon."
+    },
+    {
+      "id": "rome",
+      "names": [
+        "Rome"
+      ],
+      "relation": "Later echo in Plutarch’s pairing",
+      "modern": "Rome, Italy",
+      "lat": 41.89,
+      "lon": 12.49,
+      "presence": "named",
+      "blurb": "Plutarch pairs Theseus with Romulus—Athens’s founder-myth set beside Rome’s."
+    }
   ]
 }

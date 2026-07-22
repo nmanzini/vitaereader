@@ -49,8 +49,10 @@ import { CAMPAIGN_LAND_RINGS } from '../src/lib/campaignLand.ts'
 import {
   boundsAroundPoint,
   boundsForPoints,
+  boundsForRoute,
   isVisitKind,
   journeyPathD,
+  journeyPathSegments,
   journeyStops,
   journeyThrough,
   locationPresence,
@@ -644,6 +646,40 @@ describe('journeyMap', () => {
       ['a', 'b'],
     )
     assert.deepEqual(journeyThrough(stops, null), [])
+  })
+
+  it('splits land vs sea path segments and frames routes proportionally', () => {
+    const segs = journeyPathSegments(
+      [{ travel: 'land' }, { travel: 'sea' }, { travel: 'land' }],
+      [
+        { x: 0, y: 0 },
+        { x: 10, y: 0 },
+        { x: 10, y: 5 },
+      ],
+    )
+    assert.equal(segs.length, 2)
+    assert.equal(segs[0].mode, 'sea')
+    assert.equal(segs[0].d, 'M0 0L10 0')
+    assert.equal(segs[1].mode, 'land')
+    assert.equal(segs[1].d, 'M10 0L10 5')
+
+    const short = boundsForRoute([
+      { lat: 40, lon: 22 },
+      { lat: 40.5, lon: 23 },
+    ])
+    const long = boundsForRoute([
+      { lat: 40, lon: 20 },
+      { lat: 30, lon: 70 },
+    ])
+    const shortSpan = short.east - short.west
+    const longSpan = long.east - long.west
+    // Short path stays tight; long path opens with the route, not a fixed box.
+    assert.ok(shortSpan < 8, `short route frame too wide: ${shortSpan}`)
+    assert.ok(longSpan > shortSpan)
+    assert.ok(longSpan < 62, `long route over-padded: ${longSpan}`)
+    // Lon padding tracks lon span; lat stays thin for an E–W corridor.
+    const longLat = long.north - long.south
+    assert.ok(longLat < 20, `E–W route should not inflate into a square: ${longLat}`)
   })
 
   it('builds journey polylines and padded bounds', () => {

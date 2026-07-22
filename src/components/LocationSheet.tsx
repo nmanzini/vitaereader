@@ -5,10 +5,11 @@ import {
 } from '../lib/charMatch'
 import {
   boundsAroundPoint,
-  boundsForPoints,
+  boundsForRoute,
   journeyStops,
   journeyThrough,
   locationPresence,
+  pointInBounds,
   visitKindOf,
 } from '../lib/journeyMap'
 import { LocationMap } from './LocationMap'
@@ -87,27 +88,27 @@ export function LocationSheet({
     presence: 'visited' as const,
     visitKind: s.kind,
     visitOrder: s.order,
+    travel: s.travel,
   }))
-  // Expanded peers: named mentions + stops already reached (hide future visits).
+  // Expanded peers: named mentions + stops already reached (hide future visits),
+  // and only dots that fall inside the route frame so zoom stays on the path.
+  const overviewBounds =
+    progressStops.length >= 2
+      ? boundsForRoute(progressStops)
+      : boundsAroundPoint({ lat: current.lat, lon: current.lon }, 8)
   const peerForMap = peerMarkers.filter((m) => {
-    if (m.presence !== 'visited') return true
+    if (m.presence !== 'visited') {
+      // named: only if inside the path frame
+      return pointInBounds(m, overviewBounds, 0.25)
+    }
     if (presence !== 'visited' || current.visitOrder == null) return false
-    return (m.visitOrder ?? Infinity) <= current.visitOrder
+    if ((m.visitOrder ?? Infinity) > current.visitOrder) return false
+    return pointInBounds(m, overviewBounds, 0.25)
   })
   // Collapsed: zoom in on this place.
-  // Expanded: frame the journey so far (fallback to all places if none).
   const focusBounds = boundsAroundPoint(
     { lat: current.lat, lon: current.lon },
     5,
-  )
-  const overviewBounds = boundsForPoints(
-    (progressStops.length >= 2 ? progressStops : locations).map((l) => ({
-      lat: l.lat,
-      lon: l.lon,
-    })),
-    6,
-    undefined,
-    12,
   )
 
   function openLocation(locationId: string) {

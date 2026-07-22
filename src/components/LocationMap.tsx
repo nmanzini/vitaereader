@@ -8,7 +8,8 @@ import {
   type MapBounds,
 } from '../lib/geoMap'
 import {
-  journeyPathD,
+  journeyPathSegments,
+  type TravelMode,
   type VisitKind,
 } from '../lib/journeyMap'
 import './LocationMap.css'
@@ -20,6 +21,8 @@ type Marker = GeoPoint & {
   presence?: 'named' | 'visited'
   visitKind?: VisitKind
   visitOrder?: number
+  /** Inbound leg mode (sea → dotted segment into this stop). */
+  travel?: TravelMode
 }
 
 type Props = {
@@ -123,11 +126,13 @@ export function LocationMap({
   const journeyProjected = expanded
     ? journey.map((m) => ({
         ...m,
+        travel: (m.travel === 'sea' ? 'sea' : 'land') as TravelMode,
         ...projectEquirectangular(m, bounds, w, h),
       }))
     : []
 
-  const pathD = journeyPathD(
+  const pathSegments = journeyPathSegments(
+    journeyProjected,
     journeyProjected.map((p) => ({ x: p.x, y: p.y })),
   )
 
@@ -156,9 +161,16 @@ export function LocationMap({
       {landPaths.map((p) => (
         <path key={p.key} className="loc-map-land" d={p.d} />
       ))}
-      {pathD ? (
-        <path className="loc-map-journey" d={pathD} fill="none" />
-      ) : null}
+      {pathSegments.map((seg, i) => (
+        <path
+          key={`leg-${i}-${seg.mode}`}
+          className={
+            seg.mode === 'sea' ? 'loc-map-journey loc-map-journey-sea' : 'loc-map-journey'
+          }
+          d={seg.d}
+          fill="none"
+        />
+      ))}
       {namedPeers.map((p) => (
         <circle
           key={p.id}

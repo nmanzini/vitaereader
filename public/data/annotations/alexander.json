@@ -1483,7 +1483,8 @@
       "blurb": "Birthplace and court of his youth, where Philip’s power and Olympias’s ambitions first shaped him.",
       "presence": "visited",
       "visitKind": "city",
-      "visitOrder": 1
+      "visitOrder": 1,
+      "travel": "land"
     },
     {
       "id": "aegae",
@@ -1497,7 +1498,8 @@
       "blurb": "Ancestral capital where Philip was murdered in the theater—Alexander’s reign begins in blood.",
       "presence": "visited",
       "visitKind": "city",
-      "visitOrder": 4
+      "visitOrder": 4,
+      "travel": "land"
     },
     {
       "id": "mieza",
@@ -1511,7 +1513,8 @@
       "blurb": "Grove school where Aristotle taught Homer and politics to Alexander and the Companions’ sons.",
       "presence": "visited",
       "visitKind": "city",
-      "visitOrder": 2
+      "visitOrder": 2,
+      "travel": "land"
     },
     {
       "id": "chaeronea",
@@ -1525,7 +1528,8 @@
       "blurb": "Where the young Alexander broke the Sacred Band (338 BC). Greece’s leash passed to Macedon.",
       "presence": "visited",
       "visitKind": "battle",
-      "visitOrder": 3
+      "visitOrder": 3,
+      "travel": "land"
     },
     {
       "id": "thebes",
@@ -1539,7 +1543,8 @@
       "blurb": "Rebelled after Philip’s death; Alexander stormed it and left a ruin as a lesson to Greece.",
       "presence": "visited",
       "visitKind": "battle",
-      "visitOrder": 5
+      "visitOrder": 5,
+      "travel": "land"
     },
     {
       "id": "corinth",
@@ -1553,7 +1558,8 @@
       "blurb": "Where the Greeks named him captain against Persia—and where he met Diogenes asking only for light.",
       "presence": "visited",
       "visitKind": "city",
-      "visitOrder": 6
+      "visitOrder": 6,
+      "travel": "land"
     },
     {
       "id": "athens",
@@ -1579,7 +1585,8 @@
       "blurb": "Plutarch’s own shrine-town. Alexander pressed the Pythia for an omen before Asia.",
       "presence": "visited",
       "visitKind": "oracle",
-      "visitOrder": 7
+      "visitOrder": 7,
+      "travel": "land"
     },
     {
       "id": "troy",
@@ -1594,7 +1601,8 @@
       "blurb": "First Asian stop of myth: he honored Achilles’ tomb and took armor said to be Trojan.",
       "presence": "visited",
       "visitKind": "city",
-      "visitOrder": 9
+      "visitOrder": 9,
+      "travel": "land"
     },
     {
       "id": "hellespont",
@@ -1608,7 +1616,8 @@
       "blurb": "Strait Xerxes bridged the other way. Alexander sacrificed and stepped onto Persian soil.",
       "presence": "visited",
       "visitKind": "crossing",
-      "visitOrder": 8
+      "visitOrder": 8,
+      "travel": "sea"
     },
     {
       "id": "granicus",
@@ -1622,7 +1631,8 @@
       "blurb": "River fight against satraps and Greek mercenaries—Clitus later saved him here in memory.",
       "presence": "visited",
       "visitKind": "battle",
-      "visitOrder": 10
+      "visitOrder": 10,
+      "travel": "land"
     },
     {
       "id": "sardis",
@@ -1636,7 +1646,8 @@
       "blurb": "Key of western Asia Minor; its surrender opened the Persian road inland.",
       "presence": "visited",
       "visitKind": "city",
-      "visitOrder": 11
+      "visitOrder": 11,
+      "travel": "land"
     },
     {
       "id": "miletus",
@@ -1650,7 +1661,8 @@
       "blurb": "Coastal stronghold taken early—part of stripping Persia of its Aegean fleet bases.",
       "presence": "visited",
       "visitKind": "city",
-      "visitOrder": 12
+      "visitOrder": 12,
+      "travel": "land"
     },
     {
       "id": "halicarnassus",
@@ -1664,7 +1676,8 @@
       "blurb": "Hard siege against Memnon’s defense; Ada of Caria later became his adoptive mother nearby.",
       "presence": "visited",
       "visitKind": "battle",
-      "visitOrder": 13
+      "visitOrder": 13,
+      "travel": "land"
     },
     {
       "id": "caria",
@@ -1691,7 +1704,8 @@
       "blurb": "Phrygian town of the famous knot—cut or loosed, the oracle promised Asia’s rule.",
       "presence": "visited",
       "visitKind": "city",
-      "visitOrder": 14
+      "visitOrder": 14,
+      "travel": "land"
     },
     {
       "id": "cilicia",
@@ -1717,7 +1731,8 @@
       "blurb": "Pinned between sea and hills, Darius fled and left his family in Alexander’s hands.",
       "presence": "visited",
       "visitKind": "battle",
-      "visitOrder": 15
+      "visitOrder": 15,
+      "travel": "land"
     },
     {
       "id": "tyre",
@@ -1731,7 +1746,8 @@
       "blurb": "Seven-month siege: a causeway to the island walls—and a hard lesson in naval stubbornness.",
       "presence": "visited",
       "visitKind": "battle",
-      "visitOrder": 16
+      "visitOrder": 16,
+      "travel": "land"
     },
     {
       "id": "phoenicia",
@@ -1757,7 +1773,8 @@
       "blurb": "Desert fortress that resisted after Tyre; Alexander was wounded taking it.",
       "presence": "visited",
       "visitKind": "battle",
-      "visitOrder": 17
+      "visitOrder": 17,
+      "travel": "land"
     },
     {
       "id": "egypt",
@@ -1783,7 +1800,8 @@
       "blurb": "Laid out on the Nile mouth—his most lasting foundation, though he never saw it flourish.",
       "presence": "visited",
       "visitKind": "foundation",
-      "visitOrder": 18
+      "visitOrder": 18,
+      "travel": "land"
     },
     {
       "id": "ammon",
@@ -1798,7 +1816,8 @@
       "blurb": "Desert trek to the oasis god who greeted him as son—fuel for later divine honors.",
       "presence": "visited",
       "visitKind": "oracle",
-      "visitOrder": 19
+      "visitOrder": 19,
+      "travel": "land"
     },
     {
       "id": "damascus",
@@ -1825,7 +1844,8 @@
       "blurb": "Crossed at Thapsacus toward the heartland—Gaugamela waited beyond the Tigris.",
       "presence": "visited",
       "visitKind": "crossing",
-      "visitOrder": 20
+      "visitOrder": 20,
+      "travel": "land"
     },
     {
       "id": "gaugamela",
@@ -1840,7 +1860,8 @@
       "blurb": "Open plain where Darius’s massed army broke; Arbela names the region in older telling.",
       "presence": "visited",
       "visitKind": "battle",
-      "visitOrder": 21
+      "visitOrder": 21,
+      "travel": "land"
     },
     {
       "id": "babylon",
@@ -1854,7 +1875,8 @@
       "blurb": "Opened its gates after Gaugamela. Years later he returned to die there amid omens.",
       "presence": "visited",
       "visitKind": "city",
-      "visitOrder": 22
+      "visitOrder": 22,
+      "travel": "land"
     },
     {
       "id": "susa",
@@ -1868,7 +1890,8 @@
       "blurb": "Achaemenid seat of gold—and later the Susa weddings joining Macedonians to Persian brides.",
       "presence": "visited",
       "visitKind": "city",
-      "visitOrder": 23
+      "visitOrder": 23,
+      "travel": "land"
     },
     {
       "id": "ecbatana",
@@ -1882,7 +1905,8 @@
       "blurb": "Where Hephaestion died and where Parmenio was killed when Philotas fell.",
       "presence": "visited",
       "visitKind": "city",
-      "visitOrder": 24
+      "visitOrder": 24,
+      "travel": "land"
     },
     {
       "id": "oxus",
@@ -1896,7 +1920,8 @@
       "blurb": "Boundary of the upper satrapies; crossings mark the chase into Sogdiana.",
       "presence": "visited",
       "visitKind": "crossing",
-      "visitOrder": 26
+      "visitOrder": 26,
+      "travel": "land"
     },
     {
       "id": "hydaspes",
@@ -1910,7 +1935,8 @@
       "blurb": "Monsoon river fight of elephants and courage; Porus kept his kingdom “like a king.”",
       "presence": "visited",
       "visitKind": "battle",
-      "visitOrder": 27
+      "visitOrder": 27,
+      "travel": "land"
     },
     {
       "id": "india",
@@ -1936,7 +1962,8 @@
       "blurb": "Coastal waste on the return—thirst and sand that cost more men than many battles.",
       "presence": "visited",
       "visitKind": "crossing",
-      "visitOrder": 28
+      "visitOrder": 28,
+      "travel": "land"
     },
     {
       "id": "carmania",
@@ -1950,7 +1977,8 @@
       "blurb": "Where the survivors feasted after the desert—and Nearchus rejoined with Ocean tales.",
       "presence": "visited",
       "visitKind": "camp",
-      "visitOrder": 29
+      "visitOrder": 29,
+      "travel": "land"
     },
     {
       "id": "hyrcania",
@@ -1964,7 +1992,8 @@
       "blurb": "Northern country after Darius’s death—woods, the Caspian edge, and restless pursuit.",
       "presence": "visited",
       "visitKind": "camp",
-      "visitOrder": 25
+      "visitOrder": 25,
+      "travel": "land"
     },
     {
       "id": "nile",

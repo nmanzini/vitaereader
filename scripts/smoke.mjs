@@ -198,6 +198,12 @@ function main() {
               `${file}/${l.id}: visited places need visitOrder`,
             )
           }
+          if (l.travel != null) {
+            assert.ok(
+              l.travel === 'land' || l.travel === 'sea',
+              `${file}/${l.id}: travel must be land|sea`,
+            )
+          }
         }
         const visitOrders = ann.locations
           .filter((l) => l.presence === 'visited')
