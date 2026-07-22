@@ -1,6 +1,9 @@
 /**
  * Kindle-like reading type prefs — separate from color themes.
  * Changing these remasures CSS columns; progress stays content-anchored.
+ *
+ * Lattice is **stable** (book|classic|literary|georgia × xs…xl × leading × margin).
+ * Optical factors live in `designContract.ts` / `index.css` — rarely change.
  */
 
 export type TypeFontId = 'book' | 'classic' | 'literary' | 'georgia'

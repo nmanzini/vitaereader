@@ -99,8 +99,8 @@
   cursor: pointer;
   font-style: italic;
   text-decoration: underline;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 0.18em;
+  text-decoration-thickness: var(--underline-thickness);
+  text-underline-offset: var(--underline-offset-ref);
   text-decoration-color: var(--char-underline);
 }
 

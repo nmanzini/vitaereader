@@ -118,8 +118,8 @@
   cursor: pointer;
   text-decoration: underline;
   text-decoration-style: dashed;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 0.14em;
+  text-decoration-thickness: var(--underline-thickness);
+  text-underline-offset: var(--underline-offset-ref);
   text-decoration-color: var(--loc-underline);
 }
 
@@ -150,8 +150,9 @@
   background: none;
   cursor: pointer;
   text-decoration: underline;
-  text-underline-offset: 0.12em;
-  text-decoration-color: color-mix(in srgb, var(--ink) 22%, transparent);
+  text-decoration-thickness: var(--underline-thickness);
+  text-underline-offset: var(--underline-offset-link);
+  text-decoration-color: var(--link-underline);
 }
 
 .loc-sheet-map-toggle:hover,

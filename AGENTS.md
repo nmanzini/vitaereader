@@ -87,8 +87,9 @@ If `check` fails, fix it. Do not skip hooks or weaken tests to greenwash.
 | `src/lib/shareQuote.ts` | Share citation text + X/Threads intents + copy quote/image orchestration |
 | `src/lib/selectionLink.ts` | Compact base64url encode/decode for share selection ranges (`?r=`) |
 | `src/lib/quoteCard.ts` | Client canvas quote-card PNG (layout helpers + render) |
+| `src/lib/designContract.ts` | Stable theme/type token contract (optical, day palette, underline geometry) |
 | `src/content/types.ts` | Shared Work/Paragraph types |
-| `src/index.css` | Design tokens + themes (**colors only**) |
+| `src/index.css` | Design tokens + themes (**colors only**) + canonical face stacks |
 | `scripts/parse-epub.mjs` | EPUB → JSON ingest |
 | `scripts/pair-catalog.mjs` | Pair structure / culture derivation |
 | `scripts/text.mjs` | Slugify, titles, word count, classify |
@@ -114,8 +115,9 @@ If `check` fails, fix it. Do not skip hooks or weaken tests to greenwash.
 These are load-bearing. Violating them recreates fixed bugs.
 
 1. **Shared chrome bands** — Reserved top/bottom empty spacers; chrome *overlays* those bands. Showing/hiding chrome must never resize the reading surface.
-2. **Themes = colors only** — `[data-theme]` may override color tokens (`--bg`, `--ink`, `--accent`, `--highlight`, `--link-underline`, `--char-underline`, `--loc-underline`, …). Never change `--leading`, `--font-size-body`, `--font-optical`, or spacing via theme.
-3. **Type prefs remasure pages** — Font / size / leading / margins live in `vitae.reading` → `data-type-*` on `<html>` (see `src/lib/readingPrefs.ts`). Changing them **must** remasure columns and restore via content-anchored ratio (`layoutKey` on `PaginatedReader`) — never keep a stale page index. Per-font `--font-optical` keeps Georgia / Literary / Classic at a matched apparent size on `.paged-content`.
+2. **Themes = colors only** — `[data-theme]` may override color tokens (`--bg`, `--ink`, `--accent`, `--highlight`, `--link-underline`, `--char-underline`, `--loc-underline`, …). Never change `--leading`, `--font-size-body`, `--font-optical`, or spacing via theme. Token allow-list: `THEME_COLOR_TOKENS` in `src/lib/designContract.ts`.
+3. **Type prefs remasure pages** — Font / size / leading / margins live in `vitae.reading` → `data-type-*` on `<html>` (see `src/lib/readingPrefs.ts`). Changing them **must** remasure columns and restore via content-anchored ratio (`layoutKey` on `PaginatedReader`) — never keep a stale page index. Per-font `--font-optical` keeps Georgia / Literary / Classic at a matched apparent size on `.paged-content` (factors locked in `FONT_OPTICAL` / `index.css`).
+3a. **Stable style + type lattice** — Themes (`day|night|sepia|eink`) and Aa type (`book|classic|literary|georgia` × size × leading × margin) are **formalized and rarely changed**. Prefer retuning an existing token over adding faces, size steps, themes, or ad-hoc underline mixes. Canonical stacks are `--stack-*` in `index.css`; Library/Highlights pin Book via `.library` / `.highlights-page`.
 4. **Pages = CSS columns + hard clip** — `.paged-clip` is `overflow: hidden; contain: paint`. Content `width` **and** `columnWidth` must be the same integer page width. Do not use `width: auto` on the column box.
 5. **Measure with floored integers** — subpixel widths cause column bleed.
 6. **Footer stats are overlays** — page position and ETA always render in the bottom chrome when open; they must not change spacer height.
@@ -246,9 +248,11 @@ Do not add heavy React Testing Library stacks unless explicitly requested — ke
 ## Design constraints
 
 - Calm reading UI: measure ~`34rem`, serif display/body (see `src/index.css`).
+- **Style + type are a fixed contract** — see Invariant 3a / `src/lib/designContract.ts`. Do not casually expand the theme or Aa lattices.
 - Mobile-first; respect safe areas.
 - Avoid dashboard chrome, card grids in the reader, and novelty UI.
 - PWA: cache `data/index.json` precache + runtime CacheFirst for `/data/works/*.json` and `/data/annotations/*.json` (200 only).
+- Quote-card / PWA day colors come from `DAY_THEME` (must match `:root` in `index.css`).
 
 ## Coding norms
 
@@ -264,6 +268,7 @@ Do not add heavy React Testing Library stacks unless explicitly requested — ke
 - Do not reintroduce a Scroll layout mode or dual layout prefs.
 - Do not change pagination to vertical windowing / absolute line clipping.
 - Do not let themes alter line-height or font-size.
+- Do not casually add themes, fonts, size steps, or parallel underline color-mixes — extend `designContract.ts` + `index.css` together if you must.
 - Do not reintroduce a single `corpus.json` blob in `public/`.
 - Do not resize layout when opening settings/chrome/footer.
 - Do not skip `npm run check` after code changes.

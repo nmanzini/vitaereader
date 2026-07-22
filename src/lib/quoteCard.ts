@@ -1,7 +1,10 @@
+import { DAY_THEME } from './designContract.ts'
+
 /**
  * Client-side quote card (canvas PNG) for share flows.
- * Fixed tasteful palette — independent of reader themes (colors-only invariant).
- * X/Threads web intents cannot attach images; share orchestration lives in `shareQuote.ts`.
+ * Fixed day-theme palette from designContract — independent of reader themes
+ * (colors-only invariant). X/Threads web intents cannot attach images; share
+ * orchestration lives in `shareQuote.ts`.
  *
  * Width is fixed; height adapts to wrapped quote + attribution (no empty square void).
  */
@@ -30,12 +33,12 @@ const CREDIT_LINE = 32
 const SITE_GAP = 22
 const SITE_LINE = 28
 
-/** Calm book palette (matches day theme tokens, not theme-driven). */
+/** Calm book palette (locked day theme — not theme-driven). */
 const COLORS = {
-  bg: '#f3eee4',
-  ink: '#1a1814',
-  muted: '#5c574e',
-  accent: '#2f4a3c',
+  bg: DAY_THEME.bg,
+  ink: DAY_THEME.ink,
+  muted: DAY_THEME.inkMuted,
+  accent: DAY_THEME.accent,
   rule: 'rgba(26, 24, 20, 0.12)',
 } as const
 
