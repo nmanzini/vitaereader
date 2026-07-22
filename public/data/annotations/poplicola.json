@@ -451,5 +451,77 @@
         }
       ]
     }
+  ],
+  "locations": [
+    {
+      "id": "rome",
+      "names": [
+        "Rome"
+      ],
+      "relation": "City whose Republic he shaped with four consulships",
+      "modern": "Rome, Italy",
+      "lat": 41.89,
+      "lon": 12.49,
+      "presence": "visited",
+      "visitKind": "city",
+      "visitOrder": 1,
+      "travel": "land",
+      "blurb": "Poplicola passed the appeal laws, lowered the fasces, demolished his hilltop house, and dedicated the Capitoline temple—the first consul Rome loved as well as obeyed."
+    },
+    {
+      "id": "sublician-bridge",
+      "names": [
+        "wooden bridge"
+      ],
+      "relation": "Tiber crossing held against Porsenna’s assault",
+      "modern": "Pons Sublicius site, Tiber, Rome",
+      "lat": 41.88,
+      "lon": 12.47,
+      "presence": "visited",
+      "visitKind": "crossing",
+      "visitOrder": 2,
+      "travel": "land",
+      "blurb": "Poplicola was wounded in the thigh in the first clash as Porsenna forced the wooden bridge; Horatius held the span alone until it was cut behind him, then swam back in armor."
+    },
+    {
+      "id": "fidenae",
+      "names": [
+        "Fidenae"
+      ],
+      "relation": "Sabine base for the final large assault on Rome",
+      "modern": "Castel Giubileo, north of Rome, Italy",
+      "lat": 41.96,
+      "lon": 12.54,
+      "presence": "visited",
+      "visitKind": "battle",
+      "visitOrder": 3,
+      "travel": "land",
+      "blurb": "The Sabines camped before Fidenae and planted two thousand ambushers near Rome’s gates; Poplicola sent Posthumius over the hills at night and smashed the main force himself at dawn."
+    },
+    {
+      "id": "clusium",
+      "names": [
+        "Clusium"
+      ],
+      "relation": "Etruscan city from which Porsenna marched on Rome",
+      "modern": "Chiusi, Tuscany, Italy",
+      "lat": 43.02,
+      "lon": 11.94,
+      "presence": "named",
+      "blurb": "After his final battle Tarquin fled to Clusium and persuaded Lars Porsenna to champion his restoration—making it the source of the siege that tested Poplicola’s Rome."
+    },
+    {
+      "id": "tuscany",
+      "names": [
+        "Tuscany",
+        "Tuscans"
+      ],
+      "relation": "Etrurian homeland of the besieging Tuscan army",
+      "modern": "Tuscany (ancient Etruria), Italy",
+      "lat": 43.4,
+      "lon": 11.0,
+      "presence": "named",
+      "blurb": "Tarquin prepared a second war from Tuscany; Poplicola personally routed a separate Tuscan army that had entered Roman territory while Porsenna held the siege lines before the city."
+    }
   ]
 }

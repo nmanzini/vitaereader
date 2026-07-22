@@ -364,5 +364,140 @@
         }
       ]
     }
+  ],
+  "locations": [
+    {
+      "id": "rome",
+      "names": [
+        "Rome"
+      ],
+      "relation": "City five times placed in Fabius’s hands as dictator",
+      "modern": "Rome, Italy",
+      "lat": 41.89,
+      "lon": 12.49,
+      "presence": "visited",
+      "visitKind": "city",
+      "visitOrder": 1,
+      "travel": "land",
+      "blurb": "Base of five consulships and two dictatorships; Fabius returned here after each campaign to steady morale, conduct vows, and argue against rash decisions."
+    },
+    {
+      "id": "liguria",
+      "names": [
+        "Ligurians",
+        "Liguria"
+      ],
+      "relation": "Region of his first triumph, over the hill people",
+      "modern": "Ligurian Apennines, NW Italy",
+      "lat": 44.4,
+      "lon": 8.75,
+      "presence": "visited",
+      "visitKind": "battle",
+      "visitOrder": 2,
+      "travel": "land",
+      "blurb": "In his first consulship Fabius defeated the Ligurians in a pitched battle and drove them to shelter in the Alps—Rome’s first taste of his measured, unhurried force."
+    },
+    {
+      "id": "casilinum",
+      "names": [
+        "Casilinum"
+      ],
+      "relation": "Campanian bottleneck where he shadowed and nearly caged Hannibal",
+      "modern": "Capua / Caserta area, Campania, Italy",
+      "lat": 41.08,
+      "lon": 14.22,
+      "presence": "visited",
+      "visitKind": "camp",
+      "visitOrder": 3,
+      "travel": "land",
+      "blurb": "Hannibal’s misdirected march brought him to Casilinum’s enclosed river-plain; Fabius sealed the mountain passes and nearly trapped him until the ox-torches ruse opened a way out."
+    },
+    {
+      "id": "tarentum",
+      "names": [
+        "Tarentum"
+      ],
+      "relation": "Greek city he recovered by exploiting a Bruttian love affair",
+      "modern": "Taranto, Puglia, Italy",
+      "lat": 40.47,
+      "lon": 17.25,
+      "presence": "visited",
+      "visitKind": "city",
+      "visitOrder": 4,
+      "travel": "land",
+      "blurb": "Using a Tarentine soldier’s sister to suborn the Bruttian garrison commander, Fabius retook the city by night—his finest coup and a pointed rebuke to Hannibal’s own methods."
+    },
+    {
+      "id": "cannae",
+      "names": [
+        "Cannae"
+      ],
+      "relation": "Village by the Aufidus where Rome’s army was destroyed",
+      "modern": "Near Barletta, Puglia, Italy",
+      "lat": 41.3,
+      "lon": 16.13,
+      "presence": "named",
+      "blurb": "Varro’s impetuous battle-day gave Hannibal his greatest victory; the dead at Cannae vindicated Fabius’s caution to all who had dismissed him as the Cunctator."
+    },
+    {
+      "id": "capua",
+      "names": [
+        "Capua"
+      ],
+      "relation": "Italy’s second city that defected to Hannibal after Cannae",
+      "modern": "Santa Maria Capua Vetere, Italy",
+      "lat": 41.08,
+      "lon": 14.25,
+      "presence": "named",
+      "blurb": "Capua’s defection—Italy’s richest prize—seemed to confirm that Hannibal should have marched on Rome while he could, exactly the risk Fabius had always warned against."
+    },
+    {
+      "id": "venusia",
+      "names": [
+        "Venusia"
+      ],
+      "relation": "Town where the surviving consul fled after Cannae",
+      "modern": "Venosa, Basilicata, Italy",
+      "lat": 40.96,
+      "lon": 15.97,
+      "presence": "named",
+      "blurb": "Consul Varro reached Venusia with a thin remnant; the senate thanked him publicly for not despairing of the republic—a measured grace Plutarch notes as very Roman."
+    },
+    {
+      "id": "rhegium",
+      "names": [
+        "Rhegium"
+      ],
+      "relation": "Toe-of-Italy garrison used as Tarentum diversion",
+      "modern": "Reggio di Calabria, Italy",
+      "lat": 38.11,
+      "lon": 15.66,
+      "presence": "named",
+      "blurb": "Fabius ordered the Rhegium garrison to raid Bruttian land and storm Caulonia—a feint to draw Hannibal south while he moved on Tarentum from the north."
+    },
+    {
+      "id": "caulonia",
+      "names": [
+        "Caulonia"
+      ],
+      "relation": "Bruttian town stormed as cover for the Tarentum plan",
+      "modern": "Caulonia / Monasterace area, Calabria, Italy",
+      "lat": 38.37,
+      "lon": 16.51,
+      "presence": "named",
+      "blurb": "The Rhegium detachment was sent against Caulonia with full force, sacrificing the least dependable troops to give Hannibal a false southern emergency."
+    },
+    {
+      "id": "spain",
+      "names": [
+        "Spain"
+      ],
+      "relation": "Province Scipio cleared before striking Africa",
+      "modern": "Iberian Peninsula (Roman Hispania)",
+      "lat": 40.0,
+      "lon": -3.5,
+      "presence": "named",
+      "blurb": "Scipio’s Spanish victories gave Rome the base and prestige for the African invasion Fabius feared would strip Italy bare while Hannibal still roamed it."
+    }
   ]
 }
