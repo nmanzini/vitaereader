@@ -654,6 +654,398 @@
           "characterId": "romulus"
         }
       ]
+    },
+    {
+      "id": "dionysius-hal",
+      "names": [
+        "Dionysius"
+      ],
+      "relation": "Historian of Rome; cited in triumph dispute",
+      "blurb": "Dionysius of Halicarnassus, Greek historian of Rome; Plutarch explicitly corrects him for asserting Romulus rode in a chariot at his triumph—statues of Romulus in Rome show him on foot.",
+      "links": [
+        {
+          "characterId": "romulus"
+        }
+      ]
+    },
+    {
+      "id": "damaratus",
+      "names": [
+        "Damaratus"
+      ],
+      "relation": "Corinthian exile; Tarquinius Priscus's father",
+      "blurb": "Wealthy Corinthian who emigrated to Etruria and fathered Tarquinius Priscus; mentioned when Plutarch notes that Tarquinius—not Romulus—was the first to surround the triumph with great pomp.",
+      "links": [
+        {
+          "characterId": "tarquinius-priscus"
+        }
+      ]
+    },
+    {
+      "id": "tarquinius-priscus",
+      "names": [
+        "Tarquinius",
+        "Tarquin"
+      ],
+      "relation": "Fifth king of Rome; gave triumphs their pomp",
+      "blurb": "Tarquinius Priscus, Damaratus's son and fifth king of Rome; one tradition credits him—rather than Romulus or Publicola—with introducing the magnificent trappings that made the Roman triumph the spectacle it became.",
+      "links": [
+        {
+          "characterId": "damaratus"
+        },
+        {
+          "characterId": "publicola-r"
+        }
+      ]
+    },
+    {
+      "id": "tolumnius",
+      "names": [
+        "Tolumnius"
+      ],
+      "relation": "Etruscan king killed by Cossus; second spolia opima",
+      "blurb": "King of Veii whose death at the hands of Cornelius Cossus in single combat earned the second spolia opima in Roman history—following the precedent Romulus set by killing Acron.",
+      "links": [
+        {
+          "characterId": "cossus"
+        },
+        {
+          "characterId": "acron"
+        }
+      ]
+    },
+    {
+      "id": "viridomarus",
+      "names": [
+        "Viridomarus"
+      ],
+      "relation": "Gallic king killed by Marcellus; third spolia opima",
+      "blurb": "Gallic chieftain slain by Claudius Marcellus in single combat—earning the third and last spolia opima ever dedicated, completing the trio begun by Romulus's victory over Acron.",
+      "links": [
+        {
+          "characterId": "marcellus-r"
+        },
+        {
+          "characterId": "cossus"
+        }
+      ]
+    },
+    {
+      "id": "ascanius",
+      "names": [
+        "Ascanius"
+      ],
+      "relation": "Aeneas's son; mentioned in Rome's founding myths",
+      "blurb": "Son of Aeneas; one variant of the founding myth makes Roma—the city's eponym—a Trojan lady married to Ascanius, placing Rome's origin in the Aeneid's direct male line.",
+      "links": [
+        {
+          "characterId": "aeneas"
+        }
+      ]
+    },
+    {
+      "id": "herodorus-ponticus",
+      "names": [
+        "Herodorus Ponticus",
+        "Herodorus"
+      ],
+      "relation": "Mythographer who noted Hercules and the vulture",
+      "blurb": "Heraclean mythographer who recorded that Hercules rejoiced whenever a vulture appeared to him at the start of any undertaking—cited to explain why Romans regard the vulture as the premier omen-bird in divination.",
+      "links": [
+        {
+          "characterId": "hercules"
+        }
+      ]
+    },
+    {
+      "id": "promathion",
+      "names": [
+        "Promathion"
+      ],
+      "relation": "Author of a history of Italy; Tarchetius story",
+      "blurb": "Compiled a History of Italy in which he recorded the strange birth-legend of Tarchetius the Alban king—the rival founding myth involving a hearth-phallus that Plutarch presents as an alternative to the Mars-and-Rhea tradition.",
+      "links": [
+        {
+          "characterId": "tarchetius"
+        }
+      ]
+    },
+    {
+      "id": "teratius",
+      "names": [
+        "Teratius"
+      ],
+      "relation": "Tarchetius's agent who spared the twins",
+      "blurb": "The man to whom Tarchetius handed the twin infants with orders to destroy them; instead Teratius carried them to the river bank, where a wolf suckled them until a cowherd found them.",
+      "links": [
+        {
+          "characterId": "tarchetius"
+        },
+        {
+          "characterId": "faustulus"
+        }
+      ]
+    },
+    {
+      "id": "plistinus",
+      "names": [
+        "Plistinus"
+      ],
+      "relation": "Faustulus's brother; foster-uncle of Romulus",
+      "blurb": "Brother of the shepherd Faustulus who helped raise Romulus and Remus; he too was killed in the scuffle at the new city's walls when Remus leaped over them in contempt.",
+      "links": [
+        {
+          "characterId": "faustulus"
+        },
+        {
+          "characterId": "remus"
+        },
+        {
+          "characterId": "celer"
+        }
+      ]
+    },
+    {
+      "id": "antimachus",
+      "names": [
+        "Antimachus the Teian",
+        "Antimachus"
+      ],
+      "relation": "Teian poet whose eclipse fixes Rome's founding date",
+      "blurb": "Archaic poet of Teos; the solar eclipse he recorded in the third year of the sixth Olympiad is the astronomical anchor Plutarch mentions for the traditional date on which Romulus laid Rome's first stone.",
+      "links": [
+        {
+          "characterId": "romulus"
+        }
+      ]
+    },
+    {
+      "id": "metellus",
+      "names": [
+        "Quintus Metellus",
+        "Metellus"
+      ],
+      "relation": "Roman commander who gained the nickname Celer",
+      "blurb": "Quintus Metellus who earned the cognomen Celer by producing a gladiatorial show in record time after his father's funeral—cited to explain how the Roman word Celeres, originally Romulus's bodyguard, became a general term for swiftness.",
+      "links": [
+        {
+          "characterId": "celer"
+        }
+      ]
+    },
+    {
+      "id": "philotis",
+      "names": [
+        "Philotis",
+        "Tutola"
+      ],
+      "relation": "Handmaid who saved Rome from the Latin ruse",
+      "blurb": "A servant-maid (called Philotis or, in another version, Tutola) who devised the stratagem of sending maid-servants disguised as free virgins to the Latin commander Postumius, then lit a torch as a signal for the Romans to fall on him.",
+      "links": [
+        {
+          "characterId": "postumius-rom"
+        }
+      ]
+    },
+    {
+      "id": "simylus",
+      "names": [
+        "Simylus"
+      ],
+      "relation": "Poet who wrongly said Tarpeia betrayed to the Gauls",
+      "blurb": "Poet who spun a fanciful variant in which Tarpeia was in love with a Gallic king rather than with Sabine gold—an error Plutarch dismisses as 'mere folly.'",
+      "links": [
+        {
+          "characterId": "tarpeia"
+        }
+      ]
+    },
+    {
+      "id": "sulpicius-galba",
+      "names": [
+        "Sulpicius Galba",
+        "Sulpicius"
+      ],
+      "relation": "Roman historian cited by Juba on Tarpeius",
+      "blurb": "Roman writer whose account of Tarpeius being found guilty of treason is preserved through Juba; Plutarch invokes him to show that the father of the treacherous Tarpeia was himself prosecuted and convicted.",
+      "links": [
+        {
+          "characterId": "tarpeius"
+        },
+        {
+          "characterId": "juba"
+        }
+      ]
+    },
+    {
+      "id": "rhymitalces",
+      "names": [
+        "Rhymitalces"
+      ],
+      "relation": "Thracian prince; recipient of Caesar's famous quip",
+      "blurb": "A Thracian prince to whom Julius Caesar reportedly said he loved the treason but hated the traitor—cited alongside Antigonus's identical saying to illuminate the universal contempt for Tarpeia even among those who benefited from her betrayal.",
+      "links": [
+        {
+          "characterId": "caesar-r"
+        },
+        {
+          "characterId": "tarpeia"
+        }
+      ]
+    },
+    {
+      "id": "lucius-hostius",
+      "names": [
+        "Lucius Hostius"
+      ],
+      "relation": "First parricide in Roman history",
+      "blurb": "Roman citizen recorded as the first person ever to commit parricide in Rome—after nearly six centuries in which no such crime occurred, his act came only after the Hannibalic wars shattered the old moral fabric.",
+      "links": [
+        {
+          "characterId": "romulus"
+        }
+      ]
+    },
+    {
+      "id": "aeschylus",
+      "names": [
+        "Aeschylus"
+      ],
+      "relation": "Playwright quoted for eagles killing their own kind",
+      "blurb": "Athenian tragedian; Plutarch quotes his verse about eagles and owls preying on creatures of their own species to explain why Romans prefer the vulture as an omen-bird—it alone never kills its kindred.",
+      "links": [
+        {
+          "characterId": "herodorus-ponticus"
+        }
+      ]
+    },
+    {
+      "id": "lavinia",
+      "names": [
+        "Lavinia"
+      ],
+      "relation": "Aeneas's wife in the Alban genealogy",
+      "blurb": "Daughter of the Latin king Latinus who married Aeneas and gave her name to Lavinium; in one founding myth the twins' line runs through Aemilia, who was Aeneas's daughter by Lavinia.",
+      "links": [
+        {
+          "characterId": "aeneas"
+        },
+        {
+          "characterId": "ascanius"
+        }
+      ]
+    },
+    {
+      "id": "publicola-r",
+      "names": [
+        "Publicola"
+      ],
+      "relation": "Co-founder of the Republic; first to ride in triumph",
+      "blurb": "Publius Valerius Publicola, Rome's great republican lawgiver; one tradition credits him rather than Tarquinius with first riding in triumph—cited when Plutarch surveys conflicting accounts of the ceremony Romulus invented on foot.",
+      "links": [
+        {
+          "characterId": "tarquinius-priscus"
+        },
+        {
+          "characterId": "publicola-life",
+          "label": "Poplicola's Life",
+          "workId": "poplicola"
+        }
+      ]
+    },
+    {
+      "id": "phorbas-rom",
+      "names": [
+        "Phorbas"
+      ],
+      "relation": "Dexithea's father in one founding legend",
+      "blurb": "In one variant of the founding myth, Dexithea daughter of Phorbas was the mother of Romulus by Aeneas—a genealogy connecting the Latin founder tradition to an otherwise obscure Greek name.",
+      "links": [
+        {
+          "characterId": "dexithea"
+        }
+      ]
+    },
+    {
+      "id": "zenodotus-troez",
+      "names": [
+        "Zenodotus the Troezenian",
+        "Zenodotus"
+      ],
+      "relation": "Historian who gave an account of Tarpeia",
+      "blurb": "Historian from Troezen who told a version of the Tarpeia story; Plutarch cites him among the sources whose accounts of the Capitol's betrayal he weighs and largely rejects.",
+      "links": [
+        {
+          "characterId": "tarpeia"
+        },
+        {
+          "characterId": "simylus"
+        }
+      ]
+    },
+    {
+      "id": "dexithea",
+      "names": [
+        "Dexithea"
+      ],
+      "relation": "Phorbas's daughter; a legendary mother of Romulus",
+      "blurb": "In one founding variant, daughter of Phorbas and the woman Aeneas took as the mother of Romulus—an alternative birth-legend preserved among the many conflicting traditions Plutarch catalogues at the opening of the Life.",
+      "links": [
+        {
+          "characterId": "phorbas-rom"
+        },
+        {
+          "characterId": "aeneas"
+        }
+      ]
+    },
+    {
+      "id": "aemilia-rom",
+      "names": [
+        "Aemilia"
+      ],
+      "relation": "Legendary daughter of Aeneas; mother of Romulus in one myth",
+      "blurb": "In another founding variant, Aemilia—daughter of Aeneas by Lavinia—was said to have conceived Romulus by the god Mars; a tradition linking Rome's founder through Lavinia's lineage directly to Aeneas and divine parentage.",
+      "links": [
+        {
+          "characterId": "aeneas"
+        },
+        {
+          "characterId": "lavinia"
+        },
+        {
+          "characterId": "mars"
+        }
+      ]
+    },
+    {
+      "id": "latinus",
+      "names": [
+        "Latinus"
+      ],
+      "relation": "Son of Telemachus; Roma's husband in one legend",
+      "blurb": "In one founding variant, Roma daughter of the Trojan woman was married to Latinus—son of Telemachus—and became the mother of Romulus; a genealogy threading the Romans back through Ulysses as well as Aeneas.",
+      "links": [
+        {
+          "characterId": "telemachus-rom"
+        },
+        {
+          "characterId": "aeneas"
+        }
+      ]
+    },
+    {
+      "id": "telemachus-rom",
+      "names": [
+        "Telemachus"
+      ],
+      "relation": "Son of Odysseus; Latinus's father in one founding myth",
+      "blurb": "Homer's Telemachus appears in one alternative founding legend as the father of Latinus who wed Roma—a tradition connecting Rome's origins to the Odyssey's hero as well as the Iliad's Aeneas.",
+      "links": [
+        {
+          "characterId": "latinus"
+        }
+      ]
     }
   ],
   "locations": [

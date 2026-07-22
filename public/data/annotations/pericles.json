@@ -693,6 +693,612 @@
           "characterId": "minerva"
         }
       ]
+    },
+    {
+      "id": "protagoras",
+      "names": [
+        "Protagoras"
+      ],
+      "relation": "Sophist; debated with Pericles on causation",
+      "blurb": "Leading sophist with whom Pericles spent a whole day disputing who bore moral responsibility for an athlete's accidental javelin-kill—a story his son Xanthippus mocked in public."
+    },
+    {
+      "id": "xanthippus-son",
+      "names": [
+        "Xanthippus"
+      ],
+      "relation": "Eldest legitimate son; prodigal",
+      "blurb": "Pericles's firstborn, naturally prodigal, who borrowed money in his father's name, publicly reviled him when sued, and died in the plague before any reconciliation.",
+      "links": [
+        {
+          "characterId": "paralus"
+        },
+        {
+          "characterId": "pericles"
+        },
+        {
+          "characterId": "xanthippus"
+        }
+      ]
+    },
+    {
+      "id": "pericles-younger",
+      "names": [
+        "Pericles the Younger"
+      ],
+      "relation": "Illegitimate son by Aspasia; executed after Arginusae",
+      "blurb": "Born of Aspasia and legitimized by a special vote after Pericles's lawful sons died; later commanded at Arginusae, then was put to death with his fellow-generals by the Athenian assembly.",
+      "links": [
+        {
+          "characterId": "aspasia"
+        },
+        {
+          "characterId": "pericles"
+        }
+      ]
+    },
+    {
+      "id": "axiochus",
+      "names": [
+        "Axiochus"
+      ],
+      "relation": "Father of Aspasia; Milesian",
+      "blurb": "Milesian from whom Aspasia descended; the acknowledgment of her parentage is Plutarch's one certain biographical detail in the fog of comic and hostile accounts.",
+      "links": [
+        {
+          "characterId": "aspasia"
+        }
+      ]
+    },
+    {
+      "id": "lysicles",
+      "names": [
+        "Lysicles"
+      ],
+      "relation": "Sheep-dealer who rose by keeping Aspasia",
+      "blurb": "A man of low birth who, after Pericles's death, lived with Aspasia and, guided by her, became a leading figure in Athenian politics—proof of her influence.",
+      "links": [
+        {
+          "characterId": "aspasia"
+        }
+      ]
+    },
+    {
+      "id": "thargelia",
+      "names": [
+        "Thargelia"
+      ],
+      "relation": "Old Ionian courtesan Aspasia emulated",
+      "blurb": "Beautiful and sagacious Milesian woman of an earlier age whose method of attaching powerful men to the Persian interest Aspasia allegedly imitated—a hostile comparison Plutarch records without endorsing."
+    },
+    {
+      "id": "pissuthnes",
+      "names": [
+        "Pissuthnes"
+      ],
+      "relation": "Persian satrap who helped the Samians revolt",
+      "blurb": "Persian king's lieutenant who offered Pericles gold to spare the Samian hostages; when rebuffed, secretly returned the hostages to Samos and equipped the city for revolt.",
+      "links": [
+        {
+          "characterId": "aspasia"
+        },
+        {
+          "characterId": "melissus"
+        }
+      ]
+    },
+    {
+      "id": "lamachus",
+      "names": [
+        "Lamachus"
+      ],
+      "relation": "Athenian general who expelled Timesileus from Sinope",
+      "blurb": "Athenian commander to whom Pericles entrusted thirteen warships and troops for the Euxine expedition; he drove out Timesileus the tyrant of Sinope, allowing six hundred Athenian colonists to settle there."
+    },
+    {
+      "id": "timesileus",
+      "names": [
+        "Timesileus"
+      ],
+      "relation": "Tyrant of Sinope expelled by Lamachus",
+      "blurb": "Sinopean tyrant overthrown when Pericles sent Lamachus with thirteen ships; the houses and land Timesileus's faction had held were distributed among six hundred new Athenian colonists.",
+      "links": [
+        {
+          "characterId": "lamachus"
+        }
+      ]
+    },
+    {
+      "id": "heraclides-ponticus",
+      "names": [
+        "Heraclides Ponticus",
+        "Heraclides"
+      ],
+      "relation": "Philosopher who refuted the Artemon story",
+      "blurb": "Pontic philosopher who showed from Anacreon's poems that Artemon Periphoretus lived several generations before the Samian war—dismantling Ephorus's claim that he built Pericles's siege engines.",
+      "links": [
+        {
+          "characterId": "artemon"
+        },
+        {
+          "characterId": "anacreon"
+        }
+      ]
+    },
+    {
+      "id": "duris-per",
+      "names": [
+        "Duris"
+      ],
+      "relation": "Samian historian who charged Pericles with cruelty",
+      "blurb": "Described Pericles binding Samian prisoners to boards and clubbing them to death—an account Thucydides, Ephorus, and Aristotle ignore, and which Plutarch suspects of patriotic exaggeration.",
+      "links": [
+        {
+          "characterId": "ephorus-per"
+        }
+      ]
+    },
+    {
+      "id": "ephorus-per",
+      "names": [
+        "Ephorus"
+      ],
+      "relation": "Historian who reported the Samian siege engines",
+      "blurb": "Cited for the claim that Pericles used siege engines at Samos with Artemon's help; also named alongside Thucydides and Aristotle as a source that contradicts Duris's atrocity story.",
+      "links": [
+        {
+          "characterId": "duris-per"
+        }
+      ]
+    },
+    {
+      "id": "plato-comic-per",
+      "names": [
+        "Plato, the comic poet"
+      ],
+      "relation": "Comic playwright (distinct from the philosopher)",
+      "blurb": "Athenian comedian of the fifth century who introduces Chiron questioning Damon about teaching Pericles—one of many comic sources Plutarch mines for evidence of public perceptions.",
+      "links": [
+        {
+          "characterId": "damon"
+        }
+      ]
+    },
+    {
+      "id": "pythoclides",
+      "names": [
+        "Pythoclides"
+      ],
+      "relation": "Music teacher according to Aristotle",
+      "blurb": "Aristotle attributes Pericles's musical education to Pythoclides rather than to Damon—one of the minor disputes in the ancient tradition about who formed the young statesman."
+    },
+    {
+      "id": "parmenides",
+      "names": [
+        "Parmenides"
+      ],
+      "relation": "Eleatic philosopher; Zeno's model",
+      "blurb": "Founder of the Eleatic school; Zeno's treatment of natural philosophy followed his approach, and both men were said to have influenced the circle around Pericles.",
+      "links": [
+        {
+          "characterId": "zeno"
+        },
+        {
+          "characterId": "anaxagoras"
+        }
+      ]
+    },
+    {
+      "id": "timon-phlius",
+      "names": [
+        "Timon of Phlius"
+      ],
+      "relation": "Philosopher who described Zeno's method",
+      "blurb": "Sceptic poet-philosopher whose line about Zeno's two-edged tongue that could argue any proposition false Plutarch quotes to characterize the eristic tradition Pericles absorbed.",
+      "links": [
+        {
+          "characterId": "zeno"
+        }
+      ]
+    },
+    {
+      "id": "polycletus",
+      "names": [
+        "Polycletus"
+      ],
+      "relation": "Sculptor of Hera at Argos",
+      "blurb": "Master sculptor whose Juno at Argos Plutarch cites as a masterwork that impresses without inspiring emulation—a foil for Phidias's Athena and the standard of comparison for physical beauty in art.",
+      "links": [
+        {
+          "characterId": "phidias"
+        }
+      ]
+    },
+    {
+      "id": "critolaus",
+      "names": [
+        "Critolaus"
+      ],
+      "relation": "Peripatetic philosopher who described Pericles's reserve",
+      "blurb": "Peripatetic thinker cited for the observation that Pericles held himself back from public life like the Salaminia, reserved for great occasions—an image of deliberate political economy."
+    },
+    {
+      "id": "aeschines-sph",
+      "names": [
+        "Aeschines"
+      ],
+      "relation": "Socratic writer who cited Lysicles",
+      "blurb": "Aeschines of Sphettus, Socratic philosopher and writer, reported that Lysicles the sheep-dealer rose to prominence through his association with Aspasia after Pericles died.",
+      "links": [
+        {
+          "characterId": "lysicles"
+        },
+        {
+          "characterId": "aspasia"
+        }
+      ]
+    },
+    {
+      "id": "cyrus-young",
+      "names": [
+        "Cyrus"
+      ],
+      "relation": "Persian prince who named a concubine Aspasia",
+      "blurb": "Cyrus the Younger, who fought Artaxerxes for the throne, loved a Phocaean concubine named Milto so much he renamed her Aspasia after Athens's most famous woman.",
+      "links": [
+        {
+          "characterId": "milto"
+        },
+        {
+          "characterId": "aspasia"
+        }
+      ]
+    },
+    {
+      "id": "ictinus",
+      "names": [
+        "Ictinus"
+      ],
+      "relation": "Architect of the Parthenon",
+      "blurb": "Worked alongside Callicrates to build the Parthenon, the crown of Pericles's Acropolis program—one of the craftsmen through whom, Pericles told the assembly, all Attica was put on state-pay.",
+      "links": [
+        {
+          "characterId": "callicrates"
+        },
+        {
+          "characterId": "phidias"
+        }
+      ]
+    },
+    {
+      "id": "mnesicles",
+      "names": [
+        "Mnesicles"
+      ],
+      "relation": "Architect of the Propylaea",
+      "blurb": "Principal architect of the great gateway to the Acropolis, completed in five years; a remarkable feat during which, Plutarch records, a miraculous cure showed Athena's approval.",
+      "links": [
+        {
+          "characterId": "phidias"
+        }
+      ]
+    },
+    {
+      "id": "coroebus",
+      "names": [
+        "Coroebus"
+      ],
+      "relation": "Builder who began the Eleusis chapel",
+      "blurb": "Started the chapel at Eleusis where the Mysteries were held, raising the colonnade from the pavement up to the architraves before his death left the work unfinished.",
+      "links": [
+        {
+          "characterId": "metagenes-per"
+        }
+      ]
+    },
+    {
+      "id": "metagenes-per",
+      "names": [
+        "Metagenes"
+      ],
+      "relation": "Architect who completed the Eleusis chapel",
+      "blurb": "Of Xypete; added the frieze and upper colonnade to the chapel at Eleusis after Coroebus died, continuing the Periclean building program at the most sacred site in Attica.",
+      "links": [
+        {
+          "characterId": "coroebus"
+        }
+      ]
+    },
+    {
+      "id": "xenocles-per",
+      "names": [
+        "Xenocles"
+      ],
+      "relation": "Architect who roofed the temple of Castor and Pollux",
+      "blurb": "Of Cholargus; arched the lantern on the temple of the Dioscuri—one of the named craftsmen who carried out the wider program of building Pericles directed.",
+      "links": [
+        {
+          "characterId": "phidias"
+        }
+      ]
+    },
+    {
+      "id": "hermippus-com",
+      "names": [
+        "Hermippus"
+      ],
+      "relation": "Comedian who indicted Aspasia; mocked Pericles",
+      "blurb": "Athenian comic playwright who formally charged Aspasia with impiety and procuring women for Pericles, and wrote anapaestic verses mocking the general's caution in the war.",
+      "links": [
+        {
+          "characterId": "aspasia"
+        },
+        {
+          "characterId": "cleon"
+        }
+      ]
+    },
+    {
+      "id": "charinus",
+      "names": [
+        "Charinus"
+      ],
+      "relation": "Proposer of the harsh Megarian decree",
+      "blurb": "After the herald Anthemocritus was killed, Charinus proposed the decree of irreconcilable enmity against Megara—twice yearly invasion, and death to any Megarian who entered Attica.",
+      "links": [
+        {
+          "characterId": "anthemocritus"
+        }
+      ]
+    },
+    {
+      "id": "diopithes",
+      "names": [
+        "Diopithes"
+      ],
+      "relation": "Proposed impiety decree targeting Anaxagoras",
+      "blurb": "Moved that persons who neglected religion or taught new doctrines about the heavens should be publicly prosecuted—the decree whose real target was Pericles, with Anaxagoras as the opening case.",
+      "links": [
+        {
+          "characterId": "anaxagoras"
+        }
+      ]
+    },
+    {
+      "id": "menon-per",
+      "names": [
+        "Menon"
+      ],
+      "relation": "Workman who informed against Phidias",
+      "blurb": "A former workman of Phidias whom enemies of Pericles tempted into the market-place as a public informer, to test how Athenian juries would treat Pericles's circle.",
+      "links": [
+        {
+          "characterId": "phidias"
+        }
+      ]
+    },
+    {
+      "id": "hagnon",
+      "names": [
+        "Hagnon"
+      ],
+      "relation": "Modified the decree against Pericles",
+      "blurb": "Removed the most onerous clause from Dracontides's motion—that Pericles account for expenditure before the Prytanes—and substituted a jury trial of fifteen hundred.",
+      "links": [
+        {
+          "characterId": "dracontides"
+        }
+      ]
+    },
+    {
+      "id": "dracontides",
+      "names": [
+        "Dracontides"
+      ],
+      "relation": "Moved decree that Pericles account for public money",
+      "blurb": "Proposed that Pericles deposit his accounts with the Prytanes to be judged at the altar on the Acropolis—the political attack that directly threatened him at the height of the war.",
+      "links": [
+        {
+          "characterId": "hagnon"
+        }
+      ]
+    },
+    {
+      "id": "polycrates-sam",
+      "names": [
+        "Polycrates"
+      ],
+      "relation": "Samian tyrant who invented the samaena warship",
+      "blurb": "Tyrant of Samos said to have ordered the first broad-beamed, snub-nosed galley—the samaena—that the Athenians branded on their Samian prisoners in the Periclean war.",
+      "links": [
+        {
+          "characterId": "melissus"
+        }
+      ]
+    },
+    {
+      "id": "damonides",
+      "names": [
+        "Damonides"
+      ],
+      "relation": "Adviser who suggested public money for the poor",
+      "blurb": "Of Oea; Aristotle credits him with the key advice to Pericles—that distributing state funds for public duties and shows was the way to outbid Cimon's private generosity.",
+      "links": [
+        {
+          "characterId": "damon"
+        },
+        {
+          "characterId": "cimon"
+        }
+      ]
+    },
+    {
+      "id": "aristodicus",
+      "names": [
+        "Aristodicus"
+      ],
+      "relation": "Tanagraean who killed Ephialtes",
+      "blurb": "Hired by the oligarchical faction to murder Ephialtes, Pericles's reforming ally; Aristotle names him as the killer—correcting the hostile tradition that blamed Pericles himself.",
+      "links": [
+        {
+          "characterId": "ephialtes"
+        }
+      ]
+    },
+    {
+      "id": "leocrates",
+      "names": [
+        "Leocrates"
+      ],
+      "relation": "Democratic statesman of the age before Pericles",
+      "blurb": "Named alongside Ephialtes, Myronides, Tolmides, and Cimon as the generation of leaders against whose authority Pericles held the first place for forty years.",
+      "links": [
+        {
+          "characterId": "ephialtes"
+        },
+        {
+          "characterId": "myronides"
+        }
+      ]
+    },
+    {
+      "id": "gylippus-per",
+      "names": [
+        "Gylippus"
+      ],
+      "relation": "Son of Cleandrides; ruiner of Athens in Sicily",
+      "blurb": "Son of the Spartan general Cleandrides who took Pericles's bribe; Gylippus inherited his father's dishonesty and used his military gifts to destroy the Athenian expedition in Sicily.",
+      "links": [
+        {
+          "characterId": "cleandrides"
+        },
+        {
+          "characterId": "plistoanax"
+        }
+      ]
+    },
+    {
+      "id": "menippus-per",
+      "names": [
+        "Menippus"
+      ],
+      "relation": "Friend of Pericles slandered in comedy",
+      "blurb": "A friend who served as lieutenant under Pericles; comic poets falsely alleged Pericles had an affair with his wife—a sample of the ribaldry Plutarch deplores but records.",
+      "links": [
+        {
+          "characterId": "pericles"
+        }
+      ]
+    },
+    {
+      "id": "pyrilampes",
+      "names": [
+        "Pyrilampes"
+      ],
+      "relation": "Acquaintance satirized for peacocks",
+      "blurb": "Friend of Pericles who kept exotic peacocks; comics claimed he gave them as presents to women who visited Pericles—another strand of the hostile tradition about Aspasia's household.",
+      "links": [
+        {
+          "characterId": "aspasia"
+        }
+      ]
+    },
+    {
+      "id": "polyalces",
+      "names": [
+        "Polyalces"
+      ],
+      "relation": "Spartan ambassador who suggested turning the tablet",
+      "blurb": "Made the wry remark—\"turn it around, there's no law against that\"—when Pericles refused to take down the Megarian decree tablet; his wit did not move Pericles one step.",
+      "links": [
+        {
+          "characterId": "archidamus"
+        }
+      ]
+    },
+    {
+      "id": "hermotimus-per",
+      "names": [
+        "Hermotimus"
+      ],
+      "relation": "Father of the Persian concubine renamed Aspasia",
+      "blurb": "Phocaean father of Milto, the concubine Cyrus the Younger loved so much he renamed her Aspasia—a Persian echo of Pericles's companion that Plutarch inserts as a curious digression.",
+      "links": [
+        {
+          "characterId": "milto"
+        },
+        {
+          "characterId": "cyrus-young"
+        }
+      ]
+    },
+    {
+      "id": "milto",
+      "names": [
+        "Milto"
+      ],
+      "relation": "Persian concubine renamed Aspasia by Cyrus",
+      "blurb": "Phocaean woman of great beauty who came to Cyrus the Younger's court; renamed Aspasia after Athens's most famous woman, she outlived Cyrus and had great influence at the Persian court.",
+      "links": [
+        {
+          "characterId": "cyrus-young"
+        },
+        {
+          "characterId": "aspasia"
+        }
+      ]
+    },
+    {
+      "id": "evangelus",
+      "names": [
+        "Evangelus"
+      ],
+      "relation": "Pericles's household manager",
+      "blurb": "The single servant Pericles entrusted with running his entire domestic economy—selling produce in bulk, buying provisions as needed—the man who made the statesman's famously careful budget work."
+    }
+  ],
+  "nameResolutions": [
+    {
+      "paraId": "pericles-p006",
+      "start": 126,
+      "end": 136,
+      "characterId": "xanthippus",
+      "note": "Father of Pericles, victor at Mycale"
+    },
+    {
+      "paraId": "pericles-p069",
+      "start": 2252,
+      "end": 2262,
+      "characterId": "xanthippus-son",
+      "note": "Pericles's eldest son Xanthippus, listed with his brother Paralus"
+    },
+    {
+      "paraId": "pericles-p099",
+      "start": 430,
+      "end": 440,
+      "characterId": "xanthippus-son",
+      "note": "Eldest legitimate son; prodigal"
+    },
+    {
+      "paraId": "pericles-p099",
+      "start": 964,
+      "end": 974,
+      "characterId": "xanthippus-son",
+      "note": "The son Xanthippus, disobliged by his father"
+    },
+    {
+      "paraId": "pericles-p099",
+      "start": 1697,
+      "end": 1707,
+      "characterId": "xanthippus-son",
+      "note": "Son spreading stories about Pericles"
+    },
+    {
+      "paraId": "pericles-p099",
+      "start": 1948,
+      "end": 1958,
+      "characterId": "xanthippus-son",
+      "note": "Son died in the plague"
     }
   ]
 }
