@@ -523,5 +523,155 @@
         }
       ]
     }
+  ],
+  "locations": [
+    {
+      "id": "sparta",
+      "names": [
+        "Sparta",
+        "Lacedaemon"
+      ],
+      "relation": "Home city; seat of the reformed constitution",
+      "modern": "Sparta, Greece",
+      "lat": 37.08,
+      "lon": 22.43,
+      "presence": "visited",
+      "visitKind": "city",
+      "visitOrder": 1,
+      "travel": "land",
+      "blurb": "Born here to the Eurypontid royal house and here he imposed the Great Rhetra—common meals, iron money, and the agoge—returning from exile with laws that outlasted the lawgiver."
+    },
+    {
+      "id": "crete",
+      "names": [
+        "Crete"
+      ],
+      "relation": "First stop in voluntary exile; source of law and music",
+      "modern": "Crete, Greece",
+      "lat": 35.3,
+      "lon": 25.0,
+      "presence": "visited",
+      "visitKind": "city",
+      "visitOrder": 2,
+      "travel": "sea",
+      "blurb": "First arrived here in exile, studying Cretan government and persuading the lyric sage Thales to sail to Sparta, where his music proved more effective than laws at calming civil strife."
+    },
+    {
+      "id": "asia",
+      "names": [
+        "Asia"
+      ],
+      "relation": "Ionian coast; discovery of Homer's poems",
+      "modern": "Aegean coast of Turkey",
+      "lat": 37.9,
+      "lon": 27.2,
+      "presence": "visited",
+      "visitKind": "city",
+      "visitOrder": 3,
+      "travel": "sea",
+      "blurb": "Sailed from Crete to Asia to compare temperate Cretan customs with Ionian luxury; here first encountered Homer's poems in the hands of Creophylus's descendants and gathered them for Sparta."
+    },
+    {
+      "id": "egypt",
+      "names": [
+        "Egypt"
+      ],
+      "relation": "Model for separating soldiers from tradesmen",
+      "modern": "Egypt",
+      "lat": 26.5,
+      "lon": 30.0,
+      "presence": "visited",
+      "visitKind": "city",
+      "visitOrder": 4,
+      "travel": "sea",
+      "blurb": "Egyptians reported that he voyaged here and borrowed their practice of keeping the soldier class apart from craftsmen and laborers—a separation he transplanted to Sparta."
+    },
+    {
+      "id": "delphi",
+      "names": [
+        "Delphi"
+      ],
+      "relation": "Oracle that sanctioned the Great Rhetra",
+      "modern": "Delphi, Greece",
+      "lat": 38.48,
+      "lon": 22.50,
+      "presence": "visited",
+      "visitKind": "oracle",
+      "visitOrder": 5,
+      "travel": "land",
+      "blurb": "Consulted Apollo here before the great reforms; the oracle called him beloved of the gods and more god than man, and returned with the Rhetra—Sparta's divine constitution."
+    },
+    {
+      "id": "elis",
+      "names": [
+        "Elis"
+      ],
+      "relation": "Olympic games site; tradition of his death",
+      "modern": "Elis, western Peloponnese, Greece",
+      "lat": 37.89,
+      "lon": 21.39,
+      "presence": "named",
+      "blurb": "Associated with the Olympic truce Lycurgus helped Iphitus establish; Apollothemis said he came to Elis and died there, one of several traditions about his final journey."
+    },
+    {
+      "id": "cirrha",
+      "names": [
+        "Cirrha"
+      ],
+      "relation": "One tradition for his place of death",
+      "modern": "Kirrha, near Itea, Greece",
+      "lat": 38.39,
+      "lon": 22.44,
+      "presence": "named",
+      "blurb": "Some sources reported that Lycurgus died in Cirrha near Delphi—fitting end for the lawgiver who had received the constitution-making oracle from Apollo in that same sacred region."
+    },
+    {
+      "id": "argos",
+      "names": [
+        "Argos"
+      ],
+      "relation": "Neighbor that failed to moderate royal power",
+      "modern": "Argos, Greece",
+      "lat": 37.63,
+      "lon": 22.72,
+      "presence": "named",
+      "blurb": "Named with Messene as neighbors whose insistence on strict royal prerogative brought calamity—the negative examples that justified Lycurgus's balanced constitution for Sparta."
+    },
+    {
+      "id": "messene",
+      "names": [
+        "Messene"
+      ],
+      "relation": "Conquered neighbor; enslaved as Helots",
+      "modern": "Messenia, Greece",
+      "lat": 37.14,
+      "lon": 22.0,
+      "presence": "named",
+      "blurb": "Messenia's defeat provided Sparta with Helot labor, and the later Messenian revolt nearly destroyed the state—illustrating that Lycurgus's order rested on constant vigilance."
+    },
+    {
+      "id": "athens",
+      "names": [
+        "Athens"
+      ],
+      "relation": "Foil to Spartan simplicity in later anecdotes",
+      "modern": "Athens, Greece",
+      "lat": 37.97,
+      "lon": 23.72,
+      "presence": "named",
+      "blurb": "Cited in anecdotes comparing Athenian litigiousness and luxury to Spartan order; a Lacedaemonian visiting Athens was said to marvel that a citizen had been fined for idleness."
+    },
+    {
+      "id": "arcadia",
+      "names": [
+        "Arcadia"
+      ],
+      "relation": "Territory added by royal ancestor Sous",
+      "modern": "Arcadia, Greece",
+      "lat": 37.5,
+      "lon": 22.1,
+      "presence": "named",
+      "blurb": "Ancestor Sous pushed Spartan dominion into Arcadia through conquest; Lycurgus inherited a state already practiced in border warfare before reshaping it with laws of equality."
+    }
   ]
 }

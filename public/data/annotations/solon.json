@@ -576,5 +576,165 @@
         }
       ]
     }
+  ],
+  "locations": [
+    {
+      "id": "athens",
+      "names": [
+        "Athens"
+      ],
+      "relation": "Home city; seat of his laws",
+      "modern": "Athens, Greece",
+      "lat": 37.97,
+      "lon": 23.72,
+      "presence": "visited",
+      "visitKind": "city",
+      "visitOrder": 1,
+      "travel": "land",
+      "blurb": "Home and lawgiving city—archon who cancelled debts, freed enslaved citizens, and gave Athens its written constitution; he returned here after ten years abroad to see Pisistratus's tyranny."
+    },
+    {
+      "id": "salamis",
+      "names": [
+        "Salamis"
+      ],
+      "relation": "Island he led Athens to reclaim",
+      "modern": "Salamis, Greece",
+      "lat": 37.94,
+      "lon": 23.50,
+      "presence": "visited",
+      "visitKind": "battle",
+      "visitOrder": 2,
+      "travel": "sea",
+      "blurb": "Led the Athenian campaign to take back the island from Megara, outwitting them with a ruse at Colias and landing troops by night to capture the city."
+    },
+    {
+      "id": "delphi",
+      "names": [
+        "Delphi"
+      ],
+      "relation": "Oracle consulted before and after lawgiving",
+      "modern": "Delphi, Greece",
+      "lat": 38.48,
+      "lon": 22.50,
+      "presence": "visited",
+      "visitKind": "oracle",
+      "visitOrder": 3,
+      "travel": "land",
+      "blurb": "Consulted Apollo here before publishing his laws and urged Athens to defend the sanctuary against the Cirrhaeans—an act that won him the reputation of a friend of the god."
+    },
+    {
+      "id": "egypt",
+      "names": [
+        "Egypt",
+        "Canopus"
+      ],
+      "relation": "First port of the ten-year journey",
+      "modern": "Nile Delta, Egypt",
+      "lat": 31.32,
+      "lon": 30.07,
+      "presence": "visited",
+      "visitKind": "city",
+      "visitOrder": 4,
+      "travel": "sea",
+      "blurb": "First voyage after leaving his laws—he lived near Nilus' mouth by fair Canopus' shore and studied with the priests of Heliopolis and Saïs, receiving the Atlantic tale he later versified."
+    },
+    {
+      "id": "soli",
+      "names": [
+        "Soli",
+        "Cyprus"
+      ],
+      "relation": "City he helped relocate; renamed in his honor",
+      "modern": "Soloi (near Morphou), Cyprus",
+      "lat": 35.13,
+      "lon": 32.81,
+      "presence": "visited",
+      "visitKind": "city",
+      "visitOrder": 5,
+      "travel": "sea",
+      "blurb": "Sailing from Egypt to Cyprus, he advised King Philocyprus to abandon the cramped upland town for the fertile plain; the king named the new city Soli in his honor."
+    },
+    {
+      "id": "sardis",
+      "names": [
+        "Sardis"
+      ],
+      "relation": "Court of Croesus; proving ground of wisdom",
+      "modern": "Sart, Turkey",
+      "lat": 38.49,
+      "lon": 28.04,
+      "presence": "visited",
+      "visitKind": "city",
+      "visitOrder": 6,
+      "travel": "sea",
+      "blurb": "Croesus's invitation brought him to the richest court in the world; his lesson—call no man happy until dead—later saved the king's life when Cyrus lit the pyre."
+    },
+    {
+      "id": "miletus",
+      "names": [
+        "Miletus"
+      ],
+      "relation": "City of Thales; sage-to-sage visit",
+      "modern": "Balat, Turkey",
+      "lat": 37.53,
+      "lon": 27.28,
+      "presence": "visited",
+      "visitKind": "city",
+      "visitOrder": 7,
+      "travel": "sea",
+      "blurb": "Visited Thales the Milesian sage and marveled that so wise a man troubled himself with neither wife nor children—a question Thales answered with a prank rather than a speech."
+    },
+    {
+      "id": "corinth",
+      "names": [
+        "Corinth"
+      ],
+      "relation": "Meeting of the Seven Wise Men",
+      "modern": "Corinth, Greece",
+      "lat": 37.91,
+      "lon": 22.88,
+      "presence": "visited",
+      "visitKind": "city",
+      "visitOrder": 8,
+      "travel": "land",
+      "blurb": "Periander arranged a supper here for the wise men; alongside their meeting at Delphi, these gatherings gave each sage's maxims wider currency across Greece."
+    },
+    {
+      "id": "megara",
+      "names": [
+        "Megara"
+      ],
+      "relation": "Rival city in the Salamis dispute",
+      "modern": "Megara, Greece",
+      "lat": 37.99,
+      "lon": 23.34,
+      "presence": "named",
+      "blurb": "Megarian forces held Salamis until Solon's campaigns and the Spartan arbitration finally awarded the island to Athens; burial customs there differed from the Athenian."
+    },
+    {
+      "id": "crete",
+      "names": [
+        "Crete"
+      ],
+      "relation": "Source of the purifier Epimenides",
+      "modern": "Crete, Greece",
+      "lat": 35.3,
+      "lon": 25.0,
+      "presence": "named",
+      "blurb": "Epimenides the Phaestian came from Crete to cleanse Athens of the Cylonian pollution—Cretan holiness invoked to prepare the city for Solon's legislation."
+    },
+    {
+      "id": "sparta",
+      "names": [
+        "Sparta"
+      ],
+      "relation": "Arbitrators of the Salamis dispute",
+      "modern": "Sparta, Greece",
+      "lat": 37.08,
+      "lon": 22.43,
+      "presence": "named",
+      "blurb": "Five Spartans served as judges in the Salamis arbitration and ruled in Athens' favor; Solon also mentioned Sparta when advising Croesus on managing large subject populations."
+    }
   ]
 }
