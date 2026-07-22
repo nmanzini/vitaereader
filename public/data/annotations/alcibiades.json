@@ -702,6 +702,595 @@
           "characterId": "andocides"
         }
       ]
+    },
+    {
+      "id": "dinomache",
+      "names": [
+        "Dinomache"
+      ],
+      "relation": "Mother of Alcibiades",
+      "blurb": "Daughter of Megacles; through her Alcibiades traced his lineage to the Alcmaeonid house of Athens.",
+      "links": [
+        {
+          "characterId": "megacles-alc"
+        },
+        {
+          "characterId": "clinias"
+        }
+      ]
+    },
+    {
+      "id": "megacles-alc",
+      "names": [
+        "Megacles"
+      ],
+      "relation": "Maternal grandfather; Alcmaeonid",
+      "blurb": "Father of Dinomache; head of the great Alcmaeonid clan that gave Alcibiades his most illustrious blood-line."
+    },
+    {
+      "id": "amycla",
+      "names": [
+        "Amycla"
+      ],
+      "relation": "Lacedaemonian nurse",
+      "blurb": "Spartan woman who nursed Alcibiades—one of the few people around him Plutarch considers worthy of a name."
+    },
+    {
+      "id": "zopyrus",
+      "names": [
+        "Zopyrus"
+      ],
+      "relation": "Teacher and attendant",
+      "blurb": "Attendant who taught the young Alcibiades; Plato records his name, one detail of the boy's pampered upbringing.",
+      "links": [
+        {
+          "characterId": "antisthenes"
+        }
+      ]
+    },
+    {
+      "id": "antisthenes",
+      "names": [
+        "Antisthenes"
+      ],
+      "relation": "Philosopher who recorded Amycla",
+      "blurb": "Socratic writer who noted the name of Alcibiades's nurse—cited by Plutarch to show what fame a great subject's childhood attracts.",
+      "links": [
+        {
+          "characterId": "socrates"
+        }
+      ]
+    },
+    {
+      "id": "demosthenes-alc",
+      "names": [
+        "Demosthenes"
+      ],
+      "relation": "Athenian general of the same era",
+      "blurb": "The general, not the orator: listed alongside Nicias, Lamachus, Phormion, and Thrasybulus as an illustrious contemporary whose mother's name no one troubled to record."
+    },
+    {
+      "id": "phormion",
+      "names": [
+        "Phormion"
+      ],
+      "relation": "Athenian admiral; contemporary",
+      "blurb": "Distinguished Athenian admiral mentioned in Plutarch's opening to highlight how Socrates's friendship uniquely preserved even domestic details of Alcibiades's life."
+    },
+    {
+      "id": "archippus",
+      "names": [
+        "Archippus"
+      ],
+      "relation": "Comic poet who mocked Alcibiades's son",
+      "blurb": "Athenian comedian who ridiculed Alcibiades's son for imitating his father's trailing robe and lisping speech—evidence the affectations became a city-wide joke."
+    },
+    {
+      "id": "democrates-alc",
+      "names": [
+        "Democrates"
+      ],
+      "relation": "Man Alcibiades ran to as a boy",
+      "blurb": "An Athenian admirer in whose house the young Alcibiades once took refuge during a quarrel, prompting Ariphron to consider a public search."
+    },
+    {
+      "id": "cleanthes-alc",
+      "names": [
+        "Cleanthes"
+      ],
+      "relation": "Stoic philosopher cited in analogy",
+      "blurb": "Stoic thinker whose remark—that he held his beloved only by the ears—Plutarch uses to illustrate how Socrates alone reached Alcibiades through reason, not pleasure.",
+      "links": [
+        {
+          "characterId": "socrates"
+        }
+      ]
+    },
+    {
+      "id": "teucer",
+      "names": [
+        "Teucer"
+      ],
+      "relation": "Informer in the Mysteries panic",
+      "blurb": "Named alongside Dioclides as one of the informers whose accusations drove the city's rage during the Herms and Mysteries scandal as the Sicilian fleet sailed.",
+      "links": [
+        {
+          "characterId": "dioclides"
+        },
+        {
+          "characterId": "andocides"
+        }
+      ]
+    },
+    {
+      "id": "dioclides",
+      "names": [
+        "Dioclides"
+      ],
+      "relation": "Informer in the Herms scandal",
+      "blurb": "Deposed in the panic over the mutilation of the Hermae; later shown to have lied (the moon was new when he claimed to see by moonlight), but fear made Athens believe him.",
+      "links": [
+        {
+          "characterId": "teucer"
+        },
+        {
+          "characterId": "andocides"
+        }
+      ]
+    },
+    {
+      "id": "phrynichus-comic",
+      "names": [
+        "Phrynichus, the comic poet"
+      ],
+      "relation": "Comic poet; witness to the Mysteries panic",
+      "blurb": "The comic playwright (distinct from the oligarchic general Phrynichus) who mocked Dioclides and Teucer in verse—evidence of how Athens's comic stage shadowed every crisis."
+    },
+    {
+      "id": "timaeus-alc",
+      "names": [
+        "Timaeus"
+      ],
+      "relation": "Prisoner who persuaded Andocides to confess",
+      "blurb": "A fellow detainee of lesser repute but remarkable cunning who convinced Andocides that confessing and naming others, however falsely, was the only safe path out of prison.",
+      "links": [
+        {
+          "characterId": "andocides"
+        }
+      ]
+    },
+    {
+      "id": "hellanicus",
+      "names": [
+        "Hellanicus"
+      ],
+      "relation": "Historian of genealogies",
+      "blurb": "Attic chronicler Plutarch cites for tracing Andocides's lineage back to Ulysses—an example of the obscure detective work ancient genealogists applied to the famous.",
+      "links": [
+        {
+          "characterId": "andocides"
+        }
+      ]
+    },
+    {
+      "id": "thessalus-alc",
+      "names": [
+        "Thessalus"
+      ],
+      "relation": "Son of Cimon; formal accuser of Alcibiades",
+      "blurb": "Filed the official information that charged Alcibiades with profaning the Mysteries—the legal document Plutarch quotes verbatim, naming himself as plaintiff."
+    },
+    {
+      "id": "artaxerxes",
+      "names": [
+        "Artaxerxes"
+      ],
+      "relation": "Persian king Alcibiades hoped to serve",
+      "blurb": "The Great King whose court Alcibiades intended to reach from Bithynia, believing his services against enemies of Persia would find a better welcome than Themistocles's."
+    },
+    {
+      "id": "conon",
+      "names": [
+        "Conon"
+      ],
+      "relation": "Athenian general who escaped Aegospotami",
+      "blurb": "The only Athenian commander to save his squadron—eight galleys—when Lysander destroyed the fleet; his escape became a footnote to the catastrophe Alcibiades had warned against."
+    },
+    {
+      "id": "tydeus",
+      "names": [
+        "Tydeus"
+      ],
+      "relation": "General at Aegospotami who dismissed Alcibiades",
+      "blurb": "One of the three successors who replaced Alcibiades; his contemptuous order to leave the camp sealed the Athenians' fate when Lysander struck.",
+      "links": [
+        {
+          "characterId": "menander-alc"
+        },
+        {
+          "characterId": "adimantus-alc"
+        }
+      ]
+    },
+    {
+      "id": "menander-alc",
+      "names": [
+        "Menander"
+      ],
+      "relation": "General at Aegospotami",
+      "blurb": "Posted at Aegospotami with Tydeus and Adimantus; their careless anchorage gave Lysander the opening that ended Athenian sea power.",
+      "links": [
+        {
+          "characterId": "tydeus"
+        },
+        {
+          "characterId": "adimantus-alc"
+        }
+      ]
+    },
+    {
+      "id": "adimantus-alc",
+      "names": [
+        "Adimantus"
+      ],
+      "relation": "General at Aegospotami",
+      "blurb": "Third of the new-made commanders who ignored Alcibiades's warning at Aegospotami; later suspected of treason by some accounts.",
+      "links": [
+        {
+          "characterId": "tydeus"
+        },
+        {
+          "characterId": "menander-alc"
+        }
+      ]
+    },
+    {
+      "id": "lais",
+      "names": [
+        "Lais"
+      ],
+      "relation": "Famous courtesan; daughter of Timandra",
+      "blurb": "Called the Corinthian, though born in Hyccara in Sicily; said to be the daughter of Timandra who wrapped Alcibiades's body—a story that ties the most celebrated hetaera to his end.",
+      "links": [
+        {
+          "characterId": "timandra"
+        }
+      ]
+    },
+    {
+      "id": "magaeus",
+      "names": [
+        "Magaeus"
+      ],
+      "relation": "Pharnabazus's brother; carried out the murder",
+      "blurb": "Pharnabazus delegated the killing of Alcibiades to his brother Magaeus, who surrounded the house and set it on fire.",
+      "links": [
+        {
+          "characterId": "pharnabazus"
+        },
+        {
+          "characterId": "susamithres"
+        }
+      ]
+    },
+    {
+      "id": "susamithres",
+      "names": [
+        "Susamithres"
+      ],
+      "relation": "Pharnabazus's uncle; in the murder plot",
+      "blurb": "Joined Magaeus in carrying out Pharnabazus's order to kill Alcibiades; the two encircled the house with fire while he slept.",
+      "links": [
+        {
+          "characterId": "pharnabazus"
+        },
+        {
+          "characterId": "magaeus"
+        }
+      ]
+    },
+    {
+      "id": "chrysogonus",
+      "names": [
+        "Chrysogonus"
+      ],
+      "relation": "Pythian flute-victor at the triumphal return",
+      "blurb": "A Pythian games winner said by Duris (but no other source) to have played the flute to mark time for Alcibiades's oarsmen on the triumphal return to Athens.",
+      "links": [
+        {
+          "characterId": "duris-alc"
+        }
+      ]
+    },
+    {
+      "id": "callippides",
+      "names": [
+        "Callippides"
+      ],
+      "relation": "Tragic actor at the triumphal return",
+      "blurb": "Celebrated tragedian whom Duris claims gave the rowing commands in stage costume; Plutarch doubts the story but records it as a sample of Duris's exaggeration.",
+      "links": [
+        {
+          "characterId": "duris-alc"
+        }
+      ]
+    },
+    {
+      "id": "duris-alc",
+      "names": [
+        "Duris"
+      ],
+      "relation": "Samian historian claiming descent from Alcibiades",
+      "blurb": "Wrote sensational accounts of Alcibiades's triumph—purple sails, famous flutists, theatrical trappings—which Theopompus, Ephorus, and Xenophon all contradict.",
+      "links": [
+        {
+          "characterId": "theopompus-alc"
+        },
+        {
+          "characterId": "ephorus-alc"
+        },
+        {
+          "characterId": "xenophon-alc"
+        }
+      ]
+    },
+    {
+      "id": "theopompus-alc",
+      "names": [
+        "Theopompus"
+      ],
+      "relation": "Historian who contradicts Duris",
+      "blurb": "The Chian historian cited alongside Ephorus and Xenophon as sources that say nothing of the theatrical trappings Duris attributed to Alcibiades's triumphal return.",
+      "links": [
+        {
+          "characterId": "duris-alc"
+        }
+      ]
+    },
+    {
+      "id": "ephorus-alc",
+      "names": [
+        "Ephorus"
+      ],
+      "relation": "Historian who contradicts Duris",
+      "blurb": "Major 4th-century historian of Greek affairs; listed with Theopompus and Xenophon as a sober source that contradicts Duris's colorful version of the triumphal return.",
+      "links": [
+        {
+          "characterId": "duris-alc"
+        }
+      ]
+    },
+    {
+      "id": "xenophon-alc",
+      "names": [
+        "Xenophon"
+      ],
+      "relation": "Historian who contradicts Duris",
+      "blurb": "Athenian general and writer; Plutarch cites him alongside Theopompus and Ephorus as a reliable authority who records none of Duris's theatrical embellishments.",
+      "links": [
+        {
+          "characterId": "duris-alc"
+        }
+      ]
+    },
+    {
+      "id": "cimon-alc",
+      "names": [
+        "Cimon"
+      ],
+      "relation": "Athenian general; father of Thessalus the accuser",
+      "blurb": "Son of Miltiades and the great rival of Pericles; his son Thessalus filed the formal indictment charging Alcibiades with profaning the Mysteries—so Cimon's family supplied the decisive legal weapon against him.",
+      "links": [
+        {
+          "characterId": "thessalus-alc"
+        }
+      ]
+    },
+    {
+      "id": "leotychides-alc",
+      "names": [
+        "Leotychides"
+      ],
+      "relation": "Son born to Timaea; Alcibiades's alleged child by the Spartan queen",
+      "blurb": "Timaea named him Leotychides in public, but whispered 'Alcibiades' in private. King Agis, who had been away ten months before the birth, refused to acknowledge him; the boy was accordingly excluded from the Spartan royal succession.",
+      "links": [
+        {
+          "characterId": "agis"
+        },
+        {
+          "characterId": "timaea"
+        }
+      ]
+    },
+    {
+      "id": "agatharcus",
+      "names": [
+        "Agatharcus"
+      ],
+      "relation": "Painter held prisoner by Alcibiades",
+      "blurb": "Kept under lock and key in Alcibiades's house until he had painted the walls throughout, then dismissed with a handsome payment. Plutarch cites the episode as typical of Alcibiades's mixture of high-handedness and generosity."
+    },
+    {
+      "id": "anaxilaus-alc",
+      "names": [
+        "Anaxilaus"
+      ],
+      "relation": "Byzantine who betrayed the city to Alcibiades",
+      "blurb": "Opened Byzantine gates to Alcibiades together with Lycurgus and others, on his promise to spare the inhabitants' lives and property—ending the revolt without massacre and earning Alcibiades rare praise for clemency.",
+      "links": [
+        {
+          "characterId": "lycurgus-byz"
+        }
+      ]
+    },
+    {
+      "id": "lycurgus-byz",
+      "names": [
+        "Lycurgus"
+      ],
+      "relation": "Byzantine who betrayed the city alongside Anaxilaus",
+      "blurb": "One of the Byzantines who arranged to hand over the city to Alcibiades in exchange for guarantees of life and property; distinct from the Spartan lawgiver of the same name.",
+      "links": [
+        {
+          "characterId": "anaxilaus-alc"
+        }
+      ]
+    },
+    {
+      "id": "lycurgus-law",
+      "names": [
+        "Lycurgus the Lawgiver",
+        "Lycurgus"
+      ],
+      "relation": "Spartan lawgiver; model of Spartan virtue",
+      "blurb": "The legendary architect of Spartan discipline; cited in the Life to contrast the character Lycurgus designed to form with the reality of Alcibiades's conduct in Sparta."
+    },
+    {
+      "id": "hippocrates-alc",
+      "names": [
+        "Hippocrates"
+      ],
+      "relation": "Persian governor of Chalcedon",
+      "blurb": "Governor holding Chalcedon for Pharnabazus; made a sally against Alcibiades's besieging army at the same moment Pharnabazus arrived to relieve the town. Alcibiades divided his force and repulsed both simultaneously.",
+      "links": [
+        {
+          "characterId": "pharnabazus"
+        }
+      ]
+    },
+    {
+      "id": "demostratus",
+      "names": [
+        "Demostratus"
+      ],
+      "relation": "Athenian orator who proposed full powers for the Sicilian generals",
+      "blurb": "Moved that the generals be given absolute authority over preparations and the conduct of the whole Sicilian expedition—the decree that gave Alcibiades, Nicias, and Lamachus their sweeping mandate.",
+      "links": [
+        {
+          "characterId": "nicias"
+        },
+        {
+          "characterId": "lamachus"
+        }
+      ]
+    },
+    {
+      "id": "archestratus-alc",
+      "names": [
+        "Archestratus"
+      ],
+      "relation": "Commentator who said Greece could not bear a second Alcibiades",
+      "blurb": "Quoted by Plutarch for the remark that Greece was too small to support two Alcibiades—a wry verdict on the city's mixture of awe and exhaustion at the man's ambition."
+    },
+    {
+      "id": "menon-alc",
+      "names": [
+        "Menon"
+      ],
+      "relation": "Father of Theano the priestess",
+      "blurb": "Of the deme Agraule; his daughter Theano, alone among the priests and priestesses, refused the popular decree that the sacred ministers should formally curse Alcibiades, saying her office obliged her to prayers, not execrations.",
+      "links": [
+        {
+          "characterId": "theano"
+        }
+      ]
+    },
+    {
+      "id": "taureas",
+      "names": [
+        "Taureas"
+      ],
+      "relation": "Rival producer of games whom Alcibiades struck in public",
+      "blurb": "Mounted theatrical games in competition with Alcibiades; Alcibiades punched him in the face before the judges and the crowd—an act of brazen arrogance that the city, in its infatuation, apparently endured."
+    },
+    {
+      "id": "anthemion-alc",
+      "names": [
+        "Anthemion"
+      ],
+      "relation": "Father of Anytus",
+      "blurb": "An Athenian citizen whose son Anytus became one of Alcibiades's many infatuated admirers—and who later, as the prosecutor of Socrates, played a fateful role in Athenian history.",
+      "links": [
+        {
+          "characterId": "anytus"
+        }
+      ]
+    },
+    {
+      "id": "erasistratus-alc",
+      "names": [
+        "Erasistratus"
+      ],
+      "relation": "Father of Phaeax",
+      "blurb": "Father of Phaeax, who with Nicias was one of the only men in Athens able to contest Alcibiades's influence with the people—a detail Plutarch records to measure the scale of Alcibiades's dominance.",
+      "links": [
+        {
+          "characterId": "phaeax"
+        }
+      ]
+    },
+    {
+      "id": "niceratus-alc",
+      "names": [
+        "Niceratus"
+      ],
+      "relation": "Father of Nicias",
+      "blurb": "Father of Nicias, Alcibiades's principal rival for popular favour; mentioned to identify the statesman who, with Phaeax, was the only other Athenian capable of competing with Alcibiades.",
+      "links": [
+        {
+          "characterId": "nicias"
+        }
+      ]
+    },
+    {
+      "id": "callaeschrus-alc",
+      "names": [
+        "Callaeschrus"
+      ],
+      "relation": "Father of Critias",
+      "blurb": "Father of the oligarch Critias, who later moved in the assembly the decree recalling Alcibiades from exile—a fact Plutarch documents from Critias's own elegies.",
+      "links": [
+        {
+          "characterId": "critias"
+        }
+      ]
+    },
+    {
+      "id": "thrason-alc",
+      "names": [
+        "Thrason"
+      ],
+      "relation": "Father of Thrasybulus",
+      "blurb": "Father of Thrasybulus the democrat; noted because his son was the particular enemy of Alcibiades in the army, going especially to Athens to prosecute him after Notium.",
+      "links": [
+        {
+          "characterId": "thrasybulus"
+        }
+      ]
+    },
+    {
+      "id": "eurysaces",
+      "names": [
+        "Eurysaces"
+      ],
+      "relation": "Son of Ajax; legendary paternal ancestor of Alcibiades",
+      "blurb": "Son of the hero Ajax; through him Alcibiades traced his descent on his father Clinias's side to the Aeacid line—a pedigree that paired Homeric heroism with the Alcmaeonid distinction of his mother's family."
+    }
+  ],
+  "nameResolutions": [
+    {
+      "paraId": "alcibiades-p052",
+      "start": 1720,
+      "end": 1728,
+      "characterId": "lycurgus-law",
+      "note": "Abstract reference to the Spartan lawgiver as a standard of Spartan character"
+    },
+    {
+      "paraId": "alcibiades-p063",
+      "start": 796,
+      "end": 804,
+      "characterId": "lycurgus-byz",
+      "note": "The Byzantine citizen who betrayed the city to Alcibiades"
     }
   ]
 }

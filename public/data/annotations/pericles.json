@@ -1255,6 +1255,132 @@
       ],
       "relation": "Pericles's household manager",
       "blurb": "The single servant Pericles entrusted with running his entire domestic economy—selling produce in bulk, buying provisions as needed—the man who made the statesman's famously careful budget work."
+    },
+    {
+      "id": "euryptolemus-per",
+      "names": [
+        "Euryptolemus"
+      ],
+      "relation": "Near kinsman of Pericles",
+      "blurb": "The one person whose wedding feast Pericles attended, though even then he left before the drinking was finished—the single recorded exception to his rule of avoiding all social dinners, cited to show how jealously he guarded his public image.",
+      "links": [
+        {
+          "characterId": "pericles"
+        }
+      ]
+    },
+    {
+      "id": "melesias-per",
+      "names": [
+        "Melesias"
+      ],
+      "relation": "Father of Thucydides the political opponent",
+      "blurb": "Father of the aristocratic leader Thucydides who organized conservative opposition to Pericles; mentioned to distinguish this Thucydides (son of Melesias) from the historian Thucydides son of Olorus.",
+      "links": [
+        {
+          "characterId": "thucydides"
+        }
+      ]
+    },
+    {
+      "id": "tolmaeus-per",
+      "names": [
+        "Tolmaeus"
+      ],
+      "relation": "Father of Tolmides",
+      "blurb": "Father of the rash general Tolmides who attacked Boeotia against Pericles's advice; after the disaster at Coronea that prediction was remembered as one of Pericles's wisest political acts.",
+      "links": [
+        {
+          "characterId": "tolmides"
+        }
+      ]
+    },
+    {
+      "id": "ithagenes-per",
+      "names": [
+        "Ithagenes"
+      ],
+      "relation": "Father of Melissus the general-philosopher",
+      "blurb": "Father of Melissus of Samos, the Eleatic philosopher who commanded the Samian fleet; when Pericles left with a detachment Melissus attacked, defeated the remaining squadron, and prolonged the siege.",
+      "links": [
+        {
+          "characterId": "melissus"
+        }
+      ]
+    },
+    {
+      "id": "tisander-per",
+      "names": [
+        "Tisander"
+      ],
+      "relation": "Father of Xanthippus the Younger's expensive wife",
+      "blurb": "His daughter married Xanthippus, Pericles's eldest son; her expensive tastes led Xanthippus to borrow money in his father's name and, when sued, to publicly slander Pericles to his guests.",
+      "links": [
+        {
+          "characterId": "xanthippus-son"
+        },
+        {
+          "characterId": "epilycus-per"
+        }
+      ]
+    },
+    {
+      "id": "epilycus-per",
+      "names": [
+        "Epilycus"
+      ],
+      "relation": "Grandfather of Xanthippus the Younger's wife",
+      "blurb": "Father of Tisander; mentioned only to identify Xanthippus's bride by her grandfather's name—a sign of the family's prominence and of how closely Plutarch traces the household tensions that embittered Pericles's last years.",
+      "links": [
+        {
+          "characterId": "tisander-per"
+        }
+      ]
+    },
+    {
+      "id": "epitimus-per",
+      "names": [
+        "Epitimus"
+      ],
+      "relation": "Pharsalian killed by javelin at the games",
+      "blurb": "Struck accidentally by a javelin thrown by Pericles's son; the incident prompted Pericles to spend a full day with Protagoras debating whether the fault lay with the javelin, the thrower, or the games officials—an anecdote that anchors the abstract sophistic argument in real sorrow.",
+      "links": [
+        {
+          "characterId": "protagoras"
+        }
+      ]
+    },
+    {
+      "id": "eleus-per",
+      "names": [
+        "Eleus"
+      ],
+      "relation": "Third son of Cimon; born of an Arcadian woman",
+      "blurb": "One of three sons Cimon had by an Arcadian woman—the others being Lacedaemonius and Thessalus—who were spoken of disparagingly because Cimon supplied them only ten galleys when Athens needed far more.",
+      "links": [
+        {
+          "characterId": "lacedaemonius"
+        },
+        {
+          "characterId": "thessalus-per"
+        }
+      ]
+    },
+    {
+      "id": "thessalus-per",
+      "names": [
+        "Thessalus"
+      ],
+      "relation": "Second son of Cimon; born of an Arcadian woman",
+      "blurb": "One of the three foreign-born sons of Cimon (with Lacedaemonius and Eleus), criticised for providing only ten ships to the Athenian cause; the same Thessalus later filed the formal impiety charge against Alcibiades.",
+      "links": [
+        {
+          "characterId": "lacedaemonius"
+        },
+        {
+          "characterId": "eleus-per"
+        }
+      ]
     }
   ],
   "nameResolutions": [
