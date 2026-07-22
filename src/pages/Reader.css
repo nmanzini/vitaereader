@@ -511,7 +511,8 @@
 }
 
 /* Place highlights — dashed underline (not italic) so they read apart from people.
-   Dashed renders more reliably than dotted on mobile WebKit/Silk. */
+   Dashed renders more reliably than dotted on mobile WebKit/Silk.
+   Visited places (protagonist was there) use a solid underline. */
 .loc-ref {
   display: inline;
   padding: 0;
@@ -530,6 +531,10 @@
   text-underline-offset: 0.18em;
   text-decoration-skip-ink: auto;
   -webkit-tap-highlight-color: color-mix(in srgb, var(--accent) 12%, transparent);
+}
+
+.loc-ref-visited {
+  text-decoration-style: solid;
 }
 
 .loc-ref:hover,

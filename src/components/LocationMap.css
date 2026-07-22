@@ -6,6 +6,10 @@
   border: 1px solid color-mix(in srgb, var(--ink) 10%, transparent);
 }
 
+.loc-map-expanded {
+  min-height: 14rem;
+}
+
 .loc-map-sea {
   fill: color-mix(in srgb, var(--accent) 10%, var(--bg));
 }
@@ -13,12 +17,55 @@
 .loc-map-land {
   fill: color-mix(in srgb, var(--accent) 18%, var(--bg-elevated));
   stroke: color-mix(in srgb, var(--ink) 14%, transparent);
-  stroke-width: 0.6;
+  stroke-width: 0.7;
   stroke-linejoin: round;
+  stroke-linecap: round;
 }
 
 .loc-map-peer {
   fill: color-mix(in srgb, var(--ink-muted) 45%, transparent);
+}
+
+.loc-map-journey {
+  stroke: color-mix(in srgb, var(--accent) 55%, var(--ink));
+  stroke-width: 1.35;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 3.5 2.5;
+  opacity: 0.85;
+}
+
+.loc-map-stop-halo {
+  fill: color-mix(in srgb, var(--bg) 70%, transparent);
+  stroke: color-mix(in srgb, var(--ink) 12%, transparent);
+  stroke-width: 0.5;
+}
+
+.loc-map-stop {
+  fill: none;
+  stroke: color-mix(in srgb, var(--ink-muted) 70%, var(--accent));
+  stroke-width: 1.15;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.loc-map-stop-active {
+  stroke: var(--accent);
+  stroke-width: 1.35;
+}
+
+.loc-map-stop-active .loc-map-stop-halo {
+  fill: color-mix(in srgb, var(--accent) 22%, transparent);
+  stroke: color-mix(in srgb, var(--accent) 35%, transparent);
+}
+
+.loc-map-icon-foundation {
+  fill: color-mix(in srgb, var(--accent) 35%, var(--bg));
+}
+
+.loc-map-icon-city,
+.loc-map-icon-camp {
+  fill: color-mix(in srgb, var(--bg) 55%, transparent);
 }
 
 .loc-map-pin-halo {
@@ -43,4 +90,18 @@
 
 [data-theme='eink'] .loc-map-pin {
   fill: var(--ink);
+}
+
+[data-theme='eink'] .loc-map-journey {
+  stroke: var(--ink);
+  opacity: 0.55;
+}
+
+[data-theme='eink'] .loc-map-stop {
+  stroke: var(--ink);
+}
+
+[data-theme='eink'] .loc-map-stop-active .loc-map-stop-halo {
+  fill: color-mix(in srgb, var(--ink) 12%, transparent);
+  stroke: var(--ink);
 }

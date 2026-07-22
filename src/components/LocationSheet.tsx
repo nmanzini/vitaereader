@@ -3,6 +3,14 @@ import {
   segmentAnnotationText,
   type LocationAnnotation,
 } from '../lib/charMatch'
+import {
+  boundsAroundPoint,
+  boundsForPoints,
+  journeyStops,
+  journeyThrough,
+  locationPresence,
+  visitKindOf,
+} from '../lib/journeyMap'
 import { LocationMap } from './LocationMap'
 import './LocationSheet.css'
 
@@ -10,7 +18,7 @@ type Props = {
   open: boolean
   location: LocationAnnotation | null
   subject: string
-  /** Full place list for in-blurb hops + peer map dots. */
+  /** Full place list for in-blurb hops + peer map dots + journey. */
   locations: readonly LocationAnnotation[]
   onClose: () => void
 }
@@ -54,14 +62,53 @@ export function LocationSheet({
 
   const current = viewing
   const name = current.names[0] ?? current.id
+  const presence = locationPresence(current)
   const others = locations.filter((l) => l.id !== current.id)
   const blurbSegments = segmentAnnotationText(current.blurb, [], others)
+  const stops = journeyStops(locations)
+  const progressStops = journeyThrough(
+    stops,
+    presence === 'visited' ? current.visitOrder : null,
+  )
   const peerMarkers = locations.map((l) => ({
     id: l.id,
     lat: l.lat,
     lon: l.lon,
     active: l.id === current.id,
+    presence: locationPresence(l),
+    visitKind: visitKindOf(l),
+    visitOrder: l.visitOrder,
   }))
+  const journeyMarkers = progressStops.map((s) => ({
+    id: s.id,
+    lat: s.lat,
+    lon: s.lon,
+    active: s.id === current.id,
+    presence: 'visited' as const,
+    visitKind: s.kind,
+    visitOrder: s.order,
+  }))
+  // Expanded peers: named mentions + stops already reached (hide future visits).
+  const peerForMap = peerMarkers.filter((m) => {
+    if (m.presence !== 'visited') return true
+    if (presence !== 'visited' || current.visitOrder == null) return false
+    return (m.visitOrder ?? Infinity) <= current.visitOrder
+  })
+  // Collapsed: zoom in on this place.
+  // Expanded: frame the journey so far (fallback to all places if none).
+  const focusBounds = boundsAroundPoint(
+    { lat: current.lat, lon: current.lon },
+    5,
+  )
+  const overviewBounds = boundsForPoints(
+    (progressStops.length >= 2 ? progressStops : locations).map((l) => ({
+      lat: l.lat,
+      lon: l.lon,
+    })),
+    6,
+    undefined,
+    12,
+  )
 
   function openLocation(locationId: string) {
     const next = locations.find((l) => l.id === locationId)
@@ -79,10 +126,22 @@ export function LocationSheet({
     })
   }
 
+  const kind = visitKindOf(current)
+  const visitKindLabel: Record<typeof kind, string> = {
+    city: 'Visited · city',
+    battle: 'Visited · battle',
+    crossing: 'Visited · crossing',
+    oracle: 'Visited · oracle',
+    camp: 'Visited · camp',
+    foundation: 'Visited · founded',
+  }
+  const presenceLabel =
+    presence === 'visited' ? visitKindLabel[kind] : 'Named in the text'
+
   return (
     <div className="loc-sheet-backdrop" onClick={onClose}>
       <div
-        className="loc-sheet"
+        className={mapOpen ? 'loc-sheet loc-sheet-map-open' : 'loc-sheet'}
         role="dialog"
         aria-modal="true"
         aria-labelledby={titleId}
@@ -112,6 +171,7 @@ export function LocationSheet({
             <span className="loc-sheet-subject"> · re {subject}</span>
           ) : null}
         </p>
+        <p className="loc-sheet-presence">{presenceLabel}</p>
         {current.modern ? (
           <p className="loc-sheet-modern">Today: {current.modern}</p>
         ) : null}
@@ -139,19 +199,44 @@ export function LocationSheet({
             aria-expanded={mapOpen}
             onClick={() => setMapOpen((v) => !v)}
           >
-            {mapOpen ? 'Collapse map' : 'Expand map'}
+            {mapOpen
+              ? 'Collapse map'
+              : progressStops.length >= 2
+                ? 'Expand map · journey so far'
+                : stops.length >= 2
+                  ? 'Expand map · journey'
+                  : 'Expand map'}
           </button>
           {mapOpen ? (
             <LocationMap
-              focus={{ lat: current.lat, lon: current.lon }}
-              others={peerMarkers}
+              focus={{
+                lat: current.lat,
+                lon: current.lon,
+                id: current.id,
+                presence,
+                visitKind: visitKindOf(current),
+              }}
+              others={peerForMap}
+              journey={journeyMarkers}
               expanded
-              label={`Map showing ${name}`}
+              bounds={overviewBounds}
+              label={
+                progressStops.length >= 2
+                  ? `Map showing ${subject}'s journey through ${name}`
+                  : `Map showing ${name}`
+              }
             />
           ) : (
             <LocationMap
-              focus={{ lat: current.lat, lon: current.lon }}
+              focus={{
+                lat: current.lat,
+                lon: current.lon,
+                id: current.id,
+                presence,
+                visitKind: visitKindOf(current),
+              }}
               expanded={false}
+              bounds={focusBounds}
               label={`Map showing ${name}`}
             />
           )}

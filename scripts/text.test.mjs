@@ -47,6 +47,16 @@ import {
 } from '../src/lib/geoMap.ts'
 import { CAMPAIGN_LAND_RINGS } from '../src/lib/campaignLand.ts'
 import {
+  boundsAroundPoint,
+  boundsForPoints,
+  isVisitKind,
+  journeyPathD,
+  journeyStops,
+  journeyThrough,
+  locationPresence,
+  visitKindOf,
+} from '../src/lib/journeyMap.ts'
+import {
   findContainingHighlight,
   mergeHighlightSpans,
   normalizeRange,
@@ -574,6 +584,107 @@ describe('geoMap', () => {
     assert.match(d, /^M/)
     assert.match(d, /Z$/)
     assert.ok(d.includes('L'))
+  })
+})
+
+describe('journeyMap', () => {
+  it('defaults presence to named and sorts visited stops', () => {
+    assert.equal(locationPresence({}), 'named')
+    assert.equal(locationPresence({ presence: 'visited' }), 'visited')
+    assert.equal(visitKindOf({}), 'city')
+    assert.equal(visitKindOf({ visitKind: 'battle' }), 'battle')
+    assert.equal(isVisitKind('battle'), true)
+    assert.equal(isVisitKind('siege'), false)
+
+    const stops = journeyStops([
+      {
+        id: 'b',
+        names: ['B'],
+        blurb: 'Second stop on the march eastward.',
+        relation: 'later',
+        lat: 1,
+        lon: 2,
+        presence: 'visited',
+        visitKind: 'battle',
+        visitOrder: 2,
+      },
+      {
+        id: 'a',
+        names: ['A'],
+        blurb: 'First city of the protagonist journey.',
+        relation: 'first',
+        lat: 3,
+        lon: 4,
+        presence: 'visited',
+        visitKind: 'city',
+        visitOrder: 1,
+      },
+      {
+        id: 'n',
+        names: ['N'],
+        blurb: 'Only named in the narrative once.',
+        relation: 'mention',
+        lat: 5,
+        lon: 6,
+        presence: 'named',
+      },
+    ])
+    assert.deepEqual(
+      stops.map((s) => s.id),
+      ['a', 'b'],
+    )
+    assert.equal(stops[0].kind, 'city')
+    assert.equal(stops[1].kind, 'battle')
+    assert.deepEqual(
+      journeyThrough(stops, 1).map((s) => s.id),
+      ['a'],
+    )
+    assert.deepEqual(
+      journeyThrough(stops, 2).map((s) => s.id),
+      ['a', 'b'],
+    )
+    assert.deepEqual(journeyThrough(stops, null), [])
+  })
+
+  it('builds journey polylines and padded bounds', () => {
+    assert.equal(journeyPathD([]), '')
+    assert.equal(journeyPathD([{ x: 1, y: 2 }]), '')
+    assert.equal(
+      journeyPathD([
+        { x: 1, y: 2 },
+        { x: 3.14, y: 4.2 },
+      ]),
+      'M1 2L3.1 4.2',
+    )
+
+    const box = boundsForPoints(
+      [
+        { lat: 40, lon: 10 },
+        { lat: 42, lon: 12 },
+      ],
+      1,
+    )
+    assert.ok(box.west < 10)
+    assert.ok(box.east > 12)
+    assert.ok(box.south < 40)
+    assert.ok(box.north > 42)
+
+    const local = boundsAroundPoint({ lat: 41.89, lon: 12.49 }, 5)
+    assert.ok(local.west < 12.49 && local.east > 12.49)
+    assert.ok(Math.abs(local.east - local.west - 10) < 1e-9)
+    assert.ok(Math.abs(local.north - local.south - 10) < 1e-9)
+    // Local focus is tighter than a padded multi-place overview.
+    const overview = boundsForPoints(
+      [
+        { lat: 41.89, lon: 12.49 },
+        { lat: 48, lon: 2 },
+        { lat: 31.2, lon: 29.9 },
+      ],
+      7,
+      undefined,
+      14,
+    )
+    assert.ok(overview.east - overview.west > local.east - local.west)
   })
 })
 

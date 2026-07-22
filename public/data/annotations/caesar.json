@@ -826,5 +826,557 @@
         }
       ]
     }
+  ],
+  "locations": [
+    {
+      "id": "rome",
+      "names": [
+        "Rome"
+      ],
+      "relation": "Home of his rise and fall",
+      "modern": "Rome, Italy",
+      "lat": 41.89,
+      "lon": 12.49,
+      "presence": "visited",
+      "visitKind": "city",
+      "visitOrder": 1,
+      "blurb": "Birthplace, forum of his ambition, and the stage of the Ides—Caesar’s story begins and ends in Rome."
+    },
+    {
+      "id": "bithynia",
+      "names": [
+        "Bithynia"
+      ],
+      "relation": "Early eastern sojourn",
+      "modern": "NW Turkey",
+      "lat": 40.5,
+      "lon": 30,
+      "presence": "visited",
+      "visitKind": "city",
+      "visitOrder": 2,
+      "blurb": "As a young man he lingered at Nicomedes’ court—gossip clung to the stay, and Sylla’s enmity hardened."
+    },
+    {
+      "id": "rhodes",
+      "names": [
+        "Rhodes"
+      ],
+      "relation": "School of rhetoric after the pirates",
+      "modern": "Rhodes, Greece",
+      "lat": 36.43,
+      "lon": 28.22,
+      "presence": "visited",
+      "visitKind": "city",
+      "visitOrder": 3,
+      "blurb": "After ransoming himself from Cilician pirates, he studied with Apollonius and later crucified his captors as promised."
+    },
+    {
+      "id": "corduba",
+      "names": [
+        "Corduba"
+      ],
+      "relation": "Spanish capital of his early command",
+      "modern": "Córdoba, Spain",
+      "lat": 37.89,
+      "lon": -4.78,
+      "presence": "visited",
+      "visitKind": "city",
+      "visitOrder": 4,
+      "blurb": "Seat of his Spanish service—quaestor and later propraetor—where he first tasted provincial power and debt’s pressure."
+    },
+    {
+      "id": "gaul",
+      "names": [
+        "Gaul"
+      ],
+      "relation": "Theater of the Gallic Wars",
+      "modern": "France / Belgium / W. Germany",
+      "lat": 46.5,
+      "lon": 2.5,
+      "presence": "visited",
+      "visitKind": "camp",
+      "visitOrder": 5,
+      "blurb": "Nearly a decade of conquest, winter camps, and dispatches—the province that made him master of an army."
+    },
+    {
+      "id": "rhine",
+      "names": [
+        "Rhine"
+      ],
+      "relation": "Bridge into Germany",
+      "modern": "Rhine River",
+      "lat": 50,
+      "lon": 7.1,
+      "presence": "visited",
+      "visitKind": "crossing",
+      "visitOrder": 6,
+      "blurb": "He threw a timber bridge across in days, showed the standards beyond the river, then broke the span behind him."
+    },
+    {
+      "id": "britain",
+      "names": [
+        "Britain"
+      ],
+      "relation": "Island expeditions across the Channel",
+      "modern": "Britain",
+      "lat": 51.2,
+      "lon": 1,
+      "presence": "visited",
+      "visitKind": "crossing",
+      "visitOrder": 7,
+      "blurb": "Twice he crossed with fleets—more reconnaissance and prestige than lasting conquest, yet Rome’s first look at the island."
+    },
+    {
+      "id": "alesia",
+      "names": [
+        "Alesia"
+      ],
+      "relation": "Siege that broke Vercingetorix",
+      "modern": "Alise-Sainte-Reine, France",
+      "lat": 47.54,
+      "lon": 4.5,
+      "presence": "visited",
+      "visitKind": "battle",
+      "visitOrder": 8,
+      "blurb": "Double lines of works closed on Vercingetorix; the surrender in armor sealed Gaul and Caesar’s military fame."
+    },
+    {
+      "id": "rubicon",
+      "names": [
+        "Rubicon"
+      ],
+      "relation": "The civil-war threshold",
+      "modern": "Rubicone area, Italy",
+      "lat": 44.1,
+      "lon": 12.4,
+      "presence": "visited",
+      "visitKind": "crossing",
+      "visitOrder": 9,
+      "blurb": "The little stream of Italy’s boundary—once crossed with the Thirteenth, the Republic’s quarrel became open war."
+    },
+    {
+      "id": "ariminum",
+      "names": [
+        "Ariminum"
+      ],
+      "relation": "First town after the Rubicon",
+      "modern": "Rimini, Italy",
+      "lat": 44.06,
+      "lon": 12.57,
+      "presence": "visited",
+      "visitKind": "city",
+      "visitOrder": 10,
+      "blurb": "He seized it at once after the crossing; Italy’s towns opened as Pompey fell back toward Brundisium."
+    },
+    {
+      "id": "brundisium",
+      "names": [
+        "Brundisium"
+      ],
+      "relation": "Adriatic gate in the chase of Pompey",
+      "modern": "Brindisi, Italy",
+      "lat": 40.63,
+      "lon": 17.94,
+      "presence": "visited",
+      "visitKind": "city",
+      "visitOrder": 11,
+      "blurb": "Harbor of embarkation: Pompey slipped east from here; Caesar followed into Greece when ships and season allowed."
+    },
+    {
+      "id": "dyrrhachium",
+      "names": [
+        "Dyrrhachium"
+      ],
+      "relation": "Siege lines against Pompey",
+      "modern": "Durrës, Albania",
+      "lat": 41.32,
+      "lon": 19.45,
+      "presence": "visited",
+      "visitKind": "battle",
+      "visitOrder": 12,
+      "blurb": "Caesar’s entrenchments nearly penned Pompey, then broke; the setback sent him inland toward Thessaly."
+    },
+    {
+      "id": "pharsalia",
+      "names": [
+        "Pharsalia"
+      ],
+      "relation": "Decisive battle of the civil war",
+      "modern": "near Farsala, Greece",
+      "lat": 39.3,
+      "lon": 22.38,
+      "presence": "visited",
+      "visitKind": "battle",
+      "visitOrder": 13,
+      "blurb": "On the plain of Thessaly he broke Pompey’s larger army (48 BC); the Republic’s last great field army scattered."
+    },
+    {
+      "id": "alexandria",
+      "names": [
+        "Alexandria"
+      ],
+      "relation": "Palace war beside Cleopatra",
+      "modern": "Alexandria, Egypt",
+      "lat": 31.2,
+      "lon": 29.92,
+      "presence": "visited",
+      "visitKind": "city",
+      "visitOrder": 14,
+      "blurb": "He found Pompey already dead, stayed for the Alexandrian war, and left Cleopatra queen—and Caesarion rumored his."
+    },
+    {
+      "id": "zela",
+      "names": [
+        "Zela"
+      ],
+      "relation": "Quick victory in Pontus",
+      "modern": "Zile, Turkey",
+      "lat": 40.3,
+      "lon": 35.89,
+      "presence": "visited",
+      "visitKind": "battle",
+      "visitOrder": 15,
+      "blurb": "Where he crushed Pharnaces so swiftly the dispatch ran: I came, I saw, I conquered."
+    },
+    {
+      "id": "thapsus",
+      "names": [
+        "Thapsus"
+      ],
+      "relation": "African victory over the Optimates",
+      "modern": "Ras Dimas area, Tunisia",
+      "lat": 35.62,
+      "lon": 11.05,
+      "presence": "visited",
+      "visitKind": "battle",
+      "visitOrder": 16,
+      "blurb": "He shattered the republican remnant in Africa (46 BC); Cato’s suicide at Utica followed the rout."
+    },
+    {
+      "id": "munda",
+      "names": [
+        "Munda"
+      ],
+      "relation": "Last battle of the civil wars",
+      "modern": "near Osuna, Spain",
+      "lat": 37.25,
+      "lon": -5.1,
+      "presence": "visited",
+      "visitKind": "battle",
+      "visitOrder": 17,
+      "blurb": "Hardest fight of all, against Pompey’s sons in Spain (45 BC)—after Munda, no rival army remained."
+    },
+    {
+      "id": "italy",
+      "names": [
+        "Italy"
+      ],
+      "relation": "Peninsula of the civil war",
+      "modern": "Italy",
+      "lat": 42.5,
+      "lon": 12.5,
+      "presence": "named",
+      "blurb": "The homeland he crossed with legions after the Rubicon—towns chose sides as Pompey abandoned the west."
+    },
+    {
+      "id": "spain",
+      "names": [
+        "Spain"
+      ],
+      "relation": "Early command and final campaign",
+      "modern": "Spain",
+      "lat": 40,
+      "lon": -3.7,
+      "presence": "named",
+      "blurb": "Province of his youth’s command and of Munda’s last blood—Spain bookends his military life outside Gaul."
+    },
+    {
+      "id": "africa",
+      "names": [
+        "Africa"
+      ],
+      "relation": "Theater against Scipio and Juba",
+      "modern": "Tunisia / North Africa",
+      "lat": 34,
+      "lon": 9.5,
+      "presence": "named",
+      "blurb": "Where the republican cause gathered under Scipio; Thapsus decided it, and Utica heard Cato’s end."
+    },
+    {
+      "id": "egypt",
+      "names": [
+        "Egypt"
+      ],
+      "relation": "Kingdom of the Alexandrian war",
+      "modern": "Egypt",
+      "lat": 26.5,
+      "lon": 30,
+      "presence": "named",
+      "blurb": "He came hunting Pompey and stayed to settle a dynasty—Egypt’s court became a second civil war."
+    },
+    {
+      "id": "asia",
+      "names": [
+        "Asia"
+      ],
+      "relation": "Eastern provinces of his youth",
+      "modern": "W. Turkey / Roman Asia",
+      "lat": 38.5,
+      "lon": 28,
+      "presence": "named",
+      "blurb": "The Greek East of his early wanderings—Bithynia, Rhodes, and the pirate coast before Rome claimed him fully."
+    },
+    {
+      "id": "greece",
+      "names": [
+        "Greece"
+      ],
+      "relation": "Civil-war crossing toward Pompey",
+      "modern": "Greece",
+      "lat": 39,
+      "lon": 22.5,
+      "presence": "named",
+      "blurb": "He followed Pompey across the Adriatic into Greek lands—Dyrrhachium first, then the plain of Pharsalia."
+    },
+    {
+      "id": "thessaly",
+      "names": [
+        "Thessaly"
+      ],
+      "relation": "Plain of Pharsalia",
+      "modern": "Thessaly, Greece",
+      "lat": 39.5,
+      "lon": 22,
+      "presence": "named",
+      "blurb": "Inland from the Adriatic camps—the open country where Caesar chose to risk everything against Pompey."
+    },
+    {
+      "id": "macedonia",
+      "names": [
+        "Macedonia"
+      ],
+      "relation": "Eastern shore of the civil war",
+      "modern": "Macedonia / N. Greece",
+      "lat": 40.8,
+      "lon": 22.4,
+      "presence": "named",
+      "blurb": "Named among the eastern theaters as Pompey’s allies and Caesar’s pursuit shifted across the Greek north."
+    },
+    {
+      "id": "pontus",
+      "names": [
+        "Pontus"
+      ],
+      "relation": "Kingdom of Pharnaces",
+      "modern": "N. Turkey / Black Sea coast",
+      "lat": 41,
+      "lon": 36,
+      "presence": "named",
+      "blurb": "Mithridates’ old realm—Pharnaces rose there until Caesar’s lightning campaign ended at Zela."
+    },
+    {
+      "id": "syria",
+      "names": [
+        "Syria"
+      ],
+      "relation": "Eastern province on his route",
+      "modern": "Syria",
+      "lat": 35,
+      "lon": 38,
+      "presence": "named",
+      "blurb": "On the map of the eastern war after Egypt—Caesar’s settlements and dispatches touched Syria’s coast."
+    },
+    {
+      "id": "cilicia",
+      "names": [
+        "Cilicia"
+      ],
+      "relation": "Pirate coast of his captivity",
+      "modern": "S. Turkey",
+      "lat": 37,
+      "lon": 35,
+      "presence": "named",
+      "blurb": "Waters of the pirates who seized him as a young man—he vowed the cross, and kept the vow."
+    },
+    {
+      "id": "utica",
+      "names": [
+        "Utica"
+      ],
+      "relation": "Cato’s last stand after Thapsus",
+      "modern": "near Tunis, Tunisia",
+      "lat": 37.05,
+      "lon": 10.06,
+      "presence": "named",
+      "blurb": "Not Caesar’s battlefield, but the city where Cato chose death rather than live under the victor of Thapsus."
+    },
+    {
+      "id": "germany",
+      "names": [
+        "Germany"
+      ],
+      "relation": "Beyond the Rhine",
+      "modern": "Germany",
+      "lat": 50.5,
+      "lon": 9,
+      "presence": "named",
+      "blurb": "The tribes across the Rhine—Caesar’s bridge was a show of force more than a lasting occupation."
+    },
+    {
+      "id": "illyricum",
+      "names": [
+        "Illyricum"
+      ],
+      "relation": "Adriatic approach to Greece",
+      "modern": "Adriatic Balkans",
+      "lat": 43.5,
+      "lon": 17,
+      "presence": "named",
+      "blurb": "Shorelands toward Dyrrhachium—Caesar’s crossing of the Adriatic opened the Greek half of the civil war."
+    },
+    {
+      "id": "apollonia",
+      "names": [
+        "Apollonia"
+      ],
+      "relation": "Landing on the Greek shore",
+      "modern": "near Fier, Albania",
+      "lat": 40.72,
+      "lon": 19.47,
+      "presence": "named",
+      "blurb": "Named with the eastern landings as Caesar’s forces gained the Illyrian coast opposite Italy."
+    },
+    {
+      "id": "sicily",
+      "names": [
+        "Sicily"
+      ],
+      "relation": "Grain island on the war’s map",
+      "modern": "Sicily, Italy",
+      "lat": 37.6,
+      "lon": 14,
+      "presence": "named",
+      "blurb": "A hinge of supply and passage between Italy and Africa in the years of civil war."
+    },
+    {
+      "id": "sardinia",
+      "names": [
+        "Sardinia"
+      ],
+      "relation": "Western island of Roman seas",
+      "modern": "Sardinia, Italy",
+      "lat": 40,
+      "lon": 9,
+      "presence": "named",
+      "blurb": "Counted among the western possessions whose loyalty mattered when Italy itself was in arms."
+    },
+    {
+      "id": "alps",
+      "names": [
+        "Alps"
+      ],
+      "relation": "Wall between Italy and Gaul",
+      "modern": "Alps",
+      "lat": 45.8,
+      "lon": 6.9,
+      "presence": "named",
+      "blurb": "The mountain screen his Gallic command looked across—winter and war moved through their passes."
+    },
+    {
+      "id": "rhone",
+      "names": [
+        "Rhone"
+      ],
+      "relation": "River road of Transalpine Gaul",
+      "modern": "Rhône River",
+      "lat": 44.1,
+      "lon": 4.8,
+      "presence": "named",
+      "blurb": "The great river of southern Gaul—corridor of allies, supplies, and early campaigns."
+    },
+    {
+      "id": "po",
+      "names": [
+        "Po"
+      ],
+      "relation": "River of Cisalpine Italy",
+      "modern": "Po River, Italy",
+      "lat": 45,
+      "lon": 10.5,
+      "presence": "named",
+      "blurb": "Named in the geography of northern Italy as Caesar’s province and later his march southward."
+    },
+    {
+      "id": "tiber",
+      "names": [
+        "Tiber"
+      ],
+      "relation": "River of Rome",
+      "modern": "Tiber River, Italy",
+      "lat": 41.9,
+      "lon": 12.48,
+      "presence": "named",
+      "blurb": "Rome’s river—backdrop to triumphs, floods of politics, and the city’s daily life under his dictatorship."
+    },
+    {
+      "id": "ostia",
+      "names": [
+        "Ostia"
+      ],
+      "relation": "Port of Rome",
+      "modern": "Ostia Antica, Italy",
+      "lat": 41.75,
+      "lon": 12.29,
+      "presence": "named",
+      "blurb": "The mouth of the Tiber—Rome’s gate to the sea in an age when grain and fleets decided wars."
+    },
+    {
+      "id": "comum",
+      "names": [
+        "Comum"
+      ],
+      "relation": "Colony he settled in the north",
+      "modern": "Como, Italy",
+      "lat": 45.81,
+      "lon": 9.08,
+      "presence": "named",
+      "blurb": "A Cisalpine town tied to his patronage—Plutarch notes the colony among favors that bound the north to him."
+    },
+    {
+      "id": "carthage",
+      "names": [
+        "Carthage"
+      ],
+      "relation": "Old African rival on the map",
+      "modern": "near Tunis, Tunisia",
+      "lat": 36.85,
+      "lon": 10.32,
+      "presence": "named",
+      "blurb": "The ruined Punic capital still haunted Roman memory when Caesar’s African war returned Rome to those shores."
+    },
+    {
+      "id": "athens",
+      "names": [
+        "Athens"
+      ],
+      "relation": "Greek city on the war’s horizon",
+      "modern": "Athens, Greece",
+      "lat": 37.97,
+      "lon": 23.72,
+      "presence": "named",
+      "blurb": "Named among Greek places as the civil war’s eastern chapter moved through Hellenic lands."
+    },
+    {
+      "id": "corinth",
+      "names": [
+        "Corinth"
+      ],
+      "relation": "Isthmus city of Greece",
+      "modern": "near Corinth, Greece",
+      "lat": 37.91,
+      "lon": 22.88,
+      "presence": "named",
+      "blurb": "Another Greek landmark in the geography of Pompey’s and Caesar’s contest across the Aegean world."
+    }
   ]
 }

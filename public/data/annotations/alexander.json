@@ -1468,7 +1468,8 @@
       "modern": "northern Greece / North Macedonia",
       "lat": 40.8,
       "lon": 22.4,
-      "blurb": "Philip’s realm at the edge of the Greek world. From here Alexander marched east—and never ruled it in person again."
+      "blurb": "Philip’s realm at the edge of the Greek world. From here Alexander marched east—and never ruled it in person again.",
+      "presence": "named"
     },
     {
       "id": "pella",
@@ -1479,7 +1480,10 @@
       "modern": "near Edessa, Greece",
       "lat": 40.76,
       "lon": 22.52,
-      "blurb": "Birthplace and court of his youth, where Philip’s power and Olympias’s ambitions first shaped him."
+      "blurb": "Birthplace and court of his youth, where Philip’s power and Olympias’s ambitions first shaped him.",
+      "presence": "visited",
+      "visitKind": "city",
+      "visitOrder": 1
     },
     {
       "id": "aegae",
@@ -1490,7 +1494,10 @@
       "modern": "Vergina, Greece",
       "lat": 40.48,
       "lon": 22.32,
-      "blurb": "Ancestral capital where Philip was murdered in the theater—Alexander’s reign begins in blood."
+      "blurb": "Ancestral capital where Philip was murdered in the theater—Alexander’s reign begins in blood.",
+      "presence": "visited",
+      "visitKind": "city",
+      "visitOrder": 4
     },
     {
       "id": "mieza",
@@ -1501,7 +1508,10 @@
       "modern": "Naousa area, Greece",
       "lat": 40.65,
       "lon": 22.12,
-      "blurb": "Grove school where Aristotle taught Homer and politics to Alexander and the Companions’ sons."
+      "blurb": "Grove school where Aristotle taught Homer and politics to Alexander and the Companions’ sons.",
+      "presence": "visited",
+      "visitKind": "city",
+      "visitOrder": 2
     },
     {
       "id": "chaeronea",
@@ -1512,7 +1522,10 @@
       "modern": "Chaironeia, Greece",
       "lat": 38.49,
       "lon": 22.85,
-      "blurb": "Where the young Alexander broke the Sacred Band (338 BC). Greece’s leash passed to Macedon."
+      "blurb": "Where the young Alexander broke the Sacred Band (338 BC). Greece’s leash passed to Macedon.",
+      "presence": "visited",
+      "visitKind": "battle",
+      "visitOrder": 3
     },
     {
       "id": "thebes",
@@ -1523,7 +1536,10 @@
       "modern": "Thiva, Greece",
       "lat": 38.32,
       "lon": 23.32,
-      "blurb": "Rebelled after Philip’s death; Alexander stormed it and left a ruin as a lesson to Greece."
+      "blurb": "Rebelled after Philip’s death; Alexander stormed it and left a ruin as a lesson to Greece.",
+      "presence": "visited",
+      "visitKind": "battle",
+      "visitOrder": 5
     },
     {
       "id": "corinth",
@@ -1534,7 +1550,10 @@
       "modern": "near Corinth, Greece",
       "lat": 37.91,
       "lon": 22.88,
-      "blurb": "Where the Greeks named him captain against Persia—and where he met Diogenes asking only for light."
+      "blurb": "Where the Greeks named him captain against Persia—and where he met Diogenes asking only for light.",
+      "presence": "visited",
+      "visitKind": "city",
+      "visitOrder": 6
     },
     {
       "id": "athens",
@@ -1545,7 +1564,8 @@
       "modern": "Athens, Greece",
       "lat": 37.97,
       "lon": 23.72,
-      "blurb": "Spoke against Macedon, then flattered the conqueror. Alexander treated it carefully after Thebes."
+      "blurb": "Spoke against Macedon, then flattered the conqueror. Alexander treated it carefully after Thebes.",
+      "presence": "named"
     },
     {
       "id": "delphi",
@@ -1556,7 +1576,10 @@
       "modern": "Delphi, Greece",
       "lat": 38.48,
       "lon": 22.5,
-      "blurb": "Plutarch’s own shrine-town. Alexander pressed the Pythia for an omen before Asia."
+      "blurb": "Plutarch’s own shrine-town. Alexander pressed the Pythia for an omen before Asia.",
+      "presence": "visited",
+      "visitKind": "oracle",
+      "visitOrder": 7
     },
     {
       "id": "troy",
@@ -1568,7 +1591,10 @@
       "modern": "Hisarlik, Turkey",
       "lat": 39.96,
       "lon": 26.24,
-      "blurb": "First Asian stop of myth: he honored Achilles’ tomb and took armor said to be Trojan."
+      "blurb": "First Asian stop of myth: he honored Achilles’ tomb and took armor said to be Trojan.",
+      "presence": "visited",
+      "visitKind": "city",
+      "visitOrder": 9
     },
     {
       "id": "hellespont",
@@ -1579,7 +1605,10 @@
       "modern": "Dardanelles, Turkey",
       "lat": 40.2,
       "lon": 26.4,
-      "blurb": "Strait Xerxes bridged the other way. Alexander sacrificed and stepped onto Persian soil."
+      "blurb": "Strait Xerxes bridged the other way. Alexander sacrificed and stepped onto Persian soil.",
+      "presence": "visited",
+      "visitKind": "crossing",
+      "visitOrder": 8
     },
     {
       "id": "granicus",
@@ -1590,7 +1619,10 @@
       "modern": "Biga Çayı, Turkey",
       "lat": 40.23,
       "lon": 27.24,
-      "blurb": "River fight against satraps and Greek mercenaries—Clitus later saved him here in memory."
+      "blurb": "River fight against satraps and Greek mercenaries—Clitus later saved him here in memory.",
+      "presence": "visited",
+      "visitKind": "battle",
+      "visitOrder": 10
     },
     {
       "id": "sardis",
@@ -1601,7 +1633,10 @@
       "modern": "Sart, Turkey",
       "lat": 38.49,
       "lon": 28.04,
-      "blurb": "Key of western Asia Minor; its surrender opened the Persian road inland."
+      "blurb": "Key of western Asia Minor; its surrender opened the Persian road inland.",
+      "presence": "visited",
+      "visitKind": "city",
+      "visitOrder": 11
     },
     {
       "id": "miletus",
@@ -1612,7 +1647,10 @@
       "modern": "Balat, Turkey",
       "lat": 37.53,
       "lon": 27.28,
-      "blurb": "Coastal stronghold taken early—part of stripping Persia of its Aegean fleet bases."
+      "blurb": "Coastal stronghold taken early—part of stripping Persia of its Aegean fleet bases.",
+      "presence": "visited",
+      "visitKind": "city",
+      "visitOrder": 12
     },
     {
       "id": "halicarnassus",
@@ -1623,7 +1661,10 @@
       "modern": "Bodrum, Turkey",
       "lat": 37.03,
       "lon": 27.43,
-      "blurb": "Hard siege against Memnon’s defense; Ada of Caria later became his adoptive mother nearby."
+      "blurb": "Hard siege against Memnon’s defense; Ada of Caria later became his adoptive mother nearby.",
+      "presence": "visited",
+      "visitKind": "battle",
+      "visitOrder": 13
     },
     {
       "id": "caria",
@@ -1633,8 +1674,9 @@
       "relation": "Ada’s satrapy he restored",
       "modern": "SW Turkey",
       "lat": 37.2,
-      "lon": 28.0,
-      "blurb": "Where he adopted Queen Ada—local rule folded into his march with a personal face."
+      "lon": 28,
+      "blurb": "Where he adopted Queen Ada—local rule folded into his march with a personal face.",
+      "presence": "named"
     },
     {
       "id": "gordium",
@@ -1646,7 +1688,10 @@
       "modern": "Yassıhüyük, Turkey",
       "lat": 39.65,
       "lon": 31.99,
-      "blurb": "Phrygian town of the famous knot—cut or loosed, the oracle promised Asia’s rule."
+      "blurb": "Phrygian town of the famous knot—cut or loosed, the oracle promised Asia’s rule.",
+      "presence": "visited",
+      "visitKind": "city",
+      "visitOrder": 14
     },
     {
       "id": "cilicia",
@@ -1655,9 +1700,10 @@
       ],
       "relation": "Coastal gate before Issus",
       "modern": "Çukurova, Turkey",
-      "lat": 37.0,
-      "lon": 35.0,
-      "blurb": "Narrow land of Tarsus and fever; Darius’s army waited beyond its passes."
+      "lat": 37,
+      "lon": 35,
+      "blurb": "Narrow land of Tarsus and fever; Darius’s army waited beyond its passes.",
+      "presence": "named"
     },
     {
       "id": "issus",
@@ -1668,7 +1714,10 @@
       "modern": "near İskenderun, Turkey",
       "lat": 36.84,
       "lon": 36.16,
-      "blurb": "Pinned between sea and hills, Darius fled and left his family in Alexander’s hands."
+      "blurb": "Pinned between sea and hills, Darius fled and left his family in Alexander’s hands.",
+      "presence": "visited",
+      "visitKind": "battle",
+      "visitOrder": 15
     },
     {
       "id": "tyre",
@@ -1679,7 +1728,10 @@
       "modern": "Tyre, Lebanon",
       "lat": 33.27,
       "lon": 35.2,
-      "blurb": "Seven-month siege: a causeway to the island walls—and a hard lesson in naval stubbornness."
+      "blurb": "Seven-month siege: a causeway to the island walls—and a hard lesson in naval stubbornness.",
+      "presence": "visited",
+      "visitKind": "battle",
+      "visitOrder": 16
     },
     {
       "id": "phoenicia",
@@ -1690,7 +1742,8 @@
       "modern": "Lebanon / coastal Syria",
       "lat": 33.5,
       "lon": 35.5,
-      "blurb": "Harbor cities that fed Persia’s fleet; taking them opened the road to Egypt."
+      "blurb": "Harbor cities that fed Persia’s fleet; taking them opened the road to Egypt.",
+      "presence": "named"
     },
     {
       "id": "gaza",
@@ -1701,7 +1754,10 @@
       "modern": "Gaza",
       "lat": 31.5,
       "lon": 34.47,
-      "blurb": "Desert fortress that resisted after Tyre; Alexander was wounded taking it."
+      "blurb": "Desert fortress that resisted after Tyre; Alexander was wounded taking it.",
+      "presence": "visited",
+      "visitKind": "battle",
+      "visitOrder": 17
     },
     {
       "id": "egypt",
@@ -1711,8 +1767,9 @@
       "relation": "Welcomed as liberator",
       "modern": "Egypt",
       "lat": 26.5,
-      "lon": 30.0,
-      "blurb": "Persia’s rich province greeted him as pharaoh-to-be; here he founded Alexandria and sought Ammon."
+      "lon": 30,
+      "blurb": "Persia’s rich province greeted him as pharaoh-to-be; here he founded Alexandria and sought Ammon.",
+      "presence": "named"
     },
     {
       "id": "alexandria",
@@ -1723,7 +1780,10 @@
       "modern": "Alexandria, Egypt",
       "lat": 31.2,
       "lon": 29.92,
-      "blurb": "Laid out on the Nile mouth—his most lasting foundation, though he never saw it flourish."
+      "blurb": "Laid out on the Nile mouth—his most lasting foundation, though he never saw it flourish.",
+      "presence": "visited",
+      "visitKind": "foundation",
+      "visitOrder": 18
     },
     {
       "id": "ammon",
@@ -1735,7 +1795,10 @@
       "modern": "Siwa Oasis, Egypt",
       "lat": 29.2,
       "lon": 25.52,
-      "blurb": "Desert trek to the oasis god who greeted him as son—fuel for later divine honors."
+      "blurb": "Desert trek to the oasis god who greeted him as son—fuel for later divine honors.",
+      "presence": "visited",
+      "visitKind": "oracle",
+      "visitOrder": 19
     },
     {
       "id": "damascus",
@@ -1746,7 +1809,8 @@
       "modern": "Damascus, Syria",
       "lat": 33.51,
       "lon": 36.31,
-      "blurb": "Treasure and captives of Darius’s court fell here while the king fled inland."
+      "blurb": "Treasure and captives of Darius’s court fell here while the king fled inland.",
+      "presence": "named"
     },
     {
       "id": "euphrates",
@@ -1758,7 +1822,10 @@
       "modern": "Euphrates valley",
       "lat": 35.9,
       "lon": 38.9,
-      "blurb": "Crossed at Thapsacus toward the heartland—Gaugamela waited beyond the Tigris."
+      "blurb": "Crossed at Thapsacus toward the heartland—Gaugamela waited beyond the Tigris.",
+      "presence": "visited",
+      "visitKind": "crossing",
+      "visitOrder": 20
     },
     {
       "id": "gaugamela",
@@ -1770,7 +1837,10 @@
       "modern": "near Erbil, Iraq",
       "lat": 36.36,
       "lon": 43.25,
-      "blurb": "Open plain where Darius’s massed army broke; Arbela names the region in older telling."
+      "blurb": "Open plain where Darius’s massed army broke; Arbela names the region in older telling.",
+      "presence": "visited",
+      "visitKind": "battle",
+      "visitOrder": 21
     },
     {
       "id": "babylon",
@@ -1781,7 +1851,10 @@
       "modern": "Hillah area, Iraq",
       "lat": 32.54,
       "lon": 44.42,
-      "blurb": "Opened its gates after Gaugamela. Years later he returned to die there amid omens."
+      "blurb": "Opened its gates after Gaugamela. Years later he returned to die there amid omens.",
+      "presence": "visited",
+      "visitKind": "city",
+      "visitOrder": 22
     },
     {
       "id": "susa",
@@ -1792,7 +1865,10 @@
       "modern": "Shush, Iran",
       "lat": 32.19,
       "lon": 48.25,
-      "blurb": "Achaemenid seat of gold—and later the Susa weddings joining Macedonians to Persian brides."
+      "blurb": "Achaemenid seat of gold—and later the Susa weddings joining Macedonians to Persian brides.",
+      "presence": "visited",
+      "visitKind": "city",
+      "visitOrder": 23
     },
     {
       "id": "ecbatana",
@@ -1803,7 +1879,10 @@
       "modern": "Hamadan, Iran",
       "lat": 34.8,
       "lon": 48.52,
-      "blurb": "Where Hephaestion died and where Parmenio was killed when Philotas fell."
+      "blurb": "Where Hephaestion died and where Parmenio was killed when Philotas fell.",
+      "presence": "visited",
+      "visitKind": "city",
+      "visitOrder": 24
     },
     {
       "id": "oxus",
@@ -1812,9 +1891,12 @@
       ],
       "relation": "River of the far northeast",
       "modern": "Amu Darya",
-      "lat": 37.0,
+      "lat": 37,
       "lon": 67.5,
-      "blurb": "Boundary of the upper satrapies; crossings mark the chase into Sogdiana."
+      "blurb": "Boundary of the upper satrapies; crossings mark the chase into Sogdiana.",
+      "presence": "visited",
+      "visitKind": "crossing",
+      "visitOrder": 26
     },
     {
       "id": "hydaspes",
@@ -1825,7 +1907,10 @@
       "modern": "Jhelum River, Pakistan",
       "lat": 32.9,
       "lon": 73.7,
-      "blurb": "Monsoon river fight of elephants and courage; Porus kept his kingdom “like a king.”"
+      "blurb": "Monsoon river fight of elephants and courage; Porus kept his kingdom “like a king.”",
+      "presence": "visited",
+      "visitKind": "battle",
+      "visitOrder": 27
     },
     {
       "id": "india",
@@ -1834,9 +1919,10 @@
       ],
       "relation": "Eastern edge of the march",
       "modern": "Indus basin / NW India–Pakistan",
-      "lat": 30.0,
-      "lon": 72.0,
-      "blurb": "Land of Porus, gymnosophists, and the army’s refusal to go farther—turnback at the Hyphasis."
+      "lat": 30,
+      "lon": 72,
+      "blurb": "Land of Porus, gymnosophists, and the army’s refusal to go farther—turnback at the Hyphasis.",
+      "presence": "named"
     },
     {
       "id": "gedrosia",
@@ -1845,9 +1931,12 @@
       ],
       "relation": "Desert march that starved the army",
       "modern": "Makran, Pakistan–Iran",
-      "lat": 26.0,
-      "lon": 62.0,
-      "blurb": "Coastal waste on the return—thirst and sand that cost more men than many battles."
+      "lat": 26,
+      "lon": 62,
+      "blurb": "Coastal waste on the return—thirst and sand that cost more men than many battles.",
+      "presence": "visited",
+      "visitKind": "crossing",
+      "visitOrder": 28
     },
     {
       "id": "carmania",
@@ -1856,9 +1945,12 @@
       ],
       "relation": "Relief after Gedrosia",
       "modern": "Kerman region, Iran",
-      "lat": 29.0,
-      "lon": 57.0,
-      "blurb": "Where the survivors feasted after the desert—and Nearchus rejoined with Ocean tales."
+      "lat": 29,
+      "lon": 57,
+      "blurb": "Where the survivors feasted after the desert—and Nearchus rejoined with Ocean tales.",
+      "presence": "visited",
+      "visitKind": "camp",
+      "visitOrder": 29
     },
     {
       "id": "hyrcania",
@@ -1868,8 +1960,11 @@
       "relation": "Caspian shore satrapy",
       "modern": "Golestan / Mazandaran, Iran",
       "lat": 36.8,
-      "lon": 54.0,
-      "blurb": "Northern country after Darius’s death—woods, the Caspian edge, and restless pursuit."
+      "lon": 54,
+      "blurb": "Northern country after Darius’s death—woods, the Caspian edge, and restless pursuit.",
+      "presence": "visited",
+      "visitKind": "camp",
+      "visitOrder": 25
     },
     {
       "id": "nile",
@@ -1878,9 +1973,10 @@
       ],
       "relation": "River of Egypt’s foundation",
       "modern": "Nile River, Egypt",
-      "lat": 30.0,
+      "lat": 30,
       "lon": 31.2,
-      "blurb": "He chose Alexandria’s site by the Nile mouth—harbor, island, and fresh water together."
+      "blurb": "He chose Alexandria’s site by the Nile mouth—harbor, island, and fresh water together.",
+      "presence": "named"
     }
   ]
 }
