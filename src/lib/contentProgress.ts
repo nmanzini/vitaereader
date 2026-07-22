@@ -67,6 +67,21 @@ export function ratioFromAnchor(
   return ratioFromWordOffset(offset, index.total)
 }
 
+/**
+ * Map a paragraph + plain-text char offset (highlight / selection space)
+ * to a content ratio. Char offsets track the same space as charMatch.
+ */
+export function ratioFromParagraphOffset(
+  paraIndex: number,
+  charOffset: number,
+  paraLength: number,
+  index: WordIndex,
+): number {
+  const frac =
+    paraLength > 0 ? clampRatio(charOffset / paraLength) : 0
+  return ratioFromAnchor(paraIndex, frac, index)
+}
+
 export function anchorFromRatio(
   ratio: number,
   index: WordIndex,

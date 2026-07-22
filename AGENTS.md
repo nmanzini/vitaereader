@@ -120,7 +120,7 @@ These are load-bearing. Violating them recreates fixed bugs.
 5. **Measure with floored integers** — subpixel widths cause column bleed.
 6. **Footer stats are overlays** — page position and ETA always render in the bottom chrome when open; they must not change spacer height.
 7. **Position metrics** — Footer shows `page / pageCount` (+ shared ETA). Kindle-style location math stays in `src/lib/reading.ts` for library progress and tests.
-8. **Single content-anchored progress (Kindle-like)** — One `vitae.progress[workId]` float (0–1) = fraction of **words through the work** (cf. Kindle locations: a place in the text, not the viewport). Measure and restore **center-anchored** at the center of `.paged-clip` (`measureContentRatio`). **Pages restore** must resolve that anchor to the column/page that contains it (`pageIndexForContentRatio`), not `ratio × pageCount`.
+8. **Single content-anchored progress (Kindle-like)** — One `vitae.progress[workId]` float (0–1) = fraction of **words through the work** (cf. Kindle locations: a place in the text, not the viewport). Measure and restore **center-anchored** at the center of `.paged-clip` (`measureContentRatio`) **after** the page transform has settled — never mid CSS slide (that captures the previous column). **Pages restore** must resolve that anchor to the column/page that contains it (`pageIndexForContentRatio`), not `ratio × pageCount`. Highlight / `?r=` deep links resume at the selection’s char offset inside the paragraph, not only the paragraph start.
 9. **Missing Comparisons** (e.g. Alexander–Caesar) are manuscript losses — UI may note absence; do not “invent” comparison text.
 10. **No monolith corpus in `public/`** — index + per-work JSON only (PWA caches accordingly).
 

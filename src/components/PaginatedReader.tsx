@@ -187,11 +187,24 @@ export function PaginatedReader({
     }
   }, [settled, layoutEpoch])
 
+  // Keep a live ref so page-turn status can wait for motion without
+  // re-running when allowMotion flips true after a restore snap.
+  const allowMotionRef = useRef(allowMotion)
+  allowMotionRef.current = allowMotion
+
   useEffect(() => {
     const clip = clipRef.current
-    let raf = requestAnimationFrame(() => {
+    const content = contentRef.current
+    if (!clip || pageWidth === 0) return
+
+    let cancelled = false
+    let raf = 0
+    let timer = 0
+
+    const report = () => {
+      if (cancelled) return
       let ratio = progressFromPage(page, pageCount)
-      if (clip && measureRef.current) {
+      if (measureRef.current) {
         const measured = measureRef.current(clip)
         if (measured != null) ratio = measured
       }
@@ -200,9 +213,46 @@ export function PaginatedReader({
         pageCount,
         ratio,
       })
-    })
-    return () => cancelAnimationFrame(raf)
-  }, [page, pageCount])
+    }
+
+    // Center hit-testing during a CSS page slide still sees the previous
+    // column — defer until transform settles so reload/highlights land here.
+    const waitForSlide =
+      allowMotionRef.current &&
+      !!content &&
+      !content.classList.contains('no-motion') &&
+      !content.classList.contains('is-settling')
+
+    if (!waitForSlide) {
+      raf = requestAnimationFrame(report)
+      return () => {
+        cancelled = true
+        cancelAnimationFrame(raf)
+      }
+    }
+
+    const onEnd = (e: TransitionEvent) => {
+      if (e.target !== content) return
+      const prop = e.propertyName
+      if (prop !== 'transform' && prop !== '-webkit-transform') return
+      content.removeEventListener('transitionend', onEnd)
+      window.clearTimeout(timer)
+      raf = requestAnimationFrame(report)
+    }
+    content.addEventListener('transitionend', onEnd)
+    // --motion-page is 280ms; cover end-event misses (no delta, reduced motion).
+    timer = window.setTimeout(() => {
+      content.removeEventListener('transitionend', onEnd)
+      report()
+    }, 400)
+
+    return () => {
+      cancelled = true
+      cancelAnimationFrame(raf)
+      window.clearTimeout(timer)
+      content.removeEventListener('transitionend', onEnd)
+    }
+  }, [page, pageCount, pageWidth])
 
   const go = useCallback((delta: number, instant = false) => {
     const count = pageCountRef.current

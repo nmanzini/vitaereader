@@ -30,6 +30,7 @@ import {
   contentSamplePoints,
   pageIndexFromFlowX,
   ratioFromAnchor,
+  ratioFromParagraphOffset,
 } from '../src/lib/contentProgress.ts'
 import {
   findAnnotationMatches,
@@ -319,6 +320,26 @@ describe('content progress', () => {
 
     assert.equal(anchorFromRatio(0, index).paraIndex, 0)
     assert.equal(anchorFromRatio(1, index).paraIndex, 2)
+  })
+
+  it('maps highlight char offsets into content ratios', () => {
+    const index = buildWordIndex([
+      { id: 'a', text: 'one two' },
+      { id: 'b', text: 'three four five six' },
+    ])
+    const paraLen = 16
+    const atStart = ratioFromParagraphOffset(1, 0, paraLen, index)
+    const atMid = ratioFromParagraphOffset(1, 8, paraLen, index)
+    const atEnd = ratioFromParagraphOffset(1, 16, paraLen, index)
+    assert.equal(atStart, ratioFromAnchor(1, 0, index))
+    assert.ok(atMid > atStart)
+    assert.ok(atEnd > atMid)
+    assert.equal(atEnd, ratioFromAnchor(1, 1, index))
+    // Empty paragraph → treat as start of that slot.
+    assert.equal(
+      ratioFromParagraphOffset(0, 5, 0, index),
+      ratioFromAnchor(0, 0, index),
+    )
   })
 
   it('maps multicol flow X to page indices', () => {
