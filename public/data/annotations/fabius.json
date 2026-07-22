@@ -43,6 +43,7 @@
     {
       "id": "scipio",
       "names": [
+        "Cornelius Scipio",
         "Scipio"
       ],
       "relation": "Younger Africanus; opposed his caution",
@@ -223,16 +224,17 @@
     {
       "id": "livius",
       "names": [
+        "Marcus Livius",
         "Livius"
       ],
-      "relation": "Colleague in later commands",
-      "blurb": "Appears among the consular generation that fought on after Cannae while Fabius’s authority still steadied Rome.",
+      "relation": "Governor of Tarentum's citadel",
+      "blurb": "Held the citadel of Tarentum after the city was betrayed to Hannibal, refusing to yield until Fabius retook it; then irked the senate by claiming more credit for the recovery than Fabius—prompting Fabius's famous quip that without Livius's loss there would have been nothing to recover.",
       "links": [
         {
           "characterId": "hannibal"
         },
         {
-          "characterId": "marcellus"
+          "characterId": "tarentum"
         }
       ]
     },
@@ -514,6 +516,48 @@
         },
         {
           "characterId": "fabius-maximus"
+        }
+      ]
+    },
+    {
+      "id": "thucydides-fab",
+      "names": [
+        "Thucydides"
+      ],
+      "relation": "Historian whose style Fabius's speeches recalled",
+      "blurb": "Plutarch compares Fabius's oratory to Thucydides: weighty, sententious, and strong rather than ornamented—the same grave gravity the Athenian brought to his account of the Peloponnesian War.",
+      "links": [
+        {
+          "characterId": "fabius-maximus"
+        }
+      ]
+    },
+    {
+      "id": "euripides-fab",
+      "names": [
+        "Euripides"
+      ],
+      "relation": "Tragedian quoted on the misfortune of testing friends",
+      "blurb": "Plutarch invokes his saying—'a man is in ill-case when he must try a friend'—to reflect that states are equally unfortunate when they are forced by crisis to need an able general.",
+      "links": [
+        {
+          "characterId": "fabius-maximus"
+        }
+      ]
+    },
+    {
+      "id": "posidonius-fab",
+      "names": [
+        "Posidonius"
+      ],
+      "relation": "Historian who recorded the shield-and-sword image",
+      "blurb": "Plutarch attributes to Posidonius the saying that the Romans called Marcellus their sword and Fabius their buckler—a neat pairing of aggression and endurance that became the standard description of the two generals' complementary styles.",
+      "links": [
+        {
+          "characterId": "fabius-maximus"
+        },
+        {
+          "characterId": "marcellus"
         }
       ]
     }

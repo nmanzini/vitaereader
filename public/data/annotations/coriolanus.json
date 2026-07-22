@@ -141,6 +141,7 @@
     {
       "id": "sicinnius",
       "names": [
+        "Sicinnius Vellutus",
         "Sicinnius",
         "Sicinius"
       ],
@@ -158,6 +159,7 @@
     {
       "id": "brutus",
       "names": [
+        "Junius Brutus",
         "Brutus"
       ],
       "relation": "Tribune colleague against him",
@@ -465,6 +467,70 @@
       "relation": "Founder of Lavinium",
       "blurb": "Trojan hero who built Lavinium in Italy; its siege by Marcius struck Romans as an assault on the very cradle of their nation and its guardian gods.",
       "links": [
+        {
+          "characterId": "marcius"
+        }
+      ]
+    },
+    {
+      "id": "tullus-hostilius",
+      "names": [
+        "Tullus Hostilius"
+      ],
+      "relation": "Roman king before Ancus Marcius",
+      "blurb": "Third king of Rome; Plutarch names him to fix Ancus Marcius's place in the royal sequence — Ancus was king after Tullus Hostilius, linking Coriolanus's ancestry to the earliest regal line.",
+      "links": [
+        {
+          "characterId": "ancus-marcius"
+        },
+        {
+          "characterId": "numa-cor"
+        }
+      ]
+    },
+    {
+      "id": "marcii-aqueducts",
+      "names": [
+        "Publius Marcius",
+        "Quintus Marcius"
+      ],
+      "relation": "Marcian kinsmen who built Rome's water supply",
+      "blurb": "Two members of the same patrician house as Coriolanus; Plutarch cites them as builders of the best and most abundant water conduits Rome possessed, evidence of the family's long service to the city.",
+      "links": [
+        {
+          "characterId": "ancus-marcius"
+        },
+        {
+          "characterId": "marcius"
+        }
+      ]
+    },
+    {
+      "id": "heraclitus-cor",
+      "names": [
+        "Heraclitus"
+      ],
+      "relation": "Philosopher quoted on divine knowledge",
+      "blurb": "Plutarch closes his meditation on miraculous statues by citing Heraclitus: 'Knowledge of divine things for the most part is lost to us by incredulity' — a caution against both blind credulity and flat dismissal of wonders.",
+      "links": [
+        {
+          "characterId": "marcius"
+        }
+      ]
+    },
+    {
+      "id": "castor-cor",
+      "names": [
+        "Castor",
+        "Pollux",
+        "Castor and Pollux"
+      ],
+      "relation": "Divine twins seen after the battle with Tarquin",
+      "blurb": "Castor and Pollux appeared after the battle in which the young Marcius won his oaken crown; they were seen at Rome by the Forum fountain with foam-flecked horses, bearing news of the victory — the same day became a festival of the Twin Brothers.",
+      "links": [
+        {
+          "characterId": "tarquin"
+        },
         {
           "characterId": "marcius"
         }

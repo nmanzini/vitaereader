@@ -315,10 +315,11 @@
     {
       "id": "postumius",
       "names": [
-        "Postumius"
+        "Postumius",
+        "Postumius Tubertus"
       ],
-      "relation": "Rival magistrate in the traditions",
-      "blurb": "Named among Camillus’s awkward colleagues when politics cut short a command or triumph.",
+      "relation": "Dictator under whom Camillus first served; rival magistrate",
+      "blurb": "Postumius Tubertus was dictator in the great battle against the Aequians and Volscians where the young Camillus first distinguished himself; a later Postumius appears among Camillus's awkward colleagues when politics cut short a command or triumph.",
       "links": [
         {
           "characterId": "furius"
@@ -708,6 +709,38 @@
         },
         {
           "characterId": "stolo"
+        }
+      ]
+    },
+    {
+      "id": "livy-cam",
+      "names": [
+        "Livy"
+      ],
+      "relation": "Roman historian cited on the evocatio of Juno",
+      "blurb": "Plutarch notes that Livy gives a somewhat different account of the moment Juno's statue was invited to Rome—where Camillus touched the goddess and bystanders cried out that she was willing—while Plutarch follows the version that the statue answered in a low voice.",
+      "links": [
+        {
+          "characterId": "juno"
+        },
+        {
+          "characterId": "furius"
+        }
+      ]
+    },
+    {
+      "id": "aristotle-cam",
+      "names": [
+        "Aristotle"
+      ],
+      "relation": "Philosopher who recorded the Gallic sack but named the wrong deliverer",
+      "blurb": "Aristotle apparently heard a correct account of the sack of Rome by the Gauls, but Plutarch notes that Aristotle calls Rome's deliverer 'Lucius' — whereas Camillus's forename was Marcus, not Lucius.",
+      "links": [
+        {
+          "characterId": "heraclides"
+        },
+        {
+          "characterId": "furius"
         }
       ]
     }

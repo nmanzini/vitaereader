@@ -30,6 +30,7 @@
     {
       "id": "brutus",
       "names": [
+        "Lucius Brutus",
         "Brutus"
       ],
       "relation": "Liberator; first consul with Collatinus",
@@ -339,10 +340,11 @@
     {
       "id": "marcus",
       "names": [
+        "Marcus Valerius",
         "Marcus"
       ],
-      "relation": "Consular colleague named in the wars",
-      "blurb": "Appears among early republican commanders in the Tuscan and Latin fighting after the kings.",
+      "relation": "Poplicola's brother; consul who broke the Sabines",
+      "blurb": "Marcus Valerius, brother to Poplicola, was made consul and, with Poplicola's guidance, won two great victories over the Sabines—including a slaughter of thirteen thousand without a Roman life lost; he was rewarded with a house on the Palatine whose door opened outward as a perpetual public honor.",
       "links": [
         {
           "characterId": "valerius"
@@ -437,7 +439,8 @@
     {
       "id": "titus-lucretius",
       "names": [
-        "Titus Lucretius"
+        "Titus Lucretius",
+        "Lucretius"
       ],
       "relation": "Consular colleague of Poplicola",
       "blurb": "Chosen as Poplicola’s colleague in a second consulship; served while Poplicola led the armies against the Latin and Sabine threats after the Tarquin wars.",
@@ -612,6 +615,61 @@
           "characterId": "tarquin"
         }
       ]
+    },
+    {
+      "id": "demaratus-pop",
+      "names": [
+        "Demaratus"
+      ],
+      "relation": "Corinthian father of Tarquinius Priscus",
+      "blurb": "Plutarch notes that the Capitoline temple was first vowed by Tarquin the son of Demaratus; this Demaratus was the Corinthian exile who settled in Etruria and fathered Tarquinius Priscus, the fifth king of Rome.",
+      "links": [
+        {
+          "characterId": "tarquin"
+        }
+      ]
+    },
+    {
+      "id": "athenodorus-pop",
+      "names": [
+        "Athenodorus"
+      ],
+      "relation": "Historian who recorded Mucius's alternative name",
+      "blurb": "Athenodorus, son of Sandon, in a book addressed to Octavia, Caesar's sister, records that Mucius Scaevola was also called Postumus—a detail that Plutarch preserves while following the common tradition of the name Scaevola.",
+      "links": [
+        {
+          "characterId": "mucius"
+        }
+      ]
+    },
+    {
+      "id": "anaximenes-pop",
+      "names": [
+        "Anaximenes"
+      ],
+      "relation": "Orator cited on the origin of funeral oratory",
+      "blurb": "Plutarch cites the orator Anaximenes when noting that Poplicola's introduction of funeral orations for great citizens may predate Solon's use of the form in Greece, unless Anaximenes is right to attribute that origin to Solon.",
+      "links": [
+        {
+          "characterId": "valerius"
+        },
+        {
+          "characterId": "solon-cross"
+        }
+      ]
+    },
+    {
+      "id": "epicharmus-pop",
+      "names": [
+        "Epicharmus"
+      ],
+      "relation": "Greek comic poet quoted on extravagant giving",
+      "blurb": "Plutarch quotes Epicharmus's remark about the prodigal — that excessive giving is not generosity but a disease — to characterize Domitian's ruinous expenditure on the Capitoline temple, setting it against Poplicola's modest piety.",
+      "links": [
+        {
+          "characterId": "domitian"
+        }
+      ]
     }
   ],
   "nameResolutions": [
@@ -665,6 +723,48 @@
       "start": 1153,
       "end": 1158,
       "characterId": "aruns-porsenna"
+    },
+    {
+      "paraId": "poplicola-p017",
+      "start": 1556,
+      "end": 1564,
+      "characterId": "horatius",
+      "note": "Cocles; origin of the Cognomen at the bridge"
+    },
+    {
+      "paraId": "poplicola-p011",
+      "start": 1271,
+      "end": 1280,
+      "characterId": "lucretius",
+      "note": "Lucretius the father of Lucretia, Poplicola's first consular colleague"
+    },
+    {
+      "paraId": "poplicola-p011",
+      "start": 1498,
+      "end": 1507,
+      "characterId": "lucretius",
+      "note": "Same Lucretius, who died within days of taking the consulship"
+    },
+    {
+      "paraId": "poplicola-p017",
+      "start": 1255,
+      "end": 1264,
+      "characterId": "titus-lucretius",
+      "note": "Titus Lucretius, Poplicola's second consular colleague, wounded in the fight at the bridge"
+    },
+    {
+      "paraId": "poplicola-p023",
+      "start": 942,
+      "end": 951,
+      "characterId": "titus-lucretius",
+      "note": "Titus Lucretius, consular colleague in the fourth consulship"
+    },
+    {
+      "paraId": "poplicola-p023",
+      "start": 1231,
+      "end": 1240,
+      "characterId": "titus-lucretius",
+      "note": "Titus Lucretius charging the Sabine light-horse"
     }
   ]
 }
