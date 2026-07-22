@@ -424,7 +424,7 @@
   font-size: 0.88rem;
   color: var(--ink-muted);
   text-decoration: underline;
-  text-underline-offset: 0.2em;
+  text-underline-offset: var(--underline-offset-link);
   cursor: pointer;
 }
 
@@ -494,8 +494,8 @@
   text-decoration: underline;
   /* Fixed 1px — from-font is heavy under Georgia and uneven across faces. */
   text-decoration-color: var(--char-underline);
-  text-decoration-thickness: 1px;
-  text-underline-offset: 0.18em;
+  text-decoration-thickness: var(--underline-thickness);
+  text-underline-offset: var(--underline-offset-ref);
   text-decoration-skip-ink: auto;
   -webkit-tap-highlight-color: color-mix(in srgb, var(--accent) 12%, transparent);
 }
@@ -527,8 +527,8 @@
   text-decoration-style: dashed;
   /* Fixed 1px — stronger token so places stay visible on mobile. */
   text-decoration-color: var(--loc-underline);
-  text-decoration-thickness: 1px;
-  text-underline-offset: 0.18em;
+  text-decoration-thickness: var(--underline-thickness);
+  text-underline-offset: var(--underline-offset-ref);
   text-decoration-skip-ink: auto;
   -webkit-tap-highlight-color: color-mix(in srgb, var(--accent) 12%, transparent);
 }
@@ -559,5 +559,5 @@ mark.text-highlight {
 
 mark.text-highlight .char-ref,
 mark.text-highlight .loc-ref {
-  text-decoration-color: color-mix(in srgb, var(--ink) 28%, transparent);
+  text-decoration-color: var(--char-underline);
 }

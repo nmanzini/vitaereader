@@ -940,6 +940,109 @@ describe('readingPrefs', () => {
   })
 })
 
+describe('designContract', () => {
+  it('keeps the frozen theme/type lattice and CSS token parity', async () => {
+    const { readFileSync } = await import('node:fs')
+    const { join, dirname } = await import('node:path')
+    const { fileURLToPath } = await import('node:url')
+    const {
+      THEME_COLOR_TOKENS,
+      TYPE_METRIC_TOKENS,
+      FONT_STACK_VARS,
+      FONT_OPTICAL,
+      DAY_THEME,
+      UNDERLINE,
+    } = await import('../src/lib/designContract.ts')
+    const { THEMES } = await import('../src/lib/prefs.ts')
+    const {
+      TYPE_FONTS,
+      TYPE_SIZES,
+      TYPE_LEADINGS,
+      TYPE_MARGINS,
+    } = await import('../src/lib/readingPrefs.ts')
+
+    // Frozen lattices — expanding these is a deliberate design change.
+    assert.deepEqual(
+      THEMES.map((t) => t.id),
+      ['day', 'night', 'sepia', 'eink'],
+    )
+    assert.deepEqual(
+      TYPE_FONTS.map((f) => f.id),
+      ['book', 'classic', 'literary', 'georgia'],
+    )
+    assert.deepEqual(TYPE_SIZES, ['xs', 'sm', 'md', 'lg', 'xl'])
+    assert.deepEqual(
+      TYPE_LEADINGS.map((l) => l.id),
+      ['tight', 'normal', 'relaxed'],
+    )
+    assert.deepEqual(
+      TYPE_MARGINS.map((m) => m.id),
+      ['narrow', 'normal', 'wide'],
+    )
+    assert.deepEqual(FONT_OPTICAL, {
+      book: 1,
+      classic: 1.03,
+      literary: 1.12,
+      georgia: 0.94,
+    })
+
+    const root = join(dirname(fileURLToPath(import.meta.url)), '..')
+    const css = readFileSync(join(root, 'src/index.css'), 'utf8')
+
+    for (const token of [
+      ...THEME_COLOR_TOKENS,
+      ...TYPE_METRIC_TOKENS,
+      ...FONT_STACK_VARS,
+    ]) {
+      assert.match(css, new RegExp(`${token.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}:`))
+    }
+
+    for (const theme of THEMES) {
+      if (theme.id === 'day') continue // day = :root defaults
+      assert.match(css, new RegExp(`\\[data-theme='${theme.id}'\\]`))
+    }
+
+    for (const font of TYPE_FONTS) {
+      assert.match(css, new RegExp(`data-type-font='${font.id}'`))
+      const optical = String(FONT_OPTICAL[font.id])
+      const block = css.match(
+        new RegExp(
+          `html\\[data-type-font='${font.id}'\\]\\s*\\{([^}]+)\\}`,
+          'm',
+        ),
+      )
+      assert.ok(block, `missing CSS block for font ${font.id}`)
+      assert.match(block[1], new RegExp(`--font-optical:\\s*${optical}`))
+    }
+
+    for (const size of TYPE_SIZES) {
+      assert.match(css, new RegExp(`data-type-size='${size}'`))
+    }
+    for (const leading of TYPE_LEADINGS) {
+      assert.match(css, new RegExp(`data-type-leading='${leading.id}'`))
+    }
+    for (const margin of TYPE_MARGINS) {
+      assert.match(css, new RegExp(`data-type-margin='${margin.id}'`))
+    }
+
+    assert.match(css, new RegExp(`--underline-thickness:\\s*${UNDERLINE.thickness}`))
+    assert.match(
+      css,
+      new RegExp(`--underline-offset-link:\\s*${UNDERLINE.offsetLink}`),
+    )
+    assert.match(
+      css,
+      new RegExp(`--underline-offset-ref:\\s*${UNDERLINE.offsetRef}`),
+    )
+
+    // Day palette hex must stay shared with quote cards.
+    assert.match(css, new RegExp(`--bg:\\s*${DAY_THEME.bg}`))
+    assert.match(css, new RegExp(`--ink:\\s*${DAY_THEME.ink}`))
+    assert.match(css, new RegExp(`--accent:\\s*${DAY_THEME.accent}`))
+    assert.match(css, /\.library,\s*\n\.highlights-page/)
+  })
+})
+
 describe('selectionOffsets', () => {
   it('round-trips plain offsets through a paragraph DOM', async () => {
     const { parseHTML } = await import('linkedom')

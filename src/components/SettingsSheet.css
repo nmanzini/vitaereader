@@ -127,21 +127,21 @@
   background: color-mix(in srgb, var(--ink) 3%, transparent);
 }
 
-/* Preview each face; optical size keeps chip labels even (Georgia ≠ shout). */
+/* Preview each face via canonical stacks; chip px keeps labels even. */
 .settings-chip[data-font='book'] {
-  font-family: 'Source Serif 4', 'Iowan Old Style', Palatino, serif;
+  font-family: var(--stack-book-body);
   font-size: 0.82rem;
 }
 .settings-chip[data-font='classic'] {
-  font-family: 'Palatino Linotype', Palatino, 'Book Antiqua', serif;
+  font-family: var(--stack-classic-body);
   font-size: 0.84rem;
 }
 .settings-chip[data-font='literary'] {
-  font-family: 'Cormorant Garamond', Palatino, serif;
+  font-family: var(--stack-literary-body);
   font-size: 0.92rem;
 }
 .settings-chip[data-font='georgia'] {
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family: var(--stack-georgia-body);
   font-size: 0.76rem;
 }
 
@@ -158,7 +158,7 @@
 }
 
 .settings-size-btn {
-  font-family: 'Source Serif 4', 'Iowan Old Style', Palatino, serif;
+  font-family: var(--stack-book-body);
   font-size: 0.95rem;
   font-weight: 600;
   line-height: 1;

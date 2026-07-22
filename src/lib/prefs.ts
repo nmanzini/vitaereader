@@ -1,5 +1,6 @@
 export type ThemeId = 'day' | 'night' | 'sepia' | 'eink'
 
+/** Frozen theme lattice — colors only; see designContract.ts / index.css. */
 const THEME_KEY = 'vitae.theme'
 const PROGRESS_KEY = 'vitae.progress'
 const FINISHED_KEY = 'vitae.finished'
