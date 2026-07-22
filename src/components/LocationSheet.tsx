@@ -5,7 +5,7 @@ import {
 } from '../lib/charMatch'
 import {
   boundsAroundPoint,
-  boundsForPoints,
+  boundsForRoute,
   journeyStops,
   journeyThrough,
   locationPresence,
@@ -87,6 +87,7 @@ export function LocationSheet({
     presence: 'visited' as const,
     visitKind: s.kind,
     visitOrder: s.order,
+    travel: s.travel,
   }))
   // Expanded peers: named mentions + stops already reached (hide future visits).
   const peerForMap = peerMarkers.filter((m) => {
@@ -95,20 +96,15 @@ export function LocationSheet({
     return (m.visitOrder ?? Infinity) <= current.visitOrder
   })
   // Collapsed: zoom in on this place.
-  // Expanded: frame the journey so far (fallback to all places if none).
+  // Expanded: frame the journey so far, padding proportional to route span.
   const focusBounds = boundsAroundPoint(
     { lat: current.lat, lon: current.lon },
     5,
   )
-  const overviewBounds = boundsForPoints(
-    (progressStops.length >= 2 ? progressStops : locations).map((l) => ({
-      lat: l.lat,
-      lon: l.lon,
-    })),
-    6,
-    undefined,
-    12,
-  )
+  const overviewBounds =
+    progressStops.length >= 2
+      ? boundsForRoute(progressStops)
+      : boundsAroundPoint({ lat: current.lat, lon: current.lon }, 8)
 
   function openLocation(locationId: string) {
     const next = locations.find((l) => l.id === locationId)

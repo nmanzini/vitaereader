@@ -31,7 +31,15 @@
   stroke-width: 1.35;
   stroke-linecap: round;
   stroke-linejoin: round;
-  stroke-dasharray: 3.5 2.5;
+  /* Land march — solid */
+  stroke-dasharray: none;
+  opacity: 0.9;
+}
+
+.loc-map-journey-sea {
+  /* Boat leg — dotted */
+  stroke-dasharray: 1.2 2.4;
+  stroke-linecap: round;
   opacity: 0.85;
 }
 
@@ -95,6 +103,10 @@
 [data-theme='eink'] .loc-map-journey {
   stroke: var(--ink);
   opacity: 0.55;
+}
+
+[data-theme='eink'] .loc-map-journey-sea {
+  opacity: 0.5;
 }
 
 [data-theme='eink'] .loc-map-stop {

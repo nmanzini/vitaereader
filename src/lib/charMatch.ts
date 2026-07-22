@@ -69,6 +69,11 @@ export type LocationAnnotation = {
     | 'foundation'
   /** Chronological order among visits (required for journey path stops). */
   visitOrder?: number
+  /**
+   * How the protagonist arrived here from the previous visit
+   * (`land` default, `sea` = boat leg — dotted on the map).
+   */
+  travel?: 'land' | 'sea'
 }
 
 export type WorkAnnotations = {

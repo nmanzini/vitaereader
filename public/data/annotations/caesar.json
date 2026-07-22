@@ -840,7 +840,8 @@
       "presence": "visited",
       "visitKind": "city",
       "visitOrder": 1,
-      "blurb": "Birthplace, forum of his ambition, and the stage of the Ides—Caesar’s story begins and ends in Rome."
+      "blurb": "Birthplace, forum of his ambition, and the stage of the Ides—Caesar’s story begins and ends in Rome.",
+      "travel": "land"
     },
     {
       "id": "bithynia",
@@ -854,7 +855,8 @@
       "presence": "visited",
       "visitKind": "city",
       "visitOrder": 2,
-      "blurb": "As a young man he lingered at Nicomedes’ court—gossip clung to the stay, and Sylla’s enmity hardened."
+      "blurb": "As a young man he lingered at Nicomedes’ court—gossip clung to the stay, and Sylla’s enmity hardened.",
+      "travel": "sea"
     },
     {
       "id": "rhodes",
@@ -868,7 +870,8 @@
       "presence": "visited",
       "visitKind": "city",
       "visitOrder": 3,
-      "blurb": "After ransoming himself from Cilician pirates, he studied with Apollonius and later crucified his captors as promised."
+      "blurb": "After ransoming himself from Cilician pirates, he studied with Apollonius and later crucified his captors as promised.",
+      "travel": "sea"
     },
     {
       "id": "corduba",
@@ -882,7 +885,8 @@
       "presence": "visited",
       "visitKind": "city",
       "visitOrder": 4,
-      "blurb": "Seat of his Spanish service—quaestor and later propraetor—where he first tasted provincial power and debt’s pressure."
+      "blurb": "Seat of his Spanish service—quaestor and later propraetor—where he first tasted provincial power and debt’s pressure.",
+      "travel": "sea"
     },
     {
       "id": "gaul",
@@ -896,7 +900,8 @@
       "presence": "visited",
       "visitKind": "camp",
       "visitOrder": 5,
-      "blurb": "Nearly a decade of conquest, winter camps, and dispatches—the province that made him master of an army."
+      "blurb": "Nearly a decade of conquest, winter camps, and dispatches—the province that made him master of an army.",
+      "travel": "land"
     },
     {
       "id": "rhine",
@@ -910,7 +915,8 @@
       "presence": "visited",
       "visitKind": "crossing",
       "visitOrder": 6,
-      "blurb": "He threw a timber bridge across in days, showed the standards beyond the river, then broke the span behind him."
+      "blurb": "He threw a timber bridge across in days, showed the standards beyond the river, then broke the span behind him.",
+      "travel": "land"
     },
     {
       "id": "britain",
@@ -924,7 +930,8 @@
       "presence": "visited",
       "visitKind": "crossing",
       "visitOrder": 7,
-      "blurb": "Twice he crossed with fleets—more reconnaissance and prestige than lasting conquest, yet Rome’s first look at the island."
+      "blurb": "Twice he crossed with fleets—more reconnaissance and prestige than lasting conquest, yet Rome’s first look at the island.",
+      "travel": "sea"
     },
     {
       "id": "alesia",
@@ -938,7 +945,8 @@
       "presence": "visited",
       "visitKind": "battle",
       "visitOrder": 8,
-      "blurb": "Double lines of works closed on Vercingetorix; the surrender in armor sealed Gaul and Caesar’s military fame."
+      "blurb": "Double lines of works closed on Vercingetorix; the surrender in armor sealed Gaul and Caesar’s military fame.",
+      "travel": "land"
     },
     {
       "id": "rubicon",
@@ -952,7 +960,8 @@
       "presence": "visited",
       "visitKind": "crossing",
       "visitOrder": 9,
-      "blurb": "The little stream of Italy’s boundary—once crossed with the Thirteenth, the Republic’s quarrel became open war."
+      "blurb": "The little stream of Italy’s boundary—once crossed with the Thirteenth, the Republic’s quarrel became open war.",
+      "travel": "land"
     },
     {
       "id": "ariminum",
@@ -966,7 +975,8 @@
       "presence": "visited",
       "visitKind": "city",
       "visitOrder": 10,
-      "blurb": "He seized it at once after the crossing; Italy’s towns opened as Pompey fell back toward Brundisium."
+      "blurb": "He seized it at once after the crossing; Italy’s towns opened as Pompey fell back toward Brundisium.",
+      "travel": "land"
     },
     {
       "id": "brundisium",
@@ -980,7 +990,8 @@
       "presence": "visited",
       "visitKind": "city",
       "visitOrder": 11,
-      "blurb": "Harbor of embarkation: Pompey slipped east from here; Caesar followed into Greece when ships and season allowed."
+      "blurb": "Harbor of embarkation: Pompey slipped east from here; Caesar followed into Greece when ships and season allowed.",
+      "travel": "land"
     },
     {
       "id": "dyrrhachium",
@@ -994,7 +1005,8 @@
       "presence": "visited",
       "visitKind": "battle",
       "visitOrder": 12,
-      "blurb": "Caesar’s entrenchments nearly penned Pompey, then broke; the setback sent him inland toward Thessaly."
+      "blurb": "Caesar’s entrenchments nearly penned Pompey, then broke; the setback sent him inland toward Thessaly.",
+      "travel": "sea"
     },
     {
       "id": "pharsalia",
@@ -1008,7 +1020,8 @@
       "presence": "visited",
       "visitKind": "battle",
       "visitOrder": 13,
-      "blurb": "On the plain of Thessaly he broke Pompey’s larger army (48 BC); the Republic’s last great field army scattered."
+      "blurb": "On the plain of Thessaly he broke Pompey’s larger army (48 BC); the Republic’s last great field army scattered.",
+      "travel": "land"
     },
     {
       "id": "alexandria",
@@ -1022,7 +1035,8 @@
       "presence": "visited",
       "visitKind": "city",
       "visitOrder": 14,
-      "blurb": "He found Pompey already dead, stayed for the Alexandrian war, and left Cleopatra queen—and Caesarion rumored his."
+      "blurb": "He found Pompey already dead, stayed for the Alexandrian war, and left Cleopatra queen—and Caesarion rumored his.",
+      "travel": "sea"
     },
     {
       "id": "zela",
@@ -1036,7 +1050,8 @@
       "presence": "visited",
       "visitKind": "battle",
       "visitOrder": 15,
-      "blurb": "Where he crushed Pharnaces so swiftly the dispatch ran: I came, I saw, I conquered."
+      "blurb": "Where he crushed Pharnaces so swiftly the dispatch ran: I came, I saw, I conquered.",
+      "travel": "land"
     },
     {
       "id": "thapsus",
@@ -1050,7 +1065,8 @@
       "presence": "visited",
       "visitKind": "battle",
       "visitOrder": 16,
-      "blurb": "He shattered the republican remnant in Africa (46 BC); Cato’s suicide at Utica followed the rout."
+      "blurb": "He shattered the republican remnant in Africa (46 BC); Cato’s suicide at Utica followed the rout.",
+      "travel": "sea"
     },
     {
       "id": "munda",
@@ -1064,7 +1080,8 @@
       "presence": "visited",
       "visitKind": "battle",
       "visitOrder": 17,
-      "blurb": "Hardest fight of all, against Pompey’s sons in Spain (45 BC)—after Munda, no rival army remained."
+      "blurb": "Hardest fight of all, against Pompey’s sons in Spain (45 BC)—after Munda, no rival army remained.",
+      "travel": "sea"
     },
     {
       "id": "italy",
