@@ -346,7 +346,8 @@
     {
       "id": "hippolytus",
       "names": [
-        "Hippolytus"
+        "Hippolytus",
+        "Demophon"
       ],
       "relation": "Son by Antiope",
       "blurb": "Son of Theseus and Antiope. His ruin with Phaedra is the stuff of Attic tragedy; Plutarch will not contradict the dramatists.",
@@ -968,6 +969,654 @@
           "workId": "romulus"
         }
       ]
+    },
+    {
+      "id": "connidas",
+      "names": [
+        "Connidas"
+      ],
+      "relation": "Childhood tutor at Troezen",
+      "blurb": "Tutor set over young Theseus by Pittheus. Athenians honored him the day before Theseus’s feast—more justly, Plutarch says, than artists who only carved the hero’s image.",
+      "links": [
+        {
+          "characterId": "pittheus"
+        },
+        {
+          "characterId": "theseus"
+        }
+      ]
+    },
+    {
+      "id": "pasiphae",
+      "names": [
+        "Pasiphae"
+      ],
+      "relation": "Wife of Minos; mother of Ariadne",
+      "blurb": "In Demon’s rationalized Cretan tale, Taurus’s familiarity with Pasiphae made Minos eager for Theseus to fight him—and glad when the Athenian won.",
+      "links": [
+        {
+          "characterId": "minos"
+        },
+        {
+          "characterId": "ariadne"
+        },
+        {
+          "characterId": "minotaur"
+        }
+      ]
+    },
+    {
+      "id": "rhadamanthus",
+      "names": [
+        "Rhadamanthus"
+      ],
+      "relation": "Brother-judge under Minos",
+      "blurb": "Plutarch defends Minos as lawgiver, not stage villain: Rhadamanthus judged beneath him, administering the statutes Minos ordained.",
+      "links": [
+        {
+          "characterId": "minos"
+        }
+      ]
+    },
+    {
+      "id": "oenopion",
+      "names": [
+        "Oenopion"
+      ],
+      "relation": "Son by Ariadne (one tradition)",
+      "blurb": "Some say Ariadne bore Theseus sons Oenopion and Staphylus. Ion of Chios claims Oenopion founded Chios—tying Theseus’s line to Ionian origins.",
+      "links": [
+        {
+          "characterId": "ariadne"
+        },
+        {
+          "characterId": "theseus"
+        },
+        {
+          "characterId": "staphylus"
+        }
+      ]
+    },
+    {
+      "id": "staphylus",
+      "names": [
+        "Staphylus"
+      ],
+      "relation": "Son of Ariadne—by Theseus or Bacchus",
+      "blurb": "Named with Oenopion as Ariadne’s child by Theseus; another tale makes Staphylus and his brother sons of Bacchus on Naxos. Same name, contested father.",
+      "links": [
+        {
+          "characterId": "ariadne"
+        },
+        {
+          "characterId": "theseus"
+        },
+        {
+          "characterId": "bacchus"
+        },
+        {
+          "characterId": "oenopion"
+        }
+      ]
+    },
+    {
+      "id": "demophon",
+      "names": [
+        "Demophon"
+      ],
+      "relation": "Son of Theseus (Attic tradition); Troy figure",
+      "blurb": "Attic Demophon who fathered Munychus by Laodice, with Aethra raising the child at Troy—distinct from Pindar’s Demophon, which names Hippolytus.",
+      "links": [
+        {
+          "characterId": "aethra"
+        },
+        {
+          "characterId": "theseus"
+        },
+        {
+          "characterId": "munychus"
+        },
+        {
+          "characterId": "laodice"
+        }
+      ]
+    },
+    {
+      "id": "munychus",
+      "names": [
+        "Munychus"
+      ],
+      "relation": "Son of Demophon and Laodice",
+      "blurb": "Born secretly to Demophon and Laodice and raised by Aethra at Troy—a fable Plutarch links to Aethra’s captivity in Homer.",
+      "links": [
+        {
+          "characterId": "demophon"
+        },
+        {
+          "characterId": "laodice"
+        },
+        {
+          "characterId": "aethra"
+        }
+      ]
+    },
+    {
+      "id": "laodice",
+      "names": [
+        "Laodice"
+      ],
+      "relation": "Mother of Munychus by Demophon",
+      "blurb": "Trojan-linked mother in the Munychus tale; the child was brought up secretly by Aethra during her captivity.",
+      "links": [
+        {
+          "characterId": "demophon"
+        },
+        {
+          "characterId": "munychus"
+        },
+        {
+          "characterId": "aethra"
+        }
+      ]
+    },
+    {
+      "id": "adrastus",
+      "names": [
+        "Adrastus"
+      ],
+      "relation": "Argive king; ally at Thebes",
+      "blurb": "Theseus helped Adrastus recover the bodies of the Seven before Thebes and allotted them burial at Eleusis—cited against Euripides’ more warlike Suppliants.",
+      "links": [
+        {
+          "characterId": "theseus"
+        },
+        {
+          "characterId": "euripides"
+        }
+      ]
+    },
+    {
+      "id": "jason",
+      "names": [
+        "Jason"
+      ],
+      "relation": "Argonaut captain; heroic peer",
+      "blurb": "Excepted from a pan-Hellenic ban on large ships as captain of the Argo. Some say Theseus sailed with him to Colchis—hence “a second Hercules.”",
+      "links": [
+        {
+          "characterId": "theseus"
+        },
+        {
+          "characterId": "hercules"
+        }
+      ]
+    },
+    {
+      "id": "meleager",
+      "names": [
+        "Meleager"
+      ],
+      "relation": "Calydonian hunter; heroic peer",
+      "blurb": "Paired with Jason among exploits Theseus was said to share—the slaying of the Calydonian boar—feeding the proverb that he was a second Hercules.",
+      "links": [
+        {
+          "characterId": "jason"
+        },
+        {
+          "characterId": "theseus"
+        },
+        {
+          "characterId": "hercules"
+        }
+      ]
+    },
+    {
+      "id": "phytalidae",
+      "names": [
+        "Phytalidae"
+      ],
+      "relation": "Attic house that purified him",
+      "blurb": "Met Theseus at the Cephisus and purified him after the road killings. Later oversaw sacrifices at his temple—honor for that first hospitality.",
+      "links": [
+        {
+          "characterId": "theseus"
+        }
+      ]
+    },
+    {
+      "id": "hermus",
+      "names": [
+        "Hermus"
+      ],
+      "relation": "Athenian noble left with Soloon’s brothers",
+      "blurb": "Entrusted with government beside Euneos and Thoas after the Amazon voyage. His “House of Hermus” was later misread as Hermes’s shrine.",
+      "links": [
+        {
+          "characterId": "soloon"
+        },
+        {
+          "characterId": "antiope"
+        }
+      ]
+    },
+    {
+      "id": "chalcodon",
+      "names": [
+        "Chalcodon"
+      ],
+      "relation": "Euboean hero; father of Elephenor",
+      "blurb": "Chapel near the Piraic gate marks where Athenians broke before the Amazons. Father of Elephenor, to whom Theseus later sent his children.",
+      "links": [
+        {
+          "characterId": "elephenor"
+        },
+        {
+          "characterId": "theseus"
+        }
+      ]
+    },
+    {
+      "id": "proserpina",
+      "names": [
+        "Proserpina"
+      ],
+      "relation": "Wife of Aidoneus (Molossian “Pluto”)",
+      "blurb": "Aidoneus named his wife Proserpina and daughter Cora—playing at underworld titles—before trapping Theseus and Pirithous who came for the girl.",
+      "links": [
+        {
+          "characterId": "aidoneus"
+        },
+        {
+          "characterId": "cora"
+        },
+        {
+          "characterId": "pirithous"
+        }
+      ]
+    },
+    {
+      "id": "cora",
+      "names": [
+        "Cora"
+      ],
+      "relation": "Daughter of Aidoneus; prize of the underworld raid",
+      "blurb": "Aidoneus’s daughter, guarded by the dog Cerberus. Pirithous’s bid to carry her off doomed both friends until Hercules freed Theseus.",
+      "links": [
+        {
+          "characterId": "aidoneus"
+        },
+        {
+          "characterId": "proserpina"
+        },
+        {
+          "characterId": "pirithous"
+        },
+        {
+          "characterId": "hercules"
+        }
+      ]
+    },
+    {
+      "id": "cerberus",
+      "names": [
+        "Cerberus"
+      ],
+      "relation": "Aidoneus’s dog; trial for suitors",
+      "blurb": "Great dog kept by the Molossian king. Suitors for Cora had to fight him—mythic Cerberus scaled down to a court ordeal.",
+      "links": [
+        {
+          "characterId": "aidoneus"
+        },
+        {
+          "characterId": "cora"
+        }
+      ]
+    },
+    {
+      "id": "pandion",
+      "names": [
+        "Pandion"
+      ],
+      "relation": "Adoptive father of Aegeus",
+      "blurb": "The Pallantidae resented Aegeus as Pandion’s adopted son, not of Erechtheus’s blood—fuel for their claim against Theseus’s house.",
+      "links": [
+        {
+          "characterId": "aegeus"
+        },
+        {
+          "characterId": "pallantidae"
+        },
+        {
+          "characterId": "erechtheus"
+        }
+      ]
+    },
+    {
+      "id": "aeacus",
+      "names": [
+        "Aeacus"
+      ],
+      "relation": "Just king; Sciron’s in-law",
+      "blurb": "Cited to soften Sciron’s reputation: Aeacus, famed for sanctity, was Sciron’s son-in-law, linking the cliff-robber to Peleus and Telamon.",
+      "links": [
+        {
+          "characterId": "sciron"
+        },
+        {
+          "characterId": "peleus"
+        },
+        {
+          "characterId": "telamon"
+        }
+      ]
+    },
+    {
+      "id": "cychreus",
+      "names": [
+        "Cychreus"
+      ],
+      "relation": "Salaminian hero; Sciron’s father-in-law",
+      "blurb": "Honored with divine worship at Athens. Father-in-law of Sciron in the genealogy Plutarch uses to argue Sciron was no mere bandit.",
+      "links": [
+        {
+          "characterId": "sciron"
+        }
+      ]
+    },
+    {
+      "id": "peleus",
+      "names": [
+        "Peleus"
+      ],
+      "relation": "Hero; grandson of Sciron in one tale",
+      "blurb": "With Telamon, son of Endeis (daughter of Sciron). Their virtue is Plutarch’s exhibit that Sciron’s kin were no villains.",
+      "links": [
+        {
+          "characterId": "sciron"
+        },
+        {
+          "characterId": "telamon"
+        }
+      ]
+    },
+    {
+      "id": "telamon",
+      "names": [
+        "Telamon"
+      ],
+      "relation": "Hero; brother of Peleus in Sciron’s line",
+      "blurb": "Paired with Peleus as grandson of Sciron through Endeis—proof, for Megarian apologetics, that Sciron stood among the best men’s kin.",
+      "links": [
+        {
+          "characterId": "sciron"
+        },
+        {
+          "characterId": "peleus"
+        }
+      ]
+    },
+    {
+      "id": "termerus",
+      "names": [
+        "Termerus"
+      ],
+      "relation": "Skull-butting brigand slain by Hercules",
+      "blurb": "Killed travelers by ramming them with his head—“a Termerian mischief.” Theseus’s labors are cast as matching Hercules’ on such foes.",
+      "links": [
+        {
+          "characterId": "hercules"
+        },
+        {
+          "characterId": "theseus"
+        }
+      ]
+    },
+    {
+      "id": "pherecydes",
+      "names": [
+        "Pherecydes"
+      ],
+      "relation": "Mythographer cited on Crete and Amazons",
+      "blurb": "Says Theseus scuttled Cretan ships after the escape; with Hellanicus and Herodorus, places the Amazon voyage years after Hercules.",
+      "links": [
+        {
+          "characterId": "hellanicus"
+        },
+        {
+          "characterId": "herodorus"
+        },
+        {
+          "characterId": "theseus"
+        }
+      ]
+    },
+    {
+      "id": "demon",
+      "names": [
+        "Demon"
+      ],
+      "relation": "Historian of Taurus and Theseus’s cult",
+      "blurb": "Makes Taurus Minos’s captain, slain in the harbor games; also preserves details of Theseus’s later temple and hereditary honors at Athens.",
+      "links": [
+        {
+          "characterId": "minos"
+        },
+        {
+          "characterId": "minotaur"
+        },
+        {
+          "characterId": "theseus"
+        }
+      ]
+    },
+    {
+      "id": "clidemus",
+      "names": [
+        "Clidemus"
+      ],
+      "relation": "Attic local historian; ambitious narratives",
+      "blurb": "Gives a long Cretan-war digression and a street-by-street Amazon battle at Athens—circumstantial Attic history Plutarch quotes with caution.",
+      "links": [
+        {
+          "characterId": "theseus"
+        }
+      ]
+    },
+    {
+      "id": "hereas",
+      "names": [
+        "Hereas"
+      ],
+      "relation": "Megarian writer on text and Alycus",
+      "blurb": "Claims Pisistratus cut a Hesiod verse; also that Theseus himself slew Alycus at Aphidnae, citing Megarian lines still naming the place.",
+      "links": [
+        {
+          "characterId": "hesiod"
+        },
+        {
+          "characterId": "alycus"
+        },
+        {
+          "characterId": "theseus"
+        }
+      ]
+    },
+    {
+      "id": "dicaearchus",
+      "names": [
+        "Dicaearchus"
+      ],
+      "relation": "Peripatetic cited on Delos and the Dioscuri",
+      "blurb": "Names Theseus’s Delian dance the Crane; later says Arcadians marched with Castor and Pollux—origins of Academy and Marathon names.",
+      "links": [
+        {
+          "characterId": "theseus"
+        },
+        {
+          "characterId": "dioscuri"
+        },
+        {
+          "characterId": "academus"
+        }
+      ]
+    },
+    {
+      "id": "alcmena",
+      "names": [
+        "Alcmena"
+      ],
+      "relation": "Mother of Hercules; cousin-line to Aethra",
+      "blurb": "Daughter of Lysidice; Aethra’s cousin through Pelops. The kinship sharpens Theseus’s urge to match Hercules’ fame.",
+      "links": [
+        {
+          "characterId": "lysidice"
+        },
+        {
+          "characterId": "aethra"
+        },
+        {
+          "characterId": "hercules"
+        },
+        {
+          "characterId": "pelops"
+        }
+      ]
+    },
+    {
+      "id": "hippodamia",
+      "names": [
+        "Hippodamia"
+      ],
+      "relation": "Wife of Pelops; ancestral grandmother",
+      "blurb": "With Pelops, parent of Lysidice and Pittheus—binding Theseus’s Troezen house to Hercules’ line through Alcmena.",
+      "links": [
+        {
+          "characterId": "pelops"
+        },
+        {
+          "characterId": "lysidice"
+        },
+        {
+          "characterId": "pittheus"
+        },
+        {
+          "characterId": "alcmena"
+        }
+      ]
+    },
+    {
+      "id": "idas",
+      "names": [
+        "Idas"
+      ],
+      "relation": "Alternate ravisher of Helen (with Lynceus)",
+      "blurb": "Some writers clear Theseus of Helen’s abduction by naming Idas and Lynceus the true ravishers who then handed her to him.",
+      "links": [
+        {
+          "characterId": "lynceus"
+        },
+        {
+          "characterId": "helen"
+        },
+        {
+          "characterId": "theseus"
+        }
+      ]
+    },
+    {
+      "id": "lynceus",
+      "names": [
+        "Lynceus"
+      ],
+      "relation": "Alternate ravisher of Helen (with Idas)",
+      "blurb": "Paired with Idas in the apologetic version: they stole Helen and committed her to Theseus’s charge.",
+      "links": [
+        {
+          "characterId": "idas"
+        },
+        {
+          "characterId": "helen"
+        },
+        {
+          "characterId": "theseus"
+        }
+      ]
+    },
+    {
+      "id": "tyndarus",
+      "names": [
+        "Tyndarus"
+      ],
+      "relation": "Father of Helen; entrusted her abroad",
+      "blurb": "In one account Helen’s father Tyndarus had sent her away for safekeeping—complicating the Dioscuri’s demand that Theseus restore her.",
+      "links": [
+        {
+          "characterId": "helen"
+        },
+        {
+          "characterId": "dioscuri"
+        },
+        {
+          "characterId": "theseus"
+        }
+      ]
+    },
+    {
+      "id": "peteus",
+      "names": [
+        "Peteus"
+      ],
+      "relation": "Father of Menestheus",
+      "blurb": "Son of Orneus and father of the demagogue Menestheus, who opened Athens to the Dioscuri and later held the throne after Theseus’s fall.",
+      "links": [
+        {
+          "characterId": "orneus"
+        },
+        {
+          "characterId": "menestheus"
+        },
+        {
+          "characterId": "dioscuri"
+        }
+      ]
+    },
+    {
+      "id": "orneus",
+      "names": [
+        "Orneus"
+      ],
+      "relation": "Ancestor of Menestheus",
+      "blurb": "Grandfather of Menestheus in the Erechtheid stem Plutarch records—legitimating the usurper’s pedigree against Theseus.",
+      "links": [
+        {
+          "characterId": "peteus"
+        },
+        {
+          "characterId": "menestheus"
+        }
+      ]
+    },
+    {
+      "id": "phereclus",
+      "names": [
+        "Phereclus"
+      ],
+      "relation": "Pilot of the tribute ship (Simonides)",
+      "blurb": "Son of Amarsyas; Simonides names him steersman of the Cretan voyage, against Philochorus’s story of Scirus’s pilots Nausithous and Phaeax.",
+      "links": [
+        {
+          "characterId": "simonides"
+        },
+        {
+          "characterId": "philochorus"
+        },
+        {
+          "characterId": "scirus"
+        },
+        {
+          "characterId": "nausithous"
+        }
+      ]
     }
   ],
   "locations": [
@@ -1228,6 +1877,22 @@
       "lon": 12.49,
       "presence": "named",
       "blurb": "Plutarch pairs Theseus with Romulus—Athens’s founder-myth set beside Rome’s."
+    }
+  ],
+  "nameResolutions": [
+    {
+      "paraId": "theseus-p062",
+      "start": 521,
+      "end": 529,
+      "characterId": "hippolytus",
+      "note": "Pindar’s name for Hippolytus (same son by Antiope)"
+    },
+    {
+      "paraId": "theseus-p073",
+      "start": 130,
+      "end": 138,
+      "characterId": "demophon",
+      "note": "Attic Demophon; father of Munychus (not the Hippolytus alias)"
     }
   ]
 }
