@@ -1159,6 +1159,413 @@
           "characterId": "olympias"
         }
       ]
+    },
+    {
+      "id": "taxiles",
+      "names": [
+        "Taxiles"
+      ],
+      "relation": "Indian king who submitted peacefully at Taxila",
+      "blurb": "Wise ruler whose dominions rivaled Egypt in size. He told Alexander the only wars worth fighting are over necessities; all else should yield to gifts. He later helped persuade Calanus to follow the march.",
+      "links": [
+        {
+          "characterId": "porus"
+        },
+        {
+          "characterId": "calanus"
+        }
+      ]
+    },
+    {
+      "id": "hermolaus",
+      "names": [
+        "Hermolaus"
+      ],
+      "relation": "Royal page who led the conspiracy against Alexander",
+      "blurb": "Young Macedonian page whose plot was exposed and laid partly at Callisthenes's door. He had asked what act would most distinguish a man and received an answer that steered him toward murder. His accomplices were stoned; Callisthenes shared the disgrace.",
+      "links": [
+        {
+          "characterId": "callisthenes"
+        },
+        {
+          "characterId": "philotas"
+        }
+      ]
+    },
+    {
+      "id": "iolaus",
+      "names": [
+        "Iolaus"
+      ],
+      "relation": "Antipater's son; cupbearer; suspected of poisoning Alexander",
+      "blurb": "Chief cupbearer at Babylon during Alexander's final days, and son of Antipater. Six years after the death, Olympias scattered his ashes as if he had administered the fatal dose—an accusation Plutarch examines but leaves unproven.",
+      "links": [
+        {
+          "characterId": "antipater"
+        },
+        {
+          "characterId": "cassander"
+        },
+        {
+          "characterId": "medius"
+        }
+      ]
+    },
+    {
+      "id": "leonnatus",
+      "names": [
+        "Leonnatus"
+      ],
+      "relation": "Bodyguard who consoled Darius's captive women",
+      "blurb": "Sent after Issus to reassure the captured women of Darius that the king still lived and they had nothing to fear from Alexander. Later reproved for the extravagance of using camels to transport Egyptian wrestling-powder on campaign.",
+      "links": [
+        {
+          "characterId": "darius"
+        },
+        {
+          "characterId": "statira"
+        },
+        {
+          "characterId": "craterus"
+        }
+      ]
+    },
+    {
+      "id": "acuphis",
+      "names": [
+        "Acuphis"
+      ],
+      "relation": "Indian elder who outwitted Alexander's hostage demand",
+      "blurb": "Eldest of an Indian delegation given a cushion by Alexander. When pressed for a hundred of the best citizens as hostages, he replied he would govern more easily by sending the worst—an answer Alexander greeted with laughter and friendship.",
+      "links": [
+        {
+          "characterId": "taxiles"
+        },
+        {
+          "characterId": "porus"
+        }
+      ]
+    },
+    {
+      "id": "androcottus",
+      "names": [
+        "Androcottus"
+      ],
+      "relation": "Future Indian ruler who met the young Alexander",
+      "blurb": "Not long after Alexander's retreat from the Hyphasis, Androcottus (Chandragupta) came to rule those very lands and gave five hundred war-elephants to Seleucus—proof, Plutarch notes, that the reports of India's vast elephant armies were no exaggeration.",
+      "links": [
+        {
+          "characterId": "seleucus"
+        },
+        {
+          "characterId": "porus"
+        }
+      ]
+    },
+    {
+      "id": "chaeron",
+      "names": [
+        "Chaeron"
+      ],
+      "relation": "Philip's envoy sent to the Delphi oracle",
+      "blurb": "Man of Megalopolis dispatched by Philip after the vision of a serpent lying with Olympias. The god commanded sacrifice and special honor to Ammon—and warned Philip he would lose the eye that had peered through a crack in the door.",
+      "links": [
+        {
+          "characterId": "philip"
+        },
+        {
+          "characterId": "olympias"
+        },
+        {
+          "characterId": "ammon"
+        }
+      ]
+    },
+    {
+      "id": "stasicrates",
+      "names": [
+        "Stasicrates"
+      ],
+      "relation": "Visionary architect consulted for Hephaestion's monument",
+      "blurb": "Favored for sheer boldness of design. He had once proposed shaping Mount Athos into a colossal man—left hand holding a city of ten thousand, right hand pouring a river into the sea. Alexander declined then; grief-mad after Hephaestion's death, he sought him for something even grander.",
+      "links": [
+        {
+          "characterId": "hephaestion"
+        },
+        {
+          "characterId": "lysippus"
+        }
+      ]
+    },
+    {
+      "id": "oxyartes-bactrian",
+      "names": [
+        "Oxyartes"
+      ],
+      "relation": "Bactrian chieftain; counselor in the northeastern satrapies",
+      "blurb": "When Alexander's soldiers despaired before Sisimithres's impregnable rock, Oxyartes assured him the defender was the greatest coward alive. Alexander took the place shortly after—a lesson that resolution could reduce what geography made invulnerable.",
+      "links": [
+        {
+          "characterId": "sisimithres"
+        },
+        {
+          "characterId": "roxana"
+        }
+      ]
+    },
+    {
+      "id": "oxyartes-abuletes",
+      "names": [
+        "Oxyartes, one of the sons of Abuletes"
+      ],
+      "relation": "Son of satrap Abuletes; killed by Alexander returning from India",
+      "blurb": "Killed by Alexander's own spear as the king purged commanders who had abused their provinces in his absence. His father Abuletes compounded the failure by bringing coined money instead of proper provisions—the talents were thrown to the horses, who ignored them.",
+      "links": [
+        {
+          "characterId": "abuletes"
+        }
+      ]
+    },
+    {
+      "id": "abuletes",
+      "names": [
+        "Abuletes"
+      ],
+      "relation": "Satrap who substituted coins for provisions",
+      "blurb": "Governor who, when Alexander's army needed food on the Indian return, brought three thousand coined talents instead. Alexander had the money thrown to the horses; they would not touch it. 'What good will this provision do us?' Abuletes was sent to prison; his son was speared.",
+      "links": [
+        {
+          "characterId": "oxyartes-abuletes"
+        },
+        {
+          "characterId": "antipater"
+        }
+      ]
+    },
+    {
+      "id": "philinna",
+      "names": [
+        "Philinna"
+      ],
+      "relation": "Arrhidaeus's obscure mother; victim of Olympias's jealousy",
+      "blurb": "Woman of undistinguished birth who bore Philip's son Arrhidaeus. Olympias reportedly gave the boy drugs that ruined both his health and his intellect, leaving him the pawn Perdiccas used as a figurehead after Alexander's death.",
+      "links": [
+        {
+          "characterId": "arrhidaeus"
+        },
+        {
+          "characterId": "olympias"
+        },
+        {
+          "characterId": "philip"
+        }
+      ]
+    },
+    {
+      "id": "arymbas",
+      "names": [
+        "Arymbas"
+      ],
+      "relation": "Olympias's brother; consented to Philip's marriage",
+      "blurb": "Molossian king and Olympias's brother, who gave his consent to Philip's marriage after their meeting at Samothrace. He is the only person named in Plutarch's opening sentence as the human intermediary in the union that produced Alexander.",
+      "links": [
+        {
+          "characterId": "olympias"
+        },
+        {
+          "characterId": "philip"
+        }
+      ]
+    },
+    {
+      "id": "pindar",
+      "names": [
+        "Pindar"
+      ],
+      "relation": "Theban lyric poet whose descendants were spared at the sack",
+      "blurb": "When Alexander razed Thebes he sold thirty thousand into slavery—but exempted the family of Pindar along with those who had opposed the war. One of the very few gestures of mercy in that destruction.",
+      "links": [
+        {
+          "characterId": "homer"
+        },
+        {
+          "characterId": "aristotle"
+        }
+      ]
+    },
+    {
+      "id": "demosthenes",
+      "names": [
+        "Demosthenes"
+      ],
+      "relation": "Athenian orator who mocked Alexander as a boy",
+      "blurb": "Foremost opponent of Macedon in Athens. He called Alexander a child when the prince was in Illyria and a youth when he was in Thessaly. Alexander resolved to appear before the walls of Athens as a man—a threat made credible by the fall of Thebes.",
+      "links": [
+        {
+          "characterId": "antipater"
+        },
+        {
+          "characterId": "harpalus"
+        }
+      ]
+    },
+    {
+      "id": "python-companion",
+      "names": [
+        "Python"
+      ],
+      "relation": "Companion dispatched to the oracle of Serapis at Babylon",
+      "blurb": "Sent with Seleucus to ask the god of Serapis whether Alexander should be moved to the temple during his final illness. The oracle replied he should not be moved. He was not—and died where he lay.",
+      "links": [
+        {
+          "characterId": "seleucus"
+        },
+        {
+          "characterId": "medius"
+        }
+      ]
+    },
+    {
+      "id": "hegesias",
+      "names": [
+        "Hegesias of Magnesia",
+        "Hegesias"
+      ],
+      "relation": "Historian who linked Alexander's birth to Diana's fire",
+      "blurb": "Writer from Magnesia who declared the temple of Artemis at Ephesus burned on the night of Alexander's birth because the goddess was away assisting at it—a conceit Plutarch dismisses as cold enough to have extinguished the conflagration itself.",
+      "links": [
+        {
+          "characterId": "aristobulus"
+        },
+        {
+          "characterId": "eratosthenes"
+        }
+      ]
+    },
+    {
+      "id": "aristoxenus",
+      "names": [
+        "Aristoxenus"
+      ],
+      "relation": "Music theorist whose Memoirs record Alexander's fragrant body",
+      "blurb": "Aristotle's pupil and writer of Memoirs, cited for his report that Alexander's skin exhaled a remarkable sweet odor—attributed by Theophrastus to the heat of his choleric constitution.",
+      "links": [
+        {
+          "characterId": "aristotle"
+        },
+        {
+          "characterId": "theophrastus"
+        }
+      ]
+    },
+    {
+      "id": "theophrastus",
+      "names": [
+        "Theophrastus"
+      ],
+      "relation": "Philosopher and botanist who explained Alexander's fragrance",
+      "blurb": "Aristotle's successor, invoked to explain why Alexander's body was said to smell of spices: the sweetest odors come from the driest, hottest climates, where the sun exhausts surface moisture before it can putrefy—a by-product of his fiery temperament.",
+      "links": [
+        {
+          "characterId": "aristotle"
+        },
+        {
+          "characterId": "aristoxenus"
+        }
+      ]
+    },
+    {
+      "id": "neoptolemus",
+      "names": [
+        "Neoptolemus"
+      ],
+      "relation": "Aeacid hero; Alexander's ancestor on Olympias's side",
+      "blurb": "Son of Achilles through whom Olympias's Molossian line claimed Aeacid descent. The lineage made Achilles not only Alexander's model but his blood forebear—a claim he honored by laying a wreath on Achilles's tomb at Troy.",
+      "links": [
+        {
+          "characterId": "achilles"
+        },
+        {
+          "characterId": "olympias"
+        }
+      ]
+    },
+    {
+      "id": "glaucus-physician",
+      "names": [
+        "Glaucus"
+      ],
+      "relation": "Hephaestion's physician; crucified for negligence",
+      "blurb": "Doctor attending Hephaestion at Ecbatana who had gone to the theater when his patient—fevered but impatient with the prescribed diet—ate a whole fowl and drank a large draught of wine. Hephaestion died shortly after; Alexander had Glaucus crucified.",
+      "links": [
+        {
+          "characterId": "hephaestion"
+        },
+        {
+          "characterId": "aristander"
+        }
+      ]
+    },
+    {
+      "id": "antigonus-king",
+      "names": [
+        "Antigonus"
+      ],
+      "relation": "Later Successor king; witness to the poisoning rumor",
+      "blurb": "Officer who became one of the great rival kings after Alexander's death. Plutarch records that Hagnothemis heard Antigonus speak of the ice-cold Nonacrian water supposedly used to poison Alexander—a rumor Plutarch takes seriously enough to weigh.",
+      "links": [
+        {
+          "characterId": "cassander"
+        },
+        {
+          "characterId": "seleucus"
+        }
+      ]
+    },
+    {
+      "id": "demetrius-phidon",
+      "names": [
+        "Demetrius, surnamed Phidon"
+      ],
+      "relation": "Companion who blocked Callisthenes from the royal kiss",
+      "blurb": "At the proskynesis banquet, he warned Alexander that Callisthenes alone had failed to make the required adoration and should not receive the royal kiss. The intervention deepened the philosopher's fall and, through Callisthenes, cooled Alexander's regard for Aristotle.",
+      "links": [
+        {
+          "characterId": "callisthenes"
+        },
+        {
+          "characterId": "chares"
+        }
+      ]
+    },
+    {
+      "id": "timoclea",
+      "names": [
+        "Timoclea"
+      ],
+      "relation": "Theban matron who killed her attacker at the sack",
+      "blurb": "When a Thracian officer raped her and demanded hidden treasure, she led him to a garden well and pushed him in, then stoned him to death. She told Alexander her brother Theagenes had fallen at Chaeronea fighting his father Philip. Alexander freed her and her children at once.",
+      "links": [
+        {
+          "characterId": "philip"
+        }
+      ]
+    },
+    {
+      "id": "sophocles",
+      "names": [
+        "Sophocles"
+      ],
+      "relation": "Greek tragedian quoted in the Life",
+      "blurb": "Athenian tragedian whose plays Aristotle sent Alexander on campaign alongside those of Euripides and Aeschylus. Plutarch also quotes him on the need for both 'the bridle and the rudder'—a metaphor for the comprehensive training Aristotle required of the prince.",
+      "links": [
+        {
+          "characterId": "euripides-alex"
+        },
+        {
+          "characterId": "aristotle"
+        }
+      ]
     }
   ],
   "nameResolutions": [
