@@ -79,6 +79,7 @@ If `check` fails, fix it. Do not skip hooks or weaken tests to greenwash.
 | `src/lib/contentProgress.ts` | Word-fraction progress + page restore from anchors |
 | `src/lib/charMatch.ts` | Character/location name longest-match + ambiguous-name resolutions + text segmentation |
 | `src/lib/geoMap.ts` | Equirectangular projection + SVG path helpers for offline location maps |
+| `src/lib/journeyMap.ts` | Location presence (named vs visited) + visit kinds + journey path/bounds helpers |
 | `src/lib/campaignLand.ts` | Simplified Natural Earth land rings (public domain) for campaign maps |
 | `src/lib/textRanges.ts` | Highlight range helpers + compose with char/loc refs |
 | `src/lib/selectionOffsets.ts` | DOM selection → paragraph plain-text offsets |
@@ -139,14 +140,19 @@ public/data/annotations/<workId>.json
   {
     workId, subject,
     characters: [{ id, names[], blurb, relation, links? }],
-    locations?: [{ id, names[], blurb, relation, lat, lon, modern? }],
+    locations?: [{
+      id, names[], blurb, relation, lat, lon, modern?,
+      presence?: "named"|"visited",
+      visitKind?: "city"|"battle"|"crossing"|"oracle"|"camp"|"foundation",
+      visitOrder?: number
+    }],
     nameResolutions?: [{ paraId, start, end, characterId, note? }]
   }
 ```
 
 **Annotated lives (14):** Alcibiades, Alexander, Caesar, Camillus, Coriolanus, Fabius, Lycurgus, Numa Pompilius, Pericles, Poplicola, Romulus, Solon, Themistocles, Theseus. Other works have no cast file yet (reader simply skips highlights).
 
-`names` are surface forms to match in paragraph text and in sheet blurbs (longer first). In character sheets, other cast names inside the blurb are tappable (same-work profile hop + Back). In location sheets, other place names in the blurb hop the same way; an expandable offline SVG map (Natural Earth 110m land silhouette, public domain — no tiles/API keys) pins `lat`/`lon` (and peer dots when widened). Place names in the reader use a dashed underline (not italic) so they read apart from character refs. Optional character `links` are validated by smoke but unused in UI. Missing annotation files → no highlights (safe corpus-wide). Location arrays are optional per work (Alexander ships first).
+`names` are surface forms to match in paragraph text and in sheet blurbs (longer first). In character sheets, other cast names inside the blurb are tappable (same-work profile hop + Back). In location sheets, other place names in the blurb hop the same way; an expandable offline SVG map (Natural Earth 110m land silhouette, public domain — no tiles/API keys) pins `lat`/`lon` (and peer dots when widened). **Presence** tags why a place is highlighted: `named` (default) = mentioned in the narrative; `visited` = the protagonist was there. Visited places need `visitOrder` (chronological) and optional `visitKind` (icon: city gate, crossed swords, waves, oracle flame, tent, foundation star). On the expanded map, visited stops connect as a dashed journey line with those icons; named-only peers stay muted dots. In the reader, named places keep a dashed underline; visited places use a solid underline. Optional character `links` are validated by smoke but unused in UI. Missing annotation files → no highlights (safe corpus-wide). Location arrays are optional per work (**Alexander** and **Caesar** ship journey data first).
 
 When several cast members share a surface form (e.g. multiple Philips), body links are **not** guessed from the name alone. Add optional `nameResolutions`:
 

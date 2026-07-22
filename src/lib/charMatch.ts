@@ -49,6 +49,26 @@ export type LocationAnnotation = {
   lon: number
   /** Optional modern placename shown under the relation line. */
   modern?: string
+  /**
+   * Why this place is tagged:
+   * - `named` (default): mentioned in the narrative
+   * - `visited`: the protagonist was there — joins the expanded-map journey
+   */
+  presence?: 'named' | 'visited'
+  /**
+   * Visit icon when `presence` is `visited`
+   * (`city` | `battle` | `crossing` | `oracle` | `camp` | `foundation`).
+   * Defaults to `city` when omitted.
+   */
+  visitKind?:
+    | 'city'
+    | 'battle'
+    | 'crossing'
+    | 'oracle'
+    | 'camp'
+    | 'foundation'
+  /** Chronological order among visits (required for journey path stops). */
+  visitOrder?: number
 }
 
 export type WorkAnnotations = {

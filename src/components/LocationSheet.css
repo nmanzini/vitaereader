@@ -77,6 +77,14 @@
   line-height: 1.4;
 }
 
+.loc-sheet-presence {
+  margin: 0 0 0.45rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.02em;
+  color: color-mix(in srgb, var(--ink-muted) 85%, var(--accent));
+  line-height: 1.35;
+}
+
 .loc-sheet-subject {
   color: color-mix(in srgb, var(--ink-muted) 80%, transparent);
 }

@@ -6,6 +6,7 @@ import {
   type LocationAnnotation,
   type NameResolution,
 } from '../lib/charMatch'
+import { locationPresence } from '../lib/journeyMap'
 import {
   segmentWithHighlights,
   type EntitySpan,
@@ -109,11 +110,16 @@ function renderSegments(
       }
       return wrapHighlight(btn, seg.highlightIds, key, onHighlight)
     }
+    const loc = locs.find((l) => l.id === seg.locationId)
+    const presence = locationPresence(loc)
     const locBtn = (
       <button
         type="button"
-        className="loc-ref"
+        className={
+          presence === 'visited' ? 'loc-ref loc-ref-visited' : 'loc-ref'
+        }
         data-loc-id={seg.locationId}
+        data-presence={presence}
         aria-label={`Place: ${seg.text}`}
         onClick={(e) => {
           e.stopPropagation()

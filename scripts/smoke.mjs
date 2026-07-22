@@ -172,7 +172,41 @@ function main() {
               `${file}/${l.id}: modern must be non-empty string`,
             )
           }
+          if (l.presence != null) {
+            assert.ok(
+              l.presence === 'named' || l.presence === 'visited',
+              `${file}/${l.id}: presence must be named|visited`,
+            )
+          }
+          if (l.visitKind != null) {
+            assert.ok(
+              ['city', 'battle', 'crossing', 'oracle', 'camp', 'foundation'].includes(
+                l.visitKind,
+              ),
+              `${file}/${l.id}: invalid visitKind`,
+            )
+          }
+          if (l.visitOrder != null) {
+            assert.ok(
+              Number.isInteger(l.visitOrder) && l.visitOrder >= 1,
+              `${file}/${l.id}: visitOrder must be integer >= 1`,
+            )
+          }
+          if (l.presence === 'visited') {
+            assert.ok(
+              Number.isInteger(l.visitOrder) && l.visitOrder >= 1,
+              `${file}/${l.id}: visited places need visitOrder`,
+            )
+          }
         }
+        const visitOrders = ann.locations
+          .filter((l) => l.presence === 'visited')
+          .map((l) => l.visitOrder)
+        assert.equal(
+          new Set(visitOrders).size,
+          visitOrders.length,
+          `${file}: duplicate visitOrder among visited places`,
+        )
       }
     }
   }
