@@ -363,6 +363,159 @@
           "characterId": "fabius-maximus"
         }
       ]
+    },
+    {
+      "id": "camillus",
+      "names": [
+        "Camillus"
+      ],
+      "relation": "Republican hero cited as precedent by Flaminius",
+      "blurb": "Flaminius swore never to repeat Camillus's ordeal of fighting for Rome within its own walls; that vow led him to Trasimene. Camillus had actually saved Rome by such fighting — no mere caution.",
+      "links": [
+        {
+          "characterId": "flaminius"
+        },
+        {
+          "characterId": "fabius-maximus"
+        },
+        {
+          "characterId": "furius",
+          "label": "Camillus's Life",
+          "workId": "camillus"
+        }
+      ]
+    },
+    {
+      "id": "pomponius",
+      "names": [
+        "Pomponius"
+      ],
+      "relation": "Praetor who told Rome of Trasimene",
+      "blurb": "Summoned the assembly after the lake disaster and told them plainly that Flaminius was dead and the army beaten; his candor cleared the way for Fabius's emergency dictatorship.",
+      "links": [
+        {
+          "characterId": "flaminius"
+        },
+        {
+          "characterId": "fabius-maximus"
+        }
+      ]
+    },
+    {
+      "id": "manlius-torquatus",
+      "names": [
+        "Manlius Torquatus"
+      ],
+      "relation": "Father who executed his victorious son",
+      "blurb": "The tribune Metilius invoked his terrible example against Fabius: the Roman general who had his own son beheaded for winning a battle against orders — a warning that Fabius might do the same to Minucius.",
+      "links": [
+        {
+          "characterId": "minucius"
+        },
+        {
+          "characterId": "metilius"
+        }
+      ]
+    },
+    {
+      "id": "marcus-junius",
+      "names": [
+        "Marcus Junius"
+      ],
+      "relation": "Dictator in the field after Cannae",
+      "blurb": "Held the dictatorship with the army in the aftermath of Cannae while Rome, in emergency, appointed Fabius Buteo separately to fill the senate's seats emptied by the slaughter.",
+      "links": [
+        {
+          "characterId": "fabius-buteo"
+        }
+      ]
+    },
+    {
+      "id": "fabius-buteo",
+      "names": [
+        "Fabius Buteo"
+      ],
+      "relation": "Emergency dictator to replenish the senate",
+      "blurb": "Named dictator solely to appoint new senators for those lost at Cannae; once the seats were filled, he at once dismissed his lictors and walked home as a private citizen.",
+      "links": [
+        {
+          "characterId": "marcus-junius"
+        },
+        {
+          "characterId": "fabius-maximus"
+        }
+      ]
+    },
+    {
+      "id": "fabius-rullus",
+      "names": [
+        "Fabius Rullus"
+      ],
+      "relation": "Ancestor who first won the name Maximus",
+      "blurb": "Four generations before our Fabius, the first of the family to earn the honorable surname Maximus; that distinction shaped the house into which the Cunctator was born.",
+      "links": [
+        {
+          "characterId": "fabius-maximus"
+        },
+        {
+          "characterId": "maximus"
+        }
+      ]
+    },
+    {
+      "id": "fabius-pictor",
+      "names": [
+        "Fabius Pictor"
+      ],
+      "relation": "Kinsman sent to consult the Delphic oracle",
+      "blurb": "A close kinsman of Fabius Maximus, dispatched to Delphi after Cannae to ask what rites Rome must perform to regain the gods' favor; also recorded as an early Roman historian.",
+      "links": [
+        {
+          "characterId": "fabius-maximus"
+        }
+      ]
+    },
+    {
+      "id": "epaminondas",
+      "names": [
+        "Epaminondas"
+      ],
+      "relation": "Theban general cited at Fabius's death",
+      "blurb": "Died so poor that Thebes paid his burial; Plutarch closes the Life by contrast — the Roman people each gave a coin for Fabius's funeral, honoring him as a common father.",
+      "links": [
+        {
+          "characterId": "fabius-maximus"
+        }
+      ]
+    },
+    {
+      "id": "barcas",
+      "names": [
+        "Barcas"
+      ],
+      "relation": "Carthaginian officer who rebuked Hannibal",
+      "blurb": "After Cannae, told Hannibal in anger: 'You know how to gain a victory, but not how to use it' — the reproach that shadowed Hannibal's hesitation all the way to Zama.",
+      "links": [
+        {
+          "characterId": "hannibal"
+        }
+      ]
+    },
+    {
+      "id": "diogenes",
+      "names": [
+        "Diogenes"
+      ],
+      "relation": "Philosopher cited on being dishonored",
+      "blurb": "When Fabius bore Minucius's elevation without visible distress, Plutarch likened his calm to Diogenes, who on hearing he was being mocked replied: 'But I am not derided.'",
+      "links": [
+        {
+          "characterId": "minucius"
+        },
+        {
+          "characterId": "fabius-maximus"
+        }
+      ]
     }
   ]
 }

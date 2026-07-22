@@ -351,6 +351,124 @@
           "characterId": "marcius"
         }
       ]
+    },
+    {
+      "id": "tarquin",
+      "names": [
+        "Tarquinius Superbus",
+        "Tarquin the Proud",
+        "Tarquin"
+      ],
+      "relation": "Expelled king; Marcius's first battle",
+      "blurb": "Last king of Rome, driven out before the Republic; Marcius first earned his oaken crown fighting to repel Tarquin's attempt to reclaim the throne.",
+      "links": [
+        {
+          "characterId": "marcius"
+        }
+      ]
+    },
+    {
+      "id": "epaminondas",
+      "names": [
+        "Epaminondas"
+      ],
+      "relation": "Theban general cited on parental joy",
+      "blurb": "Plutarch pairs him with Marcius as a soldier who counted his parents' delight in his victories — at Leuctra, above all — as the highest happiness of his life.",
+      "links": [
+        {
+          "characterId": "volumnia"
+        },
+        {
+          "characterId": "marcius"
+        }
+      ]
+    },
+    {
+      "id": "gelo",
+      "names": [
+        "Gelo"
+      ],
+      "relation": "Tyrant of Syracuse who sent corn",
+      "blurb": "Sent a gift of grain to famine-struck Rome, giving Marcius the pretext to demand the people renounce their tribunes before any cheap distribution.",
+      "links": [
+        {
+          "characterId": "sicinnius"
+        },
+        {
+          "characterId": "marcius"
+        }
+      ]
+    },
+    {
+      "id": "marcus-valerius",
+      "names": [
+        "Marcus Valerius"
+      ],
+      "relation": "Consul who pledged relief to debtors",
+      "blurb": "Made the senate's promise to ease debt-bondage after the Sabine campaign; when the senate forgot its word, the plebs seceded — setting the stage for all the turmoil Marcius inflamed.",
+      "links": [
+        {
+          "characterId": "menenius"
+        },
+        {
+          "characterId": "marcius"
+        }
+      ]
+    },
+    {
+      "id": "ancus-marcius",
+      "names": [
+        "Ancus Marcius"
+      ],
+      "relation": "Royal ancestor of the Marcian house",
+      "blurb": "Grandson of Numa by his daughter and king after Tullus Hostilius; the most celebrated ancestor of the patrician house into which Coriolanus was born.",
+      "links": [
+        {
+          "characterId": "numa-cor"
+        },
+        {
+          "characterId": "marcius"
+        }
+      ]
+    },
+    {
+      "id": "censorinus",
+      "names": [
+        "Censorinus"
+      ],
+      "relation": "Ancestor who limited the censorship",
+      "blurb": "Of the same Marcian family; twice elected censor, he then persuaded the people to pass a law forbidding anyone to hold that office a second time.",
+      "links": [
+        {
+          "characterId": "marcius"
+        }
+      ]
+    },
+    {
+      "id": "cato",
+      "names": [
+        "Cato"
+      ],
+      "relation": "Moralist cited on a soldier's powers",
+      "blurb": "Plutarch invokes his dictum that a great soldier needs not only strength of hand but voice and look that terrify the enemy — a standard Marcius fully met.",
+      "links": [
+        {
+          "characterId": "marcius"
+        }
+      ]
+    },
+    {
+      "id": "aeneas",
+      "names": [
+        "Aeneas"
+      ],
+      "relation": "Founder of Lavinium",
+      "blurb": "Trojan hero who built Lavinium in Italy; its siege by Marcius struck Romans as an assault on the very cradle of their nation and its guardian gods.",
+      "links": [
+        {
+          "characterId": "marcius"
+        }
+      ]
     }
   ]
 }
