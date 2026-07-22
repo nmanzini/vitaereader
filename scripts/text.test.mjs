@@ -673,10 +673,13 @@ describe('journeyMap', () => {
     ])
     const shortSpan = short.east - short.west
     const longSpan = long.east - long.west
-    assert.ok(shortSpan < 20, `short route frame too wide: ${shortSpan}`)
+    // Short path stays tight; long path opens with the route, not a fixed box.
+    assert.ok(shortSpan < 8, `short route frame too wide: ${shortSpan}`)
     assert.ok(longSpan > shortSpan)
-    // Padding grows with route size, but stays a fraction of the span.
-    assert.ok(longSpan < 70, `long route over-padded: ${longSpan}`)
+    assert.ok(longSpan < 62, `long route over-padded: ${longSpan}`)
+    // Lon padding tracks lon span; lat stays thin for an E–W corridor.
+    const longLat = long.north - long.south
+    assert.ok(longLat < 20, `E–W route should not inflate into a square: ${longLat}`)
   })
 
   it('builds journey polylines and padded bounds', () => {

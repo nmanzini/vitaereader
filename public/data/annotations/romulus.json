@@ -655,5 +655,161 @@
         }
       ]
     }
+  ],
+  "locations": [
+    {
+      "id": "alba",
+      "names": [
+        "Alba"
+      ],
+      "relation": "Alba Longa of his birth",
+      "modern": "Castel Gandolfo / Alban Hills",
+      "lat": 41.75,
+      "lon": 12.65,
+      "presence": "visited",
+      "visitKind": "city",
+      "visitOrder": 1,
+      "travel": "land",
+      "blurb": "Royal Alba of Numitor and Amulius—where the twins were born before the basket on the Tiber."
+    },
+    {
+      "id": "tiber",
+      "names": [
+        "Tiber"
+      ],
+      "relation": "River of exposure and return",
+      "modern": "Tiber River, Italy",
+      "lat": 41.9,
+      "lon": 12.48,
+      "presence": "visited",
+      "visitKind": "crossing",
+      "visitOrder": 2,
+      "travel": "land",
+      "blurb": "Set adrift, caught at the flood’s edge by Faustulus—Rome’s river as cradle before the Palatine."
+    },
+    {
+      "id": "palatine",
+      "names": [
+        "Palatine"
+      ],
+      "relation": "Hill of the founding",
+      "modern": "Palatine Hill, Rome",
+      "lat": 41.889,
+      "lon": 12.487,
+      "presence": "visited",
+      "visitKind": "foundation",
+      "visitOrder": 3,
+      "travel": "land",
+      "blurb": "He chose the Palatine for the new city—walls, rites, and the quarrel that killed Remus."
+    },
+    {
+      "id": "rome",
+      "names": [
+        "Rome"
+      ],
+      "relation": "City he founded",
+      "modern": "Rome, Italy",
+      "lat": 41.89,
+      "lon": 12.49,
+      "presence": "visited",
+      "visitKind": "foundation",
+      "visitOrder": 4,
+      "travel": "land",
+      "blurb": "Named for him in the legend—asylum, tribes, and the calendar of a city that outgrew the hill."
+    },
+    {
+      "id": "crustumerium",
+      "names": [
+        "Crustumerium"
+      ],
+      "relation": "Early Latin war",
+      "modern": "north of Rome, Latium",
+      "lat": 42.05,
+      "lon": 12.6,
+      "presence": "visited",
+      "visitKind": "battle",
+      "visitOrder": 5,
+      "travel": "land",
+      "blurb": "Among the first towns he took in the wars that fed Rome’s strength and Sabine entanglement."
+    },
+    {
+      "id": "fidenae",
+      "names": [
+        "Fidenae"
+      ],
+      "relation": "Neighbor town in early wars",
+      "modern": "near Villa Spada / Fidene",
+      "lat": 41.98,
+      "lon": 12.51,
+      "presence": "visited",
+      "visitKind": "battle",
+      "visitOrder": 6,
+      "travel": "land",
+      "blurb": "Fidenae felt the new city’s arms—another step in Romulus’s ring of conquest around the Tiber."
+    },
+    {
+      "id": "capitol",
+      "names": [
+        "Capitol",
+        "Capitoline"
+      ],
+      "relation": "Hill of the asylum and Jupiter",
+      "modern": "Capitoline Hill, Rome",
+      "lat": 41.893,
+      "lon": 12.483,
+      "presence": "visited",
+      "visitKind": "city",
+      "visitOrder": 7,
+      "travel": "land",
+      "blurb": "He opened an asylum on the Capitol—refuge that swelled Rome’s people and its peril."
+    },
+    {
+      "id": "aventine",
+      "names": [
+        "Aventine"
+      ],
+      "relation": "Remus’s augury hill",
+      "modern": "Aventine Hill, Rome",
+      "lat": 41.883,
+      "lon": 12.475,
+      "presence": "named",
+      "blurb": "Remus took the Aventine for his birds—the rival hill in the founding omen."
+    },
+    {
+      "id": "lavinium",
+      "names": [
+        "Lavinium"
+      ],
+      "relation": "Aeneas’s town in the lineage",
+      "modern": "Pratica di Mare area",
+      "lat": 41.66,
+      "lon": 12.48,
+      "presence": "named",
+      "blurb": "City of Aeneas and Lavinia in the ancestry that links Troy’s remnant to Alba and Rome."
+    },
+    {
+      "id": "laurentum",
+      "names": [
+        "Laurentum"
+      ],
+      "relation": "Latin coast of the Aeneas tale",
+      "modern": "Laurentine coast, Latium",
+      "lat": 41.7,
+      "lon": 12.35,
+      "presence": "named",
+      "blurb": "Named with Lavinium in the Latin shore-story behind Romulus’s Alban line."
+    },
+    {
+      "id": "gabii",
+      "names": [
+        "Gabii"
+      ],
+      "relation": "Latin town in early Rome’s orbit",
+      "modern": "near Osteria dell’Osa",
+      "lat": 41.89,
+      "lon": 12.72,
+      "presence": "named",
+      "blurb": "Counted among Latin neighbors as Rome’s power thickened east of the city."
+    }
   ]
 }

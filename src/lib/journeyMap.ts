@@ -208,8 +208,9 @@ export function boundsForPoints(
 }
 
 /**
- * Expanded-map frame sized to the route itself: padding scales with the
- * path’s lon/lat span so short journeys stay tight and long ones breathe.
+ * Expanded-map frame sized to the route itself.
+ * Pads each axis from that axis’s span so the path fills the view
+ * without inflating into a huge empty square.
  */
 export function boundsForRoute(
   points: readonly GeoPoint[],
@@ -230,31 +231,51 @@ export function boundsForRoute(
 
   const lonSpan = Math.max(0, east - west)
   const latSpan = Math.max(0, north - south)
-  const major = Math.max(lonSpan, latSpan)
+  const major = Math.max(lonSpan, latSpan, 0.5)
 
-  // ~16% of route width, clamped — proportional to the path, not a fixed box.
-  const pad = Math.min(10, Math.max(1.2, major * 0.16 + 0.8))
-  // Tiny routes still need a readable window; large routes don’t get inflated.
-  const minSpan = major < 4 ? 6 : Math.min(8, major * 0.25 + 2)
+  // ~12% per axis, clamped — follows the path width/height.
+  const padLon = Math.min(5, Math.max(0.7, lonSpan * 0.12 + 0.5))
+  const padLat = Math.min(5, Math.max(0.7, latSpan * 0.12 + 0.5))
 
-  if (lonSpan < minSpan) {
+  west -= padLon
+  east += padLon
+  south -= padLat
+  north += padLat
+
+  // If one axis is a hairline vs the other, give it a little air (≤35% of major).
+  const minThin = Math.min(4.5, Math.max(2.2, major * 0.35))
+  if (east - west < minThin) {
     const mid = (west + east) / 2
-    west = mid - minSpan / 2
-    east = mid + minSpan / 2
+    west = mid - minThin / 2
+    east = mid + minThin / 2
   }
-  if (latSpan < minSpan) {
+  if (north - south < minThin) {
     const mid = (south + north) / 2
-    south = mid - minSpan / 2
-    north = mid + minSpan / 2
+    south = mid - minThin / 2
+    north = mid + minThin / 2
   }
 
-  west = Math.max(-180, west - pad)
-  east = Math.min(180, east + pad)
-  south = Math.max(-90, south - pad)
-  north = Math.min(90, north + pad)
+  west = Math.max(-180, west)
+  east = Math.min(180, east)
+  south = Math.max(-90, south)
+  north = Math.min(90, north)
 
   if (east <= west || north <= south) return { ...fallback }
   return { west, east, south, north }
+}
+
+/** True when a point lies inside bounds (optional slack in degrees). */
+export function pointInBounds(
+  point: GeoPoint,
+  bounds: MapBounds,
+  slack = 0,
+): boolean {
+  return (
+    point.lon >= bounds.west - slack &&
+    point.lon <= bounds.east + slack &&
+    point.lat >= bounds.south - slack &&
+    point.lat <= bounds.north + slack
+  )
 }
 
 /**
