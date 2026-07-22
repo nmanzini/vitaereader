@@ -36,6 +36,7 @@ import {
   measureContentRatio,
   pageIndexForContentRatio,
   ratioFromAnchor,
+  ratioFromParagraphOffset,
 } from '../lib/contentProgress'
 import {
   clearWindowSelection,
@@ -214,11 +215,31 @@ export function Reader() {
         const saved = clampRatio(loadProgress()[slug] ?? 0)
         const wi = buildWordIndex(w.paragraphs)
         let start = saved
+        const linkRanges = rangeToken
+          ? decodeSelectionRanges(rangeToken)
+          : null
         const resumePara =
-          deepPara ?? fromLink?.[0]?.paraId ?? null
+          deepPara ?? linkRanges?.[0]?.paraId ?? fromLink?.[0]?.paraId ?? null
         if (resumePara) {
           const paraIndex = wi.ids.indexOf(resumePara)
-          if (paraIndex >= 0) start = ratioFromAnchor(paraIndex, 0, wi)
+          if (paraIndex >= 0) {
+            // Prefer highlight/selection offset so long paragraphs don’t
+            // open on the page before the marked span.
+            const focus =
+              linkRanges?.find((r) => r.paraId === resumePara) ??
+              linkRanges?.[0] ??
+              null
+            const paraLen = w.paragraphs[paraIndex]?.text.length ?? 0
+            start =
+              focus && focus.paraId === resumePara
+                ? ratioFromParagraphOffset(
+                    paraIndex,
+                    focus.start,
+                    paraLen,
+                    wi,
+                  )
+                : ratioFromAnchor(paraIndex, 0, wi)
+          }
         }
         setProgress(start)
         setResumeAt(start)
