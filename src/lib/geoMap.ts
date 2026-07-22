@@ -1,7 +1,7 @@
 /**
  * Tiny equirectangular projection for offline location maps.
  * Pure math — no tiles, no DOM. Land outlines come from campaignLand.ts
- * (Natural Earth 110m, public domain).
+ * (Natural Earth 10m, public domain).
  */
 
 export type GeoPoint = {
