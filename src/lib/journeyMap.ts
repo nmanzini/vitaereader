@@ -81,6 +81,18 @@ export function journeyStops(
   return stops
 }
 
+/**
+ * Journey progress through a story beat: stops with order ≤ throughOrder.
+ * Empty when throughOrder is missing (e.g. named-only place).
+ */
+export function journeyThrough(
+  stops: readonly JourneyStop[],
+  throughOrder: number | null | undefined,
+): JourneyStop[] {
+  if (throughOrder == null || !Number.isFinite(throughOrder)) return []
+  return stops.filter((s) => s.order <= throughOrder)
+}
+
 /** SVG path `d` through projected points (open polyline). */
 export function journeyPathD(
   points: readonly { x: number; y: number }[],

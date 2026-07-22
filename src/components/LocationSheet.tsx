@@ -7,6 +7,7 @@ import {
   boundsAroundPoint,
   boundsForPoints,
   journeyStops,
+  journeyThrough,
   locationPresence,
   visitKindOf,
 } from '../lib/journeyMap'
@@ -65,6 +66,10 @@ export function LocationSheet({
   const others = locations.filter((l) => l.id !== current.id)
   const blurbSegments = segmentAnnotationText(current.blurb, [], others)
   const stops = journeyStops(locations)
+  const progressStops = journeyThrough(
+    stops,
+    presence === 'visited' ? current.visitOrder : null,
+  )
   const peerMarkers = locations.map((l) => ({
     id: l.id,
     lat: l.lat,
@@ -74,7 +79,7 @@ export function LocationSheet({
     visitKind: visitKindOf(l),
     visitOrder: l.visitOrder,
   }))
-  const journeyMarkers = stops.map((s) => ({
+  const journeyMarkers = progressStops.map((s) => ({
     id: s.id,
     lat: s.lat,
     lon: s.lon,
@@ -83,16 +88,26 @@ export function LocationSheet({
     visitKind: s.kind,
     visitOrder: s.order,
   }))
-  // Collapsed: zoom in on this place. Expanded: zoom out over the whole cast of places.
+  // Expanded peers: named mentions + stops already reached (hide future visits).
+  const peerForMap = peerMarkers.filter((m) => {
+    if (m.presence !== 'visited') return true
+    if (presence !== 'visited' || current.visitOrder == null) return false
+    return (m.visitOrder ?? Infinity) <= current.visitOrder
+  })
+  // Collapsed: zoom in on this place.
+  // Expanded: frame the journey so far (fallback to all places if none).
   const focusBounds = boundsAroundPoint(
     { lat: current.lat, lon: current.lon },
     5,
   )
   const overviewBounds = boundsForPoints(
-    locations.map((l) => ({ lat: l.lat, lon: l.lon })),
-    7,
+    (progressStops.length >= 2 ? progressStops : locations).map((l) => ({
+      lat: l.lat,
+      lon: l.lon,
+    })),
+    6,
     undefined,
-    14,
+    12,
   )
 
   function openLocation(locationId: string) {
@@ -126,7 +141,7 @@ export function LocationSheet({
   return (
     <div className="loc-sheet-backdrop" onClick={onClose}>
       <div
-        className="loc-sheet"
+        className={mapOpen ? 'loc-sheet loc-sheet-map-open' : 'loc-sheet'}
         role="dialog"
         aria-modal="true"
         aria-labelledby={titleId}
@@ -186,9 +201,11 @@ export function LocationSheet({
           >
             {mapOpen
               ? 'Collapse map'
-              : stops.length >= 2
-                ? 'Expand map · journey'
-                : 'Expand map'}
+              : progressStops.length >= 2
+                ? 'Expand map · journey so far'
+                : stops.length >= 2
+                  ? 'Expand map · journey'
+                  : 'Expand map'}
           </button>
           {mapOpen ? (
             <LocationMap
@@ -199,13 +216,13 @@ export function LocationSheet({
                 presence,
                 visitKind: visitKindOf(current),
               }}
-              others={peerMarkers}
+              others={peerForMap}
               journey={journeyMarkers}
               expanded
               bounds={overviewBounds}
               label={
-                stops.length >= 2
-                  ? `Map showing ${name} and ${subject}'s journey`
+                progressStops.length >= 2
+                  ? `Map showing ${subject}'s journey through ${name}`
                   : `Map showing ${name}`
               }
             />

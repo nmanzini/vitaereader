@@ -6,6 +6,10 @@
   border: 1px solid color-mix(in srgb, var(--ink) 10%, transparent);
 }
 
+.loc-map-expanded {
+  min-height: 14rem;
+}
+
 .loc-map-sea {
   fill: color-mix(in srgb, var(--accent) 10%, var(--bg));
 }

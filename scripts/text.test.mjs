@@ -52,6 +52,7 @@ import {
   isVisitKind,
   journeyPathD,
   journeyStops,
+  journeyThrough,
   locationPresence,
   visitKindOf,
 } from '../src/lib/journeyMap.ts'
@@ -634,6 +635,15 @@ describe('journeyMap', () => {
     )
     assert.equal(stops[0].kind, 'city')
     assert.equal(stops[1].kind, 'battle')
+    assert.deepEqual(
+      journeyThrough(stops, 1).map((s) => s.id),
+      ['a'],
+    )
+    assert.deepEqual(
+      journeyThrough(stops, 2).map((s) => s.id),
+      ['a', 'b'],
+    )
+    assert.deepEqual(journeyThrough(stops, null), [])
   })
 
   it('builds journey polylines and padded bounds', () => {

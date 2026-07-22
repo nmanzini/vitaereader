@@ -111,8 +111,8 @@ export function LocationMap({
 }: Props) {
   const { w, h } = mapViewSize(
     bounds,
-    320,
-    expanded ? 210 : 130,
+    expanded ? 380 : 320,
+    expanded ? 280 : 130,
   )
   const pin = projectEquirectangular(focus, bounds, w, h)
   const landPaths = CAMPAIGN_LAND_RINGS.map((ring, i) => ({

@@ -22,6 +22,11 @@
   box-shadow: 0 -4px 24px color-mix(in srgb, var(--ink) 8%, transparent);
 }
 
+.loc-sheet-map-open {
+  width: min(100%, 28rem);
+  max-height: min(92dvh, 44rem);
+}
+
 @media (min-width: 640px) {
   .loc-sheet-backdrop {
     align-items: center;
