@@ -618,6 +618,458 @@
           "characterId": "jupiter"
         }
       ]
+    },
+    {
+      "id": "clodius",
+      "names": [
+        "Clodius"
+      ],
+      "relation": "Annalist who questioned Rome's early records",
+      "blurb": "Wrote Strictures on Chronology, arguing that Rome's ancient registers were destroyed in the Gallic sack and that the extant ones were forgeries designed to flatter noble families—making all early chronology of Numa suspect.",
+      "links": [
+        {
+          "characterId": "gauls"
+        }
+      ]
+    },
+    {
+      "id": "hippias-elis",
+      "names": [
+        "Hippias the Elean",
+        "Hippias"
+      ],
+      "relation": "Published the Olympic victor lists used for dating",
+      "blurb": "Hippias of Elis, sophist and polymath, who at a late date compiled the first systematic list of Olympic victors—the tool chronologers used to date Lycurgus and Numa, though Plutarch notes it rests on no firm authority.",
+      "links": [
+        {
+          "characterId": "pythagoras"
+        }
+      ]
+    },
+    {
+      "id": "pomponius",
+      "names": [
+        "Pomponius"
+      ],
+      "relation": "Numa's father",
+      "blurb": "Illustrious Sabine of Cures described simply as 'an illustrious person'; Numa was the youngest of his four sons, born—so the tradition insisted—on the very day Rome was founded.",
+      "links": [
+        {
+          "characterId": "numa"
+        }
+      ]
+    },
+    {
+      "id": "minos",
+      "names": [
+        "Minos"
+      ],
+      "relation": "Cretan king-lawgiver who claimed divine guidance",
+      "blurb": "Legendary king of Crete who received his laws from Zeus; cited alongside Zaleucus, Zoroaster, Lycurgus, and Numa as rulers who invoked divine authority to make new institutions acceptable to their peoples.",
+      "links": [
+        {
+          "characterId": "zaleucus"
+        },
+        {
+          "characterId": "zoroaster"
+        }
+      ]
+    },
+    {
+      "id": "zaleucus",
+      "names": [
+        "Zaleucus"
+      ],
+      "relation": "Locrian lawgiver who used divine authority",
+      "blurb": "Lawgiver of the Western Locrians who claimed the goddess Athena had dictated his code—cited by Plutarch alongside Minos, Zoroaster, and Lycurgus as examples of legislators who found divine sanction expedient.",
+      "links": [
+        {
+          "characterId": "minos"
+        },
+        {
+          "characterId": "zoroaster"
+        }
+      ]
+    },
+    {
+      "id": "zoroaster",
+      "names": [
+        "Zoroaster"
+      ],
+      "relation": "Persian sage-lawgiver cited as parallel to Numa",
+      "blurb": "Founder of Zoroastrianism cited by Plutarch among the great lawgivers—Minos, Zaleucus, Lycurgus, Numa—who claimed divine inspiration to give their innovations the force of heaven-sent authority.",
+      "links": [
+        {
+          "characterId": "minos"
+        },
+        {
+          "characterId": "zaleucus"
+        }
+      ]
+    },
+    {
+      "id": "piso",
+      "names": [
+        "Piso",
+        "Piso Frugi"
+      ],
+      "relation": "Roman annalist; source on Numa's death",
+      "blurb": "Lucius Calpurnius Piso Frugi, early Roman annalist; Plutarch cites him specifically for the fact that Numa died not of any sudden disease but of a peaceful old age with a gradual decline.",
+      "links": [
+        {
+          "characterId": "numa"
+        }
+      ]
+    },
+    {
+      "id": "pompo",
+      "names": [
+        "Pompo"
+      ],
+      "relation": "Numa's son; eponym of the Pomponii",
+      "blurb": "One of the four sons attributed to Numa in the fuller tradition; from him descended the noble family of the Pomponii—a genealogy some ancient writers suspected of being invented to flatter that house.",
+      "links": [
+        {
+          "characterId": "pinus"
+        },
+        {
+          "characterId": "calpus"
+        },
+        {
+          "characterId": "mamercus"
+        }
+      ]
+    },
+    {
+      "id": "pinus",
+      "names": [
+        "Pinus"
+      ],
+      "relation": "Numa's son; eponym of the Pinarii",
+      "blurb": "One of the four sons in the extended tradition; from him descended the ancient patrician Pinarii—a family whose descent from Numa, like the others, was questioned by skeptical historians.",
+      "links": [
+        {
+          "characterId": "pompo"
+        },
+        {
+          "characterId": "calpus"
+        },
+        {
+          "characterId": "mamercus"
+        }
+      ]
+    },
+    {
+      "id": "calpus",
+      "names": [
+        "Calpus"
+      ],
+      "relation": "Numa's son; eponym of the Calpurnii",
+      "blurb": "One of the four sons named in the fuller genealogy; ancestor of the Calpurnii—another noble house that traced its dignity back to the philosopher-king's line.",
+      "links": [
+        {
+          "characterId": "pompo"
+        },
+        {
+          "characterId": "pinus"
+        },
+        {
+          "characterId": "mamercus"
+        }
+      ]
+    },
+    {
+      "id": "lucretia-numa",
+      "names": [
+        "Lucretia"
+      ],
+      "relation": "Alternative second wife of Numa",
+      "blurb": "Named in one tradition as another wife whom Numa married after becoming king—the source of Pompilia according to writers who doubted she was Tatia's daughter. Distinct from the more famous Lucretia of the Tarquin tale.",
+      "links": [
+        {
+          "characterId": "tatia"
+        },
+        {
+          "characterId": "pompilia"
+        }
+      ]
+    },
+    {
+      "id": "domitian",
+      "names": [
+        "Domitian"
+      ],
+      "relation": "Emperor who renamed two months",
+      "blurb": "Emperor who, imitating Julius Caesar and Augustus, renamed September and October 'Germanicus' and 'Domitianus'; on his assassination both months reverted—mentioned when Plutarch traces how Numa's original calendar was overlaid by later names.",
+      "links": [
+        {
+          "characterId": "augustus"
+        }
+      ]
+    },
+    {
+      "id": "atilius",
+      "names": [
+        "Marcus Atilius",
+        "Atilius"
+      ],
+      "relation": "Consul when Janus's gates were shut in peace",
+      "blurb": "Consul (with Titus Manlius) in one of the vanishingly rare years when the gates of Janus's temple were closed, signifying universal peace—cited to show how unusual Numa's forty-three years of peace really were.",
+      "links": [
+        {
+          "characterId": "manlius"
+        },
+        {
+          "characterId": "janus"
+        }
+      ]
+    },
+    {
+      "id": "manlius",
+      "names": [
+        "Titus Manlius",
+        "Manlius"
+      ],
+      "relation": "Co-consul with Atilius when Janus closed",
+      "blurb": "Consul alongside Marcus Atilius in the one pre-Augustan year when the gates of Janus were shut in peacetime—the unique historical moment Plutarch names to measure how extraordinary Numa's unbroken peace of forty-three years truly was.",
+      "links": [
+        {
+          "characterId": "atilius"
+        },
+        {
+          "characterId": "janus"
+        }
+      ]
+    },
+    {
+      "id": "petilius",
+      "names": [
+        "Petilius"
+      ],
+      "relation": "Praetor who ordered Numa's books burnt",
+      "blurb": "Roman praetor who, when Numa's buried books were unearthed centuries later, read them and swore before the senate that their contents were unfit to be made public—the volumes were then carried to the Comitium and burned.",
+      "links": [
+        {
+          "characterId": "cornelius-numa"
+        },
+        {
+          "characterId": "baebius"
+        }
+      ]
+    },
+    {
+      "id": "cornelius-numa",
+      "names": [
+        "Cornelius"
+      ],
+      "relation": "Consul when Numa's buried books were found",
+      "blurb": "P. Cornelius, one of the two consuls in office when heavy rains washed away the hillside at the Janiculum and exposed the stone chests containing Numa's body and books—the strange antiquarian episode reported by Valerius Antias.",
+      "links": [
+        {
+          "characterId": "baebius"
+        },
+        {
+          "characterId": "petilius"
+        }
+      ]
+    },
+    {
+      "id": "baebius",
+      "names": [
+        "Baebius"
+      ],
+      "relation": "Consul alongside Cornelius when books emerged",
+      "blurb": "M. Baebius, the other consul present when the torrential rains of their year uncovered Numa's buried coffins—one found empty of any body, the other full of the sacred books that Petilius then ordered destroyed.",
+      "links": [
+        {
+          "characterId": "cornelius-numa"
+        },
+        {
+          "characterId": "petilius"
+        }
+      ]
+    },
+    {
+      "id": "antony",
+      "names": [
+        "Antony"
+      ],
+      "relation": "Defeated by Augustus, enabling a rare peace",
+      "blurb": "Mark Antony, the triumvir whose defeat by Augustus brought such complete peace that the gates of Janus could be shut for the first time since Numa—one of only two such closures in all Roman history before Augustus.",
+      "links": [
+        {
+          "characterId": "augustus"
+        }
+      ]
+    },
+    {
+      "id": "pompey",
+      "names": [
+        "Pompey"
+      ],
+      "relation": "Caesar's defeated rival; his defeat renamed July",
+      "blurb": "Roman general whose defeat by Julius Caesar led to the renaming of the month Quintilis as July in Caesar's honor—the first of the month-name changes that Plutarch reviews when tracing what Numa's original calendar became.",
+      "links": [
+        {
+          "characterId": "augustus"
+        }
+      ]
+    },
+    {
+      "id": "timon-phliasian",
+      "names": [
+        "Timon the Phliasian",
+        "Timon"
+      ],
+      "relation": "Sceptical philosopher; wrote on Pythagoras",
+      "blurb": "Phliasian philosopher and sceptic who composed a satirical distich mocking Pythagoras for his miraculous pretensions; Plutarch cites it when listing the divine-intimacy claims surrounding Pythagoras that later writers attached to Numa.",
+      "links": [
+        {
+          "characterId": "pythagoras"
+        }
+      ]
+    },
+    {
+      "id": "archilochus",
+      "names": [
+        "Archilochus"
+      ],
+      "relation": "Iambic poet honored by the gods after death",
+      "blurb": "Paros-born archaic poet; Plutarch cites the tradition that the Muses honored Hesiod and Archilochus after their deaths to argue that if gods visit poets in sport, they might well guide lawgivers in earnest.",
+      "links": [
+        {
+          "characterId": "hesiod-numa"
+        }
+      ]
+    },
+    {
+      "id": "hesiod-numa",
+      "names": [
+        "Hesiod"
+      ],
+      "relation": "Archaic poet honored by the gods; parallel to Numa",
+      "blurb": "Boeotian poet of Works and Days; the tradition that the gods rendered him honor after death is cited by Plutarch to support the plausibility of Numa's divine conversations with Egeria.",
+      "links": [
+        {
+          "characterId": "archilochus"
+        },
+        {
+          "characterId": "egeria"
+        }
+      ]
+    },
+    {
+      "id": "pindar-numa",
+      "names": [
+        "Pindar"
+      ],
+      "relation": "Lyric poet beloved of Pan; parallel to Numa",
+      "blurb": "Theban lyric poet; Pan is reported to have fallen in love with Pindar for his verses—a story Plutarch uses to show that divine attachment to human beings of genius was not implausible and so to support the Egeria tradition.",
+      "links": [
+        {
+          "characterId": "egeria"
+        }
+      ]
+    },
+    {
+      "id": "bacchylides",
+      "names": [
+        "Bacchylides"
+      ],
+      "relation": "Lyric poet quoted on tolerance of disagreement",
+      "blurb": "Cean lyric poet; quoted for the phrase 'the road is broad'—used by Plutarch to say there is room for differing opinions about whether gods truly visited lawgivers like Lycurgus and Numa.",
+      "links": [
+        {
+          "characterId": "lycurgus-cross"
+        }
+      ]
+    },
+    {
+      "id": "epicharmus",
+      "names": [
+        "Epicharmus"
+      ],
+      "relation": "Comic writer who recorded Pythagoras as Roman citizen",
+      "blurb": "Sicilian comic playwright and Pythagorean; in a book dedicated to Antenor he recorded that Pythagoras had been made a Roman citizen—one of the external proofs Plutarch marshals for a connection between Pythagoras and Numa.",
+      "links": [
+        {
+          "characterId": "antenor"
+        },
+        {
+          "characterId": "pythagoras"
+        }
+      ]
+    },
+    {
+      "id": "antenor",
+      "names": [
+        "Antenor"
+      ],
+      "relation": "Dedicatee of Epicharmus's book on Pythagoras",
+      "blurb": "The person to whom Epicharmus dedicated his work recording Pythagoras's honorary Roman citizenship—otherwise unknown, but his name survives as the dedicatee that preserves a key piece of Pythagorean–Roman tradition.",
+      "links": [
+        {
+          "characterId": "epicharmus"
+        }
+      ]
+    },
+    {
+      "id": "aristion",
+      "names": [
+        "Aristion"
+      ],
+      "relation": "Athenian tyrant under whom the sacred fire went out",
+      "blurb": "Athenian who briefly held tyrannical power; during his tenure the perpetual holy lamp at Athens was extinguished—one of three occasions Plutarch lists where such fires died and had to be rekindled from the sun.",
+      "links": [
+        {
+          "characterId": "vesta"
+        }
+      ]
+    },
+    {
+      "id": "spurius-vettius",
+      "names": [
+        "Spurius Vettius"
+      ],
+      "relation": "Interrex who presided over Numa's election",
+      "blurb": "The Roman senator who happened to hold the interregnum at the moment the combined senate voted; he put the choice to a formal vote by which all declared Numa king—the procedural figure at Numa's accession.",
+      "links": [
+        {
+          "characterId": "numa"
+        },
+        {
+          "characterId": "velesus"
+        },
+        {
+          "characterId": "proculus"
+        }
+      ]
+    },
+    {
+      "id": "sophocles-numa",
+      "names": [
+        "Sophocles"
+      ],
+      "relation": "Tragic poet with whom Aesculapius sojourned",
+      "blurb": "Athenian tragedian; the tradition that the god Aesculapius actually lodged with Sophocles during his lifetime (with proofs still visible in Plutarch's day) is cited as precedent for Numa's divine visitation by Egeria.",
+      "links": [
+        {
+          "characterId": "egeria"
+        }
+      ]
+    },
+    {
+      "id": "alcibiades-numa",
+      "names": [
+        "Alcibiades"
+      ],
+      "relation": "One of two Greeks immortalized in bronze at Rome",
+      "blurb": "Athenian statesman; Plutarch recalls hearing that when an oracle told the Romans to erect statues to the wisest and most valiant Greek, they chose Pythagoras for wisdom and Alcibiades for valor—a tradition linking Numa's Pythagorean city to Greek ideals.",
+      "links": [
+        {
+          "characterId": "pythagoras"
+        }
+      ]
     }
   ]
 }

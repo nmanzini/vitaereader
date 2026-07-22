@@ -348,7 +348,9 @@
       "id": "abrotonon",
       "names": [
         "Abrotonon",
-        "Habrotonon"
+        "Habrotonon",
+        "Euterpe",
+        "Euterpe of Halicarnassus"
       ],
       "relation": "Possible mother; Thracian woman",
       "blurb": "One tradition named a Thracian woman called Abrotonon (or Euterpe of Halicarnassus in another) as Themistocles's mother—his obscure birth part of what drove his ferocious ambition.",
@@ -563,6 +565,810 @@
           "characterId": "aristides"
         }
       ]
+    },
+    {
+      "id": "stesilaus",
+      "names": [
+        "Stesilaus"
+      ],
+      "relation": "Beautiful youth both Aristides and Themistocles loved",
+      "blurb": "Stesilaus of Ceos, whose beauty inflamed both Themistocles and Aristides in youth; Ariston the philosopher cites this shared passion as the boyhood origin of their lifelong rivalry.",
+      "links": [
+        {
+          "characterId": "aristides"
+        },
+        {
+          "characterId": "ariston-phil"
+        }
+      ]
+    },
+    {
+      "id": "ariston-phil",
+      "names": [
+        "Ariston"
+      ],
+      "relation": "Philosopher who reported their rivalry's origin",
+      "blurb": "Philosopher cited by Plutarch as the source for the story that Themistocles's and Aristides's enmity began over the beautiful Stesilaus of Ceos.",
+      "links": [
+        {
+          "characterId": "stesilaus"
+        },
+        {
+          "characterId": "aristides"
+        }
+      ]
+    },
+    {
+      "id": "diphilides",
+      "names": [
+        "Diphilides"
+      ],
+      "relation": "Horse-breeder Themistocles threatened",
+      "blurb": "Refused Themistocles a colt; was told he would have a wooden horse in his house—meaning a lawsuit among his kin—if he did not comply. A minor story showing Themistocles's combative nature."
+    },
+    {
+      "id": "epicles",
+      "names": [
+        "Epicles"
+      ],
+      "relation": "Lute-player Themistocles courted for fame",
+      "blurb": "Epicles of Hermione, a celebrated lute-player, was courted by the young Themistocles to practice at his house—his earliest stratagem for making himself the talk of the city.",
+      "links": [
+        {
+          "characterId": "simonides"
+        }
+      ]
+    },
+    {
+      "id": "adimantus-archon",
+      "names": [
+        "Adimantus"
+      ],
+      "relation": "Archon when Themistocles sponsored the prize play",
+      "blurb": "Named on the tablet Themistocles erected to record the dramatic prize: 'Themistocles was at the charge of it; Phrynichus made it; Adimantus was archon'—a permanent monument of his ambition.",
+      "links": [
+        {
+          "characterId": "phrynichus-trag"
+        }
+      ]
+    },
+    {
+      "id": "phrynichus-trag",
+      "names": [
+        "Phrynichus"
+      ],
+      "relation": "Tragic dramatist whose play Themistocles sponsored",
+      "blurb": "Early Athenian tragic playwright; Themistocles paid for his prize-winning production and had the fact inscribed on a public tablet—his first bid for cultural as well as political fame.",
+      "links": [
+        {
+          "characterId": "adimantus-archon"
+        }
+      ]
+    },
+    {
+      "id": "leonidas",
+      "names": [
+        "Leonidas"
+      ],
+      "relation": "Spartan king killed at Thermopylae",
+      "blurb": "Fell holding the pass at Thermopylae; news of his death reached Artemisium and prompted the Greek fleet's withdrawal—the moment Themistocles turned the retreat into strategy.",
+      "links": [
+        {
+          "characterId": "xerxes"
+        },
+        {
+          "characterId": "eurybiades"
+        }
+      ]
+    },
+    {
+      "id": "nicagoras",
+      "names": [
+        "Nicagoras"
+      ],
+      "relation": "Troezenian who proposed sheltering Athenian refugees",
+      "blurb": "Proposed the Troezenian decree that housed and fed Athenian families—two obols a day per person, free schooling for children—when Themistocles ordered the evacuation of Athens.",
+      "links": [
+        {
+          "characterId": "aristides"
+        }
+      ]
+    },
+    {
+      "id": "chileus",
+      "names": [
+        "Chileus"
+      ],
+      "relation": "Arcadian leader who helped unite the Greeks",
+      "blurb": "Arcadian of great assistance to Themistocles in composing Greek civil quarrels before the war with Persia—one of the quiet diplomatic achievements Plutarch credits to Themistocles's energy.",
+      "links": [
+        {
+          "characterId": "eurybiades"
+        }
+      ]
+    },
+    {
+      "id": "arthmius",
+      "names": [
+        "Arthmius"
+      ],
+      "relation": "Of Zelea; degraded for bringing Persian gold",
+      "blurb": "Arthmius of Zelea came carrying Persian money to corrupt Greek resistance; Themistocles had him formally disfranchised with all his descendants—a striking act of pre-war deterrence.",
+      "links": [
+        {
+          "characterId": "xerxes"
+        }
+      ]
+    },
+    {
+      "id": "pelagon",
+      "names": [
+        "Pelagon"
+      ],
+      "relation": "Euboean envoy who bribed Eurybiades through Themistocles",
+      "blurb": "Sent secretly by the Euboeans with money to persuade Themistocles—and through him Eurybiades—to keep the Greek fleet at Artemisium and not abandon Euboea to Persia.",
+      "links": [
+        {
+          "characterId": "eurybiades"
+        },
+        {
+          "characterId": "architeles"
+        }
+      ]
+    },
+    {
+      "id": "leutychidas",
+      "names": [
+        "Leutychidas"
+      ],
+      "relation": "Spartan king named in Timocreon's poem",
+      "blurb": "Leotychidas II of Sparta; praised alongside Pausanias and Xanthippus in the bitter poem Timocreon wrote against Themistocles for failing to restore him to his native Rhodes.",
+      "links": [
+        {
+          "characterId": "timocreon"
+        },
+        {
+          "characterId": "pausanias"
+        }
+      ]
+    },
+    {
+      "id": "leobotes",
+      "names": [
+        "Leobotes"
+      ],
+      "relation": "Athenian who indicted Themistocles for treason",
+      "blurb": "Son of Alcmaeon of Agraule; filed the indictment of treason against Themistocles in Athens while the Spartans simultaneously pressed the charge—the alliance of enemies that drove him to flight.",
+      "links": [
+        {
+          "characterId": "pausanias"
+        }
+      ]
+    },
+    {
+      "id": "epicrates",
+      "names": [
+        "Epicrates"
+      ],
+      "relation": "Of Acharnae; saved Themistocles's family, then executed",
+      "blurb": "Secretly sent Themistocles's wife and children out of Athens to Admetus; Cimon afterward put him to death for it—proof that Athenian gratitude to its greatest general had curdled into persecution.",
+      "links": [
+        {
+          "characterId": "admetus"
+        },
+        {
+          "characterId": "cimon"
+        }
+      ]
+    },
+    {
+      "id": "phthia",
+      "names": [
+        "Phthia"
+      ],
+      "relation": "Wife of Admetus; guided Themistocles's supplication",
+      "blurb": "Queen of the Molossians who, some say, told Themistocles to take the king's child in his arms and lie at the hearth—the only form of supplication the Molossians would not refuse.",
+      "links": [
+        {
+          "characterId": "admetus"
+        }
+      ]
+    },
+    {
+      "id": "pindar",
+      "names": [
+        "Pindar"
+      ],
+      "relation": "Poet who praised the fight at Artemisium",
+      "blurb": "Plutarch quotes his verse—'There the sons of Athens set / the stone that freedom stands on yet'—as the most apt praise for the engagement that gave the Greeks confidence to fight at Salamis.",
+      "links": [
+        {
+          "characterId": "eurybiades"
+        }
+      ]
+    },
+    {
+      "id": "ergoteles",
+      "names": [
+        "Ergoteles"
+      ],
+      "relation": "Bounty-hunter who watched for Themistocles at Cyme",
+      "blurb": "Named alongside Pythodorus among those stationed along the coast to capture Themistocles, with the Persian king's two-hundred-talent reward making the hunt well worth running.",
+      "links": [
+        {
+          "characterId": "pythodorus-them"
+        },
+        {
+          "characterId": "nicogenes"
+        }
+      ]
+    },
+    {
+      "id": "pythodorus-them",
+      "names": [
+        "Pythodorus"
+      ],
+      "relation": "Bounty-hunter at Cyme alongside Ergoteles",
+      "blurb": "Staked out the coast with Ergoteles to catch Themistocles; the fugitive fled to Nicogenes's house at Aegae to hide while the two men combed the shore.",
+      "links": [
+        {
+          "characterId": "ergoteles"
+        },
+        {
+          "characterId": "nicogenes"
+        }
+      ]
+    },
+    {
+      "id": "olbius",
+      "names": [
+        "Olbius"
+      ],
+      "relation": "Attendant who prophesied in Nicogenes's household",
+      "blurb": "Child-attendant in Nicogenes's house who fell into a prophetic frenzy the night before Themistocles's secret departure and cried in verse: 'Night shall speak, and night instruct thee.'",
+      "links": [
+        {
+          "characterId": "nicogenes"
+        }
+      ]
+    },
+    {
+      "id": "demaratus",
+      "names": [
+        "Demaratus"
+      ],
+      "relation": "Exiled Spartan king at the Persian court",
+      "blurb": "Asked by the king for any gift he chose; requested to ride in state through Sardis with the royal tiara, which Mithropaustes and the king angrily refused. Themistocles interceded to calm the king's anger.",
+      "links": [
+        {
+          "characterId": "mithropaustes"
+        },
+        {
+          "characterId": "xerxes"
+        }
+      ]
+    },
+    {
+      "id": "mithropaustes",
+      "names": [
+        "Mithropaustes"
+      ],
+      "relation": "King's cousin who rebuked Demaratus",
+      "blurb": "Touched Demaratus on the head and told him he had no brains for the royal tiara to cover—even if Jupiter gave him his thunder, he would not be Jupiter for that.",
+      "links": [
+        {
+          "characterId": "demaratus"
+        },
+        {
+          "characterId": "xerxes"
+        }
+      ]
+    },
+    {
+      "id": "epixyes",
+      "names": [
+        "Epixyes"
+      ],
+      "relation": "Persian governor who tried to assassinate Themistocles",
+      "blurb": "Governor of upper Phrygia who hired Pisidians to ambush Themistocles at Lion's-head; a dream warned him to take the long road, and the assassins mistook his wet tent-cloth for the man himself.",
+      "links": [
+        {
+          "characterId": "themistocles"
+        }
+      ]
+    },
+    {
+      "id": "archippe",
+      "names": [
+        "Archippe"
+      ],
+      "relation": "Wife of Themistocles; daughter of Lysander of Alopece",
+      "blurb": "Mother of Archeptolis, Polyeuctus, and Cleophantus by Themistocles; her father Lysander of Alopece later adopted their son Diocles.",
+      "links": [
+        {
+          "characterId": "lysander-alopece"
+        },
+        {
+          "characterId": "archeptolis"
+        }
+      ]
+    },
+    {
+      "id": "lysander-alopece",
+      "names": [
+        "Lysander of Alopece"
+      ],
+      "relation": "Father of Archippe; adopted Themistocles's son Diocles",
+      "blurb": "Distinct from the Spartan admiral Lysander: an Athenian of the deme Alopece whose daughter Archippe married Themistocles, and who raised their son Diocles after the exile.",
+      "links": [
+        {
+          "characterId": "archippe"
+        },
+        {
+          "characterId": "diocles-them"
+        }
+      ]
+    },
+    {
+      "id": "archeptolis",
+      "names": [
+        "Archeptolis"
+      ],
+      "relation": "Eldest surviving son of Themistocles by Archippe",
+      "blurb": "First of three sons born to Archippe; married his half-sister Mnesiptolema after their father's death—a union across the household that Plutarch records as a family curiosity.",
+      "links": [
+        {
+          "characterId": "archippe"
+        },
+        {
+          "characterId": "mnesiptolema"
+        }
+      ]
+    },
+    {
+      "id": "polyeuctus",
+      "names": [
+        "Polyeuctus"
+      ],
+      "relation": "Son of Themistocles by Archippe",
+      "blurb": "Second of the three sons Themistocles had by Archippe; named in the family register Plutarch and Theopompus preserve, but otherwise unrecorded.",
+      "links": [
+        {
+          "characterId": "archippe"
+        }
+      ]
+    },
+    {
+      "id": "diocles-them",
+      "names": [
+        "Diocles"
+      ],
+      "relation": "Son of Themistocles; adopted by his grandfather",
+      "blurb": "One of Themistocles's older sons; adopted by his maternal grandfather Lysander of Alopece after Themistocles's fall—the family network adjusting to the disaster of exile.",
+      "links": [
+        {
+          "characterId": "lysander-alopece"
+        },
+        {
+          "characterId": "archippe"
+        }
+      ]
+    },
+    {
+      "id": "neocles-son",
+      "names": [
+        "Neocles"
+      ],
+      "relation": "Son of Themistocles; died in boyhood",
+      "blurb": "Named after his grandfather; one of Themistocles's older sons who died young from a horse-bite—a sad irony that the great strategist's son fell to the creature his daughter-in-law's father bred.",
+      "links": [
+        {
+          "characterId": "neocles"
+        }
+      ]
+    },
+    {
+      "id": "phrasicles",
+      "names": [
+        "Phrasicles"
+      ],
+      "relation": "Nephew who married Themistocles's daughter",
+      "blurb": "After Themistocles's death, went to Magnesia and married his daughter Nicomache, and took charge of the youngest daughter Asia—a kinsman who gathered the family's remnants in exile.",
+      "links": [
+        {
+          "characterId": "archeptolis"
+        }
+      ]
+    },
+    {
+      "id": "plato-comic-them",
+      "names": [
+        "Plato the comedian"
+      ],
+      "relation": "Comic poet (distinct from the philosopher)",
+      "blurb": "Athenian comedian who confirmed, in verse, the tradition that Themistocles's tomb stood near the harbor of Piraeus—Plutarch cites him as a source alongside Diodorus the cosmographer.",
+      "links": [
+        {
+          "characterId": "diodorus-cosm"
+        }
+      ]
+    },
+    {
+      "id": "phylarchus",
+      "names": [
+        "Phylarchus"
+      ],
+      "relation": "Historian who invented sons for Themistocles",
+      "blurb": "Wrote a melodramatic history that brought in Neocles and Demopolis as Themistocles's sons to stir tragic pathos; Plutarch rejects this as invention and calls it a stage machine.",
+      "links": [
+        {
+          "characterId": "diodorus-cosm"
+        }
+      ]
+    },
+    {
+      "id": "diodorus-cosm",
+      "names": [
+        "Diodorus"
+      ],
+      "relation": "Cosmographer who placed Themistocles's tomb near Piraeus",
+      "blurb": "The cosmographer-geographer cited for the conjecture that Themistocles's tomb lay on the promontory of Alcimus near the harbor—supported, Plutarch adds, by Plato the comedian's verse.",
+      "links": [
+        {
+          "characterId": "plato-comic-them"
+        },
+        {
+          "characterId": "antiphates"
+        }
+      ]
+    },
+    {
+      "id": "ammonius",
+      "names": [
+        "Ammonius"
+      ],
+      "relation": "Philosopher in whose house the later Themistocles lived",
+      "blurb": "Philosopher in whose house Plutarch himself had an intimate acquaintance with another Themistocles of Athens—a descendant who still enjoyed honors from Magnesia in Plutarch's own day.",
+      "links": [
+        {
+          "characterId": "themistocles"
+        }
+      ]
+    },
+    {
+      "id": "charon-lamp",
+      "names": [
+        "Charon of Lampsacus"
+      ],
+      "relation": "Historian who held that Xerxes was already dead",
+      "blurb": "Local historian of Lampsacus who, with Thucydides, reported that Themistocles arrived at the Persian court after Xerxes was dead—a view the chronological tables support, though Ephorus disagrees.",
+      "links": [
+        {
+          "characterId": "thucydides"
+        }
+      ]
+    },
+    {
+      "id": "heraclides-them",
+      "names": [
+        "Heraclides"
+      ],
+      "relation": "Historian who placed Themistocles at Xerxes's court",
+      "blurb": "Listed by Plutarch (as Heraclides) among those who say Themistocles came to Xerxes rather than to his successor—part of the ancient disagreement about the Persian exile chronology.",
+      "links": [
+        {
+          "characterId": "charon-lamp"
+        }
+      ]
+    },
+    {
+      "id": "dinon",
+      "names": [
+        "Dinon"
+      ],
+      "relation": "Historian who held that Themistocles met Xerxes",
+      "blurb": "Persian historian cited by Plutarch alongside Ephorus, Clitarchus, and Heraclides for placing Themistocles's arrival in Persia during Xerxes's reign rather than his son's.",
+      "links": [
+        {
+          "characterId": "clitarchus"
+        },
+        {
+          "characterId": "heraclides-them"
+        }
+      ]
+    },
+    {
+      "id": "clitarchus",
+      "names": [
+        "Clitarchus"
+      ],
+      "relation": "Historian who placed Themistocles at Xerxes's court",
+      "blurb": "Author of a life of Alexander and various histories; cited here among those who say Themistocles met Xerxes in person rather than arriving after his death.",
+      "links": [
+        {
+          "characterId": "dinon"
+        }
+      ]
+    },
+    {
+      "id": "clidemus",
+      "names": [
+        "Clidemus"
+      ],
+      "relation": "Attic historian who credited Themistocles for the fleet's manning",
+      "blurb": "Atthidographer who attributed the eight-drachma payment that manned the fleet at Salamis to Themistocles's ingenuity—a detail Aristotle credited instead to the Areopagus.",
+      "links": [
+        {
+          "characterId": "aristides"
+        }
+      ]
+    },
+    {
+      "id": "italia",
+      "names": [
+        "Italia"
+      ],
+      "relation": "Daughter of Themistocles; married to Panthoides",
+      "blurb": "Named among Themistocles's daughters; married Panthoides of the island of Chios—one of the family's dispersal across the Greek world after Themistocles's fall.",
+      "links": [
+        {
+          "characterId": "panthoides"
+        }
+      ]
+    },
+    {
+      "id": "sybaris",
+      "names": [
+        "Sybaris"
+      ],
+      "relation": "Daughter of Themistocles; married to Nicomedes",
+      "blurb": "Named among Themistocles's daughters; married Nicomedes the Athenian—part of the domestic record Theopompus and Neanthes preserve where Plutarch counts the general's many children.",
+      "links": [
+        {
+          "characterId": "nicomedes"
+        }
+      ]
+    },
+    {
+      "id": "nicomache",
+      "names": [
+        "Nicomache"
+      ],
+      "relation": "Daughter of Themistocles; married her nephew Phrasicles",
+      "blurb": "After her father's death her cousin Phrasicles came from Athens to Magnesia and married her, with her brothers' consent, and took charge of the youngest daughter Asia.",
+      "links": [
+        {
+          "characterId": "phrasicles"
+        }
+      ]
+    },
+    {
+      "id": "nicomedes",
+      "names": [
+        "Nicomedes"
+      ],
+      "relation": "Athenian who married Sybaris",
+      "blurb": "Athenian husband of Sybaris, Themistocles's daughter; named among the family connections that spread out from the exiled general's household.",
+      "links": [
+        {
+          "characterId": "sybaris"
+        }
+      ]
+    },
+    {
+      "id": "panthoides",
+      "names": [
+        "Panthoides"
+      ],
+      "relation": "Chian who married Italia",
+      "blurb": "From the island of Chios; married Italia, one of Themistocles's daughters—one of the marriages through which the family of the exile settled across the Aegean.",
+      "links": [
+        {
+          "characterId": "italia"
+        }
+      ]
+    },
+    {
+      "id": "alcmaeon-thm",
+      "names": [
+        "Alcmaeon"
+      ],
+      "relation": "Father of Leobotes the accuser",
+      "blurb": "Of Agraule; his son Leobotes filed the treason indictment against Themistocles in Athens while the Spartans pressed the same charge simultaneously—the coordinated assault that forced Themistocles into permanent exile.",
+      "links": [
+        {
+          "characterId": "leobotes"
+        }
+      ]
+    },
+    {
+      "id": "aminias",
+      "names": [
+        "Aminias"
+      ],
+      "relation": "Athenian captain who helped kill Ariamenes at Salamis",
+      "blurb": "Aminias the Decelean, sailing in the same vessel as Sosicles the Pedian, rammed his ship into the Persian flagship; the two vessels locked together, and Ariamenes, Xerxes's admiral, was killed in the fight that followed.",
+      "links": [
+        {
+          "characterId": "sosicles"
+        },
+        {
+          "characterId": "ariamenes"
+        }
+      ]
+    },
+    {
+      "id": "sosicles",
+      "names": [
+        "Sosicles"
+      ],
+      "relation": "Athenian captain at Salamis; Aminias's shipmate",
+      "blurb": "Sosicles the Pedian sailed with Aminias the Decelean; when their ship locked beaks with Ariamenes's Persian flagship, the two fought their way aboard and killed the Persian admiral in close combat.",
+      "links": [
+        {
+          "characterId": "aminias"
+        },
+        {
+          "characterId": "ariamenes"
+        }
+      ]
+    },
+    {
+      "id": "arnaces",
+      "names": [
+        "Arnaces"
+      ],
+      "relation": "Persian eunuch used as Themistocles's secret messenger to Xerxes",
+      "blurb": "Captured eunuch of the Persian king whom Themistocles sent after Salamis with the false message that the Greeks planned to sail north and destroy the bridge—a stratagem to hurry Xerxes's retreat and keep credit for restraining the Greeks.",
+      "links": [
+        {
+          "characterId": "xerxes"
+        },
+        {
+          "characterId": "sicinnus"
+        }
+      ]
+    },
+    {
+      "id": "aeschylus-thm",
+      "names": [
+        "Aeschylus"
+      ],
+      "relation": "Tragedian; eyewitness source for the Persian ship count",
+      "blurb": "Fought at Marathon and Salamis; Plutarch quotes lines from his Persians as 'certain knowledge' giving the exact count of the Persian fleet—the most famous contemporary account of the battle Themistocles won."
+    },
+    {
+      "id": "acestodorus",
+      "names": [
+        "Acestodorus"
+      ],
+      "relation": "Historian who placed Xerxes's observation post at Megara",
+      "blurb": "Placed Xerxes's golden throne not above the temple of Hercules on the Attic shore (as Phanodemus said) but on the hills called the Horns in Megara—one of the minor disagreements among ancient sources that Plutarch records without adjudicating.",
+      "links": [
+        {
+          "characterId": "phanodemus-thm"
+        }
+      ]
+    },
+    {
+      "id": "phanodemus-thm",
+      "names": [
+        "Phanodemus"
+      ],
+      "relation": "Atthidographer who placed Xerxes at the Attic promontory",
+      "blurb": "Attic local historian who said Xerxes watched Salamis from the promontory above the temple of Hercules on the Attic coast; Acestodorus put the throne at the Horns in Megara—Plutarch presents both without deciding.",
+      "links": [
+        {
+          "characterId": "acestodorus"
+        }
+      ]
+    },
+    {
+      "id": "euphemides-thm",
+      "names": [
+        "Euphemides"
+      ],
+      "relation": "Father of Epicydes the demagogue",
+      "blurb": "Father of Epicydes, the popular speaker of eloquent tongue but fearful heart who tried to seize the command from Themistocles before the crisis; Plutarch identifies him by his father's name in the standard Athenian manner.",
+      "links": [
+        {
+          "characterId": "epicydes"
+        }
+      ]
+    },
+    {
+      "id": "euphrantides",
+      "names": [
+        "Euphrantides"
+      ],
+      "relation": "Seer who demanded the three Persian captives be sacrificed",
+      "blurb": "The fleet prophet who, seeing fire blaze from the offerings and a man sneeze on the right, seized Themistocles's hand and demanded the three richly-dressed Persian prisoners be consecrated and sacrificed to Bacchus the Devourer—a terrible omen that the crowd, in its terror, enforced.",
+      "links": [
+        {
+          "characterId": "artayctes-thm"
+        },
+        {
+          "characterId": "sandauce"
+        }
+      ]
+    },
+    {
+      "id": "artayctes-thm",
+      "names": [
+        "Artayctes"
+      ],
+      "relation": "Persian whose children were sacrificed before Salamis",
+      "blurb": "Three richly clothed young men described as children of Artayctes and Sandauce (Xerxes's sister) were brought before Themistocles as he was about to sacrifice; the prophet Euphrantides demanded they be offered up to Bacchus, and the terrified crowd assented.",
+      "links": [
+        {
+          "characterId": "sandauce"
+        },
+        {
+          "characterId": "euphrantides"
+        }
+      ]
+    },
+    {
+      "id": "sandauce",
+      "names": [
+        "Sandauce"
+      ],
+      "relation": "Sister of Xerxes; mother of the sacrificed captives",
+      "blurb": "Sister of Xerxes; the three beautiful, richly dressed captives offered as human sacrifice before Salamis were said to be her children by Artayctes—a detail that heightened the terrible portent of the omen.",
+      "links": [
+        {
+          "characterId": "artayctes-thm"
+        },
+        {
+          "characterId": "xerxes"
+        }
+      ]
+    },
+    {
+      "id": "eratosthenes-thm",
+      "names": [
+        "Eratosthenes"
+      ],
+      "relation": "Scholar who added detail about Themistocles's secret contact",
+      "blurb": "In his treatise on Riches, Eratosthenes records that Themistocles's message to Artabanus (via Arnaces) was facilitated by a woman of Eretria kept by Artabanus—a further strand of the back-channel diplomacy that eased Themistocles's reception at the Persian court.",
+      "links": [
+        {
+          "characterId": "artabanus"
+        },
+        {
+          "characterId": "arnaces"
+        }
+      ]
+    }
+  ],
+  "nameResolutions": [
+    {
+      "paraId": "themistocles-p001",
+      "start": 80,
+      "end": 87,
+      "characterId": "neocles",
+      "note": "Father of Themistocles"
+    },
+    {
+      "paraId": "themistocles-p070",
+      "start": 259,
+      "end": 266,
+      "characterId": "neocles-son",
+      "note": "Son Neocles, listed alongside Diocles"
+    },
+    {
+      "paraId": "themistocles-p070",
+      "start": 280,
+      "end": 287,
+      "characterId": "neocles-son",
+      "note": "Son Neocles who died young of a horse-bite"
+    },
+    {
+      "paraId": "themistocles-p071",
+      "start": 512,
+      "end": 519,
+      "characterId": "neocles-son",
+      "note": "Phylarchus's fictional reference to Neocles as a son"
     }
   ]
 }

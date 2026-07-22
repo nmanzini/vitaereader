@@ -825,6 +825,709 @@
           "characterId": "labienus"
         }
       ]
+    },
+    {
+      "id": "nicomedes",
+      "names": [
+        "Nicomedes"
+      ],
+      "relation": "King of Bithynia; host to young Caesar",
+      "blurb": "At his Bithynian court Caesar lingered as a youthful envoy; rumors of a romantic attachment followed Caesar for life and were revived by enemies to mock him.",
+      "links": [
+        {
+          "characterId": "caesar-subject"
+        },
+        {
+          "characterId": "sylla"
+        }
+      ]
+    },
+    {
+      "id": "apollonius-molon",
+      "names": [
+        "Apollonius"
+      ],
+      "relation": "Rhetoric teacher at Rhodes",
+      "blurb": "Son of Molon, famed orator at Rhodes whose pupils included Cicero; Caesar studied under him after escaping the pirates and was judged second only to Cicero in native eloquence.",
+      "links": [
+        {
+          "characterId": "cicero"
+        }
+      ]
+    },
+    {
+      "id": "decimus-brutus",
+      "names": [
+        "Decimus Brutus",
+        "Brutus Albinus"
+      ],
+      "relation": "Second heir who joined the conspiracy",
+      "blurb": "Named second heir in Caesar's will yet joined Cassius and Brutus in the plot; on the Ides he persuaded Caesar to ignore Calpurnia's dream and enter the Senate, then kept Antony occupied outside.",
+      "links": [
+        {
+          "characterId": "brutus"
+        },
+        {
+          "characterId": "cassius"
+        },
+        {
+          "characterId": "antony"
+        },
+        {
+          "characterId": "calpurnia"
+        }
+      ]
+    },
+    {
+      "id": "casca",
+      "names": [
+        "Casca"
+      ],
+      "relation": "Conspirator who struck the first blow",
+      "blurb": "Gave Caesar the first cut, in the neck, with a trembling hand; Caesar seized the dagger crying “Vile Casca, what is this?”—and the rest fell on him from every side.",
+      "links": [
+        {
+          "characterId": "brutus"
+        },
+        {
+          "characterId": "cassius"
+        },
+        {
+          "characterId": "tillius-cimber"
+        }
+      ]
+    },
+    {
+      "id": "tillius-cimber",
+      "names": [
+        "Tillius Cimber",
+        "Tillius"
+      ],
+      "relation": "Conspirator who gave the murder signal",
+      "blurb": "Pretended to petition Caesar for his exiled brother; seized Caesar's robe with both hands and pulled it from his neck—the pre-arranged signal that unleashed the daggers on the Ides of March.",
+      "links": [
+        {
+          "characterId": "casca"
+        },
+        {
+          "characterId": "brutus"
+        },
+        {
+          "characterId": "cassius"
+        }
+      ]
+    },
+    {
+      "id": "artemidorus",
+      "names": [
+        "Artemidorus"
+      ],
+      "relation": "Greek teacher who tried to warn Caesar",
+      "blurb": "A Cnidian teacher of Greek logic who learned the conspiracy through his friendship with Brutus's circle; pressed a written warning into Caesar's hand as he approached the Senate—Caesar kept it unread.",
+      "links": [
+        {
+          "characterId": "brutus"
+        },
+        {
+          "characterId": "cassius"
+        }
+      ]
+    },
+    {
+      "id": "lepidus-c",
+      "names": [
+        "Lepidus",
+        "Marcus Lepidus"
+      ],
+      "relation": "Caesarian general; future triumvir",
+      "blurb": "Caesar's last supper host the night before the Ides; after the murder he and Antony hid in friends' houses, then emerged to take charge of Caesar's legacy and later form the second triumvirate with Octavian.",
+      "links": [
+        {
+          "characterId": "antony"
+        },
+        {
+          "characterId": "octavius"
+        },
+        {
+          "characterId": "caesar-subject"
+        }
+      ]
+    },
+    {
+      "id": "cornelius-balbus",
+      "names": [
+        "Cornelius Balbus"
+      ],
+      "relation": "Intimate agent and flatterer",
+      "blurb": "Wealthy Spanish financier and Caesar's closest personal agent; when Caesar was about to rise for the senate's honors, Balbus stopped him—“Remember you are Caesar”—locking in the slight that inflamed the optimates.",
+      "links": [
+        {
+          "characterId": "caesar-subject"
+        },
+        {
+          "characterId": "cicero"
+        }
+      ]
+    },
+    {
+      "id": "flavius-trib",
+      "names": [
+        "Flavius"
+      ],
+      "relation": "Tribune who stripped the royal diadems",
+      "blurb": "With Marullus, tore the royal diadems from Caesar's statues and arrested the first men to salute him as king; the people called them “Brutus” in approval—Caesar dismissed them both from the tribunate.",
+      "links": [
+        {
+          "characterId": "marullus-trib"
+        },
+        {
+          "characterId": "caesar-subject"
+        }
+      ]
+    },
+    {
+      "id": "marullus-trib",
+      "names": [
+        "Marullus"
+      ],
+      "relation": "Tribune who stripped the royal diadems with Flavius",
+      "blurb": "Acted with Flavius in removing the diadems from Caesar's statues and punishing those who hailed him king; dismissed by Caesar for the affront.",
+      "links": [
+        {
+          "characterId": "flavius-trib"
+        },
+        {
+          "characterId": "caesar-subject"
+        }
+      ]
+    },
+    {
+      "id": "cinna-friend",
+      "names": [
+        "Helvius Cinna"
+      ],
+      "relation": "Poet friend of Caesar wrongly killed by the mob",
+      "blurb": "Caesar's friend who went to the funeral out of respect; the grieving crowd mistook him for the conspirator Cinna and tore him apart—a poet destroyed by confused popular rage.",
+      "links": [
+        {
+          "characterId": "cinna"
+        },
+        {
+          "characterId": "caesar-subject"
+        }
+      ]
+    },
+    {
+      "id": "apollodorus",
+      "names": [
+        "Apollodorus"
+      ],
+      "relation": "Cleopatra's Sicilian confidant",
+      "blurb": "The one companion Cleopatra trusted with the plan; he carried her rolled in bedding through the palace gates to Caesar's quarters—Caesar was captivated before the bundle was undone.",
+      "links": [
+        {
+          "characterId": "cleopatra"
+        },
+        {
+          "characterId": "caesar-subject"
+        }
+      ]
+    },
+    {
+      "id": "cethegus",
+      "names": [
+        "Cethegus"
+      ],
+      "relation": "Catilinarian conspirator left in Rome",
+      "blurb": "Gaius Cornelius Cethegus, left in Rome with Lentulus Sura when Catiline fled; Caesar pleaded in the senate for mercy, Cato pressed for death—he and Lentulus were executed on Cicero's order.",
+      "links": [
+        {
+          "characterId": "catiline"
+        },
+        {
+          "characterId": "cicero"
+        },
+        {
+          "characterId": "cato"
+        }
+      ]
+    },
+    {
+      "id": "varro-c",
+      "names": [
+        "Varro"
+      ],
+      "relation": "Pompeian legate in Further Spain",
+      "blurb": "Marcus Terentius Varro—scholar and polymath—who served as Pompey's governor of Further Spain; one of the two Pompeian commanders Caesar neutralized in the Ilerda campaign before crossing to Greece.",
+      "links": [
+        {
+          "characterId": "afranius"
+        },
+        {
+          "characterId": "pompey"
+        }
+      ]
+    },
+    {
+      "id": "cotta-c",
+      "names": [
+        "Costa"
+      ],
+      "relation": "Roman legate killed in the Eburones ambush",
+      "blurb": "Lucius Aurunculeius Cotta (text spells “Costa”), co-legate with Titurius; Ambiorix lured their column into a trap and slaughtered it—the news brought Caesar racing back from Italy to exact revenge.",
+      "links": [
+        {
+          "characterId": "titurius"
+        },
+        {
+          "characterId": "abriorix"
+        }
+      ]
+    },
+    {
+      "id": "titurius",
+      "names": [
+        "Titurius"
+      ],
+      "relation": "Roman legate killed in the Eburones ambush",
+      "blurb": "Quintus Titurius Sabinus, co-legate with Cotta; both were destroyed with their entire column by Ambiorix's ruse—one of the worst Roman reverses in the Gallic War.",
+      "links": [
+        {
+          "characterId": "cotta-c"
+        },
+        {
+          "characterId": "abriorix"
+        }
+      ]
+    },
+    {
+      "id": "abriorix",
+      "names": [
+        "Abriorix"
+      ],
+      "relation": "Eburones chief who ambushed the Roman column",
+      "blurb": "Ambiorix of the Eburones, who feigned a friendly warning to Titurius and Cotta, then annihilated their column; his treachery ignited a general Gallic revolt and one of Caesar's most punishing winter campaigns.",
+      "links": [
+        {
+          "characterId": "titurius"
+        },
+        {
+          "characterId": "cotta-c"
+        },
+        {
+          "characterId": "vergentorix"
+        }
+      ]
+    },
+    {
+      "id": "paulus-c",
+      "names": [
+        "Paulus"
+      ],
+      "relation": "Consul neutralized with Gallic gold",
+      "blurb": "Lucius Aemilius Paullus (consul 50 BC), paid fifteen hundred talents by Caesar to build the Basilica Aemilia in the Forum—a transaction that bought his silence in Caesar's last year of Gallic command.",
+      "links": [
+        {
+          "characterId": "curio"
+        },
+        {
+          "characterId": "caesar-subject"
+        }
+      ]
+    },
+    {
+      "id": "amantius",
+      "names": [
+        "Amantius"
+      ],
+      "relation": "Friend and agent at Rome",
+      "blurb": "Caesar's trusted representative in Rome; the “I came, saw, conquered” dispatch from Zela was addressed to him—yet Plutarch also names Amantius's covetousness among the embarrassments of Caesar's household.",
+      "links": [
+        {
+          "characterId": "caesar-subject"
+        },
+        {
+          "characterId": "dolabella"
+        }
+      ]
+    },
+    {
+      "id": "cosconius",
+      "names": [
+        "Cosconius"
+      ],
+      "relation": "Praetor killed in the soldiers' mutiny",
+      "blurb": "One of two praetors murdered by mutinous troops in Italy; Caesar rebuked the soldiers only by addressing them as “citizens” instead of “fellow-soldiers,” then rewarded each man with a thousand drachmas—scandalizing Rome.",
+      "links": [
+        {
+          "characterId": "galba-c"
+        },
+        {
+          "characterId": "caesar-subject"
+        }
+      ]
+    },
+    {
+      "id": "galba-c",
+      "names": [
+        "Galba"
+      ],
+      "relation": "Praetor killed alongside Cosconius",
+      "blurb": "Killed with Cosconius in the army mutiny; Caesar's lenient response—gentle address, generous bounty—restored order but drew censure for treating murder so lightly.",
+      "links": [
+        {
+          "characterId": "cosconius"
+        },
+        {
+          "characterId": "caesar-subject"
+        }
+      ]
+    },
+    {
+      "id": "corfinius",
+      "names": [
+        "Corfinius"
+      ],
+      "relation": "Caesarian officer and profligate rebuilder",
+      "blurb": "Came to Caesar with reinforcements before Pharsalus; later scandalized Rome by pulling down Pompey's house and rebuilding it at his own expense, not finding it grand enough—one of the men in Caesar's orbit who made him odious.",
+      "links": [
+        {
+          "characterId": "antony"
+        },
+        {
+          "characterId": "dolabella"
+        },
+        {
+          "characterId": "amantius"
+        }
+      ]
+    },
+    {
+      "id": "didius",
+      "names": [
+        "Didius"
+      ],
+      "relation": "Officer who hunted down Pompey's elder son",
+      "blurb": "After Munda he tracked the elder of Pompey's two sons and brought Caesar his head—marking the final end of the republican cause in Spain.",
+      "links": [
+        {
+          "characterId": "pompey"
+        },
+        {
+          "characterId": "labienus"
+        }
+      ]
+    },
+    {
+      "id": "scipio-sallutio",
+      "names": [
+        "Scipio Sallutio"
+      ],
+      "relation": "Nominal Scipio placed at the head of the army",
+      "blurb": "A low-born man of the Scipio house whom Caesar put in nominal command of his African troops to counter the oracle that a Scipio must always conquer in Africa—whether in mockery or in earnest superstition, Plutarch cannot say.",
+      "links": [
+        {
+          "characterId": "scipio"
+        },
+        {
+          "characterId": "juba"
+        }
+      ]
+    },
+    {
+      "id": "caninius-revilius",
+      "names": [
+        "Caninius Revilius"
+      ],
+      "relation": "Consul for a single day",
+      "blurb": "Appointed consul when his predecessor Maximus died with one day left in the year; Cicero quipped: “Let us make haste, lest the man be gone from office before we come.”",
+      "links": [
+        {
+          "characterId": "maximus-cos"
+        },
+        {
+          "characterId": "cicero"
+        }
+      ]
+    },
+    {
+      "id": "cassius-scaeva",
+      "names": [
+        "Cassius Scaeva"
+      ],
+      "relation": "Soldier of legendary endurance at Dyrrhachium",
+      "blurb": "At the Dyrrhachium siege he fought on after an arrow through one eye, javelins through shoulder and thigh, and one hundred and thirty darts lodged in his shield; he feigned surrender to draw two enemies close, cut off one's arm, and drove off the other.",
+      "links": [
+        {
+          "characterId": "pompey"
+        },
+        {
+          "characterId": "caesar-subject"
+        }
+      ]
+    },
+    {
+      "id": "acilius",
+      "names": [
+        "Acilius"
+      ],
+      "relation": "Soldier who fought one-handed at Marseilles",
+      "blurb": "At the sea-fight before Marseilles his sword hand was cut off; he swung his shield arm against the enemy's faces until he drove them off and took the vessel—a feat Plutarch singles out among Caesar's finest soldiers.",
+      "links": [
+        {
+          "characterId": "caesar-subject"
+        }
+      ]
+    },
+    {
+      "id": "granius-petro",
+      "names": [
+        "Granius Petro"
+      ],
+      "relation": "Quaestor who chose death over pardon",
+      "blurb": "Newly appointed quaestor captured by Scipio's fleet off Africa; Scipio offered him his life—Granius replied that Caesar's soldiers gave mercy, they did not receive it, and fell on his own sword.",
+      "links": [
+        {
+          "characterId": "scipio"
+        },
+        {
+          "characterId": "caesar-subject"
+        }
+      ]
+    },
+    {
+      "id": "cornelius-captain",
+      "names": [
+        "Cornelius"
+      ],
+      "relation": "Sulla's patrol captain whom Caesar bribed to escape",
+      "blurb": "The officer commanding the Sullan patrol that caught young Caesar in the Sabine hills; Caesar paid him two talents to be released—his first successful wager on his own survival.",
+      "links": [
+        {
+          "characterId": "sylla"
+        },
+        {
+          "characterId": "caesar-subject"
+        }
+      ]
+    },
+    {
+      "id": "caius-cornelius",
+      "names": [
+        "Caius Cornelius"
+      ],
+      "relation": "Augur at Padua who foretold the Pharsalus victory",
+      "blurb": "An augur from Padua, acquaintance of the historian Livy; on the very day of Pharsalus he read the omens, announced the exact moment battle was joined, then leaped up crying “Caesar, you are victorious!”",
+      "links": [
+        {
+          "characterId": "livy-c"
+        },
+        {
+          "characterId": "caesar-subject"
+        }
+      ]
+    },
+    {
+      "id": "tanusius",
+      "names": [
+        "Tanusius"
+      ],
+      "relation": "Historian who challenged Caesar's Rhine account",
+      "blurb": "Tanusius Geminus, Roman annalist; gave a less flattering version of the German campaign, reporting that Cato urged Caesar be handed to the barbarians to expiate the broken truce.",
+      "links": [
+        {
+          "characterId": "cato"
+        },
+        {
+          "characterId": "caesar-subject"
+        }
+      ]
+    },
+    {
+      "id": "servilius-caepio",
+      "names": [
+        "Servilius Caepio"
+      ],
+      "relation": "Julia's first fiancé, displaced by Pompey",
+      "blurb": "Originally contracted to marry Caesar's daughter Julia; Caesar broke the match to give her to Pompey and seal the triumvirate, promising Servilius Pompey's own daughter in consolation.",
+      "links": [
+        {
+          "characterId": "julia"
+        },
+        {
+          "characterId": "pompey"
+        },
+        {
+          "characterId": "faustus-sulla"
+        }
+      ]
+    },
+    {
+      "id": "faustus-sulla",
+      "names": [
+        "Faustus"
+      ],
+      "relation": "Sulla's son; betrothal pawn of the triumvirate",
+      "blurb": "Faustus Cornelius Sulla, son of the dictator; Pompey's daughter had been promised to him, but the betrothal was set aside when Caesar re-arranged it to make Servilius Caepio easier to displace.",
+      "links": [
+        {
+          "characterId": "sylla"
+        },
+        {
+          "characterId": "pompey"
+        },
+        {
+          "characterId": "servilius-caepio"
+        }
+      ]
+    },
+    {
+      "id": "strabo-caesar",
+      "names": [
+        "Strabo"
+      ],
+      "relation": "Philosopher who recorded the pre-Ides omens",
+      "blurb": "Strabo the philosopher, cited by Plutarch for the extraordinary portents before the Ides: armed men of fire contending in the sky, and a soldier's hand ablaze without harm—signs Plutarch judged worth mentioning in so great a case.",
+      "links": [
+        {
+          "characterId": "caesar-subject"
+        },
+        {
+          "characterId": "calpurnia"
+        }
+      ]
+    },
+    {
+      "id": "theopompus",
+      "names": [
+        "Theopompus"
+      ],
+      "relation": "Fabulist for whom Caesar freed Cnidus",
+      "blurb": "Author of a celebrated collection of fables; to gratify him Caesar enfranchised the Cnidians on his way through Asia after Pharsalus—an act of literary patronage amid the wreckage of civil war.",
+      "links": [
+        {
+          "characterId": "caesar-subject"
+        }
+      ]
+    },
+    {
+      "id": "anienus",
+      "names": [
+        "Anienus"
+      ],
+      "relation": "Superintendent appointed for the Corinth canal",
+      "blurb": "Appointed by Caesar to supervise the cutting of the Corinth isthmus—one of the grand engineering projects Caesar planned after the wars, all left unfinished by the Ides of March.",
+      "links": [
+        {
+          "characterId": "caesar-subject"
+        }
+      ]
+    },
+    {
+      "id": "maximus-cos",
+      "names": [
+        "Maximus"
+      ],
+      "relation": "Consul who died with a day left in office",
+      "blurb": "Quintus Fabius Maximus (consul 45 BC), who died one day before his consulship ended; Caesar filled the vacancy by appointing Caninius Revilius for that single day—and Cicero's joke about hurrying to greet him went around Rome.",
+      "links": [
+        {
+          "characterId": "caninius-revilius"
+        },
+        {
+          "characterId": "cicero"
+        }
+      ]
+    },
+    {
+      "id": "junius-asia",
+      "names": [
+        "Junius"
+      ],
+      "relation": "Praetor of Asia who let the pirates escape justice",
+      "blurb": "Marcus Junius Juncus, praetor of Asia; when Caesar brought the captured pirates for sentencing, Junius coveted the ransom money and delayed—Caesar left him, went to Pergamus, and crucified them himself as he had promised.",
+      "links": [
+        {
+          "characterId": "caesar-subject"
+        }
+      ]
+    },
+    {
+      "id": "vetus-c",
+      "names": [
+        "Vetus"
+      ],
+      "relation": "Praetor under whom Caesar served as quaestor in Spain",
+      "blurb": "Gaius Antistius Vetus, praetor whom Caesar honored ever after; Caesar repaid the debt by making Vetus's son his own quaestor when the roles were later reversed.",
+      "links": [
+        {
+          "characterId": "caesar-subject"
+        }
+      ]
+    },
+    {
+      "id": "publius-antonius",
+      "names": [
+        "Publius Antonius"
+      ],
+      "relation": "Roman official prosecuted for extortion by Caesar",
+      "blurb": "A Roman official tried for corrupt practices before the praetor of Macedonia; Caesar argued for the Greek cities against him, but Antonius appealed to Rome's tribunes claiming he could not get fair judgment before Greeks.",
+      "links": [
+        {
+          "characterId": "lucullus-c"
+        },
+        {
+          "characterId": "caesar-subject"
+        }
+      ]
+    },
+    {
+      "id": "domitius-calvinus",
+      "names": [
+        "Domitius Calvinus"
+      ],
+      "relation": "Caesarian legate who commanded the center at Pharsalus",
+      "blurb": "Gnaeus Domitius Calvinus—distinct from Domitius Ahenobarbus—placed in command of Caesar's center at Pharsalus; he was later defeated by Pharnaces in Pontus, necessitating Caesar's rapid campaign that ended in the “veni, vidi, vici” dispatch.",
+      "links": [
+        {
+          "characterId": "domitius"
+        },
+        {
+          "characterId": "pharnaces"
+        },
+        {
+          "characterId": "antony"
+        }
+      ]
+    },
+    {
+      "id": "calenus",
+      "names": [
+        "Calenus"
+      ],
+      "relation": "Caesarian legate holding the Greek flank",
+      "blurb": "Quintus Fufius Calenus, one of Caesar's lieutenants in the Greek campaign; held fifteen cohorts at Megara and Athens as Caesar rallied his army before Pharsalus.",
+      "links": [
+        {
+          "characterId": "caesar-subject"
+        },
+        {
+          "characterId": "domitius-calvinus"
+        }
+      ]
+    },
+    {
+      "id": "valerius-leo",
+      "names": [
+        "Valerius Leo"
+      ],
+      "relation": "Host at a famous supper in Milan",
+      "blurb": "Entertained Caesar at table in Milan; served asparagus dressed with sweet ointment instead of oil—Caesar ate without complaint and rebuked his friends' distaste: showing disgust at another's fault proves you share it.",
+      "links": [
+        {
+          "characterId": "caesar-subject"
+        }
+      ]
     }
   ],
   "locations": [

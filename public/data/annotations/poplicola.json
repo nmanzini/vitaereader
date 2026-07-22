@@ -30,6 +30,7 @@
     {
       "id": "brutus",
       "names": [
+        "Lucius Brutus",
         "Brutus"
       ],
       "relation": "Liberator; first consul with Collatinus",
@@ -339,10 +340,11 @@
     {
       "id": "marcus",
       "names": [
+        "Marcus Valerius",
         "Marcus"
       ],
-      "relation": "Consular colleague named in the wars",
-      "blurb": "Appears among early republican commanders in the Tuscan and Latin fighting after the kings.",
+      "relation": "Poplicola's brother; consul who broke the Sabines",
+      "blurb": "Marcus Valerius, brother to Poplicola, was made consul and, with Poplicola's guidance, won two great victories over the Sabines—including a slaughter of thirteen thousand without a Roman life lost; he was rewarded with a house on the Palatine whose door opened outward as a perpetual public honor.",
       "links": [
         {
           "characterId": "valerius"
@@ -438,7 +440,7 @@
       "id": "titus-lucretius",
       "names": [
         "Titus Lucretius",
-        "Titus"
+        "Lucretius"
       ],
       "relation": "Consular colleague of Poplicola",
       "blurb": "Chosen as Poplicola’s colleague in a second consulship; served while Poplicola led the armies against the Latin and Sabine threats after the Tarquin wars.",
@@ -450,6 +452,319 @@
           "characterId": "tarquin"
         }
       ]
+    },
+    {
+      "id": "titus-brutus",
+      "names": [
+        "Titus"
+      ],
+      "relation": "Elder son of Brutus, executed for conspiracy",
+      "blurb": "Called out by name by his father Brutus before the lictors; he and his brother Tiberius had joined the Vitellian plot to restore the Tarquins and were scourged and beheaded in the forum.",
+      "links": [
+        {
+          "characterId": "brutus"
+        },
+        {
+          "characterId": "tiberius-brutus"
+        },
+        {
+          "characterId": "vitellii"
+        }
+      ]
+    },
+    {
+      "id": "tiberius-brutus",
+      "names": [
+        "Tiberius"
+      ],
+      "relation": "Younger son of Brutus, executed for conspiracy",
+      "blurb": "Named alongside Titus when Brutus condemned them both; seduced by their Vitellii kinsmen into the royalist plot, he died on his father's order to prove the Republic above family.",
+      "links": [
+        {
+          "characterId": "brutus"
+        },
+        {
+          "characterId": "titus-brutus"
+        },
+        {
+          "characterId": "vitellii"
+        }
+      ]
+    },
+    {
+      "id": "lartius",
+      "names": [
+        "Lartius"
+      ],
+      "relation": "Held the Tiber bridge alongside Horatius",
+      "blurb": "Named with Herminius as one of the two first men of Rome who stood beside Horatius Cocles on the wooden bridge against Porsenna's army, buying time for it to be destroyed behind them.",
+      "links": [
+        {
+          "characterId": "horatius"
+        },
+        {
+          "characterId": "herminius"
+        },
+        {
+          "characterId": "porsenna"
+        }
+      ]
+    },
+    {
+      "id": "aruns-porsenna",
+      "names": [
+        "Aruns"
+      ],
+      "relation": "Son of Porsenna; champion of peace with Rome",
+      "blurb": "Earnestly urged his father Porsenna to abandon Tarquin's cause and make terms with Rome; when Tarquin's men ambushed the returning Roman hostages, Aruns hastened to their rescue and drove the enemy off.",
+      "links": [
+        {
+          "characterId": "porsenna"
+        },
+        {
+          "characterId": "cloelia"
+        },
+        {
+          "characterId": "valeria"
+        },
+        {
+          "characterId": "tarquin"
+        }
+      ]
+    },
+    {
+      "id": "tarquinia",
+      "names": [
+        "Tarquinia"
+      ],
+      "relation": "Vestal who gave land to the Republic",
+      "blurb": "A vestal priestess who donated a field adjoining the Field of Mars to the public; in return she was granted unique honors, including that her testimony alone among women should be legally admissible.",
+      "links": [
+        {
+          "characterId": "valerius"
+        }
+      ]
+    },
+    {
+      "id": "publius-veturius",
+      "names": [
+        "Publius Veturius"
+      ],
+      "relation": "One of Rome's first two quaestors",
+      "blurb": "Elected with Marcus Minucius as one of the first pair of quaestors under Poplicola; they managed the public treasury newly instituted in the temple of Saturn and collected the first public tribute.",
+      "links": [
+        {
+          "characterId": "valerius"
+        },
+        {
+          "characterId": "marcus-minucius-qt"
+        }
+      ]
+    },
+    {
+      "id": "marcus-minucius-qt",
+      "names": [
+        "Marcus Minucius"
+      ],
+      "relation": "One of Rome's first two quaestors",
+      "blurb": "Chosen alongside Publius Veturius as one of the first quaestors; together they assessed and collected the first public tribute under the Republic, exempting widows and orphans from the payment.",
+      "links": [
+        {
+          "characterId": "valerius"
+        },
+        {
+          "characterId": "publius-veturius"
+        }
+      ]
+    },
+    {
+      "id": "catulus",
+      "names": [
+        "Catulus"
+      ],
+      "relation": "Dedicated Sulla's rebuilt Capitoline temple",
+      "blurb": "Sulla built the second Capitoline temple but died before its dedication; the honor fell to Catulus—a pattern Plutarch notes ironically, since the first dedicator was also not its builder.",
+      "links": [
+        {
+          "characterId": "sylla-p"
+        },
+        {
+          "characterId": "vespasian-p"
+        },
+        {
+          "characterId": "domitian"
+        }
+      ]
+    },
+    {
+      "id": "marcus-horatius",
+      "names": [
+        "Marcus Horatius",
+        "Horatius"
+      ],
+      "relation": "Consul who dedicated the first Capitoline temple",
+      "blurb": "Marcus Horatius Pulvillus, colleague of Poplicola, dedicated the Capitoline temple while Poplicola led the armies; Poplicola's brother Marcus falsely reported the death of Horatius's son to break his composure during the rite, but Horatius finished unmoved.",
+      "links": [
+        {
+          "characterId": "valerius"
+        },
+        {
+          "characterId": "marcus"
+        },
+        {
+          "characterId": "tarquin"
+        }
+      ]
+    },
+    {
+      "id": "demaratus-pop",
+      "names": [
+        "Demaratus"
+      ],
+      "relation": "Corinthian father of Tarquinius Priscus",
+      "blurb": "Plutarch notes that the Capitoline temple was first vowed by Tarquin the son of Demaratus; this Demaratus was the Corinthian exile who settled in Etruria and fathered Tarquinius Priscus, the fifth king of Rome.",
+      "links": [
+        {
+          "characterId": "tarquin"
+        }
+      ]
+    },
+    {
+      "id": "athenodorus-pop",
+      "names": [
+        "Athenodorus"
+      ],
+      "relation": "Historian who recorded Mucius's alternative name",
+      "blurb": "Athenodorus, son of Sandon, in a book addressed to Octavia, Caesar's sister, records that Mucius Scaevola was also called Postumus—a detail that Plutarch preserves while following the common tradition of the name Scaevola.",
+      "links": [
+        {
+          "characterId": "mucius"
+        }
+      ]
+    },
+    {
+      "id": "anaximenes-pop",
+      "names": [
+        "Anaximenes"
+      ],
+      "relation": "Orator cited on the origin of funeral oratory",
+      "blurb": "Plutarch cites the orator Anaximenes when noting that Poplicola's introduction of funeral orations for great citizens may predate Solon's use of the form in Greece, unless Anaximenes is right to attribute that origin to Solon.",
+      "links": [
+        {
+          "characterId": "valerius"
+        },
+        {
+          "characterId": "solon-cross"
+        }
+      ]
+    },
+    {
+      "id": "epicharmus-pop",
+      "names": [
+        "Epicharmus"
+      ],
+      "relation": "Greek comic poet quoted on extravagant giving",
+      "blurb": "Plutarch quotes Epicharmus's remark about the prodigal — that excessive giving is not generosity but a disease — to characterize Domitian's ruinous expenditure on the Capitoline temple, setting it against Poplicola's modest piety.",
+      "links": [
+        {
+          "characterId": "domitian"
+        }
+      ]
+    }
+  ],
+  "nameResolutions": [
+    {
+      "paraId": "poplicola-p007",
+      "start": 346,
+      "end": 351,
+      "characterId": "aruns",
+      "note": "Aruns son of Tarquin, who fell with Brutus in the first Republican battle"
+    },
+    {
+      "paraId": "poplicola-p013",
+      "start": 565,
+      "end": 573,
+      "characterId": "marcus-horatius",
+      "note": "Marcus Horatius Pulvillus, consul who dedicated the Capitoline temple"
+    },
+    {
+      "paraId": "poplicola-p013",
+      "start": 675,
+      "end": 683,
+      "characterId": "marcus-horatius"
+    },
+    {
+      "paraId": "poplicola-p013",
+      "start": 1150,
+      "end": 1158,
+      "characterId": "marcus-horatius"
+    },
+    {
+      "paraId": "poplicola-p013",
+      "start": 1555,
+      "end": 1563,
+      "characterId": "marcus-horatius"
+    },
+    {
+      "paraId": "poplicola-p014",
+      "start": 130,
+      "end": 138,
+      "characterId": "marcus-horatius"
+    },
+    {
+      "paraId": "poplicola-p019",
+      "start": 519,
+      "end": 524,
+      "characterId": "aruns-porsenna",
+      "note": "Aruns son of Porsenna, who urged peace with Rome"
+    },
+    {
+      "paraId": "poplicola-p020",
+      "start": 1153,
+      "end": 1158,
+      "characterId": "aruns-porsenna"
+    },
+    {
+      "paraId": "poplicola-p017",
+      "start": 1556,
+      "end": 1564,
+      "characterId": "horatius",
+      "note": "Cocles; origin of the Cognomen at the bridge"
+    },
+    {
+      "paraId": "poplicola-p011",
+      "start": 1271,
+      "end": 1280,
+      "characterId": "lucretius",
+      "note": "Lucretius the father of Lucretia, Poplicola's first consular colleague"
+    },
+    {
+      "paraId": "poplicola-p011",
+      "start": 1498,
+      "end": 1507,
+      "characterId": "lucretius",
+      "note": "Same Lucretius, who died within days of taking the consulship"
+    },
+    {
+      "paraId": "poplicola-p017",
+      "start": 1255,
+      "end": 1264,
+      "characterId": "titus-lucretius",
+      "note": "Titus Lucretius, Poplicola's second consular colleague, wounded in the fight at the bridge"
+    },
+    {
+      "paraId": "poplicola-p023",
+      "start": 942,
+      "end": 951,
+      "characterId": "titus-lucretius",
+      "note": "Titus Lucretius, consular colleague in the fourth consulship"
+    },
+    {
+      "paraId": "poplicola-p023",
+      "start": 1231,
+      "end": 1240,
+      "characterId": "titus-lucretius",
+      "note": "Titus Lucretius charging the Sabine light-horse"
     }
   ]
 }

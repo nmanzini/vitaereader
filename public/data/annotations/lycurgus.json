@@ -522,6 +522,454 @@
           "characterId": "theopompus"
         }
       ]
+    },
+    {
+      "id": "simonides",
+      "names": [
+        "Simonides"
+      ],
+      "relation": "Poet who named Lycurgus's father as Prytanis",
+      "blurb": "The poet Simonides asserted that Lycurgus was the son of Prytanis—alone against all other genealogists who made Eunomus the father. Plutarch cites him as the singular dissenting voice.",
+      "links": [
+        {
+          "characterId": "prytanis"
+        },
+        {
+          "characterId": "eunomus"
+        }
+      ]
+    },
+    {
+      "id": "eratosthenes",
+      "names": [
+        "Eratosthenes"
+      ],
+      "relation": "Chronologer who placed Lycurgus before the Olympics",
+      "blurb": "Alexandrian polymath who, with Apollodorus, computed from king-list successions that Lycurgus lived much earlier than the Olympic games—contradicting Aristotle's claim that Lycurgus helped found them.",
+      "links": [
+        {
+          "characterId": "apollodorus"
+        },
+        {
+          "characterId": "iphitus"
+        }
+      ]
+    },
+    {
+      "id": "apollodorus",
+      "names": [
+        "Apollodorus"
+      ],
+      "relation": "Chronologer paired with Eratosthenes",
+      "blurb": "Chronological writer who joined Eratosthenes in arguing from Spartan king-lists that Lycurgus lived before the Olympic games—the scholarly counter-position to Aristotle.",
+      "links": [
+        {
+          "characterId": "eratosthenes"
+        },
+        {
+          "characterId": "timaeus"
+        }
+      ]
+    },
+    {
+      "id": "xenophon",
+      "names": [
+        "Xenophon"
+      ],
+      "relation": "Historian cited on Lycurgus's date",
+      "blurb": "Athenian historian and soldier; Plutarch cites a passage of his placing Lycurgus as contemporary with the first Heraclid kings—making him far earlier than later Spartan tradition allowed.",
+      "links": [
+        {
+          "characterId": "eratosthenes"
+        }
+      ]
+    },
+    {
+      "id": "creophylus",
+      "names": [
+        "Creophylus"
+      ],
+      "relation": "Poet in whose family Homer's works were preserved",
+      "blurb": "Samian epic poet said to have been Homer's companion or son-in-law; it was in the hands of his descendants in Samos that Lycurgus first encountered Homer's poems and resolved to bring them to Sparta.",
+      "links": [
+        {
+          "characterId": "homer"
+        }
+      ]
+    },
+    {
+      "id": "leonidas-q",
+      "names": [
+        "Leonidas"
+      ],
+      "relation": "Brother of Polydectes's queen; suspicious rival",
+      "blurb": "Brother of the queen mother who warned Lycurgus bluntly that he would soon be king—suggesting the infant Charilaus might not survive—and so poisoned the atmosphere that forced Lycurgus into voluntary exile.",
+      "links": [
+        {
+          "characterId": "charilaus"
+        },
+        {
+          "characterId": "polydectes"
+        }
+      ]
+    },
+    {
+      "id": "alcibiades",
+      "names": [
+        "Alcibiades"
+      ],
+      "relation": "Athenian nursed by a Spartan woman; contrast case",
+      "blurb": "Athenian statesman famously nursed by a Spartan woman and yet ruined by poor Athenian upbringing thereafter—Plutarch's vivid contrast with Lycurgus's state-controlled paideia that left nothing to a parent's whim.",
+      "links": [
+        {
+          "characterId": "pericles"
+        },
+        {
+          "characterId": "zopyrus"
+        }
+      ]
+    },
+    {
+      "id": "pericles",
+      "names": [
+        "Pericles"
+      ],
+      "relation": "Alcibiades's guardian; chose a bad tutor",
+      "blurb": "Athenian statesman who, as guardian of Alcibiades, chose the slave Zopyrus as his ward's tutor—Plato's example and Plutarch's foil for the Lycurgan system that put all boys in the state's hands.",
+      "links": [
+        {
+          "characterId": "alcibiades"
+        },
+        {
+          "characterId": "zopyrus"
+        }
+      ]
+    },
+    {
+      "id": "zopyrus",
+      "names": [
+        "Zopyrus"
+      ],
+      "relation": "Slave preceptor chosen by Pericles for Alcibiades",
+      "blurb": "A common slave selected by Pericles to supervise Alcibiades's education—no better than any household servant, Plato notes—and so the emblem of Athenian negligence toward the young versus Lycurgus's rigorous public training.",
+      "links": [
+        {
+          "characterId": "pericles"
+        },
+        {
+          "characterId": "alcibiades"
+        }
+      ]
+    },
+    {
+      "id": "critias",
+      "names": [
+        "Critias"
+      ],
+      "relation": "Athenian writer who reported on Spartan cups",
+      "blurb": "Athenian oligarch and writer; Plutarch cites his report that Spartan cups were lacquered dark to hide the murky look of river water—a detail showing Sparta made even utensils serve military practicality.",
+      "links": [
+        {
+          "characterId": "helots"
+        }
+      ]
+    },
+    {
+      "id": "dioscorides",
+      "names": [
+        "Dioscorides"
+      ],
+      "relation": "Author of a treatise on Sparta's constitution",
+      "blurb": "Wrote a work on the Lacedaemonian constitution; he disputes the tradition that Lycurgus lost an eye, arguing the blow merely wounded him without destroying his sight—and that Lycurgus built his temple to Athena Optiletis in gratitude for a cure.",
+      "links": [
+        {
+          "characterId": "alcander"
+        }
+      ]
+    },
+    {
+      "id": "hippias-elis",
+      "names": [
+        "Hippias the sophist",
+        "Hippias"
+      ],
+      "relation": "Sophist who called Lycurgus a great soldier",
+      "blurb": "Hippias of Elis, polymath sophist who catalogued Olympic victors; he asserted that Lycurgus was himself a skilled and experienced military commander—a view Plutarch weighs against evidence for peaceful lawgiving.",
+      "links": [
+        {
+          "characterId": "iphitus"
+        }
+      ]
+    },
+    {
+      "id": "philostephanus",
+      "names": [
+        "Philostephanus"
+      ],
+      "relation": "Source attributing cavalry reform to Lycurgus",
+      "blurb": "Hellenistic writer who credited Lycurgus with the first division of cavalry into companies of fifty drawn up in a square—though Demetrius of Phalerum denied it, insisting Lycurgus legislated entirely in peacetime.",
+      "links": [
+        {
+          "characterId": "demetrius-phalerian"
+        }
+      ]
+    },
+    {
+      "id": "demetrius-phalerian",
+      "names": [
+        "Demetrius the Phalerian",
+        "Demetrius"
+      ],
+      "relation": "Peripatetic statesman who denied Lycurgus was a soldier",
+      "blurb": "Demetrius of Phalerum, Athenian statesman and Peripatetic writer, argued the opposite of Hippias: that Lycurgus made all his laws in a time of unbroken peace—consistent with the Olympic truce he helped establish.",
+      "links": [
+        {
+          "characterId": "philostephanus"
+        },
+        {
+          "characterId": "hippias-elis"
+        }
+      ]
+    },
+    {
+      "id": "hecataeus-sophist",
+      "names": [
+        "Hecataeus the sophist",
+        "Hecataeus"
+      ],
+      "relation": "Sophist who sat silent at the Spartan common table",
+      "blurb": "Invited to the Spartan public mess, this sophist said not a word throughout dinner; when others reproached him for silence, Archidamidas defended him: 'He who knows how to speak knows also when.'",
+      "links": [
+        {
+          "characterId": "archidamidas"
+        }
+      ]
+    },
+    {
+      "id": "demaratus",
+      "names": [
+        "Demaratus"
+      ],
+      "relation": "Spartan king famous for laconic answers",
+      "blurb": "Eurypontid king cited for a characteristic Spartan retort: when pressed to name the best man in Lacedaemon, he finally said, 'He, Sir, that is the least like you.'",
+      "links": [
+        {
+          "characterId": "agis"
+        }
+      ]
+    },
+    {
+      "id": "plistoanax",
+      "names": [
+        "Plistoanax"
+      ],
+      "relation": "Agiad king; son of Pausanias",
+      "blurb": "Spartan king and son of the controversial regent Pausanias; he delivered the laconic rejoinder that the Lacedaemonians alone of all the Greeks had 'learned none of your bad qualities' when an Athenian said they had no learning.",
+      "links": [
+        {
+          "characterId": "pausanias-sparta"
+        }
+      ]
+    },
+    {
+      "id": "pausanias-sparta",
+      "names": [
+        "Pausanias"
+      ],
+      "relation": "Spartan regent; father of Plistoanax",
+      "blurb": "Spartan Agiad regent whose career ended in controversy; mentioned in the Life only as the father of Plistoanax—a line that situates the laconic anecdote in the royal house.",
+      "links": [
+        {
+          "characterId": "plistoanax"
+        }
+      ]
+    },
+    {
+      "id": "stratonicus",
+      "names": [
+        "Stratonicus"
+      ],
+      "relation": "Citharist who joked about Spartan jurisdiction",
+      "blurb": "Athenian musician and wit; Plutarch cites his jest that Athenians should conduct religious processions, Eleans should preside at Olympia, and if either did amiss the Lacedaemonians should be beaten—a comic tribute to Sparta's role as Greece's taskmaster.",
+      "links": [
+        {
+          "characterId": "leonidas"
+        }
+      ]
+    },
+    {
+      "id": "antisthenes",
+      "names": [
+        "Antisthenes"
+      ],
+      "relation": "Socratic philosopher; quip about Theban pride",
+      "blurb": "Pupil of Socrates who quipped, when the Thebans were elated after Leuctra, that they looked like schoolboys who had beaten their master—a serious compliment to Sparta as Greece's pedagogical superior.",
+      "links": [
+        {
+          "characterId": "brasidas"
+        }
+      ]
+    },
+    {
+      "id": "diogenes-cyn",
+      "names": [
+        "Diogenes"
+      ],
+      "relation": "Philosopher who took Lycurgus as a model",
+      "blurb": "Cited alongside Plato and Zeno as one of the great political philosophers who took Lycurgus for their model—though they left only words, while Lycurgus built an actual state.",
+      "links": [
+        {
+          "characterId": "plato"
+        },
+        {
+          "characterId": "zeno"
+        }
+      ]
+    },
+    {
+      "id": "zeno",
+      "names": [
+        "Zeno"
+      ],
+      "relation": "Stoic founder; took Lycurgus as model",
+      "blurb": "Founder of Stoicism, cited alongside Plato and Diogenes as a philosopher who held Lycurgus's polity as their ideal—yet produced only writings, not the realized commonwealth Lycurgus had actually made.",
+      "links": [
+        {
+          "characterId": "plato"
+        },
+        {
+          "characterId": "diogenes-cyn"
+        }
+      ]
+    },
+    {
+      "id": "euripides",
+      "names": [
+        "Euripides"
+      ],
+      "relation": "Tragedian buried at Arethusa; same end as Lycurgus",
+      "blurb": "Athenian tragic playwright who died and was buried at Arethusa in Macedonia; his tomb being struck by lightning—as Lycurgus's was—is cited as proof that divine marking by lightning is not unique to the lawgiver.",
+      "links": [
+        {
+          "characterId": "lycurgus"
+        }
+      ]
+    },
+    {
+      "id": "apollothemis",
+      "names": [
+        "Apollothemis"
+      ],
+      "relation": "Source placing Lycurgus's death at Elis",
+      "blurb": "One of several authorities on the disputed location of Lycurgus's death; he says Lycurgus died after arriving at Elis—a tradition Plutarch records among several others (Cirrha and Crete).",
+      "links": [
+        {
+          "characterId": "timaeus"
+        },
+        {
+          "characterId": "aristocrates"
+        }
+      ]
+    },
+    {
+      "id": "antiorus",
+      "names": [
+        "Antiorus"
+      ],
+      "relation": "Lycurgus's only son; died without issue",
+      "blurb": "The single son Lycurgus left behind; Antiorus died childless, extinguishing the lawgiver's direct line—though friends and relatives kept annual commemorations called Lycurgides for generations after.",
+      "links": [
+        {
+          "characterId": "lycurgus"
+        }
+      ]
+    },
+    {
+      "id": "callicratidas",
+      "names": [
+        "Callicratidas"
+      ],
+      "relation": "Spartan navarch alongside Lysander and Agesilaus",
+      "blurb": "Spartan fleet-commander who served between the careers of Lysander and Agesilaus; Plutarch names him among the generals whom Greek cities in Asia welcomed as embodiments of Lycurgan discipline.",
+      "links": [
+        {
+          "characterId": "lysander"
+        },
+        {
+          "characterId": "agesilaus"
+        }
+      ]
+    },
+    {
+      "id": "alcman",
+      "names": [
+        "Alcman"
+      ],
+      "relation": "Lyric poet of Sparta",
+      "blurb": "Archaic Spartan lyric poet whose choral songs the Helots were forbidden to sing—so completely had the masters identified his art with their own martial culture.",
+      "links": [
+        {
+          "characterId": "terpander"
+        },
+        {
+          "characterId": "spendon"
+        }
+      ]
+    },
+    {
+      "id": "archidamus",
+      "names": [
+        "Archidamus"
+      ],
+      "relation": "Father of Agis; king who presided over Sparta's decline",
+      "blurb": "Eurypontid king and father of Agis; Plutarch names him to mark the generation at which Lysander's flood of silver ended the five-century observance of Lycurgus's laws.",
+      "links": [
+        {
+          "characterId": "agis"
+        },
+        {
+          "characterId": "lysander"
+        }
+      ]
+    },
+    {
+      "id": "spendon",
+      "names": [
+        "Spendon"
+      ],
+      "relation": "Spartan poet; Helots could not sing his verses",
+      "blurb": "Spartan lyric poet named alongside Terpander and Alcman as one whose songs the Helots were forbidden by their masters to perform—a measure of how completely music was woven into Spartan identity.",
+      "links": [
+        {
+          "characterId": "terpander"
+        },
+        {
+          "characterId": "alcman"
+        }
+      ]
+    }
+  ],
+  "nameResolutions": [
+    {
+      "paraId": "lycurgus-p005",
+      "start": 2214,
+      "end": 2222,
+      "characterId": "leonidas-q",
+      "note": "Queen's brother who suspected Lycurgus of plotting against Charilaus—not King Leonidas"
+    },
+    {
+      "paraId": "lycurgus-p029",
+      "start": 2487,
+      "end": 2495,
+      "characterId": "leonidas",
+      "note": "King Leonidas of Thermopylae; his wife is cited for Spartan female courage"
+    },
+    {
+      "paraId": "lycurgus-p040",
+      "start": 78,
+      "end": 86,
+      "characterId": "leonidas",
+      "note": "King Leonidas making a characteristic laconic remark"
     }
   ]
 }

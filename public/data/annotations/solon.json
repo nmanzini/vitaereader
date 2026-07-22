@@ -565,16 +565,271 @@
       "names": [
         "Hippocrates"
       ],
-      "relation": "Mathematician cited; father of Pisistratus",
-      "blurb": "Plutarch mentions Hippocrates the mathematician among those who traded; and separately, Solon addressed Pisistratus as 'son of Hippocrates,' comparing him unfavorably to Homer's Ulysses.",
+      "relation": "Father of Pisistratus",
+      "blurb": "Athenian whose son Pisistratus became tyrant; Solon mocked Pisistratus as 'son of Hippocrates' who imitated Homer's Ulysses in deceiving his own countrymen.",
       "links": [
         {
           "characterId": "pisistratus"
+        }
+      ]
+    },
+    {
+      "id": "didymus",
+      "names": [
+        "Didymus"
+      ],
+      "relation": "Grammarian who cited Philocles on Solon's father",
+      "blurb": "Alexandrian scholar whose answer to Asclepiades about Solon's Tables of Law preserves the claim—unique to Philocles—that Solon's father was Euphorion, against all other sources.",
+      "links": [
+        {
+          "characterId": "asclepiades"
         },
+        {
+          "characterId": "philocles"
+        },
+        {
+          "characterId": "execestides"
+        }
+      ]
+    },
+    {
+      "id": "asclepiades",
+      "names": [
+        "Asclepiades"
+      ],
+      "relation": "Interlocutor of Didymus on Solon's laws",
+      "blurb": "Scholar whose work on Solon's Tables of Law drew Didymus's reply and so preserved the alternative tradition about Solon's parentage.",
+      "links": [
+        {
+          "characterId": "didymus"
+        }
+      ]
+    },
+    {
+      "id": "philocles",
+      "names": [
+        "Philocles"
+      ],
+      "relation": "Lone source calling Solon's father Euphorion",
+      "blurb": "Writer quoted by Didymus as the sole authority claiming Solon's father was named Euphorion—contradicting the universal tradition that names Execestides.",
+      "links": [
+        {
+          "characterId": "execestides"
+        },
+        {
+          "characterId": "didymus"
+        }
+      ]
+    },
+    {
+      "id": "codrus",
+      "names": [
+        "Codrus"
+      ],
+      "relation": "Legendary Athenian king; Solon's ancestor",
+      "blurb": "Last mythic king of Athens who gave his life to save the city; the tradition that Solon's family descended from Codrus supplied the merchant-poet with an ancient noble pedigree.",
+      "links": [
+        {
+          "characterId": "execestides"
+        }
+      ]
+    },
+    {
+      "id": "charmus",
+      "names": [
+        "Charmus"
+      ],
+      "relation": "Favorite of Pisistratus",
+      "blurb": "Youth to whom Pisistratus was closely attached, as Solon once loved Pisistratus; Charmus dedicated the statue of Eros in the Academy beside the torch-race track.",
+      "links": [
+        {
+          "characterId": "pisistratus"
+        }
+      ]
+    },
+    {
+      "id": "protis",
+      "names": [
+        "Protis"
+      ],
+      "relation": "Phocaean founder of Massilia",
+      "blurb": "Trader who founded Massilia (Marseille) and won the friendship of Gallic peoples near the Rhine—Plutarch's example of a merchant whose voyages built a great city, invoked when defending Solon's commercial career."
+    },
+    {
+      "id": "hesiod",
+      "names": [
+        "Hesiod"
+      ],
+      "relation": "Archaic poet quoted on work",
+      "blurb": "Boeotian poet of Works and Days whose maxim 'Work was a shame to none' Plutarch cites as the moral atmosphere of Solon's era, justifying the reformer's years of maritime trade."
+    },
+    {
+      "id": "cybisthus",
+      "names": [
+        "Cybisthus"
+      ],
+      "relation": "Thales's sister's son; his adopted nephew",
+      "blurb": "Son of Thales's sister whom Thales adopted—Plutarch's example of how even the philosopher who avoided marriage still formed deep attachments and felt the anxiety of love.",
+      "links": [
         {
           "characterId": "thales"
         }
       ]
+    },
+    {
+      "id": "pataecus",
+      "names": [
+        "Pataecus"
+      ],
+      "relation": "Source for stories about Thales; claimed Aesop's soul",
+      "blurb": "Boasted he possessed Aesop's soul; the intermediary through whom Hermippus transmitted the story of Thales tricking Solon with a false report of his son's death.",
+      "links": [
+        {
+          "characterId": "thales"
+        },
+        {
+          "characterId": "aesop"
+        },
+        {
+          "characterId": "hermippus"
+        }
+      ]
+    },
+    {
+      "id": "ariston",
+      "names": [
+        "Ariston"
+      ],
+      "relation": "Athenian who proposed Pisistratus's bodyguard",
+      "blurb": "Made the formal motion in the assembly that Pisistratus be granted fifty clubmen as a personal guard—the decisive step toward tyranny that Solon alone opposed.",
+      "links": [
+        {
+          "characterId": "pisistratus"
+        }
+      ]
+    },
+    {
+      "id": "thersippus",
+      "names": [
+        "Thersippus"
+      ],
+      "relation": "Maimed soldier; precedent for public maintenance",
+      "blurb": "Athenian wounded in war for whom Solon decreed public maintenance at city expense—the first such welfare law, which Heraclides Ponticus records as Pisistratus later extended to all war-maimed.",
+      "links": [
+        {
+          "characterId": "heraclides"
+        }
+      ]
+    },
+    {
+      "id": "hegestratus",
+      "names": [
+        "Hegestratus"
+      ],
+      "relation": "Archon in whose term Solon died",
+      "blurb": "Athenian archon who succeeded Comias; Phanias the Eresian places Solon's death within this tenure, giving the sharpest chronological pin for the end of Solon's life.",
+      "links": [
+        {
+          "characterId": "phanias"
+        },
+        {
+          "characterId": "comias"
+        }
+      ]
+    },
+    {
+      "id": "lycurgus-athens",
+      "names": [
+        "Lycurgus"
+      ],
+      "relation": "Athenian factional leader of the Plain party",
+      "blurb": "Leader of the conservative Plain faction in the three-way stasis that broke out after Solon's departure—distinct from the Spartan lawgiver of the same name who is Solon's Greek foil.",
+      "links": [
+        {
+          "characterId": "megacles"
+        },
+        {
+          "characterId": "pisistratus"
+        }
+      ]
+    },
+    {
+      "id": "bathycles",
+      "names": [
+        "Bathycles"
+      ],
+      "relation": "Donor of the disputed cup in the tripod story",
+      "blurb": "In one variant of the seven sages' prize legend, Bathycles bequeathed a richly worked cup rather than a tripod; the cup was sent from sage to sage just as the tripod was in the commoner version.",
+      "links": [
+        {
+          "characterId": "thales"
+        },
+        {
+          "characterId": "bias"
+        }
+      ]
+    },
+    {
+      "id": "helen",
+      "names": [
+        "Helen"
+      ],
+      "relation": "Cast the golden tripod into the sea",
+      "blurb": "In the founding story of the sages' tripod, Helen of Troy is said to have thrown the golden vessel into the sea on her homeward voyage in fulfilment of an old oracle—so fishermen later hauled it up in their net.",
+      "links": [
+        {
+          "characterId": "thales"
+        }
+      ]
+    },
+    {
+      "id": "hippocrates-chios",
+      "names": [
+        "Hippocrates the mathematician"
+      ],
+      "relation": "Geometer cited as a philosopher who traded",
+      "blurb": "Hippocrates of Chios, famous for squaring the lune; Plutarch invokes him alongside Thales to show that great thinkers were not above maritime trade—used to vindicate Solon's commercial years.",
+      "links": [
+        {
+          "characterId": "thales"
+        }
+      ]
+    },
+    {
+      "id": "euripides",
+      "names": [
+        "Euripides"
+      ],
+      "relation": "Tragic poet quoted on Sparta's exclusivity",
+      "blurb": "Tragic playwright cited by Plutarch when contrasting Lycurgus's Spartan land-equality with Solon's more modest reform: the Euripidean line captures Sparta's policy of keeping foreigners out.",
+      "links": [
+        {
+          "characterId": "lycurgus"
+        }
+      ]
+    }
+  ],
+  "nameResolutions": [
+    {
+      "paraId": "solon-p049",
+      "start": 127,
+      "end": 135,
+      "characterId": "lycurgus",
+      "note": "Spartan lawgiver cited for contrast with Solon's land reform"
+    },
+    {
+      "paraId": "solon-p066",
+      "start": 405,
+      "end": 413,
+      "characterId": "lycurgus",
+      "note": "Spartan lawgiver; Solon compares his limits to Lycurgus's greater power"
+    },
+    {
+      "paraId": "solon-p087",
+      "start": 52,
+      "end": 60,
+      "characterId": "lycurgus-athens",
+      "note": "Athenian factional leader of the Plain, not the Spartan lawgiver"
     }
   ]
 }
