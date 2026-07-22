@@ -523,6 +523,193 @@
           "workId": "alexander"
         }
       ]
+    },
+    {
+      "id": "cornelius-scipio",
+      "names": [
+        "Cornelius Scipio"
+      ],
+      "relation": "Camillus's master of horse for the Veii campaign",
+      "blurb": "Chosen by Camillus as his cavalry commander when appointed dictator to end the long siege of Veii; the appointment marks the campaign that launched Camillus's reputation as Rome's greatest general.",
+      "links": [
+        {
+          "characterId": "furius"
+        },
+        {
+          "characterId": "veii"
+        }
+      ]
+    },
+    {
+      "id": "licinius-cossus",
+      "names": [
+        "Licinius Cossus",
+        "Cossus"
+      ],
+      "relation": "Ambassador to Delphi before the fall of Veii",
+      "blurb": "One of three distinguished envoys sent to consult Apollo at Delphi about the portent of the Alban lake; they returned with the oracle's instructions that allowed the siege of Veii to continue.",
+      "links": [
+        {
+          "characterId": "furius"
+        },
+        {
+          "characterId": "valerius-potitus"
+        },
+        {
+          "characterId": "ambustus"
+        }
+      ]
+    },
+    {
+      "id": "valerius-potitus",
+      "names": [
+        "Valerius Potitus",
+        "Potitus"
+      ],
+      "relation": "Ambassador to Delphi before the fall of Veii",
+      "blurb": "Sent with Licinius Cossus and Fabius Ambustus to consult Apollo at Delphi; the mission resolved the mystery of the Alban lake and cleared the way for Camillus's final assault on Veii.",
+      "links": [
+        {
+          "characterId": "furius"
+        },
+        {
+          "characterId": "licinius-cossus"
+        },
+        {
+          "characterId": "ambustus"
+        }
+      ]
+    },
+    {
+      "id": "timesitheus",
+      "names": [
+        "Timesitheus"
+      ],
+      "relation": "Liparean general who freed the Roman envoys",
+      "blurb": "Commander at the Liparean islands who intervened when his men seized the Roman delegation as suspected pirates; by his authority and persuasion the embassy was dismissed unharmed and accompanied toward Delphi.",
+      "links": [
+        {
+          "characterId": "furius"
+        }
+      ]
+    },
+    {
+      "id": "lucius-apuleius",
+      "names": [
+        "Lucius Apuleius",
+        "Apuleius"
+      ],
+      "relation": "Accuser who drove Camillus into exile",
+      "blurb": "Prosecuted Camillus for allegedly retaining Tuscan spoils—including brass gates—from the sack of Veii; his charge, backed by popular anger over the tenths controversy, forced Camillus to depart into exile at Ardea.",
+      "links": [
+        {
+          "characterId": "furius"
+        },
+        {
+          "characterId": "veii"
+        }
+      ]
+    },
+    {
+      "id": "julius-censor",
+      "names": [
+        "Julius"
+      ],
+      "relation": "Censor whose death foretold the Gallic disaster",
+      "blurb": "The Roman censor Julius died just before Camillus's exile; Plutarch marks this as the first omen of the coming catastrophe, since the censorship was held sacred and its holder's death an evil portent.",
+      "links": [
+        {
+          "characterId": "caedicius"
+        },
+        {
+          "characterId": "brennus"
+        }
+      ]
+    },
+    {
+      "id": "lucumo",
+      "names": [
+        "Lucumo"
+      ],
+      "relation": "Ward of Aruns whose adultery brought the Gauls",
+      "blurb": "A wealthy and handsome orphan raised in Aruns's household at Clusium; his affair with Aruns's wife and the lawsuit that humiliated Aruns drove Aruns to invite the Gallic mercenaries into Italy, setting in motion the sack of Rome.",
+      "links": [
+        {
+          "characterId": "aruns"
+        },
+        {
+          "characterId": "brennus"
+        }
+      ]
+    },
+    {
+      "id": "quintus-capitolinus",
+      "names": [
+        "Quintius Capitolinus"
+      ],
+      "relation": "Dictator who imprisoned Manlius",
+      "blurb": "Made dictator to suppress the popular disorders fomented by Marcus Manlius; had Manlius imprisoned, though the people immediately put on mourning and the senate ordered his release.",
+      "links": [
+        {
+          "characterId": "manlius"
+        },
+        {
+          "characterId": "furius"
+        }
+      ]
+    },
+    {
+      "id": "lucius-furius",
+      "names": [
+        "Lucius Furius"
+      ],
+      "relation": "Rash colleague who nearly lost a battle",
+      "blurb": "Camillus's fellow military tribune who, impatient for glory and against Camillus's counsel, rashly engaged the Volscians and was routed; Camillus leaped from his sickbed to rally the fugitives and win the battle himself.",
+      "links": [
+        {
+          "characterId": "furius"
+        }
+      ]
+    },
+    {
+      "id": "marcus-aemilius",
+      "names": [
+        "Marcus Aemilius",
+        "Aemilius"
+      ],
+      "relation": "Patrician consul in the first election under the Licinian law",
+      "blurb": "Chosen by Camillus in the consular election that marked the end of his last dictatorship; the patrician of the new pair, standing alongside Lucius Sextius as the first plebeian consul.",
+      "links": [
+        {
+          "characterId": "furius"
+        },
+        {
+          "characterId": "lucius-sextius"
+        },
+        {
+          "characterId": "stolo"
+        }
+      ]
+    },
+    {
+      "id": "lucius-sextius",
+      "names": [
+        "Lucius Sextius",
+        "Sextius"
+      ],
+      "relation": "First plebeian consul",
+      "blurb": "Elected in the consular election that Camillus conducted as the final act of his dictatorship; the first man of plebeian birth to hold the consulship, a constitutional landmark the Licinian law made possible.",
+      "links": [
+        {
+          "characterId": "furius"
+        },
+        {
+          "characterId": "marcus-aemilius"
+        },
+        {
+          "characterId": "stolo"
+        }
+      ]
     }
   ]
 }
