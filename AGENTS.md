@@ -294,3 +294,9 @@ unzip -o content/source/pg674.epub -d content/source/epub-extract
 npm run content
 npm run smoke
 ```
+
+## Cursor Cloud specific instructions
+
+- No backend/DB/secrets. Startup dependency refresh is just `npm install` (the automatic update script). Everything else is normal repo commands (see Canonical commands).
+- The corpus in `public/data` is committed, so `npm run verify` and `npm run dev` work immediately after install — you do **not** need to run `npm run content` or extract the EPUB unless you change the ingest/catalog scripts.
+- Dev server: `npm run dev -- --host 127.0.0.1 --port 5175`. Verify with `curl -s -o /dev/null -w "%{http_code}" http://127.0.0.1:5175/` and confirm `/data/index.json` returns 200. Prefs (theme/progress/highlights) live in `localStorage`, so a fresh browser starts with no highlights.
