@@ -524,5 +524,175 @@
         }
       ]
     }
+  ],
+  "locations": [
+    {
+      "id": "rome",
+      "names": [
+        "Rome"
+      ],
+      "relation": "City Camillus served, lost, and restored",
+      "modern": "Rome, Italy",
+      "lat": 41.89,
+      "lon": 12.49,
+      "presence": "visited",
+      "visitKind": "city",
+      "visitOrder": 1,
+      "travel": "land",
+      "blurb": "Centre of every phase of his career—triumph, exile, recall, and five dictatorships that rebuilt the city after the Gauls."
+    },
+    {
+      "id": "veii",
+      "names": [
+        "Veii",
+        "Veientani"
+      ],
+      "relation": "Etruscan rival taken after a ten-year siege",
+      "modern": "Veio, near Isola Farnese, Italy",
+      "lat": 42.01,
+      "lon": 12.39,
+      "presence": "visited",
+      "visitKind": "battle",
+      "visitOrder": 2,
+      "travel": "land",
+      "blurb": "Head city of Tuscany; Camillus crept in by tunnel beneath Juno’s temple, sacked it, and solemnly translated the goddess to Rome."
+    },
+    {
+      "id": "falerii",
+      "names": [
+        "Faliscans",
+        "Falerians"
+      ],
+      "relation": "Faliscan city besieged after Veii",
+      "modern": "Civita Castellana (Falerii), Italy",
+      "lat": 42.31,
+      "lon": 12.41,
+      "presence": "visited",
+      "visitKind": "city",
+      "visitOrder": 3,
+      "travel": "land",
+      "blurb": "He besieged Falerii and won it without a fight by returning the boys their schoolmaster had betrayed—justice that earned a willing surrender."
+    },
+    {
+      "id": "ardea",
+      "names": [
+        "Ardea",
+        "Ardeatians"
+      ],
+      "relation": "Exile refuge turned rallying base against the Gauls",
+      "modern": "Ardea, Lazio, Italy",
+      "lat": 41.61,
+      "lon": 12.54,
+      "presence": "visited",
+      "visitKind": "camp",
+      "visitOrder": 4,
+      "travel": "land",
+      "blurb": "Camillus sojourned in exile at Ardea when the Gauls came; he rallied its people, routed a Gallic foraging party, and gathered the army that relieved Rome."
+    },
+    {
+      "id": "sutrium",
+      "names": [
+        "Sutrium"
+      ],
+      "relation": "Latin ally rescued from Etruscan siege",
+      "modern": "Sutri, Viterbo, Italy",
+      "lat": 42.23,
+      "lon": 12.07,
+      "presence": "visited",
+      "visitKind": "battle",
+      "visitOrder": 5,
+      "travel": "land",
+      "blurb": "After driving the Gauls from Rome, Camillus marched to Sutrium’s relief—arriving to find the people stripped and destitute, then retaking the city in a single day’s hard fighting."
+    },
+    {
+      "id": "tusculum",
+      "names": [
+        "Tusculans"
+      ],
+      "relation": "Latin hill-town whose revolt Camillus suppressed by clemency",
+      "modern": "Frascati area (Tusculum), Lazio, Italy",
+      "lat": 41.79,
+      "lon": 12.7,
+      "presence": "visited",
+      "visitKind": "city",
+      "visitOrder": 6,
+      "travel": "land",
+      "blurb": "Tasked with reducing the Tusculan revolt, he found the city at outward peace and chose intercession over punishment, earning the Tusculans Roman citizenship."
+    },
+    {
+      "id": "anio",
+      "names": [
+        "Anio"
+      ],
+      "relation": "River of his last battle against the Gauls",
+      "modern": "Aniene (Anio) river near Tivoli, Italy",
+      "lat": 42.01,
+      "lon": 12.63,
+      "presence": "visited",
+      "visitKind": "battle",
+      "visitOrder": 7,
+      "travel": "land",
+      "blurb": "Near the river Anio he lured the plunder-heavy Gauls onto broken ground, concealed most of his army in the folds of a hill, and drove them from Italy for the last time."
+    },
+    {
+      "id": "allia",
+      "names": [
+        "Allia"
+      ],
+      "relation": "River where Rome’s army was destroyed before Camillus’s recall",
+      "modern": "Near Monterotondo, Lazio, Italy",
+      "lat": 42.05,
+      "lon": 12.58,
+      "presence": "named",
+      "blurb": "The Allia disaster—Rome’s darkest day—fell on the same calendar date as the earlier Cremera catastrophe of the Fabii, fixing it forever as a day of ill omen."
+    },
+    {
+      "id": "clusium",
+      "names": [
+        "Clusium"
+      ],
+      "relation": "Etruscan city whose appeal drew the Gauls south toward Rome",
+      "modern": "Chiusi, Tuscany, Italy",
+      "lat": 43.02,
+      "lon": 11.94,
+      "presence": "named",
+      "blurb": "Clusium called for Roman envoys against Gallic pressure; when the Fabii ambassadors fought beside the besieged, Brennus used it as his pretext to march on Rome."
+    },
+    {
+      "id": "delphi",
+      "names": [
+        "Delphi"
+      ],
+      "relation": "Oracle consulted about the Alban lake prodigy",
+      "modern": "Delphi, Greece",
+      "lat": 38.48,
+      "lon": 22.5,
+      "presence": "named",
+      "blurb": "The senate sent Fabius Ambustus and two others to Delphi when the Alban lake rose without cause; the oracle confirmed the ten-year siege of Veii was nearing its end."
+    },
+    {
+      "id": "capena",
+      "names": [
+        "Capenates"
+      ],
+      "relation": "Etruscan town allied with the Faliscans in raids on Roman territory",
+      "modern": "Capena, Lazio, Italy",
+      "lat": 42.14,
+      "lon": 12.54,
+      "presence": "named",
+      "blurb": "The Capenates raided in concert with the Faliscans while Camillus was occupied at Veii, forcing him to suppress both peoples once the great siege was won."
+    },
+    {
+      "id": "velitrani",
+      "names": [
+        "Velitrani"
+      ],
+      "relation": "Latin city that submitted voluntarily after the Anio victory",
+      "modern": "Velletri, Lazio, Italy",
+      "lat": 41.69,
+      "lon": 12.78,
+      "presence": "named",
+      "blurb": "After the Anio rout the Velitrani surrendered without a fight—Plutarch calls it a mere accessory to Camillus’s final great campaign."
+    }
   ]
 }

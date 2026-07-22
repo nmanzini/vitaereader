@@ -352,5 +352,121 @@
         }
       ]
     }
+  ],
+  "locations": [
+    {
+      "id": "rome",
+      "names": [
+        "Rome"
+      ],
+      "relation": "Home city that exiled then nearly lost him",
+      "modern": "Rome, Italy",
+      "lat": 41.89,
+      "lon": 12.49,
+      "presence": "visited",
+      "visitKind": "city",
+      "visitOrder": 1,
+      "travel": "land",
+      "blurb": "Born and schooled in warfare here; Rome’s class politics turned his battle-scars into a liability and drove him into the arms of its deadliest enemy."
+    },
+    {
+      "id": "corioli",
+      "names": [
+        "Corioli"
+      ],
+      "relation": "Volscian city that gave him his surname",
+      "modern": "Near Marino, Castelli Romani (site uncertain)",
+      "lat": 41.72,
+      "lon": 12.65,
+      "presence": "visited",
+      "visitKind": "battle",
+      "visitOrder": 2,
+      "travel": "land",
+      "blurb": "He rushed the gates alone when they opened, fought the enemy inside, and held off the sallying garrison—the feat of arms that earned him the cognomen Coriolanus."
+    },
+    {
+      "id": "antium",
+      "names": [
+        "Antium"
+      ],
+      "relation": "Volscian capital where he defected in exile",
+      "modern": "Anzio, Italy",
+      "lat": 41.45,
+      "lon": 12.63,
+      "presence": "visited",
+      "visitKind": "city",
+      "visitOrder": 3,
+      "travel": "land",
+      "blurb": "In disguise and exile he went straight to the hearth of Tullus Aufidius; from Antium he led the Volscians on the march that nearly destroyed Rome."
+    },
+    {
+      "id": "bola",
+      "names": [
+        "Bola"
+      ],
+      "relation": "Latin town stormed as Volscian general",
+      "modern": "Near Bovillae, south of Rome (site uncertain)",
+      "lat": 41.87,
+      "lon": 12.66,
+      "presence": "visited",
+      "visitKind": "battle",
+      "visitOrder": 4,
+      "travel": "land",
+      "blurb": "Ten miles from Rome, he took Bola, put the adults to the sword, and drew the stay-behind Volscians irresistibly into the field beside him."
+    },
+    {
+      "id": "lavinium",
+      "names": [
+        "Lavinium"
+      ],
+      "relation": "Latin city besieged—cradle of Rome’s sacred relics",
+      "modern": "Pratica di Mare, Pomezia, Italy",
+      "lat": 41.58,
+      "lon": 12.47,
+      "presence": "visited",
+      "visitKind": "camp",
+      "visitOrder": 5,
+      "travel": "land",
+      "blurb": "Lavinium held the images and sacred things of Rome’s tutelary gods; Marcius laid siege to it before being deflected north to threaten Rome itself."
+    },
+    {
+      "id": "cluilian-camp",
+      "names": [
+        "Cluilian ditches"
+      ],
+      "relation": "Camp five miles from Rome at the moment of decision",
+      "modern": "Near Via Appia, south of Rome",
+      "lat": 41.84,
+      "lon": 12.51,
+      "presence": "visited",
+      "visitKind": "camp",
+      "visitOrder": 6,
+      "travel": "land",
+      "blurb": "At the Cluilian ditches he received the priests and then Volumnia; her plea turned him from Rome’s destruction and sealed his own fate among the Volscians."
+    },
+    {
+      "id": "velitrae",
+      "names": [
+        "Velitrae"
+      ],
+      "relation": "Proposed Latin colony in the grain crisis",
+      "modern": "Velletri, Lazio, Italy",
+      "lat": 41.69,
+      "lon": 12.78,
+      "presence": "named",
+      "blurb": "Tribunes denounced the senate’s plan to relieve Rome’s famine by sending colonists to Velitrae as a scheme to scatter the plebs and break their political power."
+    },
+    {
+      "id": "syracuse",
+      "names": [
+        "Syracuse"
+      ],
+      "relation": "City whose grain gift inflamed the class contest",
+      "modern": "Syracuse, Sicily, Italy",
+      "lat": 37.07,
+      "lon": 15.29,
+      "presence": "named",
+      "blurb": "Gelo of Syracuse sent a large grain gift to Rome; whether to distribute it cheaply or dearly became the flashpoint for Coriolanus’s fatal speech against the tribunes."
+    }
   ]
 }

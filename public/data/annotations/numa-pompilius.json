@@ -619,5 +619,136 @@
         }
       ]
     }
+  ],
+  "locations": [
+    {
+      "id": "cures",
+      "names": [
+        "Cures"
+      ],
+      "relation": "Sabine birthplace and home before kingship",
+      "modern": "Correse area, Lazio, Italy",
+      "lat": 42.22,
+      "lon": 12.70,
+      "presence": "visited",
+      "visitKind": "city",
+      "visitOrder": 1,
+      "travel": "land",
+      "blurb": "Famous city of the Sabines where Numa was born and lived until the embassy came; the name Quirites, shared by Romans and Sabines together, derived from this place."
+    },
+    {
+      "id": "rome",
+      "names": [
+        "Rome"
+      ],
+      "relation": "Kingdom he came to rule and civilize",
+      "modern": "Rome, Italy",
+      "lat": 41.89,
+      "lon": 12.49,
+      "presence": "visited",
+      "visitKind": "city",
+      "visitOrder": 2,
+      "travel": "land",
+      "blurb": "Came here from Cures as the Romans' chosen king, tempering Romulus's martial legacy with priests, Vestals, and a reformed calendar that put peace before war."
+    },
+    {
+      "id": "capitol",
+      "names": [
+        "Capitol",
+        "Tarpeian Hill"
+      ],
+      "relation": "Sacred hill of augural confirmation",
+      "modern": "Capitoline Hill, Rome, Italy",
+      "lat": 41.893,
+      "lon": 12.483,
+      "presence": "visited",
+      "visitKind": "oracle",
+      "visitOrder": 3,
+      "travel": "land",
+      "blurb": "Ascended the hill the Romans then called the Tarpeian with augurs who covered his head and prayed; auspicious birds appeared on the right, and the people hailed him as a holy king."
+    },
+    {
+      "id": "aventine",
+      "names": [
+        "Aventine"
+      ],
+      "relation": "Hill where he captured prophetic spirits",
+      "modern": "Aventine Hill, Rome, Italy",
+      "lat": 41.878,
+      "lon": 12.479,
+      "presence": "visited",
+      "visitKind": "oracle",
+      "visitOrder": 4,
+      "travel": "land",
+      "blurb": "Here, before the hill was enclosed within the city walls, Numa set a trap of wine and honey at the springs for Picus and Faunus, compelling them to reveal Jupiter's thunderbolt rites."
+    },
+    {
+      "id": "quirinal",
+      "names": [
+        "Quirinalis",
+        "Quirinal"
+      ],
+      "relation": "Sabine hill where he kept a second house",
+      "modern": "Quirinal Hill, Rome, Italy",
+      "lat": 41.903,
+      "lon": 12.488,
+      "presence": "visited",
+      "visitKind": "city",
+      "visitOrder": 5,
+      "travel": "land",
+      "blurb": "Maintained a house on the Quirinal—the Sabine hill across the valley—for retreat and sacred counsel; the site was shown to visitors in Plutarch's day."
+    },
+    {
+      "id": "janiculum",
+      "names": [
+        "Janiculum"
+      ],
+      "relation": "Hill of his burial",
+      "modern": "Janiculum Hill, Rome, Italy",
+      "lat": 41.887,
+      "lon": 12.464,
+      "presence": "visited",
+      "visitKind": "city",
+      "visitOrder": 6,
+      "travel": "land",
+      "blurb": "Buried here by his own command in two stone coffins—one holding his body, the other his sacred books—on the far bank of the Tiber across from the city he had governed."
+    },
+    {
+      "id": "delphi",
+      "names": [
+        "Delphi"
+      ],
+      "relation": "Named for comparison of perpetual sacred fires",
+      "modern": "Delphi, Greece",
+      "lat": 38.48,
+      "lon": 22.50,
+      "presence": "named",
+      "blurb": "Mentioned alongside Athens when Plutarch notes that perpetual holy fires kept at both Delphi and Athens are tended by widows, not virgins—unlike Rome's Vestal order Numa founded."
+    },
+    {
+      "id": "athens-numa",
+      "names": [
+        "Athens"
+      ],
+      "relation": "Named for comparison of perpetual sacred fires",
+      "modern": "Athens, Greece",
+      "lat": 37.97,
+      "lon": 23.72,
+      "presence": "named",
+      "blurb": "Cited with Delphi as a city where a perpetual flame was once extinguished—at Athens under the tyranny of Aristion—showing that Numa's undying Vestal fire shared a Greek precedent."
+    },
+    {
+      "id": "lacedaemon",
+      "names": [
+        "Lacedaemon",
+        "Laconian"
+      ],
+      "relation": "Ancestral homeland of the Sabines",
+      "modern": "Sparta, Greece",
+      "lat": 37.08,
+      "lon": 22.43,
+      "presence": "named",
+      "blurb": "Sabines declared themselves a colony of the Lacedaemonians, which Plutarch cites when explaining how Laconian laws and customs appear throughout Numa's Roman institutions."
+    }
   ]
 }

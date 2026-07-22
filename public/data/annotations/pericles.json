@@ -694,5 +694,253 @@
         }
       ]
     }
+  ],
+  "locations": [
+    {
+      "id": "athens",
+      "names": ["Athens"],
+      "relation": "The city he governed and shaped",
+      "modern": "Athens, Greece",
+      "lat": 37.97,
+      "lon": 23.72,
+      "blurb": "Built the Parthenon, extended democracy, and refused to leave the walls even as Sparta ravaged Attica. He governed Athens for three decades and died here of the plague.",
+      "presence": "visited",
+      "visitKind": "city",
+      "visitOrder": 1,
+      "travel": "land"
+    },
+    {
+      "id": "tanagra",
+      "names": ["Tanagra"],
+      "relation": "Battle where he exerted himself above all others",
+      "modern": "Tanagra, Boeotia, Greece",
+      "lat": 38.32,
+      "lon": 23.52,
+      "blurb": "Fought the Lacedaemonians here more conspicuously and at greater personal risk than in any other battle—perhaps to silence charges that he favored Sparta.",
+      "presence": "visited",
+      "visitKind": "battle",
+      "visitOrder": 2,
+      "travel": "land"
+    },
+    {
+      "id": "chersonese",
+      "names": ["Chersonese"],
+      "relation": "Most-praised expedition; wall and colony",
+      "modern": "Gallipoli peninsula, Turkey",
+      "lat": 40.55,
+      "lon": 26.65,
+      "blurb": "His most praised expedition: he carried a thousand fresh Athenian colonists, built a wall across the neck of the peninsula from sea to sea, and ended the chronic Thracian raids.",
+      "presence": "visited",
+      "visitKind": "camp",
+      "visitOrder": 3,
+      "travel": "sea"
+    },
+    {
+      "id": "pegae",
+      "names": ["Pegae"],
+      "relation": "Port of Megara; start of the circumnavigation",
+      "modern": "near Alepochori, Megara, Greece",
+      "lat": 38.02,
+      "lon": 23.08,
+      "blurb": "Set out from this Megarid port with a hundred galleys for the famous circumnavigation of Peloponnesus—demonstrating that Athens could project power along any enemy shoreline.",
+      "presence": "visited",
+      "visitKind": "crossing",
+      "visitOrder": 4,
+      "travel": "land"
+    },
+    {
+      "id": "nemea",
+      "names": ["Nemea", "Sicyon"],
+      "relation": "Victory over the Sicyonians on their own ground",
+      "modern": "Nemea, Corinthia, Greece",
+      "lat": 37.81,
+      "lon": 22.72,
+      "blurb": "In the course of the Peloponnesian circumnavigation he landed at Nemea, routed the Sicyonians in a pitched engagement, and raised a trophy—an object lesson in Athenian sea power.",
+      "presence": "visited",
+      "visitKind": "battle",
+      "visitOrder": 5,
+      "travel": "sea"
+    },
+    {
+      "id": "acarnania",
+      "names": ["Acarnania"],
+      "relation": "Ravaged on the circumnavigation; Oeniadae shut in",
+      "modern": "Aetolia-Acarnania, Greece",
+      "lat": 38.7,
+      "lon": 21.3,
+      "blurb": "With Achaean allies he crossed to the mainland, laid waste Acarnanian territory, and penned the Oeniadae behind their walls—the whole western voyage completed without a single casualty.",
+      "presence": "visited",
+      "visitKind": "camp",
+      "visitOrder": 6,
+      "travel": "sea"
+    },
+    {
+      "id": "euxine",
+      "names": ["Euxine"],
+      "relation": "Black Sea cruise; diplomacy with kings and cities",
+      "modern": "Black Sea",
+      "lat": 43.0,
+      "lon": 33.0,
+      "blurb": "Sailed a large and finely equipped fleet into the Euxine; secured favors for Greek cities, impressed barbarous kings, and sent colonists to Sinope—Athens's reach into the far north.",
+      "presence": "visited",
+      "visitKind": "camp",
+      "visitOrder": 7,
+      "travel": "sea"
+    },
+    {
+      "id": "sinope",
+      "names": ["Sinope"],
+      "relation": "Tyrant expelled; six hundred colonists settled",
+      "modern": "Sinop, Turkey",
+      "lat": 42.02,
+      "lon": 35.15,
+      "blurb": "Left Lamachus with thirteen ships to assist the Sinopians against their tyrant; sent six hundred Athenian colonists to take the tyrant's land and houses—empire by colony.",
+      "presence": "visited",
+      "visitKind": "city",
+      "visitOrder": 8,
+      "travel": "sea"
+    },
+    {
+      "id": "delphi",
+      "names": ["Delphi"],
+      "relation": "Restored to Phocians; Athens's privilege engraved",
+      "modern": "Delphi, Greece",
+      "lat": 38.48,
+      "lon": 22.5,
+      "blurb": "Led an army to restore the oracle to the Phocians after Sparta had given it to the Delphians; had Athens's right of first consultation engraved on the bronze wolf beside Sparta's—a clean political riposte.",
+      "presence": "visited",
+      "visitKind": "oracle",
+      "visitOrder": 9,
+      "travel": "land"
+    },
+    {
+      "id": "euboea",
+      "names": ["Euboea"],
+      "relation": "Revolt suppressed twice; colony planted",
+      "modern": "Euboea, Greece",
+      "lat": 38.5,
+      "lon": 23.9,
+      "blurb": "Crossed twice with large forces to crush revolts; drove out the Chalcidian horse-breeding aristocracy and removed all the Histiaeans, settling Athenian colonists in their place.",
+      "presence": "visited",
+      "visitKind": "camp",
+      "visitOrder": 10,
+      "travel": "sea"
+    },
+    {
+      "id": "samos",
+      "names": ["Samos"],
+      "relation": "Nine-month siege; walls torn down",
+      "modern": "Samos, Greece",
+      "lat": 37.75,
+      "lon": 26.97,
+      "blurb": "Led two expeditions to crush the Samian revolt; after a nine-month blockade the islanders surrendered, tore down their walls, gave up their fleet, and paid a large fine. Pericles compared his nine months to Agamemnon's ten years at Troy.",
+      "presence": "visited",
+      "visitKind": "battle",
+      "visitOrder": 11,
+      "travel": "sea"
+    },
+    {
+      "id": "epidaurus",
+      "names": ["Epidaurus"],
+      "relation": "Late siege cut short by the plague",
+      "modern": "Epidavros, Greece",
+      "lat": 37.63,
+      "lon": 23.08,
+      "blurb": "Led the great fleet of a hundred and fifty galleys to Peloponnesus and laid siege to the holy city Epidaurus, which gave him hope of surrender—but the plague spread even to his army and ended the attempt.",
+      "presence": "visited",
+      "visitKind": "battle",
+      "visitOrder": 12,
+      "travel": "sea"
+    },
+    {
+      "id": "sparta",
+      "names": ["Sparta", "Lacedaemon"],
+      "relation": "Rival whose invasions Pericles refused to meet",
+      "modern": "Sparta, Greece",
+      "lat": 37.08,
+      "lon": 22.43,
+      "blurb": "His lifelong antagonist: Pericles refused land battle and trusted the walls when Archidamus invaded Attica. He managed Sparta through Cimon's recall, the Thirty-Years Peace, and bribery—never giving a direct fight on Spartan terms.",
+      "presence": "named"
+    },
+    {
+      "id": "corinth",
+      "names": ["Corinth"],
+      "relation": "Rival sea power; trigger of the Corcyrean alliance",
+      "modern": "near Corinth, Greece",
+      "lat": 37.91,
+      "lon": 22.88,
+      "blurb": "Corinth's war against Corcyra prompted Pericles to advise the alliance that pulled Athens into the Peloponnesian War. Corinth was also one of the cities whose harbors Athens showed it could threaten at will.",
+      "presence": "named"
+    },
+    {
+      "id": "megara",
+      "names": ["Megara"],
+      "relation": "The decree that lit the Peloponnesian War",
+      "modern": "Megara, Greece",
+      "lat": 37.99,
+      "lon": 23.34,
+      "blurb": "The Megarian decree—excluding Megara from Athenian harbors and markets—was the immediate flashpoint of the war; Pericles refused to rescind it even when Sparta made it the price of peace.",
+      "presence": "named"
+    },
+    {
+      "id": "aegina",
+      "names": ["Aegina"],
+      "relation": "The eyesore of the Piraeus",
+      "modern": "Aegina, Greece",
+      "lat": 37.74,
+      "lon": 23.43,
+      "blurb": "Pericles called Aegina 'the eyesore of the Piraeus'; the island was subjugated and planted with Athenian colonists—one of the more aggressive steps in building Athens's empire.",
+      "presence": "named"
+    },
+    {
+      "id": "corcyra",
+      "names": ["Corcyra"],
+      "relation": "Island alliance that drew Athens into war",
+      "modern": "Corfu, Greece",
+      "lat": 39.62,
+      "lon": 19.92,
+      "blurb": "Pericles advised helping the Corcyrseans against Corinth, securing an island fleet; sending only twenty ships under Lacedaemonius gave barely token aid—he did not want full war yet.",
+      "presence": "named"
+    },
+    {
+      "id": "priene",
+      "names": ["Priene"],
+      "relation": "The city disputed between Samos and Miletus",
+      "modern": "near Güllübahçe, Turkey",
+      "lat": 37.67,
+      "lon": 27.3,
+      "blurb": "The dispute between Samos and Miletus over Priene was the stated casus belli for the Samian war—though comic writers blamed Aspasia's Milesian sympathies for what sounded like a love quarrel.",
+      "presence": "named"
+    },
+    {
+      "id": "boeotia",
+      "names": ["Boeotia"],
+      "relation": "Northern borderland; scene of Tolmides's disaster",
+      "modern": "Boeotia, Greece",
+      "lat": 38.35,
+      "lon": 23.0,
+      "blurb": "Pericles checked Athenian impulses to overreach into Boeotia after Tolmides's rash campaign ended in disaster at Coronea; the region's autonomy was a perpetual irritant on Athens's northern flank.",
+      "presence": "named"
+    },
+    {
+      "id": "thurii",
+      "names": ["Thurii"],
+      "relation": "Italian colony to ease the city of idle citizens",
+      "modern": "near Sibari, Calabria, Italy",
+      "lat": 39.73,
+      "lon": 16.45,
+      "blurb": "Pericles sent colonists to Thurii (refounded Sybaris) to ease Athens of its surplus, restless population; Cleandrides, exiled for the Attic bribe, later served there as general.",
+      "presence": "named"
+    },
+    {
+      "id": "lemnos",
+      "names": ["Lemnos"],
+      "relation": "Loyal cleruch island; held Samian hostages",
+      "modern": "Lemnos, Greece",
+      "lat": 39.92,
+      "lon": 25.23,
+      "blurb": "Pericles sent fifty of Samos's leading citizens as hostages to Lemnos; the island was one of Athens's most loyal cleruchies in the northern Aegean throughout the war.",
+      "presence": "named"
+    }
   ]
 }
